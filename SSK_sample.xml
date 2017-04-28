@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="TEI_SSK.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Multispectral imaging for painted works of art</title>
+            </titleStmt>
+            <publicationStmt>
+                <authority>Parthenos</authority>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Create from scratch</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type=""/>
+            <div type="">
+                <desc>
+                    <desc>This standard describes a method to record multispectral images of
+                        colour painted materials and artworks. The method may be applied to painted
+                        artefacts either untreated or subjected to any treatment or ageing. The
+                        method is suitable for the measurement of representative surfaces of
+                        objects, indoors or outdoors.</desc>
+                    <term source="parthenos" type="discipline" key="http://parthenos-project.eu"
+                        >Heritage and applied disciplines</term>
+                    <term source="parthenos" type="datatype" key="http://parthenos-project.eu"
+                        >artefacts</term>
+                </desc>
+                <listEvent>
+                    <event type="">
+                        <head>Collecting information on paintings</head>
+                        <desc/>
+                        <listBibl>
+                            <biblStruct type="">
+                                <monogr>
+                                    <ref target="ssk.parthenos-project.eu"/>
+                                    <imprint>
+                                        <date when="2017"/>
+                                    </imprint>
+                                </monogr>
+                            </biblStruct>
+                        </listBibl>
+                    </event>
+                    <event>
+                        <head>Spectral image acquisition</head>
+                        <desc/>
+                        <label/>
+                        <listBibl>
+                            <biblStruct>
+                                <monogr>
+                                    <ref target="ssk.parthenos-project.eu"/>
+                                    <imprint>
+                                        <date when="2017"/>
+                                    </imprint>
+                                </monogr>
+                            </biblStruct>
+                        </listBibl>
+                    </event>
+                    <event>
+                        <head>Image post-processing</head>
+                        <desc>
+                            <term source="tadirah" type="activity"
+                                key="http://tadirah.dariah.eu/vocab/index.php?tema=23&amp;/cleanup"
+                                >cleanup</term>
+                        </desc>
+                        <listBibl>
+                            <listBibl type="guidelines">
+                                <biblStruct>
+                                    <monogr>
+                                        <ref target="zoteroRef"/>
+                                        <imprint>
+                                            <date when="2017"/>
+                                        </imprint>
+                                    </monogr>
+                                </biblStruct>
+                                <biblStruct>
+                                    <monogr>
+                                        <ref target="blogRef"/>
+                                        <imprint>
+                                            <date when="2017"/>
+                                        </imprint>
+                                    </monogr>
+                                </biblStruct>
+                            </listBibl>
+                            <listBibl type="handsOn">
+                                <biblStruct>
+                                    <monogr>
+                                        <ref target="https://fr.mathworks.com/products/image.html"/>
+                                        <imprint>
+                                            <date when="2017"/>
+                                        </imprint>
+                                    </monogr>
+                                </biblStruct>
+                                <biblStruct>
+                                    <monogr>
+                                        <ref target="http://imagej.net/Welcome"/>
+                                        <imprint>
+                                            <date when="2017"/>
+                                        </imprint>
+                                    </monogr>
+                                </biblStruct>
+                            </listBibl>
+                        </listBibl>
+                    </event>
+                    <event>
+                        <head>Analysing images</head>
+                        <desc/>
+                        <label/>
+                        <listBibl>
+                            <biblStruct>
+                                <monogr>
+                                    <ref target="ssk.parthenos-project.eu"/>
+                                    <imprint>
+                                        <date when="2017"/>
+                                    </imprint>
+                                </monogr>
+                            </biblStruct>
+                        </listBibl>
+                    </event>
+                    <event>
+                        <head>Organizing output results</head>
+                        <desc/>
+                        <label/>
+                        <listBibl>
+                            <biblStruct>
+                                <monogr>
+                                    <ref target="ssk.parthenos-project.eu"/>
+                                    <imprint>
+                                        <date when="2017"/>
+                                    </imprint>
+                                </monogr>
+                            </biblStruct>
+                        </listBibl>
+                    </event>
+                    <event>
+                        <head>publishing results</head>
+                        <desc/>
+                        <label/>
+                        <listBibl>
+                            <biblStruct>
+                                <monogr>
+                                    <ref target="ssk.parthenos-project.eu"/>
+                                    <imprint>
+                                        <date when="2017"/>
+                                    </imprint>
+                                </monogr>
+                            </biblStruct>
+                        </listBibl>
+                    </event>
+                    <listRelation>
+                        <head/>
+                        <relation/>
+                        <relation/>
+                    </listRelation>
+                </listEvent>
+            </div>
+        </body>
+    </text>
+</TEI>
