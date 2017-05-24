@@ -30,7 +30,7 @@
                         >artefacts</term>
                 </desc>
                 <listEvent>
-                    <event type="">
+                    <event type="step">
                         <head>Collecting information on paintings</head>
                         <desc/>
                         <listBibl>
@@ -44,7 +44,7 @@
                             </biblStruct>
                         </listBibl>
                     </event>
-                    <event>
+                    <event type="step">
                         <head>Spectral image acquisition</head>
                         <desc/>
                         <label/>
@@ -59,7 +59,10 @@
                             </biblStruct>
                         </listBibl>
                     </event>
-                    <event>
+                    <event type="step" ref="digitizing.xml#jkfdsks">
+                        <label></label>
+                    </event>                    
+                    <event type="step" xml:id="ev0001">
                         <head>Image post-processing</head>
                         <desc>
                             <term source="tadirah" type="activity"
@@ -105,7 +108,7 @@
                             </listBibl>
                         </listBibl>
                     </event>
-                    <event>
+                    <event type="step">
                         <head>Analysing images</head>
                         <desc/>
                         <label/>
@@ -120,7 +123,7 @@
                             </biblStruct>
                         </listBibl>
                     </event>
-                    <event>
+                    <event type="step">
                         <head>Organizing output results</head>
                         <desc/>
                         <label/>
@@ -135,7 +138,7 @@
                             </biblStruct>
                         </listBibl>
                     </event>
-                    <event>
+                    <event type="step">
                         <head>publishing results</head>
                         <desc/>
                         <label/>

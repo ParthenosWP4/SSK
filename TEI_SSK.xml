@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+<?xml-model href="PureOdd.rnc" type="application/relax-ng-compact-syntax"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
     <teiHeader>
         <fileDesc>
@@ -31,19 +32,79 @@
                 <moduleRef key="namesdates" except=""/>
                 <elementSpec ident="div" mode="change">
                     <attList>
-                        <attDef ident="type" mode="change">
+                        <attDef ident="type" usage="req" mode="change">
+                            <gloss>You must indicate the level of the scenario</gloss>
                             <datatype>
                                 <dataRef key="teidata.enumerated"/>
                             </datatype>
-                            <valList type="closed">
+                            <valList type="closed" mode="replace">
+                                <valItem ident="description">
+                                    <gloss>Scenario description</gloss>
+                                </valItem>
                                 <valItem ident="subscenario">
-                                    <gloss>Sub Scenarios</gloss>
+                                    <gloss xml:lang="en">Sub Scenarios</gloss>
+                                    <gloss xml:lang="fr"/>
                                     <desc>one or more steps in a research process, that can be
                                         combined to create a complete research scenario</desc>
                                 </valItem>
                                 <valItem ident="scenario">
-                                    <gloss>Research scenario</gloss>
-                                    <desc>a combination of sub scenarios that represent a complet research process, from the definition of the research question to the publishing of the results</desc>
+                                    <gloss xml:lang="en">Research scenario</gloss>
+                                    <gloss xml:lang="fr">Scénarion de recherche</gloss>
+                                    <desc> combination of sub scenarios that represent a complet
+                                        research process, from the definition of the research
+                                        question to the publishing of the results</desc>
+                                </valItem>
+                            </valList>
+                        </attDef>
+                    </attList>
+                </elementSpec>
+                <elementSpec ident="event" mode="change">
+                    <attList>
+                        <attDef ident="type" usage="req" mode="change">
+                            <datatype>
+                                <dataRef key="teidata.enumerated"/>
+                            </datatype>
+                            <valList type="closed" mode="replace">
+                                <valItem ident="step"/>
+                            </valList>
+                        </attDef>
+                        <attDef ident="xml:id" mode="change" usage="req">
+                            <desc>It is mandatory to uniquely identify the steps, for URI
+                                generation purposes and to facilitate the reuse of steps in new
+                                scenarios.</desc>
+                        </attDef>
+                    </attList>
+                </elementSpec>
+                <elementSpec ident="biblStruct" mode="change">
+                    <attList>
+                        <attDef ident="type" usage="req" mode="replace">
+                            <datatype>
+                                <dataRef key="teidata.enumerated"/>
+                            </datatype>
+                            <valList type="semi" mode="replace">
+                                <valItem ident="specification">
+                                    <gloss xml:lang="en">Specification</gloss>
+                                    <gloss xml:lang="fr">Spécification</gloss>
+                                </valItem>
+                                <valItem ident="report">
+                                    <gloss xml:lang="en">Report</gloss>
+                                    <gloss xml:lang="fr">Rapport</gloss>
+                                </valItem>
+                                <valItem ident="blog">
+                                    <gloss xml:lang="en">Blog</gloss>
+                                    <gloss xml:lang="fr">Article de blog</gloss>
+                                </valItem>
+                                <valItem ident="tutorial">
+                                    <gloss xml:lang="en">Tutorial</gloss>
+                                    <gloss xml:lang="fr">Tutoriel</gloss>
+                                </valItem>
+                                <valItem ident="code_script">
+                                    <gloss xml:lang="en">Scripts and code</gloss>
+                                    <gloss xml:lang="fr">Scripts et code</gloss>
+                                </valItem>
+                                <valItem ident="paper">
+                                    <gloss xml:lang="en">Scholarly paper</gloss>
+                                    <gloss xml:lang="fr">publication scientifique</gloss>
                                 </valItem>
                             </valList>
                         </attDef>
