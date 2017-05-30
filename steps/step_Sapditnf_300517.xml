@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event type="step">
+    <desc>
+        <label>Share and publish data in this new format</label>
+        <gloss/>
+        <term type="activity" source="http://tadirah.dariah.eu/"
+            key="http://tadirah.dariah.eu/vocab/index.php?tema=47&amp;/publishing"/>
+        <term type="activity" source="http://tadirah.dariah.eu/"
+            key="http://tadirah.dariah.eu/vocab/index.php?tema=48&amp;/sharing"/>
+    </desc>
+</event>

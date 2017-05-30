@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event type="step">
+    <desc>
+        <label>Create associated documentation</label>
+        <gloss>To make you customization easy to read and understand by others, it is
+            important to document all the changes made and present them clearly. ODD
+            allows you to generate such documentation in various formats (HTML, PDF,
+            Docx, etc.)</gloss>
+        <term type="standard" source="standard_list" key="XML"/>
+        <term type="standard" source="standard_list" key="TEI"/>
+        <term type="standard" source="standard_list" key="EAD"/>
+        <term type="activity" source="http://tadirah.dariah.eu/"
+            key="http://tadirah.dariah.eu/vocab/index.php?tema=22&amp;/annotating"/>
+    </desc>
+    <listBibl type="general">
+        <bibl type="blog">
+            <ref type="copyBibl" target="step_Eprimf_3000517.xml#b1"/>
+        </bibl>
+        <bibl type="spec" subtype="standard">
+            <ref target="http://zotero.org/groups/427927/items/QVUGK2B2"/>
+        </bibl>
+        <bibl type="spec" subtype="standard">
+            <ref target="http://zotero.org/groups/427927/items/BEVAWMPX"/>
+        </bibl>
+    </listBibl>
+    <listBibl type="project">
+        <bibl type="code" subtype="project">
+            <ref
+                target="https://github.com/EHRI/data-validations/blob/master/ODD-RelaxNG/EAD/EHRI_EAD_doc.html"
+            />
+        </bibl>
+    </listBibl>
+</event>

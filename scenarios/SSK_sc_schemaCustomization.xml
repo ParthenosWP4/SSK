@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../TEI_SSK.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <!-- teiHeader TBC -->
+      <fileDesc>
+         <titleStmt>
+            <!-- Title of the tei document, not title of the scenario -->
+            <title>schema Customization scenario</title>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos</authority>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div type="scenario" xml:id="sc_schemaCustomization">
+            <desc>
+               <label type="scen_title">Project-centered EAD customization</label>
+               <gloss><!--description of the scenario--></gloss>
+               <!--<desc type=""></desc>-->
+               <!-- Need a reference resource for all the terms, including Parthenos disciplines, datatypes, etc... in a separate file? -->
+               <term source="parthenos" type="discipline" key="SOTP">Studies of the past</term>
+               <term source="parthenos" type="discipline" key="HAD">Heritage and applied
+                  disciplines</term>
+               <term source="parthenos" type="datatype" key="artefacts">artefacts</term>
+            </desc>
+            <listEvent>
+               <event xml:id="s1" type="step" ref="step_EaXswO_290517.xml"/>
+               <event xml:id="s2" type="step" ref="step_Eprimrf°300517.xml"/>
+               <event xml:id="s3" type="step" ref="step_Cad_300517.xml"/>
+               <event xml:id="s4" type="step" ref="step_Tdats_300517"/>
+               <event xml:id="s5" type="step" ref="step_Sapditnf_300517.xml"/>
+            </listEvent>
+         </div>
+      </body>
+   </text>
+</TEI>

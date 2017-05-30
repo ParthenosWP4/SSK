@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event type="step">
+    <desc>
+        <label>Test data against the schema</label>
+        <gloss>An important debug phase is to test relevant data with the new schema to
+            make sure that the behaviour of the added rules is appropriate.</gloss>
+        <term type="standard" source="standard_list" key="XML"/>
+        <term type="standard" source="standard_list" key="TEI"/>
+        <term type="standard" source="standard_list" key="EAD"/>
+        <term type="activity" source="http://tadirah.dariah.eu/"
+            key="http://tadirah.dariah.eu/vocab/index.php?tema=50&amp;/meta-assessing"/>
+    </desc>
+</event>
+
