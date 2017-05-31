@@ -1,57 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<event>
-    <desc type="step_desc">
-    <label type="step_title">Express an XML schema with ODD</label>
-    <gloss><abbr>ODD</abbr> stands for <expan>One Document Does it all</expan>. It
-        is a TEI XML-conformant specification format that allows one to customize
-        TEI P5 in a literate programming fashion. Any XML schema can be described
-        with ODD.</gloss>
-    <term type="standard" source="standard_list" key="XML"/>
-    <term type="standard" source="standard_list" key="TEI"/>
-    <term type="standard" source="standard_list" key="EAD"/>
-    <term type="activity" source="http://tadirah.dariah.eu/"
-        key="http://tadirah.dariah.eu/vocab/index.php?tema=35&amp;/modeling"
-        >modeling</term>
-</desc>
+<?xml-model href="../TEI_SSK.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title/>
+            </titleStmt>
+            <publicationStmt>
+                <p/>
+            </publicationStmt>
+            <sourceDesc>
+                <p/>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <textClass/>
+        </profileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listEvent>
+                <event type="step">
+                    <desc type="step_desc">
+                        <label type="step_title">Express an XML schema with ODD</label>
+                        <gloss><abbr>ODD</abbr> stands for <expan>One Document Does it all</expan>.
+                            It is a TEI XML-conformant specification format that allows one to
+                            customize TEI P5 in a literate programming fashion. Any XML schema can
+                            be described with ODD.</gloss>
+                        <term type="standard" source="standard_list" key="XML"/>
+                        <term type="standard" source="standard_list" key="TEI"/>
+                        <term type="standard" source="standard_list" key="EAD"/>
+                        <term type="activity" source="http://tadirah.dariah.eu/"
+                            key="http://tadirah.dariah.eu/vocab/index.php?tema=35&amp;/modeling"
+                            >modeling</term>
+                    </desc>
 
-    <listBibl type="general">
-        <bibl type="spec">
-            <term type="standard" source="standard_list" key="TEI"/>
-            <ref target="http://zotero.org/groups/427927/items/ZABRV5VD"/>
-        </bibl>
-        <bibl type="spec">
-            <term type="standard" source="standard_list" key="TEI"/>
-            <ref target="http://zotero.org/groups/427927/items/SS93B7B8"/>
-        </bibl>
-        <bibl type="spec">
-            <term type="standard" source="standard_list" key="TEI"/>
-            <ref target="http://zotero.org/groups/427927/items/ZE34VR34"/>
-        </bibl>
-        <bibl type="tutorial">
-            <term type="standard" source="standard_list" key="TEI"/>
-            <ref target="http://zotero.org/groups/427927/items/UBE86XKI"/>
-        </bibl>
-        <bibl type="tutorial">
-            <term type="standard" source="standard_list" key="TEI"/>
-            <ref target="http://zotero.org/groups/427927/items/QQT6NQA6"/>
-        </bibl>
-        <bibl type="tutorial">
-            <term type="standard" source="standard_list" key="TEI"/>
-            <ref target="http://zotero.org/groups/427927/items/IE9EQ2QK"/>
-        </bibl>
-        <bibl type="tutorial">
-            <term type="standard" source="standard_list" key="TEI"/>
-            <ref target="http://zotero.org/groups/427927/items/69CGH77A"/>
-        </bibl>
-    </listBibl>
-    <listBibl type="projects">
-        <bibl type="code">
-            <author xml:id="EHRI">EHRI</author>
-            <term type="standard" source="standard_list" key="TEI"/>
-            <term type="standard" source="standard_list" key="EAD"/>
-            <ref
-                target="https://github.com/PARTHENOSWP4/standardsLibrary/tree/master/archivalDescription/EAD/odd"
-            />
-        </bibl>
-    </listBibl>
-</event>
+                    <listBibl type="general">
+                        <bibl type="spec">
+                            <term type="standard" source="standard_list" key="TEI"/>
+                            <ref target="http://zotero.org/groups/427927/items/ZABRV5VD"/>
+                        </bibl>
+                        <bibl type="spec">
+                            <term type="standard" source="standard_list" key="TEI"/>
+                            <ref target="http://zotero.org/groups/427927/items/SS93B7B8"/>
+                        </bibl>
+                        <bibl type="spec">
+                            <term type="standard" source="standard_list" key="TEI"/>
+                            <ref target="http://zotero.org/groups/427927/items/ZE34VR34"/>
+                        </bibl>
+                        <bibl type="tutorial">
+                            <term type="standard" source="standard_list" key="TEI"/>
+                            <ref target="http://zotero.org/groups/427927/items/UBE86XKI"/>
+                        </bibl>
+                        <bibl type="tutorial">
+                            <term type="standard" source="standard_list" key="TEI"/>
+                            <ref target="http://zotero.org/groups/427927/items/QQT6NQA6"/>
+                        </bibl>
+                        <bibl type="tutorial">
+                            <term type="standard" source="standard_list" key="TEI"/>
+                            <ref target="http://zotero.org/groups/427927/items/IE9EQ2QK"/>
+                        </bibl>
+                        <bibl type="tutorial">
+                            <term type="standard" source="standard_list" key="TEI"/>
+                            <ref target="http://zotero.org/groups/427927/items/69CGH77A"/>
+                        </bibl>
+                        <bibl type="spec">
+                            <term type="standard" source="standard_list" key="EAD"/>
+                            <ref target="http://zotero.org/groups/427927/items/XPDZH8WZ"/>
+                        </bibl>
+                        <bibl type="spec">
+                            <term type="standard" source="standard_list" key="EAD"/>
+                            <ref target="http://zotero.org/groups/427927/items/2Z29AVQV"/>
+                        </bibl>
+                        <bibl type="code">
+                            <author xml:id="EHRI">EHRI</author>
+                            <term type="standard" source="standard_list" key="TEI"/>
+                            <term type="standard" source="standard_list" key="EAD"/>
+                            <ref
+                                target="https://github.com/PARTHENOSWP4/standardsLibrary/tree/master/archivalDescription/EAD/odd"
+                            />
+                        </bibl>
+                    </listBibl>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>

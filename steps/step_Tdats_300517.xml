@@ -1,14 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<event type="step">
-    <desc>
-        <label>Test data against the schema</label>
-        <gloss>An important debug phase is to test relevant data with the new schema to
-            make sure that the behaviour of the added rules is appropriate.</gloss>
-        <term type="standard" source="standard_list" key="XML"/>
-        <term type="standard" source="standard_list" key="TEI"/>
-        <term type="standard" source="standard_list" key="EAD"/>
-        <term type="activity" source="http://tadirah.dariah.eu/"
-            key="http://tadirah.dariah.eu/vocab/index.php?tema=50&amp;/meta-assessing"/>
-    </desc>
-</event>
-
+<?xml-model href="../TEI_SSK.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title/>
+            </titleStmt>
+            <publicationStmt>
+                <p/>
+            </publicationStmt>
+            <sourceDesc>
+                <p/>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <textClass/>
+        </profileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listEvent>
+                <event type="step">
+                    <desc>
+                        <label>Test data against the schema</label>
+                        <gloss>An important debug phase is to test relevant data with the new schema
+                            to make sure that the behaviour of the added rules is
+                            appropriate.</gloss>
+                        <term type="standard" source="standard_list" key="XML"/>
+                        <term type="standard" source="standard_list" key="TEI"/>
+                        <term type="standard" source="standard_list" key="EAD"/>
+                        <term type="activity" source="http://tadirah.dariah.eu/"
+                            key="http://tadirah.dariah.eu/vocab/index.php?tema=50&amp;/meta-assessing"
+                        />
+                    </desc>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>

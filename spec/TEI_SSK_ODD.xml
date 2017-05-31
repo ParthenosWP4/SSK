@@ -107,11 +107,6 @@
                                 <valItem ident="step"/>
                             </valList>
                         </attDef>
-                        <attDef ident="xml:id" mode="change" usage="req">
-                            <desc>It is mandatory to uniquely identify the steps, for URI generation
-                                purposes and to facilitate the reuse of steps in new
-                                scenarios.</desc>
-                        </attDef>
                         <attDef ident="mode" usage="opt" mode="add">
                             <desc versionDate="2010-05-11" xml:lang="en">specifies the effect of
                                 this declaration on its parent object.</desc>
