@@ -34,9 +34,6 @@
                             key="http://tadirah.dariah.eu/vocab/index.php?tema=22&amp;/annotating"/>
                     </desc>
                     <listBibl type="general">
-                        <bibl type="blog">
-                            <ref type="copyBibl" target="step_Eprimf_3000517.xml#b1"/>
-                        </bibl>
                         <bibl type="spec" subtype="standard">
                             <ref target="http://zotero.org/groups/427927/items/QVUGK2B2"/>
                         </bibl>
@@ -49,6 +46,9 @@
                             <ref
                                 target="https://github.com/EHRI/data-validations/blob/master/ODD-RelaxNG/EAD/EHRI_EAD_doc.html"
                             />
+                        </bibl>
+                        <bibl type="report">
+                            <ref type="copyBibl" target="step_Eprimf_3000517.xml#b1"/>
                         </bibl>
                     </listBibl>
                 </event>
