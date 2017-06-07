@@ -27,7 +27,7 @@
                <term source="parthenos" type="discipline" key="SOTP">Studies of the past</term>
                <term source="parthenos" type="discipline" key="HAD">Heritage and applied
                   disciplines</term>
-               <term source="parthenos" type="datatype" key="artefacts">artefacts</term>
+               <term type="datatype" key="catalogs" source="nedimah"/>
             </desc>
             <listEvent>
                <event xml:id="s1" type="step" ref="step_EaXswO_290517.xml"/>

@@ -51,7 +51,7 @@
                                 <valItem ident="scenario">
                                     <gloss xml:lang="en">Research scenario</gloss>
                                     <gloss xml:lang="fr">Scénario de recherche</gloss>
-                                    <desc> combination of sub scenarios that represent a complet
+                                    <desc>combination of sub scenarios that represent a complete
                                         research process, from the definition of the research
                                         question to the publishing of the results</desc>
                                 </valItem>
