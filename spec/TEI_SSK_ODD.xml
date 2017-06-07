@@ -50,7 +50,7 @@
                                 </valItem>
                                 <valItem ident="scenario">
                                     <gloss xml:lang="en">Research scenario</gloss>
-                                    <gloss xml:lang="fr">Scénarion de recherche</gloss>
+                                    <gloss xml:lang="fr">Scénario de recherche</gloss>
                                     <desc> combination of sub scenarios that represent a complet
                                         research process, from the definition of the research
                                         question to the publishing of the results</desc>
@@ -63,7 +63,7 @@
                     mode="replace">
                     <gloss versionDate="2008-12-09" xml:lang="fr">évènement</gloss>
                     <desc versionDate="2017-05-30" xml:lang="en">The <gi>event</gi> is the core
-                        element of the SSK scneario. It is usable in two different contexts: <list>
+                        element of the SSK scenario. It is usable in two different contexts: <list>
                             <item>A full description of the scenario step, with all the
                                 bibliographical references included. This events are stored in
                                 single files.</item>
