@@ -21,7 +21,12 @@
          <div type="scenario" xml:id="sc_schemaCustomization">
             <desc>
                <label type="scen_title">Project-centered EAD customization</label>
-               <gloss><!--description of the scenario--></gloss>
+               <gloss>
+                  TEI ODD can be used to document data models external to the TEI environment. 
+                  Several projects working with archival standards (in particular EAD) use it as well. 
+                  PARTHENOS created and maintain an instance of the EAD specification in ODD,  
+                  that can be used to create project oriented customizations.
+            </gloss>
                <!--<desc type=""></desc>-->
                <!-- Need a reference resource for all the terms, including Parthenos disciplines, datatypes, etc... in a separate file? -->
                <term source="parthenos" type="discipline" key="SOTP">Studies of the past</term>
