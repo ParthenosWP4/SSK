@@ -1,0 +1,43 @@
+<div class="row">
+	<div class=" scenario-details ">
+		<div  class=" col-md-7 pull-left">
+			<h1>Project-centered EAD <br>Customization</h1>
+			<i class="fa fa-bookmark-o fa-3x" aria-hidden="true"></i>
+			<br>
+			<p>
+				TEI ODD can be used to document data models external to the TEI environment. 
+				Several projects working with archival standards (in particular EAD) use it as well. 
+				PARTHENOS created and maintain an instance of the EAD specification in ODD,  
+				that can be used to create project oriented customizations.
+			</p>
+		</div>
+		<div  class="col-md-5 c">
+				<img src="../assets/project_centered_ead.png" class="" alt="EAD"> 
+		</div>
+	</div>
+</div>       
+<div class="scenario-details">
+<section class="cd-horizontal-timeline">
+	<div class="timeline">
+		<div class="events-wrapper">
+			<div class="events">
+				<ol >
+					<li *ngFor="let step of scenarioElt.steps; let i = index">
+						<a href="#0" [ngStyle]="{left: ((i+1) *left) + 'px'}" [ngClass]="(i==0 )? 'selected':''">{{i+1}}</a>
+					</li>
+					
+				</ol>		
+				<span class="filling-line" [ngStyle]="{transform:'scaleX(0.10)'}" aria-hidden="true" ></span>
+			</div> <!-- .events -->
+		</div> <!-- .events-wrapper -->
+		<ul class="cd-timeline-navigation">
+			<li><a href="#0" class="prev inactive">&nbsp;<i class="fa fa-chevron-circle-left fa-2x" aria-hidden="true"></i></a></li>
+			<li><a href="#0" [ngClass]="(scenarioElt.steps.length == 5 )? 'inactive':'active'" class="next">&nbsp;<i class="fa fa-chevron-circle-right fa-2x" aria-hidden="true"></i></a></li>
+		</ul> <!-- .cd-timeline-navigation -->
+	</div> <!-- .timeline -->
+
+	<div class="events-content">
+		
+	</div> <!-- .events-content -->
+</section>
+</div>

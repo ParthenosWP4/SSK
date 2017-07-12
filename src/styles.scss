@@ -1,0 +1,249 @@
+@import 'timeline';
+
+/* You can add global styles to this file, and also import other style files */
+
+body{
+position: relative;
+}
+.ic {
+  display: inline-block;
+  font: normal normal normal 16px/1  icomoon;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-sskhome:before {
+  content: "\e900";
+}
+.icon-ssksettings:before {
+  content: "\e901";
+}
+.icon-sskpartners:before {
+  content: "\e902";
+}
+.icon-ssklaptop:before {
+  content: "\e903";
+}
+
+body {
+ 
+  background: #f8f8f8 !important;
+}
+nav {
+    padding: 0px  !important;
+}
+#navbar{
+    margin-left: 12.5%; 
+}
+.navbar-fixed-top{
+    position: relative !important;
+}
+
+.logo-responsive{
+    display: block;
+    max-width: 75%;
+    max-height: 115px;
+}
+
+
+nav {
+    position: relative;
+}
+.nav {
+    padding: 0 !important;
+}
+nav .navbar-header{
+    margin: 10px 0px 10px 10px;
+}
+.navbar{
+    margin-bottom: 0px !important;
+}
+.navbar-header{
+    float: none !important;
+}
+
+.header {
+    margin: 6px 12px;
+}
+
+.nav-pills li {
+    //margin-left: 50px; //use whatever you want
+    margin-right: 20px;
+} 
+
+
+
+.starter-template {
+    margin: 0 7.5%;
+  text-align: center;
+  > h1{
+        font-family: Roboto;
+        font-size: 46.0px;
+        font-style: normal;
+        font-stretch: normal;
+        font-weight: 300;
+        color: #2aabd2;
+        margin: 3%;
+    }
+    > p {
+       
+        color: #000000;
+        font-family: Roboto;
+        font-size: 18.0px;
+        font-style: normal;
+        font-stretch: normal;
+        font-weight: 300;
+        text-align: left;
+    }
+}
+
+.container{
+    width: 1200px;
+    height: auto;
+}
+nav{
+    background-color: white;
+}
+
+.nav > li > a {
+    margin-top: 20px;
+    color: #333333 !important;
+    font-family: Roboto;
+}
+.user-profile{
+      margin-top: 1.3%;
+}
+.scenarios{
+    padding: 5% 5%;
+    .block{
+        background: #ffffff;
+        box-shadow: 2px 2px 5px rgb(42, 171, 210);
+        border-radius: 10px;
+        margin: 15px 0px;
+        .title{
+            font-family: ArialRoundedMTBold;
+            font-size: 20px ;
+             color: #2aabd2;
+             padding: 10px;
+             >p{
+                 padding-left: 1.5em;
+                text-indent:-1.5em;
+             }
+        };
+>a {>img {
+            display: block;
+            //width:100%;
+            max-height: 220px;
+            width: -moz-available;
+            width: -webkit-fill-available;
+        }
+        >p{
+            padding: 10px;
+        }
+}
+    };
+    
+}
+.row .wide-gutter [class*='col-']:not(:first-child):not(:last-child) {
+  padding:20px;
+}
+
+.footer_1{
+    background-color: #292929;
+    color: white;
+    padding: 30px;
+    .text{
+        text-align: justify;
+        font-size: 10px !important;
+    }
+}
+
+.scenario-details{
+    color:#464646;
+    text-align: left;
+    margin: 3% 7.5%;
+    >div >h1{
+        font-family: ArialRoundedMTBold;
+        font-size:48px;
+        font-weight:Regular;
+    }
+    
+    >div >i{
+        color: #3E6477;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        margin: 4% 15%;
+    }
+       >div  >p{
+            font-size: 18px;
+        }
+    
+    >div >img{
+        margin: 4.5%;
+        /* books: */
+        border: 2px solid #35596D;
+        box-shadow: 2px 2px 6px 0 rgba(0,0,0,0.50);
+    }
+}
+
+.content{
+    padding-bottom: 10%;
+}
+
+.navbar-fixed-bottom{
+    //height: 25% !important;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a:hover{
+    text-decoration: none !important;
+}
+
+.spinner {
+  width: 100px;
+  height: 100px;
+  background-color: #333;
+
+  margin: 25% 49%;
+  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes sk-rotateplane {
+  0% { 
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+  } 50% { 
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+  } 100% { 
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+.loading{
+  background-color: #d35400;
+}
