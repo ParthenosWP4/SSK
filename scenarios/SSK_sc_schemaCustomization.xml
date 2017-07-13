@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../TEI_SSK.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<!--<?xml-model href="../TEI_SSK.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+--><TEI xmlns="http://www.tei-c.org/ns/1.0" type="scenario">
    <teiHeader>
       <!-- teiHeader TBC -->
       <fileDesc>
@@ -43,7 +43,13 @@
                <term source="parthenos" type="discipline" key="SOTP">Studies of the past</term>
                <term source="parthenos" type="discipline" key="HAD">Heritage and applied disciplines</term>
                <term type="datatype" key="catalogs" source="nedimah"/>
+               <figure>
+                  <head>...</head>
+                  <graphic url="">...</graphic>
+                  <figDesc>...</figDesc>
+               </figure>
             </head>
+            
             <listEvent>
                <event xml:id="s1" type="step" ref="step_EaXswO_290517.xml">
                   <head mode="change">
@@ -57,6 +63,7 @@
                <event xml:id="s4" type="step" ref="step_Tdats_300517"/>
                <event xml:id="s5" type="step" ref="step_Sapditnf_300517.xml"/>
                <event xml:id="s6" type="step" ref="ste_Sapditnf_300517.xml"/>
+               <event type="scenario"></event>
             </listEvent>
          </div>
       </body>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../TEI_SSK.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="step">
     <teiHeader>
         <fileDesc>
             <titleStmt>
@@ -21,18 +21,26 @@
         <body>
             <listEvent>
                 <event type="step">
-                    <desc>
-                        <label>Create associated documentation</label>
-                        <gloss>To make you customization easy to read and understand by others, it
+                    <head>
+                        <label xml:lang="en">Create associated documentation</label>
+                        <label xml:lang="fr">Création de la documentation associée</label>
+                        <desc xml:lang="en">To make you customization easy to read and understand by others, it
                             is important to document all the changes made and present them clearly.
                             ODD allows you to generate such documentation in various formats (HTML,
-                            PDF, Docx, etc.)</gloss>
+                            PDF, Docx, etc.)</desc>
                         <term type="standard" source="standard_list" key="XML"/>
                         <term type="standard" source="standard_list" key="TEI"/>
                         <term type="standard" source="standard_list" key="EAD"/>
                         <term type="activity" source="http://tadirah.dariah.eu/"
                             key="http://tadirah.dariah.eu/vocab/index.php?tema=22&amp;/annotating"/>
-                    </desc>
+                    </head>
+                    
+                    <!-- on remplace listBibl par listRef -->
+                    <listRef>
+                        <ref type="spec" target="...">
+                            <term>...</term>
+                        </ref>
+                    </listRef>
                     <listBibl type="general">
                         <bibl type="spec" subtype="standard">
                             <ref target="http://zotero.org/groups/427927/items/QVUGK2B2"/>
