@@ -6,36 +6,52 @@
       <fileDesc>
          <titleStmt>
             <!-- Title of the tei document, not title of the scenario -->
-            <title>schema Customization scenario</title>
+            <title>Project-centered EAD customization scenario</title>
+            <author>
+               <persName>...</persName>
+               <affiliation>...</affiliation>
+            </author>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority>Parthenos ...</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 3.0 Unported (CC BY 4.0) Licence
+                     applies to this document.</p>
+               </licence>
+            </availability>
          </publicationStmt>
          <sourceDesc>
             <p>Created from scratch</p>
          </sourceDesc>
       </fileDesc>
+      <revisionDesc>
+         <change>
+            <!-- Changement majeur: Nouvel auteur, ajout d'étape etc. -->
+         </change>
+      </revisionDesc>
    </teiHeader>
    <text>
       <body>
          <div type="scenario" xml:id="sc_schemaCustomization">
-            <desc>
+            <head>
                <label type="scen_title">Project-centered EAD customization</label>
-               <gloss>
-                  TEI ODD can be used to document data models external to the TEI environment. 
-                  Several projects working with archival standards (in particular EAD) use it as well. 
-                  PARTHENOS created and maintain an instance of the EAD specification in ODD,  
-                  that can be used to create project oriented customizations.
-            </gloss>
+               <desc>TEI ODD can be used to document data models external to the TEI environment. Several projects working with archival standards (in particular EAD) use it as well. PARTHENOS
+                  created and maintain an instance of the EAD specification in ODD, that can be used to create project oriented customizations. </desc>
                <!--<desc type=""></desc>-->
                <!-- Need a reference resource for all the terms, including Parthenos disciplines, datatypes, etc... in a separate file? -->
                <term source="parthenos" type="discipline" key="SOTP">Studies of the past</term>
-               <term source="parthenos" type="discipline" key="HAD">Heritage and applied
-                  disciplines</term>
+               <term source="parthenos" type="discipline" key="HAD">Heritage and applied disciplines</term>
                <term type="datatype" key="catalogs" source="nedimah"/>
-            </desc>
+            </head>
             <listEvent>
-               <event xml:id="s1" type="step" ref="step_EaXswO_290517.xml"/>
+               <event xml:id="s1" type="step" ref="step_EaXswO_290517.xml">
+                  <head mode="change">
+                     <!-- nouveau <label> qui remplace celiui de l'étape à langue égal-->
+                     <label mode="change" xml:lang="jp">...</label>
+                     <term></term>
+                  </head>
+               </event>
                <event xml:id="s2" type="step" ref="step_Eprimrf°300517.xml"/>
                <event xml:id="s3" type="step" ref="step_Cad_300517.xml"/>
                <event xml:id="s4" type="step" ref="step_Tdats_300517"/>
