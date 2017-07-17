@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--<?xml-model href="../TEI_SSK.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
---><TEI xmlns="http://www.tei-c.org/ns/1.0" type="scenario">
+<?xml-model href="../spec/TEI_all_SSK.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="scenario">
    <teiHeader>
       <!-- teiHeader TBC -->
       <fileDesc>
@@ -16,7 +16,7 @@
             <authority>Parthenos ...</authority>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
-                  <p>The Creative Commons Attribution 3.0 Unported (CC BY 4.0) Licence
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence
                      applies to this document.</p>
                </licence>
             </availability>
@@ -27,15 +27,16 @@
       </fileDesc>
       <revisionDesc>
          <change>
-            <!-- Changement majeur: Nouvel auteur, ajout d'étape etc. -->
+            <!-- Only for major changes: addition of an author, of a step, etc. -->
          </change>
       </revisionDesc>
    </teiHeader>
    <text>
       <body>
          <div type="scenario" xml:id="sc_schemaCustomization">
+            <!-- All the textual information about scenarios and steps is now contained in the <head> element-->
             <head>
-               <label type="scen_title">Project-centered EAD customization</label>
+               <label xml:lang="en" type="scen_title">Project-centered EAD customization</label>
                <desc>TEI ODD can be used to document data models external to the TEI environment. Several projects working with archival standards (in particular EAD) use it as well. PARTHENOS
                   created and maintain an instance of the EAD specification in ODD, that can be used to create project oriented customizations. </desc>
                <!--<desc type=""></desc>-->
@@ -44,26 +45,28 @@
                <term source="parthenos" type="discipline" key="HAD">Heritage and applied disciplines</term>
                <term type="datatype" key="catalogs" source="nedimah"/>
                <figure>
-                  <head>...</head>
-                  <graphic url="">...</graphic>
-                  <figDesc>...</figDesc>
+                  <!-- Illustration of the scenario. Can also be used in the steps -->
+                  <head>Title of the image</head>
+                  <graphic url=""/>
+                  <figDesc>Description of the image</figDesc>
                </figure>
             </head>
             
             <listEvent>
+               <!-- <event type="scenario" ref="SSK_digitization.xml"/> -->
                <event xml:id="s1" type="step" ref="step_EaXswO_290517.xml">
                   <head mode="change">
                      <!-- nouveau <label> qui remplace celiui de l'étape à langue égal-->
                      <label mode="change" xml:lang="jp">...</label>
-                     <term></term>
+                     <desc mode="change">...</desc>
+                     <term mode="add"></term>
                   </head>
                </event>
                <event xml:id="s2" type="step" ref="step_Eprimrf°300517.xml"/>
                <event xml:id="s3" type="step" ref="step_Cad_300517.xml"/>
                <event xml:id="s4" type="step" ref="step_Tdats_300517"/>
                <event xml:id="s5" type="step" ref="step_Sapditnf_300517.xml"/>
-               <event xml:id="s6" type="step" ref="ste_Sapditnf_300517.xml"/>
-               <event type="scenario"></event>
+               <event xml:id="s6" type="step" ref="step_Sapditnf_300517.xml"/>
             </listEvent>
          </div>
       </body>
