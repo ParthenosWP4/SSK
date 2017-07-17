@@ -14,9 +14,14 @@
                 <note type="ns">http://www.example.org/ns/nonTEI</note>
             </notesStmt>
             <sourceDesc>
-                <p>created on Friday 28th April 2017 08:22:36 AM</p>
+                <p>created on Friday 28th April 2017 08:22:36 AM by Charles Riondet</p>
             </sourceDesc>
         </fileDesc>
+        <revisionDesc>
+            <change>First major revision on <date when="2017-07-13">July 13th 2017</date> by Laurent
+                Romary and Charles Riondet. Replacement of <gi>listBibl</gi> by <gi>listRef</gi> in
+                the events. See dated comments for more information</change>
+        </revisionDesc>
     </teiHeader>
     <text>
         <front>
@@ -31,30 +36,18 @@
                 <moduleRef key="textstructure" except=""/>
                 <moduleRef key="namesdates" except=""/>
                 <moduleRef key="linking" except=""/>
-                <elementSpec ident="div" mode="change">
+                <moduleRef key="tagdocs" except=""/>
+
+                <!-- Elements changed-->
+                <elementSpec ident="TEI" mode="change">
                     <attList>
                         <attDef ident="type" usage="req" mode="change">
-                            <gloss>You must indicate the level of the scenario</gloss>
                             <datatype>
                                 <dataRef key="teidata.enumerated"/>
                             </datatype>
                             <valList type="closed" mode="replace">
-                                <valItem ident="description">
-                                    <gloss>Scenario description</gloss>
-                                </valItem>
-                                <valItem ident="subscenario">
-                                    <gloss xml:lang="en">Sub Scenarios</gloss>
-                                    <gloss xml:lang="fr"/>
-                                    <desc>one or more steps in a research process, that can be
-                                        combined to create a complete research scenario</desc>
-                                </valItem>
-                                <valItem ident="scenario">
-                                    <gloss xml:lang="en">Research scenario</gloss>
-                                    <gloss xml:lang="fr">Scénario de recherche</gloss>
-                                    <desc>combination of sub scenarios that represent a complete
-                                        research process, from the definition of the research
-                                        question to the publishing of the results</desc>
-                                </valItem>
+                                <valItem ident="step"/>
+                                <valItem ident="scenario"/>
                             </valList>
                         </attDef>
                     </attList>
@@ -82,6 +75,7 @@
                         <memberOf key="model.eventLike"/>
                     </classes>
                     <content>
+                        <!-- Allow empty <event> elements -->
                         <sequence>
                             <classRef key="model.headLike" minOccurs="0" maxOccurs="unbounded"/>
                             <alternate>
@@ -105,97 +99,22 @@
                             </datatype>
                             <valList type="closed" mode="replace">
                                 <valItem ident="step"/>
+                                <valItem ident="scenario"/>
                             </valList>
-                        </attDef>
-                        <attDef ident="mode" usage="opt" mode="add">
-                            <desc versionDate="2010-05-11" xml:lang="en">specifies the effect of
-                                this declaration on its parent object.</desc>
-                            <datatype>
-                                <dataRef key="teidata.enumerated"/>
-                            </datatype>
-                            <defaultVal>change</defaultVal>
-                            <valList type="closed">
-                                <valItem ident="change">
-                                    <desc versionDate="2010-05-11" xml:lang="en">this declaration
-                                        changes the declaration of the same name in the current
-                                        definition</desc>
-                                    <desc versionDate="2007-12-20" xml:lang="ko">이 선언은 현 정의에서 동일 이름의
-                                        선언을 변경한다.</desc>
-                                    <desc versionDate="2007-05-02" xml:lang="zh-TW"
-                                        >該宣告改變在現有定義中名稱相同的宣告。</desc>
-                                    <desc versionDate="2008-04-06" xml:lang="es">esta declaración
-                                        cambia la declaración del mismo nombre en la definición
-                                        actual</desc>
-                                    <desc versionDate="2008-04-05" xml:lang="ja"
-                                        >当該宣言は，現行定義中の同名宣言を修正する．</desc>
-                                    <desc versionDate="2008-03-30" xml:lang="fr">cette déclaration
-                                        modifie la déclaration de même nom dans la définition
-                                        courante.</desc>
-                                    <desc versionDate="2007-01-21" xml:lang="it">la dichiarazione
-                                        modifica la dichiarazione con lo stesso nome nella
-                                        definizione corrente</desc>
-                                </valItem>
-                            </valList>
-                        </attDef>
-                        <attDef ident="where" usage="opt">
-                            <desc versionDate="2007-06-11" xml:lang="en">indicates the location of
-                                an event by pointing to a <gi>place</gi> element</desc>
-                            <desc versionDate="2007-12-20" xml:lang="ko"><gi>place</gi> 요소를 지시함으로써
-                                사건의 위치를 나타낸다.</desc>
-                            <desc versionDate="2008-04-06" xml:lang="es">indica la localización de
-                                un acontecimiento señalando un elemento <gi>lugar</gi>
-                            </desc>
-                            <desc versionDate="2008-12-09" xml:lang="fr">indique la localisation
-                                d'un évènement en pointant vers un élément <gi>place</gi>
-                            </desc>
-                            <desc versionDate="2007-11-06" xml:lang="it">indica la posizione di un
-                                evento facendo riferimento a un elemento place</desc>
-                            <datatype>
-                                <dataRef key="teidata.pointer"/>
-                            </datatype>
                         </attDef>
                     </attList>
-                    <exemplum xml:lang="en">
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                            <person>
-                                <event type="mat" when="1972-10-12">
-                                    <label>matriculation</label>
-                                </event>
-                                <event type="grad" when="1975-06-23">
-                                    <label>graduation</label>
-                                </event>
-                            </person>
-                        </egXML>
-                    </exemplum>
-                    <exemplum versionDate="2008-04-06" xml:lang="fr">
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                            <person>
-                                <event type="mat" when="1972-10-12">
-                                    <label>inscription</label>
-                                </event>
-                                <event type="grad" when="1975-06-23">
-                                    <label>diplômé</label>
-                                </event>
-                            </person>
-                        </egXML>
-                    </exemplum>
-                    <exemplum xml:lang="zh-TW">
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                            <person>
-                                <event type="mat" when="1972-10-12">
-                                    <label>入學</label>
-                                </event>
-                                <event type="grad" when="1975-06-23">
-                                    <label>畢業</label>
-                                </event>
-                            </person>
-                        </egXML>
-                    </exemplum>
-                    <listRef>
-                        <ptr target="#NDPERSbp"/>
-                    </listRef>
                 </elementSpec>
-                <elementSpec ident="bibl" mode="change">
+                <elementSpec xmlns="http://www.tei-c.org/ns/1.0" module="tagdocs" xml:id="LISTREF"
+                    ident="listRef" mode="change">
+                    <classes>
+                        <!-- 2017-07-17 ADDED model.ptrlike and att.typed -->
+                        <memberOf key="att.global"/>
+                        <memberOf key="att.typed"/>
+                        <memberOf key="model.oddDecl"/>
+                        <memberOf key="model.ptrLike"/>
+                    </classes>
+                </elementSpec>
+                <elementSpec ident="ref" mode="change">
                     <attList>
                         <attDef ident="type" usage="req" mode="replace">
                             <desc>The values of <att>type</att> are the taken from the Zotero item
@@ -244,190 +163,70 @@
                                 <valItem ident="pilastro"/>
                                 <valItem ident="jrr"/>
                             </valList>
+                            <remarks>
+                                <p>Maybe the values of the attribute @source qhould be stored in an
+                                    external parameter file. </p>
+                            </remarks>
                         </attDef>
                     </attList>
                 </elementSpec>
+
+                <!-- Prose elements present is <event> -->
                 <elementSpec ident="term" mode="change">
+                    <classes>
+                        <memberOf key="att.global"/>
+                        <memberOf key="model.emphLike"/>
+                        <memberOf key="att.declaring"/>
+                        <memberOf key="att.pointing"/>
+                        <memberOf key="att.typed"/>
+                        <memberOf key="att.canonical"/>
+                        <memberOf key="att.sortable"/>
+                        <memberOf key="att.cReferencing"/>
+                        <!--2017-07-17: <term> is now member of the class att.combinable, i.e., can have @mode for attribute. In the SSK,
+                        it is used when a scenario uses a step, but want to add additional information, or change it
+                        NB : the prose element we use in <event>, namely <label>, <desc>, and the terms <term>, contained by <head>, are also member
+                        of att.combinable -->
+                        <memberOf key="att.combinable"/>
+                    </classes>
                     <attList>
-                        <attDef ident="mode" usage="opt" mode="add">
-                            <desc versionDate="2010-05-11" xml:lang="en">specifies the effect of
-                                this declaration on its parent object.</desc>
-                            <desc versionDate="2007-12-20" xml:lang="ko">그 부모 모듈에 이 선언의 효과를
-                                명시한다.</desc>
-                            <desc versionDate="2007-05-02" xml:lang="zh-TW">標明該宣告在其來源模組中的作用。</desc>
-                            <desc versionDate="2008-04-05" xml:lang="ja">当該宣言が親要素に与える影響を示す．</desc>
-                            <desc versionDate="2007-06-12" xml:lang="fr">précise l'effet de cette
-                                déclaration sur son parent.</desc>
-                            <desc versionDate="2007-05-04" xml:lang="es">especifica el efecto de
-                                esta declaración en el módulo del que obtiene el orígen (módulo
-                                padre)</desc>
-                            <desc versionDate="2007-01-21" xml:lang="it">indica l'effetto della
-                                dichiarazione sul modulo da cui trae origine</desc>
-                            <datatype>
-                                <dataRef key="teidata.enumerated"/>
-                            </datatype>
-                            <defaultVal>add</defaultVal>
-                            <valList type="closed">
-                                <valItem ident="add">
-                                    <desc versionDate="2010-05-11" xml:lang="en">this declaration is
-                                        added to the current definitions</desc>
-                                    <desc versionDate="2007-12-20" xml:lang="ko">이 선언은 현 정의에
-                                        추가된다.</desc>
-                                    <desc versionDate="2007-05-02" xml:lang="zh-TW"
-                                        >該宣告添加在現有定義中</desc>
-                                    <desc versionDate="2008-04-06" xml:lang="es">esta declaración se
-                                        agrega a las definiciones actuales</desc>
-                                    <desc versionDate="2008-04-05" xml:lang="ja"
-                                        >当該宣言は現行定義に追加される．</desc>
-                                    <desc versionDate="2008-03-30" xml:lang="fr">cette déclaration
-                                        s'ajoute aux définitions courantes.</desc>
-                                    <desc versionDate="2007-01-21" xml:lang="it">la dichiarazione è
-                                        aggiunta alle definizioni correnti</desc>
-                                </valItem>
-                                <valItem ident="replace">
-                                    <desc versionDate="2010-05-11" xml:lang="en">this declaration
-                                        replaces the declaration of the same name in the current
-                                        definition</desc>
-                                    <desc versionDate="2007-12-20" xml:lang="ko">이 선언은 현 정의에서 동일 이름의
-                                        선언을 대체한다.</desc>
-                                    <desc versionDate="2007-05-02" xml:lang="zh-TW"
-                                        >該宣告代替在現有定義中名稱相同的宣告</desc>
-                                    <desc versionDate="2008-04-06" xml:lang="es">esta declaración
-                                        substituye la declaración del mismo nombre en la definición
-                                        actual</desc>
-                                    <desc versionDate="2008-04-05" xml:lang="ja"
-                                        >当該宣言は，現行定義中の同名宣言に置き換わる．</desc>
-                                    <desc versionDate="2008-03-30" xml:lang="fr">cette déclaration
-                                        remplace la déclaration de même nom dans la définition
-                                        courante.</desc>
-                                    <desc versionDate="2007-01-21" xml:lang="it">la dichiarazione
-                                        sostituisce la dichiarazione con lo stesso nome nella
-                                        definizione corrente</desc>
-                                </valItem>
-                            </valList>
-                        </attDef>
-                    </attList>
-                </elementSpec>
-                <elementSpec ident="listBibl" mode="change">
-                    <attList>
-                        <attDef ident="mode" usage="opt" mode="add">
-                            <desc versionDate="2010-05-11" xml:lang="en">specifies the effect of
-                                this declaration on its parent object.</desc>
-                            <desc versionDate="2007-12-20" xml:lang="ko">그 부모 모듈에 이 선언의 효과를
-                                명시한다.</desc>
-                            <desc versionDate="2007-05-02" xml:lang="zh-TW">標明該宣告在其來源模組中的作用。</desc>
-                            <desc versionDate="2008-04-05" xml:lang="ja">当該宣言が親要素に与える影響を示す．</desc>
-                            <desc versionDate="2007-06-12" xml:lang="fr">précise l'effet de cette
-                                déclaration sur son parent.</desc>
-                            <desc versionDate="2007-05-04" xml:lang="es">especifica el efecto de
-                                esta declaración en el módulo del que obtiene el orígen (módulo
-                                padre)</desc>
-                            <desc versionDate="2007-01-21" xml:lang="it">indica l'effetto della
-                                dichiarazione sul modulo da cui trae origine</desc>
-                            <datatype>
-                                <dataRef key="teidata.enumerated"/>
-                            </datatype>
-                            <defaultVal>add</defaultVal>
-                            <valList type="closed">
-                                <valItem ident="add">
-                                    <desc versionDate="2010-05-11" xml:lang="en">this declaration is
-                                        added to the current definitions</desc>
-                                    <desc versionDate="2007-12-20" xml:lang="ko">이 선언은 현 정의에
-                                        추가된다.</desc>
-                                    <desc versionDate="2007-05-02" xml:lang="zh-TW"
-                                        >該宣告添加在現有定義中</desc>
-                                    <desc versionDate="2008-04-06" xml:lang="es">esta declaración se
-                                        agrega a las definiciones actuales</desc>
-                                    <desc versionDate="2008-04-05" xml:lang="ja"
-                                        >当該宣言は現行定義に追加される．</desc>
-                                    <desc versionDate="2008-03-30" xml:lang="fr">cette déclaration
-                                        s'ajoute aux définitions courantes.</desc>
-                                    <desc versionDate="2007-01-21" xml:lang="it">la dichiarazione è
-                                        aggiunta alle definizioni correnti</desc>
-                                </valItem>
-                                <valItem ident="replace">
-                                    <desc versionDate="2010-05-11" xml:lang="en">this declaration
-                                        replaces the declaration of the same name in the current
-                                        definition</desc>
-                                    <desc versionDate="2007-12-20" xml:lang="ko">이 선언은 현 정의에서 동일 이름의
-                                        선언을 대체한다.</desc>
-                                    <desc versionDate="2007-05-02" xml:lang="zh-TW"
-                                        >該宣告代替在現有定義中名稱相同的宣告</desc>
-                                    <desc versionDate="2008-04-06" xml:lang="es">esta declaración
-                                        substituye la declaración del mismo nombre en la definición
-                                        actual</desc>
-                                    <desc versionDate="2008-04-05" xml:lang="ja"
-                                        >当該宣言は，現行定義中の同名宣言に置き換わる．</desc>
-                                    <desc versionDate="2008-03-30" xml:lang="fr">cette déclaration
-                                        remplace la déclaration de même nom dans la définition
-                                        courante.</desc>
-                                    <desc versionDate="2007-01-21" xml:lang="it">la dichiarazione
-                                        sostituisce la dichiarazione con lo stesso nome nella
-                                        definizione corrente</desc>
-                                </valItem>
-                            </valList>
-                        </attDef>
+                        <!-- @xml:lang is required -->
+                        <attDef ident="xml:lang" usage="req" mode="change"/>
                     </attList>
                 </elementSpec>
                 <elementSpec ident="desc" mode="change">
+                    <classes>
+                        <memberOf key="att.global"/>
+                        <memberOf key="model.descLike"/>
+                        <memberOf key="att.translatable"/>
+                        <memberOf key="att.typed"/>
+                        <memberOf key="model.labelLike"/>
+                        <!--2017-07-17: <desc> is now member of the class att.combinable, i.e., can have @mode for attribute. In the SSK,
+                        it is used when a scenario uses a step, but want to add additional information, or change it
+                        NB : the prose element we use in <event>, namely <label>, <desc>, and the terms <term>, contained by <head>, are also member
+                        of att.combinable -->
+                        <memberOf key="att.combinable"/>
+                    </classes>
                     <attList>
-                        <attDef ident="mode" usage="opt" mode="add">
-                            <desc versionDate="2010-05-11" xml:lang="en">specifies the effect of
-                                this declaration on its parent object.</desc>
-                            <desc versionDate="2007-12-20" xml:lang="ko">그 부모 모듈에 이 선언의 효과를
-                                명시한다.</desc>
-                            <desc versionDate="2007-05-02" xml:lang="zh-TW">標明該宣告在其來源模組中的作用。</desc>
-                            <desc versionDate="2008-04-05" xml:lang="ja">当該宣言が親要素に与える影響を示す．</desc>
-                            <desc versionDate="2007-06-12" xml:lang="fr">précise l'effet de cette
-                                déclaration sur son parent.</desc>
-                            <desc versionDate="2007-05-04" xml:lang="es">especifica el efecto de
-                                esta declaración en el módulo del que obtiene el orígen (módulo
-                                padre)</desc>
-                            <desc versionDate="2007-01-21" xml:lang="it">indica l'effetto della
-                                dichiarazione sul modulo da cui trae origine</desc>
-                            <datatype>
-                                <dataRef key="teidata.enumerated"/>
-                            </datatype>
-                            <defaultVal>add</defaultVal>
-                            <valList type="closed">
-                                <valItem ident="add">
-                                    <desc versionDate="2010-05-11" xml:lang="en">this declaration is
-                                        added to the current definitions</desc>
-                                    <desc versionDate="2007-12-20" xml:lang="ko">이 선언은 현 정의에
-                                        추가된다.</desc>
-                                    <desc versionDate="2007-05-02" xml:lang="zh-TW"
-                                        >該宣告添加在現有定義中</desc>
-                                    <desc versionDate="2008-04-06" xml:lang="es">esta declaración se
-                                        agrega a las definiciones actuales</desc>
-                                    <desc versionDate="2008-04-05" xml:lang="ja"
-                                        >当該宣言は現行定義に追加される．</desc>
-                                    <desc versionDate="2008-03-30" xml:lang="fr">cette déclaration
-                                        s'ajoute aux définitions courantes.</desc>
-                                    <desc versionDate="2007-01-21" xml:lang="it">la dichiarazione è
-                                        aggiunta alle definizioni correnti</desc>
-                                </valItem>
-                                <valItem ident="replace">
-                                    <desc versionDate="2010-05-11" xml:lang="en">this declaration
-                                        replaces the declaration of the same name in the current
-                                        definition</desc>
-                                    <desc versionDate="2007-12-20" xml:lang="ko">이 선언은 현 정의에서 동일 이름의
-                                        선언을 대체한다.</desc>
-                                    <desc versionDate="2007-05-02" xml:lang="zh-TW"
-                                        >該宣告代替在現有定義中名稱相同的宣告</desc>
-                                    <desc versionDate="2008-04-06" xml:lang="es">esta declaración
-                                        substituye la declaración del mismo nombre en la definición
-                                        actual</desc>
-                                    <desc versionDate="2008-04-05" xml:lang="ja"
-                                        >当該宣言は，現行定義中の同名宣言に置き換わる．</desc>
-                                    <desc versionDate="2008-03-30" xml:lang="fr">cette déclaration
-                                        remplace la déclaration de même nom dans la définition
-                                        courante.</desc>
-                                    <desc versionDate="2007-01-21" xml:lang="it">la dichiarazione
-                                        sostituisce la dichiarazione con lo stesso nome nella
-                                        definizione corrente</desc>
-                                </valItem>
-                            </valList>
-                        </attDef>
+                        <!-- @xml:lang is required -->
+                        <attDef ident="xml:lang" usage="req" mode="change"/>
+                    </attList>
+                </elementSpec>
+                <elementSpec ident="label" mode="change">
+                    <classes>
+                        <memberOf key="att.global"/>
+                        <memberOf key="att.typed"/>
+                        <memberOf key="att.placement"/>
+                        <memberOf key="att.written"/>
+                        <memberOf key="model.labelLike"/>
+                        <!--2017-07-17: <desc> is now member of the class att.combinable, i.e., can have @mode for attribute. In the SSK,
+                        it is used when a scenario uses a step, but want to add additional information, or change it
+                        NB : the prose element we use in <event>, namely <label>, <desc>, and the terms <term>, contained by <head>, are also member
+                        of att.combinable -->
+                        <memberOf key="att.combinable"/>
+                    </classes>
+                    <attList>
+                        <!-- @xml:lang is required -->
+                        <attDef ident="xml:lang" usage="req" mode="change"/>
                     </attList>
                 </elementSpec>
             </schemaSpec>
