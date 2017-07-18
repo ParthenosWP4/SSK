@@ -28,208 +28,221 @@
             <divGen type="toc"/>
         </front>
         <body>
-            <p>My TEI Customization&#xD; starts with modules tei, core, textstructure and header</p>
-            <schemaSpec ident="TEI_SSK" docLang="en" prefix="tei_" xml:lang="en">
-                <moduleRef key="core" except=""/>
-                <moduleRef key="tei" except=""/>
-                <moduleRef key="header" except=""/>
-                <moduleRef key="textstructure" except=""/>
-                <moduleRef key="namesdates" except=""/>
-                <moduleRef key="linking" except=""/>
-                <moduleRef key="tagdocs" except=""/>
-
-                <!-- Elements changed-->
-                <elementSpec ident="TEI" mode="change">
-                    <attList>
-                        <attDef ident="type" usage="req" mode="change">
-                            <datatype>
-                                <dataRef key="teidata.enumerated"/>
-                            </datatype>
-                            <valList type="closed" mode="replace">
-                                <valItem ident="step"/>
-                                <valItem ident="scenario"/>
-                            </valList>
-                        </attDef>
-                    </attList>
-                </elementSpec>
-                <elementSpec xmlns="http://www.tei-c.org/ns/1.0" module="namesdates" ident="event"
-                    mode="replace">
-                    <gloss versionDate="2008-12-09" xml:lang="fr">évènement</gloss>
-                    <desc versionDate="2017-05-30" xml:lang="en">The <gi>event</gi> is the core
-                        element of the SSK scenario. It is usable in two different contexts: <list>
-                            <item>A full description of the scenario step, with all the
-                                bibliographical references included. This events are stored in
-                                single files.</item>
-                            <item>In a given scenario, <gi>event</gi> elements are used as pointers
-                                to link to full <gi>event</gi> elements stored in external
-                                files</item>
-                        </list>
-                    </desc>
-                    <classes>
-                        <memberOf key="att.global"/>
-                        <memberOf key="att.datable"/>
-                        <memberOf key="att.editLike"/>
-                        <memberOf key="att.typed"/>
-                        <memberOf key="att.naming"/>
-                        <memberOf key="att.sortable"/>
-                        <memberOf key="model.eventLike"/>
-                    </classes>
-                    <content>
-                        <!-- Allow empty <event> elements -->
-                        <sequence>
-                            <classRef key="model.headLike" minOccurs="0" maxOccurs="unbounded"/>
-                            <alternate>
-                                <classRef key="model.pLike" minOccurs="0" maxOccurs="unbounded"/>
-                                <classRef key="model.labelLike" minOccurs="0" maxOccurs="unbounded"
-                                />
-                            </alternate>
-                            <alternate minOccurs="0" maxOccurs="unbounded">
-                                <classRef key="model.noteLike"/>
-                                <classRef key="model.biblLike"/>
-                                <elementRef key="linkGrp"/>
-                                <elementRef key="link"/>
-                            </alternate>
-                            <elementRef key="event" minOccurs="0" maxOccurs="unbounded"/>
-                        </sequence>
-                    </content>
-                    <attList>
-                        <attDef ident="type" usage="req" mode="change">
-                            <datatype>
-                                <dataRef key="teidata.enumerated"/>
-                            </datatype>
-                            <valList type="closed" mode="replace">
-                                <valItem ident="step"/>
-                                <valItem ident="scenario"/>
-                            </valList>
-                        </attDef>
-                    </attList>
-                </elementSpec>
-                <elementSpec xmlns="http://www.tei-c.org/ns/1.0" module="tagdocs" xml:id="LISTREF"
-                    ident="listRef" mode="change">
-                    <classes>
-                        <!-- 2017-07-17 ADDED model.ptrlike and att.typed -->
-                        <memberOf key="att.global"/>
-                        <memberOf key="att.typed"/>
-                        <memberOf key="model.oddDecl"/>
-                        <memberOf key="model.ptrLike"/>
-                    </classes>
-                </elementSpec>
-                <elementSpec ident="ref" mode="change">
-                    <attList>
-                        <attDef ident="type" usage="req" mode="replace">
-                            <desc>The values of <att>type</att> are the taken from the Zotero item
-                                types, plus SSK specific values.</desc>
-                            <datatype>
-                                <dataRef key="teidata.enumerated"/>
-                            </datatype>
-                            <valList type="semi" mode="replace">
-                                <valItem ident="specification">
-                                    <gloss xml:lang="en">Specification</gloss>
-                                    <gloss xml:lang="fr">Spécification</gloss>
-                                </valItem>
-                                <valItem ident="report">
-                                    <gloss xml:lang="en">Report</gloss>
-                                    <gloss xml:lang="fr">Rapport</gloss>
-                                </valItem>
-                                <valItem ident="blog">
-                                    <gloss xml:lang="en">Blog</gloss>
-                                    <gloss xml:lang="fr">Article de blog</gloss>
-                                </valItem>
-                                <valItem ident="tutorial">
-                                    <gloss xml:lang="en">Tutorial</gloss>
-                                    <gloss xml:lang="fr">Tutoriel</gloss>
-                                </valItem>
-                                <valItem ident="code_script">
-                                    <gloss xml:lang="en">Scripts and code</gloss>
-                                    <gloss xml:lang="fr">Scripts et code</gloss>
-                                </valItem>
-                                <valItem ident="paper">
-                                    <gloss xml:lang="en">Scholarly paper</gloss>
-                                    <gloss xml:lang="fr">publication scientifique</gloss>
-                                </valItem>
-                            </valList>
-                        </attDef>
-                        <attDef ident="source" mode="change">
-                            <desc>the <att>source</att> in <gi>bibl</gi> is used by the SSK to
-                                determine from which information canal the resource come. the values
-                                are a semi-closed list.</desc>
-                            <datatype>
-                                <dataRef key="teidata.enumerated"/>
-                            </datatype>
-                            <valList type="semi" mode="add">
-                                <valItem ident="zotero"/>
-                                <valItem ident="github"/>
-                                <valItem ident="isidore"/>
-                                <valItem ident="pilastro"/>
-                                <valItem ident="jrr"/>
-                            </valList>
-                            <remarks>
-                                <p>Maybe the values of the attribute @source qhould be stored in an
-                                    external parameter file. </p>
-                            </remarks>
-                        </attDef>
-                    </attList>
-                </elementSpec>
-
-                <!-- Prose elements present is <event> -->
-                <elementSpec ident="term" mode="change">
-                    <classes>
-                        <memberOf key="att.global"/>
-                        <memberOf key="model.emphLike"/>
-                        <memberOf key="att.declaring"/>
-                        <memberOf key="att.pointing"/>
-                        <memberOf key="att.typed"/>
-                        <memberOf key="att.canonical"/>
-                        <memberOf key="att.sortable"/>
-                        <memberOf key="att.cReferencing"/>
-                        <!--2017-07-17: <term> is now member of the class att.combinable, i.e., can have @mode for attribute. In the SSK,
-                        it is used when a scenario uses a step, but want to add additional information, or change it
-                        NB : the prose element we use in <event>, namely <label>, <desc>, and the terms <term>, contained by <head>, are also member
-                        of att.combinable -->
-                        <memberOf key="att.combinable"/>
-                    </classes>
-                    <attList>
-                        <!-- @xml:lang is required -->
-                        <attDef ident="xml:lang" usage="req" mode="change"/>
-                    </attList>
-                </elementSpec>
-                <elementSpec ident="desc" mode="change">
-                    <classes>
-                        <memberOf key="att.global"/>
-                        <memberOf key="model.descLike"/>
-                        <memberOf key="att.translatable"/>
-                        <memberOf key="att.typed"/>
-                        <memberOf key="model.labelLike"/>
-                        <!--2017-07-17: <desc> is now member of the class att.combinable, i.e., can have @mode for attribute. In the SSK,
-                        it is used when a scenario uses a step, but want to add additional information, or change it
-                        NB : the prose element we use in <event>, namely <label>, <desc>, and the terms <term>, contained by <head>, are also member
-                        of att.combinable -->
-                        <memberOf key="att.combinable"/>
-                    </classes>
-                    <attList>
-                        <!-- @xml:lang is required -->
-                        <attDef ident="xml:lang" usage="req" mode="change"/>
-                    </attList>
-                </elementSpec>
-                <elementSpec ident="label" mode="change">
-                    <classes>
-                        <memberOf key="att.global"/>
-                        <memberOf key="att.typed"/>
-                        <memberOf key="att.placement"/>
-                        <memberOf key="att.written"/>
-                        <memberOf key="model.labelLike"/>
-                        <!--2017-07-17: <desc> is now member of the class att.combinable, i.e., can have @mode for attribute. In the SSK,
-                        it is used when a scenario uses a step, but want to add additional information, or change it
-                        NB : the prose element we use in <event>, namely <label>, <desc>, and the terms <term>, contained by <head>, are also member
-                        of att.combinable -->
-                        <memberOf key="att.combinable"/>
-                    </classes>
-                    <attList>
-                        <!-- @xml:lang is required -->
-                        <attDef ident="xml:lang" usage="req" mode="change"/>
-                    </attList>
-                </elementSpec>
-            </schemaSpec>
+            <div>
+                <head>Main elements used in our SSK TEI</head>
+                <list>
+                    <item><gi>event</gi></item>
+                    <item><gi>head</gi></item>
+                    <item><gi>term</gi></item>
+                    <item><gi>label</gi></item>
+                    <item><gi>desc</gi></item>
+                </list>
+            </div>
         </body>
+        <back>
+            <div>
+                <schemaSpec ident="TEI_SSK" docLang="en" prefix="tei_" xml:lang="en">
+                    <moduleRef key="core" except=""/>
+                    <moduleRef key="tei" except=""/>
+                    <moduleRef key="header" except=""/>
+                    <moduleRef key="textstructure" except=""/>
+                    <moduleRef key="namesdates" except=""/>
+                    <moduleRef key="linking" except=""/>
+                    <moduleRef key="tagdocs" except=""/>
+
+                    <!-- Elements changed-->
+                    <elementSpec ident="TEI" mode="change">
+                        <attList>
+                            <attDef ident="type" usage="req" mode="change">
+                                <datatype>
+                                    <dataRef key="teidata.enumerated"/>
+                                </datatype>
+                                <valList type="closed" mode="replace">
+                                    <valItem ident="step"/>
+                                    <valItem ident="scenario"/>
+                                </valList>
+                            </attDef>
+                        </attList>
+                    </elementSpec>
+                    <elementSpec xmlns="http://www.tei-c.org/ns/1.0" module="namesdates"
+                        ident="event" mode="replace">
+                        <gloss versionDate="2008-12-09" xml:lang="fr">évènement</gloss>
+                        <desc versionDate="2017-05-30" xml:lang="en">The <gi>event</gi> is the core
+                            element of the SSK scenario. It is usable in two different contexts: <list>
+                                <item>A full description of the scenario step, with all the
+                                    bibliographical references included. This events are stored in
+                                    single files.</item>
+                                <item>In a given scenario, <gi>event</gi> elements are used as
+                                    pointers to link to full <gi>event</gi> elements stored in
+                                    external files</item>
+                            </list>
+                        </desc>
+                        <classes>
+                            <memberOf key="att.global"/>
+                            <memberOf key="att.datable"/>
+                            <memberOf key="att.editLike"/>
+                            <memberOf key="att.typed"/>
+                            <memberOf key="att.naming"/>
+                            <memberOf key="att.sortable"/>
+                            <memberOf key="model.eventLike"/>
+                        </classes>
+                        <content>
+                            <!-- Allow empty <event> elements -->
+                            <sequence>
+                                <classRef key="model.headLike" minOccurs="0" maxOccurs="unbounded"/>
+                                <alternate>
+                                    <classRef key="model.pLike" minOccurs="0" maxOccurs="unbounded"/>
+                                    <classRef key="model.labelLike" minOccurs="0"
+                                        maxOccurs="unbounded"/>
+                                </alternate>
+                                <alternate minOccurs="0" maxOccurs="unbounded">
+                                    <classRef key="model.noteLike"/>
+                                    <classRef key="model.biblLike"/>
+                                    <elementRef key="linkGrp"/>
+                                    <elementRef key="link"/>
+                                </alternate>
+                                <elementRef key="event" minOccurs="0" maxOccurs="unbounded"/>
+                            </sequence>
+                        </content>
+                        <attList>
+                            <attDef ident="type" usage="req" mode="change">
+                                <datatype>
+                                    <dataRef key="teidata.enumerated"/>
+                                </datatype>
+                                <valList type="closed" mode="replace">
+                                    <valItem ident="step"/>
+                                    <valItem ident="scenario"/>
+                                </valList>
+                            </attDef>
+                        </attList>
+                    </elementSpec>
+                    <elementSpec xmlns="http://www.tei-c.org/ns/1.0" module="tagdocs"
+                        xml:id="LISTREF" ident="listRef" mode="change">
+                        <classes>
+                            <!-- 2017-07-17 ADDED model.ptrlike and att.typed -->
+                            <memberOf key="att.global"/>
+                            <memberOf key="att.typed"/>
+                            <memberOf key="model.oddDecl"/>
+                            <memberOf key="model.ptrLike"/>
+                        </classes>
+                    </elementSpec>
+                    <elementSpec ident="ref" mode="change">
+                        <attList>
+                            <attDef ident="type" usage="req" mode="replace">
+                                <desc>The values of <att>type</att> are the taken from the Zotero
+                                    item types, plus SSK specific values.</desc>
+                                <datatype>
+                                    <dataRef key="teidata.enumerated"/>
+                                </datatype>
+                                <valList type="semi" mode="replace">
+                                    <valItem ident="specification">
+                                        <gloss xml:lang="en">Specification</gloss>
+                                        <gloss xml:lang="fr">Spécification</gloss>
+                                    </valItem>
+                                    <valItem ident="report">
+                                        <gloss xml:lang="en">Report</gloss>
+                                        <gloss xml:lang="fr">Rapport</gloss>
+                                    </valItem>
+                                    <valItem ident="blog">
+                                        <gloss xml:lang="en">Blog</gloss>
+                                        <gloss xml:lang="fr">Article de blog</gloss>
+                                    </valItem>
+                                    <valItem ident="tutorial">
+                                        <gloss xml:lang="en">Tutorial</gloss>
+                                        <gloss xml:lang="fr">Tutoriel</gloss>
+                                    </valItem>
+                                    <valItem ident="code_script">
+                                        <gloss xml:lang="en">Scripts and code</gloss>
+                                        <gloss xml:lang="fr">Scripts et code</gloss>
+                                    </valItem>
+                                    <valItem ident="paper">
+                                        <gloss xml:lang="en">Scholarly paper</gloss>
+                                        <gloss xml:lang="fr">publication scientifique</gloss>
+                                    </valItem>
+                                </valList>
+                            </attDef>
+                            <attDef ident="source" mode="change">
+                                <desc>the <att>source</att> in <gi>bibl</gi> is used by the SSK to
+                                    determine from which information canal the resource come. the
+                                    values are a semi-closed list.</desc>
+                                <datatype>
+                                    <dataRef key="teidata.enumerated"/>
+                                </datatype>
+                                <valList type="semi" mode="add">
+                                    <valItem ident="zotero"/>
+                                    <valItem ident="github"/>
+                                    <valItem ident="isidore"/>
+                                    <valItem ident="pilastro"/>
+                                    <valItem ident="jrr"/>
+                                </valList>
+                                <remarks>
+                                    <p>Maybe the values of the attribute @source should be stored in
+                                        an external parameter file. </p>
+                                </remarks>
+                            </attDef>
+                        </attList>
+                    </elementSpec>
+
+                    <!-- Prose elements present is <event> -->
+                    <elementSpec ident="term" mode="change">
+                        <classes>
+                            <memberOf key="att.global"/>
+                            <memberOf key="model.emphLike"/>
+                            <memberOf key="att.declaring"/>
+                            <memberOf key="att.pointing"/>
+                            <memberOf key="att.typed"/>
+                            <memberOf key="att.canonical"/>
+                            <memberOf key="att.sortable"/>
+                            <memberOf key="att.cReferencing"/>
+                            <!--2017-07-17: <term> is now member of the class att.combinable, i.e., can have @mode for attribute. In the SSK,
+                        it is used when a scenario uses a step, but want to add additional information, or change it
+                        NB : the prose element we use in <event>, namely <label>, <desc>, and the terms <term>, contained by <head>, are also member
+                        of att.combinable -->
+                            <memberOf key="att.combinable"/>
+                        </classes>
+                        <attList>
+                            <!-- @xml:lang is required -->
+                            <attDef ident="xml:lang" usage="req" mode="change"/>
+                        </attList>
+                    </elementSpec>
+                    <elementSpec ident="desc" mode="change">
+                        <classes>
+                            <memberOf key="att.global"/>
+                            <memberOf key="model.descLike"/>
+                            <memberOf key="att.translatable"/>
+                            <memberOf key="att.typed"/>
+                            <memberOf key="model.labelLike"/>
+                            <!--2017-07-17: <desc> is now member of the class att.combinable, i.e., can have @mode for attribute. In the SSK,
+                        it is used when a scenario uses a step, but want to add additional information, or change it
+                        NB : the prose element we use in <event>, namely <label>, <desc>, and the terms <term>, contained by <head>, are also member
+                        of att.combinable -->
+                            <memberOf key="att.combinable"/>
+                        </classes>
+                        <attList>
+                            <!-- @xml:lang is required -->
+                            <attDef ident="xml:lang" usage="req" mode="change"/>
+                        </attList>
+                    </elementSpec>
+                    <elementSpec ident="label" mode="change">
+                        <classes>
+                            <memberOf key="att.global"/>
+                            <memberOf key="att.typed"/>
+                            <memberOf key="att.placement"/>
+                            <memberOf key="att.written"/>
+                            <memberOf key="model.labelLike"/>
+                            <!--2017-07-17: <desc> is now member of the class att.combinable, i.e., can have @mode for attribute. In the SSK,
+                        it is used when a scenario uses a step, but want to add additional information, or change it
+                        NB : the prose element we use in <event>, namely <label>, <desc>, and the terms <term>, contained by <head>, are also member
+                        of att.combinable -->
+                            <memberOf key="att.combinable"/>
+                        </classes>
+                        <attList>
+                            <!-- @xml:lang is required -->
+                            <attDef ident="xml:lang" usage="req" mode="change"/>
+                        </attList>
+                    </elementSpec>
+                </schemaSpec>
+            </div>
+        </back>
     </text>
 </TEI>
