@@ -74,7 +74,16 @@ Doc --> https://www.slideshare.net/developers/documentation
 
 * Dirt Directory
 
+API key requested
+
+http://dirtdirectory.org/publicapi/
+https://dirtdirectory.org/export-and-api-documentation
+
+
 * Isidore
+
+URL of the resource on Isidore -> https://www.rechercheisidore.fr/search/resource/?uri=10670/1.67apb8
+API query https://api.rechercheisidore.fr/resource/content?uri=10670/1.67apb8
 
 * Wizard WP3
 
