@@ -4,6 +4,23 @@ APIs queried by the SSK
 
 * GitHub
 
+Informations to get
+
+- GitHub User
+  -> name
+  -> html_url
+  -> bio
+  -> updated_at
+  -> type
+  -> avatar_url
+
+- GitHub repo
+  -> owner (NB : a GitHub user)
+  -> full_name
+  -> html_url
+  -> description
+
+
 * Zotero
 
 * Slideshare
