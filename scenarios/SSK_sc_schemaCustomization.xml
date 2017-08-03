@@ -62,7 +62,7 @@
                      <term mode="add"></term>
                   </head>
                </event>
-               <event xml:id="s2" type="step" ref="step_Eprimrf300517">
+               <event xml:id="s2" type="step" ref="step_Eprimrf_300517">
                   <head mode="change">
                      <!-- nouveau <label> qui remplace celiui de l'étape à langue égal-->
                      <label mode="change" xml:lang="jp">...</label>
