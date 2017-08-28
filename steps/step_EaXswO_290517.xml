@@ -23,7 +23,7 @@
                 <event type="step">
                     <desc type="step_desc">
                         <label type="step_title">Express an XML schema with ODD</label>
-                        <gloss><abbr>ODD</abbr> stands for <expan>One Document Does it all</expan>.
+                        <gloss xml:lang="en"><abbr>ODD</abbr> stands for <expan>One Document Does it all</expan>.
                             It is a TEI XML-conformant specification format that allows one to
                             customize TEI P5 in a literate programming fashion. Any XML schema can
                             be described with ODD.</gloss>
