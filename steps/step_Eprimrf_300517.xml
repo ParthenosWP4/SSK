@@ -23,7 +23,7 @@
                 <event type="step">
                     <desc>
                         <label>Express projects requirements in machine-readable format</label>
-                        <gloss>With ODD, it is possible to customize a schema in different ways.To
+                        <gloss xml:lang="en">With ODD, it is possible to customize a schema in different ways.To
                             add specific, or project-oriented, rules, the best way is to embed
                             schematron rules in the Schema specification.</gloss>
                         <term type="standard" source="standard_list" key="XML"/>
