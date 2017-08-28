@@ -35,7 +35,6 @@
                             key="http://tadirah.dariah.eu/vocab/index.php?tema=22&amp;/annotating"/>
                     </head>
                     <ab type="resources">
-                        <!-- on remplace listBibl par listRef -->
                         <listRef type="general">
                             <ref type="spec" subtype="standard"
                                 target="http://zotero.org/groups/427927/items/QVUGK2B2"/>

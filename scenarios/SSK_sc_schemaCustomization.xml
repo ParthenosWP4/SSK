@@ -61,6 +61,7 @@
                      <desc mode="change">Express an XML schema with ODD</desc>
                      <term mode="add"></term>
                   </head>
+                  <ab mode="change"/>
                </event>
                <event xml:id="s2" type="step" ref="step_Eprimrf_300517">
                   <head mode="change">
@@ -69,6 +70,7 @@
                      <desc mode="change">Express projects requirements in machine-readable format</desc>
                      <term mode="add"></term>
                   </head>
+                  <ab mode="change"/>
                </event>
                <event xml:id="s3" type="step" ref="step_Cad_300517">
                   <head mode="change">
@@ -77,6 +79,7 @@
                      <desc mode="change">Create associated documentation</desc>
                      <term mode="add"></term>
                   </head>
+                  <ab mode="change"/>
                </event>
                <event xml:id="s4" type="step" ref="step_Tdats_300517">
                   <head mode="change">
@@ -85,6 +88,7 @@
                      <desc mode="change">Test data against the schema</desc>
                      <term mode="add"></term>
                   </head>
+                  <ab mode="change"/>
                </event>
                <event xml:id="s5" type="step" ref="step_Sapditnf_300517">
                   <head mode="change">
@@ -93,6 +97,7 @@
                      <desc mode="change">Share and publish data in this new format</desc>
                      <term mode="add"></term>
                   </head>
+                  <ab mode="change"/>
                </event>
                
             </listEvent>

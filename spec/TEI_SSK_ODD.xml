@@ -29,6 +29,7 @@
         </front>
         <body>
             <div>
+                <div>
                 <head>Main elements used in our SSK TEI</head>
                 <list>
                     <item><gi>event</gi></item>
@@ -36,8 +37,34 @@
                     <item><gi>term</gi></item>
                     <item><gi>label</gi></item>
                     <item><gi>desc</gi></item>
+                    <item><gi>listRef</gi></item>
                 </list>
+                </div>
+                <div>
+                    <head>Major features of the SSK customization</head>
+                    <list>
+                        <item></item>
+                        <item>All the <gi>TEI</gi> elements must be typed, either with the values
+                            "scenario" or "step"</item>
+                        <item>The attribute <att>mode</att> is used to refine the results when a
+                            step is used in more than one scenario</item>
+                        <item><att>xml:lang</att> in mandatory for:<list>
+                                <item><gi>label</gi></item>
+                                <item><gi>desc</gi></item>
+                                <item><gi>term</gi></item>
+                            </list>
+                        </item>
+                        <item>All elements that use <att>mode</att> are member or the class
+                            att.combinable.</item>
+                        <item><gi>figure</gi> is used in <gi>head</gi>, especially the <gi>head</gi>
+                            present in the <gi>div</gi> presenting the scenario, to provide an image
+                            for the scenario</item>
+                    </list>
+                </div>
             </div>
+            <!--
+                http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-att.internetMedia.html
+             -->
         </body>
         <back>
             <div>
