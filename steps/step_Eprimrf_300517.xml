@@ -26,6 +26,9 @@
                         <gloss xml:lang="en">With ODD, it is possible to customize a schema in different ways.To
                             add specific, or project-oriented, rules, the best way is to embed
                             schematron rules in the Schema specification.</gloss>
+                        <gloss xml:lang="fr">Avec l'ODD, il est possible de personnaliser un schéma de différentes façons.
+                            Pour ajouter des règles spécifiques ou axées sur le projet, la meilleure façon est d'intégrer
+                            les règles de sshematron dans la spécification du Schema.</gloss>
                         <term type="standard" source="standard_list" key="XML"/>
                         <term type="standard" source="standard_list" key="TEI"/>
                         <term type="standard" source="standard_list" key="EAD"/>
