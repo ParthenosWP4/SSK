@@ -8,8 +8,8 @@
             <!-- Title of the tei document, not title of the scenario -->
             <title>Project-centered EAD customization scenario</title>
             <author>
-               <persName>...</persName>
-               <affiliation>...</affiliation>
+               <persName>Charles Riondet</persName>
+               <affiliation>Inria</affiliation>
             </author>
          </titleStmt>
          <publicationStmt>

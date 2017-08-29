@@ -4,18 +4,28 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title/>
+                <title>Step "Create associated documentation"</title>
+                <author>
+                    <persName>Charles Riondet</persName>
+                    <affiliation>Inria</affiliation>
+                </author>
             </titleStmt>
             <publicationStmt>
-                <p/>
+                <authority>Parthenos</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/">
+                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence
+                            applies to this document.</p>
+                    </licence>
+                </availability>
             </publicationStmt>
             <sourceDesc>
-                <p/>
+                <p>Created from scratch</p>
             </sourceDesc>
         </fileDesc>
-        <profileDesc>
-            <textClass/>
-        </profileDesc>
+        <revisionDesc>
+            <change></change>
+        </revisionDesc>
     </teiHeader>
     <text>
         <body>

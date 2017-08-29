@@ -1,28 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../TEI_SSK.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="../spec/TEI_all_SSK.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="step">
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title/>
+                <title>Step "Express projects requirements in machine-readable format"</title>
+                <author>
+                    <persName>Charles Riondet</persName>
+                    <affiliation>Inria</affiliation>
+                </author>
             </titleStmt>
             <publicationStmt>
-                <p/>
+                <authority>Parthenos</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/">
+                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence
+                            applies to this document.</p>
+                    </licence>
+                </availability>
             </publicationStmt>
             <sourceDesc>
-                <p/>
+                <p>Created from scratch</p>
             </sourceDesc>
         </fileDesc>
-        <profileDesc>
-            <textClass/>
-        </profileDesc>
+        <revisionDesc>
+            <change></change>
+        </revisionDesc>
     </teiHeader>
     <text>
         <body>
             <listEvent>
                 <event type="step">
-                    <desc>
-                        <label>Express projects requirements in machine-readable format</label>
+                    <head>
+                        <label xml:lang="en">Express projects requirements in machine-readable format</label>
                         <gloss xml:lang="en">With ODD, it is possible to customize a schema in different ways.To
                             add specific, or project-oriented, rules, the best way is to embed
                             schematron rules in the Schema specification.</gloss>
@@ -33,54 +43,46 @@
                         <term type="standard" source="standard_list" key="TEI"/>
                         <term type="standard" source="standard_list" key="EAD"/>
                         <term type="standard" source="standard_list" key="Schematron"/>
-                        
                         <term type="activity" source="http://tadirah.dariah.eu/" 
                             key="http://tadirah.dariah.eu/vocab/index.php?tema=35&amp;/modeling"/>
-                    </desc>
-                    <listBibl type="general">
-                        <bibl type="spec" source="zotero">
+                    </head>
+                    <ab type="resources">
+                        <listRef type="general">
+                            <ref type="spec" source="zotero" target="https://www.zotero.org/groups/parthenos-wp4/items/itemKey/7THSVQ9K">
                             <term type="standard" source="standard_list" key="Schematron"/>
-                            <ref target="https://www.zotero.org/groups/parthenos-wp4/items/itemKey/7THSVQ9K"/>
-                        </bibl>
-                        <bibl type="bibliography">
+                        </ref>
+                            <ref type="bibliography" target="https://www.zotero.org/groups/parthenos-wp4/items/itemKey/E2C8BNVH">
                             <term type="standard" source="standard_list" key="Schematron"/>
-                            <ref target="https://www.zotero.org/groups/parthenos-wp4/items/itemKey/E2C8BNVH"/>
-                        </bibl>
-                        <bibl type="spec">
+                        </ref>
+                            <ref type="spec" target="https://www.zotero.org/groups/parthenos-wp4/items/itemKey/ZT3MRZJ6">
                             <term type="standard" source="standard_list" key="Schematron"/>
-                            <ref target="https://www.zotero.org/groups/parthenos-wp4/items/itemKey/ZT3MRZJ6"/>
-                        </bibl>
-                        <bibl type="spec">
+                        </ref>
+                            <ref type="spec" target=" https://github.com/Schematron">
                             <term type="standard" source="standard_list" key="Schematron"/>
-                            <ref target=" https://github.com/Schematron"/>
-                        </bibl>
-                        <bibl type="spec">
+                        </ref>
+                            <ref type="spec" target="https://www.zotero.org/groups/parthenos-wp4/items/itemKey/ZD8689UG">
                             <term type="standard" source="standard_list" key="TEI"/>
-                            <ref target="https://www.zotero.org/groups/parthenos-wp4/items/itemKey/ZD8689UG"/>
-                        </bibl>
-                        <bibl type="schema">
+                        </ref>
+                            <ref type="schema" target="http://schematron.com/wp-content/uploads/2016/12/iso-schematron.rnc_.txt">
                             <term type="standard" source="standard_list" key="Schematron"/>
-                            <ref target="http://schematron.com/wp-content/uploads/2016/12/iso-schematron.rnc_.txt"/>
-                        </bibl>
-                    </listBibl>
-                    <listBibl type="project" n="EHRI" corresp="http://ehri-project.eu">
-                        <bibl type="code">
+                        </ref>
+                    </listRef>
+                    <listRef type="project" n="EHRI" corresp="http://ehri-project.eu">
+                        <ref type="code" target="https://github.com/EHRI/data-validations/tree/master/ODD-RelaxNG/EAD/EHRI_EAD.odd">
                             <term type="standard" source="standard_list" key="Schematron"/>
                             <term type="standard" source="standard_list" key="EAD"/>
                             <term type="standard" source="standard_list" key="TEI"/>
-                            <ref target="https://github.com/EHRI/data-validations/tree/master/ODD-RelaxNG/EAD/EHRI_EAD.odd"/>
-                        </bibl>
-                        <bibl type="tutorial">
+                        </ref>
+                        <ref type="tutorial" target="http://zotero.org/groups/427927/items/J3JH54VE">
                             <term type="standard" source="standard_list" key="Schematron"/>
-                            <ref target="http://zotero.org/groups/427927/items/J3JH54VE"/>
-                        </bibl>
-                        <bibl type="report" xml:id="b1">
+                        </ref>
+                        <ref type="report" xml:id="b1" target="https://hal.inria.fr/hal-01503235">
                             <term type="standard" source="standard_list" key="Schematron"/>
                             <term type="standard" source="standard_list" key="EAD"/>
                             <term type="standard" source="standard_list" key="TEI"/>
-                            <ref target="https://hal.inria.fr/hal-01503235"/>
-                        </bibl>
-                    </listBibl>
+                        </ref>
+                    </listRef>
+                    </ab>
                 </event>
             </listEvent>
         </body>

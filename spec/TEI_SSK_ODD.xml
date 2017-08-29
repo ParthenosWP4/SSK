@@ -20,7 +20,9 @@
         <revisionDesc>
             <change>First major revision on <date when="2017-07-13">July 13th 2017</date> by Laurent
                 Romary and Charles Riondet. Replacement of <gi>listBibl</gi> by <gi>listRef</gi> in
-                the events. See dated comments for more information</change>
+                the events. See dated comments for more information.</change>
+            <change>First iteration of documentation paragraphs presenting the way the SSK TEI is
+                designed on <date when="2017-08-29">August 29th 2017</date>.</change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -29,7 +31,111 @@
         </front>
         <body>
             <div>
-                <div>
+                <head>Introduction</head>
+            </div>
+            <div>
+                <head>Text Encoding Initative Guidelines</head>
+            </div>
+            <div>
+                <head>General Structure of SSK scenarios and steps</head>
+                <p>The SSK offers complete frameworks to researchers needing standardized methods
+                    and resources to carry out their project, in Arts and Humanities and Heritage
+                    science. </p>
+                <p>This guidance takes the form of step by step research scenarios where the use of
+                    standards is clearly identified. Theses scenarios are divided into different
+                    steps, implying specific tasks. Each step contains a set of bibliographical
+                    resources. </p>
+                <p> A scenario is a list of events (<gi>listEvents</gi>), each scenario step is an
+                    event (<gi>event</gi>).</p>
+                <p>The <gi>event</gi> is the core element of the SSK scenario. It is usable in two
+                    different contexts: <list>
+                        <item>A full description of the scenario step, with all the bibliographical
+                            references included. These events are stored in single files.</item>
+                        <item>In a given scenario, event elements are used as pointers to link to
+                            full event elements stored in external files</item>
+                    </list></p>
+                <p>Events are stored in external files, allowing them to be used in different
+                    scenarios The resources consists of Bibliographical references. They are of two
+                    types : “general resources” and “project specific”. These elements can be
+                    repeated (one per "project"). At each level, the elements are enriched with
+                    keywords that can be <gi>term</gi> or XML attributes </p>
+            </div>
+
+            <div>
+                <head>Scenarios</head>
+                <p>The structure of the Scenario header is as follows:</p>
+
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <TEI type="scenario">
+                        <fileDesc>
+                            <titleStmt>
+
+                                <title><!-- Title of the tei document, not title of the scenario --></title>
+                                <author>
+                                    <persName>...</persName>
+                                    <affiliation>...</affiliation>
+                                </author>
+                            </titleStmt>
+                            <publicationStmt>
+                                <authority>Parthenos ...</authority>
+                                <availability>
+                                    <licence target="http://creativecommons.org/licenses/by/4.0/">
+                                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0)
+                                            Licence applies to this document.</p>
+                                    </licence>
+                                </availability>
+                            </publicationStmt>
+                            <sourceDesc>
+                                <p>Created from scratch</p>
+                            </sourceDesc>
+                        </fileDesc>
+                        <revisionDesc>
+                            <change>
+                                <!-- Only for major changes: addition of an author, of a step, etc. -->
+                            </change>
+                        </revisionDesc>
+                    </TEI>
+                </egXML>
+                <p>The scenario header includes the following data elements:</p>
+                <list type="unordered">
+                    <item>the title of the document (which is not the title of the scenario</item>
+                    <item>the authors of the scenarios</item>
+                    <item>the majors modifications</item>
+                </list>
+            </div>
+            <div>
+                <head>Steps</head>
+                <p>The structure of the step header is as follows:</p>
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <teiHeader>
+                        <fileDesc>
+                            <titleStmt>
+                                <title><!-- title of the file, not title of the step --></title>
+                                <author>
+                                    <persName>Charles Riondet</persName>
+                                    <affiliation>Inria</affiliation>
+                                </author>
+                            </titleStmt>
+                            <publicationStmt>
+                                <authority>Parthenos</authority>
+                                <availability>
+                                    <licence target="http://creativecommons.org/licenses/by/4.0/">
+                                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence
+                                            applies to this document.</p>
+                                    </licence>
+                                </availability>
+                            </publicationStmt>
+                            <sourceDesc>
+                                <p>Created from scratch</p>
+                            </sourceDesc>
+                        </fileDesc>
+                        <revisionDesc>
+                            <change></change>
+                        </revisionDesc>
+                    </teiHeader>
+                </egXML>
+            </div>
+            <div>
                 <head>Main elements used in our SSK TEI</head>
                 <list>
                     <item><gi>event</gi></item>
@@ -39,29 +145,29 @@
                     <item><gi>desc</gi></item>
                     <item><gi>listRef</gi></item>
                 </list>
-                </div>
-                <div>
-                    <head>Major features of the SSK customization</head>
-                    <list>
-                        <item></item>
-                        <item>All the <gi>TEI</gi> elements must be typed, either with the values
-                            "scenario" or "step"</item>
-                        <item>The attribute <att>mode</att> is used to refine the results when a
-                            step is used in more than one scenario</item>
-                        <item><att>xml:lang</att> in mandatory for:<list>
-                                <item><gi>label</gi></item>
-                                <item><gi>desc</gi></item>
-                                <item><gi>term</gi></item>
-                            </list>
-                        </item>
-                        <item>All elements that use <att>mode</att> are member or the class
-                            att.combinable.</item>
-                        <item><gi>figure</gi> is used in <gi>head</gi>, especially the <gi>head</gi>
-                            present in the <gi>div</gi> presenting the scenario, to provide an image
-                            for the scenario</item>
-                    </list>
-                </div>
             </div>
+            <div>
+                <head>Major features of the SSK customization</head>
+                <list>
+                    <item/>
+                    <item>All the <gi>TEI</gi> elements must be typed, either with the values
+                        "scenario" or "step"</item>
+                    <item>The attribute <att>mode</att> is used to refine the results when a step is
+                        used in more than one scenario</item>
+                    <item><att>xml:lang</att> in mandatory for:<list>
+                            <item><gi>label</gi></item>
+                            <item><gi>desc</gi></item>
+                            <item><gi>term</gi></item>
+                        </list>
+                    </item>
+                    <item>All elements that use <att>mode</att> are member or the class
+                        att.combinable.</item>
+                    <item><gi>figure</gi> is used in <gi>head</gi>, especially the <gi>head</gi>
+                        present in the <gi>div</gi> presenting the scenario, to provide an image for
+                        the scenario</item>
+                </list>
+            </div>
+
             <!--
                 http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-att.internetMedia.html
              -->
