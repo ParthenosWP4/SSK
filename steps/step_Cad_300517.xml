@@ -52,7 +52,7 @@
                                 target="http://zotero.org/groups/427927/items/BEVAWMPX"/>
                         </listRef>
                         <listRef type="project">
-                            <ref type="code" subtype="project"
+                            <ref type="code" subtype="project" source="EHRI"
                                 target="https://github.com/EHRI/data-validations/blob/master/ODD-RelaxNG/EAD/EHRI_EAD_doc.html"/>
                             <ref type="report" subtype="copyBibl"
                                 target="step_Eprimf_3000517.xml#b1"/>

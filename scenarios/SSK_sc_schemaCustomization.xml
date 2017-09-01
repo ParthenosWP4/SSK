@@ -53,6 +53,7 @@
             </head>
             
             <listEvent>
+               
                <!-- <event type="scenario" ref="SSK_digitization.xml"/> -->
                <event xml:id="s1" type="step" ref="step_EaXswO_290517">
                   <head mode="change">
@@ -63,6 +64,7 @@
                   </head>
                   <ab mode="change"/>
                </event>
+               
                <event xml:id="s2" type="step" ref="step_Eprimrf_300517">
                   <head mode="change">
                      <!-- nouveau <label> qui remplace celiui de l'étape à langue égal-->
