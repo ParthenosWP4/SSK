@@ -51,9 +51,7 @@
                   <figDesc>Description of the image</figDesc>
                </figure>
             </head>
-            
             <listEvent>
-               
                <!-- <event type="scenario" ref="SSK_digitization.xml"/> -->
                <event xml:id="s1" type="step" ref="step_EaXswO_290517">
                   <head mode="change">
