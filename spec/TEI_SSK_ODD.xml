@@ -362,7 +362,7 @@
                     <head>ref</head>
                     <p>the attributes for <gi>ref</gi> are <att>type</att>, <att>subtype</att>,
                             <att>source</att> and <att>target</att>. <list>
-                            <item>The values of <att>type</att> are the taken from the Zotero item
+                            <item>The attribute <att>type</att> is required. Its values are taken from the Zotero item
                                 types, plus SSK specific values. Possible values are:<list>
                                     <item>spec: the specification, of a standard for
                                         instance.</item>
@@ -546,10 +546,6 @@
                         of att.combinable -->
                             <memberOf key="att.combinable"/>
                         </classes>
-                        <attList>
-                            <!-- @xml:lang is required -->
-                            <attDef ident="xml:lang" usage="req" mode="change"/>
-                        </attList>
                     </elementSpec>
                     <elementSpec ident="desc" mode="change">
                         <classes mode="change">
