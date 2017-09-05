@@ -50,7 +50,7 @@
                             >modeling</term>
                     </head>
                     <ab type="resources">
-                        <listRef type="general">
+                        <linkGrp type="general">
                             <ref type="spec" target="http://zotero.org/groups/427927/items/ZABRV5VD">
                                 <term type="standard" source="standard_list" key="TEI"/>
                             </ref>
@@ -82,14 +82,50 @@
                             <ref type="spec" target="http://zotero.org/groups/427927/items/2Z29AVQV">
                                 <term type="standard" source="standard_list" key="EAD"/>
                             </ref>
-                        </listRef>
-                        <listRef type="project">
                             <ref type="code"
                                 target="https://github.com/PARTHENOSWP4/standardsLibrary/tree/master/archivalDescription/EAD/odd">
+                                <author xml:id="EHRI">EHRI</author>
                                 <term type="standard" source="standard_list" key="TEI"/>
                                 <term type="standard" source="standard_list" key="EAD"/>
                             </ref>
-                        </listRef>
+                        </linkGrp>
+                        <linkGrp type="project">
+                            <linkGrp source="EHRI">
+                                <ref type="tutorial"
+                                    target="http://zotero.org/groups/427927/items/IE9EQ2QK">
+                                    <term type="standard" source="standard_list" key="TEI"/>
+                                </ref>
+                                <ref type="tutorial"
+                                    target="http://zotero.org/groups/427927/items/69CGH77A">
+                                    <term type="standard" source="standard_list" key="TEI"/>
+                                </ref>
+                                <ref type="spec" target="http://zotero.org/groups/427927/items/XPDZH8WZ">
+                                    <term type="standard" source="standard_list" key="EAD"/>
+                                </ref>
+                                <ref type="spec" target="http://zotero.org/groups/427927/items/2Z29AVQV">
+                                    <term type="standard" source="standard_list" key="EAD"/>
+                                </ref>
+                                
+                            </linkGrp>
+                            <linkGrp source="CLARIN">
+                                <ref type="tutorial"
+                                    target="http://zotero.org/groups/427927/items/IE9EQ2QK">
+                                    <term type="standard" source="standard_list" key="TEI"/>
+                                </ref>
+                                <ref type="tutorial"
+                                    target="http://zotero.org/groups/427927/items/69CGH77A">
+                                    <term type="standard" source="standard_list" key="TEI"/>
+                                </ref>
+                                <ref type="spec" target="http://zotero.org/groups/427927/items/XPDZH8WZ">
+                                    <term type="standard" source="standard_list" key="EAD"/>
+                                </ref>
+                                <ref type="spec" target="http://zotero.org/groups/427927/items/2Z29AVQV">
+                                    <term type="standard" source="standard_list" key="EAD"/>
+                                </ref>
+                                
+                            </linkGrp>
+                        </linkGrp>
+                       
                     </ab>
                 </event>
             </listEvent>
