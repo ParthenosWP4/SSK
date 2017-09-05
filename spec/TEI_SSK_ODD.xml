@@ -37,11 +37,11 @@
         <body>
             <div>
                 <head>Introduction</head>
-                <p></p>
+                <p/>
             </div>
             <div>
                 <head>Text Encoding Initative Guidelines</head>
-                <p></p>
+                <p/>
             </div>
             <div>
                 <head>General Structure of SSK scenarios and steps</head>
@@ -56,7 +56,9 @@
                     <p>The main elements of the SSK TEI are: <specList>
                             <specDesc key="listEvent"/>
                             <specDesc key="event"/>
+                            <!-- to be replaced by linkGrp -->
                             <specDesc key="listRef"/>
+                            <!--<specDesc key="linkGrp"/>-->
                             <specDesc key="ref"/>
                         </specList>
                     </p>
@@ -329,6 +331,7 @@
                         <label xml:lang="en">Create associated documentation</label>
                     </egXML>
                 </div>
+                <!-- to be replaced by linkGrp-->
                 <div xml:id="SSK_listRef">
                     <head>listRef</head>
                     <p><gi>listRef</gi> is (for the moment) contained by the element <gi>ab</gi>.
@@ -361,7 +364,8 @@
                             <att>source</att> and <att>target</att>. <list>
                             <item>The values of <att>type</att> are the taken from the Zotero item
                                 types, plus SSK specific values. Possible values are:<list>
-                                    <item>spec: the specification, of a standard for instance.</item>
+                                    <item>spec: the specification, of a standard for
+                                        instance.</item>
                                     <item>report: technical reports</item>
                                     <item>blog: blog posts</item>
                                     <item>tutorial: tutorials or guidelines</item>
@@ -383,7 +387,8 @@
                                     <item>isidore: resources described in the platform of search
                                             <ref target="http://rechercheisidore.org">Isidore</ref>
                                         dedicated to Humanities and Social Sciences.</item>
-                                    <item>pilastro: The Knowledge base describing Humanities and Social Sciences standards.</item>
+                                    <item>pilastro: The Knowledge base describing Humanities and
+                                        Social Sciences standards.</item>
                                     <!--<item>jrr</item>-->
                                 </list></item>
                             <item>The <att>target</att> attribute specifies the destination of the
@@ -423,26 +428,21 @@
                             </attDef>
                         </attList>
                     </elementSpec>
-                    <elementSpec xmlns="http://www.tei-c.org/ns/1.0" module="namesdates"
-                        ident="event" mode="replace">
-                        <gloss versionDate="2008-12-09" xml:lang="fr">évènement</gloss>
-                        <classes>
-                            <memberOf key="att.global"/>
-                            <memberOf key="att.datable"/>
-                            <memberOf key="att.editLike"/>
-                            <memberOf key="att.typed"/>
-                            <memberOf key="att.naming"/>
-                            <memberOf key="att.sortable"/>
-                            <memberOf key="model.eventLike"/>
+                    <elementSpec ident="event" mode="change">
+                        <classes mode="change">
+                            <!--2017-07-17: <event> is now member of the class att.combinable, i.e., can have @mode for attribute. In the SSK,
+                        it is used when a scenario uses a step, but want to add additional information, or change it
+                        NB : the prose element we use in <event>, namely <label>, <desc>, and the terms <term>, contained by <head>, are also member
+                        of att.combinable -->
+                            <memberOf key="att.combinable"/>
                         </classes>
                         <content>
                             <!-- Allow empty <event> elements -->
                             <sequence>
                                 <classRef key="model.headLike" minOccurs="0" maxOccurs="unbounded"/>
-                                <alternate>
-                                    <classRef key="model.pLike" minOccurs="0" maxOccurs="unbounded"/>
-                                    <classRef key="model.labelLike" minOccurs="0"
-                                        maxOccurs="unbounded"/>
+                                <alternate minOccurs="0" maxOccurs="unbounded">
+                                    <classRef key="model.pLike"/>
+                                    <classRef key="model.labelLike"/>
                                 </alternate>
                                 <alternate minOccurs="0" maxOccurs="unbounded">
                                     <classRef key="model.noteLike"/>
@@ -465,9 +465,17 @@
                             </attDef>
                         </attList>
                     </elementSpec>
-                    <elementSpec xmlns="http://www.tei-c.org/ns/1.0" module="tagdocs"
-                        xml:id="LISTREF" ident="listRef" mode="change">
-                        <classes>
+                    <elementSpec ident="head" mode="change">
+                        <classes mode="change">
+                            <!--2017-07-17: <event> is now member of the class att.combinable, i.e., can have @mode for attribute. In the SSK,
+                        it is used when a scenario uses a step, but want to add additional information, or change it
+                        NB : the prose element we use in <event>, namely <label>, <desc>, and the terms <term>, contained by <head>, are also member
+                        of att.combinable -->
+                            <memberOf key="att.combinable"/>
+                        </classes>
+                    </elementSpec>
+                    <elementSpec ident="listRef" mode="change">
+                        <classes mode="change">
                             <!-- 2017-07-17 ADDED model.ptrlike and att.typed -->
                             <memberOf key="att.global"/>
                             <memberOf key="att.typed"/>
@@ -476,6 +484,9 @@
                         </classes>
                     </elementSpec>
                     <elementSpec ident="ref" mode="change">
+                        <classes mode="change">
+                            <memberOf key="att.combinable"/>
+                        </classes>
                         <attList>
                             <attDef ident="type" usage="req" mode="replace">
                                 <datatype>
@@ -526,19 +537,10 @@
                             </attDef>
                         </attList>
                     </elementSpec>
-
                     <!-- Prose elements present is <event> -->
                     <elementSpec ident="term" mode="change">
-                        <classes>
-                            <memberOf key="att.global"/>
-                            <memberOf key="model.emphLike"/>
-                            <memberOf key="att.declaring"/>
-                            <memberOf key="att.pointing"/>
-                            <memberOf key="att.typed"/>
-                            <memberOf key="att.canonical"/>
-                            <memberOf key="att.sortable"/>
-                            <memberOf key="att.cReferencing"/>
-                            <!--2017-07-17: <event> is now member of the class att.combinable, i.e., can have @mode for attribute. In the SSK,
+                        <classes mode="change">
+                            <!--2017-07-17: <term> is now member of the class att.combinable, i.e., can have @mode for attribute. In the SSK,
                         it is used when a scenario uses a step, but want to add additional information, or change it
                         NB : the prose element we use in <event>, namely <label>, <desc>, and the terms <term>, contained by <head>, are also member
                         of att.combinable -->
@@ -550,12 +552,7 @@
                         </attList>
                     </elementSpec>
                     <elementSpec ident="desc" mode="change">
-                        <classes>
-                            <memberOf key="att.global"/>
-                            <memberOf key="model.descLike"/>
-                            <memberOf key="att.translatable"/>
-                            <memberOf key="att.typed"/>
-                            <memberOf key="model.labelLike"/>
+                        <classes mode="change">
                             <!--2017-07-17: <desc> is now member of the class att.combinable, i.e., can have @mode for attribute. In the SSK,
                         it is used when a scenario uses a step, but want to add additional information, or change it
                         NB : the prose element we use in <event>, namely <label>, <desc>, and the terms <term>, contained by <head>, are also member
@@ -568,12 +565,7 @@
                         </attList>
                     </elementSpec>
                     <elementSpec ident="label" mode="change">
-                        <classes>
-                            <memberOf key="att.global"/>
-                            <memberOf key="att.typed"/>
-                            <memberOf key="att.placement"/>
-                            <memberOf key="att.written"/>
-                            <memberOf key="model.labelLike"/>
+                        <classes mode="change">
                             <!--2017-07-17: <label> is now member of the class att.combinable, i.e., can have @mode for attribute. In the SSK,
                         it is used when a scenario uses a step, but want to add additional information, or change it
                         NB : the prose element we use in <event>, namely <label>, <desc>, and the terms <term>, contained by <head>, are also member
