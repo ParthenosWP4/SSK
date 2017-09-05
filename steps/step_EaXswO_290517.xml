@@ -34,14 +34,14 @@
                     <head type="step_desc">
                         <label type="step_title" xml:lang="en">Express an XML schema with
                             ODD</label>
-                        <gloss xml:lang="en"><abbr>ODD</abbr> stands for <expan>One Document Does it
+                        <desc xml:lang="en"><abbr>ODD</abbr> stands for <expan>One Document Does it
                                 all</expan>. It is a TEI XML-conformant specification format that
                             allows one to customize TEI P5 in a literate programming fashion. Any
-                            XML schema can be described with ODD.</gloss>
-                        <gloss xml:lang="fr"><abbr>ODD</abbr> pour <expan>One Document Does it
+                            XML schema can be described with ODD.</desc>
+                        <desc xml:lang="fr"><abbr>ODD</abbr> pour <expan>One Document Does it
                                 all</expan>. C'est un format de spécification TEI comptatible XML
-                            qui permet de personnaliser la TEI P5 dans un programmation assez
-                            structuré. Tout schéma XML peut être décrit avec l'ODD.</gloss>
+                            qui permet de personnaliser la TEI P5 dans une programmation assez
+                            structuré. Tout schéma XML peut être décrit avec l'ODD.</desc>
                         <term type="standard" source="standard_list" key="XML"/>
                         <term type="standard" source="standard_list" key="TEI"/>
                         <term type="standard" source="standard_list" key="EAD"/>
