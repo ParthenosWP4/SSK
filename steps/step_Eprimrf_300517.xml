@@ -82,7 +82,7 @@
                             <term type="standard" source="standard_list" key="TEI"/>
                         </ref>
                     </listRef>
-                        <listRef type="project" n="EHRI" corresp="http://ehri-project.eu">
+                        <listRef type="project" n="Clarin" corresp="http://ehri-project.eu">
                         <ref type="code" target="https://github.com/EHRI/data-validations/tree/master/ODD-RelaxNG/EAD/EHRI_EAD.odd">
                             <term type="standard" source="standard_list" key="Schematron"/>
                             <term type="standard" source="standard_list" key="EAD"/>
