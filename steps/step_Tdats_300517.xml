@@ -33,7 +33,7 @@
                 <event type="step">
                     <head>
                         <label xml:lang="en">Test data against the schema</label>
-                        <desc>An important debug phase is to test relevant data with the new schema
+                        <desc xml:lang="en">An important debug phase is to test relevant data with the new schema
                             to make sure that the behaviour of the added rules is
                             appropriate.</desc>
                         <term type="standard" source="standard_list" key="XML"/>
