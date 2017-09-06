@@ -1,51 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../spec/TEI_all_SSK.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Step "Test data against the schema"</title>
-                <author>
-                    <persName>Charles Riondet</persName>
-                    <affiliation>Inria</affiliation>
-                </author>
-            </titleStmt>
-            <publicationStmt>
-                <authority>Parthenos</authority>
-                <availability>
-                    <licence target="http://creativecommons.org/licenses/by/4.0/">
-                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence
-                            applies to this document.</p>
-                    </licence>
-                </availability>
-            </publicationStmt>
-            <sourceDesc>
-                <p>Created from scratch</p>
-            </sourceDesc>
-        </fileDesc>
-        <revisionDesc>
-            <change></change>
-        </revisionDesc>
-    </teiHeader>
-    <text>
-        <body>
-            <listEvent>
-                <event type="step">
-                    <head>
-                        <label xml:lang="en">Test data against the schema</label>
-                        <desc xml:lang="en">An important debug phase is to test relevant data with the new schema
-                            to make sure that the behaviour of the added rules is
-                            appropriate.</desc>
-                        <term type="standard" source="standard_list" key="XML"/>
-                        <term type="standard" source="standard_list" key="TEI"/>
-                        <term type="standard" source="standard_list" key="EAD"/>
-                        <term type="activity" source="http://tadirah.dariah.eu/"
-                            key="http://tadirah.dariah.eu/vocab/index.php?tema=50&amp;/meta-assessing"
-                        />
-                    </head>
-                    <ab/>
-                </event>
-            </listEvent>
-        </body>
-    </text>
+    
 </TEI>
