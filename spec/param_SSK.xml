@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>SSK resources parameters and guidelines</title>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos</authority>
+         </publicationStmt>
+         <sourceDesc>
+            <p>created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div>
+            <head>SKK resources parameters</head>
+            <fs n="zotero">
+               <f name="service_name">
+                  <string>Zotero</string>
+               </f>
+               <f name="url">
+                  <fs>
+                     <f name="base">
+                        <string>https://api.zotero.org</string>
+                     </f>
+                     <f name="url_param">
+                        <vColl org="list">
+                           <string>groups</string>
+                           <string>users</string>
+                        </vColl>
+                     </f>
+                  </fs>
+               </f>
+               <f name="parthenosGroupId">
+                  <string>427927</string>
+               </f>
+            </fs>
+            <fs n="github"></fs>
+         </div>
+      </body>
+   </text>
+</TEI>
