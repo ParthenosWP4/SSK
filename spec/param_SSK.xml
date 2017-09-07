@@ -15,7 +15,7 @@
    </teiHeader>
    <text>
       <body>
-         <div>
+         <div type="params">
             <head>SKK resources parameters</head>
             <fs n="zotero">
                <f name="service_name">
@@ -38,7 +38,30 @@
                   <string>427927</string>
                </f>
             </fs>
-            <fs n="github"></fs>
+            <fs n="github"/>
+         </div>
+         <div type="guidelines">
+            <head>Guidelines</head>
+            <div>
+               <head>Zotero</head>
+               <p>The resources to be presented in the SSK are preferably stored in Zotero Parthenos
+                  WP4 database.</p>
+               <p>The Zotero database fields required by the SSK are:<list>
+                     <item>Item type</item>
+                     <item>Title</item>
+                     <item>Author</item>
+                     <item>Date</item>
+                     <item>Url</item>
+                     <item>Language</item>
+                     <item>Source : <list>
+                           <item>For webpages: website title</item>
+                           <item>For blogposts: blog title</item>
+                           <item>For journal articles, books, book sections, documents: library
+                              catalog</item>
+                        </list>
+                     </item>
+                  </list></p>
+            </div>
          </div>
       </body>
    </text>
