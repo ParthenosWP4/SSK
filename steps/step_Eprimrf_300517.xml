@@ -51,22 +51,22 @@
                     <ab type="resources">
                         <listRef type="general">
                             <ref type="spec" source="zotero"
-                                target="https://www.zotero.org/groups/parthenos-wp4/items/itemKey/7THSVQ9K">
+                                target="7THSVQ9K">
                                 <term type="standard" source="standard_list" key="Schematron"/>
                             </ref>
-                            <ref type="bibliography"
-                                target="https://www.zotero.org/groups/parthenos-wp4/items/itemKey/E2C8BNVH">
+                            <ref type="bibliography" source="zotero"
+                                target="E2C8BNVH">
                                 <term type="standard" source="standard_list" key="Schematron"/>
                             </ref>
-                            <ref type="spec"
-                                target="https://www.zotero.org/groups/parthenos-wp4/items/itemKey/ZT3MRZJ6">
+                            <ref type="spec" source="zotero"
+                                target="ZT3MRZJ6">
                                 <term type="standard" source="standard_list" key="Schematron"/>
                             </ref>
                             <ref type="spec" target=" https://github.com/Schematron">
                                 <term type="standard" source="standard_list" key="Schematron"/>
                             </ref>
-                            <ref type="spec"
-                                target="https://www.zotero.org/groups/parthenos-wp4/items/itemKey/ZD8689UG">
+                            <ref type="spec" source="zotero"
+                                target="ZD8689UG">
                                 <term type="standard" source="standard_list" key="TEI"/>
                             </ref>
                             <ref type="schema"
@@ -81,8 +81,8 @@
                                 <term type="standard" source="standard_list" key="EAD"/>
                                 <term type="standard" source="standard_list" key="TEI"/>
                             </ref>
-                            <ref type="tutorial"
-                                target="http://zotero.org/groups/427927/items/J3JH54VE">
+                            <ref type="tutorial" source="zotero"
+                                target="J3JH54VE">
                                 <term type="standard" source="standard_list" key="Schematron"/>
                             </ref>
                             <ref type="report" xml:id="b1"
@@ -99,8 +99,8 @@
                                 <term type="standard" source="standard_list" key="EAD"/>
                                 <term type="standard" source="standard_list" key="TEI"/>
                             </ref>
-                            <ref type="tutorial"
-                                target="http://zotero.org/groups/427927/items/J3JH54VE">
+                            <ref type="tutorial" source="zotero"
+                                target="J3JH54VE">
                                 <term type="standard" source="standard_list" key="Schematron"/>
                             </ref>
                             <ref type="report" xml:id="b1"

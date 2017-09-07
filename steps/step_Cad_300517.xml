@@ -46,13 +46,13 @@
                     </head>
                     <ab type="resources">
                         <listRef type="general">
-                            <ref type="spec" subtype="standard"
-                                target="http://zotero.org/groups/427927/items/QVUGK2B2"/>
-                            <ref type="spec" subtype="standard"
-                                target="http://zotero.org/groups/427927/items/BEVAWMPX"/>
+                            <ref type="spec" subtype="standard" source="zotero"
+                                target="QVUGK2B2"/>
+                            <ref type="spec" subtype="standard" source="zotero"
+                                target="BEVAWMPX"/>
                         </listRef>
                         <listRef type="project" n="EHRI" corresp="http://ehri-project.eu">
-                            <ref type="code"
+                            <ref type="code" 
                                 target="https://github.com/EHRI/data-validations/blob/master/ODD-RelaxNG/EAD/EHRI_EAD_doc.html"/>
                             <ref type="report" subtype="copyBibl"
                                 target="step_Eprimf_3000517.xml#b1"/>
