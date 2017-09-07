@@ -16,29 +16,47 @@
    <text>
       <body>
          <div type="params">
-            <head>SKK resources parameters</head>
-            <fs n="zotero">
-               <f name="service_name">
-                  <string>Zotero</string>
-               </f>
-               <f name="url">
-                  <fs>
-                     <f name="base">
-                        <string>https://api.zotero.org</string>
-                     </f>
-                     <f name="url_param">
-                        <vColl org="list">
-                           <string>groups</string>
-                           <string>users</string>
-                        </vColl>
-                     </f>
-                  </fs>
-               </f>
-               <f name="parthenosGroupId">
-                  <string>427927</string>
-               </f>
-            </fs>
-            <fs n="github"/>
+            <head>Parameters</head>
+            <!-- the parameters are put inside an egXML tag for HTML rendition -->
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <fs n="zotero">
+                  <f name="service_name">
+                     <string>Zotero</string>
+                  </f>
+                  <f name="url">
+                     <fs>
+                        <f name="base">
+                           <string>https://api.zotero.org</string>
+                        </f>
+                        <f name="url_param">
+                           <vColl org="list">
+                              <string>groups</string>
+                              <string>users</string>
+                           </vColl>
+                        </f>
+                     </fs>
+                  </f>
+                  <f name="parthenosGroupId">
+                     <string>427927</string>
+                  </f>
+               </fs>
+               <fs n="github">
+                  <f name="service_name">
+                     <string>GitHub</string>
+                  </f>
+                  <f name="url_param">
+                     <fs>
+                        <f name="base"><string>https://api.github.com</string></f>
+                        <f name="url_param">
+                           <vColl org="list">
+                              <string>users</string>
+                              <string>repos</string>
+                           </vColl>
+                        </f>
+                     </fs>
+                  </f>
+               </fs>
+            </egXML>
          </div>
          <div type="guidelines">
             <head>Guidelines</head>
@@ -47,18 +65,27 @@
                <p>The resources to be presented in the SSK are preferably stored in Zotero Parthenos
                   WP4 database.</p>
                <p>The Zotero database fields required by the SSK are:<list>
-                     <item>Item type</item>
-                     <item>Title</item>
-                     <item>Author</item>
-                     <item>Date</item>
-                     <item>Url</item>
-                     <item>Language</item>
-                     <item>Source : <list>
-                           <item>For webpages: website title</item>
-                           <item>For blogposts: blog title</item>
-                           <item>For journal articles, books, book sections, documents: library
-                              catalog</item>
-                        </list>
+                     <item><label>Item type</label>: <desc>The item type is most of the time
+                           identified by Zotero but it's important to check it. The most used item
+                           types are:<list>
+                              <item>webpage</item>
+                              <item>blogpost</item>
+                              <item>journal article</item>
+                              <item>book section</item>
+                              <item>book</item>
+                              <item>presentation</item>
+                           </list></desc></item>
+                     <item><label>Title</label>: <desc>The title of the resource</desc></item>
+                     <item><label>Author</label>: <desc>The author of the resource</desc></item>
+                     <item><label>Date</label>: <desc>The date of the resource</desc></item>
+                     <item><label>Url</label>: <desc>the url of the resource</desc></item>
+                     <item><label>Language</label>: <desc>the language of the resource</desc></item>
+                     <item><label>Source</label>: <desc><list>
+                              <item>For webpages: website title</item>
+                              <item>For blogposts: blog title</item>
+                              <item>For journal articles, books, book sections, documents: library
+                                 catalog</item>
+                           </list></desc>
                      </item>
                   </list></p>
             </div>
