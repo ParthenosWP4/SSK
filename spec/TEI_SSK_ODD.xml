@@ -413,6 +413,7 @@
                     <moduleRef key="namesdates" except=""/>
                     <moduleRef key="linking" except=""/>
                     <moduleRef key="tagdocs" except=""/>
+                    <moduleRef key="figures"/>
 
                     <!-- Elements changed-->
                     <elementSpec ident="TEI" mode="change">

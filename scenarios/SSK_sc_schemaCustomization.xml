@@ -37,7 +37,7 @@
             <!-- All the textual information about scenarios and steps is now contained in the <head> element-->
             <head>
                <label xml:lang="en" type="scen_title">Project-centered EAD customization</label>
-               <desc>TEI ODD can be used to document data models external to the TEI environment. Several projects working with archival standards (in particular EAD) use it as well. PARTHENOS
+               <desc xml:lang="en">TEI ODD can be used to document data models external to the TEI environment. Several projects working with archival standards (in particular EAD) use it as well. PARTHENOS
                   created and maintain an instance of the EAD specification in ODD, that can be used to create project oriented customizations. </desc>
                <!--<desc type=""></desc>-->
                <!-- Need a reference resource for all the terms, including Parthenos disciplines, datatypes, etc... in a separate file? -->
@@ -57,49 +57,47 @@
                   <head mode="change">
                      <!-- nouveau <label> qui remplace celiui de l'étape à langue égal-->
                      <label mode="change" xml:lang="jp">...</label>
-                     <desc mode="change">Express an XML schema with ODD</desc>
+                     <desc xml:lang="en" mode="change">Express an XML schema with ODD</desc>
                      <term mode="add"></term>
                   </head>
-                  <ab mode="change"/>
+                  <ab/>
                </event>
-               
                <event xml:id="s2" type="step" ref="step_Eprimrf_300517">
                   <head mode="change">
                      <!-- nouveau <label> qui remplace celiui de l'étape à langue égal-->
                      <label mode="change" xml:lang="jp">...</label>
-                     <desc mode="change">Express projects requirements in machine-readable format</desc>
+                     <desc xml:lang="en" mode="change">Express projects requirements in machine-readable format</desc>
                      <term mode="add"></term>
                   </head>
-                  <ab mode="change"/>
+                  <ab/>
                </event>
                <event xml:id="s3" type="step" ref="step_Cad_300517">
                   <head mode="change">
                      <!-- nouveau <label> qui remplace celiui de l'étape à langue égal-->
                      <label mode="change" xml:lang="jp">...</label>
-                     <desc mode="change">Create associated documentation</desc>
+                     <desc xml:lang="en" mode="change">Create associated documentation</desc>
                      <term mode="add"></term>
                   </head>
-                  <ab mode="change"/>
+                  <ab/>
                </event>
                <event xml:id="s4" type="step" ref="step_Tdats_300517">
                   <head mode="change">
                      <!-- nouveau <label> qui remplace celiui de l'étape à langue égal-->
                      <label mode="change" xml:lang="jp">...</label>
-                     <desc mode="change">Test data against the schema</desc>
+                     <desc xml:lang="en" mode="change">Test data against the schema</desc>
                      <term mode="add"></term>
                   </head>
-                  <ab mode="change"/>
+                  <ab/>
                </event>
                <event xml:id="s5" type="step" ref="step_Sapditnf_300517">
                   <head mode="change">
                      <!-- nouveau <label> qui remplace celiui de l'étape à langue égal-->
                      <label mode="change" xml:lang="jp">...</label>
-                     <desc mode="change">Share and publish data in this new format</desc>
+                     <desc xml:lang="en" mode="change">Share and publish data in this new format</desc>
                      <term mode="add"></term>
                   </head>
-                  <ab mode="change"/>
+                  <ab/>
                </event>
-               
             </listEvent>
          </div>
       </body>

@@ -81,7 +81,7 @@
                                 <term type="standard" source="standard_list" key="EAD"/>
                                 <term type="standard" source="standard_list" key="TEI"/>
                             </ref>
-                            <ref type="tutorial" source="zotero"
+                            <ref type="tutorial" source="zotero" resp="group"
                                 target="J3JH54VE">
                                 <term type="standard" source="standard_list" key="Schematron"/>
                             </ref>
