@@ -48,41 +48,38 @@
                         <term type="activity" source="http://tadirah.dariah.eu/"
                             key="http://tadirah.dariah.eu/vocab/index.php?tema=35&amp;/modeling"/>
                     </head>
-                    <ab type="resources">
-                        <listRef type="general">
-                            <ref type="spec" source="zotero"
-                                target="7THSVQ9K">
-                                <term type="standard" source="standard_list" key="Schematron"/>
-                            </ref>
-                            <ref type="bibliography" source="zotero"
-                                target="E2C8BNVH">
-                                <term type="standard" source="standard_list" key="Schematron"/>
-                            </ref>
-                            <ref type="spec" source="zotero" 
-                                target="ZT3MRZJ6">
-                                <term type="standard" source="standard_list" key="Schematron"/>
-                            </ref>
-                            <ref type="spec" target=" https://github.com/Schematron">
-                                <term type="standard" source="standard_list" key="Schematron"/>
-                            </ref>
-                            <ref type="spec" source="zotero"
-                                target="ZD8689UG">
-                                <term type="standard" source="standard_list" key="TEI"/>
-                            </ref>
-                            <ref type="schema"
-                                target="http://schematron.com/wp-content/uploads/2016/12/iso-schematron.rnc_.txt">
-                                <term type="standard" source="standard_list" key="Schematron"/>
-                            </ref>
-                        </listRef>
-                        <listRef type="project" n="EHRI" corresp="http://ehri-project.eu">
+
+
+                    <linkGrp type="general">
+                        <ref type="spec" source="zotero" target="7THSVQ9K">
+                            <term type="standard" source="standard_list" key="Schematron"/>
+                        </ref>
+                        <ref type="bibliography" source="zotero" target="E2C8BNVH">
+                            <term type="standard" source="standard_list" key="Schematron"/>
+                        </ref>
+                        <ref type="spec" source="zotero" target="ZT3MRZJ6">
+                            <term type="standard" source="standard_list" key="Schematron"/>
+                        </ref>
+                        <ref type="spec" target=" https://github.com/Schematron">
+                            <term type="standard" source="standard_list" key="Schematron"/>
+                        </ref>
+                        <ref type="spec" source="zotero" target="ZD8689UG">
+                            <term type="standard" source="standard_list" key="TEI"/>
+                        </ref>
+                        <ref type="schema"
+                            target="http://schematron.com/wp-content/uploads/2016/12/iso-schematron.rnc_.txt">
+                            <term type="standard" source="standard_list" key="Schematron"/>
+                        </ref>
+                    </linkGrp>
+                    <linkGrp type="project">
+                        <linkGrp source="EHRI" corresp="http://ehri-project.eu">
                             <ref type="code"
                                 target="https://github.com/EHRI/data-validations/tree/master/ODD-RelaxNG/EAD/EHRI_EAD.odd">
                                 <term type="standard" source="standard_list" key="Schematron"/>
                                 <term type="standard" source="standard_list" key="EAD"/>
                                 <term type="standard" source="standard_list" key="TEI"/>
                             </ref>
-                            <ref type="tutorial" source="zotero" resp="group"
-                                target="J3JH54VE">
+                            <ref type="tutorial" source="zotero" resp="group" target="J3JH54VE">
                                 <term type="standard" source="standard_list" key="Schematron"/>
                             </ref>
                             <ref type="report" xml:id="b1"
@@ -91,8 +88,8 @@
                                 <term type="standard" source="standard_list" key="EAD"/>
                                 <term type="standard" source="standard_list" key="TEI"/>
                             </ref>
-                        </listRef>
-                    </ab>
+                        </linkGrp>
+                    </linkGrp>
                 </event>
             </listEvent>
         </body>
