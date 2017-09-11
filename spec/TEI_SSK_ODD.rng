@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2017-09-11T10:07:05Z. .
+Schema generated from ODD source 2017-09-11T16:34:08Z. .
 TEI Edition: Version 3.2.0. Last updated on
 	10th July 2017, revision 0fcf651
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.2.0/
@@ -10111,12 +10111,7 @@ Sample values include: 1] atBirth; 2] atDeath; 3] dependent; 4] inherited; 5] in
    <define name="tei_linkGrp">
       <element name="linkGrp">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(link group) defines a collection of associations or hypertextual links. [16.1. Links]</a:documentation>
-         <oneOrMore>
-            <choice>
-               <ref name="tei_link"/>
-               <ref name="tei_ptr"/>
-            </choice>
-         </oneOrMore>
+         <empty/>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.pointing.group.attributes"/>
          <empty/>

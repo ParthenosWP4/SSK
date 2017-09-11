@@ -14,8 +14,8 @@
                 <authority>Parthenos</authority>
                 <availability>
                     <licence target="http://creativecommons.org/licenses/by/4.0/">
-                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence
-                            applies to this document.</p>
+                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.</p>
                     </licence>
                 </availability>
             </publicationStmt>
@@ -24,7 +24,7 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
-            <change></change>
+            <change/>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -44,20 +44,19 @@
                         <term type="activity" source="http://tadirah.dariah.eu/"
                             key="http://tadirah.dariah.eu/vocab/index.php?tema=22&amp;/annotating"/>
                     </head>
-                    <ab type="resources">
-                        <listRef type="general">
-                            <ref type="spec" subtype="standard" source="zotero"
-                                target="QVUGK2B2"/>
-                            <ref type="spec" subtype="standard" source="zotero"
-                                target="BEVAWMPX"/>
-                        </listRef>
-                        <listRef type="project" n="EHRI" corresp="http://ehri-project.eu">
-                            <ref type="code" 
+                    <linkGrp type="general">
+                        <ref type="spec" subtype="standard" source="zotero" target="QVUGK2B2"/>
+                        <ref type="spec" subtype="standard" source="zotero" target="BEVAWMPX"/>
+                    </linkGrp>
+                    <linkGrp type="project">
+                        <linkGrp source="EHRI" corresp="http://ehri-project.eu">
+                            <ref type="code"
                                 target="https://github.com/EHRI/data-validations/blob/master/ODD-RelaxNG/EAD/EHRI_EAD_doc.html"/>
                             <ref type="report" subtype="copyBibl"
                                 target="step_Eprimf_3000517.xml#b1"/>
-                        </listRef>
-                    </ab>
+                        </linkGrp>
+                    </linkGrp>
+
                 </event>
             </listEvent>
         </body>

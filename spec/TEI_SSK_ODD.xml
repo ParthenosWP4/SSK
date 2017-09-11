@@ -28,6 +28,9 @@
                 the events. See dated comments for more information.</change>
             <change>First iteration of documentation paragraphs presenting the way the SSK TEI is
                 designed on <date when="2017-08-29">August 29th 2017</date>.</change>
+            <change>Second major revision on <date when="2017-09-11">September 11th 2017</date> by
+                Laurent Romary and Charles Riondet. Replacement of <gi>listRef</gi> by
+                    <gi>linkGrp</gi> in the events.</change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -264,8 +267,8 @@
                         <p>The main elements of a <gi>event</gi> are the description of the event,
                             and the resources related to it. The description is recorded in the
                             element <gi>head</gi> (<ref target="#SSK_head">see below</ref>) and the
-                            resources are contained by one or two <gi>listRef</gi> (<ref
-                                target="#SSK_listRef">see below</ref>).</p>
+                            resources are contained by one or two <gi>linkGrp</gi> (<ref
+                                target="#SSK_linkGrp">see below</ref>).</p>
                     </div>
                 </div>
                 <div xml:id="SSK_term">
@@ -295,9 +298,7 @@
                             />
                         </egXML>
                     </p>
-
                 </div>
-
                 <div xml:id="SSK_head">
                     <head>head</head>
                     <p>The TEI <gi>head</gi> element: to record all the descriptive elements of a
@@ -332,9 +333,9 @@
                     </egXML>
                 </div>
                 <!-- to be replaced by linkGrp-->
-                <div xml:id="SSK_listRef">
-                    <head>listRef</head>
-                    <p><gi>listRef</gi> is (for the moment) contained by the element <gi>ab</gi>.
+                <div xml:id="SSK_linkGrp">
+                    <head>linkGrp</head>
+                    <p><gi>linkGrp</gi> is (for the moment) contained by the element <gi>ab</gi>.
                         The attribute <att>type</att> is required and can have two values:<list>
                             <item>general: for resources that give general input about a standard, a
                                 protocol, ...</item>
@@ -343,18 +344,18 @@
                         </list></p>
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <ab>
-                            <listRef type="general">
+                            <linkGrp type="general">
                                 <ref type="spec" subtype="standard"
                                     target="http://zotero.org/groups/427927/items/QVUGK2B2"/>
                                 <ref type="spec" subtype="standard"
                                     target="http://zotero.org/groups/427927/items/BEVAWMPX"/>
-                            </listRef>
-                            <listRef type="project">
+                            </linkGrp>
+                            <linkGrp type="project">
                                 <ref type="code" subtype="project" source="EHRI"
                                     target="https://github.com/EHRI/data-validations/blob/master/ODD-RelaxNG/EAD/EHRI_EAD_doc.html"/>
                                 <ref type="report" subtype="copyBibl"
                                     target="step_Eprimf_3000517.xml#b1"/>
-                            </listRef>
+                            </linkGrp>
                         </ab>
                     </egXML>
                 </div>
@@ -362,8 +363,9 @@
                     <head>ref</head>
                     <p>the attributes for <gi>ref</gi> are <att>type</att>, <att>subtype</att>,
                             <att>source</att> and <att>target</att>. <list>
-                            <item>The attribute <att>type</att> is required. Its values are taken from the Zotero item
-                                types, plus SSK specific values. Possible values are:<list>
+                            <item>The attribute <att>type</att> is required. Its values are taken
+                                from the Zotero item types, plus SSK specific values. Possible
+                                values are:<list>
                                     <item>spec: the specification, of a standard for
                                         instance.</item>
                                     <item>report: technical reports</item>
@@ -483,6 +485,14 @@
                             <memberOf key="model.oddDecl"/>
                             <memberOf key="model.ptrLike"/>
                         </classes>
+                    </elementSpec>
+                    <elementSpec ident="linkGrp" mode="change">
+                        <content>
+                            <alternate minOccurs="1" maxOccurs="unbounded">
+                                <elementRef key="ref"/>
+                                <elementRef key="linkGrp"/>
+                            </alternate>
+                        </content>
                     </elementSpec>
                     <elementSpec ident="ref" mode="change">
                         <classes mode="change">
