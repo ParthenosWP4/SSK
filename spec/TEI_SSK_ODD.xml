@@ -477,15 +477,15 @@
                             <memberOf key="att.combinable"/>
                         </classes>
                     </elementSpec>
-                    <elementSpec ident="listRef" mode="change">
+                  <!--  <elementSpec ident="listRef" mode="change">
                         <classes mode="change">
-                            <!-- 2017-07-17 ADDED model.ptrlike and att.typed -->
+                            <!-\- 2017-07-17 ADDED model.ptrlike and att.typed -\->
                             <memberOf key="att.global"/>
                             <memberOf key="att.typed"/>
                             <memberOf key="model.oddDecl"/>
                             <memberOf key="model.ptrLike"/>
                         </classes>
-                    </elementSpec>
+                    </elementSpec>-->
                     <elementSpec ident="linkGrp" mode="change">
                         <content>
                             <alternate minOccurs="1" maxOccurs="unbounded">

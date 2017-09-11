@@ -48,8 +48,6 @@
                         <term type="activity" source="http://tadirah.dariah.eu/"
                             key="http://tadirah.dariah.eu/vocab/index.php?tema=35&amp;/modeling"/>
                     </head>
-
-
                     <linkGrp type="general">
                         <ref type="spec" source="zotero" target="7THSVQ9K">
                             <term type="standard" source="standard_list" key="Schematron"/>
