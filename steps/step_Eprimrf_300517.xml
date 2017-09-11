@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../spec/TEI_all_SSK.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" type="step">
     <teiHeader>
         <fileDesc>
@@ -58,7 +58,7 @@
                                 target="E2C8BNVH">
                                 <term type="standard" source="standard_list" key="Schematron"/>
                             </ref>
-                            <ref type="spec" source="zotero"
+                            <ref type="spec" source="zotero" 
                                 target="ZT3MRZJ6">
                                 <term type="standard" source="standard_list" key="Schematron"/>
                             </ref>
@@ -103,7 +103,7 @@
                                 target="J3JH54VE">
                                 <term type="standard" source="standard_list" key="Schematron"/>
                             </ref>
-                            <ref type="report" xml:id="b1"
+                            <ref type="report" xml:id="b2"
                                 target="https://hal.inria.fr/hal-01503235">
                                 <term type="standard" source="standard_list" key="Schematron"/>
                                 <term type="standard" source="standard_list" key="EAD"/>

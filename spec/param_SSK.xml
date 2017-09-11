@@ -19,8 +19,8 @@
             <head>Parameters</head>
             <!-- the parameters are put inside an egXML tag for HTML rendition -->
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-               <fs n="zotero">
-                  <f name="service_name">
+               <fs type="SSKSource">
+                  <f name="serviceName">
                      <string>Zotero</string>
                   </f>
                   <f name="url">
@@ -28,7 +28,7 @@
                         <f name="base">
                            <string>https://api.zotero.org</string>
                         </f>
-                        <f name="url_param">
+                        <f name="urlParam">
                            <vColl org="list">
                               <string>groups</string>
                               <string>users</string>
@@ -40,14 +40,14 @@
                      <string>427927</string>
                   </f>
                </fs>
-               <fs n="github">
+               <fs type="SSKSource">
                   <f name="service_name">
                      <string>GitHub</string>
                   </f>
-                  <f name="url_param">
+                  <f name="url">
                      <fs>
                         <f name="base"><string>https://api.github.com</string></f>
-                        <f name="url_param">
+                        <f name="url">
                            <vColl org="list">
                               <string>users</string>
                               <string>repos</string>
@@ -58,30 +58,6 @@
                </fs>
             </egXML>
             <!--
-            ***********************
-APIs queried by the SSK
-***********************
-
-* GitHub
-
-Informations to get
-
-- GitHub User
-  -> name
-  -> html_url
-  -> bio
-  -> updated_at
-  -> type
-  -> avatar_url
-
-- GitHub repo
-  -> owner (NB : a GitHub user)
-  -> full_name
-  -> html_url
-  -> description
-
-
-* Zotero
 
 * Slideshare
 What should we have in the TEI file -> a slideshow URL or Id
@@ -197,6 +173,24 @@ API query https://api.rechercheisidore.fr/resource/content?uri=10670/1.67apb8
                            </list></desc>
                      </item>
                   </list></p>
+            </div>
+            <div>
+               <head>GitHub</head>
+               <p>Informations to get with the GitHub API</p>
+               <p>For a GitHub User<list>
+                     <item>name</item>
+                     <item>html_url</item>
+                     <item>bio</item>
+                     <item>updated_at</item>
+                     <item>type</item>
+                     <item>avatar_url</item>
+                  </list> For a GitHub repository<list>
+                     <item>owner (NB : a GitHub user)</item>
+                     <item>full_name</item>
+                     <item>html_url</item>
+                     <item>description</item>
+                  </list>
+               </p>
             </div>
          </div>
       </body>
