@@ -86,23 +86,6 @@
                                 <term type="standard" source="standard_list" key="TEI"/>
                             </ref>
                     </linkGrp>
-                    <linkGrp type="project" source="Clarin" corresp="http://ehri-project.eu">
-                            <ref type="code"
-                                target="https://github.com/EHRI/data-validations/tree/master/ODD-RelaxNG/EAD/EHRI_EAD.odd">
-                                <term type="standard" source="standard_list" key="Schematron"/>
-                                <term type="standard" source="standard_list" key="EAD"/>
-                                <term type="standard" source="standard_list" key="TEI"/>
-                            </ref>
-                            <ref type="tutorial" source="zotero" resp="group" target="J3JH54VE">
-                                <term type="standard" source="standard_list" key="Schematron"/>
-                            </ref>
-                            <ref type="report" xml:id="b1"
-                                target="https://hal.inria.fr/hal-01503235">
-                                <term type="standard" source="standard_list" key="Schematron"/>
-                                <term type="standard" source="standard_list" key="EAD"/>
-                                <term type="standard" source="standard_list" key="TEI"/>
-                            </ref>
-                    </linkGrp>
                 </event>
             </listEvent>
         </body>
