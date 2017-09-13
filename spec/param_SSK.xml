@@ -18,7 +18,7 @@
          <div type="params">
             <head>Parameters</head>
             <!-- the parameters are put inside an egXML tag for HTML rendition -->
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <!--<egXML xmlns="http://www.tei-c.org/ns/Examples">-->
                <fs type="SSKSource">
                   <f name="serviceName">
                      <string>Zotero</string>
@@ -56,7 +56,29 @@
                      </fs>
                   </f>
                </fs>
-            </egXML>
+               <fs type="SSKSource">
+                  <f name="serviceName">
+                     <string>WP3 Wizard</string>
+                  </f>
+                  <f>
+                  <fs>
+                     <f name="mapping">
+                        <fs>
+                           <!-- topics -->
+                           <f n="CD">
+                              <vColl org="list">
+                                 <string>DATA CREATION</string>
+                              </vColl>
+                           </f>
+                        </fs>
+                        <fs>
+                           <!-- disciplines -->
+                        </fs>
+                     </f>
+                  </fs>
+                  </f>
+               </fs>
+            <!--</egXML>-->
             <!--
 
 * Slideshare
