@@ -38,10 +38,11 @@
                                 all</expan>. It is a TEI XML-conformant specification format that
                             allows one to customize TEI P5 in a literate programming fashion. Any
                             XML schema can be described with ODD.</desc>
-                        <desc xml:lang="fr"><abbr>ODD</abbr> pour <expan>One Document Does it
-                                all</expan>. C'est un format de spécification TEI comptatible XML
-                            qui permet de personnaliser la TEI P5 dans une programmation assez
-                            structuré. Tout schéma XML peut être décrit avec l'ODD.</desc>
+                        <desc xml:lang="fr"><abbr>ODD</abbr> signifie <expan>One Document Does it
+                                all</expan>. Il s'agit d'un format de spécification XML-TEI qui
+                            permet de personnaliser la TEI P5, suivant les principes de la
+                            programmation littéraire. Tout schéma XML peut être décrit avec
+                            ODD.</desc>
                         <term type="standard" source="standard_list" key="XML"/>
                         <term type="standard" source="standard_list" key="TEI"/>
                         <term type="standard" source="standard_list" key="EAD"/>
