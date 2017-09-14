@@ -100,22 +100,6 @@
                                 <term type="standard" source="standard_list" key="EAD"/>
                             </ref>
                         </linkGrp>
-                        <linkGrp source="CLARIN">
-                            <ref type="tutorial"
-                                target="http://zotero.org/groups/427927/items/IE9EQ2QK">
-                                <term type="standard" source="standard_list" key="TEI"/>
-                            </ref>
-                            <ref type="tutorial"
-                                target="http://zotero.org/groups/427927/items/69CGH77A">
-                                <term type="standard" source="standard_list" key="TEI"/>
-                            </ref>
-                            <ref type="spec" target="http://zotero.org/groups/427927/items/XPDZH8WZ">
-                                <term type="standard" source="standard_list" key="EAD"/>
-                            </ref>
-                            <ref type="spec" target="http://zotero.org/groups/427927/items/2Z29AVQV">
-                                <term type="standard" source="standard_list" key="EAD"/>
-                            </ref>
-                        </linkGrp>
                     </linkGrp>
                 </event>
             </listEvent>
