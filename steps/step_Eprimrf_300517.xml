@@ -58,13 +58,13 @@
                         <ref type="spec" source="zotero" target="ZT3MRZJ6">
                             <term type="standard" source="standard_list" key="Schematron"/>
                         </ref>
-                        <ref type="spec" target=" https://github.com/Schematron">
+                        <ref type="spec" source ="github" target=" https://github.com/Schematron">
                             <term type="standard" source="standard_list" key="Schematron"/>
                         </ref>
                         <ref type="spec" source="zotero" target="ZD8689UG">
                             <term type="standard" source="standard_list" key="TEI"/>
                         </ref>
-                        <ref type="schema"
+                        <ref type="schema" 
                             target="http://schematron.com/wp-content/uploads/2016/12/iso-schematron.rnc_.txt">
                             <term type="standard" source="standard_list" key="Schematron"/>
                         </ref>
