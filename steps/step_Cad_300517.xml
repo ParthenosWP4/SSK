@@ -48,15 +48,12 @@
                         <ref type="spec" subtype="standard" source="zotero" target="QVUGK2B2"/>
                         <ref type="spec" subtype="standard" source="zotero" target="BEVAWMPX"/>
                     </linkGrp>
-                    <linkGrp type="project">
-                        <linkGrp source="EHRI" corresp="http://ehri-project.eu">
+                    <linkGrp type="project" source="EHRI" corresp="http://ehri-project.eu">
                             <ref type="code" source = "github"
                                 target="https://github.com/EHRI/data-validations/blob/master/ODD-RelaxNG/EAD/EHRI_EAD_doc.html"/>
                             <ref type="report" subtype="copyBibl" source = "ssk"
                                 target="step_Eprimf_3000517.xml#b1"/>
-                        </linkGrp>
                     </linkGrp>
-
                 </event>
             </listEvent>
         </body>
