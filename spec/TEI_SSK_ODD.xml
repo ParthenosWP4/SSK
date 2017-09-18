@@ -53,7 +53,8 @@
                     science. It takes the form of step by step research scenarios where the use of
                     standards is clearly identified. Theses scenarios are divided into different
                     steps, implying specific tasks. Each step contains a set of bibliographical
-                    resources. </p>
+                    resources.</p>
+
                 <div>
                     <head>Main elements</head>
                     <p>The main elements of the SSK TEI are: <specList>
@@ -125,8 +126,27 @@
                 </div>
             </div>
             <div>
+                <head>General organization</head>
+                <p><ref target="#SSKScenarios">Scenarios</ref> and <ref target="#SSKSteps"
+                        >steps</ref> are represented in different files. This choice has been made
+                    to facilitate the use of a step in several scenarios, with or without
+                    modifications. </p>
+                <p>Files naming conventions are the following:<list>
+                        <item>for scenarios:<list>
+                                <item>the initials of the scenario name</item>
+                                <item>an underscore</item>
+                                <item>a condensed title of the scenario in camel case</item>
+                            </list></item>
+                    <item>for steps:<list>
+                        <item>the intials of the step name, with the liaison words in lower case, and the meaningful words in upper case</item>
+                        <item>an underscore</item>
+                        <item>the creation date of the file</item>
+                    </list></item>
+                    </list></p>
+            </div>
+            <div>
                 <head>Description of SSK TEI elements</head>
-                <div>
+                <div xml:id="SSKScenarios">
                     <head>Scenarios</head>
                     <p>The scenario is represented by the element <gi>listEvent</gi>, containing a
                         set of <gi>event</gi> elements, references to external TEI files.</p>
@@ -219,8 +239,8 @@
                         </p>
                     </div>
                 </div>
-                <div>
-                    <head>Complete events</head>
+                <div xml:id="SSKSteps">
+                    <head>Steps</head>
                     <p>A full description of the scenario step.</p>
                     <div>
                         <head>header</head>
@@ -476,7 +496,7 @@
                             <memberOf key="att.combinable"/>
                         </classes>
                     </elementSpec>
-                  <!--  <elementSpec ident="listRef" mode="change">
+                    <!--  <elementSpec ident="listRef" mode="change">
                         <classes mode="change">
                             <!-\- 2017-07-17 ADDED model.ptrlike and att.typed -\->
                             <memberOf key="att.global"/>
