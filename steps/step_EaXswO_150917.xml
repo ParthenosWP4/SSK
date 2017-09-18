@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Step "Express an XML schema with ODD"</title>
+                <author>
+                    <persName>Charles Riondet</persName>
+                    <affiliation>Inria</affiliation>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <authority>Parthenos</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/">
+                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.</p>
+                    </licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Created from scratch</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listEvent>
+                <event type="researchStep">
+                    <head type="stepTitle" xml:lang="en">Express an XML schema with ODD</head>
+                    <desc type="definition" xml:lang="en"><abbr>ODD</abbr> stands for <expan>One Document Does it
+                            all</expan>. It is a TEI XML-conformant specification format that allows
+                        one to customize TEI P5 in a literate programming fashion. Any XML schema
+                        can be described with ODD.</desc>
+                    <desc type="definition" xml:lang="fr"><abbr>ODD</abbr> signifie <expan>One Document Does it
+                            all</expan>. Il s'agit d'un format de spécification XML-TEI qui permet
+                        de personnaliser la TEI P5, suivant les principes de la programmation
+                        littéraire. Tout schéma XML peut être décrit avec ODD.</desc>
+                    <desc xml:lang="en" type="terms">
+                        <term type="standard" source="standard_list" key="XML"/>
+                        <term type="standard" source="standard_list" key="TEI"/>
+                        <term type="standard" source="standard_list" key="EAD"/>
+                        <term type="activity" source="http://tadirah.dariah.eu/"
+                            key="http://tadirah.dariah.eu/vocab/index.php?tema=35&amp;/modeling"
+                            >modeling</term>
+                        <term type="policies" source="WP3Wizard" key="CD"/>
+                    </desc>
+                    <linkGrp type="generalResources">
+                        <ref type="spec" source="zotero" target="ZABRV5VD">
+                            <term type="standard" source="standard_list" key="TEI"/>
+                        </ref>
+                        <ref type="spec" source="zotero" target="SS93B7B8">
+                            <term type="standard" source="standard_list" key="TEI"/>
+                        </ref>
+                        <ref type="spec" source="zotero" target="ZE34VR34">
+                            <term type="standard" source="standard_list" key="TEI"/>
+                        </ref>
+                        <ref type="tutorial" source="zotero" target="UBE86XKI">
+                            <term type="standard" source="standard_list" key="TEI"/>
+                        </ref>
+                        <ref type="tutorial" source="zotero" target="QQT6NQA6">
+                            <term type="standard" source="standard_list" key="TEI"/>
+                        </ref>
+                        <ref type="tutorial" source="zotero" target="IE9EQ2QK">
+                            <term type="standard" source="standard_list" key="TEI"/>
+                        </ref>
+                        <ref type="tutorial" source="zotero" target="69CGH77A">
+                            <term type="standard" source="standard_list" key="TEI"/>
+                        </ref>
+                        <ref type="spec" source="zotero" target="XPDZH8WZ">
+                            <term type="standard" source="standard_list" key="EAD"/>
+                        </ref>
+                        <ref type="spec" source="zotero" target="2Z29AVQV">
+                            <term type="standard" source="standard_list" key="EAD"/>
+                        </ref>
+                        <ref type="code" source="github"
+                            target="https://github.com/PARTHENOSWP4/standardsLibrary/tree/master/archivalDescription/EAD/odd">
+                            <term type="standard" source="standard_list" key="TEI"/>
+                            <term type="standard" source="standard_list" key="EAD"/>
+                        </ref>
+                    </linkGrp>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>

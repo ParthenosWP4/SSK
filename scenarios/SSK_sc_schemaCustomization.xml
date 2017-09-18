@@ -53,7 +53,7 @@
                </figure>
             <listEvent>
                <!-- <event type="scenario" ref="SSK_digitization.xml"/> -->
-               <event xml:id="s1" type="step" ref="step_EaXswO_290517">
+               <event xml:id="s1" type="researchStep" ref="step_EaXswO_290517">
                   <head mode="change" xml:lang="jp"></head>
                      <!-- new definition, replacing the one in the step file (for the same language)-->
                      <desc type="definition" xml:lang="en" mode="change">...</desc>
@@ -61,18 +61,18 @@
                      <term mode="add"></term>
                   </desc>
                </event>
-               <event xml:id="s2" type="step" ref="step_Eprimrf_300517">
+               <event xml:id="s2" type="researchStep" ref="step_Eprimrf_300517">
                   <!-- new definition, replacing the one in the step file (for the same language)-->
                      <head mode="change" xml:lang="jp">...</head>
                      <desc type="definition" xml:lang="en" mode="change">...</desc>
                      <desc xml:lang="en" type="terms"><term mode="add"></term></desc>
                </event>
-               <event xml:id="s3" type="step" ref="step_Cad_300517"/>
+               <event xml:id="s3" type="researchStep" ref="step_Cad_300517"/>
                
-               <event xml:id="s4" type="step" ref="step_Tdats_300517"/>
+               <event xml:id="s4" type="researchStep" ref="step_Tdats_300517"/>
                 
                
-               <event xml:id="s5" type="step" ref="step_Sapditnf_300517"/>
+               <event xml:id="s5" type="researchStep" ref="step_Sapditnf_300517"/>
                
             </listEvent>
          </div>
