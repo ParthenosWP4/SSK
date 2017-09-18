@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario">
+   <teiHeader>
+      <!-- teiHeader TBC -->
+      <fileDesc>
+         <titleStmt>
+            <!-- Title of the tei document, not title of the scenario -->
+            <title>Project-centered EAD customization scenario</title>
+            <author>
+               <persName>Charles Riondet</persName>
+               <affiliation>Inria</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos ...</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence
+                     applies to this document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change>
+            <!-- Only for major changes: addition of an author, of a step, etc. -->
+         </change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div type="scenario" xml:id="sc_schemaCustomization">
+            <!-- All the textual information about scenarios and steps is now contained in the <head> element-->
+               <head xml:lang="en" type="scenarioTitle">Title of the scenario</head>
+               <desc type="definition" xml:lang="en">Description of the scenario</desc>
+               <!--<desc type=""></desc>-->
+               <desc xml:lang="en" type="terms">
+            <!-- Need a reference resource for all the terms, including Parthenos disciplines, datatypes, etc...  -->
+               <term source="parthenos" type="discipline" key="SOTP">Studies of the past</term>
+               <term source="parthenos" type="discipline" key="HAD">Heritage and applied disciplines</term>
+               <term type="datatype" key="catalogs" source="nedimah"/>
+               </desc>
+               <figure type="image">
+                  <!-- Illustration of the scenario. Can also be used in the steps -->
+                  <head>Title of the image</head>
+                  <graphic url=""/>
+                  <figDesc>Description of the image</figDesc>
+               </figure>
+            <listEvent>
+               <!-- <event type="scenario" ref="SSK_digitization.xml"/> -->
+               <event xml:id="s1" type="researchStep" ref="step_EaXswO_290517">
+                  <head mode="change" xml:lang="jp"></head>
+                     <!-- new definition, replacing the one in the step file (for the same language)-->
+                     <desc type="definition" xml:lang="en" mode="change">...</desc>
+                  <desc xml:lang="" type="terms" mode="change">
+                     <term mode="add"></term>
+                  </desc>
+               </event>
+               <event xml:id="s2" type="researchStep" ref="step_Eprimrf_300517">
+                  <!-- new definition, replacing the one in the step file (for the same language)-->
+                     <head mode="change" xml:lang="jp">...</head>
+                     <desc type="definition" xml:lang="en" mode="change">...</desc>
+                     <desc xml:lang="en" type="terms"><term mode="add"></term></desc>
+               </event>
+               <event xml:id="s3" type="researchStep" ref="step_Cad_300517"/>
+               
+               <event xml:id="s4" type="researchStep" ref="step_Tdats_300517"/>
+                
+               
+               <event xml:id="s5" type="researchStep" ref="step_Sapditnf_300517"/>
+               
+            </listEvent>
+         </div>
+      </body>
+   </text>
+</TEI>
