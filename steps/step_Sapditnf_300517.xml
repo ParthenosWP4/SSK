@@ -31,7 +31,7 @@
         <body>
             <listEvent>
                 <event type="researchStep">
-                        <head xml:lang="en">Share and publish data in this new format</label>
+                        <head xml:lang="en">Share and publish data in this new format</head>
                         <desc xml:lang="en" type="definition">...</desc>
                     <desc xml:lang="en" type="term">
                         <term type="activity" source="http://tadirah.dariah.eu/"
