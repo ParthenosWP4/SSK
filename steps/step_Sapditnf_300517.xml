@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../spec/TEI_all_SSK.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="../spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
     <teiHeader>
         <fileDesc>
             <titleStmt>
@@ -30,16 +30,14 @@
     <text>
         <body>
             <listEvent>
-                <event type="step">
-                    <head>
-                        <label xml:lang="en">Share and publish data in this new format</label>
-                        <desc/>
-                        <term type="activity" source="http://tadirah.dariah.eu/"
+                <event type="researchStep">
+                        <head xml:lang="en">Share and publish data in this new format</label>
+                        <desc xml:lang="en" type="definition">...</desc>
+                    <desc xml:lang="en"><term type="activity" source="http://tadirah.dariah.eu/"
                             key="http://tadirah.dariah.eu/vocab/index.php?tema=47&amp;/publishing"/>
                         <term type="activity" source="http://tadirah.dariah.eu/"
                             key="http://tadirah.dariah.eu/vocab/index.php?tema=48&amp;/sharing"/>
-                    </head>
-                    <ab/>
+                    </desc>
                 </event>
             </listEvent>
         </body>

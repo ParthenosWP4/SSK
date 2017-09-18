@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../spec/TEI_all_SSK.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" type="step">
     <teiHeader>
         <fileDesc>
@@ -31,19 +31,17 @@
         <body>
             <listEvent>
                 <event type="step">
-                    <head>
-                        <label xml:lang="en">Test data against the schema</label>
-                        <desc xml:lang="en">An important debug phase is to test relevant data with the new schema
+                        <head xml:lang="en">Test data against the schema</head>
+                        <desc type="definition" xml:lang="en">An important debug phase is to test relevant data with the new schema
                             to make sure that the behaviour of the added rules is
                             appropriate.</desc>
-                        <term type="standard" source="standard_list" key="XML"/>
+                        <desc xml:lang="en" type="terms">
+                            <term type="standard" source="standard_list" key="XML"/>
                         <term type="standard" source="standard_list" key="TEI"/>
                         <term type="standard" source="standard_list" key="EAD"/>
                         <term type="activity" source="http://tadirah.dariah.eu/"
                             key="http://tadirah.dariah.eu/vocab/index.php?tema=50&amp;/meta-assessing"
-                        />
-                    </head>
-                    <ab/>
+                        /></desc>
                 </event>
             </listEvent>
         </body>

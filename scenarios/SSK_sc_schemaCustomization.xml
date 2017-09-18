@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="scenario">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario">
    <teiHeader>
       <!-- teiHeader TBC -->
       <fileDesc>
@@ -35,69 +35,45 @@
       <body>
          <div type="scenario" xml:id="sc_schemaCustomization">
             <!-- All the textual information about scenarios and steps is now contained in the <head> element-->
-            <head>
-               <label xml:lang="en" type="scen_title">Project-centered EAD customization</label>
-               <desc xml:lang="en">TEI ODD can be used to document data models external to the TEI environment. Several projects working with archival standards (in particular EAD) use it as well. PARTHENOS
+               <head xml:lang="en" type="scenarioTitle">Project-centered EAD customization</head>
+               <desc type="definition" xml:lang="en">TEI ODD can be used to document data models external to the TEI environment. Several projects working with archival standards (in particular EAD) use it as well. PARTHENOS
                   created and maintain an instance of the EAD specification in ODD, that can be used to create project oriented customizations. </desc>
                <!--<desc type=""></desc>-->
-               <!-- Need a reference resource for all the terms, including Parthenos disciplines, datatypes, etc... in a separate file? -->
+               <desc xml:lang="en" type="terms">
+            <!-- Need a reference resource for all the terms, including Parthenos disciplines, datatypes, etc... in a separate file? -->
                <term source="parthenos" type="discipline" key="SOTP">Studies of the past</term>
                <term source="parthenos" type="discipline" key="HAD">Heritage and applied disciplines</term>
                <term type="datatype" key="catalogs" source="nedimah"/>
-               <figure>
+               </desc>
+               <figure type="image">
                   <!-- Illustration of the scenario. Can also be used in the steps -->
                   <head>Title of the image</head>
                   <graphic url=""/>
                   <figDesc>Description of the image</figDesc>
                </figure>
-            </head>
             <listEvent>
                <!-- <event type="scenario" ref="SSK_digitization.xml"/> -->
                <event xml:id="s1" type="step" ref="step_EaXswO_290517">
-                  <head mode="change">
-                     <!-- nouveau <label> qui remplace celiui de l'étape à langue égal-->
-                     <label mode="change" xml:lang="jp">...</label>
-                     <desc xml:lang="en" mode="change">Express an XML schema with ODD</desc>
+                  <head mode="change" xml:lang="jp"></head>
+                     <!-- new definition, replacing the one in the step file (for the same language)-->
+                     <desc type="definition" xml:lang="en" mode="change">...</desc>
+                  <desc xml:lang="" type="terms" mode="change">
                      <term mode="add"></term>
-                  </head>
-                  <ab/>
+                  </desc>
                </event>
                <event xml:id="s2" type="step" ref="step_Eprimrf_300517">
-                  <head mode="change">
-                     <!-- nouveau <label> qui remplace celiui de l'étape à langue égal-->
-                     <label mode="change" xml:lang="jp">...</label>
-                     <desc xml:lang="en" mode="change">Express projects requirements in machine-readable format</desc>
-                     <term mode="add"></term>
-                  </head>
-                  <ab/>
+                  <!-- new definition, replacing the one in the step file (for the same language)-->
+                     <head mode="change" xml:lang="jp">...</head>
+                     <desc type="definition" xml:lang="en" mode="change">...</desc>
+                     <desc xml:lang="en" type="terms"><term mode="add"></term></desc>
                </event>
-               <event xml:id="s3" type="step" ref="step_Cad_300517">
-                  <head mode="change">
-                     <!-- nouveau <label> qui remplace celiui de l'étape à langue égal-->
-                     <label mode="change" xml:lang="jp">...</label>
-                     <desc xml:lang="en" mode="change">Create associated documentation</desc>
-                     <term mode="add"></term>
-                  </head>
-                  <ab/>
-               </event>
-               <event xml:id="s4" type="step" ref="step_Tdats_300517">
-                  <head mode="change">
-                     <!-- nouveau <label> qui remplace celiui de l'étape à langue égal-->
-                     <label mode="change" xml:lang="jp">...</label>
-                     <desc xml:lang="en" mode="change">Test data against the schema</desc>
-                     <term mode="add"></term>
-                  </head>
-                  <ab/>
-               </event>
-               <event xml:id="s5" type="step" ref="step_Sapditnf_300517">
-                  <head mode="change">
-                     <!-- nouveau <label> qui remplace celiui de l'étape à langue égal-->
-                     <label mode="change" xml:lang="jp">...</label>
-                     <desc xml:lang="en" mode="change">Share and publish data in this new format</desc>
-                     <term mode="add"></term>
-                  </head>
-                  <ab/>
-               </event>
+               <event xml:id="s3" type="step" ref="step_Cad_300517"/>
+               
+               <event xml:id="s4" type="step" ref="step_Tdats_300517"/>
+                
+               
+               <event xml:id="s5" type="step" ref="step_Sapditnf_300517"/>
+               
             </listEvent>
          </div>
       </body>

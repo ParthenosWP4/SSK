@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="step">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
     <teiHeader>
         <fileDesc>
             <titleStmt>
@@ -30,25 +30,24 @@
     <text>
         <body>
             <listEvent>
-                <event type="step">
-                    <head>
-                        <label xml:lang="en">Express projects requirements in machine-readable
-                            format</label>
-                        <desc xml:lang="en">With ODD, it is possible to customize a schema in
+                <event type="researchStep">
+                        <head xml:lang="en">Express projects requirements in machine-readable
+                            format</head>
+                        <desc type="definition" xml:lang="en">With ODD, it is possible to customize a schema in
                             different ways.To add specific, or project-oriented, rules, the best way
                             is to embed schematron rules in the Schema specification.</desc>
-                        <desc xml:lang="fr">Avec l'ODD, il est possible de personnaliser un schéma
+                    <desc type="definition" xml:lang="fr">Avec l'ODD, il est possible de personnaliser un schéma
                             de différentes façons. Pour ajouter des règles spécifiques ou axées sur
                             le projet, la meilleure façon est d'intégrer les règles de sshematron
                             dans la spécification du Schema.</desc>
-                        <term type="standard" source="standard_list" key="XML"/>
+                        <desc xml:lang="en" type="terms"><term type="standard" source="standard_list" key="XML"/>
                         <term type="standard" source="standard_list" key="TEI"/>
                         <term type="standard" source="standard_list" key="EAD"/>
                         <term type="standard" source="standard_list" key="Schematron"/>
                         <term type="activity" source="http://tadirah.dariah.eu/"
-                            key="http://tadirah.dariah.eu/vocab/index.php?tema=35&amp;/modeling"/>
-                    </head>
-                    <linkGrp type="general">
+                            key="http://tadirah.dariah.eu/vocab/index.php?tema=35&amp;/modeling"/></desc>
+                    
+                    <linkGrp type="generalResources">
                         <ref type="spec" source="zotero" target="7THSVQ9K">
                             <term type="standard" source="standard_list" key="Schematron"/>
                         </ref>
@@ -69,7 +68,7 @@
                             <term type="standard" source="standard_list" key="Schematron"/>
                         </ref>
                     </linkGrp>
-                    <linkGrp type="project" source="EHRI" corresp="http://ehri-project.eu">
+                    <linkGrp type="projectResources" source="EHRI" corresp="http://ehri-project.eu">
                             <ref type="code" source="github"
                                 target="https://github.com/EHRI/data-validations/tree/master/ODD-RelaxNG/EAD/EHRI_EAD.odd">
                                 <term type="standard" source="standard_list" key="Schematron"/>

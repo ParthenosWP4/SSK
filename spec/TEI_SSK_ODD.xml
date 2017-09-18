@@ -60,7 +60,7 @@
                             <specDesc key="listEvent"/>
                             <specDesc key="event"/>
                             <!-- to be replaced by linkGrp -->
-                            <specDesc key="listRef"/>
+                            <specDesc key="linkGrp"/>
                             <!--<specDesc key="linkGrp"/>-->
                             <specDesc key="ref"/>
                         </specList>
@@ -332,7 +332,6 @@
                         <label xml:lang="en">Create associated documentation</label>
                     </egXML>
                 </div>
-                <!-- to be replaced by linkGrp-->
                 <div xml:id="SSK_linkGrp">
                     <head>linkGrp</head>
                     <p><gi>linkGrp</gi> is (for the moment) contained by the element <gi>ab</gi>.
@@ -425,8 +424,8 @@
                                     <dataRef key="teidata.enumerated"/>
                                 </datatype>
                                 <valList type="closed" mode="replace">
-                                    <valItem ident="step"/>
-                                    <valItem ident="scenario"/>
+                                    <valItem ident="researchStep"/>
+                                    <valItem ident="researchScenario"/>
                                 </valList>
                             </attDef>
                         </attList>
@@ -462,8 +461,8 @@
                                     <dataRef key="teidata.enumerated"/>
                                 </datatype>
                                 <valList type="closed" mode="replace">
-                                    <valItem ident="step"/>
-                                    <valItem ident="scenario"/>
+                                    <valItem ident="researchStep"/>
+                                    <valItem ident="researchScenario"/>
                                 </valList>
                             </attDef>
                         </attList>
