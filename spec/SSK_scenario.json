@@ -1,0 +1,132 @@
+{"TEI": {
+    "xmlns": "http://www.tei-c.org/ns/1.0",
+    "type": "researchScenario",
+    "teiHeader": {
+        "fileDesc": {
+            "titleStmt": {
+                "title": "Project-centered EAD customization scenario",
+                "author": {
+                    "persName": "Charles Riondet",
+                    "affiliation": "Inria"
+                }
+            },
+            "publicationStmt": {
+                "authority": "Parthenos ...",
+                "availability": {"licence": {
+                    "target": "http://creativecommons.org/licenses/by/4.0/",
+                    "p": "The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence\n                     applies to this document."
+                }}
+            },
+            "sourceDesc": {"p": "Created from scratch"}
+        },
+        "revisionDesc": {"change": ""}
+    },
+    "text": {"body": {"div": {
+        "type": "scenario",
+        "xml:id": "sc_schemaCustomization",
+        "head": {
+            "xml:lang": "en",
+            "type": "scenarioTitle",
+            "content": "Title of the scenario"
+        },
+        "desc": [
+            {
+                "type": "definition",
+                "xml:lang": "en",
+                "content": "Description of the scenario"
+            },
+            {
+                "xml:lang": "en",
+                "type": "terms",
+                "term": [
+                    {
+                        "source": "parthenos",
+                        "type": "discipline",
+                        "key": "SOTP",
+                        "content": "Studies of the past"
+                    },
+                    {
+                        "source": "parthenos",
+                        "type": "discipline",
+                        "key": "HAD",
+                        "content": "Heritage and applied disciplines"
+                    },
+                    {
+                        "type": "datatype",
+                        "key": "catalogs",
+                        "source": "nedimah"
+                    }
+                ]
+            }
+        ],
+        "figure": {
+            "type": "image",
+            "head": "Title of the image",
+            "graphic": {"url": ""},
+            "figDesc": "Description of the image"
+        },
+        "listEvent": {"event": [
+            {
+                "xml:id": "s1",
+                "type": "researchStep",
+                "ref": "step_EaXswO_290517",
+                "head": {
+                    "mode": "change",
+                    "xml:lang": "jp"
+                },
+                "desc": [
+                    {
+                        "type": "definition",
+                        "xml:lang": "en",
+                        "mode": "change",
+                        "content": "..."
+                    },
+                    {
+                        "xml:lang": "",
+                        "type": "terms",
+                        "mode": "change",
+                        "term": {"mode": "add"}
+                    }
+                ]
+            },
+            {
+                "xml:id": "s2",
+                "type": "researchStep",
+                "ref": "step_Eprimrf_300517",
+                "head": {
+                    "mode": "change",
+                    "xml:lang": "jp",
+                    "content": "..."
+                },
+                "desc": [
+                    {
+                        "type": "definition",
+                        "xml:lang": "en",
+                        "mode": "change",
+                        "content": "..."
+                    },
+                    {
+                        "xml:lang": "en",
+                        "type": "terms",
+                        "term": {"mode": "add"}
+                    }
+                ]
+            },
+            {
+                "xml:id": "s3",
+                "type": "researchStep",
+                "ref": "step_Cad_300517"
+            },
+            {
+                "xml:id": "s4",
+                "type": "researchStep",
+                "ref": "step_Tdats_300517"
+            },
+            {
+                "xml:id": "s5",
+                "type": "researchStep",
+                "ref": "step_Sapditnf_300517"
+            }
+        ]}
+    }}}
+}}
