@@ -60,9 +60,7 @@
                     <p>The main elements of the SSK TEI are: <specList>
                             <specDesc key="listEvent"/>
                             <specDesc key="event"/>
-                            <!-- to be replaced by linkGrp -->
                             <specDesc key="linkGrp"/>
-                            <!--<specDesc key="linkGrp"/>-->
                             <specDesc key="ref"/>
                         </specList>
                     </p>
@@ -133,11 +131,13 @@
                     modifications. </p>
                 <p>Files naming conventions are the following:<list>
                         <item>for scenarios:<list>
-                                <item>the initials of the scenario name</item>
+                                <item>"sc" for scenario</item>
                                 <item>an underscore</item>
                                 <item>a condensed title of the scenario in camel case</item>
                             </list></item>
                     <item>for steps:<list>
+                        <item>the string "step"</item>
+                        <item>an underscore</item>
                         <item>the intials of the step name, with the liaison words in lower case, and the meaningful words in upper case</item>
                         <item>an underscore</item>
                         <item>the creation date of the file</item>
@@ -434,7 +434,7 @@
                     <moduleRef key="namesdates" except=""/>
                     <moduleRef key="linking" except=""/>
                     <moduleRef key="tagdocs" except=""/>
-                    <moduleRef key="figures"/>
+                    <!--<moduleRef key="figures"/>-->
 
                     <!-- Elements changed-->
                     <elementSpec ident="TEI" mode="change">
