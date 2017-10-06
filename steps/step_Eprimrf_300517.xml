@@ -78,7 +78,7 @@
                             <ref type="tutorial" source="zotero" resp="group" target="J3JH54VE">
                                 <term type="standard" source="standard_list" key="Schematron"/>
                             </ref>
-                            <ref type="report"  source="hal" target="01503235"
+                            <ref type="report"  source="hal"
                                 target="https://hal.inria.fr/hal-01503235">
                                 <term type="standard" source="standard_list" key="Schematron"/>
                                 <term type="standard" source="standard_list" key="EAD"/>

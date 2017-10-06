@@ -36,7 +36,7 @@
                <desc xml:lang="en" type="terms">
                <term source="parthenos" type="discipline" key="SOTP">Studies of the past</term>
                <term source="parthenos" type="discipline" key="HAD">Heritage and applied disciplines</term>
-               <term type="datatype" key="catalogs" source="nedimah"/>
+               <term type="objects" key="metadata" source="tadirah"/>
                </desc>
                <figure type="image">
                   <head/>
