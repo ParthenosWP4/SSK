@@ -135,13 +135,14 @@
                                 <item>an underscore</item>
                                 <item>a condensed title of the scenario in camel case</item>
                             </list></item>
-                    <item>for steps:<list>
-                        <item>the string "step"</item>
-                        <item>an underscore</item>
-                        <item>the intials of the step name, with the liaison words in lower case, and the meaningful words in upper case</item>
-                        <item>an underscore</item>
-                        <item>the creation date of the file</item>
-                    </list></item>
+                        <item>for steps:<list>
+                                <item>the string "step"</item>
+                                <item>an underscore</item>
+                                <item>the intials of the step name, with the liaison words in lower
+                                    case, and the meaningful words in upper case</item>
+                                <item>an underscore</item>
+                                <item>the creation date of the file</item>
+                            </list></item>
                     </list></p>
             </div>
             <div>
@@ -295,8 +296,16 @@
                     <head>term</head>
                     <p><gi>term</gi> elements are used to tag the scenarios, the steps and the
                         resources, according to the SSK taxonomies, that are:<list>
-                            <item>The Tadirah activities</item>
+                            <item><ref target="http://tadirah.dariah.eu/vocab/index.php">Tadirah
+                                    activities, objects, techniques</ref></item>
                             <item>the Dariah Standard Knowledge base</item>
+                            <item>Parthenos disciplines: 
+                                <list>
+                                    <item>Studies of the past, <abbr>SOTP</abbr></item>
+                                    <item>Language related studies, <abbr>LRS</abbr></item>
+                                    <item>Heritage and applied disciplines, <abbr>HAD</abbr></item>
+                                    <item>Social Sciences, <abbr>SS</abbr></item>
+                                </list></item>
                         </list> These taxonomies are declared with the attributes <att>type</att>
                         and <att>source</att>. The attributes of <gi>term</gi> are <list>
                             <item>The <att>type</att> attribute gives an information about the kind
@@ -314,8 +323,11 @@
                         </egXML>
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
                             <term type="activity" source="http://tadirah.dariah.eu/"
-                                key="http://tadirah.dariah.eu/vocab/index.php?tema=22&amp;/annotating"
-                            />
+                                key="annotating"/>
+                        </egXML>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <term type="objects" source="http://tadirah.dariah.eu/"
+                                key="Data"/>
                         </egXML>
                     </p>
                 </div>
