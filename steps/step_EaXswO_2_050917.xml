@@ -30,7 +30,7 @@
     <text>
         <body>
             <listEvent>
-                <event type="step">
+                <event type="researchStep">
                     <head type="step_desc">
                         <label type="step_title" xml:lang="en">Express an XML schema with
                             ODD</label>
@@ -84,7 +84,7 @@
                         </ref>
                     </linkGrp>
                     <linkGrp type="project">
-                        <linkGrp source="EHRI">
+                        <linkGrp source="EHRI" target="http://ehri-project.eu">
                             <ref type="tutorial"
                                 target="http://zotero.org/groups/427927/items/IE9EQ2QK">
                                 <term type="standard" source="standard_list" key="TEI"/>
