@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="file:/d:/Users/hgautier/Desktop/TEI%20WP4/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Perform Statistical Analysis on Data on Historical and Contemporary
+               Occupations</title>
+            <author>
+               <persName>Emilie Kraikamp</persName>
+               <affiliation>DANS</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos ...</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
+                     this document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div type="scenario" xml:id="sc_schemaCustomization">
+            <head xml:lang="en" type="scenarioTitle">Perform Statistical Analysis on Data on
+               Historical and Contemporary Occupations</head>
+            <desc type="definition" xml:lang="en">Given a large dataset with several raw variables,
+               a social science researcher needs to (re)code some of the data in order to properly
+               conduct statistical analysis and modelling techniques. To allow comparison across
+               studies, researchers often develop and use certain standards for recoding some
+               aspects of individuals, such as recoding contemporary occupations into the ISCO.
+               After (re)coding variables, scales are often constructed by using standard methods
+               such as factor and reliability analysis. Several software packages, such as SPSS
+               Statistics, exist that are widely used for these purposes across social science
+               researchers. Statistical analyses and modelling also have certain software standards.
+               Finally, reporting the results is done within a consistent style, such as APA Style.
+               Some of these coding, software and reporting standards are covered in this use
+               case.</desc>
+            <desc xml:lang="en" type="terms">
+               <term source="parthenos" type="discipline" key="SOTP">Studies of the past</term>
+               <term source="parthenos" type="discipline" key="SS">Social Sciences</term>
+               <term type="objects" key="data" source="tadirah"/>
+               <term type="techniques" key="encoding" source="tadirah"/>
+            </desc>
+            <figure type="image">
+               <head>Acorns vendor</head>
+               <graphic url="http://historyofwork.iisg.nl/docs/images/bramer_iisg2-0020.jpg"/>
+               <figDesc>Acorns vendor, drawing by Lenaert Bramer (c. 1659)</figDesc>
+            </figure>
+            <listEvent>
+               <event xml:id="s1" type="researchStep" ref="step_Rv_121017"/>
+               <event xml:id="s2" type="researchStep" ref="step_CViS_121017"/>
+               <event xml:id="s3" type="researchStep" ref="step_TfRotS_121017"/>
+               <event xml:id="s4" type="researchStep" ref="step_MtRbV_121017"/>
+               <event xml:id="s5" type="researchStep" ref="step_A_121017"/>
+            </listEvent>
+         </div>
+      </body>
+   </text>
+</TEI>

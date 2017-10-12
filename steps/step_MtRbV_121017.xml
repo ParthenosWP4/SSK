@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="file:/d:/Users/hgautier/Desktop/TEI%20WP4/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Step "Model the relationship between variables"</title>
+            <author>
+               <persName>Emilie Kraikamp</persName>
+               <affiliation>DANS</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
+                     this document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head xml:lang="en">Model the relationship between variables</head>
+               <head xml:lang="fr"/>
+               <desc xml:lang="en" type="definition">Perform Structural Equation Modelling
+                  (SEM)</desc>
+               <desc xml:lang="fr" type="definition"/>
+               <desc xml:lang="en" type="term">
+                  <term type="activity" source="http://tadirah.dariah.eu/"
+                     key="http://tadirah.dariah.eu/vocab/index.php?tema=30&amp;/structural-analysis"/>
+               </desc>
+               <linkGrp type="generalResources">
+                  <ref type="tutorial" subtype="tool" source="zotero" target="QP9WMGDS">
+                     <term type="tool" key="R"></term>
+                  </ref>
+                  <ref type="bibliography" subtype="tool" source="zotero" target="VAAKZ6JI">
+                     <term type="tool" key="R"></term>
+                  </ref>
+                  <ref type="journal" subtype="tool" source="zotero" target="PENH8EZE">
+                     <term type="tool" key="R"></term>
+                  </ref>
+                  <ref type="code" subtype="tool" source="github"
+                     target="https://github.com/jasp-stats/jasp-desktop">
+                     <term type="tool" key="JASP"></term>
+                  </ref>
+                  <ref type="tutorial" subtype="tool" source="zotero" target="P3WVDB2Z">
+                     <term type="tool" key="PSPP"></term>
+                  </ref>
+                  <ref type="webpage" subtype="tool" source="zotero" target="2PCNPUUG">
+                     <term type="tool" key="STATA"></term>
+                  </ref>
+                  <ref type="webpage" subtype="tool" source="zotero" target="3BIQ5K3W">
+                     <term type="tool" key="SPSS_Amos"></term>
+                  </ref>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
+</TEI>
