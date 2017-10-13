@@ -54,7 +54,7 @@
             <figure type="image">
                <!-\- Illustration of the scenario. Can also be used in the steps -\->
                <head>Title of the image</head>
-               <graphic url="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Text_Encoding_Initiative_TEI-800.jpg/440px-Text_Encoding_Initiative_TEI-800.jpg"/>
+               <graphic url="http://www.tei-c.org/About/Logos/TEI-600.jpg"/>
                <figDesc>Description of the image</figDesc>
             </figure>
             <listEvent>
