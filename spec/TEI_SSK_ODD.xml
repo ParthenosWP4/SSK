@@ -299,19 +299,59 @@
                             <item><ref target="http://tadirah.dariah.eu/vocab/index.php">Tadirah
                                     activities, objects, techniques</ref></item>
                             <item>the Dariah Standard Knowledge base</item>
-                            <item>Parthenos disciplines: 
-                                <list>
-                                    <item>Studies of the past, <abbr>SOTP</abbr></item>
-                                    <item>Language related studies, <abbr>LRS</abbr></item>
-                                    <item>Heritage and applied disciplines, <abbr>HAD</abbr></item>
-                                    <item>Social Sciences, <abbr>SS</abbr></item>
-                                </list></item>
+                            <item>Disciplines</item>
                         </list> These taxonomies are declared with the attributes <att>type</att>
                         and <att>source</att>. The attributes of <gi>term</gi> are <list>
                             <item>The <att>type</att> attribute gives an information about the kind
                                 of term used. Its values are <list>
-                                    <item>standard</item>
-                                    <item>activity</item>
+                                    <item>standard: the <att>key</att> would provide the name or the
+                                        ID of a standard (NB = TBD Link with Dariah IT knowledge
+                                        base)</item>
+                                    <item>activity: the value of <att>key</att> is taken from the
+                                        tadirah ontology, <ref
+                                            target="http://tadirah.dariah.eu/vocab/index.php?tema=6&amp;/research-activities"
+                                            >research activities section</ref>
+                                    </item>
+                                    <item>object: the value of <att>key</att> is taken from the
+                                        tadirah ontology, <ref
+                                            target="http://tadirah.dariah.eu/vocab/index.php?tema=6&amp;/research-objects"
+                                            >research objects section</ref></item>
+                                    <item>technique: the value of <att>key</att> is taken from the
+                                        tadirah ontology, <ref
+                                            target="http://tadirah.dariah.eu/vocab/index.php?tema=6&amp;/research-techniques"
+                                            >research techniques section</ref></item>
+                                    <item>discipline: The disciplines must be chosen in the
+                                        following list: <list>
+                                            <item> Biological anthropology</item>
+                                            <item>Social Anthropology and ethnology</item>
+                                            <item>Archaeology and Prehistory</item>
+                                            <item>Architecture, space management</item>
+                                            <item>Art and art history</item>
+                                            <item>Classical studies</item>
+                                            <item>Demography</item>
+                                            <item>Law</item>
+                                            <item>Economies and finances</item>
+                                            <item>Education</item>
+                                            <item>Environmental studies</item>
+                                            <item>Gender studies</item>
+                                            <item>Geography</item>
+                                            <item>Management</item>
+                                            <item>History, Philosophy and Sociology of
+                                                Sciences</item>
+                                            <item>History</item>
+                                            <item>Communication sciences</item>
+                                            <item>Linguistics</item>
+                                            <item>Literature</item>
+                                            <item>Cultural heritage and museology</item>
+                                            <item>Musicology and performing arts</item>
+                                            <item>Philosophy</item>
+                                            <item>Psychology</item>
+                                            <item>Religions</item>
+                                            <item>Political science</item>
+                                            <item>Sociology</item>
+                                            <item>Methods and statistics</item>
+                                        </list>
+                                    </item>
                                 </list></item>
                             <item>The <att>source</att> attribute sets a reference link for the
                                 taxonomy.</item>
@@ -326,8 +366,7 @@
                                 key="annotating"/>
                         </egXML>
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                            <term type="objects" source="http://tadirah.dariah.eu/"
-                                key="Data"/>
+                            <term type="objects" source="http://tadirah.dariah.eu/" key="Data"/>
                         </egXML>
                     </p>
                 </div>
