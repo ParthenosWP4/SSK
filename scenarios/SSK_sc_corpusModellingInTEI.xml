@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario">
+   <teiHeader>
+      <!-- teiHeader TBC -->
+      <fileDesc>
+         <titleStmt>
+            <!-- Title of the tei document, not title of the scenario -->
+            <title>Description of the scenario "Corpus modelling in TEI"</title>
+            <author>
+               <persName>Klaus Illmayer</persName>
+               <affiliation>OEAW-ACDH</affiliation>
+            </author>
+            <author>
+               <persName>Susanne Haaf</persName>
+               <affiliation>BBAW</affiliation>
+            </author>
+            <author>
+               <persName>Piotr Bański</persName>
+               <affiliation>IDS Mannheim, CLARIN</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos ...</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
+                     this document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change>
+            <!-- Only for major changes: addition of an author, of a step, etc. -->
+         </change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div type="scenario" xml:id="sc_schemaCustomization">
+            <!-- All the textual information about scenarios and steps is now contained in the <head> element-->
+            <head xml:lang="en" type="scenarioTitle">Corpus modelling in TEI</head>
+            <desc type="definition" xml:lang="en">This scenario enumerates steps that make it possible to create a corpus in the TEI.</desc>
+            <!--<desc type=""></desc>-->
+            <desc xml:lang="en" type="terms">
+               <!-- Need a reference resource for all the terms, including Parthenos disciplines, datatypes, etc...  -->
+               <term source="parthenos" type="discipline" key="SOTP">Linguistics</term>
+               <term type="datatype" key="catalogs" source="nedimah"/>
+            </desc>
+            <!--<figure type="image">
+               <!-\- Illustration of the scenario. Can also be used in the steps -\->
+               <head>Title of the image</head>
+               <graphic url=""/>
+               <figDesc>Description of the image</figDesc>
+            </figure>-->
+            <listEvent>
+               <!-- <event type="scenario" ref="SSK_digitization.xml"/> -->
+               <event xml:id="CMiT01" type="researchStep" ref="step_corpusComposition"/>
+               <event xml:id="CMiT02" type="researchStep" ref="step_verificationAndCleanup"/>
+               <event xml:id="CMiT05" type="researchStep" ref="step_conversionToTEI"/>
+               <event xml:id="CMiT15" type="researchStep" ref="step_verificationAndCleanup"/>
+               <event xml:id="CMiT20" type="researchStep" ref="step_createWorkbench"/>
+               <event xml:id="CMiT25" type="researchStep" ref="step_verificationAndCleanup"/>
+               <event xml:id="CMiT40" type="researchStep" ref="step_annotation"/>
+               <event xml:id="CMiT45" type="researchStep" ref="step_verificationAndCleanup"/>
+               <event xml:id="CMiT55" type="researchStep" ref="step_finalize"/>
+            </listEvent>
+            <!-- we would like to be able to name preliminary and follow-up scenarios, too -->
+         </div>
+      </body>
+   </text>
+</TEI>
