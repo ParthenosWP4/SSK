@@ -51,12 +51,12 @@
                <term source="parthenos" type="discipline" key="SOTP">Linguistics</term>
                <term type="datatype" key="catalogs" source="nedimah"/>
             </desc>
-            <!--<figure type="image">
+            <figure type="image">
                <!-\- Illustration of the scenario. Can also be used in the steps -\->
                <head>Title of the image</head>
-               <graphic url=""/>
+               <graphic url="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Text_Encoding_Initiative_TEI-800.jpg/440px-Text_Encoding_Initiative_TEI-800.jpg"/>
                <figDesc>Description of the image</figDesc>
-            </figure>-->
+            </figure>
             <listEvent>
                <!-- <event type="scenario" ref="SSK_digitization.xml"/> -->
                <event xml:id="CMiT01" type="researchStep" ref="step_corpusComposition"/>
