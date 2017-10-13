@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_corpusComposition">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Description of the "Corpus Composition" step</title>
+                <author>
+                    <persName>Klaus Illmayer</persName>
+                    <affiliation>OEAW-ACDH</affiliation>
+                </author>
+                <author>
+                    <persName>Susanne Haaf</persName>
+                    <affiliation>BBAW, CLARIN-D</affiliation>
+                </author>
+                <author>
+                    <persName>Piotr Bański</persName>
+                    <affiliation>IDS Mannheim, CLARIN</affiliation>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <authority>Parthenos</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/">
+                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.</p>
+                    </licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Created from scratch</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <!-- Use only for major changes -->
+            <change/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listEvent>
+                <event type="researchStep">
+                    <!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
+                    <head type="stepTitle" xml:lang="en">Corpus Composition</head>
+                    <head type="stepTitle" xml:lang="de">Korpuszusammenstellung</head>
+                    <desc type="definition" xml:lang="en">Creation of a corpus, including decision about (1) the corpus type (opportunistic, balanced, etc.) and the criteria of balancedness, (2) the type of annotations (lightweight, multiple layers, inline/standoff, …) and (3) the tagset, i.e. the content of the markup planed. Selection of resources to be included in the corpus (e.g. date range of historical sources, etc.), possibly by reference to the research question.</desc>
+                    <desc xml:lang="en" type="terms">
+                        <term type="standard" source="standard_list" key="XML"/>
+                        <term type="standard" source="standard_list" key="TEI"/>
+                        <term type="standard" source="standard_list" key="EAD"/>
+                        <term type="activity" source="http://tadirah.dariah.eu/" key="modeling">modeling</term>
+                        <term type="policies" source="WP3Wizard" key="CD"/>
+                    </desc>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>
