@@ -43,7 +43,7 @@
                <figDesc>Photo by Chris Lawton on Unsplash</figDesc>
             </figure>
             <listEvent>
-               <event xml:id="kfsjdlfds" type="researchScenario" ref="sc_yourscenario.xml"/>
+               <!--<event xml:id="kfsjdlfds" type="researchScenario" ref="sc_yourscenario.xml"/>-->
                <event xml:id="s1" type="researchStep" ref="step_EaXswO_150917"/>
                <event xml:id="s2" type="researchStep" ref="step_Eprimrf_300517"/>
                <event xml:id="s3" type="researchStep" ref="step_Cad_300517"/>
