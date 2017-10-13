@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!--<?xml-model href="../spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+--><?xml-model href="../spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario">
    <teiHeader>
       <fileDesc>
@@ -11,7 +12,8 @@
             <authority>Parthenos</authority>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
-                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this document.</p></licence>
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
+                     this document.</p></licence>
             </availability>
          </publicationStmt>
          <sourceDesc>
@@ -39,11 +41,11 @@
             </desc>
             <figure type="image">
                <head/>
-               <graphic url="https://c.pxhere.com/photos/c0/57/book_read_library_spine_hardcover-1397643.jpg!d"/>
+               <graphic
+                  url="https://c.pxhere.com/photos/c0/57/book_read_library_spine_hardcover-1397643.jpg!d"/>
                <figDesc>Photo by Chris Lawton on Unsplash</figDesc>
             </figure>
             <listEvent>
-               <event xml:id="kfsjdlfds" type="researchScenario" ref="sc_yourscenario.xml"/>
                <event xml:id="s1" type="researchStep" ref="step_EaXswO_150917"/>
                <event xml:id="s2" type="researchStep" ref="step_Eprimrf_300517"/>
                <event xml:id="s3" type="researchStep" ref="step_Cad_300517"/>

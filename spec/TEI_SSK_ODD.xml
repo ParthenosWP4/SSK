@@ -485,7 +485,7 @@
                     <moduleRef key="namesdates" except=""/>
                     <moduleRef key="linking" except=""/>
                     <moduleRef key="tagdocs" except=""/>
-                    <!--<moduleRef key="figures"/>-->
+                    <moduleRef key="figures"/>
 
                     <!-- Elements changed-->
                     <elementSpec ident="TEI" mode="change">
@@ -501,6 +501,34 @@
                             </attDef>
                         </attList>
                     </elementSpec>
+
+                    <elementSpec ident="alternate" mode="change">
+                        <classes mode="change">
+                            <memberOf key="model.eventLike"/>
+                        </classes>
+                        <content>
+                            <sequence>
+                                <alternate>
+                                    <classRef key="model.eventLike" maxOccurs="unbounded"/>
+                                    <classRef key="model.contentPart" maxOccurs="unbounded"/>
+                                </alternate>
+                            </sequence>
+                        </content>
+                    </elementSpec>
+
+                    <elementSpec ident="listEvent" mode="change">
+                        <content>
+                            <sequence>
+                                <classRef key="model.headLike" minOccurs="0" maxOccurs="unbounded"/>
+                                <classRef key="model.eventLike" minOccurs="1" maxOccurs="unbounded"/>
+                                <alternate minOccurs="0" maxOccurs="unbounded">
+                                    <elementRef key="relation"/>
+                                    <elementRef key="listRelation"/>
+                                </alternate>
+                            </sequence>
+                        </content>
+                    </elementSpec>
+
                     <elementSpec ident="event" mode="change">
                         <classes mode="change">
                             <!--2017-07-17: <event> is now member of the class att.combinable, i.e., can have @mode for attribute. In the SSK,
