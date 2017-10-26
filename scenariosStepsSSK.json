@@ -1,0 +1,97 @@
+{
+    "scenarios": [
+        {
+            "Corpus modelling in TEI": "http://www.github.com/ParthenosWP4/SSK/tree/master/scenarios/SSK_sc_corpusModellingInTEI.xml",
+            "steps": {
+                "Corpus Composition": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_corpusComposition.xml",
+                "Verification and Cleanup": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_verificationAndCleanup.xml",
+                "Conversion to TEI": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_conversionToTEI.xml",
+                "Create Workbench": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_createWorkbench.xml",
+                "Annotation": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_annotation.xml",
+                "Finalize": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_finalize.xml"
+            }
+        },
+        {
+            "Project-centered EAD customization": "http://www.github.com/ParthenosWP4/SSK/tree/master/scenarios/SSK_sc_schemaCustomization.xml",
+            "steps": {
+                "Express an XML schema with ODD": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_EaXswO_150917.xml",
+                "Express projects requirements in machine-readable format": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_Eprimrf_300517.xml",
+                "Create associated documentation": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_Cad_300517.xml",
+                "Test data against the schema": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_Tdats_300517.xml",
+                "Share and publish data in this new format": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_Sapditnf_300517.xml"
+            }
+        },
+        {
+            "Scholars needing standards to represent information (reference tools) about persons, titles of works, documents identifiers (shelfmarks\u2026)": "http://www.github.com/ParthenosWP4/SSK/tree/master/scenarios/SSK_sc_scholarsStandards.xml",
+            "steps": {
+                "Define the research target (persons, works, shelfmarks), and thematic, geographic and chronological boundaries": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DtrTaTGaCB.xml",
+                "Select data which are to be retained for curation": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SDtatRfC.xml",
+                "Choose a sustainable archive, repository, data centre or other custodian where data will be stored": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CaSARDCooCwDwbs.xml",
+                "Adhere to guidance, policies and legal requirements": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_atGPaLR.xml",
+                "Collect standards about the selected resources": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CSatSR.xml",
+                "Assessment of Standards": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_AoS.xml",
+                "Synthesize the results": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_StR.xml",
+                "Interpret these data": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_ItD.xml",
+                "Sharing data through articles and publications": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SdtAaP.xml",
+                "Ensure that the required legal permissions are available": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_EttrLPaA.xml"
+            }
+        },
+        {
+            "Perform Statistical Analysis on Data onHistorical and Contemporary Occupations": "http://www.github.com/ParthenosWP4/SSK/tree/master/scenarios/SSK_sc_statisticalAnalysisOccupations.xml",
+            "steps": {
+                "Recode variables": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_Rv_121017.xml",
+                "Combine variables into scales": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CViS_121017.xml",
+                "Test for reliability of the scales": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_TfRotS_121017.xml",
+                "Model the relationship between variables": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_MtRbV_121017.xml",
+                "Analyse": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_A_121017.xml"
+            }
+        },
+        {
+            "Tracking the dissemination of a specific work": "http://www.github.com/ParthenosWP4/SSK/tree/master/scenarios/SSK_sc_trackingTheDissemination.xml",
+            "steps": {
+                "Select data which are to be retained for curation": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SDtatRfC.xml",
+                "Choose a sustainable archive, repository, data centre or other custodian where data will be stored": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CaSARDCooCwDwbs.xml",
+                "Adhere to guidance, policies and legal requirements": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_atGPaLR.xml",
+                "Understand the popularity and circulation of this work": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_UtPaCotW.xml",
+                "Sharing data through articles and publications": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SdtAaP.xml",
+                "Ensure that the required legal permissions are available": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_EttrLPaA.xml"
+            }
+        }
+    ],
+    "steps": {
+        "Analyse": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_A_121017.xml",
+        "Annotation": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_annotation.xml",
+        "Assessment of Standards": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_AoS.xml",
+        "Adhere to guidance, policies and legal requirements": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_atGPaLR.xml",
+        "Assess the use of the editions in the selected period. Assess how many manuscripts of this work survive today in our libraries": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_tdsw_7.xml",
+        "Bundle collected data": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_tdsw_10.xml",
+        "Create associated documentation": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_Cad_300517.xml",
+        "Collect all existent editions of the selected work": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_tdsw_6.xml",
+        "Choose a sustainable archive, repository, data centre or other custodian where data will be stored": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CaSARDCooCwDwbs.xml",
+        "Conversion to TEI": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_conversionToTEI.xml",
+        "Corpus Composition": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_corpusComposition.xml",
+        "Create Workbench": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_createWorkbench.xml",
+        "Collect standards about the selected resources": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CSatSR.xml",
+        "Combine variables into scales": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CViS_121017.xml",
+        "Define the geographic and the chronological boundaries": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_tdsw_2.xml",
+        "Define the research target (persons, works, shelfmarks), and thematic, geographic and chronological boundaries": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DtrTaTGaCB.xml",
+        "Express an XML schema with ODD": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_EaXswO_150917.xml",
+        "Ensure inclusiveness of data": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_tdsw_9.xml",
+        "Express projects requirements in machine-readable format": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_Eprimrf_300517.xml",
+        "Ensure that the required legal permissions are available": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_EttrLPaA.xml",
+        "Finalize": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_finalize.xml",
+        "Interpret these data": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_ItD.xml",
+        "Interpret these data and offer explanations on statistical information, metrics, or other methods are used to analyse the corpus": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_tdsw_11.xml",
+        "Model the relationship between variables": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_MtRbV_121017.xml",
+        "Recode variables": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_Rv_121017.xml",
+        "Share and publish data in this new format": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_Sapditnf_300517.xml",
+        "Sharing data through articles and publications": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SdtAaP.xml",
+        "Select data which are to be retained for curation": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SDtatRfC.xml",
+        "Synthesize the results": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_StR.xml",
+        "Select the work on which the survey is conducted": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_tdsw_1.xml",
+        "Test data against the schema": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_Tdats_300517.xml",
+        "Understand the popularity and circulation of this work": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_UtPaCotW.xml",
+        "Test for reliability of the scales": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_TfRotS_121017.xml",
+        "Verification and Cleanup": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_verificationAndCleanup.xml"
+    }
+}

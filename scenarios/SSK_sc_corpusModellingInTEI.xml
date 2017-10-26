@@ -41,7 +41,7 @@
    </teiHeader>
    <text>
       <body>
-         <div type="scenario" xml:id="sc_schemaCustomization">
+         <div type="scenario" xml:id="sc_corpusModelling">
             <!-- All the textual information about scenarios and steps is now contained in the <head> element-->
             <head xml:lang="en" type="scenarioTitle">Corpus modelling in TEI</head>
             <desc type="definition" xml:lang="en">This scenario enumerates steps that make it possible to create a corpus in the TEI.</desc>
@@ -52,7 +52,7 @@
                <term type="datatype" key="catalogs" source="nedimah"/>
             </desc>
             <figure type="image">
-               <!-\- Illustration of the scenario. Can also be used in the steps -\->
+               <!-- Illustration of the scenario. Can also be used in the steps -->
                <head>Title of the image</head>
                <graphic url="http://www.tei-c.org/About/Logos/TEI-600.jpg"/>
                <figDesc>Description of the image</figDesc>

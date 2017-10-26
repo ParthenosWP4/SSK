@@ -47,8 +47,6 @@
                 <event type="researchStep">
                     <!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
                     <head type="stepTitle" xml:lang="en">Define the research target (persons, works, shelfmarks), and thematic, geographic and chronological boundaries</head>
-                    <head type="stepTitle" xml:lang="fr">Titre de l'étape en Français</head>
-                    <desc type="definition" xml:lang="en">Formulate a research question and survey the source material and the general historical and theoretical literature</desc>
                     <desc xml:lang="en" type="terms">
                         <term type="standard" source="standard_list" key="XML"/>
                         <term type="standard" source="standard_list" key="TEI"/>
