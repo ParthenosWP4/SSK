@@ -22,7 +22,7 @@
             }
         },
         {
-            "Scholars needing standards to represent information (reference tools) about persons, titles of works, documents identifiers (shelfmarks\u2026)": "http://www.github.com/ParthenosWP4/SSK/tree/master/scenarios/SSK_sc_scholarsStandards.xml",
+            "Scholars needing standards to represent information (reference tools) about persons, titles of works, documents identifiers (shelfmarks)": "http://www.github.com/ParthenosWP4/SSK/tree/master/scenarios/SSK_sc_scholarsStandards.xml",
             "steps": {
                 "Define the research target (persons, works, shelfmarks), and thematic, geographic and chronological boundaries": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DtrTaTGaCB.xml",
                 "Select data which are to be retained for curation": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SDtatRfC.xml",
@@ -37,7 +37,7 @@
             }
         },
         {
-            "Perform Statistical Analysis on Data onHistorical and Contemporary Occupations": "http://www.github.com/ParthenosWP4/SSK/tree/master/scenarios/SSK_sc_statisticalAnalysisOccupations.xml",
+            "Perform Statistical Analysis on Data on Historical and Contemporary Occupations": "http://www.github.com/ParthenosWP4/SSK/tree/master/scenarios/SSK_sc_statisticalAnalysisOccupations.xml",
             "steps": {
                 "Recode variables": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_Rv_121017.xml",
                 "Combine variables into scales": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CViS_121017.xml",
