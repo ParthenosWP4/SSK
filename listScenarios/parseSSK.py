@@ -17,7 +17,7 @@ def get_files(d):
 
 def parseSteps(files):
 
-    dictSteps = {}
+    dictSteps = []
 
     for xml_file in files:
         with open(xml_file) as file:
@@ -27,27 +27,38 @@ def parseSteps(files):
         for head in heads:
             if head['xml:lang'] == "en":
                 hText = head.text.replace('\n', ' ').replace('\r', '').replace('  ', '').strip()
-                dictSteps[hText] = xmlBase + xml_file
+                step = {
+                    "name" : hText,
+                    "url" : xmlBase + xml_file
+                    }
+                dictSteps.append(step)
     return dictSteps
 
 
 def parseSSK(files):
     listScens = []
-    stepsList = parseSteps(get_files("steps"))
+    stepsList = parseSteps(get_files("../steps"))
     for xml_file in files:
         with open(xml_file) as file:
             soup = BeautifulSoup(file, "xml")
-        dictScen = {}
         head = soup.find("head", {"type" : "scenarioTitle"})
         hText = head.text.replace('\n',' ').replace('\r', '').replace('  ', '').strip()
-        dictScen[hText] = xmlBase + xml_file
-        dictScen["steps"] = {}
+        dictScen = {
+            "name" : hText,
+            "url" : xmlBase + xml_file
+        }
+        dictScen["steps"] = []
         events = soup.find_all("event")
         for event in events:
             eventRef = event["ref"]
-            for key, value in stepsList.items():
-                if eventRef in value:
-                    dictScen["steps"][key] = value
+            for i in range(len(stepsList)):
+                if eventRef in stepsList[i]["url"]:
+                    step = {
+                            "name" : stepsList[i]["name"],
+                            "url" : stepsList[i]["url"]
+                         }
+                    dictScen["steps"].append(step)
+
         listScens.append(dictScen)
     SSKParsed = {
         "scenarios" : listScens,
@@ -56,8 +67,8 @@ def parseSSK(files):
 
     return SSKParsed
 
-parsedSSK = parseSSK(get_files("scenarios"))
+parsedSSK = parseSSK(get_files("../scenarios"))
 
-with open('scenariosStepsSSK.json', 'w') as file:
+with open('scenariosStepsSSK2.json', 'w') as file:
     json.dump(parsedSSK, file)
 
