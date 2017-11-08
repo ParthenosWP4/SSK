@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../../SSK/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Researcher identifies the convenience of standardized Laser-Induced Breakdown
+               Spectroscopy (LIBS) analysis for glass substrate characterization in the field of
+               Cultural Heritage</title>
+            <author>
+               <persName>Marta Castillejo</persName>
+               <affiliation>CSIC</affiliation>
+            </author>
+            <author>
+               <persName>Mikel Sanz</persName>
+               <affiliation>CSIC</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
+                     this document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from an Excel sheet by Marie Puren</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div type="scenario" xml:id="sc_LIBS">
+            <head xml:lang="en" type="scenarioTitle"/>
+            <desc type="definition" xml:lang="en">Researcher is interested in accessing systematic
+               works related to LIBS analysis of glass substrates and its application to cultural
+               heritage glass artefacts given the speed, absence of sampling and sample preparation,
+               microscopic resolution and in-situ characterization proper to the technique.</desc>
+            <desc xml:lang="en" type="terms">
+               <term source="aurehal" type="discipline" key="AAH">Art and art history</term>
+               <term source="aurehal" type="discipline" key="CHM">Cultural heritage and
+                  museology</term>
+               <term type="objects" key="research_results" source="tadirah"/>
+               <term type="objects" key="standards" source="tadirah"/>
+               <term type="techniques" key="tecnology_preservation" source="tadirah"/>
+            </desc>
+            <!-- 
+            <figure type="image">
+               <head></head>
+               <graphic url=""/>
+               <figDesc></figDesc>
+            </figure>-->
+            <listEvent>
+               <event xml:id="s1" type="researchStep" ref="step_RoG_081117"/>
+               <event xml:id="s2" type="researchStep" ref="step_SA_081117"/>
+               <event xml:id="s3" type="researchStep" ref="step_PPS_081117"/>
+               <event xml:id="s4" type="researchStep" ref="step_IRE_081117"/>
+               <event xml:id="s5" type="researchStep" ref="step_AS_081117"/>
+               <event xml:id="s6" type="researchStep" ref="step_GC_081117"/>
+               <event xml:id="s7" type="researchStep" ref="step_CwOT_081117"/>
+               <event xml:id="s8" type="researchStep" ref="step_ESR_081117"/>
+               <event xml:id="s9" type="researchStep" ref="step_Pub_081117"/>
+               <event xml:id="s10" type="researchStep" ref="step_KAR_081117"/>
+            </listEvent>
+         </div>
+      </body>
+   </text>
+</TEI>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../../SSK/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Researcher using lasers in conservation/restoration identifies the necessity of
+               standardized reports of the laser application conditions and the evaluation of the
+               obtained results</title>
+            <author>
+               <persName>Marta Castillejo</persName>
+               <affiliation>CSIC</affiliation>
+            </author>
+            <author>
+               <persName>Mikel Sanz</persName>
+               <affiliation>CSIC</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
+                     this document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from an Excel sheet by Marie Puren</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div type="scenario" xml:id="sc_LIBS">
+            <head xml:lang="en" type="scenarioTitle"/>
+            <desc type="definition" xml:lang="en">The standard will indicate a methodology to
+               document the kind, extent, and objectives of the laser cleaning, the employed laser
+               cleaning parameters and the obtained results including cleaning quality as well as
+               side effects or induced damage. The standard will contain guidelines to report the
+               aforementioned required steps in the employ of lasers for conservation/restoration in
+               order to allow the comparison of results with different treatments performed in
+               different studies.</desc>
+            <desc xml:lang="en" type="terms">
+               <term source="aurehal" type="discipline" key="AAH">Art and art history</term>
+               <term source="aurehal" type="discipline" key="CHM">Cultural heritage and
+                  museology</term>
+               <term type="objects" key="research_results" source="tadirah"/>
+               <term type="objects" key="standards" source="tadirah"/>
+               <term type="techniques" key="tecnology_preservation" source="tadirah"/>
+            </desc>
+            <!-- 
+            <figure type="image">
+               <head></head>
+               <graphic url=""/>
+               <figDesc></figDesc>
+            </figure>-->
+            <listEvent>
+               <event xml:id="s1" type="researchStep" ref="step_RLCP_081117"/>
+               <event xml:id="s2" type="researchStep" ref="step_DLC_081117"/>
+               <event xml:id="s3" type="researchStep" ref="step_SAn_081117"/>
+               <event xml:id="s4" type="researchStep" ref="step_CLE_081117"/>
+               <event xml:id="s5" type="researchStep" ref="step_MLMI_081117"/>
+               <event xml:id="s6" type="researchStep" ref="step_DoLE_081117"/>
+               <event xml:id="s7" type="researchStep" ref="step_Pb_081117"/>
+               <event xml:id="s8" type="researchStep" ref="step_Pres_081117"/>
+            </listEvent>
+         </div>
+      </body>
+   </text>
+</TEI>
