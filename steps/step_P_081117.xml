@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../../SSK/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Step "Preparation"</title>
+            <author>
+               <persName>Panayotis Siozos</persName>
+               <affiliation>IESL-FORTH</affiliation>
+            </author>
+            <author>
+               <persName>Demetrios Anglos</persName>
+               <affiliation>IESL-FORTH</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
+                     this document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from an Excel sheet by Marie Puren</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head xml:lang="en">Preparation</head>
+               <desc xml:lang="en" type="definition">The preparation procedure consists of the
+                  steps for effective recording of Raman spectra. These steps are: a) Positioning
+                  the object/artwork, b) positioning the Raman instrument and c) Acquire of a high
+                  resolution image of the cultural heritage object. The image will be used to
+                  document the exact points that Raman analysis was performed.</desc>
+               <desc xml:lang="fr" type="definition"/>
+               <desc xml:lang="en" type="term">
+                  <term type="standard" source="standard_list" key="LIBS"/>
+                  <term type="standard" source="standard_list" key="Raman Spectroscopy"/>
+                  <term type="activity" source="http://tadirah.dariah.eu/"
+                     key="http://tadirah.dariah.eu/vocab/index.php?tema=11&amp;/gathering"/>
+               </desc>
+               <linkGrp type="generalResources">
+                  <ref type="article" subtype="technique" source="zotero" target="AVJ3J46Y">
+                     <term type="technique" key="Raman Spectroscopy"/>
+                     <term type="technique" key="LIBS"/>
+                  </ref>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
+</TEI>
