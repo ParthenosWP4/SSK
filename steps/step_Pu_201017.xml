@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Step "Publish"</title>
+            <author>
+               <persName>Panayotis Siozos</persName>
+               <affiliation>IESL-FORTH</affiliation>
+            </author>
+            <author>
+               <persName>Demetrios Anglos</persName>
+               <affiliation>IESL-FORTH</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
+                     this document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from an Excel sheet by Marie Puren</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head xml:lang="en">Publish</head>
+               <desc xml:lang="en" type="definition">Publish the results of the artwork's
+                  multispectral imaging analysis.</desc>
+               <desc xml:lang="fr" type="definition"/>
+               <desc xml:lang="en" type="term">
+                  <term type="activity" source="http://tadirah.dariah.eu/"
+                     key="http://tadirah.dariah.eu/vocab/index.php?tema=47&amp;/publishing"/>
+               </desc>
+               <linkGrp type="generalResources">
+                  <ref type="website" subtype="service" source="zotero" target="TZX5QSR7">
+                     <term type="service" key="POLYGNOSIS"/>
+                  </ref>
+                  <ref type="website" subtype="service" target="https://hal.archives-ouvertes.fr/ ">
+                     <term type="service" key="Hal"/>
+                  </ref>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
+</TEI>

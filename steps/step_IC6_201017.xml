@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Step "Image Capture 6: Capturing VIVL images"</title>
+            <author>
+               <persName>Panayotis Siozos</persName>
+               <affiliation>IESL-FORTH</affiliation>
+            </author>
+            <author>
+               <persName>Demetrios Anglos</persName>
+               <affiliation>IESL-FORTH</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
+                     this document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from an Excel sheet by Marie Puren</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head xml:lang="en">Image Capture 6: Capturing VIVL images</head>
+               <desc xml:lang="en" type="definition">Visible-induced visible luminescence (VIVL)
+                  image record the emission of light in the visible region (500-700 nm) from a
+                  subject when this is illuminated with visible light (400-500 nm).</desc>
+               <desc xml:lang="en" type="term">
+                  <term type="standard" source="standard_list" key="TIFF/EP (ISO 12234-2)"/>
+                  <term type="activity" source="http://tadirah.dariah.eu/"
+                     key="http://tadirah.dariah.eu/vocab/index.php?tema=12&amp;/imaging"/>
+               </desc>
+               <linkGrp type="generalResources">
+                  <ref type="website" subtype="tool" source="zotero" target="H23RCNAH">
+                     <term type="tool" key="GIMP"/>
+                  </ref>
+                  <ref type="ISO-standard" subtype="standard" source="zotero" target="SA323STT">
+                     <term type="standard" key="TIFF/EP (ISO 12234-2)"/>
+                  </ref>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
+</TEI>
