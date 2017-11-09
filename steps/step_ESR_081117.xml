@@ -42,12 +42,11 @@
                   relevant data related to the LIBS characterization of glass artefacts.</desc>
                <desc xml:lang="fr" type="definition"/>
                <desc xml:lang="en" type="term">
-                  <term type="standard" source="standard_list" key="LIBS"/>
                   <term type="activity" source="http://tadirah.dariah.eu/"
                      key="http://tadirah.dariah.eu/vocab/index.php?tema=20&amp;/writing"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref type="article" subtype="tool" source="zotero" target="4W7QUMZF">
+                  <ref type="software" subtype="tool" source="zotero" target="4W7QUMZF">
                      <term type="tool" key="MOVIDA"/>
                   </ref>
                </linkGrp>
