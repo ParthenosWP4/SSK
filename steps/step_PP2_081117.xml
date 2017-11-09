@@ -6,7 +6,7 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Step "Post processing 2:Raman Peak identification"</title>
+            <title>Step "Post processing 2: Raman Peak identification"</title>
             <author>
                <persName>Panayotis Siozos</persName>
                <affiliation>IESL-FORTH</affiliation>
@@ -37,7 +37,7 @@
       <body>
          <listEvent>
             <event type="researchStep">
-               <head xml:lang="en">Post processing 2:Raman Peak identification</head>
+               <head xml:lang="en">Post processing 2: Raman Peak identification</head>
                <desc xml:lang="en" type="definition">In this step the wavelength and the relative
                   intensity of the observed peaks in the Raman spectrum are identified and
                   documented. The relative intensity can be expressed as weak, moderate or
@@ -48,16 +48,16 @@
                      key="http://tadirah.dariah.eu/vocab/index.php?tema=26&amp;/content-analysis"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref type="article" subtype="tool" source="zotero" target="4W7QUMZF">
+                  <ref type="software" subtype="tool" source="zotero" target="4W7QUMZF">
                      <term type="tool" key="MOVIDA"/>
                   </ref>
-                  <ref type="website" subtype="tool" source="zotero" target="2NZPNEAN">
+                  <ref type="software" subtype="tool" source="zotero" target="2NZPNEAN">
                      <term type="tool" key="GNU Octave"/>
                      </ref>
-                  <ref type="website" subtype="service" source="zotero" target="US2HB3DN">
+                  <ref type="service" subtype="website"  source="zotero" target="US2HB3DN">
                      <term type="service" key="DIAGNOSIS"/>
                   </ref>
-                  <ref type="website" subtype="tool" source="zotero" target="S5TDK87K">
+                  <ref type="software" subtype="tool" source="zotero" target="S5TDK87K">
                      <term type="tool" key="Origin"/>
                   </ref>
                </linkGrp>
