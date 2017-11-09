@@ -49,7 +49,7 @@
                    <ref type="software" subtype="tool" source="zotero" target="4W7QUMZF">
                      <term type="tool" key="MOVIDA"/>
                   </ref>
-                  <ref type="website" subtype="service" source="zotero" target="US2HB3DN">
+                  <ref type="service" subtype="website" source="zotero" target="US2HB3DN">
                      <term type="service" key="DIAGNOSIS"/>
                   </ref>
                </linkGrp>
