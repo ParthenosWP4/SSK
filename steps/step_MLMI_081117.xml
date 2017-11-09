@@ -46,7 +46,7 @@
                   />
                </desc>
                <linkGrp type="generalResources">
-                  <ref type="software" subtype="tool" source="zotero" target="RHKZ37DU">
+                  <ref type="software" subtype="tool" source="zotero" target="HIQ57ED7">
                      <term type="software" key="COMSOL Multiphysics"/>
                   </ref>
                </linkGrp>
