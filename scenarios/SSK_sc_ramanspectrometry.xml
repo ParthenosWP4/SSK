@@ -36,8 +36,9 @@
    </teiHeader>
    <text>
       <body>
-         <div type="scenario" xml:id="sc_multipsectralImaging">
-            <head xml:lang="en" type="scenarioTitle"/>
+         <div type="scenario" xml:id="sc_ramanspectrometry">
+            <head xml:lang="en" type="scenarioTitle">Raman spectrometry for the analysis and
+               identification of pigments directly on cultural heritage objects</head>
             <desc type="definition" xml:lang="en">Raman spectrometry is a widely used technique for
                examining various types of cultural heritage objects, with significant contributions
                in studies concentrating on pigment identification. The Raman effect provides a quick
