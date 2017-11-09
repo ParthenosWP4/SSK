@@ -43,13 +43,13 @@
                <desc xml:lang="fr" type="definition"/>
                <desc xml:lang="en" type="term">
                   <term type="standard" source="standard_list"
-                     key="Lasers and laser-related equipment -- Test methods for laser-induced damage threshold -- Part 4: Inspection, detection and measurement (ISO/TR 21254-4:2011)"/>
+                     key="ISO/TR 21254-4:2011"/>
                   <term type="activity" source="http://tadirah.dariah.eu/"
                      key="http://tadirah.dariah.eu/vocab/index.php?tema=26&amp;/content-analysis"
                   />
                </desc>
                <linkGrp type="generalResources">
-                  <ref type="ISO-standard" subtype="standard" source="zotero" target="3Z6IEPXR">
+                  <ref type="standard" subtype="ISO_standard" source="zotero" target="3Z6IEPXR">
                      <term type="standard" key="ISO/TR 21254-4:2011"/>
                   </ref>
                </linkGrp>
