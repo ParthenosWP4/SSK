@@ -46,10 +46,10 @@
                      key="http://tadirah.dariah.eu/vocab/index.php?tema=34&amp;/contextualizing"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref type="website" subtype="database" source="zotero" target="JDUB296N">
+                  <ref type="database" subtype="website" source="zotero" target="JDUB296N">
                      <term type="database" key="NIST Atomic Spectra Database"/>
                   </ref>
-                  <ref type="website" subtype="database" source="zotero" target="ZG6IKTA5">
+                  <ref type="database" subtype="website" source="zotero" target="ZG6IKTA5">
                      <term type="database" key="Atomic spectral line"/>
                   </ref>
                </linkGrp>
