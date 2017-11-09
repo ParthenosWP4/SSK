@@ -37,7 +37,7 @@
       <body>
          <listEvent>
             <event type="researchStep">
-               <head xml:lang="en">Ccomparison with other techniques</head>
+               <head xml:lang="en">Comparison with other techniques</head>
                <desc xml:lang="en" type="definition">Compare the obtained results by LIBS with
                   results from other analytical techniques employed in the characterization of the
                   same glass object or other glasses.</desc>
