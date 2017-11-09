@@ -52,10 +52,10 @@
                      key="http://tadirah.dariah.eu/vocab/index.php?tema=10&amp;/discovering"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref type="article" subtype="technique" source="zotero" target="W39BNU8K">
+                 <ref type="tutorial" subtype="article" source="zotero" target="W39BNU8K">
                      <term type="technique" key="Raman spectroscopy"/>
                   </ref>
-                  <ref type="article" subtype="technique" source="zotero" target="CVI5TJZV">
+                  <ref type="tutorial" subtype="article" source="zotero" target="CVI5TJZV">
                      <term type="technique"/>
                   </ref>
                </linkGrp>
