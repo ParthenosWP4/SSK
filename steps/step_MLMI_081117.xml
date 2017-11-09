@@ -46,8 +46,8 @@
                   />
                </desc>
                <linkGrp type="generalResources">
-                  <ref type="blog" subtype="tool" source="zotero" target="RHKZ37DU">
-                     <term type="tool" key="COMSOL Multiphysics"/>
+                  <ref type="software" subtype="tool" source="zotero" target="RHKZ37DU">
+                     <term type="software" key="COMSOL Multiphysics"/>
                   </ref>
                </linkGrp>
             </event>
