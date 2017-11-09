@@ -46,14 +46,14 @@
                      key="http://tadirah.dariah.eu/vocab/index.php?tema=11&amp;/gathering"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref type="book" subtype="tutorial" source="zotero" target="PM5P3JDB">
+                  <ref type="tutorial" subtype="book" source="zotero" target="PM5P3JDB">
                      <term type="tutorial" key="Laser cleaning"/>
                   </ref>
-                  <ref type="article" subtype="tutorial" source="zotero" target="9796G3AB">
+                  <ref type="tutorial" subtype="article" source="zotero" target="9796G3AB">
                      <term type="tutorial" key="Laser cleaning"/>
                   </ref>
                </linkGrp>
-               <linkGrp type="projectResources" source="COST"
+               <linkGrp type="projectResources" source="COST Actions"
                   corresp="http://www.cost.eu/COST_Actions/fps/G7">
                   <ref type="webpage" target="http://www.cost.eu/COST_Actions/fps/G7"/>
                </linkGrp>
