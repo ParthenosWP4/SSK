@@ -43,11 +43,12 @@
                   same glass object or other glasses.</desc>
                <desc xml:lang="fr" type="definition"/>
                <desc xml:lang="en" type="term">
+		  <term type="standard" source="standard_list" key="LIBS"></term>
                   <term type="activity" source="http://tadirah.dariah.eu/"
                      key="http://tadirah.dariah.eu/vocab/index.php?tema=34&amp;/contextualizing"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref type="article" subtype="technique" source="zotero" target="S3U4TFHQ">
+                  <ref type="tutorial" subtype="article" source="zotero" target="S3U4TFHQ">
                      <term type="technique" key="LIBS"/>
                      <term type="technique" key="UV-Vis"/>
                      <term type="technique" key="LIF"/>
