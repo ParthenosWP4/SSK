@@ -52,11 +52,11 @@
                      key="http://tadirah.dariah.eu/vocab/index.php?tema=26&amp;/content-analysis"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref type="article" subtype="technique" source="zotero" target="FCKKBJ8X">
-                     <term type="methodology" key="SERDS"/>
-                     <term type="methodology" key="SSRS"/>
+                  <ref type="tutorial" subtype="article" source="zotero" target="FCKKBJ8X">
+                     <term type="technique" key="SERDS"/>
+                     <term type="technique" key="SSRS"/>
                   </ref>
-                  <ref type="article" subtype="methodology" source="zotero" target="2PAJ6NGT">
+                  <ref ttype="tutorial" subtype="article" source="zotero" target="2PAJ6NGT">
                      <term type="methodology" key="Raman spectroscopy"/>
                   </ref>
                </linkGrp>
