@@ -37,7 +37,8 @@
    <text>
       <body>
          <div type="scenario" xml:id="sc_multipsectralImaging">
-            <head xml:lang="en" type="scenarioTitle"/>
+            <head xml:lang="en" type="scenarioTitle">Multispectral imaging for the in-situ
+               characterization of painted works of art</head>
             <desc type="definition" xml:lang="en">Multispectral imaging is a commonly used technique
                that is currently available to the scientist, conservator, archaeologist and art
                historian for the non-invasive investigation of works of art. It has a relatively low
