@@ -58,12 +58,12 @@
                <term type="objects" key="images" source="tadirah"/>
                <term type="techniques" key="photography" source="tadirah"/>
             </desc>
-            <!-- 
             <figure type="image">
-               <head></head>
-               <graphic url=""/>
-               <figDesc></figDesc>
-            </figure>-->
+               <head/>
+               <graphic
+                  url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/SSK-multispectral-photo1-1.jpg"/>
+               <figDesc/>
+            </figure>
             <listEvent>
                <event xml:id="s1" type="researchStep" ref="step_RoA_201017"/>
                <event xml:id="s2" type="researchStep" ref="step_MIS_201017"/>
