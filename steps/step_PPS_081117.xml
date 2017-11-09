@@ -48,7 +48,7 @@
                   />
                </desc>
                <linkGrp type="generalResources">
-                  <ref type="website" subtype="tool" source="zotero" target="RHKZ37DU">
+                  <ref type="software" subtype="tool" source="zotero" target="RHKZ37DU">
                      <term type="tool" key="Spectrum Analyzer"/>
                   </ref>
                </linkGrp>
