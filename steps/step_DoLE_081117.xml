@@ -43,12 +43,12 @@
                <desc xml:lang="fr" type="definition"/>
                <desc xml:lang="en" type="term">
                   <term type="standard" source="standard_list"
-                     key="Conservation of cultural heritage - Cleaning of porous inorganic materials - Laser cleaning techniques for cultural heritage (EN 16782:2016)"/>
+                     key="EN 16782:2016"/>
                   <term type="activity" source="http://tadirah.dariah.eu/"
                      key="http://tadirah.dariah.eu/vocab/index.php?tema=38&amp;/archiving"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref type="CEN_standard" subtype="standard" source="zotero" target="RESKCJ4E">
+                  <ref type="standard" subtype="CEN_standard" source="zotero" target="RESKCJ4E">
                      <term type="standard" key="EN 16782:2016"/>
                   </ref>
                </linkGrp>
