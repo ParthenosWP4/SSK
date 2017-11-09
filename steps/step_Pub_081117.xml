@@ -45,7 +45,7 @@
                      key="http://tadirah.dariah.eu/vocab/index.php?tema=47&amp;/publishing"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref type="website" subtype="service" target="https://hal.archives-ouvertes.fr/ ">
+                  <ref type="service" subtype="website" target="https://hal.archives-ouvertes.fr/ ">
                      <term type="service" key="Hal"/>
                   </ref>
                </linkGrp>
