@@ -6,8 +6,8 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Researcher identifies the convenience of standardized Laser-Induced Breakdown
-               Spectroscopy (LIBS) analysis for glass substrate characterization in the field of
+            <title>Researcher identifies the convenience of
+               standardized LIBS analysis for glass substrate characterization in the field of
                Cultural Heritage</title>
             <author>
                <persName>Marta Castillejo</persName>
@@ -38,13 +38,14 @@
    <text>
       <body>
          <div type="scenario" xml:id="sc_LIBS">
-            <head xml:lang="en" type="scenarioTitle">Researcher identifies the convenience of standardized Laser-Induced Breakdown
-               Spectroscopy (LIBS) analysis for glass substrate characterization in the field of
-		    Cultural Heritage</head>
+            <head xml:lang="en" type="scenarioTitle">Researcher identifies the convenience of
+               standardized LIBS analysis for glass substrate characterization in the field of
+               Cultural Heritage</head>
             <desc type="definition" xml:lang="en">Researcher is interested in accessing systematic
-               works related to LIBS analysis of glass substrates and its application to cultural
-               heritage glass artefacts given the speed, absence of sampling and sample preparation,
-               microscopic resolution and in-situ characterization proper to the technique.</desc>
+               works related to Laser-Induced Breakdown Spectroscopy (LIBS) analysis of glass
+               substrates and its application to cultural heritage glass artefacts given the speed,
+               absence of sampling and sample preparation, microscopic resolution and in-situ
+               characterization proper to the technique.</desc>
             <desc xml:lang="en" type="terms">
                <term source="aurehal" type="discipline" key="AAH">Art and art history</term>
                <term source="aurehal" type="discipline" key="CHM">Cultural heritage and
