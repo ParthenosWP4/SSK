@@ -47,7 +47,7 @@
                      "/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref type="website" subtype="tool" source="zotero" target="PJ88VREG">
+                  <ref type="software" subtype="tool" source="zotero" target="PJ88VREG">
                      <term type="tool" key="MultiSpec"/>
                   </ref>
                </linkGrp>
