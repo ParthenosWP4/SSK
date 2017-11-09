@@ -51,7 +51,7 @@
                      key="http://tadirah.dariah.eu/vocab/index.php?tema=11&amp;/gathering"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref type="article" subtype="technique" source="zotero" target="AVJ3J46Y">
+                  <ref type="tutorial" subtype="article" source="zotero" target="AVJ3J46Y">
                      <term type="technique" key="Raman Spectroscopy"/>
                      <term type="technique" key="LIBS"/>
                   </ref>
