@@ -46,10 +46,10 @@
                      key="http://tadirah.dariah.eu/vocab/index.php?tema=47&amp;/publishing"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref type="website" subtype="service" source="zotero" target="TZX5QSR7">
+                  <ref type="service" subtype="website" source="zotero" target="TZX5QSR7">
                      <term type="service" key="POLYGNOSIS"/>
                   </ref>
-                  <ref type="website" subtype="service" target="https://hal.archives-ouvertes.fr/ ">
+                  <ref type="service" subtype="website" source="zotero" target="TXK2S5FC">
                      <term type="service" key="Hal"/>
                   </ref>
                </linkGrp>
