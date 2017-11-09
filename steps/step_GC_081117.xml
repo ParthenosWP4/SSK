@@ -49,10 +49,10 @@
                      key="http://tadirah.dariah.eu/vocab/index.php?tema=36&amp;/theorizing"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref type="article" subtype="technique" source="zotero" target="D2WE387F">
+                  <ref type="tutorial" subtype="article" source="zotero" target="D2WE387F">
                      <term type="technique" key="LIBS"/>
                   </ref>
-                  <ref type="article" subtype="technique" source="zotero" target="SZDQC8BF">
+                  <ref type="tutorial" subtype="article" source="zotero" target="SZDQC8BF">
                      <term type="technique" key="LIBS"/>
                   </ref>
                </linkGrp>
