@@ -49,7 +49,7 @@
                      key="http://tadirah.dariah.eu/vocab/index.php?tema=10&amp;/discovering"/>
                </desc>
                <linkGrp type="generalResources">
-                  type="tutorial" subtype="article" source="zotero" target="AVJ3J46Y">
+                  <ref type="tutorial" subtype="article" source="zotero" target="AVJ3J46Y">
                      <term type="technique" key="Raman Spectroscopy"/>
                      <term type="technique" key="LIBS"/>
                   </ref>
