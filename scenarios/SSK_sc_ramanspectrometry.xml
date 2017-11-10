@@ -58,13 +58,12 @@
                <term type="objects" key="artifacts" source="tadirah"/>
                <term type="objects" key="data" source="tadirah"/>
                <term type="techniques" key="scanning" source="tadirah"/>
-            </desc>
-            <!-- 
+		 </desc>
             <figure type="image">
                <head></head>
-               <graphic url=""/>
+               <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/SSK-Raman-photo1.tif"/>
                <figDesc></figDesc>
-            </figure>-->
+            </figure>
             <listEvent>
                <event xml:id="s1" type="researchStep" ref="step_RoA_081117"/>
                <event xml:id="s2" type="researchStep" ref="step_P_081117"/>
