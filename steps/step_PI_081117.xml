@@ -71,7 +71,7 @@
                <linkGrp type="projectResources"
                   source="Modern and Contemporary Art in the laboratory"
                   corresp="https://modern.kikirpa.be/">
-                  <ref type="webpage" target="https://modern.kikirpa.be/"/>
+                  <ref type="webpage" target="https://modern.kikirpa.be/" />
                </linkGrp>
             </event>
          </listEvent>
