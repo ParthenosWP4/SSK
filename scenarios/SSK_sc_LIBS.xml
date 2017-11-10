@@ -54,12 +54,11 @@
                <term type="objects" key="standards" source="tadirah"/>
                <term type="techniques" key="tecnology_preservation" source="tadirah"/>
             </desc>
-            <!-- 
             <figure type="image">
                <head></head>
-               <graphic url=""/>
+               <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/SSK-LIBS2.png"/>
                <figDesc></figDesc>
-            </figure>-->
+            </figure>
             <listEvent>
                <event xml:id="s1" type="researchStep" ref="step_RoG_081117"/>
                <event xml:id="s2" type="researchStep" ref="step_SA_081117"/>
