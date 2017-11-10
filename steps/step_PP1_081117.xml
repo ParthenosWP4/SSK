@@ -56,7 +56,7 @@
                      <term type="technique" key="SERDS"/>
                      <term type="technique" key="SSRS"/>
                   </ref>
-                  <ref ttype="tutorial" subtype="article" source="zotero" target="2PAJ6NGT">
+                  <ref type="tutorial" subtype="article" source="zotero" target="2PAJ6NGT">
                      <term type="methodology" key="Raman spectroscopy"/>
                   </ref>
                </linkGrp>
