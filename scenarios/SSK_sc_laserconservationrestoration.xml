@@ -56,12 +56,11 @@
                <term type="objects" key="standards" source="tadirah"/>
                <term type="techniques" key="tecnology_preservation" source="tadirah"/>
             </desc>
-            <!-- 
             <figure type="image">
                <head></head>
-               <graphic url=""/>
+               <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/SSK-Laser-cleaning.png"/>
                <figDesc></figDesc>
-            </figure>-->
+            </figure>
             <listEvent>
                <event xml:id="s1" type="researchStep" ref="step_RLCP_081117"/>
                <event xml:id="s2" type="researchStep" ref="step_DLC_081117"/>
