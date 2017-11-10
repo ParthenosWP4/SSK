@@ -6,7 +6,7 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Perform Statistical Analysis on Data on Historical and Contemporary Occupations</title>
+            <title>Perform Statistical Analysis on Historical and Contemporary Occupations</title>
             <author>
                <persName>Emilie Kraikamp</persName>
                <affiliation>DANS</affiliation>
@@ -32,7 +32,7 @@
    <text>
       <body>
          <div type="scenario" xml:id="sc_statisticalAnalysisOccupations">
-            <head xml:lang="en" type="scenarioTitle">Perform Statistical Analysis on Data on
+            <head xml:lang="en" type="scenarioTitle">Perform Statistical Analysis on
                Historical and Contemporary Occupations</head>
             <desc type="definition" xml:lang="en">Given a large dataset with several raw variables,
                a social science researcher needs to (re)code some of the data in order to properly
