@@ -42,11 +42,11 @@
                <desc xml:lang="fr" type="definition"/>
                <desc xml:lang="en" type="term">
                   <term type="activity" source="http://tadirah.dariah.eu/"
-                     key="http://tadirah.dariah.eu/vocab/index.php?tema=47&amp;/publishing"/>
+                     key="http://tadirah.dariah.eu/vocab/index.php?tema=47&amp;/publishing" />
                </desc>
                <linkGrp type="generalResources">
                   <ref type="service" subtype="website" source="zotero" target="TXK2S5FC">
-                     <term type="service" key="Hal"/>
+                     <term type="service" key="Hal" />
                   </ref>
                </linkGrp>
             </event>
