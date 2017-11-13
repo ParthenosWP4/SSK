@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI 
-      xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario">
+      xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario" xml:id="sc_scholars_standards">
       <teiHeader>
             <fileDesc>
                   <titleStmt>
@@ -42,7 +42,7 @@
       </teiHeader>
       <text>
             <body>
-                  <div type="scenario" xml:id="sc_scholars_standards">
+                  <div type="scenario">
                         <head xml:lang="en" type="scenarioTitle">Scholars needing standards to represent information (reference tools) about persons, titles of works, documents identifiers (shelfmarks)</head>
                         <desc type="definition" xml:lang="en">In medieval studies, it is often needed to define in an unambiguous way information like person names (i.e.: authors), titles of works and documents identifiers (i.e.: shelfmarks). In fact, information can frequently be ambiguous: there are several cases of homonimy; an author can have more than one appellation known; the title of a work can have different forms, and also shelfmarks may have different structures. The quantity of material involved in the research and the time employed to perform it may vary depending on the subject of the research itself.</desc>
                         <desc xml:lang="en" type="terms">

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario" xml:id="sc_trackingDissemination">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -41,7 +41,7 @@
    </teiHeader>
    <text>
       <body>
-         <div type="scenario" xml:id="sc_trackingDissemination">
+         <div type="scenario">
             <head xml:lang="en" type="scenarioTitle">Tracking the dissemination of a specific work</head>
             <desc type="definition" xml:lang="en">In medieval studies, the dissemination of a work
                can give important information on life and movements of the author; plus, it can

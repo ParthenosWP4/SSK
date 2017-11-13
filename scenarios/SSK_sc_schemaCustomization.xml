@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--<?xml-model href="../spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 --><?xml-model href="../spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario"  xml:id="sc_schemaCustomization">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -27,7 +27,7 @@
    <text>
 
       <body>
-         <div type="scenario" xml:id="sc_schemaCustomization">
+         <div type="scenario">
             <head xml:lang="en" type="scenarioTitle">Project-centered EAD customization</head>
             <desc type="definition" xml:lang="en">TEI ODD can be used to document data models
                external to the TEI environment. Several projects working with archival standards (in
