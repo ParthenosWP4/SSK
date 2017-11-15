@@ -47,9 +47,8 @@
                     <desc xml:lang="en" type="terms">
                         <term type="standard" source="standard_list" key="XML"/>
                         <term type="standard" source="standard_list" key="TEI"/>
-                        <term type="standard" source="standard_list" key="EAD"/>
                         <term type="activity" source="http://tadirah.dariah.eu/" key="modeling">modeling</term>
-                        <term type="policies" source="WP3Wizard" key="CD"/>
+                        <!--<term type="policies" source="WP3Wizard" key="CD"/>-->
                     </desc>
                 </event>
             </listEvent>
