@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Step "Obtain the informed consent of participants"</title>
+                <author>
+                    <persName>Hélène Gautier</persName>
+                    <affiliation>Huma-Num/CNRS</affiliation>
+                </author>
+                <author>
+                    <persName>Marie Puren</persName>
+                    <affiliation>INRIA</affiliation>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <authority>Parthenos</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/">
+                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.</p>
+                    </licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Created from scratch</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listEvent>
+                <event type="researchStep">
+                    <head xml:lang="en">Obtain the informed consent of participants</head>
+                    <head xml:lang="fr">Obtenir le consentement éclairé des participants</head>
+                    <desc xml:lang="en" type="definition">Seek consent of the participants by
+                        advising them about risks and benefits of research participation and data
+                        sharing. Inform them how research data will be stored, preserved and used in
+                        the long-term, and how confidentiality can be protected when needed.</desc>
+                    <desc xml:lang="fr" type="definition"/>
+                    <desc xml:lang="en" type="term">
+                        <term type="activity" source="http://tadirah.dariah.eu/"
+                            key="http://tadirah.dariah.eu/vocab/index.php?tema=11&amp;/gathering"/>
+                    </desc>
+                    <linkGrp type="generalResources">
+                        <ref type="tutorial" source="zotero" target="Z4AU7AWG">
+                            
+                        </ref>
+                        <ref type="tutorial" source="zotero" target="VZQP2M6G">
+                            
+                        </ref>
+                       
+                    </linkGrp>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>

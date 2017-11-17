@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Step "Collect and classify"</title>
+                <author>
+                    <persName>Hélène Gautier</persName>
+                    <affiliation>Huma-Num/CNRS</affiliation>
+                </author>
+                <author>
+                    <persName>Marie Puren</persName>
+                    <affiliation>INRIA</affiliation>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <authority>Parthenos</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/">
+                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.</p>
+                    </licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Created from scratch</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listEvent>
+                <event type="researchStep">
+                    <head xml:lang="en">Collect and classify</head>
+                    <head xml:lang="fr">Collecte et classement</head>
+                    <desc xml:lang="en" type="definition">Gather the different materials related to
+                        a survey. Classify them according to a classification plan divided in three
+                        sections (preparation of the survey, field collection, data analysis). Do an
+                        analytical inventory of all the documents collected (provide for each
+                        document the file name, the author, the date, the version and its position
+                        into the classification plan). Give an unique identifier to each
+                        document.</desc>
+                    <desc xml:lang="fr" type="definition">Rassembler les différents matériaux
+                        relatifs à une enquête. Les classer selon un plan de classement composé de
+                        trois sections (préparation de l'enquête, collecte sur le terrain et analyse
+                        des données). Réaliser un inventaire analytique de tous les documents
+                        collectés (pour chaque document sont détaillés le nom du fichier, l'auteur,
+                        la date, la version et sa position sur le plan de classement). Donner un
+                        identifiant unique à chaque document.</desc>
+                    <desc xml:lang="en" type="term">
+                        <term type="activity" source="http://tadirah.dariah.eu/"
+                            key="http://tadirah.dariah.eu/vocab/index.php?tema=11&amp;/gathering"/>
+                    </desc>
+                    <linkGrp type="generalResources">
+                        <ref type="official_documentation" source="zotero" target="XPDZH8WZ">
+                            <term key="EAD" type="official_documentation"/>
+                        </ref>
+                        <ref type="official_documentation" source="zotero" target="X6MUZND9">
+                            <term key="EAD" type="official_documentation"/>
+                        </ref>
+                        <ref type="official_documentation" source="zotero" target="2Z29AVQV">
+                            <term key="EAD" type="official_documentation"/>
+                        </ref>
+                    </linkGrp>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>

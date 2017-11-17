@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Step "Contextualize the research"</title>
+                <author>
+                    <persName>Hélène Gautier</persName>
+                    <affiliation>Huma-Num/CNRS</affiliation>
+                </author>
+                <author>
+                    <persName>Marie Puren</persName>
+                    <affiliation>INRIA</affiliation>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <authority>Parthenos</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/">
+                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.</p>
+                    </licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Created from scratch</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listEvent>
+                <event type="researchStep">
+                    <head xml:lang="en">Contextualize the research</head>
+                    <head xml:lang="fr">Contextualisation de la recherche</head>
+                    <desc xml:lang="en" type="definition">Contextualizing the research is valuable
+                        to make the reuse of the materials easier. Based on the survey materials,
+                        the publications from the research and interviews of the researcher(s), a
+                        report completes the survey. It is composed of different sections giving
+                        information about the genesis of the survey, the theoretical framework, the
+                        realisation of the field survey, the corpus established, the data analysis
+                        and the offspring of the survey.</desc>
+                    <desc xml:lang="fr" type="definition">Proposer une contextualisation facilite la
+                        réutilisation des matériaux. A partir des matériaux de l'enquête, des
+                        publications tirées de la recherche et des entretiens avec le(s)
+                        chercheur(s), un rapport vient compléter l'enquête. Il s'organise en
+                        plusieurs chapitres et documente la genèse de l'enquête, l'univers théorique
+                        de la recherche, la réalisation sur le terrain, le corpus constitué,
+                        l'analyse des données et la postérité de l'enquête.</desc>
+                    <desc xml:lang="en" type="term">
+                        <term type="activity" source="http://tadirah.dariah.eu/"
+                            key="http://tadirah.dariah.eu/vocab/index.php?tema=34&amp;/contextualizing"
+                        />
+                    </desc>
+
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>
