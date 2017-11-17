@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Encode and modelize field surveys for their online dissemination</title>
+                <author>
+                    <persName>Hélène Gautier</persName>
+                    <affiliation>Huma-Num/CNRS</affiliation>
+                </author>
+                <author>
+                    <persName>Marie Puren</persName>
+                    <affiliation>INRIA</affiliation>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <authority>Parthenos ...</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/">
+                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.</p>
+                    </licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Created from scratch</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="scenario" xml:id="sc_DisseminationFieldSurveys">
+                <head xml:lang="en" type="scenarioTitle">Encode and modelize field surveys for their
+                    online dissemination</head>
+                <desc type="definition" xml:lang="en">A researcher wants to preserve and to give
+                    access to field surveys and their related materials. Indeed, to provide a
+                    consistent context and make the reuse of raw data easier, the documentation has
+                    to include not only field materials but also documents about the research
+                    process steps, that’s to say the preparation of the survey (research project,
+                    funding file, etc.), the field collection (interviews, field notebooks, etc.)
+                    and the data analysis (summary sheets, drafts, etc.). This corpus can thus cover
+                    a great variety of media (paper, digital, picture, audio or video records…) and
+                    is organised according to a classification plan. It is supposed that people
+                    interested have agreed that data will be made public available (potentially with
+                    some restrictions).</desc>
+                <desc xml:lang="en" type="terms">
+                    <term source="parthenos" type="discipline" key="SS">Social Sciences</term>
+                    <!-- <term type="objects" key="data" source="tadirah"/>
+                    <term type="objects" key="sound" source="tadirah"/>-->
+                    <term type="techniques" key="encoding" source="tadirah"/>
+                    <term type="InformationResourceTypes" key="document" source="nemo"/>
+                    <term type="InformationResourceTypes" key="sound" source="nemo"/>
+                    <term type="InformationResourceTypes" key="Videorecording" source="nemo"/>
+                    <term type="InformationResourceTypes" key="Technical reports" source="nemo"/>
+                </desc>
+                <figure type="image">
+                    <!-- AJOUTER -->
+                    <head/>
+                    <graphic url=""/>
+                    <figDesc/>
+                </figure>
+                <listEvent>
+                    <event xml:id="s1" type="researchStep" ref="step_OtICoP_171117"/>
+                    <event xml:id="s2" type="researchStep" ref="step_CaC_171117"/>
+                    <event xml:id="s3" type="researchStep" ref="step_SaD_171117"/>
+                    <event xml:id="s4" type="researchStep" ref="step_A_171117"/>
+                    <event xml:id="s5" type="researchStep" ref="step_CiSF_171117"/>
+                    <event xml:id="s6" type="researchStep" ref="step_TtI_171117"/>
+                    <event xml:id="s7" type="researchStep" ref="step_AM_171117"/>
+                    <event xml:id="s8" type="researchStep" ref="step_CtR_171117"/>
+                    <event xml:id="s9" type="researchStep" ref="step_DaA_171117"/>
+                </listEvent>
+            </div>
+        </body>
+    </text>
+</TEI>
