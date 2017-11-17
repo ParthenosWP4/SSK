@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Encode and modelize field surveys for their online dissemination</title>
+                <author>
+                    <persName>Hélène Gautier</persName>
+                    <affiliation>Huma-Num</affiliation>
+                </author>
+                <author>
+                    <persName>Marie Puren</persName>
+                    <affiliation>INRIA</affiliation>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <authority>Parthenos ...</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/">
+                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.</p>
+                    </licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Created from scratch</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="scenario" xml:id="sc_schemaCustomization">
+                <head xml:lang="en" type="scenarioTitle">Encode and modelize field surveys for their online dissemination</head>
+                <desc type="definition" xml:lang="en"></desc>
+                <desc xml:lang="en" type="terms">
+                    <term source="parthenos" type="discipline" key="SS">Social Sciences</term>
+                    <term type="objects" key="data" source="tadirah"/>
+                    <term type="objects" key="sound" source="tadirah"/>
+                    <term type="techniques" key="encoding" source="tadirah"/>
+                </desc>
+                <figure type="image">
+                    <head></head>
+                    <graphic url=""/>
+                    <figDesc></figDesc>
+                </figure>
+                <listEvent>
+                    <event xml:id="s1" type="researchStep" ref="step_Rv_121017"/>
+                    <event xml:id="s2" type="researchStep" ref="step_CViS_121017"/>
+                    <event xml:id="s3" type="researchStep" ref="step_TfRotS_121017"/>
+                    <event xml:id="s4" type="researchStep" ref="step_MtRbV_121017"/>
+                    <event xml:id="s5" type="researchStep" ref="step_A_121017"/>
+                </listEvent>
+            </div>
+        </body>
+    </text>
+</TEI>
