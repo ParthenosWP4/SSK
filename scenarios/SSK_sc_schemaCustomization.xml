@@ -34,15 +34,16 @@
                particular EAD) use it as well. PARTHENOS created and maintain an instance of the EAD
                specification in ODD, that can be used to create project oriented customizations. </desc>
             <desc xml:lang="en" type="terms">
-               <term source="parthenos" type="discipline" key="SOTP">Studies of the past</term>
-               <term source="parthenos" type="discipline" key="HAD">Heritage and applied
-                  disciplines</term>
-               <term type="objects" key="metadata" source="tadirah"/>
+               <term source="aureHAL" type="discipline">Library and information sciences</term>
+               <term source="aureHAL" type="discipline">Cultural heritage and museology</term>
+               <term type="objects" key="Catalogs" source="nemo"/>
+               <term type="techniques" source="tadirah" key="encoding"/>
+               <term type="techniques" source="tadirah" key="mapping"/>
             </desc>
             <figure type="image">
                <head/>
                <graphic
-                  url="https://c.pxhere.com/photos/c0/57/book_read_library_spine_hardcover-1397643.jpg!d"/>
+                  url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/SSK-schemCust.jpg"/>
                <figDesc>Photo by Chris Lawton on Unsplash</figDesc>
             </figure>
             <listEvent>
