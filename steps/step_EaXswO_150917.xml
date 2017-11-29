@@ -79,8 +79,8 @@
                         </ref>
                         <ref type="code" source="github"
                             target="https://github.com/PARTHENOSWP4/standardsLibrary/tree/master/archivalDescription/EAD/odd">
-                            <term type="standard" source="standard_list" key="TEI"/>
                             <term type="standard" source="standard_list" key="EAD"/>
+                            <term type="standard" source="standard_list" key="TEI"/>
                         </ref>
                     </linkGrp>
                 </event>
