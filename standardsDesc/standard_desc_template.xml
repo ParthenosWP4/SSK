@@ -1,0 +1,17 @@
+<doc>
+    <field name="id">33 (must be incremented by 1 for each new standard)</field>
+    <field name="standard_name">Standard Sample Name</field>
+    <field name="standard_name_complete">Standard Sample Name Complete</field>
+    <field name="standard_desc_eng">English Description</field>
+    <field name="standard_desc_fr">French Description</field>
+    <field name="standard_desc_deu">German Description</field>
+    <field name="standard_desc_esp">Spanish Description</field>
+    <field name="standard_data_type">select from: Horizontal->e.g. XML, CSV and vertical ->e.g.
+        EDM</field>
+    <field name="standard_link">http://link_to_standard_official_page.com</field>
+    <field name="standard_tags">Tag1: example-> Classification</field>
+    <field name="standard_tags">Tag2: example-> Human-history</field>
+    <field name="standard_tags">Tag3: example-> Research Activities - Organizing</field>
+    <field name="standard_tags">Tag4: example-> Research Objects - Digital Humanities</field>
+    <field name="standard_resources">http://link_to_resource_about_the _standard.com</field>
+</doc>

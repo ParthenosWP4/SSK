@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <?xml-model href="PureOdd.rnc" type="application/relax-ng-compact-syntax"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+    xml:lang="en">
     <teiHeader>
         <fileDesc>
             <titleStmt>
@@ -472,6 +473,69 @@
                         </egXML>
                     </p>
                 </div>
+                <div xml:id="SSK_param">
+                    <head>param</head>
+                    <p>It is possible to use Based on the vocabularies used (zero or more in this
+                        list): Tadirah activity Tadirah objects Tadirah techniques Standards
+                        Disciplines Semi-limited list of values Sample: <egXML
+                            xmlns="http://www.tei-c.org/ns/Examples"><event type="researchStep"
+                                ref="referencedStep">
+                                <label mode="replace">New label</label>
+                                <desc mode="replace">new description</desc>
+                                <!-- resources -->
+                                <param name="standards" value="XML"/>
+                                <param name="activity" value="conversion"/>
+                                <param name="techniques" value="Text Bearing Objects"/> ...
+                            </event></egXML> In this example, the resources displayed would only be
+                        the <gi>ref</gi> that contains one or more <gi>term</gi> elements with
+                        values "XML", "conversion" and "Text Bearing Objects": <egXML
+                            xmlns="http://www.tei-c.org/ns/Examples">
+                            <linkGrp type="generalResources">
+                                <ref type="code" target="URL">
+                                    <term type="activity" source="tadirah" key="conversion"/>
+                                    <term type="standards" key="XML"/>
+                                </ref>
+                                <ref type="code" target="URL">
+                                    <term type="techniques" source="tadirah"
+                                        key="Text Bearing Objects"/>
+                                    <term type="standards" key="XML"/>
+                                </ref>
+                                <ref type="code" target="URL">
+                                    <term type="techniques" source="tadirah"
+                                        key="Text Bearing Objects"/>
+                                    <term type="activity" source="tadirah" key="conversion"/>
+                                </ref>
+                                <ref type="code" target="URL">
+                                    <term type="standards" key="XML"/>
+                                </ref>
+                            </linkGrp>
+                        </egXML> Parameters to include scenarios into scenarios This mechanism
+                        should record The reference to a scenario The first step to include The last
+                        step to include (more complex) A set of steps, not necessarily consecutive.
+                        Possibilities: I) a list of consecutive steps <egXML
+                            xmlns="http://www.tei-c.org/ns/Examples">
+                            <event xml:id="jjjj" type="researchScenario"
+                                ref="scenario_to_Be_Included">
+                                <param name="start" value="3"/>
+                                <param name="end" value="6"/>
+                            </event></egXML> → select steps 3, 4, 5, 6 II) a set of steps, sometimes
+                        consecutive, sometimes not <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <event xml:id="jjjj" type="researchScenario"
+                                ref="scenario_to_Be_Included">
+                                <param name="range" value="1,3,5-7"/>
+                            </event></egXML> → select steps 1, 3, 5, 6, 7 NB = the index reflects
+                        the oreder of the step in the scenario file Mixing both parameters This
+                        example shows the inclusion of a scenario into another and a filter based on
+                        a keyword for a particular step in this subset. If the @corresp is not used,
+                        the <gi>param</gi> will be applied to all the included steps. <egXML
+                            xmlns="http://www.tei-c.org/ns/Examples"><event xml:id="jjjj"
+                                type="researchScenario" ref="scenario_to_Be_Included">
+                                <param name="range" value="1,2,4-6"/>
+                                <!-- filter resources of the step nr 2 -->
+                                <param name="standards" value="XML" corresp="#2"/>
+                            </event></egXML>
+                    </p>
+                </div>
 
             </div>
         </body>
@@ -489,6 +553,11 @@
 
                     <!-- Elements changed-->
                     <elementSpec ident="TEI" mode="change">
+                        <constraintSpec scheme="schematron" ident="ns">
+                            <constraint>
+                                <sch:ns prefix="tei" uri="http://www.tei-c.org/ns/1.0"/>
+                            </constraint>
+                        </constraintSpec>
                         <attList>
                             <attDef ident="type" usage="req" mode="change">
                                 <datatype>
@@ -552,8 +621,22 @@
                                     <elementRef key="link"/>
                                 </alternate>
                                 <elementRef key="event" minOccurs="0" maxOccurs="unbounded"/>
+                                <!-- 2017-11-15: Add param as child of event-->
+                                <elementRef key="param" minOccurs="0" maxOccurs="unbounded"/>
                             </sequence>
                         </content>
+                        <constraintSpec scheme="schematron" ident="paramInScenarios">
+                            <desc>the parameters, expressed by <gi>param</gi> should only be used in
+                                scenario files, i.e. files where TEI <att>type</att> is
+                                    <hi>researchScenario</hi></desc>
+                            <constraint>
+                                <sch:rule context="tei:param">
+                                    <sch:assert test="ancestor::tei:TEI[@type ='researchScenario']"
+                                        >Parameters should only be used in scenario
+                                        files</sch:assert>
+                                </sch:rule>
+                            </constraint>
+                        </constraintSpec>
                         <attList>
                             <attDef ident="type" usage="req" mode="change">
                                 <datatype>

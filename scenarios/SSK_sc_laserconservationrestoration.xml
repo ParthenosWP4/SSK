@@ -57,9 +57,10 @@
                <term type="techniques" key="tecnology_preservation" source="tadirah"/>
             </desc>
             <figure type="image">
-               <head></head>
-               <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/SSK-Laser-cleaning.png"/>
-               <figDesc></figDesc>
+               <head/>
+               <graphic
+                  url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/SSK-Laser-cleaning.png"/>
+               <figDesc/>
             </figure>
             <listEvent>
                <event xml:id="s1" type="researchStep" ref="step_RLCP_081117"/>

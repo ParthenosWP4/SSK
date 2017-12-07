@@ -19,65 +19,63 @@
             <head>Parameters</head>
             <!-- the parameters are put inside an egXML tag for HTML rendition -->
             <!--<egXML xmlns="http://www.tei-c.org/ns/Examples">-->
-               <fs type="SSKSource">
-                  <f name="serviceName">
-                     <string>Zotero</string>
-                  </f>
-                  <f name="url">
-                     <fs>
-                        <f name="base">
-                           <string>https://api.zotero.org</string>
-                        </f>
-                        <f name="urlParam">
-                           <vColl org="list">
-                              <string>groups</string>
-                              <string>users</string>
-                           </vColl>
-                        </f>
-                     </fs>
-                  </f>
-                  <f name="parthenosGroupId">
-                     <string>427927</string>
-                  </f>
-               </fs>
-               <fs type="SSKSource">
-                  <f name="service_name">
-                     <string>GitHub</string>
-                  </f>
-                  <f name="url">
-                     <fs>
-                        <f name="base"><string>https://api.github.com</string></f>
-                        <f name="url">
-                           <vColl org="list">
-                              <string>users</string>
-                              <string>repos</string>
-                           </vColl>
-                        </f>
-                     </fs>
-                  </f>
-               </fs>
-               <fs type="SSKSource">
-                  <f name="serviceName">
-                     <string>WP3 Wizard</string>
-                  </f>
-                  <f>
+            <fs type="SSKSource">
+               <f name="serviceName">
+                  <string>Zotero</string>
+               </f>
+               <f name="url">
                   <fs>
-                     <f name="mapping">
-                        <fs>
-                           <!-- topics -->
-                           <f n="CD">
-                              <vColl org="list">
-                                 <string>DATA CREATION</string>
-                              </vColl>
-                           </f>
-                        </fs>
-                        <fs>
-                           <!-- disciplines -->
-                        </fs>
+                     <f name="base">
+                        <string>https://api.zotero.org</string>
+                     </f>
+                     <f name="urlParam">
+                        <vColl org="list">
+                           <string>groups</string>
+                           <string>users</string>
+                        </vColl>
                      </f>
                   </fs>
-                  </f>
-               </fs>
+               </f>
+               <f name="parthenosGroupId">
+                  <string>427927</string>
+               </f>
+            </fs>
+            <fs type="SSKSource">
+               <f name="service_name">
+                  <string>GitHub</string>
+               </f>
+               <f name="url">
+                  <fs>
+                     <f name="base"><string>https://api.github.com</string></f>
+                     <f name="url">
+                        <vColl org="list">
+                           <string>users</string>
+                           <string>repos</string>
+                        </vColl>
+                     </f>
+                  </fs>
+               </f>
+            </fs>
+            
+            <!-- This needs some more work -->
+            <fs type="SSKSource">
+               <f name="serviceName">
+                  <string>WP3 Wizard</string>
+               </f>
+               <f name="mapping">
+                  <fs>
+                     <!-- topics -->
+                     <f name="CD">
+                        <vColl org="list">
+                           <string>DATA CREATION</string>
+                        </vColl>
+                     </f>
+                  </fs>
+                  <!-- <fs>
+                           <f name="disciplines"></f>
+                        </fs>-->
+               </f>
+            </fs>
             <!--</egXML>-->
             <!--
 
