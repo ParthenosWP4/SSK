@@ -127,6 +127,70 @@
                 </div>
             </div>
             <div>
+                <head>The Resources</head>
+                <div>
+                    <head>Zotero</head>
+                    <p>The resources to be presented in the SSK are preferably stored in Zotero
+                        Parthenos WP4 database, accessible <ref
+                            target="https://www.zotero.org/groups/427927/parthenos-wp4">here</ref>.
+                        To add a resource, an account on Zotero is required. Contact the SSK team to
+                        join the group (ssk [at] inria [dot] fr)</p>
+                    <p>The Zotero database fields required by the SSK are:<list>
+                            <item><label>Item type</label>: <desc>The item type is most of the time
+                                    identified by Zotero but it's important to check it. The most
+                                    used item types are:<list>
+                                        <item>webpage</item>
+                                        <item>blogpost</item>
+                                        <item>journal article</item>
+                                        <item>book section</item>
+                                        <item>book</item>
+                                        <item>presentation</item>
+                                    </list></desc></item>
+                            <item><label>Title</label>: <desc>The title of the
+                                resource</desc></item>
+                            <item><label>Author</label>: <desc>The author of the
+                                resource</desc></item>
+                            <item><label>Date</label>: <desc>The date of the resource</desc></item>
+                            <item><label>Url</label>: <desc>the url of the resource</desc></item>
+                            <item><label>Language</label>: <desc>the language of the
+                                resource</desc></item>
+                            <item><label>Source</label>: <desc><list>
+                                        <item>For webpages: website title</item>
+                                        <item>For blogposts: blog title</item>
+                                        <item>For journal articles, books, book sections, documents:
+                                            library catalog</item>
+                                    </list></desc>
+                            </item>
+                        </list></p>
+                </div>
+                <div>
+                    <head>GitHub</head>
+                    <p>It is also possible to point to a GitHub user or repository. In this case,
+                        the informations that the SSK shows (via the API) are:</p>
+                    <list>
+                        <item>For a GitHub User<list>
+                                <item>name</item>
+                                <item>html_url</item>
+                                <item>bio</item>
+                                <item>updated_at</item>
+                                <item>type</item>
+                                <item>avatar_url</item>
+                            </list></item>
+                        <item>For a GitHub repository<list>
+                                <item>owner (NB : a GitHub user)</item>
+                                <item>full_name</item>
+                                <item>html_url</item>
+                                <item>description</item>
+                            </list>
+                        </item>
+                    </list>
+                    <p>A dedicated GitHub repository has been set for projects supported or
+                        maintained by Parthenos. It is available <ref
+                            target="https://github.com/ParthenosWP4/standardsLibrary">here</ref>.
+                        Contact the SSK team for more information.</p>
+                </div>
+            </div>
+            <div>
                 <head>Detailed structure</head>
                 <p><ref target="#SSKScenarios">Scenarios</ref> and <ref target="#SSKSteps"
                         >steps</ref> are represented in different files. This choice has been made
@@ -747,10 +811,10 @@
                         <head>param</head>
                         <p>When pointing to a step inside a scenario, it is possible to use
                             parameters to refine the behaviour of this step. This parametrization
-                            uses the element <gi>param</gi> in <gi>event</gi>. Two different uses are
-                            possible for the moment, <ref target="#param1">(1)</ref> to refine the
-                            resources selection in a given step, <ref target="#param2">(2)</ref> to
-                            include some steps of a scenario in another scenario.</p>
+                            uses the element <gi>param</gi> in <gi>event</gi>. Two different uses
+                            are possible for the moment, <ref target="#param1">(1)</ref> to refine
+                            the resources selection in a given step, <ref target="#param2">(2)</ref>
+                            to include some steps of a scenario in another scenario.</p>
                         <div xml:id="param1">
                             <head>Parameter #1 : refine the resources</head>
                             <p>It is possible to select the resources to be displayed in a scenario.
@@ -851,11 +915,10 @@
                         <div>
                             <head>Mixing parameters </head>
                             <p>This example shows the inclusion of a scenario into another and a
-                                filter based on a keyword for a particular step in this subset.
-                                If the @corresp is not used, the <gi>param</gi> will be applied
-                                to all the included steps. <egXML
-                                    xmlns="http://www.tei-c.org/ns/Examples"><event
-                                        xml:id="jjjj" type="researchScenario"
+                                filter based on a keyword for a particular step in this subset. If
+                                the @corresp is not used, the <gi>param</gi> will be applied to all
+                                the included steps. <egXML xmlns="http://www.tei-c.org/ns/Examples"
+                                        ><event xml:id="jjjj" type="researchScenario"
                                         ref="scenario_to_Be_Included">
                                         <param name="range" value="1,2,4-6"/>
                                         <!-- filter resources of the step nr 2 -->
@@ -875,7 +938,8 @@
                     <moduleRef key="textstructure" except=""/>
                     <moduleRef key="namesdates" except=""/>
                     <moduleRef key="linking" except=""/>
-                    <moduleRef key="tagdocs" except=""/>
+                    <moduleRef key="tagdocs"
+                        except="altIdent alternate anyElement attDef attList attRef classRef classSpec classes code constraint constraintSpec content dataFacet dataRef dataSpec datatype defaultVal eg egXML elementRef elementSpec empty equiv exemplum ident listRef macroRef macroSpec memberOf model modelGrp modelSequence moduleRef moduleSpec outputRendition paramList paramSpec remarks schemaSpec sequence specDesc specGrp specGrpRef specList tag textNode val valDesc valItem valList"/>
                     <moduleRef key="figures"/>
 
                     <!-- Elements changed-->
