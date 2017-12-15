@@ -38,7 +38,14 @@ theory of liability, whether in contract, strict liability, or tort
 of this software, even if advised of the possibility of such damage.
 
 */
-
+/*.tei_toc{
+    position:fixed;
+    width:200px;
+    overflow:auto;
+}
+.teidiv0{
+    margin-left:350px;
+}*/
 /* main layout */
 /* Parthenos = full url for odd.css. */
 @import url(http://www.tei-c.org/Vault/P5/current/xml/tei/odd/odd.css);
