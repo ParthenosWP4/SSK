@@ -6,7 +6,7 @@
       <fileDesc>
          <titleStmt>
             <!-- Title of the tei document, not title of the scenario -->
-            <title>Description of the scenario "Corpus modelling in TEI"</title>
+            <title>Description of the scenario \"Corpus modelling in TEI\"</title>
             <author>
                <persName>Klaus Illmayer</persName>
                <affiliation>OEAW-ACDH</affiliation>
