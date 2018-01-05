@@ -39,14 +39,14 @@
             <divGen type="toc"/>
         </front>
         <body>
-            <div>
+            <!--    <div>
                 <head>Introduction</head>
                 <p/>
             </div>
             <div>
                 <head>Text Encoding Initative Guidelines</head>
                 <p/>
-            </div>
+            </div>-->
             <div>
                 <head>The SSK TEI in short</head>
                 <p>The SSK offers researchers needing standardized methods and resources complete
@@ -562,131 +562,191 @@
                                         <item>Text Mining</item>
                                     </list></p>
                             </div>
-                            <div xml:id="nemoObjects">
-                                <head>NEMO objects</head>
-                                <list>
-                                    <item n="1">Books<list>
-                                            <item n="1.1">Abstracts/summaries</item>
-                                            <item n="1.2">Bibliographies</item>
-                                            <item n="1.3">Calendars</item>
-                                            <item n="1.4">Catalogs</item>
-                                            <item n="1.5">Comics/graphic novels</item>
-                                            <item n="1.6">Dictionaries</item>
-                                            <item n="1.7">Directories</item>
-                                            <item n="1.8">Discographies</item>
-                                            <item n="1.9">Encyclopedias</item>
-                                            <item n="1.10">Filmographies</item>
-                                            <item n="1.11">Handbooks</item>
-                                            <item n="1.12">Indexes</item>
-                                            <item n="1.13">Law reports and digests</item>
-                                            <item n="1.14">Legal articles</item>
-                                            <item n="1.15">Legal cases and case notes</item>
-                                            <item n="1.16">Legislation</item>
-                                            <item n="1.17">Offprints</item>
-                                            <item n="1.18">Patent document</item>
-                                            <item n="1.19">Programmed texts</item>
-                                            <item n="1.20">Reviews</item>
-                                            <item n="1.21">Standards/specifications</item>
-                                            <item n="1.22">Statistics</item>
-                                            <item n="1.23">Surveys of literature in a subject
-                                                area</item>
-                                            <item n="1.24">Technical reports</item>
-                                            <item n="1.25">Theses</item>
-                                            <item n="1.26">Treaties</item>
-                                            <item n="1.27">Yearbooks</item>
-                                        </list>
-                                    </item>
-                                    <item n="2">Computer Files<list>
-                                            <item n="2.1">Bibliographic data</item>
-                                            <item n="2.2">Combination</item>
-                                            <item n="2.3">Computer program</item>
-                                            <item n="2.4">Document</item>
-                                            <item n="2.5">Font</item>
-                                            <item n="2.6">Game</item>
-                                            <item n="2.7">Interactive multimedia</item>
-                                            <item n="2.8">Numeric data</item>
-                                            <item n="2.9">Online system or service</item>
-                                            <item n="2.10">Representational</item>
-                                            <item n="2.11">Sound</item>
-                                        </list></item>
-                                    <item n="3">Continuing Resources <list>
-                                            <item n="3.1">Abstracts/summaries</item>
-                                            <item n="3.2">Bibliographies</item>
-                                            <item n="3.3">Biography</item>
-                                            <item n="3.4">Calendars</item>
-                                            <item n="3.5">Catalogs</item>
-                                            <item n="3.6">Comics/graphic novels</item>
-                                            <item n="3.7">Dictionaries</item>
-                                            <item n="3.8">Directories</item>
-                                            <item n="3.9">Discographies</item>
-                                            <item n="3.10">Encyclopedias</item>
-                                            <item n="3.11">Filmographies</item>
-                                            <item n="3.12">Handbooks</item>
-                                            <item n="3.13">Indexes</item>
-                                            <item n="3.14">Law reports and digests</item>
-                                            <item n="3.15">Legal articles</item>
-                                            <item n="3.16">Legal cases and case notes</item>
-                                            <item n="3.17">Legislation</item>
-                                            <item n="3.18">Programmed texts</item>
-                                            <item n="3.19">Reviews</item>
-                                            <item n="3.20">Standards/specifications</item>
-                                            <item n="3.21">Statistics</item>
-                                            <item n="3.22">Surveys of literature in a subject area </item>
-                                            <item n="3.23">Technical reports</item>
-                                            <item n="3.24">Theses</item>
-                                            <item n="3.25">Treaties</item>
-                                            <item n="3.26">Yearbooks</item>
-                                        </list></item>
-                                    <item n="4">Maps <list>
-                                            <item n="4.1">Atlas</item>
-                                            <item n="4.2">Bound as part of another work</item>
-                                            <item n="4.3">Globe</item>
-                                            <item n="4.4">Map serial</item>
-                                            <item n="4.5">Map series</item>
-                                            <item n="4.6">Separate supplement to another work</item>
-                                            <item n="4.7">Single map</item>
-                                        </list></item>
-                                    <item n="5">Mixed Materials</item>
-                                    <item n="6">Music<list>
-                                            <item n="6.1">Accompaniment reduced for keyboard</item>
-                                            <item n="6.2">Chorus score</item>
-                                            <item n="6.3">Close score</item>
-                                            <item n="6.4">Condensed score</item>
-                                            <item n="6.5">Condensed score or piano-conductor
-                                                score</item>
-                                            <item n="6.6">Full score</item>
-                                            <item n="6.7">Full score, miniature or study size</item>
-                                            <item n="6.8">Multiple score formats</item>
-                                            <item n="6.9">Performer-conductor part</item>
-                                            <item n="6.10">Score</item>
-                                            <item n="6.11">Vocal score</item>
-                                            <item n="6.12">Voice score with accompaniment
-                                                omitted</item>
-                                        </list>
-                                    </item>
-                                    <item n="7">Visual Materials<list>
-                                            <item n="7.1">Art original</item>
-                                            <item n="7.2">Art reproduction</item>
-                                            <item n="7.3">Chart</item>
-                                            <item n="7.4">Diorama</item>
-                                            <item n="7.5">Filmstrip</item>
-                                            <item n="7.6">Flash card</item>
-                                            <item n="7.7">Game</item>
-                                            <item n="7.8">Graphic</item>
-                                            <item n="7.9">Kit</item>
-                                            <item n="7.10">Microscope slide</item>
-                                            <item n="7.11">Model</item>
-                                            <item n="7.12">Motion picture</item>
-                                            <item n="7.13">Picture</item>
-                                            <item n="7.14">Realia</item>
-                                            <item n="7.15">Slide</item>
-                                            <item n="7.16">Technical drawing</item>
-                                            <item n="7.17">Toy</item>
-                                            <item n="7.18">Transparency</item>
-                                            <item n="7.19">Videorecording</item>
-                                        </list>
-                                    </item>
-                                </list>
+                            <div xml:id="researchObjects">
+                                <head>Research objects taxonomies</head>
+                                <p>We weren't able to find a single taxonomy complete enough for the
+                                    research objects (<hi rend="italic">i.e.</hi> the material on
+                                    which the research process is undertaken). Therefore, It is
+                                    possible to take a term from two taxonomies : the <ref
+                                        target="#nemoObjects">NeDIMAH resource types</ref> and the
+                                        <ref target="#tadirahObjects">TaDIRAH objects</ref></p>
+                                <div xml:id="tadirahObjects">
+                                    <head>TaDIRAH Objects</head>
+                                    <p>The TaDIRAH objects vocabularu contains 36 types of research
+                                        objects, including the most common used by Arts and
+                                        Humanities scholars.</p>
+                                    <list>
+                                        <item> Artifacts </item>
+                                        <item> Bibliographic Listings </item>
+                                        <item> Code </item>
+                                        <item> Computers </item>
+                                        <item> Curricula </item>
+                                        <item> Digital Humanities </item>
+                                        <item> Data </item>
+                                        <item> File </item>
+                                        <item> Images </item>
+                                        <item> Images (3D) </item>
+                                        <item> Infrastructure </item>
+                                        <item> Interaction </item>
+                                        <item> Language </item>
+                                        <item> Link </item>
+                                        <item> Literature </item>
+                                        <item> Manuscript </item>
+                                        <item> Map </item>
+                                        <item> Metadata </item>
+                                        <item> Methods </item>
+                                        <item> Multimedia </item>
+                                        <item> Multimodal </item>
+                                        <item> Named Entities </item>
+                                        <item> Persons </item>
+                                        <item> Projects </item>
+                                        <item> Research </item>
+                                        <item> Research Process </item>
+                                        <item> Research Results </item>
+                                        <item> Sheet Music </item>
+                                        <item> Software </item>
+                                        <item> Sound </item>
+                                        <item> Standards </item>
+                                        <item> Text </item>
+                                        <item> Text Bearing Objects </item>
+                                        <item> Tools </item>
+                                        <item> Video </item>
+                                        <item> VREs </item>
+                                    </list>
+                                </div>
+                                <div xml:id="nemoObjects">
+                                    <head>NeDIMAH resource types</head>
+                                    <p>The NeDIMAH resource types contains 106 terms divided in 7
+                                        categories : Books, Computer Files, Continuining Resources,
+                                        Maps, Mixed Materials, Music and Visual Materials.</p>
+                                    <list>
+                                        <item n="1">Books<list>
+                                                <item n="1.1">Abstracts/summaries</item>
+                                                <item n="1.2">Bibliographies</item>
+                                                <item n="1.3">Calendars</item>
+                                                <item n="1.4">Catalogs</item>
+                                                <item n="1.5">Comics/graphic novels</item>
+                                                <item n="1.6">Dictionaries</item>
+                                                <item n="1.7">Directories</item>
+                                                <item n="1.8">Discographies</item>
+                                                <item n="1.9">Encyclopedias</item>
+                                                <item n="1.10">Filmographies</item>
+                                                <item n="1.11">Handbooks</item>
+                                                <item n="1.12">Indexes</item>
+                                                <item n="1.13">Law reports and digests</item>
+                                                <item n="1.14">Legal articles</item>
+                                                <item n="1.15">Legal cases and case notes</item>
+                                                <item n="1.16">Legislation</item>
+                                                <item n="1.17">Offprints</item>
+                                                <item n="1.18">Patent document</item>
+                                                <item n="1.19">Programmed texts</item>
+                                                <item n="1.20">Reviews</item>
+                                                <item n="1.21">Standards/specifications</item>
+                                                <item n="1.22">Statistics</item>
+                                                <item n="1.23">Surveys of literature in a subject
+                                                  area</item>
+                                                <item n="1.24">Technical reports</item>
+                                                <item n="1.25">Theses</item>
+                                                <item n="1.26">Treaties</item>
+                                                <item n="1.27">Yearbooks</item>
+                                            </list>
+                                        </item>
+                                        <item n="2">Computer Files<list>
+                                                <item n="2.1">Bibliographic data</item>
+                                                <item n="2.2">Combination</item>
+                                                <item n="2.3">Computer program</item>
+                                                <item n="2.4">Document</item>
+                                                <item n="2.5">Font</item>
+                                                <item n="2.6">Game</item>
+                                                <item n="2.7">Interactive multimedia</item>
+                                                <item n="2.8">Numeric data</item>
+                                                <item n="2.9">Online system or service</item>
+                                                <item n="2.10">Representational</item>
+                                                <item n="2.11">Sound</item>
+                                            </list></item>
+                                        <item n="3">Continuing Resources <list>
+                                                <item n="3.1">Abstracts/summaries</item>
+                                                <item n="3.2">Bibliographies</item>
+                                                <item n="3.3">Biography</item>
+                                                <item n="3.4">Calendars</item>
+                                                <item n="3.5">Catalogs</item>
+                                                <item n="3.6">Comics/graphic novels</item>
+                                                <item n="3.7">Dictionaries</item>
+                                                <item n="3.8">Directories</item>
+                                                <item n="3.9">Discographies</item>
+                                                <item n="3.10">Encyclopedias</item>
+                                                <item n="3.11">Filmographies</item>
+                                                <item n="3.12">Handbooks</item>
+                                                <item n="3.13">Indexes</item>
+                                                <item n="3.14">Law reports and digests</item>
+                                                <item n="3.15">Legal articles</item>
+                                                <item n="3.16">Legal cases and case notes</item>
+                                                <item n="3.17">Legislation</item>
+                                                <item n="3.18">Programmed texts</item>
+                                                <item n="3.19">Reviews</item>
+                                                <item n="3.20">Standards/specifications</item>
+                                                <item n="3.21">Statistics</item>
+                                                <item n="3.22">Surveys of literature in a subject
+                                                  area </item>
+                                                <item n="3.23">Technical reports</item>
+                                                <item n="3.24">Theses</item>
+                                                <item n="3.25">Treaties</item>
+                                                <item n="3.26">Yearbooks</item>
+                                            </list></item>
+                                        <item n="4">Maps <list>
+                                                <item n="4.1">Atlas</item>
+                                                <item n="4.2">Bound as part of another work</item>
+                                                <item n="4.3">Globe</item>
+                                                <item n="4.4">Map serial</item>
+                                                <item n="4.5">Map series</item>
+                                                <item n="4.6">Separate supplement to another
+                                                  work</item>
+                                                <item n="4.7">Single map</item>
+                                            </list></item>
+                                        <item n="5">Mixed Materials</item>
+                                        <item n="6">Music<list>
+                                                <item n="6.1">Accompaniment reduced for
+                                                  keyboard</item>
+                                                <item n="6.2">Chorus score</item>
+                                                <item n="6.3">Close score</item>
+                                                <item n="6.4">Condensed score</item>
+                                                <item n="6.5">Condensed score or piano-conductor
+                                                  score</item>
+                                                <item n="6.6">Full score</item>
+                                                <item n="6.7">Full score, miniature or study
+                                                  size</item>
+                                                <item n="6.8">Multiple score formats</item>
+                                                <item n="6.9">Performer-conductor part</item>
+                                                <item n="6.10">Score</item>
+                                                <item n="6.11">Vocal score</item>
+                                                <item n="6.12">Voice score with accompaniment
+                                                  omitted</item>
+                                            </list>
+                                        </item>
+                                        <item n="7">Visual Materials<list>
+                                                <item n="7.1">Art original</item>
+                                                <item n="7.2">Art reproduction</item>
+                                                <item n="7.3">Chart</item>
+                                                <item n="7.4">Diorama</item>
+                                                <item n="7.5">Filmstrip</item>
+                                                <item n="7.6">Flash card</item>
+                                                <item n="7.7">Game</item>
+                                                <item n="7.8">Graphic</item>
+                                                <item n="7.9">Kit</item>
+                                                <item n="7.10">Microscope slide</item>
+                                                <item n="7.11">Model</item>
+                                                <item n="7.12">Motion picture</item>
+                                                <item n="7.13">Picture</item>
+                                                <item n="7.14">Realia</item>
+                                                <item n="7.15">Slide</item>
+                                                <item n="7.16">Technical drawing</item>
+                                                <item n="7.17">Toy</item>
+                                                <item n="7.18">Transparency</item>
+                                                <item n="7.19">Videorecording</item>
+                                            </list>
+                                        </item>
+                                    </list>
+                                </div>
                             </div>
                             <div xml:id="aurehalDisciplines">
                                 <head>aureHAL disciplines</head>
