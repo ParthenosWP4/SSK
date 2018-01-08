@@ -4,6 +4,7 @@
     exclude-result-prefixes="xs"
     version="2.0">
         <xsl:output method="text"/>
+        <xsl:strip-space elements="*"/>
 
         <xsl:template match="/">{
             <xsl:apply-templates select="*"/>}
@@ -30,6 +31,9 @@
                 <xsl:otherwise>{
                     <xsl:apply-templates select="@*"/>
                     <xsl:apply-templates select="*"/>
+                    <xsl:if test="text()">
+                "content": "<xsl:value-of select="text()"/>"
+                    }</xsl:if>
                     }</xsl:otherwise>
             </xsl:choose>
             <xsl:if test="following-sibling::*">,</xsl:if>
