@@ -33,7 +33,8 @@
                     <xsl:apply-templates select="*"/>
                     <xsl:if test="text()">
                 "content": "<xsl:value-of select="text()"/>"
-                    }</xsl:if></xsl:otherwise>
+                    </xsl:if>
+                }</xsl:otherwise>
             </xsl:choose>
             <xsl:if test="following-sibling::*">,</xsl:if>
 
