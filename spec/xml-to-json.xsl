@@ -286,7 +286,7 @@
       <xsl:when test="$use-badgerfish">
         <json:object>
           <json:member>
-            <json:name>$</json:name>
+            <json:name>content</json:name>
             <json:value>
               <xsl:value-of select="$node"/>
             </json:value>
