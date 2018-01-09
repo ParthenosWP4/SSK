@@ -47,6 +47,7 @@
             </figure>
             <listEvent>
                <event xml:id="s1" type="researchStep" ref="step_EaXswO_150917"/>
+               <event xml:id="s1" type="researchStep" ref="step_EaXswO_150917"/>
             </listEvent>
          </div>
       </body>
