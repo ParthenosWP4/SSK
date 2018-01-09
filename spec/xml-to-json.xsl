@@ -201,7 +201,7 @@
               <xsl:copy-of select="json:create-namespaces($node)"/>
               <xsl:copy-of select="json:create-attributes($node)"/>
               <json:member>
-                <json:name>$</json:name>
+                <json:name>content</json:name>
                 <json:value><xsl:value-of select="$node"/></json:value>
               </json:member>
             </json:object>
@@ -218,7 +218,7 @@
               <xsl:copy-of select="json:create-namespaces($node)"/>
               <xsl:copy-of select="json:create-attributes($node)"/>
               <json:member>
-                <json:name>$</json:name>
+                <json:name>content</json:name>
                 <json:value>
                   <xsl:copy-of select="json:create-mixed-array($node)"/>
                 </json:value>
@@ -333,7 +333,7 @@
                 <json:member>
                   <xsl:choose>
                     <xsl:when test="local-name(.) eq ''">
-                      <json:name>$</json:name>
+                      <json:name>content</json:name>
                     </xsl:when>
                     <xsl:otherwise>
                       <json:name><xsl:value-of select="local-name(.)"/></json:name>
