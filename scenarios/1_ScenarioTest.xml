@@ -32,7 +32,7 @@
                external to the TEI environment. Several projects working with archival standards (in
                particular EAD) use it as well. PARTHENOS created and maintain an instance of the EAD
                specification in ODD, that can be used to create project oriented customizations. </desc>
-            <desc xml:lang="en" type="terms">
+            <desc xml:lang="en" type="term">
                <term source="aureHAL" type="discipline">Library and information sciences</term>
                <term source="aureHAL" type="discipline">Cultural heritage and museology</term>
                <term type="objects" key="Catalogs" source="nemo"/>
