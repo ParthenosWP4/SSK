@@ -1,0 +1,34 @@
+
+<div class=" col-mod-12 ">
+        <div class="panel-group col-md-6" >
+            <h2 align="center">Scenario's list</h2>
+
+            <div class="panel panel-default" *ngFor="let scenario of content?.scenarios, let i =index">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" [attr.href]="'#scenario' + i">{{scenario?.name}}</a>
+                    </h4>
+                </div>
+                <div [attr.id]="'scenario' + i" class="panel-collapse collapse">
+                    <ul class="list-group">
+                        <li *ngFor="let step of scenario?.steps,  let j =index" class="list-group-item">
+                            {{j+1}}- <a  target="_blank" [href]="step.url">{{step.name}} &raquo;</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="panel-group col-md-6" >
+            <h2 align="center">Step's list</h2>
+
+            <div  class="panel panel-default" *ngFor="let scenario of content?.scenarios, let i =index">
+                    <ul class="list-group">
+                        <li *ngFor="let step of scenario?.steps,  let j =index" class="list-group-item">
+                            {{j+1}} -  <a  target="_blank" [href]="step.url">{{step.name}}  &raquo;</a>({{scenario?.name}})
+                        </li>
+
+                    </ul>
+        </div>
+    </div>
+</div>

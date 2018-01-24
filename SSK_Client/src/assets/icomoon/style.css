@@ -1,0 +1,371 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?jpzu3k');
+  src:  url('fonts/icomoon.eot?jpzu3k#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?jpzu3k') format('truetype'),
+    url('fonts/icomoon.woff?jpzu3k') format('woff'),
+    url('fonts/icomoon.svg?jpzu3k#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-login:before {
+  content: "\e900";
+  color: #fff;
+}
+.icon-spain .path1:before {
+  content: "\e901";
+  color: rgb(200, 65, 75);
+}
+.icon-spain .path2:before {
+  content: "\e902";
+  margin-left: -1em;
+  color: rgb(255, 210, 80);
+}
+.icon-spain .path3:before {
+  content: "\e903";
+  margin-left: -1em;
+  color: rgb(200, 65, 75);
+}
+.icon-spain .path4:before {
+  content: "\e904";
+  margin-left: -1em;
+  color: rgb(245, 245, 245);
+}
+.icon-spain .path5:before {
+  content: "\e905";
+  margin-left: -1em;
+  color: rgb(250, 180, 70);
+}
+.icon-spain .path6:before {
+  content: "\e906";
+  margin-left: -1em;
+  color: rgb(200, 65, 75);
+}
+.icon-spain .path7:before {
+  content: "\e907";
+  margin-left: -1em;
+  color: rgb(200, 65, 75);
+}
+.icon-spain .path8:before {
+  content: "\e908";
+  margin-left: -1em;
+  color: rgb(200, 65, 75);
+}
+.icon-spain .path9:before {
+  content: "\e909";
+  margin-left: -1em;
+  color: rgb(245, 245, 245);
+}
+.icon-spain .path10:before {
+  content: "\e90a";
+  margin-left: -1em;
+  color: rgb(200, 65, 75);
+}
+.icon-spain .path11:before {
+  content: "\e90b";
+  margin-left: -1em;
+  color: rgb(200, 65, 75);
+}
+.icon-spain .path12:before {
+  content: "\e90c";
+  margin-left: -1em;
+  color: rgb(250, 180, 70);
+}
+.icon-spain .path13:before {
+  content: "\e90d";
+  margin-left: -1em;
+  color: rgb(200, 65, 75);
+}
+.icon-spain .path14:before {
+  content: "\e90e";
+  margin-left: -1em;
+  color: rgb(200, 65, 75);
+}
+.icon-spain .path15:before {
+  content: "\e90f";
+  margin-left: -1em;
+  color: rgb(255, 180, 65);
+}
+.icon-spain .path16:before {
+  content: "\e910";
+  margin-left: -1em;
+  color: rgb(250, 180, 70);
+}
+.icon-spain .path17:before {
+  content: "\e911";
+  margin-left: -1em;
+  color: rgb(250, 180, 70);
+}
+.icon-spain .path18:before {
+  content: "\e912";
+  margin-left: -1em;
+  color: rgb(245, 245, 245);
+}
+.icon-spain .path19:before {
+  content: "\e913";
+  margin-left: -1em;
+  color: rgb(250, 180, 70);
+}
+.icon-spain .path20:before {
+  content: "\e914";
+  margin-left: -1em;
+  color: rgb(250, 180, 70);
+}
+.icon-spain .path21:before {
+  content: "\e915";
+  margin-left: -1em;
+  color: rgb(80, 100, 170);
+}
+.icon-spain .path22:before {
+  content: "\e916";
+  margin-left: -1em;
+  color: rgb(250, 180, 70);
+}
+.icon-spain .path23:before {
+  content: "\e917";
+  margin-left: -1em;
+  color: rgb(80, 100, 170);
+}
+.icon-spain .path24:before {
+  content: "\e918";
+  margin-left: -1em;
+  color: rgb(250, 180, 70);
+}
+.icon-spain .path25:before {
+  content: "\e919";
+  margin-left: -1em;
+  color: rgb(255, 180, 65);
+}
+.icon-spain .path26:before {
+  content: "\e91a";
+  margin-left: -1em;
+  color: rgb(245, 245, 245);
+}
+.icon-spain .path27:before {
+  content: "\e91b";
+  margin-left: -1em;
+  color: rgb(245, 245, 245);
+}
+.icon-spain .path28:before {
+  content: "\e91c";
+  margin-left: -1em;
+  color: rgb(245, 245, 245);
+}
+.icon-spain .path29:before {
+  content: "\e91d";
+  margin-left: -1em;
+  color: rgb(245, 245, 245);
+}
+.icon-spain .path30:before {
+  content: "\e91e";
+  margin-left: -1em;
+  color: rgb(250, 180, 70);
+}
+.icon-spain .path31:before {
+  content: "\e91f";
+  margin-left: -1em;
+  color: rgb(255, 160, 210);
+}
+.icon-spain .path32:before {
+  content: "\e920";
+  margin-left: -1em;
+  color: rgb(80, 100, 170);
+}
+.icon-spain .path33:before {
+  content: "\e921";
+  margin-left: -1em;
+  color: rgb(250, 180, 70);
+}
+.icon-spain .path34:before {
+  content: "\e922";
+  margin-left: -1em;
+  color: rgb(200, 65, 75);
+}
+.icon-spain .path35:before {
+  content: "\e923";
+  margin-left: -1em;
+  color: rgb(255, 210, 80);
+}
+.icon-spain .path36:before {
+  content: "\e924";
+  margin-left: -1em;
+  color: rgb(255, 210, 80);
+}
+.icon-spain .path37:before {
+  content: "\e925";
+  margin-left: -1em;
+  color: rgb(255, 210, 80);
+}
+.icon-spain .path38:before {
+  content: "\e926";
+  margin-left: -1em;
+  color: rgb(200, 65, 75);
+}
+.icon-spain .path39:before {
+  content: "\e927";
+  margin-left: -1em;
+  color: rgb(200, 65, 75);
+}
+.icon-netherlands .path1:before {
+  content: "\e928";
+  color: rgb(255, 75, 85);
+}
+.icon-netherlands .path2:before {
+  content: "\e929";
+  margin-left: -1em;
+  color: rgb(65, 71, 155);
+}
+.icon-netherlands .path3:before {
+  content: "\e92a";
+  margin-left: -1em;
+  color: rgb(245, 245, 245);
+}
+.icon-italy .path1:before {
+  content: "\e92b";
+  color: rgb(115, 175, 0);
+}
+.icon-italy .path2:before {
+  content: "\e92c";
+  margin-left: -1em;
+  color: rgb(245, 245, 245);
+}
+.icon-italy .path3:before {
+  content: "\e92d";
+  margin-left: -1em;
+  color: rgb(255, 75, 85);
+}
+.icon-germany .path1:before {
+  content: "\e92e";
+  color: rgb(70, 70, 85);
+}
+.icon-germany .path2:before {
+  content: "\e92f";
+  margin-left: -1em;
+  color: rgb(255, 225, 90);
+}
+.icon-germany .path3:before {
+  content: "\e930";
+  margin-left: -1em;
+  color: rgb(255, 75, 85);
+}
+.icon-france .path1:before {
+  content: "\e931";
+  color: rgb(65, 71, 155);
+}
+.icon-france .path2:before {
+  content: "\e932";
+  margin-left: -1em;
+  color: rgb(245, 245, 245);
+}
+.icon-france .path3:before {
+  content: "\e933";
+  margin-left: -1em;
+  color: rgb(255, 75, 85);
+}
+.icon-united-kingdom .path1:before {
+  content: "\e934";
+  color: rgb(65, 71, 155);
+}
+.icon-united-kingdom .path2:before {
+  content: "\e935";
+  margin-left: -1em;
+  color: rgb(245, 245, 245);
+}
+.icon-united-kingdom .path3:before {
+  content: "\e936";
+  margin-left: -1em;
+  color: rgb(245, 245, 245);
+}
+.icon-united-kingdom .path4:before {
+  content: "\e937";
+  margin-left: -1em;
+  color: rgb(245, 245, 245);
+}
+.icon-united-kingdom .path5:before {
+  content: "\e938";
+  margin-left: -1em;
+  color: rgb(245, 245, 245);
+}
+.icon-united-kingdom .path6:before {
+  content: "\e939";
+  margin-left: -1em;
+  color: rgb(255, 75, 85);
+}
+.icon-united-kingdom .path7:before {
+  content: "\e93a";
+  margin-left: -1em;
+  color: rgb(255, 75, 85);
+}
+.icon-united-kingdom .path8:before {
+  content: "\e93b";
+  margin-left: -1em;
+  color: rgb(255, 75, 85);
+}
+.icon-united-kingdom .path9:before {
+  content: "\e93c";
+  margin-left: -1em;
+  color: rgb(255, 75, 85);
+}
+.icon-united-kingdom .path10:before {
+  content: "\e93d";
+  margin-left: -1em;
+  color: rgb(255, 75, 85);
+}
+.icon-ssk-cloud:before {
+  content: "\e93e";
+}
+.icon-ssk-search:before {
+  content: "\e93f";
+}
+.icon-home:before {
+  content: "\e940";
+}
+.icon-project_centered_ead:before {
+  content: "\e941";
+  color: #2aabd2;
+}
+.icon-digitization:before {
+  content: "\e942";
+  color: #2aabd2;
+}
+.icon-network_analysis:before {
+  content: "\e943";
+  color: #2aabd2;
+}
+.icon-multispectral_imaging:before {
+  content: "\e944";
+  color: #2aabd2;
+}
+.icon-project_specific_resource:before {
+  content: "\e945";
+  color: #5b5b5b;
+}
+.icon-general_resources:before {
+  content: "\e946";
+  color: #5b5b5b;
+}
+.icon-resources:before {
+  content: "\e947";
+}
+.icon-partners:before {
+  content: "\e948";
+}
+.icon-scenarios:before {
+  content: "\e949";
+}
