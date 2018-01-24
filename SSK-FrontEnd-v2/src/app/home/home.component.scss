@@ -1,0 +1,63 @@
+
+@import '../../partials/variables';
+
+@mixin backgroundShorthand($imgpath,$position:0 0,$repeat: no-repeat) {
+  background: transparent url(#{$imgpath}) $repeat $position;
+}
+.home{
+    background-color: $color-20;
+}
+
+.home-text1{
+  font-family: $roboto-light;
+  color: $color-21;
+}
+
+.btn-secondary{
+  background-color: $color-12 !important;
+  color: $color-3 !important;
+  font-family: $raleway-medium !important;
+  border: $color-12 solid 1px !important;
+}
+
+
+.home-second{
+  margin-right: -15px;
+  margin-left: -15px;
+  //@include backgroundShorthand("../../assets/images/Group.png");
+  background :url("../../assets/images/background.svg") no-repeat ;
+  background-size:cover;
+  //height: 60%;
+
+  h1{
+    font-family: $adventure;
+    color: $color-22;
+  }
+  h5{
+    font-family: $raleway-medium;
+    color: $color-21;
+
+  }
+}
+
+.last-content{
+  line-height: 200%;
+  > a {
+    color: red;
+  }
+}
+@media (max-width: 1650px) {
+  .home-second {
+    margin-right: -15px;
+    margin-left: -15px;
+    //@include backgroundShorthand("../../assets/images/Group.png");
+    background: url("../../assets/images/background.svg") no-repeat;
+    background-size: cover;
+  }
+  .down{
+    margin-top: 10%;
+  }
+}
+
+
+

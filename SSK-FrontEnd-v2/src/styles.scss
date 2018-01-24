@@ -1,0 +1,133 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import './partials/mixins';
+@import './partials/variables';
+
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('./assets/icomoon/fonts/icomoon.eot?1y86zq');
+  src:  url('./assets/icomoon/fonts/icomoon.eot?1y86zq#iefix') format('embedded-opentype'),
+  url('./assets/icomoon/fonts/icomoon.ttf?1y86zq') format('truetype'),
+  url('./assets/icomoon/fonts/icomoon.woff?1y86zq') format('woff'),
+  url('./assets/icomoon/fonts/icomoon.svg?1y86zq#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto-Medium';
+  src:  url('./assets/fonts/Roboto-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $roboto-regular;
+  src:  url('./assets/fonts/Roboto-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Raleway-SemiBold';
+  src:  url('./assets/fonts/Raleway-SemiBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Raleway-Bold';
+  src:  url('./assets/fonts/Raleway-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Raleway-Medium';
+  src:  url('./assets/fonts/Raleway-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto-Light';
+  src:  url('./assets/fonts/Roboto-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Adventure';
+  src:  url('./assets/fonts/Adventure.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Raleway-Italic';
+  src:  url('./assets/fonts/Raleway-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Raleway-Regular';
+  src:  url('./assets/fonts/Raleway-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima-Nova-Regular';
+  src:  url('assets/fonts/Proxima-Nova-Regular.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+.ic {
+  display: inline-block;
+  font: normal normal normal 16px/1  icomoon;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.ssk-home:before {
+  content: "\e940";
+}
+.ssk-create:before {
+  content: "\e93e";
+}
+
+.ssk-explore:before {
+  content: "\e93f";
+}
+
+
+.ssk-partners:before {
+  content: "\e948";
+}
+
+.ssk-France:before {
+  content: "\e931";
+}
+.ssk-England:before {
+  content: "\e934";
+}
+.ssk-Germany:before {
+  content: "\e92e";
+}
+.ssk-Spain:before {
+  content: "\e901";
+}
+.ssk-Netherlans:before {
+  content: "\e928";
+}
+.ssk-Italy:before {
+  content: "\e92b";
+}
+
+.ssk-login:before {
+  content: "\e900";
+}
+
