@@ -9,8 +9,8 @@
                 <author>
                     <persName>Maurizio Sanesi</persName>
                     <affiliation>SISMEL</affiliation>
-				  </author>
-	              <author>
+                </author>
+                <author>
                     <persName>Roberta Giacomi</persName>
                     <affiliation>SISMEL</affiliation>
                 </author>
@@ -38,23 +38,18 @@
             <listEvent>
                 <event type="researchStep">
                     <!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
-                    <head type="stepTitle" xml:lang="en">Merge different databases in one Unique Reference Resource</head>
+                    <head type="stepTitle" xml:lang="en">Merge different databases in one Unique
+                        Reference Resource</head>
                     <desc xml:lang="en" type="terms">
-                                   
-                        <term type="activity" source="http://tadirah.dariah.eu/"
-                            key="Modeling" />
+                        <term type="activity" source="http://tadirah.dariah.eu/" key="Modeling"/>
                         <term type="policies" source="WP3Wizard" key="CD"/>
                     </desc>
-					<linkGrp type="generalResources">
-						
-						<ref type="code" source="XML"
-                            target="https://www.w3.org/XML/">
-                        </ref>
-						<ref type="code" source="CIDOC-CRM"
-                            target="www.cidoc-crm.org">
-                        </ref>
-						
-					</linkGrp>
+                    <linkGrp type="generalResources">
+
+                        <ref type="code" target="https://www.w3.org/XML/"> </ref>
+                        <ref type="code" target="www.cidoc-crm.org"> </ref>
+
+                    </linkGrp>
                 </event>
             </listEvent>
         </body>
