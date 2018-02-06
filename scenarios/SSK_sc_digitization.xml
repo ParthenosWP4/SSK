@@ -50,10 +50,10 @@
             <!--<desc type=""></desc>-->
             <desc xml:lang="en" type="terms">
                <!-- Need a reference resource for all the terms, including Parthenos disciplines, datatypes, etc...  -->
-               <term source="aurehal" type="discipline">Social Anthropology and ethnology</term>
-               <term source="aurehal" type="discipline">History</term>
-               <term source="aurehal" type="discipline">Philosophy and Sociology of Sciences</term>
-               <term source="aurehal" type="discipline">Library and information sciences</term>
+               <term source="aureHAL" type="discipline">Social Anthropology and ethnology</term>
+               <term source="aureHAL" type="discipline">History</term>
+               <term source="aureHAL" type="discipline">Philosophy and Sociology of Sciences</term>
+               <term source="aureHAL" type="discipline">Library and information sciences</term>
                <term source="TaDiRAH" type="object" key="Data"/>
                <term source="TaDiRAH" type="object" key="Image"/>
                <term source="TaDiRAH" type="object" key="Literature"/>
@@ -80,7 +80,7 @@
                <event xml:id="s4" type="researchStep" ref="step_I_06022018"/>
                <event xml:id="s5" type="researchStep" ref="step_EQC_06022018"/>
                <event xml:id="s6" type="researchStep" ref="step_SMF_06022018"/>
-               <event xml:id="s7" type="researchStep" ref="step_PP__06022018"/>
+               <event xml:id="s7" type="researchStep" ref="step_PP_06022018"/>
                <event xml:id="s8" type="researchStep" ref="step_SEF_06022018"/>
                <event xml:id="s9" type="researchStep" ref="step_DTM_06022018"/>
                <!--<event xml:id="s12" type="researchStep" ref="createMetadata"/>-->
