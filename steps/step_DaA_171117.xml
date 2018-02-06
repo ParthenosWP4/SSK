@@ -58,7 +58,7 @@
                         />
                     </desc>
                     <linkGrp type="projectResources" source="BeQuali" corresp="http://bequali.fr/fr/">
-                        <ref type="webpage" target="http://bequali.fr/fr/"></ref>
+                        <ref type="webpage" source="BeQuali" target="http://bequali.fr/fr/"></ref>
                     </linkGrp>
                 </event>
             </listEvent>
