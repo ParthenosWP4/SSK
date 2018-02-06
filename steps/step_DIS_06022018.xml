@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Step "Assess legal issues"</title>
+                <author>
+                    <persName>Frank Uiterwaal</persName>
+                    <affiliation>NIOD-KNAW</affiliation>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <authority>Parthenos</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/">
+                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.</p>
+                    </licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Created from scratch</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listEvent>
+                <event type="researchStep">
+                    <head xml:lang="en">Define Imaging specifications</head>
+                    <head xml:lang="fr">Définir les spécifications de la numérisation</head>
+                    <desc xml:lang="en" type="definition">After the scanning method was chosen,
+                        setting requirements for the digital fascimile helps to make sure that it is
+                        suitable for intended purposes.</desc>
+                    <desc xml:lang="fr" type="definition"/>
+                    <desc xml:lang="en" type="term">
+                        <term type="technique" source="TaDiRAH" key="Brainstorming"/>
+                        <term type="technique" source="TaDiRAH" key="Scanning"/>
+                        <term type="activity" source="TaDiRAH" key="Imaging"/>
+                    </desc>
+                    <linkGrp type="generalResources">
+                        <ref type="Report" source="zotero" target="TFPF76UC"/>
+                    </linkGrp>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>

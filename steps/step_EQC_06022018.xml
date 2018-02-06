@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Step "Ensure Quality Control"</title>
+                <author>
+                    <persName>Frank Uiterwaal</persName>
+                    <affiliation>NIOD-KNAW</affiliation>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <authority>Parthenos</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/">
+                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.</p>
+                    </licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Created from scratch</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listEvent>
+                <event type="researchStep">
+                    <head xml:lang="en">Ensure quality control</head>
+                    <head xml:lang="fr">Contrôler la qualité des images obtenues</head>
+                    <desc xml:lang="en" type="definition">After the imaging has been completed, it
+                        is best practice to verify whether the actual digital version aligns with
+                        the requirements set earlier. This allows for timely adjustment or re-doing
+                        (parts of the) the procedure before the object returns to its place in the
+                        archive.</desc>
+                    <desc xml:lang="fr" type="definition"/>
+                    <desc xml:lang="en" type="term">
+                        <term type="technique" source="TaDiRAH" key="Scanning"/>
+                        <term type="activity" source="TaDiRAH" key="imaging"/>
+                    </desc>
+                    <linkGrp type="generalResources">
+                        <ref type="tutorial" source="zotero" target="S748BVNT"/>
+                    </linkGrp>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>
