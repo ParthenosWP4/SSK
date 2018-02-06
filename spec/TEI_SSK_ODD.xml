@@ -359,12 +359,7 @@
                                     <gi>linkGrp</gi> (<ref target="#SSK_linkGrp">see
                                 below</ref>).</p>
                         </div>
-
                     </div>
-
-
-
-
                 </div>
                 <div>
                     <head>Content of scenarios and steps</head>
@@ -799,28 +794,31 @@
                     </div>
                     <div xml:id="SSK_linkGrp">
                         <head>linkGrp</head>
-                        <p><gi>linkGrp</gi> is (for the moment) contained by the element
-                            <gi>ab</gi>. The attribute <att>type</att> is required and can have two values:<list>
-                                <item>general: for resources that give general input about a
-                                    standard, a protocol, ...</item>
-                                <item>project: for resources that show examples of real projects
-                                    using the described standard, protocol, ...</item>
-                            </list></p>
+                        <p><gi>linkGrp</gi> is the container for the resources associated to a given
+                            step. It can have three attributes: <list>
+                                <item>The attribute <att>type</att> is required and can have two values:<list>
+                                        <item><code>generalResources</code>: for resources that give
+                                            general input about a standard, a protocol, ...</item>
+                                        <item><code>projectResources</code>: for resources that show
+                                            examples of real projects using the described standard,
+                                            protocol, ...</item>
+                                    </list></item>
+                                <item>When <att>type</att> has <code>projectResources</code> for value, two more attributes are required:
+                                <list>
+                                    <item><att>source</att> for the name of the project mentioned</item>
+                                    <item><att>corresp</att> for a url pointing to or identifying the project</item>
+                                </list></item>
+                                
+                            </list>
+                        </p>
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                            <ab>
-                                <linkGrp type="general">
-                                    <ref type="spec" subtype="standard"
-                                        target="http://zotero.org/groups/427927/items/QVUGK2B2"/>
-                                    <ref type="spec" subtype="standard"
-                                        target="http://zotero.org/groups/427927/items/BEVAWMPX"/>
-                                </linkGrp>
-                                <linkGrp type="project">
-                                    <ref type="code" subtype="project" source="EHRI"
-                                        target="https://github.com/EHRI/data-validations/blob/master/ODD-RelaxNG/EAD/EHRI_EAD_doc.html"/>
-                                    <ref type="report" subtype="copyBibl"
-                                        target="step_Eprimf_3000517.xml#b1"/>
-                                </linkGrp>
-                            </ab>
+                            <linkGrp type="generalResources">
+                                <ref type="Report" source="zotero" target="ZQVB6CIP"/>
+                            </linkGrp>
+                            <linkGrp type="projectResources" source="CODATA"
+                                corresp="http://www.codata.org/">
+                                <ref type="Report" source="zotero" target="G4UPDPG3"/>
+                            </linkGrp>
                         </egXML>
                     </div>
                     <div xml:id="SSK_ref">
