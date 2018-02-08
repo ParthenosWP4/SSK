@@ -1,6 +1,6 @@
 # `<term>` and `<ref>` typing
 
-## term/@@type
+## term/@type
 
 * `standard`: the key gives the id of a standard referenced in the SSK standards Knowledge base
 * `activity`: the value of key is taken from the tadirah ontology, research activities section
@@ -8,7 +8,7 @@
 * `technique`: the value of key is taken from the tadirah ontology, research techniques section
 * `discipline`, taken from the aureHAL taxonomy
 
-## ref/@type =
+## ref/@type
 * `spec`: the specification, of a standard for instance.
 * `report`: technical reports
 * `blog`: blog posts
