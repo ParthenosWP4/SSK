@@ -54,7 +54,7 @@
             <figure type="image">
                <!-- Illustration of the scenario. Can also be used in the steps -->
                <head>Title of the image</head>
-               <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/corpusAnalysis_large.png"/>
+               <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/corpusAnalysis_compact.png"/>
                <figDesc>Description of the image</figDesc>
             </figure>
             <listEvent>
