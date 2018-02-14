@@ -207,7 +207,7 @@
                                 <item>an underscore</item>
                                 <item>the intials of the step name, with the liaison words in lower
                                     case, and the meaningful words in upper case</item>
-                                <item>an underscore</item>
+                                <item>an underscore and the date (optional)</item>
                             </list></item>
                     </list></p>
                 <div>
@@ -828,13 +828,19 @@
                                 <item>The attribute <att>type</att> is required. Its values are
                                     taken from the Zotero item types, plus SSK specific values.
                                     Possible values are:<list>
-                                        <item>spec: the specification, of a standard for
+                                        <item><code>spec</code>: the specification, of a standard for
                                             instance.</item>
-                                        <item>report: technical reports</item>
-                                        <item>blog: blog posts</item>
-                                        <item>tutorial: tutorials or guidelines</item>
-                                        <item>script: Scripts and code samples</item>
-                                        <item>paper: Scholarly papers</item>
+                                        <item><code>report</code>: technical reports</item>
+                                        <item><code>blog</code>: blog posts</item>
+                                        <item><code>tutorial</code>: tutorials or guidelines</item>
+                                        <item><code>script</code>: Scripts and code samples</item>
+                                        <item><code>paper</code>: Scholarly papers</item>
+                                        <item><code>library</code>: Computing libraries</item>
+                                        <item><code>tool</code>: a link to a service or a software useful for a given step.</item>
+                                        <item><code>database</code>: </item>
+                                        <item><code>method</code></item>
+                                        <item><code>bibliography</code></item>
+                                        <item><code>schema</code></item>
                                     </list></item>
                                 <item>the <att>source</att> attribute in <gi>ref</gi> is used by the
                                     SSK to record where the full information about the resource is
