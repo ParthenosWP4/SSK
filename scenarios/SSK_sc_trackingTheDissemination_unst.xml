@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario" xml:id="sc_trackingDissemination">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Tracking the dissemination of a specific work</title>
+            <author>
+               <persName>Maurizio Sanesi</persName>
+               <affiliation>SISMEL</affiliation>
+            </author>
+            <author>
+               <persName>Roberta Giacomi</persName>
+               <affiliation>SISMEL</affiliation>
+            </author>
+            <author>
+               <persName>Claus Spiecker</persName>
+               <affiliation>FHP</affiliation>
+            </author>
+            <author>
+               <persName>Karolien Verbrugge</persName>
+               <affiliation>NIOD</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
+                     this document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div type="scenario">
+            <head xml:lang="en" type="scenarioTitle">Tracking the dissemination of a specific work</head>
+            <desc type="definition" xml:lang="en">In medieval studies, the dissemination of a work
+               can give important information on life and movements of the author; plus, it can
+               influence local history and everyday activities: i.e. some medical practices were
+               performed just in places where the work carrying information about them was spread.
+               Moreover, it can be useful also to understand if the work was disseminated alone or
+               together with other works, and why: for instance, in medieval universities the
+               essential works for the study of a discipline were often gathered in the same
+               manuscript. Therefore, scholars may have interest in the itinerary made by a given
+               work, and may want to track it. </desc>
+            <desc xml:lang="en" type="terms">
+               <term source="parthenos" type="discipline" key="SOTP">Studies of the past</term>
+               <term type="objects" key="metadata" source="tadirah"/>
+            </desc>
+            <figure type="image">
+               <head/>
+               <graphic
+                  url="https://upload.wikimedia.org/wikipedia/commons/6/6f/Portrait_de_Dante.jpg"/>
+               <figDesc>Photo from Wikimedia</figDesc>
+            </figure>
+            <listEvent>
+               <event xml:id="s1" type="researchStep" ref="step_StWowtSiC"/>
+               <event xml:id="s2" type="researchStep" ref="step_DtGatCB"/>
+               <event xml:id="s3" type="researchStep" ref="step_SDtatRfC"/>
+               <event xml:id="s4" type="researchStep" ref="step_CaSARDCooCwDwbs"/>
+               <event xml:id="s5" type="researchStep" ref="step_atGPaLR"/>
+               <event xml:id="s6" type="researchStep" ref="step_CaeEotSW"/>
+               <event xml:id="s7" type="researchStep" ref="step_AtuotEitSP"/>
+               <event xml:id="s8" type="researchStep" ref="step_UtPaCotW"/>
+               <event xml:id="s9" type="researchStep" ref="step_EIoD"/>
+               <event xml:id="s10" type="researchStep" ref="step_BCD"/>
+               <event xml:id="s11" type="researchStep" ref="step_ItdaoeoSIMooMautAtC"/>
+               <event xml:id="s12" type="researchStep" ref="step_SdtAaP"/>
+               <event xml:id="s13" type="researchStep" ref="step_EttrLPaA"/>
+            </listEvent>
+         </div>
+      </body>
+   </text>
+</TEI>
