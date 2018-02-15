@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Step "Applying a license"</title>
+                <author>
+                    <persName>Antonio Davide Madonna</persName>
+                    <affiliation>MIBACT-ICCU</affiliation>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <authority>Parthenos</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/">
+                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.</p>
+                    </licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Created from scratch</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listEvent>
+                <event type="researchStep">
+                    <head xml:lang="en">Applying a license</head>
+                    <head xml:lang="fr">TODO</head>
+                    <desc xml:lang="en" type="definition">The step describes good practices to identify the right license for metadata and related digital objects</desc>
+                    <desc xml:lang="fr" type="definition"/>
+                    <desc xml:lang="en" type="term">
+                        <term type="activity" source="http://tadirah.dariah.eu/"
+                            key="---"/>
+                            <!-- I did not find any tadirah term that matches with this step. -->
+                    </desc>
+                    <linkGrp type="generalResources">
+                        <ref type="spec" subtype="standard" source="zotero"
+                            target="Z2JMRVUJ">
+                            <term type="standard" source="standard_list" key="IPR ISSUES"/>
+                        </ref>
+                        <ref type="spec" subtype="standard" source="zotero"
+			    target="VFP6G6DN">
+			    <term type="standard" source="standard_list" key="IPR ISSUES"/>
+                        </ref>
+                        <ref type="spec" subtype="standard" source="zotero"
+			    target="9VERTQD5">
+			    <term type="standard" source="standard_list" key="IPR ISSUES"/>
+                        </ref>
+                        <ref type="spec" subtype="standard" source="zotero"
+			     target="SKVD76FW">
+			     <term type="standard" source="standard_list" key="LICENSES"/>
+			</ref>
+			<ref type="spec" subtype="standard" source="zotero"
+			    target="ZXQFGKKJ">
+			    <term type="standard" source="standard_list" key="Legal requirements"/>
+			</ref>
+			<ref type="spec" subtype="standard" source="zotero"
+			    target="RH4HVTJE">
+			    <term type="standard" source="standard_list" key=""/>
+                        </ref>
+                        <ref type="spec" subtype="standard" source="zotero"
+			    target="8UEFSE66">
+			    <term type="standard" source="standard_list" key="IPR ISSUES"/>
+			 </ref>
+			 <ref type="spec" subtype="standard" source="zotero"
+		             target="48FT7629">
+			     <term type="standard" source="standard_list" key="ipr"/>
+			 </ref>
+			 <ref type="spec" subtype="standard" source="zotero"
+			      target="93A4F6PJ">
+			      <term type="standard" source="standard_list" key=""/>
+			 </ref>
+			 <ref type="spec" subtype="standard" source="zotero"
+			     target="BJVG52WX">
+                             <term type="standard" source="standard_list" key=""/>
+			 </ref>
+                        <!-- substantially, here i copy all the documents present in ZOTERO. They all present a discussion about licenses.  -->
+                    </linkGrp>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>

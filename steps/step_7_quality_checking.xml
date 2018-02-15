@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Step "Quality checking"</title>
+                <author>
+                    <persName>Antonio Davide Madonna</persName>
+                    <affiliation>MIBACT-ICCU</affiliation>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <authority>Parthenos</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/">
+                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.</p>
+                    </licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Created from scratch</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listEvent>
+                <event type="researchStep">
+                    <head xml:lang="en">Quality checking</head>
+                    <head xml:lang="fr">TODO</head>
+                    <desc xml:lang="en" type="definition">The step describes the workflow to verify the quality of metadata produced and their correspondence with the application profile adopted</desc>
+                    <desc xml:lang="fr" type="definition"/>
+                    <desc xml:lang="en" type="term">
+                        <term type="activity" source="http://tadirah.dariah.eu/"
+                            key="http://tadirah.dariah.eu/vocab/index.php?tema=50&amp;/meta-assessing"/>
+                            <!-- I'm not sure this term works. It can be used in a broader sense, but please check. -->
+                    </desc>
+                    <linkGrp type="generalResources">
+                        <ref type="spec" subtype="standard" source="zotero"
+                            target="BUCK542P">
+                            <term type="standard" source="standard_list" key="Metadata"/>
+                        </ref>
+                        <ref type="spec" subtype="standard" source="zotero"
+			    target="MAAJ25EV">
+			    <term type="standard" source="standard_list" key="Metadata"/>
+                        </ref>
+                        <ref type="spec" subtype="standard" source="zotero"
+			    target="D59ARI5T">
+			    <term type="standard" source="standard_list" key="Metadata"/>
+                        </ref>
+                    </linkGrp>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>

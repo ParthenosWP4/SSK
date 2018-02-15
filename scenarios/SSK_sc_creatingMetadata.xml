@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario">
+   <teiHeader>
+      <!-- teiHeader TBC -->
+      <fileDesc>
+         <titleStmt>
+            <!-- Title of the tei document, not title of the scenario -->
+            <title>Creation of Metadata scenario</title>
+            <author>
+               <persName>Antonio Davide Madonna</persName>
+               <affiliation>MIBACT-ICCU</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>PARTHENOS</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
+                     this document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>This Google doc: https://docs.google.com/document/d/1K_JSaML4bjXPNs83JB00UVnO8OpniwJiX4UkYeifCAw/edit#heading=h.26xtcwgdha6a</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change>
+            <!-- Only for major changes: addition of an author, of a step, etc. -->
+         </change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div type="reseachScenario" xml:id="sc_creatingMetadata">
+            <!-- All the textual information about scenarios and steps is now contained in the <head> element-->
+            <head xml:lang="en" type="scenarioTitle">Creating Metadata</head>
+            <desc type="definition" xml:lang="en">Scenario consisting of a step-by-step guide to make metadata in a specific application profile from data structured in different manners</desc>
+            <!--<desc type=""></desc>-->
+            <desc xml:lang="en" type="terms">
+               <term source="TaDiRAH" type="ResearchObject" key="Metadata" />
+               <term source="TaDiRAH" type="ResearchObject" key="Standards" />
+               <term source="TaDiRAH" type="ResearchTechniques" key="Mapping" />
+               <term source="TaDiRAH" type="ResearchActivities" key="Creation"/>
+               <term source="TaDiRAH" type="ResearchActivities" key="Conversion"/>
+            </desc>
+            <figure type="image">
+               <!-- Illustration of the scenario. Can also be used in the steps -->
+               <head>Mapping schema</head>
+               <graphic url="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Figure-1-A-schema-mapping-in-Clio.png/640px-Figure-1-A-schema-mapping-in-Clio.png"/>
+               <figDesc>example of mapping between original data and a specific application profile</figDesc>
+            </figure>
+            <listEvent>
+               <event xml:id="s1" type="researchStep" ref="step_1_creating_metadata_scenario"/>
+               <event xml:id="s2" type="researchStep" ref="step_2_defining_responsabilities_and_policies"/>
+               <event xml:id="s3" type="researchStep" ref="step_3_adopting_standard"/>
+               <event xml:id="s4" type="researchStep" ref="step_4_metadata°enrichment"/>
+               <event xml:id="s5" type="researchStep" ref="step_5_mapping_data"/>
+               <event xml:id="s6" type="researchStep" ref="step_6_creating_or_converting_metadata_in_a_standard_format"/>
+               <event xml:id="s7" type="researchStep" ref="step_7_quality_checking"/>
+               <event xml:id="s8" type="researchStep" ref="step_8_applying_license"/>
+             </listEvent>
+         </div>
+      </body>
+   </text>
+</TEI>
