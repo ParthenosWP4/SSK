@@ -10,15 +10,15 @@
                     <persName>Maurizio Sanesi</persName>
                     <affiliation>SISMEL</affiliation>
                 </author>
-    <author>
+                <author>
                     <persName>Karolien Verbrugge</persName>
                     <affiliation>NIOD</affiliation>
                 </author>
-	<author>
+                <author>
                     <persName>Claus Spiecker</persName>
                     <affiliation>FHP</affiliation>
                 </author>
-	<author>
+                <author>
                     <persName>Roberta Giacomi</persName>
                     <affiliation>SISMEL</affiliation>
                 </author>
@@ -46,33 +46,32 @@
             <listEvent>
                 <event type="researchStep">
                     <!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
-                    <head type="stepTitle" xml:lang="en">Select the work on which the survey is conducted</head> 
+                    <head type="stepTitle" xml:lang="en">Select the work on which the survey is
+                        conducted</head>
                     <head type="stepTitle" xml:lang="fr">Titre de l'étape en Français</head>
-                    <desc type="definition" xml:lang="en">Select the work on which you want to conduct the survey</desc>
+                    <desc type="definition" xml:lang="en">Select the work on which you want to
+                        conduct the survey</desc>
                     <desc xml:lang="en" type="terms">
                         <term type="standard" source="standard_list" key="XML"/>
                         <term type="standard" source="standard_list" key="TEI"/>
-                        
-                        <term type="activity" source="http://tadirah.dariah.eu/"
-                            key="discovering" />
+                        <term type="activity" source="http://tadirah.dariah.eu/" key="discovering"/>
                         <term type="policies" source="WP3Wizard" key="CD"/>
-						</desc>
-						<linkGrp type="generalResources">
-						
-						<ref type="code" source="Mirabile"
-                            target="http://www.mirabileweb.it/">
+                    </desc>
+                    <linkGrp type="generalResources">
+
+                        <ref type="database" source="Mirabile" target="http://www.mirabileweb.it/">
                             <term type="activity" source="tadirah" key="discovering"/>
                         </ref>
-						<ref type="code" source="TEXT-inc"
+                        <ref type="code" source="TEXT-inc"
                             target="http://textinc.bodleian.ox.ac.uk/">
-						<term type="activity" source="tadirah" key="discovering"/>
+                            <term type="activity" source="tadirah" key="discovering"/>
                         </ref>
-						<ref type="code" source="BASE"
+                        <ref type="code" source="BASE"
                             target="https://www.base-search.net/about/en/">
-						<term type="activity" source="tadirah" key="discovering"/>                        
-						</ref>
-						
-                        
+                            <term type="activity" source="tadirah" key="discovering"/>
+                        </ref>
+
+
                     </linkGrp>
                 </event>
             </listEvent>
