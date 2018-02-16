@@ -2,9 +2,9 @@ package ssk.server.service;
 
 
 import com.google.gson.*;
-import org.apache.commons.lang.ArrayUtils;
-import org.json.JSONArray;
 import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
@@ -34,14 +34,30 @@ public class ElasticServices {
     private RestTemplate restTemplate = new RestTemplate();
     private HttpHeaders headers;
     private List<String> lastProperties  = new ArrayList<>();
+    private static final Logger logger = LoggerFactory.getLogger(ElasticServices.class.getName());
 
 
     public static final List<String> nestedStepMappings = Arrays.asList("TEI.teiHeader.fileDesc.titleStmt.author",  "TEI.text.body.listEvent.event",  "TEI.text.body.listEvent.event.head", "TEI.text.body.listEvent.event.head.content", "TEI.text.body.listEvent.event.head.term", "TEI.text.body.listEvent.event.head.ref",
             "TEI.text.body.listEvent.event.desc.term","TEI.text.body.listEvent.event.desc.content");
     public static final List<String> nestedScenarioMappings = Arrays.asList("TEI.teiHeader.fileDesc.titleStmt.author", "TEI.text.body.div.desc.content" , "TEI.text.body.div.desc.term", "TEI.text.body.listEvent.event");
 
-    public static final List<String> metadata = Arrays.asList("technical", "object", "discipline", "standard", "activity");
-    public static final List<String> nestedREsMappings = Arrays.asList("content");
+    public static final List<String> metadata = Arrays.asList("techniques", "objects", "disciplines", "standards", "standards.desc",   "activities");
+    public static final List<String> nestedREsMappings = Arrays.asList("general", "project");
+    
+    
+    public static final List<String> toolTypeVariants = Arrays.asList("tool", "service", "software");
+    public static final List<String> specTypeVariants = Arrays.asList("spec", "specification", "standard");
+    public static final List<String> documentationTypeVariants = Arrays.asList("documentation", "official_documentation");
+	
+	HashMap<String, List<String>> resourceTypeVariant = new HashMap<>();
+	
+	
+	public ElasticServices() {
+		resourceTypeVariant.put("tool", Arrays.asList("tool", "service", "software"));
+		resourceTypeVariant.put("specification", Arrays.asList("spec", "specification", "standard"));
+		resourceTypeVariant.put("documentation", Arrays.asList("documentation", "official_documentation"));
+	}
+	
 
     public ElasticsearchOperations getEs() {
         return es;
@@ -111,7 +127,7 @@ public class ElasticServices {
         }
 
         setHeaders();
-        HttpEntity<String> entity = new HttpEntity<String>(typeContent.toString(), this.headers);
+        HttpEntity<String> entity = new HttpEntity<>(typeContent.toString(), this.headers);
         ResponseEntity<String> response = this.restTemplate.exchange("http://localhost:" + elasticSearchPort + "/" + sskIndex + "/_mapping/" + mappingType, HttpMethod.PUT, entity, String.class);
         String responseBody = response.getBody();
         mapping = new JSONObject(responseBody);
@@ -121,11 +137,11 @@ public class ElasticServices {
         while (iter.hasNext()) {
             String key = (String) iter.next();// loop to get the dynamic key
             result = (boolean) mapping.get(key);
-            System.out.print("key : " + key);
-            System.out.println(" value :" + result);
+            logger.info("key : " + key);
+            logger.info(" value :" + result);
         }
         for (int j = 0; j < nested.size(); j++) {
-            nestedMapping = addMappingFromPath(nested.get(j), mappingType);
+            addMappingFromPath(nested.get(j), mappingType);
         }
         return result;
     }
@@ -163,32 +179,144 @@ public class ElasticServices {
         properties.put("properties",resources);
 
         setHeaders();
-        HttpEntity<String> entity = new HttpEntity<String>(properties.toString(), this.headers);
+        HttpEntity<String> entity = new HttpEntity<>(properties.toString(), this.headers);
         ResponseEntity<String> response = this.restTemplate.exchange("http://localhost:" + elasticSearchPort + "/" + sskIndex + "/_mapping/resource" , HttpMethod.PUT, entity, String.class);
     }
 
-    public boolean pushData(JSONArray scenarioAndStep, int iteration) {
+    public boolean pushData(JsonArray scenarioAndStep, int iteration) throws Exception {
         String type;
-        String idParent = "";
+         String  idParent="";
         boolean result = true;
         setHeaders();
         HttpEntity<String> entity;
-        for (int j = 0; j < scenarioAndStep.length(); j++) {
+	    JsonObject resources =null;
+        for (int j = 0; j < scenarioAndStep.size(); j++) {
             type = "step";
-            if (j == 0) type = "scenario";
-            else type += "?parent=" + idParent;
-            entity = new HttpEntity<String>(scenarioAndStep.get(j).toString(), this.headers);
+             JsonObject metaData  = scenarioAndStep.get(j).getAsJsonObject().remove("metadata").getAsJsonObject();
+            if (j == 0) {
+                type = "scenario";
+            }
+            else {
+                type += "?parent=" + idParent;
+	              resources  = scenarioAndStep.get(j).getAsJsonObject().remove("resources").getAsJsonObject();
+            }
+            entity = new HttpEntity<>(scenarioAndStep.get(j).toString(), this.headers);
             ResponseEntity<String> response = this.restTemplate.exchange("http://localhost:" + elasticSearchPort + "/" + sskIndex + "/" + type, HttpMethod.POST, entity, String.class);
             JSONObject responseBody = new JSONObject(response.getBody());
-            //System.out.println(responseBody);
             result = result && Boolean.parseBoolean(responseBody.get("created").toString());
             if (result) {
-                if (j == 0) idParent = responseBody.get("_id").toString();
+                if (j == 0) {
+                    idParent = responseBody.get("_id").toString();
+                    final String  id = idParent;
+                    this.executeThread("scenario-metadata", id, metaData, this.headers);
+                }
+                else {
+                    final String idStep = responseBody.get("_id").toString();
+	                this.executeThread("step-metadata", idStep, metaData, this.headers);
+	                this.executeThread("resources", idStep, resources, this.headers);
+	                
+                }
             } else break;
         }
         if (result)
-            System.out.println("----- > Successful push scenario " + iteration + " on ElasticSearch with result id: " + idParent);
+        logger.info("----- > Successful push scenario " + iteration + " on ElasticSearch with result id: " );
         return result;
+    }
+	
+    void executeThread(String type, String id, JsonObject data, HttpHeaders headers) {
+		Thread t = new Thread(() -> {
+			try {
+				if (type.equals("resources")) {
+					//pushResources(id, data, headers);
+				} else {
+					this.pushMetadata(type, id, data, headers);
+					
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		});
+		t.run();
+	}
+ 
+	private void pushResources(String idParent, JsonObject data, HttpHeaders headers) throws  Exception{
+		Set<Map.Entry<String, JsonElement>> entries = data.entrySet();
+		String source = "";
+		setHeaders();
+		HttpEntity<String> entity;
+		String type = "resource?parent=" + idParent;
+		HashMap<String, List<JsonObject>> dataToPush = new HashMap<>();
+		entries.forEach(entry ->{
+			String category = entry.getKey().toString().equals("generalResources") ? "general"  : "project";
+			JsonArray resources = data.get(entry.getKey()).getAsJsonArray();
+			String[] temp = new String[1];
+			resources.forEach(resource -> {
+				String resourceType ;
+				System.out.println(resource.toString());
+				if(resource.getAsJsonObject().has("type")){
+					temp[0] = resource.getAsJsonObject().get("type").getAsString();
+					if(temp[0].equals("code") && resource.getAsJsonObject().has("subtype")){
+						temp[0] = resource.getAsJsonObject().get("subtype").getAsString();
+					}
+					final String resType = temp[0];
+					this.resourceTypeVariant.   forEach((key, value) -> {
+						if(value.contains(resType.toLowerCase())){
+							temp[0] = key.toString();
+						}
+					});
+					 resourceType = temp[0];
+				}
+				
+				
+				
+			});
+			
+		});
+		
+		/*for (Map.Entry<String, JsonElement> entry: entries) {
+			HashMap<String, List<JsonObject>> dataToPush = new HashMap<>();
+			for (int i = 0; i < resources.size(); i++) {
+				JsonObject item = resources.get(i).getAsJsonObject();//{"source":"zotero","subtype":"website","target":"JDUB296N","type":"database"}
+				List<JsonObject> resourceData = new ArrayList<>();
+				if(item.has("source")){
+                    source = item.get("source").getAsString();
+                    switch (source){
+                        case "zotero":
+	                        resourceData.add(sskServices.getZoteroResource(item.get("target").getAsString()));
+	                        
+                            dataToPush.add(entry.getKey().toString().equals("generalResources") ? "general"  : "project" , sskServices.getZoteroResource(item.get("target").getAsString()));
+                            entity = new HttpEntity<>(dataToPush.toString(), this.headers);
+                            
+                            break;
+                        case "github":
+                        	
+                            
+                            break;
+                        case "hal":
+                            break;
+                        case "BeQuali":
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                else{
+					
+				}
+				
+			}*/
+			//ResponseEntity<String> response = this.restTemplate.exchange("http://localhost:" + elasticSearchPort + "/" + sskIndex + "/" + type, HttpMethod.POST, entity, String.class);
+		}
+	
+
+
+    private  void pushMetadata(String type, String idParent, JsonObject data, HttpHeaders headers) throws Exception{
+        if(data.get("standard") != null){
+            JsonArray standards = sskServices.getWholeStandard(data.remove("standard").getAsJsonArray());
+            data.add("standards", standards.getAsJsonArray());
+        }
+        HttpEntity entity = new HttpEntity<>(data.toString(), headers);
+        ResponseEntity<String> response = this.restTemplate.exchange("http://localhost:" + elasticSearchPort + "/" + sskIndex + "/" + type + "?parent="+ idParent, HttpMethod.POST, entity, String.class);
     }
 
 
@@ -237,13 +365,15 @@ public class ElasticServices {
                     }
                 }
                 else{
+                
+                properties.put("type", "nested");
                     elt.put(pathArray[i], properties);
                 }
             properties = new JSONObject();
             properties.put("properties", elt);
         }
         setHeaders();
-        HttpEntity<String> entity = new HttpEntity<String>(properties.toString(), this.headers);
+        HttpEntity<String> entity = new HttpEntity<>(properties.toString(), this.headers);
         ResponseEntity<String> response = this.restTemplate.exchange("http://localhost:" + elasticSearchPort + "/" + sskIndex + "/_mapping/" + mappingType, HttpMethod.PUT, entity, String.class);
         return elt;
     }

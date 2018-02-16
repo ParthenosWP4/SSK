@@ -4,8 +4,12 @@ import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.google.gson.Gson;
 
 
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
@@ -38,8 +42,8 @@ public class GithubApiService {
 
     @Value("${GITHUB_AUTH_TOKEN}")
     private String authorizationToken;
-
-
+    
+    private static final Logger logger = LoggerFactory.getLogger(GithubApiService.class.getName());
 
     @Value("${GITHUB_SSK_API}")
     private String githubUrl;
@@ -82,30 +86,18 @@ public class GithubApiService {
 
 
     public GithubApiService(){
-        this.requestHeaders = new LinkedMultiValueMap<String, String>();
+        this.requestHeaders = new LinkedMultiValueMap<>();
         this.responseHeaders = new ArrayList<>();
         this.responseHeaders.add(MediaType.APPLICATION_JSON);
         this.restTemplate = new RestTemplate();
+        gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
     }
 
-
-    /*public JSONArray getScenarioList(){
-        HttpHeaders headers = new HttpHeaders();
-        this.request = new HttpEntity<>(this.updateRequestHeaders("json", null));
-        this.url = "contents/scenarios/";
-        ResponseEntity<String> responseEntity =  this.restTemplate.exchange(getGithubUrl() + this.url, HttpMethod.GET, this.getRequest(), String.class);
-        Object[] objects = responseEntity.getBody();
-        MediaType contentType = responseEntity.getHeaders().getContentType();
-        HttpStatus statusCode = responseEntity.getStatusCode();
-        JSONObject response = new JSONObject(objects);
-        return  new JSONArray( responseEntity.getBody());
-    }*/
-
-    public JSONArray getSSKElementsList( String type){
+    public JsonArray getSSKElementsList(String type){
         this.request = new HttpEntity<>(this.updateRequestHeaders("json", null));
         this.url = "contents/"+ type+"/";
         ResponseEntity<String> responseEntity =  this.restTemplate.exchange(getGithubUrl() + this.url, HttpMethod.GET, this.getRequest(), String.class);
-        return  new JSONArray( responseEntity.getBody());
+        return gson.fromJson(responseEntity.getBody(), JsonArray.class);
     }
 
 
@@ -128,10 +120,13 @@ public class GithubApiService {
 
             default:
         }
-        String content =  this.restTemplate.exchange(getGithubUrl() + this.url, HttpMethod.GET, this.request, String.class).getBody();
-        return content;
-         //string2XMl(content);
-        //return this.restTemplate.exchange(getGithubUrl() + this.url, HttpMethod.GET, this.getRequest(), String.class);
+        try{
+            return this.restTemplate.exchange(getGithubUrl() + this.url, HttpMethod.GET, this.request, String.class).getBody();
+        }
+        catch (Exception e ){
+            logger.trace(e.getMessage());
+            return  null;
+        }
     }
 
     /* Get Commits on specific Github path */
@@ -258,6 +253,4 @@ public class GithubApiService {
         }
         return result;
     }
-
-
 }

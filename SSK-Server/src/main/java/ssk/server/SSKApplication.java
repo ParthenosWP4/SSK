@@ -1,7 +1,10 @@
 package ssk.server;
 
 
+import org.apache.commons.lang.StringEscapeUtils;
 import org.elasticsearch.client.Client;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
@@ -16,6 +19,7 @@ import ssk.server.service.SSKServices;
 
 import java.io.*;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Map;
@@ -43,6 +47,7 @@ public class SSKApplication
     public static  final String [] mappings  = { "resource-metadata", "resource", "step-metadata", "scenario-metadata", "step" ,"scenario"};
 
     boolean firstLaunch = false;
+    private static final Logger logger = LoggerFactory.getLogger(SSKApplication.class.getName());
 
 
     public static void main(String args[]) {
@@ -52,16 +57,16 @@ public class SSKApplication
 
     //useful for debug, print elastic search details
     private void printElasticSearchInfo() {
-        System.out.println("--ElasticSearch--");
+        logger.info("--ElasticSearch--");
         Client client = es.getClient();
         Map<String, String> asMap = client.settings().getAsMap();
 
         asMap.forEach((k, v) -> {
-            System.out.println(k + " = " + v);
+            logger.info(k + " = " + v);
         });
 
         if(!es.indexExists(sskIndex)){
-            System.out.println("index :" + es.createIndex(sskIndex));
+            logger.info("index :" + es.createIndex(sskIndex));
             firstLaunch = true;
         }
 
@@ -75,7 +80,7 @@ public class SSKApplication
                if(elServices.createMappings(mapping)) System.out.println("Type '"+mapping+ "' successful created ");
             }
         }
-        System.out.println("--ElasticSearch--");
+        logger.info("--ElasticSearch--");
     }
 
     @Override

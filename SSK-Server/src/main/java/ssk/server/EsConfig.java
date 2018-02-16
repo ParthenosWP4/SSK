@@ -14,6 +14,7 @@ import org.springframework.data.elasticsearch.repository.config.EnableElasticsea
 import java.net.InetAddress;
 
 
+@SuppressWarnings("ALL")
 @Configuration
 @EnableElasticsearchRepositories(basePackages = "org.server.repository")
 public class EsConfig {
