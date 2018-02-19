@@ -789,6 +789,28 @@
                                         target="http://it.dariah.eu:8983/solr/#/WP4/documents"
                                         >here</ref>: choose <code>XML</code> for Document Type,
                                     paste the content of the file in Document(s) and submit.</p>
+                                <p>Note that the value to indicate in the <att>key</att> is the value of the field "standard_abbr_name". See below the sample file</p>
+                                
+                                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                    <doc>
+                                        <field name="id">33 (must be incremented by 1 for each new standard)</field>
+                                        <field name="standard_abbr_name">Standard abbreviated Name : This information will be used in the TEI file to refer to this description</field>
+                                        <field name="standard_complete_name">Standard Complete name</field>
+                                        <field name="standard_type">Two values: 'standard' OR 'method'. When describing a format, use 'standard', when describing a protocol or a set of techniques, use 'method'</field>
+                                        <field name="standard_desc_eng">English Description</field>
+                                        <field name="standard_desc_fr">French Description</field>
+                                        <field name="standard_desc_deu">German Description</field>
+                                        <field name="standard_desc_esp">Spanish Description</field>
+                                        <field name="standard_data_type">select from: Horizontal->e.g. XML, CSV and vertical ->e.g.
+                                            EDM</field>
+                                        <field name="standard_link">http://link_to_standard_official_page.com</field>
+                                        <field name="standard_tags">Tag1: example-> Classification</field>
+                                        <field name="standard_tags">Tag2: example-> Human-history</field>
+                                        <field name="standard_tags">Tag3: example-> Research Activities - Organizing</field>
+                                        <field name="standard_tags">Tag4: example-> Research Objects - Digital Humanities</field>
+                                        <field name="standard_resources">http://link_to_resource_about_the _standard.com</field>
+                                    </doc>
+                                </egXML>
                             </div>
                         </div>
                     </div>
