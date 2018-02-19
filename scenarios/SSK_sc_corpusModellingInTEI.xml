@@ -39,7 +39,7 @@
    </teiHeader>
    <text>
       <body>
-         <div type="scenario">
+         <div type="researchScenario" xml:id="sc_corpusComposition">
             <head xml:lang="en" type="scenarioTitle">Creation of a TEI-based corpus</head>
             <desc type="definition" xml:lang="en">This scenario explains the steps to take, in order to create a corpus based on the TEI tagset. As of today, the TEI guidelines have become a de facto standard for text annotation, providing solutions for a great variety of text and phrase structures, information on content types, linguistic information on words or phrases, etc. In many digital text collections and digital edition projects annotation has been based on the TEI. Linguistic corpora based on TEI may thus be re-used in projects of other disciplines as well or may themselves benefit from the wide range of already existing resources.</desc>
             <desc xml:lang="en" type="terms">
@@ -47,21 +47,21 @@
                <term type="datatype" key="catalogs" source="nedimah"/>
             </desc>
             <figure type="image">
-               <head>Title of the image</head>
+               <head>Illustrative image of the scenario</head>
                <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/corpusAnalysis_compact.png"/>
-               <figDesc>Description of the image</figDesc>
+               <figDesc>Combination of screenshots of different steps in the scenario (image created by Susanne Haaf)</figDesc>
             </figure>
             <listEvent>
                <event xml:id="s1" type="researchScenario" ref="SSK_sc_digitization"/>
-               <event xml:id="CMiT01" type="researchStep" ref="step_corpusComposition"/>
-               <event xml:id="CMiT02" type="researchStep" ref="step_verificationAndCleanup"/>
-               <event xml:id="CMiT05" type="researchStep" ref="step_conversionToTEI"/>
-               <event xml:id="CMiT15" type="researchStep" ref="step_verificationAndCleanup"/>
-               <event xml:id="CMiT20" type="researchStep" ref="step_createWorkbench"/>
-               <event xml:id="CMiT25" type="researchStep" ref="step_verificationAndCleanup"/>
-               <event xml:id="CMiT40" type="researchStep" ref="step_annotation"/>
-               <event xml:id="CMiT45" type="researchStep" ref="step_verificationAndCleanup"/>
-               <event xml:id="CMiT55" type="researchStep" ref="step_finalize"/>
+               <event xml:id="s2" type="researchStep" ref="step_corpusComposition"/>
+               <event xml:id="s3" type="researchStep" ref="step_verificationAndCleanup"/>
+               <event xml:id="s4" type="researchStep" ref="step_conversionToTEI"/>
+               <event xml:id="s5" type="researchStep" ref="step_verificationAndCleanup"/>
+               <event xml:id="s6" type="researchStep" ref="step_createWorkbench"/>
+               <event xml:id="s7" type="researchStep" ref="step_verificationAndCleanup"/>
+               <event xml:id="s8" type="researchStep" ref="step_annotation"/>
+               <event xml:id="s9" type="researchStep" ref="step_verificationAndCleanup"/>
+               <event xml:id="s10" type="researchStep" ref="step_finalize"/>
             </listEvent>
          </div>
       </body>
