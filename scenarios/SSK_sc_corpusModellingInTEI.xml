@@ -48,7 +48,7 @@
             </desc>
             <figure type="image">
                <head>Title of the image</head>
-               <graphic url="http://www.tei-c.org/About/Logos/TEI-600.jpg"/>
+               <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/corpusAnalysis_compact.png"/>
                <figDesc>Description of the image</figDesc>
             </figure>
             <listEvent>
