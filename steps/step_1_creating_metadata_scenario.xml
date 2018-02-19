@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Step "Select Data (or existing Metadata) to be transformed in Metadata"</title>
+                <author>
+                    <persName>Antonio Davide Madonna</persName>
+                    <affiliation>MIBACT-ICCU</affiliation>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <authority>Parthenos</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/">
+                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.</p>
+                    </licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Created from scratch</p>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <listPrefixDef>
+                <prefixDef ident="wp2" matchPattern="(.*?)" replacementPattern="groups/368112">
+                    <p>The prefix wp2 needs to be used before resources taken from the <ref
+                        type="url" target="https://www.zotero.org/groups/368112/parthenos_wp2"
+                        >Parthenos WP2 Zotero Library</ref>.</p>
+                    <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID
+                        by a colon ":". Ex: target="wp2:JHSD76DS"</p>
+                </prefixDef>
+                <prefixDef ident="wp3" matchPattern="(.*?)" replacementPattern="groups/520841">
+                    <p>The prefix wp3 needs to be used before resources taken from the <ref
+                        type="url" target="https://www.zotero.org/groups/520841/parthenos_wp3"
+                        >Parthenos WP3 Zotero Library</ref>.</p>
+                    <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID
+                        by a colon ":". Ex: target="wp2:JHSD76DS"</p>
+                </prefixDef>
+                <prefixDef ident="wp4" matchPattern="(.*?)" replacementPattern="groups/427927">
+                    <p>The prefix wp4 needs to be used before resources taken from the <ref
+                        type="url" target="https://www.zotero.org/groups/427927/parthenos_wp4"
+                        >Parthenos WP4 Zotero Library</ref>.</p>
+                    <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID
+                        by a colon ":". Ex: target="wp2:JHSD76DS"</p>
+                </prefixDef>
+            </listPrefixDef>
+        </encodingDesc>
+        <revisionDesc>
+            <change/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listEvent>
+                <event type="researchStep">
+                    <head xml:lang="en">Select Data (or existing Metadata) to be transformed in Metadata</head>
+                    <desc xml:lang="en" type="definition">This step describes Data (or Metadata) selection process, based on predefined criteria: format, homogeneity, implemented fields, etc. etc.</desc>
+                    <desc xml:lang="fr" type="definition"/>
+                    <desc xml:lang="en" type="term">
+                        <term type="activity" source="http://tadirah.dariah.eu/"
+                            key="http://tadirah.dariah.eu/vocab/index.php?tema=25&amp;/4_analysis"/>
+                    </desc>
+                    <linkGrp type="generalResources">
+                        <ref type="specification" subtype="standard" source="zotero"
+                            target="wp2:D59ARI5T">
+                            <term type="standard" source="standard_list" key="Metadata"/>
+                        </ref>
+                        <ref type="documentation" subtype="standard" source="zotero"
+                            target="wp2:NDW392WD">
+                            <term type="standard" source="standard_list" key="Metadata"/>
+                        </ref>
+                        <ref type="documentation" subtype="standard" source="zotero" 
+                            target="wp2:MAAJ25EV">
+			    <term type="standard" source="standard_list" key="Metadata"/>
+			</ref>
+                    </linkGrp>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>

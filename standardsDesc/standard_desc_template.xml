@@ -1,7 +1,8 @@
 <doc>
     <field name="id">33 (must be incremented by 1 for each new standard)</field>
-    <field name="standard_name">Standard Sample Name</field>
-    <field name="standard_name_complete">Standard Sample Name Complete</field>
+    <field name="standard_abbr_name">Standard abbreviated Name : This information will be used in the TEI file to refer to this description</field>
+    <field name="standard_complete_name">Standard Complete name</field>
+    <field name="standard_type">Two values: 'standard' OR 'method'. When describing a format, use 'standard', when describing a protocol or a set of techniques, use 'method'</field>
     <field name="standard_desc_eng">English Description</field>
     <field name="standard_desc_fr">French Description</field>
     <field name="standard_desc_deu">German Description</field>

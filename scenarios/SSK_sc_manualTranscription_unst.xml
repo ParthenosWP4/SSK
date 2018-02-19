@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario">
+   <teiHeader>
+      <!-- teiHeader TBC -->
+      <fileDesc>
+         <titleStmt>
+            <!-- Title of the tei document, not title of the scenario -->
+            <title>Digitization scenario</title>
+            <author>
+               <persName>Frank Uiterwaal</persName>
+               <affiliation>NIOD-KNAW</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>PARTHENOS</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
+                     this document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>This Google doc:
+               https://docs.google.com/document/d/1K_JSaML4bjXPNs83JB00UVnO8OpniwJiX4UkYeifCAw/edit#.</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change>
+            <!-- Only for major changes: addition of an author, of a step, etc. -->
+         </change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div type="scenario" xml:id="sc_manualTranscription">
+            <!-- All the textual information about scenarios and steps is now contained in the <head> element-->
+            <head xml:lang="en" type="scenarioTitle">Manual transcription of digitised textual material</head>
+            <desc type="definition" xml:lang="en">After an object has been digitised, a
+               transcription of its text can make the characters searchable. There are several
+               reasons to do the transcription by hand. People transcribe generally more accurrately
+               and with more attention to context. Sometimes a lack of legibility can also leave
+               manual transcription as the only possibility. It is, however, more
+               labour-intensive.</desc>
+            <desc xml:lang="en" type="terms">
+               <term source="aureHAL" type="discipline">Social Anthropology and ethnology</term>
+               <term source="aureHAL" type="discipline">History</term>
+               <term source="aureHAL" type="discipline">Philosophy and Sociology of Sciences</term>
+               <term source="aureHAL" type="discipline">Library and information sciences</term>
+               <term source="TaDiRAH" type="object" key="Data"/>
+               <term source="TaDiRAH" type="object" key="Image"/>
+               <term source="TaDiRAH" type="object" key="Literature"/>
+               <term source="TaDiRAH" type="object" key="Manuscript"/>
+               <term source="TaDiRAH" type="object" key="Sheet Music"/>
+               <term source="TaDiRAH" type="object" key="Text"/>
+               <term source="TaDiRAH" type="object" key="Text Bearing Objects"/>
+               <term source="TaDiRAH" type="technique" key="Scanning"/>
+               <term source="TaDiRAH" type="technique" key="Transcription"/>
+            </desc>
+            <figure type="image">
+               <!-- Illustration of the scenario. Can also be used in the steps -->
+               <head>Manual Transcription</head>
+               <graphic url="https://upload.wikimedia.org/wikipedia/commons/4/4e/Computer_keyboard.png"/>
+               <figDesc/>
+            </figure>
+            <listEvent>
+               <!-- <event type="scenario" ref="SSK_digitization.xml"/> -->
+               <!--<event xml:id="s1" type="researchStep" ref="selectDocuments"/>
+               <event xml:id="s2" type="researchStep" ref="describeDocumentType"/>-->
+               <event xml:id="s1" type="researchStep" ref="step_ALI_06022018"/>
+               <event xml:id="s2" type="researchStep" ref="step_DSM_06022018"/>
+               <event xml:id="s3" type="researchStep" ref="step_DIS_06022018"/>
+               <event xml:id="s4" type="researchStep" ref="step_I_06022018"/>
+               <event xml:id="s5" type="researchStep" ref="step_EQC_06022018"/>
+               <event xml:id="s6" type="researchStep" ref="step_SMF_06022018"/>
+               <event xml:id="s7" type="researchStep" ref="step_PP_06022018"/>
+               <event xml:id="s8" type="researchStep" ref="step_SEF_06022018"/>
+               <event xml:id="s9" type="researchStep" ref="step_DTM_06022018"/>
+               <!--<event xml:id="s12" type="researchStep" ref="createMetadata"/>-->
+            </listEvent>
+         </div>
+      </body>
+   </text>
+</TEI>

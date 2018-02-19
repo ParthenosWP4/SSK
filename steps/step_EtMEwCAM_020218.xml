@@ -70,12 +70,12 @@
                     </linkGrp>
                     <linkGrp type="projectResources" source="Gesualdo Online"
                         corresp="https://ricercar.gesualdo-online.cesr.univ-tours.fr/">
-                        <ref type="webpage"
+                        <ref type="database"
                             target="https://ricercar.gesualdo-online.cesr.univ-tours.fr/"/>
                     </linkGrp>
                     <linkGrp type="projectResources" source="The Lost Voices Project"
                         corresp="http://digitalduchemin.org/">
-                        <ref type="webpage" target="http://digitalduchemin.org/"/>
+                        <ref type="database" target="http://digitalduchemin.org/"/>
                     </linkGrp>
                 </event>
             </listEvent>

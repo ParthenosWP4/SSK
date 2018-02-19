@@ -48,22 +48,11 @@
                      key="http://tadirah.dariah.eu/vocab/index.php?tema=32&amp;/visualization"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref type="code" subtype="library_(computing)" source="github"
-                     target="https://github.com/jcupitt/libvips">
-                     <term type="library_(computing)" key="libvips"/>
-                  </ref>
-                  <ref type="website" subtype="tool" source="zotero" target="H23RCNAH">
-                     <term type="tool" key="GIMP"/>
-                  </ref>
-                  <ref type="website" subtype="tool" source="zotero" target="AWRNIGUR">
-                     <term type="tool" key="Adobe Photoshop"/>
-                  </ref>
-                  <ref type="website" subtype="tool" source="zotero" target="2NZPNEAN">
-                     <term type="tool" key="ImageJ"/>
-                  </ref>
-                  <ref type="website" subtype="tool" source="zotero" target="2NZPNEAN">
-                     <term type="tool" key="GNU Octave"/>
-                  </ref>
+                  <ref type="library" source="github" target="https://github.com/jcupitt/libvips"/> 
+                  <ref type="website" subtype="tool" source="zotero" target="H23RCNAH"/> 
+                  <ref type="website" subtype="tool" source="zotero" target="AWRNIGUR"/> 
+                  <ref type="website" subtype="tool" source="zotero" target="2NZPNEAN"/> 
+                  <ref type="website" subtype="tool" source="zotero" target="2NZPNEAN"/> 
                </linkGrp>
             </event>
          </listEvent>

@@ -42,14 +42,9 @@
                         Reference Resource</head>
                     <desc xml:lang="en" type="terms">
                         <term type="activity" source="http://tadirah.dariah.eu/" key="Modeling"/>
-                        <term type="policies" source="WP3Wizard" key="CD"/>
+                        <term type="standard" source="standard_list" key="CIDOC-CRM"/>
+                        <term type="standard" source="standard_list" key="XML"/>
                     </desc>
-                    <linkGrp type="generalResources">
-
-                        <ref type="code" target="https://www.w3.org/XML/"> </ref>
-                        <ref type="code" target="www.cidoc-crm.org"> </ref>
-
-                    </linkGrp>
                 </event>
             </listEvent>
         </body>

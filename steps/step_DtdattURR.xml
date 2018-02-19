@@ -43,16 +43,9 @@
                                    
                         <term type="activity" source="http://tadirah.dariah.eu/"
                             key="Organizing" />
-                        <term type="policies" source="WP3Wizard" key="CD"/>
+                        <term type="standard" source="standard_list" key="XML"/>
+                        <term type="standard" source="standard_list" key="CIDOC-CRM"/>
 						</desc>
-						<linkGrp type="generalResources">
-						<ref type="code" source="XML"
-                            target="https://www.w3.org/XML/">
-                        </ref>
-						<ref type="code" source="CIDOC-CRM"
-                            target="www.cidoc-crm.org">
-                        </ref>						
-					</linkGrp>
                 </event>
             </listEvent>
         </body>

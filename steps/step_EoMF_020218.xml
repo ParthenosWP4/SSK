@@ -71,7 +71,7 @@
                             target="https://github.com/DuChemin/MEIMassaging">
                             <term type="tool" key="MEIMassaging"/>
                         </ref>
-                        <ref type="code" subtype="tool" source="github"
+                        <ref type="tool" source="github"
                             target="https://github.com/zolaemil/meiView">
                             <term type="tool" key="MeiView"/>
                         </ref>

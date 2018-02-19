@@ -49,16 +49,16 @@
                </desc>
                <linkGrp type="generalResources">
                   <ref type="software" subtype="tool" source="zotero" target="4W7QUMZF">
-                     <term type="tool" key="MOVIDA"/>
+                     <!--<term type="tool" key="MOVIDA"/>-->
                   </ref>
                   <ref type="software" subtype="tool" source="zotero" target="2NZPNEAN">
-                     <term type="tool" key="GNU Octave"/>
+                     <!--<term type="tool" key="GNU Octave"/>-->
                      </ref>
                   <ref type="service" subtype="website"  source="zotero" target="US2HB3DN">
-                     <term type="service" key="DIAGNOSIS"/>
+                     <!--<term type="service" key="DIAGNOSIS"/>-->
                   </ref>
                   <ref type="software" subtype="tool" source="zotero" target="S5TDK87K">
-                     <term type="tool" key="Origin"/>
+                     <!--<term type="tool" key="Origin"/>-->
                   </ref>
                </linkGrp>
             </event>
