@@ -4,7 +4,7 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Description of the scenario \"Corpus modelling in TEI\"</title>
+            <title>Description of the scenario \"Creation of a TEI-based corpus\"</title>
             <author>
                <persName>Klaus Illmayer</persName>
                <affiliation>OEAW-ACDH</affiliation>
@@ -40,7 +40,7 @@
    <text>
       <body>
          <div type="scenario">
-            <head xml:lang="en" type="scenarioTitle">Corpus modelling in TEI</head>
+            <head xml:lang="en" type="scenarioTitle">Creation of a TEI-based corpus</head>
             <desc type="definition" xml:lang="en">This scenario explains the steps to take, in order to create a corpus based on the TEI tagset. As of today, the TEI guidelines have become a de facto standard for text annotation, providing solutions for a great variety of text and phrase structures, information on content types, linguistic information on words or phrases, etc. In many digital text collections and digital edition projects annotation has been based on the TEI. Linguistic corpora based on TEI may thus be re-used in projects of other disciplines as well or may themselves benefit from the wide range of already existing resources.</desc>
             <desc xml:lang="en" type="terms">
                <term source="parthenos" type="discipline" key="LRS">Linguistics</term>
@@ -52,6 +52,7 @@
                <figDesc>Description of the image</figDesc>
             </figure>
             <listEvent>
+               <event xml:id="s1" type="researchScenario" ref="SSK_sc_digitization"/>
                <event xml:id="CMiT01" type="researchStep" ref="step_corpusComposition"/>
                <event xml:id="CMiT02" type="researchStep" ref="step_verificationAndCleanup"/>
                <event xml:id="CMiT05" type="researchStep" ref="step_conversionToTEI"/>
