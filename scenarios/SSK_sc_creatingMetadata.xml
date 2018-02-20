@@ -64,11 +64,11 @@
             <desc type="definition" xml:lang="en">Scenario consisting of a step-by-step guide to make metadata in a specific application profile from data structured in different manners</desc>
             <!--<desc type=""></desc>-->
             <desc xml:lang="en" type="terms">
-               <term source="TaDiRAH" type="ResearchObject" key="Metadata" />
-               <term source="TaDiRAH" type="ResearchObject" key="Standards" />
-               <term source="TaDiRAH" type="ResearchTechniques" key="Mapping" />
-               <term source="TaDiRAH" type="ResearchActivities" key="Creation"/>
-               <term source="TaDiRAH" type="ResearchActivities" key="Conversion"/>
+               <term source="TaDiRAH" type="object" key="Metadata" />
+               <term source="TaDiRAH" type="object" key="Standards" />
+               <term source="TaDiRAH" type="technique" key="Mapping" />
+               <term source="TaDiRAH" type="activity" key="Creation"/>
+               <term source="TaDiRAH" type="activity" key="Conversion"/>
             </desc>
             <figure type="image">
                <!-- Illustration of the scenario. Can also be used in the steps -->
