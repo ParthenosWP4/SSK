@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI 
+      xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario" xml:id="sc_prosopography_research">
+      <teiHeader>
+            <fileDesc>
+                  <titleStmt>
+                        <title>Prosopography research</title>
+                        <author>
+                              <persName>Maurizio Sanesi</persName>
+                              <affiliation>SISMEL</affiliation>
+                        </author>
+                        <author>
+                              <persName>Roberta Giacomi</persName>
+                              <affiliation>SISMEL</affiliation>
+                        </author>
+                  </titleStmt>
+                  <publicationStmt>
+                        <authority>Parthenos</authority>
+                        <availability>
+                              <licence target="http://creativecommons.org/licenses/by/4.0/">
+                                    <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this document.</p>
+                              </licence>
+                        </availability>
+                  </publicationStmt>
+                  <sourceDesc>
+                        <p>Created from scratch</p>
+                  </sourceDesc>
+            </fileDesc>
+            <revisionDesc>
+                  <change/>
+            </revisionDesc>
+      </teiHeader>
+      <text>
+            <body>
+                  <div type="scenario">
+                        <head xml:lang="en" type="scenarioTitle">Prosopography research</head>
+                        <desc type="definition" xml:lang="en">Prosopography is the investigation of the common background characteristics of a group of actors in history, making a collective study of their lives. Prosopography is mostly used by historians to address two main research questions: 
+						1. roots of political action: e.g. the interests beneath the rhetoric of politics or the social and economic affiliations of political groupings;
+						2. social structure and social mobility: e.g. the role in society, the degree of social mobility and the correlation of intellectual or religious movements with other factors.</desc>
+                        <desc xml:lang="en" type="terms">
+                              <term source="parthenos" type="discipline" key="history">History</term>
+                              <term type="objects" key="metadata" source="tadirah"/>
+                        </desc>
+                        <figure type="image">
+                              <head/>
+                              <graphic url="https://upload.wikimedia.org/wikipedia/commons/7/7f/Filippo_Dolciati_%281443_-_1519%29_Execution_of_Girolamo_Savonarola._1498%2C_Florence%2C_Museo_di_San_Marco.jpg"/>
+                              <figDesc/>
+                        </figure>
+                        <listEvent>
+                              <event xml:id="s1" type="researchStep" ref="step_FswHasHQcttg_V2"/>
+                              <event xml:id="s2" type="researchStep" ref="step_SDtatRfC_V2"/>
+                              <event xml:id="s3" type="researchStep" ref="step_CaSARDCooCwDwbs_V2"/>
+                              <event xml:id="s4" type="researchStep" ref="step_atGPaLR_V2"/>
+                              <event xml:id="s5" type="researchStep" ref="step_SaRR_V2"/>
+                              <event xml:id="s6" type="researchStep" ref="step_SEouDatttQ_V2"/>
+                              <event xml:id="s7" type="researchStep" ref="step_MdDioURR_V2"/>
+                              <event xml:id="s8" type="researchStep" ref="step_DtdattURR_V2"/>
+                              <event xml:id="s9" type="researchStep" ref="step_StR_V2"/>
+                              <event xml:id="s10" type="researchStep" ref="step_ItD_V2"/>
+							  <event xml:id="s11" type="researchStep" ref="step_SdtAaP_V2"/>
+							  <event xml:id="s12" type="researchStep" ref="step_StURR_V2"/>
+							  <event xml:id="s13" type="researchStep" ref="step_EttrLPaA_V2"/>
+							  <event xml:id="s14" type="researchStep" ref="step_PTtacitUaRoD_V2"/>
+							  <event xml:id="s15" type="researchStep" ref="step_AACaAP_V2"/>
+                        </listEvent>
+                  </div>
+            </body>
+      </text>
+</TEI>

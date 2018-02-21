@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI 
+      xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario" xml:id="sc_scholars_standards">
+      <teiHeader>
+            <fileDesc>
+                  <titleStmt>
+                        <title>Research standards for scholars</title>
+                        <author>
+                              <persName>Maurizio Sanesi</persName>
+                              <affiliation>SISMEL</affiliation>
+                        </author>
+                        <author>
+                              <persName>Roberta Giacomi</persName>
+                              <affiliation>SISMEL</affiliation>
+                        </author>
+                        <author>
+                              <persName>Claus Spiecker</persName>
+                              <affiliation>FHP</affiliation>
+                        </author>
+                        <author>
+                              <persName>Karolien Verbrugge</persName>
+                              <affiliation>NIOD</affiliation>
+                        </author>
+                  </titleStmt>
+                  <publicationStmt>
+                        <authority>Parthenos</authority>
+                        <availability>
+                              <licence target="http://creativecommons.org/licenses/by/4.0/">
+                                    <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence
+                     applies to this document.</p>
+                              </licence>
+                        </availability>
+                  </publicationStmt>
+                  <sourceDesc>
+                        <p>Created from scratch</p>
+                  </sourceDesc>
+            </fileDesc>
+            <revisionDesc>
+                  <change/>
+            </revisionDesc>
+      </teiHeader>
+      <text>
+            <body>
+                  <div type="scenario">
+                        <head xml:lang="en" type="scenarioTitle">Scholar needs standards to represent information about authors, works, documents</head>
+                        <desc type="definition" xml:lang="en">In medieval studies, it is often needed to define in an unambiguous way information like person names (i.e.: authors), titles of works and documents identifiers (i.e.: shelfmarks). In fact, information can frequently be ambiguous: there are several cases of homonimy; an author can have more than one appellation known; the title of a work can have different forms, and also shelfmarks may have different structures. The quantity of material involved in the research and the time employed to perform it may vary depending on the subject of the research itself.</desc>
+                        <desc xml:lang="en" type="terms">
+                              <term source="parthenos" type="discipline" key="history">History</term>
+                              <term type="objects" key="metadata" source="tadirah"/>
+                        </desc>
+                        <figure type="image">
+                              <head/>
+                              <graphic url="https://c1.staticflickr.com/1/107/306564541_5249a67f89_b.jpg"/>
+                              <figDesc/>
+                        </figure>
+                        <listEvent>
+                              <event xml:id="s1" type="researchStep" ref="step_DtrTaTGaCB_V2"/>
+                              <event xml:id="s2" type="researchStep" ref="step_SDtatRfC_V2"/>
+                              <event xml:id="s3" type="researchStep" ref="step_CaSARDCooCwDwbs_V2"/>
+                              <event xml:id="s4" type="researchStep" ref="step_atGPaLR_V2"/>
+                              <event xml:id="s5" type="researchStep" ref="step_CSatSR_V2"/>
+                              <event xml:id="s6" type="researchStep" ref="step_AoS_V2"/>
+                              <event xml:id="s7" type="researchStep" ref="step_StR_V2"/>
+                              <event xml:id="s8" type="researchStep" ref="step_ItD_V2"/>
+                              <event xml:id="s9" type="researchStep" ref="step_SdtAaP_V2"/>
+                              <event xml:id="s10" type="researchStep" ref="step_EttrLPaA_V2"/>
+                        </listEvent>
+                  </div>
+            </body>
+      </text>
+</TEI>
