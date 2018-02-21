@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="st_dtabf_006">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>step_RoM.xml</title>
+                <author>
+                    <persName><surname>Haaf</surname><forename>Susanne</forename></persName>
+                    <affiliation>Berlin-Brandenburg Academy of Sciences and Humanities</affiliation>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <authority>Parthenos</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/">
+                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.</p>
+                    </licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Created from scratch</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listEvent>
+                <event type="researchStep">
+                    
+                    <head type="stepTitle" xml:lang="en">Recognition of metadata</head>
+                    
+                    <desc type="definition" xml:lang="en">For each text in the corpus it is necessary to record bibliographic information. The DTABf provides an extensive TEI Header to hold this information, containing not only title, author and year of publication, but also further information on the digital publication and licensing, notes about the text sources, responsibilities, etc. Several resources are provided to facilitate this step: 
+                    	<list>
+                    	   <item>A web form to record the necessary metadata in a WYSIWYG environment and to automatically create the DTABf conformant teiHeader</item>
+                    	   <item>Extensive documentation on the recording of metadata according to DTABf</item>
+                    	   <item>The DTABf-RNG-schema to validate the entire TEI-Document including its metadata</item>
+                    	</list> 
+                    </desc>
+                    <desc xml:lang="en" type="terms">
+                      <term type="activity" source="http://tadirah.dariah.eu/" key="DataRecognition"/>
+                    	<term type="technique" source="http://tadirah.dariah.eu/" key="Encoding"/>
+                    	<term type="object" source="http://tadirah.dariah.eu/" key="Metadata"/>
+                                                
+                      <term type="standard" source="standard_list" key="TEI"/>
+                    	<term type="standard" source="standard_list" key="XML"/>
+                    	<term type="standard" source="clarinStandards" key="CMDI"/>
+                    </desc>
+                    <linkGrp type="generalResources">
+                        <!-- Ressources: Metadata web form, XSLT, CMDI -->
+                        <ref type="specification" source="zotero" target="https://www.zotero.org/groups/427927/items/T7672NJ8">DTABf documentation</ref>
+                        <ref type="specification" source="github" target="https://github.com/deutschestextarchiv/dtabf/tree/master/schema">
+                            Formal specification of the DTABf: ODDs, schemas, Schematron Constraints
+                        </ref>
+                    </linkGrp>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>

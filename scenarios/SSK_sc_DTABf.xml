@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>sc_DTABf.xml</title>
+            <author>
+               <persName><surname>Haaf</surname><forename>Susanne</forename></persName>
+               <affiliation>Berlin-Brandenburg Academy of Sciences and Humanities</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos WP4</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
+                     this document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div type="scenario" xml:id="sc_schemaCustomization">
+            <head xml:lang="en" type="scenarioTitle">Harmonization of digitized textual resources with the DTABf</head>
+            <desc type="definition" xml:lang="en">Currently, initiatives for the digitization of textual resources and their provision to the interested community are manifold and various. Hence, scholars who want to base their research on digitized texts, especially if working with popular works, may find a considerable amount of resources already digitized and ready to use. However, with these resources originating from various data providers (individual scholars, singular research projects, large infrastructures, ...) scholars usually face a great variety of digitization guidelines and formats. Gathering resources from different sources will hence almost always require their harmonization on different levels of processing. The CLARIN-D center at the Berlin-Brandenburg Academy of Sciences and Humanities provides an infrastructure for this task based on the DTA 'Base Format' (DTABf). The DTABf is a TEI-P5 format for homogeneous text annotation including set of extensive guidelines for text transcription. This scenario describes the steps to take in order to create a homogeneous, DTABf-based text corpus.</desc>
+            <!-- Can I reference the D2.1 use case corresponding with this scenario somewhere here? -->
+            <desc type="terms" xml:lang="en">
+               <term type="standard" source="standard_list" key="XML"/>
+               <term type="standard" source="standard_list" key="TEI"/>
+               
+               <term type="activity" source="http://tadirah.dariah.eu/" key="Discovering"/>
+               <term type="activity" source="http://tadirah.dariah.eu/" key="Gathering"/>
+               <term type="activity" source="http://tadirah.dariah.eu/" key="Meta:TeachingLearning"/>
+               <term type="activity" source="http://tadirah.dariah.eu/" key="Meta:Assessing"/>
+               <term type="activity" source="http://tadirah.dariah.eu/" key="DataRecognition"/>
+               <term type="activity" source="http://tadirah.dariah.eu/" key="Annotating"/> 
+               <term type="activity" source="http://tadirah.dariah.eu/" key="Cleanup"/>
+               <term type="activity" source="http://tadirah.dariah.eu/" key="ContentAnalysis"/>
+               <term type="activity" source="http://tadirah.dariah.eu/" key="StructuralAnalysis"/>
+               <term type="activity" source="http://tadirah.dariah.eu/" key="NetworkAnalysis"/>
+               <term type="activity" source="http://tadirah.dariah.eu/" key="Contextualizing"/>
+               <term type="activity" source="http://tadirah.dariah.eu/" key="Publishing"/>
+               <term type="activity" source="http://tadirah.dariah.eu/" key="Sharing"/>
+               
+               <term type="technique" source="http://tadirah.dariah.eu/" key="Encoding"/>
+            	 <term type="technique" source="http://tadirah.dariah.eu/" key="Mapping"/>
+            	 <term type="technique" source="http://tadirah.dariah.eu/" key="Searching"/>
+            	 <term type="technique" source="http://tadirah.dariah.eu/" key="Browsing"/>
+            	 <!-- For this scenario some techniques are missing in TADIRAH, I think: Converting; Homogenizing/Harmonizing; Collecting -->
+            	
+               <term type="object" source="http://tadirah.dariah.eu/" key="Data"/>
+            	 <term type="object" source="http://tadirah.dariah.eu/" key="Language"/>
+            	 <term type="object" source="http://tadirah.dariah.eu/" key="Literature"/>
+            	 <term type="object" source="http://tadirah.dariah.eu/" key="Metadata"/>
+            	 <term type="object" source="http://tadirah.dariah.eu/" key="Projects"/>
+            	 <term type="object" source="http://tadirah.dariah.eu/" key="Standards"/>
+            	 <term type="object" source="http://tadirah.dariah.eu/" key="Text"/>
+            	 <term type="object" source="http://tadirah.dariah.eu/" key="Digital Humanities"/>
+               <term type="object" source="NEMO" key="Computer Files:Computer program"/>
+            	 <term type="object" source="NEMO" key="Computer Files:Document"/>
+            	 <term type="object" source="NEMO" key="Continuing Resources:StandardsSpecifications"/>
+            	
+               <term type="discipline" source="autreHAL" key="History"></term>
+            	 <term type="discipline" source="autreHAL" key="Linguistics"></term>
+            	 <term type="discipline" source="autreHAL" key="Literature"></term>
+            	 <term type="discipline" key="DigitalHumanities"/><!-- Is there a good source for that? -->
+           
+            </desc>
+            <figure type="image">
+               <head>Text digitization with DTABf</head>
+               <graphic url=".../sc_DTABf_figure.jpg"/><!-- URL has to be adjusted -->
+               <figDesc>Example for DTABf encoding from: Arnim/Brentano: Des Knaben Wunderhorn. Bd. 1. Heidelberg, 1806, S. 86, 
+                  http://www.deutschestextarchiv.de/arnim_wunderhorn01_1806/95.</figDesc>
+            </figure>
+            <listEvent>
+               <event xml:id="st_dtabf_001" type="researchStep" ref="step_SoTWRftRQ.xml"/>
+               <event xml:id="st_dtabf_002" type="researchStep" ref="step_SoTtGiaRC.xml"/>
+               <event xml:id="st_dtabf_003" type="researchStep" ref="step_DoDaAGftRC.xml"/>
+               <event xml:id="st_dtabf_004" type="researchStep" ref="step_DoRftRC.xml"/>
+               <event xml:id="st_dtabf_005" type="researchStep" ref="step_HoEDTftC.xml"/>
+               <event xml:id="st_dtabf_006" type="researchStep" ref="step_RoM.xml"/>
+               <event xml:id="st_dtabf_007" type="researchStep" ref="step_PotC.xml"/>
+            </listEvent>
+         </div>
+      </body>
+   </text>
+</TEI>

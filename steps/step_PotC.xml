@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="st_dtabf_007">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>step_PotC.xml</title>
+                <author>
+                    <persName><surname>Haaf</surname><forename>Susanne</forename></persName>
+                    <affiliation>Berlin-Brandenburg Academy of Sciences and Humanities</affiliation>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <authority>Parthenos</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/">
+                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.</p>
+                    </licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Created from scratch</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listEvent>
+                <event type="researchStep">
+                    
+                    <head type="stepTitle" xml:lang="en">Provision of the corpus</head>
+                    
+                    <desc type="definition" xml:lang="en">The text corpus that has been created with the issue of interoperability in mind and according to the standardized DTA 'Base Format' can then be provided to the Digital Humanities' Community for re-use in other project contexts. It can be handed over to a CLARIN center for persistent storage and availability via the CLARIN infrastructure. Because of the usage of the DTABf as a standardized format, conversion into CLARIN's input formats (CMDI, TCF) can be done automatically. This way, the corpus becomes findable via CLARIN's faceted search platform VLO (Virtual Language Observatory) and can be further analysed in WebLicht. German text corpora can be easily integrated in the Deutsches Textarchiv (DTA) platform, where they become part of a large historical corpus and connected to search and data analysis facilities on the platform. In any case, it is strongly recommended to respect the FAIR principles when providing the corpus.
+                    </desc>
+                    <desc xml:lang="en" type="terms">
+                      <term type="activity" source="http://tadirah.dariah.eu/" key="Archiving"/>
+                      <term type="activity" source="http://tadirah.dariah.eu/" key="Preservation"/>
+                      <term type="activity" source="http://tadirah.dariah.eu/" key="Publishing"/>
+                      <term type="activity" source="http://tadirah.dariah.eu/" key="Sharing"/>
+                      <term type="object" source="http://tadirah.dariah.eu/" key="Data"/>
+                                                
+                      <term type="standard" source="clarinStandards" key="CMDI"/>
+                      <term type="standard" source="clarinStandards" key="TCF"/>
+                    </desc>
+                    <linkGrp type="generalResources">
+                        <!-- further ressources: conversion DTABf to CMDI, DTABf CMDI profile, paper Geyken et al. 2018 -->
+                        
+                        <ref type="service" source="zotero" target="https://www.zotero.org/groups/427927/items/8BD6FDKR">VLO</ref>
+                        <ref type="service" source="zotero" target="https://www.zotero.org/groups/427927/items/HNU9RXFC">WebLicht</ref>
+                        <ref type="service" source="zotero" target="https://www.zotero.org/groups/427927/items/A5NVUWZB">TEI-TCF encoder+decoder</ref>
+                        
+                        <ref type="specification" source="zotero" target="https://www.zotero.org/groups/427927/items/ZJ7ZSJWT">FAIR principles</ref>
+                        <ref type="specification" source="zotero" target="https://www.zotero.org/groups/427927/items/BNFTBS5W">CMDI 1.2 specification</ref>
+                        <ref type="specification" source="zotero" target="https://www.zotero.org/groups/427927/items/IHWJQT9N">TCF documentation</ref>
+                        
+                        <ref type="website" source="zotero" target="https://www.zotero.org/groups/427927/items/AGAAKQ2D">Deutsches Textarchiv (DTA)</ref>
+                        
+                        
+                    </linkGrp>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="st_dtabf_001">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>step_SoTWRftRQ.xml</title>
+                <author>
+                    <persName><surname>Haaf</surname><forename>Susanne</forename></persName>
+                    <affiliation>Berlin-Brandenburg Academy of Sciences and Humanities</affiliation>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <authority>Parthenos</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/">
+                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.</p>
+                    </licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Created from scratch</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listEvent>
+                <event type="researchStep">
+                    
+                    <head type="stepTitle" xml:lang="en">Selection of textual works relevant for the research question</head>
+                    
+                    <desc type="definition" xml:lang="en">This is a qualitative task: As a first step, identify suitable texts for your research question and decide on the text selection which the planned work should be based on. This step can already be accompanied by checks for digital collections that might be suitable and available for the planned research (cf. step_textSelection).</desc>
+                    <desc xml:lang="en" type="terms">
+                        <term type="activity" source="http://tadirah.dariah.eu/" key="Designing"/>
+                        <term type="activity" source="http://tadirah.dariah.eu/" key="Discovering"/>
+                    	<term type="technique" source="http://tadirah.dariah.eu/" key="Searching"/>
+            	 		<term type="object" source="http://tadirah.dariah.eu/" key="Text"/>
+                    	<term type="object" source="http://tadirah.dariah.eu/" key="Text Bearing Objects"/>
+                    	<term type="object" source="NEMO" key="Books"/>	
+                    </desc>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>
