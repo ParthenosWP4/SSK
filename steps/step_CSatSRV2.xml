@@ -59,7 +59,7 @@
 						<term type="standard" source="standard_list" key="VIAF"/>
                         <term type="policies" source="WP3Wizard" key="CD"/>
                     </desc>
-                    <linkGrp type="generalResources"/>
+                    
                 </event>
             </listEvent>
         </body>
