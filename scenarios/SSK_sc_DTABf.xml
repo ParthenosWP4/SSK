@@ -96,7 +96,7 @@
             <listEvent>
                <event xml:id="st_dtabf_001" type="researchStep" ref="step_SoTWRftRQ"/>
                <event xml:id="st_dtabf_002" type="researchStep" ref="step_SoTtGiaRC"/>
-               <!--<event xml:id="st_dtabf_003" type="researchStep" ref="step_DoDaAGftRC"/>-->
+               <event xml:id="st_dtabf_003" type="researchStep" ref="step_DoDaAGftRC"/>
                <event xml:id="st_dtabf_004" type="researchStep" ref="step_DoRftRC"/>
                <event xml:id="st_dtabf_005" type="researchStep" ref="step_HoEDTftC"/>
                <event xml:id="st_dtabf_006" type="researchStep" ref="step_RoM"/>
