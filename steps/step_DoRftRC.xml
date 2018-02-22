@@ -58,7 +58,7 @@
                     	<ref type="specification" source="github" target="https://github.com/deutschestextarchiv/dtabf/tree/master/schema">
                     	  Formal specification of the DTABf: ODDs, schemas, Schematron Constraints
                     	</ref>
-                        <ref type="specification" source="zotero" target="https://www.zotero.org/groups/427927/items/T7672NJ8">DTABf transcription and annotation guidelines</ref>
+                        <ref type="specification" source="zotero" target="T7672NJ8">DTABf transcription and annotation guidelines</ref>
                     </linkGrp>
                 </event>
             </listEvent>
