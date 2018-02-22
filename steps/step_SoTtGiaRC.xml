@@ -47,9 +47,9 @@
                 	
                     <linkGrp type="generalResources">
                         <!-- add: KVK, VDs, ZVDD -->
-                      <ref type="website" source="zotero" target="https://www.zotero.org/groups/427927/items/8BD6FDKR">VLO</ref><!-- add date -->
-                      <ref type="website" source="zotero" target="https://www.zotero.org/groups/427927/items/33XHNMST">Europeana Collections</ref><!-- add date -->
-                      <ref type="website" source="zotero" target="https://www.zotero.org/groups/427927/items/ZI8NZUC2">Deutsche Digitale Bibliothek (DDB; Digital Library of Germany)</ref><!-- add date -->
+                      <ref type="website" source="zotero" target="8BD6FDKR">VLO</ref><!-- add date -->
+                      <ref type="website" source="zotero" target="33XHNMST">Europeana Collections</ref><!-- add date -->
+                      <ref type="website" source="zotero" target="ZI8NZUC2">Deutsche Digitale Bibliothek (DDB; Digital Library of Germany)</ref><!-- add date -->
                     
                         
                     </linkGrp>
