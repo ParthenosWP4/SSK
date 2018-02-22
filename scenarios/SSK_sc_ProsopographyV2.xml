@@ -48,21 +48,21 @@
                               <figDesc/>
                         </figure>
                         <listEvent>
-                              <event xml:id="s1" type="researchStep" ref="step_FswHasHQcttg_V2"/>
-                              <event xml:id="s2" type="researchStep" ref="step_SDtatRfC_V2"/>
-                              <event xml:id="s3" type="researchStep" ref="step_CaSARDCooCwDwbs_V2"/>
-                              <event xml:id="s4" type="researchStep" ref="step_atGPaLR_V2"/>
-                              <event xml:id="s5" type="researchStep" ref="step_SaRR_V2"/>
-                              <event xml:id="s6" type="researchStep" ref="step_SEouDatttQ_V2"/>
-                              <event xml:id="s7" type="researchStep" ref="step_MdDioURR_V2"/>
-                              <event xml:id="s8" type="researchStep" ref="step_DtdattURR_V2"/>
-                              <event xml:id="s9" type="researchStep" ref="step_StR_V2"/>
-                              <event xml:id="s10" type="researchStep" ref="step_ItD_V2"/>
-							  <event xml:id="s11" type="researchStep" ref="step_SdtAaP_V2"/>
-							  <event xml:id="s12" type="researchStep" ref="step_StURR_V2"/>
-							  <event xml:id="s13" type="researchStep" ref="step_EttrLPaA_V2"/>
-							  <event xml:id="s14" type="researchStep" ref="step_PTtacitUaRoD_V2"/>
-							  <event xml:id="s15" type="researchStep" ref="step_AACaAP_V2"/>
+                              <event xml:id="s1" type="researchStep" ref="step_FswHasHQcttgV2"/>
+                              <event xml:id="s2" type="researchStep" ref="step_SDtatRfCV2"/>
+                              <event xml:id="s3" type="researchStep" ref="step_CaSARDCooCwDwbsV2"/>
+                              <event xml:id="s4" type="researchStep" ref="step_atGPaLRV2"/>
+                              <event xml:id="s5" type="researchStep" ref="step_SaRRV2"/>
+                              <event xml:id="s6" type="researchStep" ref="step_SEouDatttQV2"/>
+                              <event xml:id="s7" type="researchStep" ref="step_MdDioURRV2"/>
+                              <event xml:id="s8" type="researchStep" ref="step_DtdattURRV2"/>
+                              <event xml:id="s9" type="researchStep" ref="step_StRV2"/>
+                              <event xml:id="s10" type="researchStep" ref="step_ItDV2"/>
+							  <event xml:id="s11" type="researchStep" ref="step_SdtAaPV2"/>
+							  <event xml:id="s12" type="researchStep" ref="step_StURRV2"/>
+							  <event xml:id="s13" type="researchStep" ref="step_EttrLPaAV2"/>
+							  <event xml:id="s14" type="researchStep" ref="step_PTtacitUaRoDV2"/>
+							  <event xml:id="s15" type="researchStep" ref="step_AACaAPV2"/>
                         </listEvent>
                   </div>
             </body>
