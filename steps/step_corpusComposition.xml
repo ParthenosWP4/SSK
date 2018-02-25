@@ -4,7 +4,7 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Description of the "Corpus Composition" step</title>
+                <title>Step corpus composition</title>
                 <author>
                     <persName>Klaus Illmayer</persName>
                     <affiliation>OEAW-ACDH</affiliation>
@@ -19,7 +19,7 @@
                 </author>
             </titleStmt>
             <publicationStmt>
-                <authority>Parthenos</authority>
+                <authority>PARTHENOS</authority>
                 <availability>
                     <licence target="http://creativecommons.org/licenses/by/4.0/">
                         <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
@@ -43,13 +43,33 @@
                     <!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
                     <head type="stepTitle" xml:lang="en">Corpus Composition</head>
                     <head type="stepTitle" xml:lang="de">Korpuszusammenstellung</head>
-                    <desc type="definition" xml:lang="en">Creation of a corpus, including decision about (1) the corpus type (opportunistic, balanced, etc.) and the criteria of balancedness, (2) the type of annotations (lightweight, multiple layers, inline/standoff, …) and (3) the tagset, i.e. the content of the markup planed. Selection of resources to be included in the corpus (e.g. date range of historical sources, etc.), possibly by reference to the research question.</desc>
+                    <desc type="definition" xml:lang="en">
+                      For corpus composition a set of canonical decisions should be considered. As a starting point,
+                      the corpus type will have to be determined: Is it an opportunistic selection, a balanced corpus, etc.? If balanced, which would be the
+                      criteria of balancedness? This is accompanied by the question which domain the corpus should represent (e.g. Should it only contain
+                      resources within a specific date range or of a certain text type or from a specific author?). Based on this decision, the resources
+                      that should be included in the corpus have to be selected, possibly by reference to a research question. After that, corpus composers
+                      have to decide on the type of annotation that should be applied: lightweight or with multiple layers, inline or standoff, etc. The next
+                      important step for corpus composition is the determination of a general tagset which the annotation should follow, i.e. the content of
+                      the markup planned.
+                    </desc>
                     <desc xml:lang="en" type="terms">
                         <term type="standard" source="standard_list" key="XML"/>
                         <term type="standard" source="standard_list" key="TEI"/>
-                        <term type="activity" source="http://tadirah.dariah.eu/" key="modeling">modeling</term>
-                        <!--<term type="policies" source="WP3Wizard" key="CD"/>-->
+                        <term type="activity" source="http://tadirah.dariah.eu/" key="designing">Designing</term>
                     </desc>
+                    <linkGrp type="generalResources">
+                        <!-- VLO, which subtype to take, because it is not a standard -->
+                        <ref type="resource" subtype="standard" source="zotero"
+                            target="8BD6FDKR">
+                            <term type="standard" source="standard_list" key="Metadata"/>
+                        </ref>
+                        <!-- CMDI -->
+                        <ref type="standard" subtype="standard" source="zotero"
+                            target="BNFTBS5W">
+                            <term type="standard" source="standard_list" key="Metadata"/>
+                        </ref>
+                    </linkGrp>
                 </event>
             </listEvent>
         </body>
