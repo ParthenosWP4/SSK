@@ -20,7 +20,7 @@
                 </author>
             </titleStmt>
             <publicationStmt>
-                <authority>Parthenos</authority>
+                <authority>PARTHENOS</authority>
                 <availability>
                     <licence target="http://creativecommons.org/licenses/by/4.0/">
                         <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
@@ -41,14 +41,24 @@
         <body>
             <listEvent>
                 <event type="researchStep">
-                    <!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
                     <head type="stepTitle" xml:lang="en">Create Workbench</head>
-                    <desc type="definition" xml:lang="en">Compile data into a corpus (bundle data into one repository, either a file directory or a Github repository).</desc>
+                    <desc type="definition" xml:lang="en">
+                      After the data has been gathered and homogenized in one similar
+                      format, it should be compiled into a proper corpus. This can be
+                      done by just bundling the data into one repository, either a file
+                      directory or a Github repository.
+                    </desc>
                     <desc xml:lang="en" type="terms">
                         <term type="standard" source="standard_list" key="XML"/>
                         <term type="standard" source="standard_list" key="TEI"/>
                         <term type="activity" source="http://tadirah.dariah.eu/" key="organizing">Organizing</term>
                     </desc>
+                      <!-- todo: include github / other repos like zenodo <linkGrp type="generalResources">
+                        <ref type="spec" source="zotero" target="...">
+                            <term type="standard" source="standard_list" key="TEI"/>
+                            - github.com -
+                        </ref>
+                      </linkGrp>-->
                 </event>
             </listEvent>
         </body>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario" xml:id="sc_corpusModelling">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario" xml:id="sc_corpusCreation">
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Description of the scenario \"Creation of a TEI-based corpus\"</title>
+            <title>Scenario \"Creation of a TEI-based corpus\"</title>
             <author>
                <persName>Klaus Illmayer</persName>
                <affiliation>OEAW-ACDH</affiliation>
@@ -39,16 +39,13 @@
    </teiHeader>
    <text>
       <body>
-         <div type="researchScenario" xml:id="sc_corpusComposition">
+         <div type="researchScenario">
             <head xml:lang="en" type="scenarioTitle">Creation of a TEI-based corpus</head>
-            <desc type="definition" xml:lang="en">This scenario explains the steps to take, in order
-               to create a corpus based on the TEI tagset. As of today, the TEI guidelines have
-               become a de facto standard for text annotation, providing solutions for a great
-               variety of text and phrase structures, information on content types, linguistic
-               information on words or phrases, etc. In many digital text collections and digital
-               edition projects annotation has been based on the TEI. Linguistic corpora based on
-               TEI may thus be re-used in projects of other disciplines as well or may themselves
-               benefit from the wide range of already existing resources.</desc>
+            <desc type="definition" xml:lang="en">This scenario explains the steps to take, in order to create a corpus based on the TEI tagset.
+                As of today, the TEI guidelines have become a de facto standard for text annotation, providing solutions for a great variety of
+                text and phrase structures, information on content types, linguistic information on words or phrases, etc. In many digital text
+                collections and digital edition projects annotation has been based on the TEI. Linguistic corpora based on TEI may thus be re-used
+                in projects of other disciplines as well or may themselves benefit from the wide range of already existing resources.</desc>
             <desc xml:lang="en" type="terms">
                <term source="parthenos" type="discipline" key="LRS">Linguistics</term>
                <term type="datatype" key="catalogs" source="nedimah"/>

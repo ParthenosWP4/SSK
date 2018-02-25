@@ -20,7 +20,7 @@
                 </author>
             </titleStmt>
             <publicationStmt>
-                <authority>Parthenos</authority>
+                <authority>PARTHENOS</authority>
                 <availability>
                     <licence target="http://creativecommons.org/licenses/by/4.0/">
                         <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
@@ -41,10 +41,16 @@
         <body>
             <listEvent>
                 <event type="researchStep">
-                    <!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
                     <head type="stepTitle" xml:lang="en">Verification and Cleanup</head>
-                    <head type="stepTitle" xml:lang="fr">La Verification avec la Cleanup</head>
-                    <desc type="definition" xml:lang="en">This is a step that is actually a "hidden" or "stepified" scenario which should take parameters. Verification can be automatic at first, and then manual, done by annotators. This step has the power of looping the entire process back to the previous step (after the/some errors have been corrected).</desc>
+                    <desc type="definition" xml:lang="en">
+                      It is straightforward to include a phase of verification of results and cleanup
+                      after each step towards corpus creation. This step is actually a "hidden" or
+                      "stepified" scenario which should take parameters. Verification can be automatic
+                      at first, and then manual, done by annotators. This step has the power of looping
+                      the entire process back to the previous step (after the/some errors have been corrected).
+                      Important: Preserve the data that is about to undergo cleanup (simplest: zip with a date 
+                      stamp, more intricate: use a versioning system).
+                    </desc>
                     <desc xml:lang="en" type="terms">
                         <term type="standard" source="standard_list" key="XML"/>
                         <term type="standard" source="standard_list" key="TEI"/>
@@ -52,10 +58,9 @@
                         <term type="activity" source="http://tadirah.dariah.eu/"
                             key="meta-assessing">assessing</term>
                         <term type="activity" source="http://tadirah.dariah.eu/"
-                            key="cleanup">cleanup</term>
+                            key="cleanup">Cleanup</term>
                         <term type="policies" source="WP3Wizard" key="CD"/>
                     </desc>
-
                 </event>
             </listEvent>
         </body>

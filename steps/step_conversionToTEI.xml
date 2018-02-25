@@ -20,7 +20,7 @@
                 </author>
             </titleStmt>
             <publicationStmt>
-                <authority>Parthenos</authority>
+                <authority>PARTHENOS</authority>
                 <availability>
                     <licence target="http://creativecommons.org/licenses/by/4.0/">
                         <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
@@ -41,18 +41,36 @@
         <body>
             <listEvent>
                 <event type="researchStep">
-                    <!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
                     <head type="stepTitle" xml:lang="en">Conversion to TEI</head>
-                    <desc type="definition" xml:lang="en">The input is data format x (we can't tell it), the output is TEI.</desc>
+                    <desc type="definition" xml:lang="en">
+                      For the project at hand, a TEI format has to be chosen or created
+                      (the latter by usage of the ODD language) which suits the markup
+                      necessities defined in the corpus composition step. Thus, if digitized
+                      data from other sources are to be re-used for corpus creation, these
+                      may very likely be available only in formats that aren't similar to the
+                      TEI format selected for the corpus creation project at hand. External data
+                      may either come in completely different formats or at least in different
+                      TEI dialects. In any case, it will be necessary to convert the data from
+                      different formats into the TEI output format. Conversion may be conducted
+                      semi-automatically.</desc>
                     <desc xml:lang="en" type="terms">
                         <term type="standard" source="standard_list" key="XML"/>
                         <term type="standard" source="standard_list" key="TEI"/>
                         <term type="activity" source="http://tadirah.dariah.eu/"
                             key="conversion">Conversion</term>
                     </desc>
-                    <!--<linkGrp type="generalResources">
-                        <ref type="spec"></ref> // here a reference to the tool OxGarage would be great, but we do not have a type for tools 
-                    </linkGrp>-->
+                    <linkGrp type="generalResources">
+                        <ref type="spec" source="zotero" target="ZABRV5VD">
+                            <term type="standard" source="standard_list" key="TEI"/>
+                        </ref>
+                        <ref type="spec" source="zotero" target="ZE34VR34">
+                            <term type="standard" source="standard_list" key="TEI"/>
+                        </ref>
+                        <ref type="spec" source="zotero" target="JKRT7H2E">
+                            <term type="standard" source="standard_list" key="XML"/>
+                        </ref>
+                        <!-- todo: include http://www.tei-c.org/Guidelines/Customization/ -->
+                    </linkGrp>
                 </event>
             </listEvent>
         </body>

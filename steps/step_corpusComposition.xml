@@ -40,7 +40,6 @@
         <body>
             <listEvent>
                 <event type="researchStep">
-                    <!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
                     <head type="stepTitle" xml:lang="en">Corpus Composition</head>
                     <head type="stepTitle" xml:lang="de">Korpuszusammenstellung</head>
                     <desc type="definition" xml:lang="en">
@@ -59,15 +58,13 @@
                         <term type="activity" source="http://tadirah.dariah.eu/" key="designing">Designing</term>
                     </desc>
                     <linkGrp type="generalResources">
-                        <!-- VLO, which subtype to take, because it is not a standard -->
-                        <ref type="resource" subtype="standard" source="zotero"
-                            target="8BD6FDKR">
+                        <!-- VLO, which subtype to take? -->
+                        <ref type="resource" source="zotero" target="8BD6FDKR">
                             <term type="standard" source="standard_list" key="Metadata"/>
                         </ref>
                         <!-- CMDI -->
-                        <ref type="standard" subtype="standard" source="zotero"
-                            target="BNFTBS5W">
-                            <term type="standard" source="standard_list" key="Metadata"/>
+                        <ref type="standard" subtype="standard" source="zotero" target="BNFTBS5W">
+                            <term type="standard" source="standard_list" key="CMDI"/>
                         </ref>
                     </linkGrp>
                 </event>
