@@ -56,7 +56,7 @@
                     </desc>
                     <linkGrp type="generalResources">
                         <!-- FAIR principles -->
-                        <ref type="spec" target="ZJ7ZSJWT">
+                        <ref type="spec" source="zotero" target="ZJ7ZSJWT">
                             <term type="standard" source="policy" key="FAIR"/>
                         </ref>
                     </linkGrp>
