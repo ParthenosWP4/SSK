@@ -49,15 +49,15 @@
                     <linkGrp type="generalResources">
                         <!-- further ressources: conversion DTABf to CMDI, DTABf CMDI profile, paper Geyken et al. 2018 -->
                         
-                        <ref type="service" source="zotero" target="https://www.zotero.org/groups/427927/items/8BD6FDKR">VLO</ref>
-                        <ref type="service" source="zotero" target="https://www.zotero.org/groups/427927/items/HNU9RXFC">WebLicht</ref>
-                        <ref type="service" source="zotero" target="https://www.zotero.org/groups/427927/items/A5NVUWZB">TEI-TCF encoder+decoder</ref>
+                        <ref type="service" source="zotero" target="8BD6FDKR">VLO</ref>
+                        <ref type="service" source="zotero" target="HNU9RXFC">WebLicht</ref>
+                        <ref type="service" source="zotero" target="A5NVUWZB">TEI-TCF encoder+decoder</ref>
                         
-                        <ref type="specification" source="zotero" target="https://www.zotero.org/groups/427927/items/ZJ7ZSJWT">FAIR principles</ref>
-                        <ref type="specification" source="zotero" target="https://www.zotero.org/groups/427927/items/BNFTBS5W">CMDI 1.2 specification</ref>
-                        <ref type="specification" source="zotero" target="https://www.zotero.org/groups/427927/items/IHWJQT9N">TCF documentation</ref>
+                        <ref type="specification" source="zotero" target="ZJ7ZSJWT">FAIR principles</ref>
+                        <ref type="specification" source="zotero" target="BNFTBS5W">CMDI 1.2 specification</ref>
+                        <ref type="specification" source="zotero" target="IHWJQT9N">TCF documentation</ref>
                         
-                        <ref type="website" source="zotero" target="https://www.zotero.org/groups/427927/items/AGAAKQ2D">Deutsches Textarchiv (DTA)</ref>
+                        <ref type="website" source="zotero" target="AGAAKQ2D">Deutsches Textarchiv (DTA)</ref>
                         
                         
                     </linkGrp>
