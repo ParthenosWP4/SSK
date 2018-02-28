@@ -38,14 +38,13 @@
                     <desc xml:lang="en" type="definition">A thorough examination of the object
                         provides insight in which scanning method is the most appropriate one given
                         the type of material, its dimensions and fragility.</desc>
-                    <desc xml:lang="fr" type="definition"/>
                     <desc xml:lang="en" type="term">
                         <term type="technique" source="TaDiRAH" key="Brainstorming"/>
                         <term type="technique" source="TaDiRAH" key="Scanning"/>
                         <term type="activity" source="TaDiRAH" key="Imaging"/>
                     </desc>
                     <linkGrp type="generalResources">
-                        <ref type="Tutorial" source="zotero" target="NHGSF53R"/>
+                        <ref type="tutorial" source="zotero" target="NHGSF53R"/>
                     </linkGrp>
                 </event>
             </listEvent>
