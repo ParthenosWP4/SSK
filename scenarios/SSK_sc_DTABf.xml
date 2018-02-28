@@ -91,8 +91,7 @@
                <head>Text digitization with DTABf</head>
                <!--<graphic
                   url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/sc_DTABf_figure.jpg"/>-->
-               <graphic
-                  url=""/>
+               
                <figDesc>Example for DTABf encoding from: Arnim/Brentano: Des Knaben Wunderhorn. Bd.
                   1. Heidelberg, 1806, S. 86,
                   http://www.deutschestextarchiv.de/arnim_wunderhorn01_1806/95.</figDesc>
