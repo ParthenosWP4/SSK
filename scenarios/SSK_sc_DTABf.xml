@@ -47,8 +47,9 @@
                TEI-P5 format for homogeneous text annotation including set of extensive guidelines
                for text transcription. This scenario describes the steps to take in order to create
                a homogeneous, DTABf-based text corpus.</desc>
-            <!-- Can I reference the D2.1 use case corresponding with this scenario somewhere here? -->
+            
             <desc type="terms" xml:lang="en">
+               <!-- Can I reference the D2.1 use case corresponding with this scenario somewhere here? -->
                <term type="standard" source="standard_list" key="XML"/>
                <term type="standard" source="standard_list" key="TEI"/>
                <term type="activity" source="http://tadirah.dariah.eu/" key="Discovering"/>
