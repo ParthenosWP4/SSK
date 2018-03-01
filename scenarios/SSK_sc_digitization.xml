@@ -39,7 +39,6 @@
    <text>
       <body>
          <div type="scenario" xml:id="sc_digitization">
-            <!-- All the textual information about scenarios and steps is now contained in the <head> element-->
             <head xml:lang="en" type="scenarioTitle">Digitizing textual material</head>
             <desc type="definition" xml:lang="en">The digitisation process of original objects lies
                at the core of many activities in the digital humanities field. The way in which a
@@ -47,9 +46,7 @@
                gathered from this virtual replica. While there are many complimentary processes
                which can enrich the the object (metadating, adding augmented layers etc.), these
                data will build upon the digital fascimile.</desc>
-            <!--<desc type=""></desc>-->
             <desc xml:lang="en" type="terms">
-               <!-- Need a reference resource for all the terms, including Parthenos disciplines, datatypes, etc...  -->
                <term source="aureHAL" type="discipline">Social Anthropology and ethnology</term>
                <term source="aureHAL" type="discipline">History</term>
                <term source="aureHAL" type="discipline">Philosophy and Sociology of Sciences</term>
@@ -65,15 +62,12 @@
                <term source="TaDiRAH" type="technique" key="Transcription"/>
             </desc>
             <figure type="image">
-               <!-- Illustration of the scenario. Can also be used in the steps -->
                <head>Digitisation station</head>
                <graphic url="https://i.ytimg.com/vi/CmONh1F_atk/maxresdefault.jpg"/>
                <figDesc/>
             </figure>
             <listEvent>
-               <!-- <event type="scenario" ref="SSK_digitization.xml"/> -->
-               <!--<event xml:id="s1" type="researchStep" ref="selectDocuments"/>
-               <event xml:id="s2" type="researchStep" ref="describeDocumentType"/>-->
+              
                <event xml:id="s1" type="researchStep" ref="step_ALI_06022018"/>
                <event xml:id="s2" type="researchStep" ref="step_DSM_06022018"/>
                <event xml:id="s3" type="researchStep" ref="step_DIS_06022018"/>
@@ -83,7 +77,6 @@
                <event xml:id="s7" type="researchStep" ref="step_PP_06022018"/>
                <event xml:id="s8" type="researchStep" ref="step_SEF_06022018"/>
                <event xml:id="s9" type="researchStep" ref="step_DTM_06022018"/>
-               <!--<event xml:id="s12" type="researchStep" ref="createMetadata"/>-->
             </listEvent>
          </div>
       </body>
