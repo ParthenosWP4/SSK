@@ -63,7 +63,7 @@
                             <term type="activity" source="tadirah" key="discovering"/>
                         </ref>
 						<ref type="code" source="KVK - Karlsruher Virtueller Katalog"
-                            target="https://kvk.bibliothek.kit.edu/?digitalOnly=0&embedFulltitle=0&newTab=0">
+                            target="https://kvk.bibliothek.kit.edu">
                             <term type="activity" source="tadirah" key="discovering"/>
                         </ref>
 						<ref type="code" source="Incunabula Short Title Catalogue"
