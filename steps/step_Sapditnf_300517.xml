@@ -33,7 +33,7 @@
                 <event type="researchStep">
                         <head xml:lang="en">Share and publish data in this new format</head>
                         <desc xml:lang="en" type="definition">...</desc>
-                    <desc xml:lang="en" type="term">
+                    <desc xml:lang="en" type="terms">
                         <term type="activity" source="http://tadirah.dariah.eu/"
                             key="http://tadirah.dariah.eu/vocab/index.php?tema=47&amp;/publishing"/>
                         <term type="activity" source="http://tadirah.dariah.eu/"
