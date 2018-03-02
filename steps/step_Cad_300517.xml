@@ -42,7 +42,7 @@
                         d'autres, il est important de documenter tous les changements apportés et de les présenter
                         clairement. ODD vous permet de générer une telle documentation dans différents formats (HTML, PDF, Docx, etc.)
                     </desc>
-                    <desc xml:lang="en" type="term">
+                    <desc xml:lang="en" type="terms">
                         <term type="standard" source="standard_list" key="XML"/>
                         <term type="standard" source="standard_list" key="TEI"/>
                         <term type="standard" source="standard_list" key="EAD"/>
