@@ -44,11 +44,14 @@ public class SSKApplication
     @Value("${elasticsearch.index}")
     private String sskIndex;
 
-    public static  final String [] mappings  = { "resource-metadata", "resource", "step-metadata", "scenario-metadata", "step" ,"scenario"};
+    public static  final String [] mappings  = { "resource_metadata", "resource", "step_metadata", "scenario_metadata", "step" ,"scenario"};
 
     boolean firstLaunch = false;
-    private static final Logger logger = LoggerFactory.getLogger(SSKApplication.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(SSKApplication.class);
 
+    
+    
+    
 
     public static void main(String args[]) {
         SpringApplication.run(SSKApplication.class, args);
@@ -73,11 +76,11 @@ public class SSKApplication
         for (String mapping : mappings ) {
             try {
                 Map existsMappings = es.getMapping("ssk", mapping);
-                if(elServices.createMappings(mapping)) System.out.println("Type '"+mapping+ "' successful updated ");
+                if(elServices.createMappings(mapping)) logger.info("Type '"+mapping+ "' successful updated ");
 
             } catch (ElasticsearchException e) {
-                e.printStackTrace();
-               if(elServices.createMappings(mapping)) System.out.println("Type '"+mapping+ "' successful created ");
+               logger.error(e.getMessage());
+               if(elServices.createMappings(mapping)) logger.info("Type '"+mapping+ "' successful created ");
             }
         }
         logger.info("--ElasticSearch--");
@@ -88,4 +91,7 @@ public class SSKApplication
        printElasticSearchInfo();
        sskServices.initializeData();
     }
+    
+    
+    
 }

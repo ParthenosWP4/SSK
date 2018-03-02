@@ -1,9 +1,14 @@
-<div class="card text-center">
 
-  <div class="card-header">
-    Perform statistical analysis on historical and contemporary occupations
+<div class="card ">
+  <div class="card-header align-middle">
+   {{shortTitle?.content}}
   </div>
-  <img class="card-img-top img-fluid" src="../../assets/images/SSK-multispectral.svg" alt="">
+  <img class=" align-content-lg-center card-img-top img-fluid" src={{scenario?.image}} alt="">
+  <img *ngIf="defaultImage" class="  card-img-top img-fluid" src={{defaultImage}} alt="default image">
 
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  <p class="card-text m-2">{{shortDesc?.content}}</p>
+  <p>
+    <button type="button" class="btn btn-secondary disabled m-1" *ngFor=" let elt of metadata">{{elt?.key}} </button>
+  </p>
 </div>
+

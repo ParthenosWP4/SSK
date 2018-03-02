@@ -2,15 +2,16 @@ package ssk.server.service;
 
 
 import com.google.gson.*;
-import org.json.JSONArray;
-import org.json.JSONObject;
+import org.jsoup.Jsoup;
+import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.w3c.dom.Document;
@@ -32,6 +33,7 @@ import javax.xml.transform.stream.StreamResult;
 import javax.xml.xpath.*;
 import java.io.*;
 import java.net.URLEncoder;
+import java.nio.charset.Charset;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -50,6 +52,7 @@ public class SSKServices {
     private RestTemplate restTemplate;
     private  HttpHeaders headers;
     private ClassLoader classLoader;
+    private  HashMap<String, String>  platforms = new HashMap<>();
 
     private static final String  scenarioType = "scenario";
     private static final String  stepType= "step";
@@ -63,8 +66,9 @@ public class SSKServices {
     private static final String resourceStandardPath = "/TEI/text/body/listEvent/event/linkGrp/ref/term[contains(@type, \"standard\")]";
     private static List<String>  metaDataTab=  Arrays.asList("techniques", "standard", "discipline", "objects", "activity");
     
-    private static String dariahApiUrl= "http://it.dariah.eu:8983/solr/WP4/select?indent=on&q=standard_name:";
-    private static String zoteroApihUrl = "https://api.zotero.org/groups/427927/items/";
+    private static String dariahApiUrl= "http://it.dariah.eu:8983/solr/WP4/select?indent=on&q=standard_abbr_name:";
+    private static String zoteroApihUrl = "https://api.zotero.org/";
+    
 
     private static JsonParser parser ;
     private static Gson gson ;
@@ -84,6 +88,8 @@ public class SSKServices {
     public static void setXmlStringBuilder(StringBuilder xmlStringBuilder) {
         SSKServices.xmlStringBuilder = xmlStringBuilder;
     }
+    
+    
 
     public static Document getDoc() {
         return doc;
@@ -140,11 +146,16 @@ public class SSKServices {
         this.headers =  new HttpHeaders();
         this.headers.set("Content-Type", "application/json; charset=utf-8");
         restTemplate = new RestTemplate();
+        restTemplate.getMessageConverters()
+                .add(0, new StringHttpMessageConverter(Charset.forName("UTF-8")));
         classLoader = getClass().getClassLoader();
         parser = new JsonParser();
         gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+        platforms.put("wp4", "groups/427927");
 
     }
+    
+    
 
     public String toJson(Object object){
         return gson.toJson(object);
@@ -164,6 +175,8 @@ public class SSKServices {
          *  convert scenario content to json and push them in ElasticSearch
          *  make the same with all scenario's step
      */
+    
+    
     public void initializeData() throws  Exception{
         //JsonArray scenarioAndStep;
         String relaxNgContent =  githubApiService.getGithubFileContent ("spec", teiSSKRelaxNgPath);
@@ -185,22 +198,27 @@ public class SSKServices {
                 if(scenario.get("name").getAsString().contains("unst")) return;
     
                 String scenarioContent = githubApiService.getGithubFileContent(scenarioType, scenarioName);
-    
+                
                 if(scenarioContent == null) return;
                 if(validateSSKFile(scenarioContent, (ordinal.intValue() == scenarios.size()-1))){
+                    updatePlatforms(scenarioContent);
                     try{
                         JsonObject scenarioJson = teiToJson(scenarioContent, true, scenarioType);
+                        scenarioJson.addProperty("GithubRef", scenarioName);
                         scenarioAndStep.add(scenarioJson);
                         JsonArray steps = scenarioJson.getAsJsonObject ("TEI").getAsJsonObject("text").getAsJsonObject("body").getAsJsonObject("div").getAsJsonObject("listEvent").getAsJsonArray("event");
                         for (int j = 0; j < steps.size(); j++) {
                             JsonObject step = steps.get(j).getAsJsonObject();
-                            logger.info("STEP:  "+ step.get("ref").toString());
+                            logger.info("STEP:  "+ step.get("ref").toString()+ "*********position : "+ j+1);
                             String stepContent = githubApiService.getGithubFileContent(stepType, this.removeDoubleQuote(step.get("ref").toString())  + ".xml");
                             if(!validateSSKFile(stepContent, false)) {
                                 break;
                             }
                             else {
+                                updatePlatforms(stepContent);
                                 JsonObject stepJson = teiToJson(stepContent, false, stepType);
+                                stepJson.addProperty("position", j+1);
+                                stepJson.addProperty("GithubRef", this.removeDoubleQuote(step.get("ref").toString()));
                                 scenarioAndStep.add(stepJson);
                             }
                         }
@@ -220,8 +238,31 @@ public class SSKServices {
             }
         });
     }
-
-
+    
+    
+    /*This is function is to change Zotero group url for a successful query ressource*/
+    
+    private void updatePlatforms(String content) throws IOException, SAXException, XPathExpressionException, ParserConfigurationException{
+        setXmlStringBuilder(new StringBuilder().append(content));
+        setDoc(DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new ByteArrayInputStream(xmlStringBuilder.toString().getBytes("UTF-8"))));
+        setxPath(XPathFactory.newInstance().newXPath());
+        setNode(( NodeList) xPath.compile("//prefixDef").evaluate(doc, XPathConstants.NODESET));
+        for (int i = 0; i < node.getLength() ; i++) {
+            JsonObject platform = new JsonObject();
+            for (int j = 0; j < node.item(i).getAttributes().getLength() ; j++) {
+                if(node.item(i).getAttributes().item(j).toString().contains("ident") &&  node.item(i).getAttributes().item(j).toString().contains("replacementPattern")) {
+                    String[] attributes  = node.item(i).getAttributes().item(j).toString().split("=");
+                    if(removeDoubleQuote(attributes[0]).equals("ident")) platform.addProperty("id", removeDoubleQuote(attributes[1]));
+                    if(removeDoubleQuote(attributes[0]).equals("replacementPattern")) platform.addProperty("url-add", removeDoubleQuote(attributes[1]));
+                }
+            }
+            if(platforms.get(platform.get("id").getAsString()) == null){
+                platforms.put(platform.get("id").getAsString(), platform.get("url-add").getAsString());
+            }
+        }
+    }
+    
+    
     public void  generateRelaxNgFromXML(String teiODDContent){
         File command = getFile("/Stylesheets-dev/bin/teitorelaxng");
         if(command != null){
@@ -265,7 +306,7 @@ public class SSKServices {
             File sskFile = getFile(sskContentFileName);
             if(teiToJsonFile != null && sskFile !=null){
                 String jSon =  executeCommand(true, "java -jar "+command.getPath(), "",sskFile.getPath(), teiToJsonFile.getPath());
-                result =this.parser.parse(jSon).getAsJsonObject();
+                result = this.parser.parse(jSon).getAsJsonObject();
             }
             if(result != null){
                 result.add ("metadata", this.parser.parse(getMetadata(sskContent, type)));
@@ -290,7 +331,6 @@ public class SSKServices {
         JsonObject metaData  = result.getAsJsonObject().remove("metadata").getAsJsonObject();
         for(int k = 0; k < node.getLength(); k ++){
             for(int l=0; l<node.item(k).getAttributes().getLength(); l++) {
-                //logger.warn("attributes ##############" + node.item(k).getAttributes().item(l).toString());
                 if(node.item(k).getAttributes().item(l).toString().contains("key")){
                     String[] attributes  = node.item(k).getAttributes().item(l).toString().split("=");
                     JsonObject standard = new JsonObject();
@@ -299,15 +339,12 @@ public class SSKServices {
                         JsonArray standards = gson.fromJson(metaData.get("standard").getAsJsonArray(), JsonArray.class);
                         int i = 0;
                         while (i < standards.size()){
-                            //logger.warn(removeDoubleQuote(standards.get(i).getAsJsonObject().get("key").toString()));
-                            //logger.warn(" ##############" + standard.get("key"));
                             if(removeDoubleQuote(standards.get(i).getAsJsonObject().get("key").toString()).equals(removeDoubleQuote(standard.get("key").toString())))  {
                                 break;
                             }
                             else  metaData.getAsJsonArray("standard").add(standard);
                             i++;
                         }
-                       
                     }
                     else{
                         JsonArray jsonArray = new JsonArray(); jsonArray.add(standard);
@@ -315,7 +352,6 @@ public class SSKServices {
                     }
                 }
             }
-            
         }
         result.add("metadata", metaData);
         setNode(( NodeList) xPath.compile(resourcesPath).evaluate(doc, XPathConstants.NODESET));
@@ -324,7 +360,6 @@ public class SSKServices {
     
     
     public   void  convertStringToFile(String xmlStr, String path) {
-
         try
         {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -340,12 +375,11 @@ public class SSKServices {
             Transformer transformer = transformerFactory.newTransformer();
             transformer.transform(source, result);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error(e.getMessage());
         }
     }
 
     private static String getMetadata(String  sskContent, String type) throws IOException, SAXException, XPathExpressionException, ParserConfigurationException {
-
         setXmlStringBuilder(new StringBuilder().append(sskContent));
         setDoc(DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new ByteArrayInputStream(xmlStringBuilder.toString().getBytes("UTF-8"))));
         setxPath(XPathFactory.newInstance().newXPath());
@@ -358,7 +392,7 @@ public class SSKServices {
             for(int j=0; j<node.item(k).getAttributes().getLength(); j++) {
                 String[] attributes  = node.item(k).getAttributes().item(j).toString().split("=", 2);
                 metaData.addProperty(attributes[0], removeDoubleQuote(attributes[1]));
-                if(removeDoubleQuote(attributes[1]).equals("discipline")) metaData.addProperty ("key", node.item(k).getTextContent());
+                if(removeDoubleQuote(attributes[1]).equals("discipline") && node.item(k).getTextContent() != "") metaData.addProperty ("key", node.item(k).getTextContent());
             }
             if(metaDataTab.contains(metaDataType)){
                 if(mapMetaData.containsKey(metaDataType)){
@@ -377,15 +411,33 @@ public class SSKServices {
                 }
             }
         }
-        logger.info(mapMetaData.toString());
+        //logger.info(mapMetaData.toString());
         return gson.toJson(mapMetaData);
+    }
+    
+    public JsonObject scraptWebPage(String source, String target,String type) {
+        JsonObject result = new JsonObject();
+        result.addProperty("type", type);
+        try {
+            switch (source) {
+                case "github":
+                    result =  scrapGithub(target);
+                    result.addProperty("url", target);
+                    break;
+                case "hal":
+                    break;
+                case "BeQuali":
+                    break;
+                default:
+                    break;
+            }
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+        }
+        return result;
     }
 
     private  void getStepResources(JsonObject result, NodeList nodeParam ) throws IOException, SAXException, XPathExpressionException, ParserConfigurationException{
-        //setXmlStringBuilder(new StringBuilder().append(StepContent));
-        //setDoc(DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new ByteArrayInputStream(xmlStringBuilder.toString().getBytes("UTF-8"))));
-        //setxPath(XPathFactory.newInstance().newXPath());
-        //setNode(( NodeList) xPath.compile(resourcesPath).evaluate(doc, XPathConstants.NODESET));
         HashMap<String, List<JsonObject>> resourcesMap = new HashMap<>();
         for(int i=0; i< nodeParam.getLength(); i++){
             Element elt = (Element) nodeParam.item(i);
@@ -394,21 +446,7 @@ public class SSKServices {
             for (int k = 0; k < children.getLength(); k++) {
                 if(children.item(k).getNodeType() != Node.TEXT_NODE  && children.item(k).getNodeType() != Node.COMMENT_NODE){
                     Node child = children.item(k);
-                    //logger.warn("mouna **********:"+ child.getChildNodes().getLength());
                     NodeList grandChildren = child.getChildNodes();
-                    /*for (int j = 0; j <grandChildren.getLength() ; j++) {
-                        if(grandChildren.item(j).toString().contains("term")){
-                            logger.warn("Term ##############" + grandChildren.item(j).toString());
-                            for(int l=0; l<grandChildren.item(j).getAttributes().getLength(); l++) {
-                                logger.warn("attributes ##############" + grandChildren.item(j).getAttributes().item(l).toString());
-                                String[] attributes  = grandChildren.item(j).getAttributes().item(l).toString().split("=", 2);
-                                logger.warn("attributes ##############" + attributes.length);
-                                for (int m = 0; m <attributes.length ; m++) {
-                                    logger.warn("attributes ##############" + attributes[m]);
-                                }
-                            }
-                        }
-                    }*/
                     JsonObject metaData = new JsonObject();
                     for(int j=0; j<child.getAttributes().getLength(); j++) {
                         String[] attributes  = child.getAttributes().item(j).toString().split("=", 2);
@@ -424,7 +462,7 @@ public class SSKServices {
                 }
             }
         }
-        logger.info(resourcesMap.toString());
+        //logger.info(resourcesMap.toString());
         result.add ("resources", this.parser.parse(resourcesMap.toString()));
     }
 
@@ -447,8 +485,10 @@ public class SSKServices {
                         standardElt.getAsJsonObject().entrySet().forEach(entry -> {
                             String content = removeDoubleQuote(standardElt.get(entry.getKey()).toString());
                             switch (entry.getKey()){
-                                case "standard_name" :
+                                case "standard_abbr_name" :
+                                case "standard_complete_name" :
                                 case "standard_link":
+                                case "standard_type":
                                     elt.addProperty(removeDoubleQuote(entry.getKey().split("_")[1].toString()),content );
                                     break;
                                 case "standard_tags":
@@ -474,25 +514,35 @@ public class SSKServices {
                     }
                     else{
                         standardsTab.put(clef,standard.getAsJsonObject());
-                        result.add (standard.getAsJsonObject());
+                        if(!result.contains(standard.getAsJsonObject())){
+                            result.add (standard.getAsJsonObject());
+                        }
                     }
                 }
                 catch(Exception e) {
-                    logger.trace(e.getMessage());
+                    logger.error(e.getMessage());
                 }
             }
         });
         return result;
     }
 
-    public JsonObject getZoteroResource(String id) throws Exception{
+    public JsonObject getZoteroResource(String id, String type) throws Exception{
         JsonObject result  = new JsonObject();
-        ResponseEntity<String> response = this.restTemplate.getForEntity(     zoteroApihUrl+id ,String.class);
+        result.addProperty("type", type);
+        String urlAddOn ;
+        if(id.contains(":")) {
+            urlAddOn = platforms.get(id.split(":")[0]) + "/items/"+ id.split(":")[1];
+        }
+        else{
+            urlAddOn = platforms.get("wp4") + "/items/"+ id;
+        }
+        ResponseEntity<String> response = this.restTemplate.getForEntity(     zoteroApihUrl+urlAddOn ,String.class);
         JsonObject data =  this.parser.parse(response.getBody()).getAsJsonObject().get("data").getAsJsonObject();
-        if(data.has("title")) result.addProperty("title", removeDoubleQuote(data.get("title").toString()));
-        if(data.has("url"))  result.addProperty ("url", removeDoubleQuote(data.get("url").toString()));
-        if(data.has("date")) result.addProperty ("date", removeDoubleQuote(data.get("date").toString()));
-        if(data.has("abstract")) result.addProperty ("abstract", removeDoubleQuote(data.get("abstractNote").toString()));
+        if(data.has("title") && removeDoubleQuote(data.get("title").toString()) != "") result.addProperty("title", removeDoubleQuote(data.get("title").toString()));
+        if(data.has("url") && removeDoubleQuote(data.get("url").toString()) != "")  result.addProperty ("url", removeDoubleQuote(data.get("url").toString()));
+        if(data.has("date") &&  !removeDoubleQuote(data.get("date").toString()).isEmpty()) result.addProperty ("date", removeDoubleQuote(data.get("date").toString()));
+        if(data.has("abstract") && removeDoubleQuote(data.get("abstract").toString()) != "") result.addProperty ("abstract", removeDoubleQuote(data.get("abstractNote").toString()));
         if(data.has("creators")){
             JsonArray dataCreators = data.getAsJsonArray("creators");
             if(dataCreators.size() > 0){
@@ -511,7 +561,38 @@ public class SSKServices {
         return result;
     }
     
+    private JsonObject scrapGithub(String target) throws IOException, XPathExpressionException, ParserConfigurationException, SAXException {
+        org.jsoup.nodes.Document document = Jsoup.connect(target).get();
+        Elements newsHeadlines = document.getElementsByTag("article");
+        setXmlStringBuilder(new StringBuilder().append(newsHeadlines));
+        setDoc(DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new ByteArrayInputStream(xmlStringBuilder.toString().getBytes("UTF-8"))));
+        setxPath(XPathFactory.newInstance().newXPath());
+        setNode(( NodeList) xPath.compile("article/p").evaluate(doc, XPathConstants.NODESET));
+        JsonObject result  = new JsonObject();
+        if(node.getLength() > 0){
+            result.addProperty("abstract", node.item(0).getTextContent());
+        }
     
+        newsHeadlines = document.select("h1.public");
+        setXmlStringBuilder(new StringBuilder().append(newsHeadlines));
+        setDoc(DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new ByteArrayInputStream(xmlStringBuilder.toString().getBytes("UTF-8"))));
+        setNode(( NodeList) xPath.compile("//span[@class='author' and @itemprop='author']").evaluate(doc, XPathConstants.NODESET));
+        List<String> creators = new ArrayList<>();
+        if(node.getLength() > 0){
+            creators.add(node.item(0).getTextContent());
+            result.addProperty("creators", creators.toString());
+        }
+        setNode(( NodeList) xPath.compile("//strong[ @itemprop='name']").evaluate(doc, XPathConstants.NODESET));
+        if(node.getLength() > 0){
+            result.addProperty("title", node.item(0).getTextContent());
+        }
+        org.jsoup.nodes.Element date  = document.getElementsByClass ("age").last().getElementsByTag("span").first();
+    
+        if(date.children().hasText() && date.data() != ""){
+            result.addProperty("date", date.data() );
+        }
+        return result;
+    }
     
     private File getFile(String path){
         File result  = null;
@@ -552,7 +633,14 @@ public class SSKServices {
         }
     }
 
-    private static  String removeDoubleQuote(String content){
+   public static  String removeDoubleQuote(String content){
         return content.replaceAll("\"","");
+    }
+    
+    
+    public ResponseEntity<String> serverError(){
+        return  ResponseEntity
+                        .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                        .body(null);
     }
 }

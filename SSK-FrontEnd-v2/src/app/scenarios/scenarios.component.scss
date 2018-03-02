@@ -38,7 +38,6 @@
   border-radius: unset !important;
   font-family: $raleway-regular !important;
   color:$color-24 !important;
-
 }
 
 .nav-link.active{
@@ -122,27 +121,6 @@ ul li a {
 }
 
 
-.card{
-  /* Box: */
-  box-shadow: 0 0 2px 0 $color-25 !important;
-  border-radius: 10px;
-  background-color: $color-3 !important;
-  margin-top: 5px;
-}
-
-.card-header{
-  font-family: $raleway-medium !important;
-  font-size: $eighteen !important;
-  color: $color-22 !important;
-  background-color: $color-3 !important;
-  border: none !important;
-  border-radius: 10px;
-}
-
-p button{
-  font-family: $proxima-nova-regular;
-  border: 2px solid $color-26 ;
-}
 
 
 .result {
@@ -161,33 +139,7 @@ p button{
   color: $color-12 !important;
 }
 
-#steps-tab{
-  .card{
-    box-shadow: none !important;
-    border : none !important;
-    border-radius : unset !important;
-    font-family: $roboto-regular !important;
-    border-bottom: 1px solid $color-17 !important;
-    .title{
-        font-size: $twenty-two;
-        color: $color-27;
-    }
-    a{
-      color : $color-22;
-      font-size: $eighteen;
-    }
-    button{
-      background-color: $color-22;
-      color: $color-3;
-      font-family: $roboto-regular ;
-      border-radius: 10px !important;
-    }
-    .desc{
-      font-size: 16px;
-      color: $color-13;
-    }
-  }
-}
+
 
 #resources-tab{
   .card {
@@ -221,6 +173,19 @@ p button{
     .col-1{
       padding: 0;
     }
+  }
+}
+
+
+.ssk-pagination /deep/ .ngx-pagination {
+  a {
+    color: $color-12 !important;
+    font-family: $roboto-regular !important;
+    font-size: 20px;
+  }
+  .current {
+    background: $color-12;
+    border-radius: .55rem;
   }
 }
 

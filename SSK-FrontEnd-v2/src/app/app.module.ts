@@ -1,12 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SafeHtmlPipe } from './safe-html.pipe';
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
+import { routing, appRoutingProviders } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
-import { ScenarioComponent } from './scenario/scenario.component';
+import { ScenariosComponent } from './scenarios/scenarios.component';
 import { ScenarioCardComponent } from './scenario-card/scenario-card.component';
+import { ScenarioTemplateComponent } from './scenario-template/scenario-template.component';
+import {ElastichsearchServicesService} from './elastichsearch-services.service';
+import {HttpModule} from '@angular/http';
+import { StepCardComponent } from './step-card/step-card.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 
@@ -16,14 +21,23 @@ import { ScenarioCardComponent } from './scenario-card/scenario-card.component';
     AppComponent,
     HomeComponent,
     SafeHtmlPipe,
-    ScenarioComponent,
-    ScenarioCardComponent
+    ScenariosComponent,
+    ScenarioCardComponent,
+    ScenarioTemplateComponent,
+    StepCardComponent
   ],
-  imports: [AppRoutingModule,
-            BrowserModule,
-            CommonModule
+  imports:
+    [
+      routing,
+      BrowserModule,
+      CommonModule,
+      HttpModule,
+      NgxPaginationModule
   ],
-  providers: [SafeHtmlPipe],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ],
+  providers: [appRoutingProviders, SafeHtmlPipe, ElastichsearchServicesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

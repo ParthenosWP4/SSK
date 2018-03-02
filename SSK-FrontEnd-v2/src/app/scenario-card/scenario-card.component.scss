@@ -1,9 +1,41 @@
 
 @import '../../partials/variables';
 
+.card{
+  /* Box: */
+  box-shadow: 0 0 2px 0 $color-25 !important;
+  border-radius: 10px;
+  background-color: $color-3 !important;
+  margin-top: 5px;
+}
+
+.card-header{
+  font-family: $raleway-medium !important;
+  font-size: $eighteen !important;
+  color: $color-22 !important;
+  background-color: $color-3 !important;
+  border: none !important;
+  border-radius: 10px;
+  letter-spacing: -1px;
+  height: 78px;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+p button{
+  font-family: $proxima-nova-regular;
+  border: 2px solid $color-26 ;
+  cursor: pointer;
+}
 
 
 
+
+
+
+.card-text{
+  text-align: inherit !important;
+}
 
 
 

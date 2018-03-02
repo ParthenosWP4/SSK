@@ -6,6 +6,7 @@ import com.google.gson.Gson;
 
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.slf4j.Logger;
@@ -29,6 +30,8 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.ByteArrayInputStream;
 import java.io.StringWriter;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -47,6 +50,9 @@ public class GithubApiService {
 
     @Value("${GITHUB_SSK_API}")
     private String githubUrl;
+    
+    @Value("${GITHUB_API}")
+    private String githubApiUrl;
 
     private MultiValueMap<String, String> requestHeaders;
 
@@ -62,9 +68,23 @@ public class GithubApiService {
 
 
     private ResponseEntity<?> response ;
-
-
-
+    
+    public String getAuthorizationToken() {
+        return authorizationToken;
+    }
+    
+    public void setAuthorizationToken(String authorizationToken) {
+        this.authorizationToken = authorizationToken;
+    }
+    
+    public String getGithubApiUrl() {
+        return githubApiUrl;
+    }
+    
+    public void setGithubApiUrl(String githubApiUrl) {
+        this.githubApiUrl = githubApiUrl;
+    }
+    
     public MultiValueMap<String, String> getHeaders() {
         return requestHeaders;
     }
@@ -127,6 +147,27 @@ public class GithubApiService {
             logger.trace(e.getMessage());
             return  null;
         }
+    }
+    
+    public JsonObject getRepositoryData(String repo, String type) throws UnsupportedEncodingException{
+        this.request = new HttpEntity<>(this.updateRequestHeaders("json", null));
+        ResponseEntity<String> responseEntity =  this.restTemplate.exchange(getGithubApiUrl() + URLEncoder.encode(repo, "UTF-8"), HttpMethod.GET, this.getRequest(), String.class);
+        JsonObject result = gson.fromJson(responseEntity.getBody(), JsonObject.class);
+        JsonObject data = new JsonObject();
+        data.addProperty("type", type);
+        if(result.has("name")) data.addProperty("title", result.get("title").getAsString());
+        if(result.has("description"))  data.addProperty ("abstract", result.get("url").getAsString());
+        if(result.has("homepage")) data.addProperty ("url", result.get("homepage").getAsString());
+        if(result.has("created_at")) data.addProperty ("date", result.get("created_at").getAsString());
+        if(result.has("name")) {
+            JsonObject owner = result.getAsJsonObject("owner");
+            JsonObject elt = new JsonObject();
+            if(owner.has("type")) elt.addProperty("type",owner.get("type").getAsString());
+            if(owner.has("login")) elt.addProperty("name",owner.get("login").getAsString());
+            data.add ("creators", elt);
+        }
+       logger.warn(data.toString());
+        return data;
     }
 
     /* Get Commits on specific Github path */
@@ -213,7 +254,6 @@ public class GithubApiService {
         } catch (TransformerException te) {
             System.out.println("nodeToString Transformer Exception");
         }
-
         return sw.toString();
     }
 
@@ -225,7 +265,6 @@ public class GithubApiService {
                 if(converDate(getDate(result)).compareTo(converDate(getDate(explrObject))) <= 0){
                     result = explrObject;
                 }
-
             }
         }
         return result;

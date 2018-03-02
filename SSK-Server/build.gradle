@@ -67,9 +67,16 @@ dependencies {
     // https://mvnrepository.com/artifact/org.w3c/dom
     compile group: 'org.w3c', name: 'dom', version: '2.3.0-jaxb-1.0.6'
 
+    // https://mvnrepository.com/artifact/org.jsoup/jsoup
+    compile group: 'org.jsoup', name: 'jsoup', version: '1.10.2'
 
-    // https://mvnrepository.com/artifact/net.sourceforge.htmlunit/htmlunit
-    compile group: 'net.sourceforge.htmlunit', name: 'htmlunit', version: '2.29'
+    // https://mvnrepository.com/artifact/org.slf4j/log4j-over-slf4j
+    compile group: 'org.slf4j', name: 'log4j-over-slf4j', version: '1.7.25'
+
+// https://mvnrepository.com/artifact/org.slf4j/jul-to-slf4j
+    compile group: 'org.slf4j', name: 'jul-to-slf4j', version: '1.7.25'
+
+
 
 
 
