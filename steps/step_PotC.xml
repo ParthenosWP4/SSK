@@ -6,7 +6,8 @@
             <titleStmt>
                 <title>step_PotC.xml</title>
                 <author>
-                    <persName><surname>Haaf</surname><forename>Susanne</forename></persName>
+                    <!--<persName><surname>Haaf</surname><forename>Susanne</forename></persName>-->
+                    <persName>Haaf Susanne</persName>
                     <affiliation>Berlin-Brandenburg Academy of Sciences and Humanities</affiliation>
                 </author>
             </titleStmt>
