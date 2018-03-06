@@ -1,19 +1,22 @@
 
 <div class="card  mr-3 my-5 ">
   <div class="title">
-    Perform statistical analysis on historical and contemporary occupations
+    {{shortTitle?.content}}
   </div>
   <div class="row vdivide">
     <div class="col ">
-      <a href="#">Multispectral imaging for in-situ characterization of painted works of art</a>
+      <a href="#">{{scenarioTitle?.content}}</a>
     </div>
     <div class="col mx-auto">
       <button type="button" class="btn btn-step">
-        {{step?._id}}
+        Step {{step?.position}}
       </button>
     </div>
   </div>
   <div class="descmt-2 mb-5">
-    Visible-reflected (VIS) images corresponds to standard photography and record the reflected light in the visible region (400-700 nm) from a subject when this is illuminated with visible light.
+    {{shortDesc?.content}}
   </div>
+  <p>
+    <button type="button" class="btn btn-secondary disabled m-1" *ngFor=" let elt of step?.metadata">{{elt?.key}} {{elt?.abbr}} </button>
+  </p>
 </div>

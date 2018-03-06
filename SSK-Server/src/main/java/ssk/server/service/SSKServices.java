@@ -50,7 +50,6 @@ public class SSKServices {
     private ElasticServices elasticServices;
 
     private RestTemplate restTemplate;
-    private  HttpHeaders headers;
     private ClassLoader classLoader;
     private  HashMap<String, String>  platforms = new HashMap<>();
 
@@ -70,14 +69,14 @@ public class SSKServices {
     private static String zoteroApihUrl = "https://api.zotero.org/";
     
 
-    private static JsonParser parser ;
+    private  JsonParser parser ;
     private static Gson gson ;
     private static StringBuilder xmlStringBuilder;
     private static Document doc  ;
     private static XPath xPath ;
     private static NodeList node ;
 
-    private static final Logger logger = LoggerFactory.getLogger(SSKServices.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(SSKServices.class);
     
     private  Map<String , JsonElement> standardsTab = new HashMap<>();
 
@@ -89,8 +88,10 @@ public class SSKServices {
         SSKServices.xmlStringBuilder = xmlStringBuilder;
     }
     
+    public  JsonParser getParser() {
+        return parser;
+    }
     
-
     public static Document getDoc() {
         return doc;
     }
@@ -131,20 +132,12 @@ public class SSKServices {
         this.restTemplate = restTemplate;
     }
 
-    public HttpHeaders getHeaders() {
-        return headers;
-    }
 
-    public void setHeaders(HttpHeaders headers) {
-        this.headers = headers;
-    }
+    
 
     private static File teiToJsonFile;
 
     public SSKServices(){
-
-        this.headers =  new HttpHeaders();
-        this.headers.set("Content-Type", "application/json; charset=utf-8");
         restTemplate = new RestTemplate();
         restTemplate.getMessageConverters()
                 .add(0, new StringHttpMessageConverter(Charset.forName("UTF-8")));
@@ -239,7 +232,6 @@ public class SSKServices {
         });
     }
     
-    
     /*This is function is to change Zotero group url for a successful query ressource*/
     
     private void updatePlatforms(String content) throws IOException, SAXException, XPathExpressionException, ParserConfigurationException{
@@ -261,7 +253,6 @@ public class SSKServices {
             }
         }
     }
-    
     
     public void  generateRelaxNgFromXML(String teiODDContent){
         File command = getFile("/Stylesheets-dev/bin/teitorelaxng");
@@ -336,15 +327,28 @@ public class SSKServices {
                     JsonObject standard = new JsonObject();
                     standard.addProperty(removeDoubleQuote(attributes[0]), removeDoubleQuote(attributes[1]));
                     if(metaData.has("standard")){
-                        JsonArray standards = gson.fromJson(metaData.get("standard").getAsJsonArray(), JsonArray.class);
-                        int i = 0;
-                        while (i < standards.size()){
-                            if(removeDoubleQuote(standards.get(i).getAsJsonObject().get("key").toString()).equals(removeDoubleQuote(standard.get("key").toString())))  {
-                                break;
+                        JsonArray standards =   metaData.getAsJsonArray("standard");
+                        logger.info(standards.toString());
+                        int i = standards.size() -1;
+                        boolean isIn = true;
+                        while (i >= 0){
+                            logger.warn(removeDoubleQuote(standards.get(i).getAsJsonObject().get("key").toString()));
+                            logger.warn(removeDoubleQuote(standards.get(i).toString()));
+                            logger.warn(removeDoubleQuote(standard.toString()));
+                            logger.warn(String.valueOf(removeDoubleQuote(standards.get(i).getAsJsonObject().toString()).equals(removeDoubleQuote(standard.toString()))));
+                            if(removeDoubleQuote(standards.get(i).getAsJsonObject().toString()).equals(removeDoubleQuote(standard.toString()))){
+                                    break;
                             }
-                            else  metaData.getAsJsonArray("standard").add(standard);
-                            i++;
+                            else{
+                                metaData.getAsJsonArray("standard").add(standard);
+                              //  standards.add(standard);
+                            }
+                            i = standards.size() -1;
                         }
+                        
+                        
+                        
+                        
                     }
                     else{
                         JsonArray jsonArray = new JsonArray(); jsonArray.add(standard);
@@ -357,7 +361,6 @@ public class SSKServices {
         setNode(( NodeList) xPath.compile(resourcesPath).evaluate(doc, XPathConstants.NODESET));
         getStepResources(result, node);
     }
-    
     
     public   void  convertStringToFile(String xmlStr, String path) {
         try
@@ -465,7 +468,6 @@ public class SSKServices {
         //logger.info(resourcesMap.toString());
         result.add ("resources", this.parser.parse(resourcesMap.toString()));
     }
-
 
     public JsonArray  getWholeStandard(JsonArray standards) throws  Exception{
         JsonArray  result =  new JsonArray();
@@ -625,7 +627,6 @@ public class SSKServices {
         return  result;
     }
 
-
     private void deleteFiles(File ...files) {
         for (File file:files
                 ) {
@@ -633,14 +634,25 @@ public class SSKServices {
         }
     }
 
-   public static  String removeDoubleQuote(String content){
-        return content.replaceAll("\"","");
-    }
     
     
     public ResponseEntity<String> serverError(){
         return  ResponseEntity
                         .status(HttpStatus.INTERNAL_SERVER_ERROR)
                         .body(null);
+    }
+    
+    public static  String removeDoubleQuote(String content){
+        return content.replaceAll("\"","");
+    }
+    
+    public <T> T deepCopy(T object, Class<T> type) {
+        try {
+            Gson gson = new Gson();
+            return gson.fromJson(gson.toJson(object, type), type);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }

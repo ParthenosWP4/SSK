@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {isUndefined} from "util";
+import {SskServicesService} from "../ssk-services.service";
 
 @Component({
   selector: 'app-scenario-card',
@@ -15,7 +16,7 @@ export class ScenarioCardComponent implements OnInit {
   private defaultImage: string;
   private shortTitle: any = {}
   private shortDesc: any = {}
-  constructor() { }
+  constructor(private sskServices: SskServicesService) { }
 
   ngOnInit() {
 
@@ -24,7 +25,7 @@ export class ScenarioCardComponent implements OnInit {
     } else {
       this.title = this.scenario.title;
     }
-    this.shortTitle = this.shorten(this.title, 99);
+    this.shortTitle = this.sskServices.shorten(this.title, 99);
 
     if (this.scenario.image === null || this.scenario.image === 'null' ||  this.scenario.image === undefined) {
       this.defaultImage = '../../assets/images/ssk_logo.svg';
@@ -35,7 +36,7 @@ export class ScenarioCardComponent implements OnInit {
     } else {
       this.desc = this.scenario.desc;
     }
-    this.shortDesc = this.shorten(this.desc, 250);
+    this.shortDesc = this.sskServices.shorten(this.desc, 250);
 
     if (this.scenario.scenario_metadata.objects instanceof Array ) {
       this.metadata  =  this.metadata.concat(this.scenario.scenario_metadata.objects);
@@ -58,12 +59,6 @@ export class ScenarioCardComponent implements OnInit {
     }
   }
 
-  shorten(content: any, length: number) {
-      if (content.content.length > length) {
-        content.content = content.content.substring(0, length) + '...';
-      }
-      console.log(content);
-    return content;
-  }
+
 
 }

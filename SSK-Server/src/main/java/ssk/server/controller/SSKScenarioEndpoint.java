@@ -10,8 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import ssk.server.service.ElasticGetDataServices;
 import ssk.server.service.ElasticServices;
-import ssk.server.service.GithubApiService;
 import ssk.server.service.SSKServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +25,7 @@ public class SSKScenarioEndpoint {
 
 
     @Autowired
-    GithubApiService githubApiService;
+    ElasticGetDataServices elasticGetDataServices;
 
     @Autowired
     ElasticServices esServices;
@@ -41,7 +41,7 @@ public class SSKScenarioEndpoint {
     @ResponseBody
     @RequestMapping(method = { RequestMethod.GET  }, produces="application/json")
     public  ResponseEntity  getElasticHealth(){
-        return esServices.getElastichHealth();
+        return esServices.getElasticSearchHealth();
     }
     
     
@@ -91,10 +91,10 @@ public class SSKScenarioEndpoint {
                     try{
                         if(field.equals("image")){
         
-                            jsonResult.addProperty(field, sskServices.removeDoubleQuote (esServices.getScenarioDetails(scenarioId, field).getAsJsonObject().get("url").toString()));
+                            jsonResult.addProperty(field, sskServices.removeDoubleQuote (elasticGetDataServices.getScenarioDetails(scenarioId, field).getAsJsonObject().get("url").toString()));
                         }
                         else{
-                            jsonResult.add(field, esServices.getScenarioDetails(scenarioId, field));
+                            jsonResult.add(field, elasticGetDataServices.getScenarioDetails(scenarioId, field));
                         }
                     }
                     catch (NullPointerException e){
@@ -111,15 +111,4 @@ public class SSKScenarioEndpoint {
         }
         return  new ResponseEntity<>(jsonResult.toString(), this.headers, HttpStatus.OK);
     }
-    
-    
-    
-    
-    
-    private void setHeaders() {
-        this.headers = new HttpHeaders();
-        this.headers.setContentType(MediaType.APPLICATION_JSON_UTF8);
-    }
-
-
 }

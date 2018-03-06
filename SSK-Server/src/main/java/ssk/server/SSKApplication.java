@@ -89,7 +89,7 @@ public class SSKApplication
     @Override
     public void run(String... args) throws Exception {
        printElasticSearchInfo();
-       sskServices.initializeData();
+       //sskServices.initializeData();
     }
     
     

@@ -1,7 +1,30 @@
-
+@import '../../partials/variables';
 
 .card{
   border:  none !important;
   border-bottom: 1px solid #CFCFCF !important;
   border-radius: inherit !important;
+}
+
+.title{
+  color: $color-27;
+  font-family: $raleway-regular;
+  font-size: 22px;
+}
+
+.row.vdivide [class*='col']:not(:last-child):after {
+  background: #e0e0e0;
+  width: 1px;
+  content: "";
+  display:block;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  right: 0;
+}
+
+.btn-step{
+  background-color: $color-22;
+  color: $color-3;
+  font-family: $raleway-regular;
 }

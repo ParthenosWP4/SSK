@@ -12,6 +12,7 @@ import {ElastichsearchServicesService} from './elastichsearch-services.service';
 import {HttpModule} from '@angular/http';
 import { StepCardComponent } from './step-card/step-card.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import {SskServicesService} from './ssk-services.service';
 
 
 
@@ -37,7 +38,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],
-  providers: [appRoutingProviders, SafeHtmlPipe, ElastichsearchServicesService],
+  providers: [appRoutingProviders, SafeHtmlPipe, ElastichsearchServicesService, SskServicesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -26,3 +26,8 @@ nbdist/
 out/
 
 .DS_Store
+*#.#*
+.*.md.html
+.DS_Store
+.classpath
+/src/main/resources/application.properties

@@ -3,8 +3,6 @@ package ssk.server.service;
 
 
 import com.google.gson.*;
-import jdk.nashorn.internal.parser.JSONParser;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import org.slf4j.Logger;
@@ -34,6 +32,9 @@ public class ElasticServices {
 	@Autowired
 	private GithubApiService githubApiService;
 	
+	@Autowired
+	private RequestHeadersParams requestHeadersParams;
+	
 	@Value("${elasticsearch.port2}")
 	private String elasticSearchPort;
 	
@@ -47,15 +48,10 @@ public class ElasticServices {
 	List<String> targetList ;
 	
 	private RestTemplate restTemplate = new RestTemplate();
-	private HttpHeaders headers;
 	private List<String> lastProperties = new ArrayList<>();
 	private static final Logger logger = LoggerFactory.getLogger(ElasticServices.class.getName());
 	private static StringBuilder xmlStringBuilder;
-	private static UriComponentsBuilder builder ;
 	private static HttpEntity<String> entity;
-	private static List<String> include;
-	private static List<String> exclude;
-	
 	
 	public static final List<String> nestedStepMappings = Arrays.asList("TEI.teiHeader.fileDesc.titleStmt.author","TEI.teiHeader.fileDesc.titleStmt.author.persName ", "TEI.text.body.listEvent.event", "TEI.text.body.listEvent.event.head", "TEI.text.body.listEvent.event.head.content", "TEI.text.body.listEvent.event.head.term", "TEI.text.body.listEvent.event.head.ref",
 			"TEI.text.body.listEvent.event.desc.term", "TEI.text.body.listEvent.event.desc.content");
@@ -92,16 +88,16 @@ public class ElasticServices {
 	}
 	
 	
-	public ResponseEntity<Object> getElastichHealth() {
+	public ResponseEntity<Object> getElasticSearchHealth() {
 		HttpStatus status;
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("content", "AVAILABLE");
-		ResponseEntity<String> response = this.restTemplate.getForEntity("http://localhost:" + elasticSearchPort + "_cat/health", String.class);
+		ResponseEntity<String> response = this.restTemplate.getForEntity(elasticSearchPort + "_cat/health", String.class);
 		if (response.getStatusCode().equals(HttpStatus.NOT_FOUND) || response.getBody().contains("red")) {
 			jsonObject.put("content", "NOT AVAILABLE");
 		}
 		return ResponseEntity.status(HttpStatus.OK)
-				       .headers(this.headers)
+				       .headers(requestHeadersParams.getHeaders())
 				       .body(sskServices.toJson(jsonObject));
 	}
 	
@@ -150,9 +146,9 @@ public class ElasticServices {
 			
 		}
 		
-		setHeaders();
-		HttpEntity<String> entity = new HttpEntity<>(typeContent.toString(), this.headers);
-		ResponseEntity<String> response = this.restTemplate.exchange("http://localhost:" + elasticSearchPort + "/" + sskIndex + "/_mapping/" + mappingType, HttpMethod.PUT, entity, String.class);
+		requestHeadersParams.setHeaders();
+		HttpEntity<String> entity = new HttpEntity<>(typeContent.toString(), requestHeadersParams.getHeaders());
+		ResponseEntity<String> response = this.restTemplate.exchange(elasticSearchPort + "/" + sskIndex + "/_mapping/" + mappingType, HttpMethod.PUT, entity, String.class);
 		String responseBody = response.getBody();
 		mapping = new JSONObject(responseBody);
 		boolean result = false;
@@ -202,16 +198,16 @@ public class ElasticServices {
 		properties = new JSONObject();
 		properties.put("properties", resources);
 		
-		setHeaders();
-		HttpEntity<String> entity = new HttpEntity<>(properties.toString(), this.headers);
-		ResponseEntity<String> response = this.restTemplate.exchange("http://localhost:" + elasticSearchPort + "/" + sskIndex + "/_mapping/resource", HttpMethod.PUT, entity, String.class);
+		requestHeadersParams.setHeaders();
+		HttpEntity<String> entity = new HttpEntity<>(properties.toString(), requestHeadersParams.getHeaders());
+		ResponseEntity<String> response = this.restTemplate.exchange(elasticSearchPort + "/" + sskIndex + "/_mapping/resource", HttpMethod.PUT, entity, String.class);
 	}
 	
 	public boolean pushData(JsonArray scenarioAndStep, int iteration) throws Exception {
 		String type;
 		String idParent = "";
 		boolean result = true;
-		setHeaders();
+		requestHeadersParams.setHeaders();
 		HttpEntity<String> entity;
 		JsonObject resources = null;
 		for (int j = 0; j < scenarioAndStep.size(); j++) {
@@ -223,19 +219,19 @@ public class ElasticServices {
 				type += "?parent=" + idParent;
 				resources = scenarioAndStep.get(j).getAsJsonObject().remove("resources").getAsJsonObject();
 			}
-			entity = new HttpEntity<>(scenarioAndStep.get(j).toString(), this.headers);
-			ResponseEntity<String> response = this.restTemplate.exchange("http://localhost:" + elasticSearchPort + "/" + sskIndex + "/" + type, HttpMethod.POST, entity, String.class);
+			entity = new HttpEntity<>(scenarioAndStep.get(j).toString(), requestHeadersParams.getHeaders());
+			ResponseEntity<String> response = this.restTemplate.exchange( elasticSearchPort + "/" + sskIndex + "/" + type, HttpMethod.POST, entity, String.class);
 			JSONObject responseBody = new JSONObject(response.getBody());
 			result = result && Boolean.parseBoolean(responseBody.get("created").toString());
 			if (result) {
 				if (j == 0) {
 					idParent = responseBody.get("_id").toString();
 					final String id = idParent;
-					this.executeThread("scenario_metadata", id, metaData, this.headers);
+					this.executeThread("scenario_metadata", id, metaData, requestHeadersParams.getHeaders());
 				} else {
 					final String idStep = responseBody.get("_id").toString();
-					this.executeThread("step_metadata", idStep, metaData, this.headers);
-					this.executeThread("resources", idStep, resources, this.headers);
+					this.executeThread("step_metadata", idStep, metaData, requestHeadersParams.getHeaders());
+					this.executeThread("resources", idStep, resources, requestHeadersParams.getHeaders());
 					
 				}
 			} else break;
@@ -245,7 +241,7 @@ public class ElasticServices {
 		return result;
 	}
 	
-	void executeThread(String type, String id, JsonObject data, HttpHeaders headers) {
+	private void executeThread(String type, String id, JsonObject data, HttpHeaders headers) {
 		Thread t = new Thread(() -> {
 			try {
 				if (type.equals("resources")) {
@@ -321,9 +317,9 @@ public class ElasticServices {
 			dataToPush.put(category, resourceData);
 		});
 		if (dataToPush.size() > 0) {
-			setHeaders();
-			entity = new HttpEntity<>(gson.toJson(dataToPush), this.headers);
-			this.restTemplate.exchange("http://localhost:" + elasticSearchPort + "/" + sskIndex + "/" + type, HttpMethod.POST, entity, String.class);
+			requestHeadersParams.setHeaders();
+			entity = new HttpEntity<>(gson.toJson(dataToPush), requestHeadersParams.getHeaders());
+			this.restTemplate.exchange(elasticSearchPort + "/" + sskIndex + "/" + type, HttpMethod.POST, entity, String.class);
 		}
 	}
 	
@@ -334,15 +330,8 @@ public class ElasticServices {
 			data.add("standards", standards.getAsJsonArray());
 		}
 		HttpEntity entity = new HttpEntity<>(data.toString(), headers);
-		ResponseEntity<String> response = this.restTemplate.exchange("http://localhost:" + elasticSearchPort + "/" + sskIndex + "/" + type + "?parent=" + idParent, HttpMethod.POST, entity, String.class);
+		ResponseEntity<String> response = this.restTemplate.exchange(elasticSearchPort + "/" + sskIndex + "/" + type + "?parent=" + idParent, HttpMethod.POST, entity, String.class);
 	}
-	
-	
-	private void setHeaders() {
-		this.headers = new HttpHeaders();
-		this.headers.setContentType(MediaType.APPLICATION_JSON_UTF8);
-	}
-	
 	
 	public JSONObject addMappingFromPath(String path, String mappingType) {
 		JSONObject properties = new JSONObject();
@@ -387,9 +376,9 @@ public class ElasticServices {
 			properties = new JSONObject();
 			properties.put("properties", elt);
 		}
-		setHeaders();
-		HttpEntity<String> entity = new HttpEntity<>(properties.toString(), this.headers);
-		ResponseEntity<String> response = this.restTemplate.exchange("http://localhost:" + elasticSearchPort + "/" + sskIndex + "/_mapping/" + mappingType, HttpMethod.PUT, entity, String.class);
+		requestHeadersParams.setHeaders();
+		HttpEntity<String> entity = new HttpEntity<>(properties.toString(), requestHeadersParams.getHeaders());
+		ResponseEntity<String> response = this.restTemplate.exchange( elasticSearchPort + "/" + sskIndex + "/_mapping/" + mappingType, HttpMethod.PUT, entity, String.class);
 		return elt;
 	}
 	
@@ -398,10 +387,10 @@ public class ElasticServices {
 		JsonObject result = new JsonObject();
 		JsonObject param = new JsonObject();
 		param.addProperty("_source", false);
-		setHeaders();
+		requestHeadersParams.setHeaders();
 		sskIndex = "ssk/" + type;
-		entity = new HttpEntity<>(param.toString(), this.headers);
-		ResponseEntity<String> response = this.restTemplate.exchange("http://localhost:" + elasticSearchPort + "/" + sskIndex + "/_search?size=10000" , HttpMethod.POST, entity, String.class);
+		entity = new HttpEntity<>(param.toString(), requestHeadersParams.getHeaders());
+		ResponseEntity<String> response = this.restTemplate.exchange(elasticSearchPort + "/" + sskIndex + "/_search?size=10000" , HttpMethod.POST, entity, String.class);
 		if(response.getStatusCode().is2xxSuccessful()){
 			param = this.parser.parse(response.getBody()).getAsJsonObject().get("hits").getAsJsonObject();
 			result.addProperty("total", Integer.valueOf(param.get("total").getAsString()));
@@ -412,7 +401,7 @@ public class ElasticServices {
 		return result;
 	}
 	
-	public JSONObject getStepPagination(int from, int size){
+	/*public JSONObject getStepPagination(int from, int size){
 		JSONObject jsonResult = new JSONObject();
 			//http://localhost:9200/ssk/step/_search?pretty=true
 		sskIndex = "ssk/step";
@@ -475,144 +464,16 @@ public class ElasticServices {
 				                   "}";
 		setHeaders();
 		entity = new HttpEntity<>(queryBody.replaceAll("\\\\",""), this.headers);
-		ResponseEntity<String> response = this.restTemplate.exchange("http://localhost:" + elasticSearchPort + "/" + sskIndex, HttpMethod.POST, entity, String.class);
+		ResponseEntity<String> response = this.restTemplate.exchange(elasticSearchPort + "/" + sskIndex, HttpMethod.POST, entity, String.class);
 		System.out.println(response.getBody());
 		return jsonResult;
-	}
+	}*/
 	
-	public JsonElement getScenarioDetails(String scenarioId, String field) {
-		
-		JsonElement res = null;
-		switch (field.trim()){
-			case "title":
-				res = queryTitle(scenarioId);
-			break;
-			case "desc":
-				res = queryDescription(scenarioId)	;
-			break;
-			case "image":
-				res = queryImage(scenarioId)	;
-			break;
-		case "scenario_metadata":
-				res = parser.parse( queryScenarioMetadata(scenarioId));
-			break;
-		}
-		
-		return res;
-	}
 	
-	private JsonElement loadContentByKey(JSONObject json, String keyToCheck){
-		Iterator<?> json_keys = json.keys();
-		JsonElement content = null;
-		boolean enter = true;
-		while( json_keys.hasNext() && enter){
-			String json_key = (String)json_keys.next();
-			try{
-				content = parser.parse(json.optJSONObject(json_key).toString());
-				if (json_key.equals(keyToCheck)){
-					enter = false;
-					break;
-				}
-				content = loadContentByKey(new JSONObject(content.toString()), keyToCheck);
-				
-			}
-			catch (NullPointerException e){
-				//e.printStackTrace();
-				if (json_key.equals(keyToCheck)){
-					content = parser.parse(json.getJSONArray(json_key).toString());
-					enter = false;
-				}
-			}
-			
-		}
-		return content;
-	}
 	
-	private JsonElement queryDescription(String scenarioId) {
-		JsonElement jsonResult ;
-		include = Arrays.asList("\"*.desc.lang\"", "\"*.desc.content\"");
-		exclude = Arrays.asList("\"*.listEvent.*\"", "\"*.text.div\"","\"*.desc.term\"", "\"*.desc.type\"", "\"*.teiHeader.*\"");
-		JsonElement inSource = new JsonObject();
-		inSource.getAsJsonObject().addProperty("include", include.toString());
-		inSource.getAsJsonObject().addProperty("exclude", exclude.toString());
-		JsonElement source = new JsonObject();
-		source.getAsJsonObject().add("_source", inSource);
-		setHeaders();
-		
-		sskIndex = "ssk/scenario/_search?q=_id:" + scenarioId;
-		String sourceText = source.toString().replaceAll("\\\\","").replaceAll("\\\"\\[","[").replaceAll("]\\\"","]");
-		entity = new HttpEntity<>(sourceText, this.headers);
-		ResponseEntity<String> response = this.restTemplate.exchange("http://localhost:" + elasticSearchPort + "/" + sskIndex, HttpMethod.POST, entity, String.class);
-		if (response.getStatusCode().is2xxSuccessful()) {
-			final JsonArray result = new JsonArray();
-			source = loadContentByKey((JSONObject) new JSONObject(response.getBody()).getJSONObject("hits").getJSONArray("hits").get(0), "desc") ;
-			
-			if(source.isJsonArray()){
-				source.getAsJsonArray().forEach(desc->{
-					if(desc.toString().contains("content")){
-						result.getAsJsonArray().add(desc.getAsJsonObject());
-					}
-				});
-				jsonResult = result;
-			}
-			else{
-				jsonResult = source;
-			}
-		} else {
-			jsonResult =  null;
-		}
-		return jsonResult;
-	}
 	
-	private JsonElement queryTitle(String scenarioId){
-		sskIndex = "ssk/scenario/" + scenarioId;
-		builder = UriComponentsBuilder.fromUriString("http://localhost:" + elasticSearchPort + "/" + sskIndex)
-				          .queryParam("_source_include", "*.head.*")
-				          .queryParam("_source_exclude", "*.head.type,*.listEvent,*.desc,*.author");
-		setHeaders();
-		entity = new HttpEntity<>(this.headers);
-		ResponseEntity<String> response = this.restTemplate.exchange(builder.build().encode().toUri(), HttpMethod.GET, entity, String.class);
-		
-		return loadContentByKey(new JSONObject(response.getBody()), "head");
-	}
 	
-	private JsonElement queryImage(String scenarioId){
-		JsonElement jsonResult = new JsonObject();
-		include = Arrays.asList("\"*.graphic\"");
-		exclude = Arrays.asList("\"*.listEvent.*\"", "\"*.text.div\"", "\"*.teiHeader.*\"", "\"*.div.desc\"");
-		JsonElement inSource = new JsonObject();
-		inSource.getAsJsonObject().addProperty("include", include.toString());
-		inSource.getAsJsonObject().addProperty("exclude", exclude.toString());
-		JsonElement source = new JsonObject();
-		source.getAsJsonObject().add("_source", inSource);
-		setHeaders();
-		
-		sskIndex = "ssk/scenario/_search?q=_id:" + scenarioId;
-		String sourceText = source.toString().replaceAll("\\\\","").replaceAll("\\\"\\[","[").replaceAll("]\\\"","]");
-		entity = new HttpEntity<>(sourceText, this.headers);
-		ResponseEntity<String> response = this.restTemplate.exchange("http://localhost:" + elasticSearchPort + "/" + sskIndex, HttpMethod.POST, entity, String.class);
-		if (response.getStatusCode().is2xxSuccessful()) {
-			jsonResult = loadContentByKey((JSONObject) new JSONObject(response.getBody()).getJSONObject("hits").getJSONArray("hits").get(0), "graphic") ;
-		}
-		return  jsonResult;
-	}
 	
-	private String queryScenarioMetadata(String scenarioId){
-		JSONObject jsonResult = new JSONObject();
-		String queryBody = "{\"query\":{\"has_child\" : {\"type\" : \"scenario_metadata\",\"query\" : {\"match_all\": {}},\"inner_hits\" : {} }},\"_source\":false}";
-		sskIndex = "ssk/scenario/_search?q=_id:" + scenarioId;
-		setHeaders();
-		entity = new HttpEntity<>(queryBody.replaceAll("\\\\",""), this.headers);
-		ResponseEntity<String> response = this.restTemplate.exchange("http://localhost:" + elasticSearchPort + "/" + sskIndex, HttpMethod.POST, entity, String.class);
-		if (response.getStatusCode().is2xxSuccessful()) {
-			JSONObject temp ;
-			temp = (JSONObject) new JSONObject(response.getBody()).getJSONObject("hits").getJSONArray("hits").get(0);
-			jsonResult = (JSONObject) temp.getJSONObject("inner_hits").getJSONObject("scenario_metadata").getJSONObject("hits").getJSONArray("hits").get(0);
-			temp = jsonResult.getJSONObject("_source");
-			jsonResult = temp;
-		}
-		return  jsonResult.toString();
-	}
 	
 	
 	

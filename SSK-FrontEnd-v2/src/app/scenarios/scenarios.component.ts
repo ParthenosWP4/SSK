@@ -41,9 +41,7 @@ export class ScenariosComponent implements OnInit {
     this.elastichServices.countItems('scenarios').subscribe(result => {
         this.elastichServices.setScenariosID(result['scenarios']);
         this.elastichServices.setScenarioNumber(result['total']);
-        console.log(this.elastichServices.getScenarioNumber());
         this.scenariosTemp = new Array<any>(this.elastichServices.getScenarioNumber());
-        console.log(this.scenariosTemp.length);
         this.elastichServices.getScenariosID().forEach((obj)  => {
            this.asynchFunction(obj);
         });
@@ -51,12 +49,13 @@ export class ScenariosComponent implements OnInit {
       this.error = '500 - Internal Server Error';
     });
     this.scenarios = this.elastichServices.getScenarios();
-
+    this.loadStepsMetaData();
   }
 
    asynchFunction(scenario: any) {
      setTimeout(() => {
        this.elastichServices.getScenarioDetails(scenario._id).subscribe(detailsResult => {
+         detailsResult.id = scenario._id;
          this.elastichServices.addScenario(detailsResult);
          this.scenariosTemp.pop();
          this.resultCount += 1;
@@ -66,15 +65,7 @@ export class ScenariosComponent implements OnInit {
          this.error = '500 - Internal Server Error';
        });
      }, 1000);
-  }
-
-  /*ping(scenario: any) {
-    console.log('before');
-    setTimeout(function(){
-      this.as
-      console.log('after');
-    },300);
-  }*/
+   }
 
 
   onKey(event: any) { // without type info
@@ -105,6 +96,7 @@ export class ScenariosComponent implements OnInit {
     this.selectTab = item;
     if (item === 'scenarios') {
       this.router.navigate([{ outlets: { target: null }}]);
+      this.resultCount = this.elastichServices.getScenarioNumber();
     }    else {
       this.router.navigate([{ outlets: { target : item}}]);
       this.loadContents(item);
@@ -120,28 +112,34 @@ export class ScenariosComponent implements OnInit {
         }
   }
 
+
+
   loadSteps() {
-    this.elastichServices.countItems('steps').subscribe(result => {
-      this.elastichServices.setStepNumber(result['total']);
-      this.resultCount = this.elastichServices.getstepNumber();
-      console.log(result['steps']);
-      this.elastichServices.setSteps(result['steps']);
-      console.log(this.elastichServices.getSteps());
-      this.steps = this.elastichServices.getSteps();
-    }, error => {
-      this.error = '500 - Internal Server Error';
+    if ( this.steps.length <= 0) {
+      this.elastichServices.getAllSteps().subscribe(result => {
+        this.resultCount = this.elastichServices.getstepNumber();
+        this.steps = this.elastichServices.getSteps();
+      });
+    }
+  }
+
+  loadStepsMetaData() {
+    this.elastichServices.getAllStepsMetaData().subscribe(result => {
     });
   }
+
+
 
   @HostListener('window:scroll', ['$event']) checkScroll() {
     const componentPosition = this.el.nativeElement.offsetTop
     const scrollPosition = window.pageYOffset
-    if ( this.scenarios.length < this.elastichServices.getScenarioNumber() && scrollPosition >= componentPosition) {
+    if ( this.scenarios.length  < this.elastichServices.getScenarioNumber() && scrollPosition >= componentPosition) {
       const  elt: any = {};
-      console.log(this.scenariosTemp.length);
-    }
-    else if ( this.scenarios.length >= this.elastichServices.getScenarioNumber()) {
-      this.scenariosTemp.pop();
+      if (this.scenariosTemp.length === 1) {
+        this.scenariosTemp.pop();
+      }
+    } else if ( this.scenarios.length >= this.elastichServices.getScenarioNumber()) {
+
     }
   }
 

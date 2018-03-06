@@ -51,16 +51,7 @@ ul li a {
   text-transform: capitalize;
 }
 
-.row.vdivide [class*='col']:not(:last-child):after {
-  background: #e0e0e0;
-  width: 1px;
-  content: "";
-  display:block;
-  position: absolute;
-  top:0;
-  bottom: 0;
-  right: 0;
-}
+
 
 .card-columns{
   orphans: 1 !important;
