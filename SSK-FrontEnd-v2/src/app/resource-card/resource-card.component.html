@@ -1,0 +1,14 @@
+<div class="row d-flex h-100 mr-3 my-3">
+  <div class="col-1 mr-3">
+    <div class="preview mb-3">
+      <iframe class="embed-responsive-item" [src]= 'res?.url' allowfullscreen></iframe>
+    </div>
+  </div>
+  <div class="col  ">
+    <p><span  *ngIf="res?.type" class="badge badge-pill badge-secondary">{{res?.type}}</span>
+      <span class="author" >{{res?.creators}}</span>
+    <span class="title" > {{res?.title}}</span>
+      <span class="date">{{res?.date}}</span>
+    </p>
+  </div>
+</div>

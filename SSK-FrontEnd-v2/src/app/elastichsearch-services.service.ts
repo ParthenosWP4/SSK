@@ -3,6 +3,7 @@ import {Http,  Response, Headers, URLSearchParams, RequestOptions} from '@angula
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import * as _ from 'lodash';
 
 
 @Injectable()
@@ -12,11 +13,13 @@ export class ElastichsearchServicesService {
   private headers = new Headers({'Content-Type': 'application/json'});
 
   private scenarioNumber: number;
-  private scenariosId: any;
   private stepNumber: any;
+  private resourceNumber: any;
+  private scenariosId: any;
   private steps: any;
-  private stepsMetaData: any = [];
   private scenarios: any[];
+  private resources: any[];
+  private stepsMetaData: any = [];
   private options: any;
   private params: URLSearchParams;
 
@@ -25,6 +28,8 @@ export class ElastichsearchServicesService {
     this.scenarios = new Array();
     this.params = new URLSearchParams();
     this.params.append('fromSSK', 'true');
+    this.headers.set('Access-Control-Allow-Origin', '*');
+    this.headers.set('Access-Control-Allow-Methods', 'GET');
   }
 
 
@@ -69,6 +74,25 @@ export class ElastichsearchServicesService {
       }).catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
 
+  getAllResources() {
+    this.setOptions(this.headers, null);
+    return this.http.get(this.sskBackendEndpoint + 'steps/resources', this.options)
+      .map((response: Response) => {
+        const result = JSON.parse(response.text());
+        this.setResourceCount(result['total']);
+        this.setResources(result['resources']);
+      }).catch((error: any) => Observable.throw(error.json().error ||  console.log('Server error')));
+  }
+
+  testUrl(url: string) {
+    console.log(url);
+    this.setOptions(this.headers, null);
+    return this.http.get ('https://cors-anywhere.herokuapp.com/'+ url, this.options)
+      .map((response: Response) => {
+        console.log(response.headers);
+      }).catch((error: any) => Observable.throw( console.log(error.json()) || console.log('Server error')));
+  }
+
 
   getScenarioNumber(): number {
     return this.scenarioNumber;
@@ -84,6 +108,14 @@ export class ElastichsearchServicesService {
 
   setStepNumber(value: number) {
     this.stepNumber = value;
+  }
+
+  getResourceCount(): number {
+    return this.resourceNumber;
+  }
+
+  setResourceCount(value: number) {
+    this.resourceNumber = value;
   }
 
   getScenariosID(): any {
@@ -124,5 +156,13 @@ export class ElastichsearchServicesService {
 
   setStepsMetadata(metadata: any): any  {
     this.stepsMetaData = metadata;
+  }
+
+  getResources() {
+    return this.resources;
+  }
+
+  setResources(resources: any): any  {
+    this.resources = resources;
   }
 }

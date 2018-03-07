@@ -12,19 +12,18 @@ import {ActivatedRoute, Router} from '@angular/router';
 
 export class ScenariosComponent implements OnInit {
 
-  searchPlaceholder = 'Scenarios, steps or resources'
-  tabList: any = {}
-  values = ''
-  contentCol = 'col-lg-12'
-  collapse = ''
+  searchPlaceholder = 'Scenarios, steps or resources';
+  tabList: any = {};
+  contentCol = 'col-lg-12';
+  collapse = '';
   scenarios: any[];
   steps: any[];
-  selectTab: string
+  resources: any[];
+  selectTab: string;
   error: string;
   resultCount = 0;
   scenariosTemp: any[];
   p  = 1;
-  collection: any[];
 
   title: boolean;
   constructor(
@@ -50,6 +49,7 @@ export class ScenariosComponent implements OnInit {
     });
     this.scenarios = this.elastichServices.getScenarios();
     this.loadStepsMetaData();
+    this.loadResources();
   }
 
    asynchFunction(scenario: any) {
@@ -97,7 +97,7 @@ export class ScenariosComponent implements OnInit {
     if (item === 'scenarios') {
       this.router.navigate([{ outlets: { target: null }}]);
       this.resultCount = this.elastichServices.getScenarioNumber();
-    }    else {
+    }else {
       this.router.navigate([{ outlets: { target : item}}]);
       this.loadContents(item);
     }
@@ -109,10 +109,11 @@ export class ScenariosComponent implements OnInit {
             this.steps = new Array();
               this.loadSteps();
             break;
+          case 'resources':
+            this.resultCount = this.elastichServices.getResourceCount();
+            break;
         }
   }
-
-
 
   loadSteps() {
     if ( this.steps.length <= 0) {
@@ -123,12 +124,16 @@ export class ScenariosComponent implements OnInit {
     }
   }
 
+  loadResources() {
+    this.elastichServices.getAllResources().subscribe(result => {
+      this.resources = this.elastichServices.getResources();
+    });
+  }
+
   loadStepsMetaData() {
     this.elastichServices.getAllStepsMetaData().subscribe(result => {
     });
   }
-
-
 
   @HostListener('window:scroll', ['$event']) checkScroll() {
     const componentPosition = this.el.nativeElement.offsetTop

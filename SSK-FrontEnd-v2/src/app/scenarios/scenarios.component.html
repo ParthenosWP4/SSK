@@ -67,39 +67,13 @@
         </pagination-controls>
       </div>
       <div class="tab-pane  " id="resources-tab">
-          <div class="row d-flex h-100 mr-3 my-3">
-            <div class="col-1 mr-5">
-              <div class="card" style="width: 9rem;">
-                <img class="card-img-top img-fluid" src="../../assets/images/mork.png" alt="Card image cap">
-                <div class="text-center">
-                  <p >Tutotial</p>
-                </div>
-              </div>
-            </div>
-            <div class="col align-self-center ">
-                  <p><span class="badge badge-pill badge-secondary">Secondary</span><span class="badge badge-pill badge-secondary">Secondary</span><span class="badge badge-pill badge-secondary">Secondary</span><span class="badge badge-pill badge-secondary">Secondary</span><span class="badge badge-pill badge-secondary">Secondary</span></p>
-                  <span class="author">Charles Riondet, Laurent Romary, Annelies Van Nispen, Kepa Joseba Rodriguez, Mike Bryant</span>
-                <span class="title"> Report on Standards</span>
-              <p class="date">D.11.4, 2017</p>
-            </div>
-          </div>
-        <div class="row d-flex h-100 mr-3 my-3">
-          <div class="col-1 mr-5">
-            <div class="card" style="width: 9rem;">
-              <img class="card-img-top img-fluid" src="../../assets/images/mork.png" alt="Card image cap">
-              <div class="text-center">
-                <p >Tutotial</p>
-              </div>
-            </div>
-          </div>
-          <div class="col align-self-center ">
-            <p><span class="badge badge-pill badge-secondary">Secondary</span><span class="badge badge-pill badge-secondary">Secondary</span><span class="badge badge-pill badge-secondary">Secondary</span><span class="badge badge-pill badge-secondary">Secondary</span><span class="badge badge-pill badge-secondary">Secondary</span></p>
-            <span class="author">Charles Riondet, Laurent Romary, Annelies Van Nispen, Kepa Joseba Rodriguez, Mike Bryant</span>
-            <span class="title"> Report on Standards</span>
-            <p class="date">D.11.4, 2017</p>
-          </div>
-        </div>
-
+        <app-resource-card *ngFor="let res of resources | paginate: { itemsPerPage: 10, currentPage: p,  totalItems: resources?.length }"  [res]="res "></app-resource-card>
+        <pagination-controls
+          (pageChange)="p = $event"
+          class="text-center ssk-pagination"
+          previousLabel=""
+          nextLabel="">
+        </pagination-controls>
       </div>
     </div>
   </div>

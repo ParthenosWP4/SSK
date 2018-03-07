@@ -30,7 +30,6 @@ export class SskServicesService {
           newContent = newContent + ' ' + value.toString() ;
         }
       });
-      console.log(newContent);
       content.content = newContent;
     }
     if (content.content.length > length) {

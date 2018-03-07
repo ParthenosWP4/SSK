@@ -218,4 +218,24 @@ public class ElasticGetDataServices {
 		
 		return res;
 	}
+	
+	public JsonElement getAllResources() {
+		JsonObject jsonResult = new JsonObject();
+		requestHeadersParams.setHeaders();
+		sskIndex = "ssk/resource/_search?size=10000";
+		requestHeadersParams.setHeaders();
+		ResponseEntity<String> response = this.restTemplate.getForEntity( elasticSearchPort + "/" + sskIndex, String.class) ;
+		if (response.getStatusCode().is2xxSuccessful()) {
+			JsonObject param = sskServices.getParser().parse(response.getBody()).getAsJsonObject().get("hits").getAsJsonObject();
+			String input  = param.getAsJsonArray("hits").toString();
+			input = input.toString().replaceAll("\"_source\":\\{", "");
+			input = input.replaceAll("}}", "}");
+			jsonResult.addProperty("total", Integer.valueOf(param.get("total").getAsString()));
+			jsonResult.add("resources", this.sskServices.getParser().parse(input).getAsJsonArray());
+		}
+		else{
+			 jsonResult = null;
+		}
+		return jsonResult;
+	}
 }

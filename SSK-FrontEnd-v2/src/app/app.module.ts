@@ -13,6 +13,7 @@ import {HttpModule} from '@angular/http';
 import { StepCardComponent } from './step-card/step-card.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {SskServicesService} from './ssk-services.service';
+import { ResourceCardComponent } from './resource-card/resource-card.component';
 
 
 
@@ -25,7 +26,8 @@ import {SskServicesService} from './ssk-services.service';
     ScenariosComponent,
     ScenarioCardComponent,
     ScenarioTemplateComponent,
-    StepCardComponent
+    StepCardComponent,
+    ResourceCardComponent
   ],
   imports:
     [

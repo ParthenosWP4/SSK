@@ -259,7 +259,7 @@ public class ElasticServices {
 	
 	private void pushResources(String idParent, JsonObject data, HttpHeaders headers) throws Exception {
 		Set<Map.Entry<String, JsonElement>> entries = data.entrySet();
-		HttpEntity<String> entity;
+		//HttpEntity<String> entity;
 		
 		String type = "resource?parent=" + idParent;
 		HashMap<String, List<JsonObject>> dataToPush = new HashMap<>();
@@ -284,23 +284,26 @@ public class ElasticServices {
 					});
 					resourceType = temp[0];
 				}
-				
+				JsonObject elt= new JsonObject();
+				boolean push = false;
 				if (resource.has("source")) {
 					String source = resource.get("source").getAsString();
 					try {
 						if(!targetList.contains(resource.get("target").getAsString())) {
+							push = true;
 							targetList.add(resource.get("target").getAsString());
 							switch (source) {
 								case "zotero":
-										resourceData.add(sskServices.getZoteroResource(resource.get("target").getAsString(), resourceType));
+									elt = sskServices.getZoteroResource(resource.get("target").getAsString(), resourceType);
+									// resourceData.add(sskServices.getZoteroResource(resource.get("target").getAsString(), resourceType));
 									break;
 								case "github":
-									resourceData.add(githubApiService.getRepositoryData(resource.get("target").getAsString().split("github.com")[1], resourceType));
+									//resourceData.add(githubApiService.getRepositoryData(resource.get("target").getAsString().split("github.com")[1], resourceType));
+									elt = githubApiService.getRepositoryData(resource.get("target").getAsString().split("github.com")[1], resourceType);
 									break;
 								case "hal":
 								case "BeQuali":
 								default:
-									JsonObject elt= new JsonObject();
 									elt.addProperty("title", source);
 									elt.addProperty("url", resource.get("target").getAsString());
 									elt.addProperty("type", resourceType);
@@ -310,17 +313,24 @@ public class ElasticServices {
 						}
 					} catch (Exception e) {
 						logger.error(e.getMessage());
-						resourceData.add(this.sskServices.scraptWebPage(source, resource.get("target").getAsString(),resourceType));
+						elt = this.sskServices.scraptWebPage(source, resource.get("target").getAsString(),resourceType);
+						//resourceData.add(this.sskServices.scraptWebPage(source, resource.get("target").getAsString(),resourceType));
 					}
 				}
+				if(push){
+					elt.addProperty("category", category);
+					requestHeadersParams.setHeaders();
+					entity = new HttpEntity<>(elt.toString(), requestHeadersParams.getHeaders());
+					this.restTemplate.exchange(elasticSearchPort + "/" + sskIndex + "/" + type, HttpMethod.POST, entity, String.class);
+				}
+				
 			});
-			dataToPush.put(category, resourceData);
 		});
-		if (dataToPush.size() > 0) {
+		/*if (dataToPush.size() > 0) {
 			requestHeadersParams.setHeaders();
 			entity = new HttpEntity<>(gson.toJson(dataToPush), requestHeadersParams.getHeaders());
 			this.restTemplate.exchange(elasticSearchPort + "/" + sskIndex + "/" + type, HttpMethod.POST, entity, String.class);
-		}
+		}*/
 	}
 	
 	

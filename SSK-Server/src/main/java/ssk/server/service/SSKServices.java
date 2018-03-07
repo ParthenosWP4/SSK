@@ -328,27 +328,17 @@ public class SSKServices {
                     standard.addProperty(removeDoubleQuote(attributes[0]), removeDoubleQuote(attributes[1]));
                     if(metaData.has("standard")){
                         JsonArray standards =   metaData.getAsJsonArray("standard");
-                        logger.info(standards.toString());
                         int i = standards.size() -1;
                         boolean isIn = true;
                         while (i >= 0){
-                            logger.warn(removeDoubleQuote(standards.get(i).getAsJsonObject().get("key").toString()));
-                            logger.warn(removeDoubleQuote(standards.get(i).toString()));
-                            logger.warn(removeDoubleQuote(standard.toString()));
-                            logger.warn(String.valueOf(removeDoubleQuote(standards.get(i).getAsJsonObject().toString()).equals(removeDoubleQuote(standard.toString()))));
                             if(removeDoubleQuote(standards.get(i).getAsJsonObject().toString()).equals(removeDoubleQuote(standard.toString()))){
                                     break;
                             }
                             else{
                                 metaData.getAsJsonArray("standard").add(standard);
-                              //  standards.add(standard);
                             }
                             i = standards.size() -1;
                         }
-                        
-                        
-                        
-                        
                     }
                     else{
                         JsonArray jsonArray = new JsonArray(); jsonArray.add(standard);
@@ -533,12 +523,20 @@ public class SSKServices {
         JsonObject result  = new JsonObject();
         result.addProperty("type", type);
         String urlAddOn ;
-        if(id.contains(":")) {
-            urlAddOn = platforms.get(id.split(":")[0]) + "/items/"+ id.split(":")[1];
+        if(id.contains("zotero.org")){
+            urlAddOn = id.split("zotero.org/")[1];
         }
         else{
-            urlAddOn = platforms.get("wp4") + "/items/"+ id;
+            if(id.contains(":")) {
+                urlAddOn = platforms.get(id.split(":")[0]) + "/items/"+ id.split(":")[1];
+            }
+            else{
+                urlAddOn = platforms.get("wp4") + "/items/"+ id;
+            }
         }
+        
+        
+        
         ResponseEntity<String> response = this.restTemplate.getForEntity(     zoteroApihUrl+urlAddOn ,String.class);
         JsonObject data =  this.parser.parse(response.getBody()).getAsJsonObject().get("data").getAsJsonObject();
         if(data.has("title") && removeDoubleQuote(data.get("title").toString()) != "") result.addProperty("title", removeDoubleQuote(data.get("title").toString()));
@@ -565,11 +563,12 @@ public class SSKServices {
     
     private JsonObject scrapGithub(String target) throws IOException, XPathExpressionException, ParserConfigurationException, SAXException {
         org.jsoup.nodes.Document document = Jsoup.connect(target).get();
+        
         Elements newsHeadlines = document.getElementsByTag("article");
         setXmlStringBuilder(new StringBuilder().append(newsHeadlines));
-        setDoc(DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new ByteArrayInputStream(xmlStringBuilder.toString().getBytes("UTF-8"))));
+        setDoc(DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new ByteArrayInputStream((xmlStringBuilder.toString().replaceAll("<br>","" ).replaceAll("<hr>", "")).getBytes("UTF-8"))));
         setxPath(XPathFactory.newInstance().newXPath());
-        setNode(( NodeList) xPath.compile("article/p").evaluate(doc, XPathConstants.NODESET));
+        setNode(( NodeList) xPath.compile("/article/p").evaluate(doc, XPathConstants.NODESET));
         JsonObject result  = new JsonObject();
         if(node.getLength() > 0){
             result.addProperty("abstract", node.item(0).getTextContent());

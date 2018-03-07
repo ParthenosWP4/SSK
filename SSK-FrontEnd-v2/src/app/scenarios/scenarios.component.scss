@@ -133,38 +133,7 @@ ul li a {
 
 
 #resources-tab{
-  .card {
-    box-shadow: none !important;
-    border: none !important;
-    border-radius: unset !important;
-    font-family: $roboto-regular !important;
-    border-bottom: none;
-    font-size: $twenty;
-  }
-    .badge{
-      border-radius: .55rem !important;
-      background-color: $color-29 !important;
-      margin: .25em .4em;
-      color: $color-3;
-      font-size: 14px !important;
-    }
-  .author{
-      color : $color-30 !important;
 
-  }
-  .title{
-    color: $color-31;
-  }
-  .date{
-    font-size: 16px;
-    color: $color-32;
-  }
-  .row{
-    border-bottom: 1px solid $color-17 !important;
-    .col-1{
-      padding: 0;
-    }
-  }
 }
 
 
