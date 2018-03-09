@@ -1,0 +1,58 @@
+<div class="scenario">
+  <div class="row ">
+    <div class="col-lg-7 my-lg-5 ">
+      <div class=" ml-lg-5 col-md-12 col-sm-12 text-lg-left text-center title">
+       {{scenarioElt?.title?.content}}
+      </div>
+      <div class="w-100 "></div>
+      <div class="ml-lg-5  col-md-12 col-sm-12 text-center  text-lg-left my-lg-5 desc">
+        {{scenarioElt?.descrip?.content}}
+        </div>
+      <div class="w-100"></div>
+  </div>
+    <div class="col-md-12 col-sm-12 col-lg  mt-lg-2 text-center mr-lg-5 my-lg-5 desc">
+      <img src={{scenarioElt?.image}} class="img-fluid" alt="Responsive image">
+      <p *ngFor=" let item of tags">  <span *ngIf="tagExist(item, 'scenario')"> {{item}}</span>   <img  *ngIf="tagExist(item, 'scenario')" src="../../assets/images/interrogationDot.png" class="pb-1" alt="Responsive image">
+         <button type="button" class="btn btn-secondary disabled m-1" *ngFor=" let elt of tagExist(item, 'scenario')">{{elt?.key}} </button>
+      </p>
+    </div>
+  </div>
+    <div class=" row cd-horizontal-timeline mx-5">
+      <div class="timeline mx-5">
+        <div class="events-wrapper">
+          <div class="events" [ngStyle]= "{width: timelineTotWidth + 'px'}">
+            <ol >
+              <li *ngFor="let step of scenarioElt?.steps; let i = index">
+								<span  (click)="updateContent(step, i, $event)" [ngStyle]="{left: ((i) *left) + 'px'}" [ngClass]="(i==idSelectedStep)? 'selected':''">{{i+1}}
+								</span>
+              </li>
+            </ol>
+          </div> <!-- .events -->
+        </div> <!-- .events-wrapper -->
+       <!-- <ul class="cd-timeline-navigation">
+          <li><span (click)="updateSlide(timelineComponents, timelineTotWidth, 'prev')" class="prev inactive">&nbsp;<i class="fa fa-chevron-circle-left fa-2x" aria-hidden="true"></i></span></li>
+          <li ><span  (click)="updateSlide(timelineComponents, timelineTotWidth, 'next')"  class="next" >&nbsp;<i class="fa fa-chevron-circle-right fa-2x" aria-hidden="true"></i></span></li>
+        </ul> --><!-- .cd-timeline-navigation -->
+      </div> <!-- .timeline -->
+    </div>
+  <div class=" row mb-lg-2">
+    <div class=" col-lg step ml-lg-5">
+      <span class="position  ml-lg-3">{{selectedStep?.position}}.</span>
+      <span>{{selectedStep?.title?.content}}</span>
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-lg-7 ">
+      <div class="ml-lg-5  col-md-12 col-sm-12 text-center  text-lg-left desc">
+        {{selectedStep?.description?.content}}
+         </div>
+    </div>
+    <div class="col-md-12 col-sm-12 col-lg text-center  desc">
+      <ng-container *ngFor=" let item of tags">
+        <p *ngIf="tagExist(item, 'step')"> <span>{{item}}  <img  *ngIf="tagExist(item, 'step')" src="../../assets/images/interrogationDot.png" class="pb-1" alt="Responsive image"></span>
+          <button type="button" class="btn btn-secondary disabled m-1" *ngFor=" let elt of tagExist(item, 'step')">{{tagShow(elt)?.key}} </button>
+        </p>
+      </ng-container>
+    </div>
+  </div>
+</div>

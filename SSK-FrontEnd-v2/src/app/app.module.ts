@@ -14,6 +14,8 @@ import { StepCardComponent } from './step-card/step-card.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {SskServicesService} from './ssk-services.service';
 import { ResourceCardComponent } from './resource-card/resource-card.component';
+import { ScenarioComponent } from './scenario/scenario.component';
+import * as $ from 'jquery';
 
 
 
@@ -27,7 +29,8 @@ import { ResourceCardComponent } from './resource-card/resource-card.component';
     ScenarioCardComponent,
     ScenarioTemplateComponent,
     StepCardComponent,
-    ResourceCardComponent
+    ResourceCardComponent,
+    ScenarioComponent
   ],
   imports:
     [

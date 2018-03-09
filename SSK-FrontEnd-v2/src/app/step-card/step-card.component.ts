@@ -48,7 +48,7 @@ export class StepCardComponent implements OnInit {
     }
     this.step['metadata'] = this.sskServices.addStepMetadata(this.step._id);
     const urlTag: Array<any>  = _.remove(this.step.metadata, (tag) => {
-        return this.isUrl(tag.key);
+        return this.sskServices.isUrl(tag.key);
     });
     _.forEach(urlTag, (value) => {
       value['url'] = value.key;
@@ -61,10 +61,7 @@ export class StepCardComponent implements OnInit {
     });
   }
 
-  isUrl(s) {
-    const regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/
-    return regexp.test(s);
-  }
+
 
 
 }

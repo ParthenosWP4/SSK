@@ -6,6 +6,7 @@ import {ScenariosComponent} from './scenarios/scenarios.component';
 import {ScenarioTemplateComponent} from './scenario-template/scenario-template.component';
 import {ScenarioCardComponent} from './scenario-card/scenario-card.component';
 import {StepCardComponent} from './step-card/step-card.component';
+import {ScenarioComponent} from './scenario/scenario.component';
 
 
 const routes: Routes = [
@@ -23,7 +24,8 @@ const routes: Routes = [
     ]
   },
   { path: 'steps', component: ScenariosComponent, outlet: 'target'},
-  { path: 'resources', component: ScenariosComponent, outlet: 'target'}
+  { path: 'resources', component: ScenariosComponent, outlet: 'target'},
+  { path: 'scenarios/:id', component: ScenarioComponent}
 ];
 
 export const appRoutingProviders: any[] = [

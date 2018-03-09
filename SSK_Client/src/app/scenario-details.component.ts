@@ -85,6 +85,7 @@ export class ScenarioDetailsComponent implements OnInit {
 
 	updateContent(step: any, index: number, event: any) {
 		//console.log(this.scenarioElt.stepKeys[index])
+
 		this.idSelectedStep = index;
 		this.updateFilling(event.target, this.timelineComponents['fillingLine'], this.timelineTotWidth);
 		this.selectedStep = this.scenarioElt.steps[index]
@@ -119,11 +120,9 @@ export class ScenarioDetailsComponent implements OnInit {
 	}
 
 	updateSlide(timelineComponents: any, timelineTotWidth, string) {
-		//retrieve translateX value of timelineComponents['eventsWrapper']
-		var translateValue = this.getTranslateValue(timelineComponents['eventsWrapper']),
+		let translateValue = this.getTranslateValue(timelineComponents['eventsWrapper']),
 			wrapperWidth = Number(timelineComponents['timelineWrapper'].css('width').replace('px', ''));
-		//translate the timeline to the left('next')/right('prev') 
-		(string == 'next')
+		(string === 'next')
 			? this.translateTimeline(timelineComponents, translateValue - wrapperWidth + this.left, wrapperWidth - timelineTotWidth)
 			: this.translateTimeline(timelineComponents, translateValue + wrapperWidth - this.left);
 	};

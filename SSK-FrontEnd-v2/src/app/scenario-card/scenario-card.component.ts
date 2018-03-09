@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {isUndefined} from "util";
 import {SskServicesService} from "../ssk-services.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-scenario-card',
@@ -16,10 +17,10 @@ export class ScenarioCardComponent implements OnInit {
   private defaultImage: string;
   private shortTitle: any = {}
   private shortDesc: any = {}
-  constructor(private sskServices: SskServicesService) { }
+  constructor(private sskServices: SskServicesService,  private router: Router) { }
 
   ngOnInit() {
-
+    console.log(this.scenario)
     if (this.scenario.title instanceof Array) {
       this.title = this.scenario.title[0];
     } else {
@@ -57,6 +58,10 @@ export class ScenarioCardComponent implements OnInit {
     if (this.scenario.scenario_metadata.standards instanceof Array) {
       this.metadata  =  this.metadata.concat(this.scenario.scenario_metadata.standards);
     }
+  }
+
+  goToScenario(scenarioId: string) {
+    this.router.navigate(['/scenarios', scenarioId]);
   }
 
 

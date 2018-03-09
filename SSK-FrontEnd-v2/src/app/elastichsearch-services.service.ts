@@ -3,7 +3,8 @@ import {Http,  Response, Headers, URLSearchParams, RequestOptions} from '@angula
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import * as _ from 'lodash';
+
+import {flatMap} from "tslint/lib/utils";
 
 
 @Injectable()
@@ -87,11 +88,12 @@ export class ElastichsearchServicesService {
   testUrl(url: string) {
     console.log(url);
     this.setOptions(this.headers, null);
-    return this.http.get ('https://cors-anywhere.herokuapp.com/'+ url, this.options)
+    return this.http.get ('https://cors-anywhere.herokuapp.com/' + url, this.options)
       .map((response: Response) => {
         console.log(response.headers);
       }).catch((error: any) => Observable.throw( console.log(error.json()) || console.log('Server error')));
   }
+
 
 
   getScenarioNumber(): number {
@@ -165,4 +167,5 @@ export class ElastichsearchServicesService {
   setResources(resources: any): any  {
     this.resources = resources;
   }
+
 }

@@ -1,0 +1,48 @@
+
+
+@import '../../partials/variables';
+@import '../../timeline';
+
+
+.scenario {
+  background-color: $color-33;
+  .title{
+    font-family: $roboto-regular;
+    font-size: 48px;
+    color: $color-34;
+  }
+  .desc{
+    color: $color-18;
+    font-family: $roboto-light;
+    font-size: 18px;
+    p{
+      font-family: $roboto-italic;
+      font-size: 20px;
+      color: $color-21;
+
+    }
+  }
+  img{
+    max-height: 75%;
+  }
+}
+
+
+ol{
+  list-style-type: none !important;
+}
+
+.step{
+  color: $color-14;
+  font-family: $raleway-semibold;
+  font-size: 36px;
+  .position{
+    letter-spacing: .3em;
+  }
+}
+p span{
+ // color: red;
+}
+
+
+

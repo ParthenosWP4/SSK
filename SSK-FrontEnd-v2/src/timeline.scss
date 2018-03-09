@@ -1,0 +1,316 @@
+@import '~bourbon/app/assets/stylesheets/bourbon';
+
+@import '/partials/variables'; // colors, fonts etc...
+
+@import './partials/mixins'; // custom mixins
+
+@import './partials/layout'; // responsive grid and media queries
+
+
+/* --------------------------------
+
+Main Components
+
+-------------------------------- */
+
+.cd-horizontal-timeline {
+	opacity: 1;
+	//margin: 2em auto;
+
+
+	&::before {
+		/* never visible - this is used in jQuery to check the current MQ */
+		content: 'mobile';
+		display: none;
+	}
+
+	&.loaded {
+		/* show the timeline after events position has been set (using JavaScript) */
+		opacity: 1;
+	}
+
+	.timeline {
+		position: relative;
+		height: 100px;
+		width: 95%;
+		//min-height: 175px;
+	}
+
+	.events-wrapper {
+		position: relative;
+		height: 100%;
+		margin: 0 40px;
+		overflow: hidden;
+
+		&::after, &::before {
+			/* these are used to create a shadow effect at the sides of the timeline */
+			position: absolute;
+			z-index: 2;
+			top: 0;
+			height: 100%;
+			width: 20px;
+		}
+
+		&::before {
+			left: 0;
+	    	@include background-image(linear-gradient(to right,$color-4, rgba($color-4, 0)));
+		}
+
+		&::after {
+			right: 0;
+			@include background-image(linear-gradient(to left,$color-4, rgba($color-4, 0)));
+		}
+	}
+
+	.events {
+		/* this is the grey line/timeline */
+		position: absolute;
+		height: 5px;
+		margin-top: 25px;
+		background: $color-2 ;
+		@include transition(transform .4s);
+		ins{
+			text-decoration: none;
+			width: 120px;
+			position: absolute;
+			margin-top: 55px;
+			text-align: center;
+			line-height: normal;
+			margin-left: -60px;
+			font-family: $roboto-regular;
+			color: $color-9;
+			font-size: $sixteen;
+		}
+	}
+
+	.filling-line {
+		/* this is used to create the green line filling the timeline */
+		position: absolute;
+		z-index: 1;
+		left: 0;
+		top: 0;
+		height: 2px;
+		width:100%;
+		background-color: $color-2;
+		@include transform(scaleX(0));
+		@include transform-origin(left center);
+		@include transition(transform .3s);
+		&::after {
+			width: 90%;
+		}
+	}
+
+
+
+	.events li {
+		span:nth-child(odd){
+		cursor: pointer;
+		position: absolute;
+		height: 50px;
+		top: -25px;
+		width: 50px;
+		border-radius: 50%;
+		border: 4px solid $color-2;
+		background-color: $color-4;
+		@include transition(background-color .3s, border-color .3s);
+		text-align: center;
+		font-size: 1.3rem !important;
+		padding-bottom: 15px;
+		color: $color-2;
+		line-height: 45px;
+		z-index: 2;
+		@include center(x);
+		vertical-align: middle;
+		/* fix bug on Safari - text flickering while timeline translates */
+		@include transform(translateZ(0));
+
+		&::after {
+			/* this is used to create the event spot */
+			position: absolute;
+		}
+
+		.no-touch &:hover::after {
+			background-color: $color-2;
+			border-color: $color-2;
+		}
+
+		&.selected {
+			pointer-events: none;
+			background-color: $color-2;
+			text-decoration: none;
+			color: $color-5 !important;
+			&::after {
+				background-color: $color-2;
+				border-color: $color-2;
+			}
+		}
+
+		&.older-event::after {
+			border-color: $color-2;
+		}
+	}
+	span:nth-child(even){
+		position: absolute;
+		color:$color-1;
+		top: 50px;
+		width: 150px;
+		text-align: center;
+		margin-left: -50px;
+
+	}
+
+
+
+}
+	@include MQ(L) {
+		&::before {
+			/* never visible - this is used in jQuery to check the current MQ */
+			content: 'desktop';
+		}
+	}
+}
+
+.cd-timeline-navigation {
+
+	span {
+		/* these are the left/right arrows to navigate the timeline */
+		cursor: pointer;
+		position: absolute;
+		z-index: 1;
+		//top:30%;
+		padding-bottom:50px;
+		@include center(y);
+		overflow: hidden;
+		color: $color-2;
+		white-space: nowrap;
+		@include transition(border-color .3s);
+
+		&::after {
+			/* arrow icon */
+			text-decoration: none;
+			content: '';
+			position: absolute;
+			@include center;
+			//background:  url(./assets/cd-arrow.svg) no-repeat 0 0;
+
+		}
+
+		&.prev {
+			left: 0;
+			//@include transform(translateY(-50%) rotate(180deg));
+		}
+
+		&.next {
+			right: 0;
+		}
+
+		.no-touch &:hover {
+			border-color: $color-2;
+			text-decoration: none;
+		}
+
+		&.inactive {
+			cursor: not-allowed;
+			text-decoration: none;
+			pointer-events: none;
+			opacity: 0.1;
+			&::after {
+				background-position: 0 -16px;
+			}
+
+			.no-touch &:hover {
+				border-color: darken($color-4, 10%);
+
+			}
+		}
+
+	}
+}
+
+.events-content {
+
+		 .my-badge{
+			background-color: $color-2;
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			border-radius: 50%;
+			font-size: 25px;
+			font-family: $roboto-medium;
+			text-align: center;
+			position: absolute;
+			color: $color-3;
+		}
+
+		.cube-grid-spinner{
+			width: 120px !important;
+			//height: 150px !important;
+		}
+
+		.step-title{
+			font-family: Raleway-SemiBold;
+			font-size: 36px;
+			color: $color-2;
+			margin-left: $seventy-five;
+		}
+
+		.step-desc{
+			margin-left: $seventy-five;
+		}
+
+		.resources{
+			color: $color-6;
+			font-family: $roboto-regular;
+			font-size: $thirty;
+			margin-left: $thirty;
+		}
+		.sub-resources{
+			margin-left: $thirty;
+			.title {
+				color: $color-7;
+				font-family: $raleway-medium;
+				font-size: 24px;
+				margin-left: $thirty;
+			}
+
+			i {
+				margin-left: $thirty;
+			}
+			.label{
+				font-size: $eighteen;
+				font-family: $roboto-regular;
+				font-weight: unset;
+				display: inline-block;
+				margin: 1px;
+			}
+
+		}
+
+
+
+
+}
+
+@include keyframes(cd-enter-right) {
+	0% {
+		opacity: 0;
+		@include transform(translateX(100%));
+	}
+
+	100% {
+		opacity: 1;
+		@include transform(translateX(0%));
+	}
+}
+
+@include keyframes(cd-enter-left) {
+	0% {
+		opacity: 0;
+		@include transform(translateX(-100%));
+	}
+
+	100% {
+		opacity: 1;
+		@include transform(translateX(0%));
+	}
+}
