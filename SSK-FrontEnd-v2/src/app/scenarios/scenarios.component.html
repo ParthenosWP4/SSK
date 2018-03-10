@@ -67,7 +67,7 @@
         </pagination-controls>
       </div>
       <div class="tab-pane  " id="resources-tab">
-        <app-resource-card *ngFor="let res of resources | paginate: { itemsPerPage: 10, currentPage: p,  totalItems: resources?.length }"  [res]="res "></app-resource-card>
+        <app-resource-card   *ngFor="let res of resources | paginate: { itemsPerPage: 10, currentPage: p,  totalItems: resources?.length }"  [res]="res" [border]="border"></app-resource-card>
         <pagination-controls
           (pageChange)="p = $event"
           class="text-center ssk-pagination"

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
 import {ElastichsearchServicesService} from '../elastichsearch-services.service';
 import {isUndefined} from 'util';
@@ -11,11 +11,11 @@ import {isUndefined} from 'util';
 export class ResourceCardComponent implements OnInit {
 
   @Input() res: any;
+  @Input() border: any;
+  constructor(public sanitizer: DomSanitizer, private elasticServices: ElastichsearchServicesService) {
 
-  constructor(public sanitizer: DomSanitizer, private elasticServices: ElastichsearchServicesService) { }
-
+  }
   ngOnInit() {
-    console.log(this.res);
     this.res.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.res.url);
     if (!isUndefined(this.res.creators) ) {
       this.res.creators = this.res.creators.replace('[', '').replace(']', '');

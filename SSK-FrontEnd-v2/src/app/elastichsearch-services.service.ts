@@ -17,7 +17,7 @@ export class ElastichsearchServicesService {
   private stepNumber: any;
   private resourceNumber: any;
   private scenariosId: any;
-  private steps: any;
+  private steps: any[];
   private scenarios: any[];
   private resources: any[];
   private stepsMetaData: any = [];

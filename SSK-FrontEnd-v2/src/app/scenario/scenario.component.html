@@ -1,6 +1,6 @@
 <div class="scenario">
   <div class="row ">
-    <div class="col-lg-7 my-lg-5 ">
+    <div class="col-lg-7 my-lg-5 mr-3">
       <div class=" ml-lg-5 col-md-12 col-sm-12 text-lg-left text-center title">
        {{scenarioElt?.title?.content}}
       </div>
@@ -10,9 +10,9 @@
         </div>
       <div class="w-100"></div>
   </div>
-    <div class="col-md-12 col-sm-12 col-lg  mt-lg-2 text-center mr-lg-5 my-lg-5 desc">
+    <div class="col-md-12 col-sm-12 col-lg mr-3 mt-lg-2  mr-lg-5 my-lg-5 desc">
       <img src={{scenarioElt?.image}} class="img-fluid" alt="Responsive image">
-      <p *ngFor=" let item of tags">  <span *ngIf="tagExist(item, 'scenario')"> {{item}}</span>   <img  *ngIf="tagExist(item, 'scenario')" src="../../assets/images/interrogationDot.png" class="pb-1" alt="Responsive image">
+      <p *ngFor=" let item of tags" class="ml-lg-4">  <span *ngIf="tagExist(item, 'scenario')"> {{item}}</span>   <img  *ngIf="tagExist(item, 'scenario')" src="../../assets/images/interrogationDot.png" class="pb-1" alt="Responsive image">
          <button type="button" class="btn btn-secondary disabled m-1" *ngFor=" let elt of tagExist(item, 'scenario')">{{elt?.key}} </button>
       </p>
     </div>
@@ -47,12 +47,46 @@
         {{selectedStep?.description?.content}}
          </div>
     </div>
-    <div class="col-md-12 col-sm-12 col-lg text-center  desc">
+    <div class="col-md-12 col-sm-12 col-lg  ml-lg-5 desc">
       <ng-container *ngFor=" let item of tags">
-        <p *ngIf="tagExist(item, 'step')"> <span>{{item}}  <img  *ngIf="tagExist(item, 'step')" src="../../assets/images/interrogationDot.png" class="pb-1" alt="Responsive image"></span>
+        <p *ngIf="tagExist(item, 'step')"> <span>{{item}}  <img  src="../../assets/images/interrogationDot.png" class="pb-1" alt="Responsive image"></span>
           <button type="button" class="btn btn-secondary disabled m-1" *ngFor=" let elt of tagExist(item, 'step')">{{tagShow(elt)?.key}} </button>
         </p>
       </ng-container>
+    </div>
+  </div>
+  <div class="row  resource mt-lg-5" >
+    <div class="col-lg-7  my-lg-5">
+      <div class="ml-lg-5  col-md-12 col-sm-12 text-center  text-lg-left desc">
+        <div *ngIf="selectedStep?.generals">
+          <div class="head" >
+          <span  class="title">
+          <i class="ic ssk-resources mr-3" aria-hidden="true"></i>
+            GENERAL RESOURCES
+        </span>
+          </div>
+          <app-resource-card  *ngFor = "let res of selectedStep?.generals" [border]="border" [res]="res"></app-resource-card>
+        </div >
+        <div   *ngIf="selectedStep?.projects">
+        <div class="head" >
+          <span  class="title">
+          <i class="ic ssk-projects mr-3" aria-hidden="true"></i>
+           PROJECT-SPECIFIC RESOURCES
+        </span>
+        </div>
+        <app-resource-card *ngFor = "let res of selectedStep?.projects" [border]="border" [res]="res"></app-resource-card>
+      </div>
+      </div>
+    </div>
+    <div class="col-md-12 col-sm-12 col-lg  ml-lg-5  desc my-lg-5">
+      <div *ngIf="selectedStep?.metadata?.standards"> <p><span>standards  <img  src="../../assets/images/interrogationDot.png" class="pb-1" alt="Responsive image"></span></p>
+        <div *ngFor=" let elt of selectedStep?.metadata?.standards" class="my-2">
+        <button type="button" class="btn btn-secondary disabled m-1" >{{elt?.abbr}} </button>
+        <span class="complete"> - {{elt?.complete}}</span>
+        <p class="desc">{{elt?.desc[0]?.eng}}</p>
+    </div>
+      </div>
+
     </div>
   </div>
 </div>

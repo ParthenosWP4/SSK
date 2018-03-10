@@ -2,6 +2,7 @@ import {Component, ElementRef, HostListener, OnInit} from '@angular/core';
 import {AppComponent} from '../app.component';
 import {ElastichsearchServicesService} from '../elastichsearch-services.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {isUndefined} from 'util';
 
 @Component({
   selector: 'app-scenario',
@@ -23,44 +24,56 @@ export class ScenariosComponent implements OnInit {
   error: string;
   resultCount = 0;
   scenariosTemp: any[];
-
   p  = 1;
-
   title: boolean;
+  border: any = {} ;
+
   constructor(
     private appComponent: AppComponent,
-    private elastichServices: ElastichsearchServicesService,
+    private elasticServices: ElastichsearchServicesService,
     public el: ElementRef,
     private router: Router,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute) {
+    this.border.class = 'col-1';
+    this.border.border ='1px solid #979797';
+  }
 
   ngOnInit() {
     this.router.navigate([{ outlets: { target: null }}]);
     this.tabList = this.appComponent.browseItems;
     this.selectTab = this.tabList[0];
-    this.elastichServices.countItems('scenarios').subscribe(result => {
-        this.elastichServices.setScenariosID(result['scenarios']);
-        this.elastichServices.setScenarioNumber(result['total']);
-        this.scenariosTemp = new Array<any>(this.elastichServices.getScenarioNumber());
-        this.elastichServices.getScenariosID().forEach((obj)  => {
-           this.asynchFunction(obj);
+    if (this.elasticServices.getScenarios().length === 0 ) {
+      this.elasticServices.countItems('scenarios').subscribe(result => {
+          this.elasticServices.setScenariosID(result['scenarios']);
+          this.elasticServices.setScenarioNumber(result['total']);
+          this.scenariosTemp = new Array<any>(this.elasticServices.getScenarioNumber());
+          this.elasticServices.getScenariosID().forEach((obj)  => {
+            this.asynchFunction(obj);
+          });
+        }, error => {
+          this.error = '500 - Internal Server Error';
+        },
+        () => {
+          this.scenarios = this.elasticServices.getScenarios();
+          this.elasticServices.getAllSteps().subscribe(result => {});
+          this.loadStepsMetaData();
+          this.loadResources();
         });
-    }, error => {
-      this.error = '500 - Internal Server Error';
-    });
-    this.scenarios = this.elastichServices.getScenarios();
-    this.loadStepsMetaData();
-    this.loadResources();
+    } else {
+      this.resultCount = this.elasticServices.getScenarios().length;
+      this.scenarios = this.elasticServices.getScenarios();
+      console.log(this.scenarios);
+    }
   }
 
    asynchFunction(scenario: any) {
      setTimeout(() => {
-       this.elastichServices.getScenarioDetails(scenario._id).subscribe(detailsResult => {
+       this.elasticServices.getScenarioDetails(scenario._id).subscribe(detailsResult => {
          detailsResult.id = scenario._id;
-         this.elastichServices.addScenario(detailsResult);
+         this.elasticServices.addScenario(detailsResult);
          this.scenariosTemp.pop();
          this.resultCount += 1;
-         if (this.scenarios.length === this.elastichServices.getScenarioNumber()) {
+         if (this.scenarios.length === this.elasticServices.getScenarioNumber()) {
          }
        }, error => {
          this.error = '500 - Internal Server Error';
@@ -97,7 +110,7 @@ export class ScenariosComponent implements OnInit {
     this.selectTab = item;
     if (item === 'scenarios') {
       this.router.navigate([{ outlets: { target: null }}]);
-      this.resultCount = this.elastichServices.getScenarioNumber();
+      this.resultCount = this.elasticServices.getScenarioNumber();
     }else {
       this.router.navigate([{ outlets: { target : item}}]);
       this.loadContents(item);
@@ -111,40 +124,50 @@ export class ScenariosComponent implements OnInit {
               this.loadSteps();
             break;
           case 'resources':
-            this.resultCount = this.elastichServices.getResourceCount();
+              this.loadResources();
             break;
         }
   }
 
   loadSteps() {
-    if ( this.steps.length <= 0) {
-      this.elastichServices.getAllSteps().subscribe(result => {
-        this.resultCount = this.elastichServices.getstepNumber();
-        this.steps = this.elastichServices.getSteps();
+    if (isUndefined(this.steps)) {
+      this.elasticServices.getAllSteps().subscribe(result => {
+        this.resultCount = this.elasticServices.getstepNumber();
+        this.steps = this.elasticServices.getSteps();
       });
+    }else {
+      this.resultCount = this.elasticServices.getstepNumber();
+      this.steps = this.elasticServices.getSteps();
     }
   }
 
   loadResources() {
-    this.elastichServices.getAllResources().subscribe(result => {
-      this.resources = this.elastichServices.getResources();
-    });
+    if (isUndefined(this.resources)) {
+      this.elasticServices.getAllResources().subscribe(result => {
+        this.resultCount = this.elasticServices.getResourceCount();
+        this.resources = this.elasticServices.getResources();
+      });
+    } else {
+      this.resultCount = this.elasticServices.getResourceCount();
+      this.resources = this.elasticServices.getResources();
+    }
+
   }
 
   loadStepsMetaData() {
-    this.elastichServices.getAllStepsMetaData().subscribe(result => {
+    this.elasticServices.getAllStepsMetaData().subscribe(result => {
     });
   }
 
   @HostListener('window:scroll', ['$event']) checkScroll() {
     const componentPosition = this.el.nativeElement.offsetTop
     const scrollPosition = window.pageYOffset
-    if ( this.scenarios.length  < this.elastichServices.getScenarioNumber() && scrollPosition >= componentPosition) {
+    if ( this.scenarios.length  < this.elasticServices.getScenarioNumber() && scrollPosition >= componentPosition) {
       const  elt: any = {};
       if (this.scenariosTemp.length === 1) {
         this.scenariosTemp.pop();
       }
-    } else if ( this.scenarios.length >= this.elastichServices.getScenarioNumber()) {
+    } else if ( this.scenarios.length >= this.elasticServices.getScenarioNumber()) {
 
     }
   }

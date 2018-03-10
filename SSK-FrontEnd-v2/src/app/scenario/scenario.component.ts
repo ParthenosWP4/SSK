@@ -4,7 +4,7 @@ import {SskServicesService} from '../ssk-services.service';
 import {Observable} from 'rxjs/Observable';
 import {ElastichsearchServicesService} from '../elastichsearch-services.service';
 import * as _ from 'lodash';
-import {isUndefined} from "util";
+import {isUndefined} from 'util';
 
 @Component({
   selector: 'app-scenario',
@@ -17,15 +17,14 @@ export class ScenarioComponent implements OnInit {
   timelines: any;
   scenarioElt: any;
   selectedStep: any;
-  scenarioTitle: string;
-  scenarioDesc: string;
   left: number;
   idSelectedStep: number;
   timelineTotWidth: number;
   scenarioId: string;
   timelineTranslate: any;
-  tags = ['discipline', 'objects', 'techniques', 'activity', ]
+  tags = ['discipline', 'objects', 'techniques', 'activity', 'standards']
   private data: Observable<any>;
+  border: any = {};
 
 
   constructor(
@@ -39,6 +38,8 @@ export class ScenarioComponent implements OnInit {
     this.selectedStep = {}
     this.selectedStep.id = 1;
     this.scenarioElt = {};
+    this.border.class = 'col-2';
+    this.border.border = '1px dashed #979797';
 
   }
 
@@ -64,7 +65,7 @@ export class ScenarioComponent implements OnInit {
           () =>  {
             this.elasticServices.getAllResources().subscribe(result => {});
             this.elasticServices.getScenariosID().forEach((obj)  => {
-              this.elasticServices.getScenarioDetails(this.scenarioId)
+              this.elasticServices.getScenarioDetails(obj._id)
                 .subscribe(detailsResult => {
                     detailsResult.id = obj._id;
                     this.elasticServices.addScenario(detailsResult);
@@ -75,52 +76,58 @@ export class ScenarioComponent implements OnInit {
                       this.scenarioElt = _.find(this.elasticServices.getScenarios(), (item) => {
                         return item.id === this.scenarioId;
                       });
-
-                      if (this.scenarioElt.title instanceof Array) {
-                        this.scenarioElt.title = this.scenarioElt.title[0];
-                      } else {
-                        this.scenarioElt.title = this.scenarioElt.title;
-                      }
-
-                      if (this.scenarioElt.desc instanceof Array) {
-                        this.scenarioElt.descrip = this.scenarioElt.desc[0];
-                      } else {
-                        this.scenarioElt.descrip = this.scenarioElt.desc;
-                      }
+                      setTimeout(() => {
+                        this.scenarioElt.title = (this.scenarioElt.title instanceof Array) ? this.scenarioElt.title[0]
+                          : this.scenarioElt.title;
+                        this.scenarioElt.descrip = (this.scenarioElt.desc instanceof Array) ? this.scenarioElt.desc[0]
+                          : this.scenarioElt.desc;
+                      }, 100);
                       this.setScenarioSteps(this.scenarioId);
-
                     }
                   });
             });
+
           }
         );
-    }
-    else{
+    } else {
       this.scenarioElt = _.find(this.elasticServices.getScenarios(), (item) => {
         return item.id === this.scenarioId;
       });
-      console.log(this.scenarioElt);
+      this.scenarioElt.title = (this.scenarioElt.title instanceof Array) ? this.scenarioElt.title[0] : this.scenarioElt.title;
+      this.scenarioElt.descrip = (this.scenarioElt.desc instanceof Array) ? this.scenarioElt.desc[0] : this.scenarioElt.desc;
       this.setScenarioSteps(this.scenarioId);
     }
   }
 
   setScenarioSteps(scenarioId: string) {
-    this.elasticServices.getAllSteps().subscribe(
-      result => {},
-      err => console.error('Get All Steps: 500 - Internal Server Error : ' + err ),
-      () => {
-        this.scenarioElt.steps = _.groupBy(this.elasticServices.getSteps(), (item) => {
-          return item._parent === this.scenarioId;
-        }).true;
-        this.initializeCurrentStep(this.scenarioElt);
+    if ( isUndefined(this.elasticServices.getSteps())) {
+      this.elasticServices.getAllSteps().subscribe(
+        result => {},
+        err => console.error('Get All Steps: 500 - Internal Server Error : ' + err ),
+        () => {
+          this.scenarioElt.steps = _.groupBy(this.elasticServices.getSteps(), (item) => {
+            return item._parent === this.scenarioId;
+          }).true;
+          this.initializeCurrentStep(this.scenarioElt);
+        }
+      );
+    } else {
+      this.scenarioElt.steps = _.groupBy(this.elasticServices.getSteps(), (item) => {
+        return item._parent === this.scenarioId;
+      }).true;
+    }
+    setTimeout(() => {
+      this.initializeCurrentStep(this.scenarioElt);
+    },100);
 
-      }
-    );
   }
 
   tagExist(tag: string, type: string  ) {
-     if (type === 'scenario' && !isUndefined(this.scenarioElt.scenario_metadata) && !isUndefined(this.scenarioElt.scenario_metadata[tag])) { return this.scenarioElt.scenario_metadata[tag] ; }
-     if (type === 'step' && !isUndefined(this.selectedStep.metadata) && !isUndefined(this.selectedStep.metadata[tag])) { return this.selectedStep.metadata[tag] ; }
+    if ( tag === 'standards') { return false}
+     if (type === 'scenario' && !isUndefined(this.scenarioElt.scenario_metadata) &&
+       !isUndefined(this.scenarioElt.scenario_metadata[tag])) { return this.scenarioElt.scenario_metadata[tag] ; }
+     if (type === 'step' && !isUndefined(this.selectedStep.metadata) &&
+       !isUndefined(this.selectedStep.metadata[tag])) { return this.selectedStep.metadata[tag] ; }
       return false;
   }
 
@@ -128,13 +135,13 @@ export class ScenarioComponent implements OnInit {
     this.timelines = $('.cd-horizontal-timeline');
     this.timelineTotWidth = this.timelines.width();
     this.left = this.timelineTotWidth / 7;
-    if (this.scenarioElt.steps.length > 5) {
+    if (!isUndefined(this.scenarioElt.steps) && this.scenarioElt.steps.length > 5) {
       this.timelineTotWidth = this.timelineTotWidth + this.left * (this.scenarioElt.steps.length - 5);
     }
     (this.timelines.length > 0) && this.initTimeline(this.timelines);
     this.timelineTranslate = 0;
     this.initTimeline(this.timelines)
-    if (scenario.steps.length > 0) {
+    if (!isUndefined(scenario.steps)) {
       this.selectedStep = scenario.steps[0];
       this.selectedStep.ref = this.selectedStep._id;
      this.setTitleAndDescription();
@@ -142,19 +149,40 @@ export class ScenarioComponent implements OnInit {
        this.elasticServices.getAllStepsMetaData().subscribe(result => {},
          err => console.error('get All Steps MetaData: 500 - Internal Server Error : ' + err ),
          () => {
-           const temp  = _.groupBy(this.elasticServices.getStepsMetadata(),  (item) => {
-             return item._parent ===  this.selectedStep._id;
-           }).true;
-           if (temp[0] != null && !isUndefined(temp[0]._source)) {
-             this.selectedStep.metadata = temp[0]._source;
-           }
-           console.log(this.selectedStep);
+           this.setStepMetadata();
+           this.setResources();
          });
      } else {
-       this.selectedStep['metadata'] = this.sskService.addStepMetadata(this.selectedStep._id);
-       console.log(this.selectedStep);
+       this.setStepMetadata()
+       this.setResources();
       }
     }
+  }
+
+  setStepMetadata() {
+    console.log(this.elasticServices.getStepsMetadata())
+    const temp  = _.groupBy(this.elasticServices.getStepsMetadata(),  (item) => {
+      return item._parent ===  this.selectedStep._id;
+    }).true;
+    if (temp[0] != null && !isUndefined(temp[0]._source)) {
+      this.selectedStep.metadata = temp[0]._source;
+    }
+  }
+
+  setResources() {
+    const resources = _.groupBy(this.elasticServices.getResources(),  (item) => {
+      return item._parent ===  this.selectedStep._id;
+    }).true ;
+
+    this.selectedStep.projects =  _.groupBy(resources,  (item) => {
+      return item.category ===  'project';
+    }).true
+
+    this.selectedStep.generals =  _.groupBy(resources,  (item) => {
+      return item.category ===  'general';
+    }).true;
+
+    console.log(this.selectedStep);
   }
 
 
@@ -187,13 +215,11 @@ export class ScenarioComponent implements OnInit {
   }
 
   updateContent(step: any, index: number, event: any) {
-    //console.log(this.scenarioElt.stepKeys[index])
     this.idSelectedStep = index;
     this.updateFilling(event.target, this.timelineComponents['fillingLine'], this.timelineTotWidth);
     this.selectedStep = this.scenarioElt.steps[index]
     this.selectedStep['id'] =  index + 1
     this.selectedStep['ref'] = this.scenarioElt.stepKeys[index]
-    //console.log(this.selectedStep)
 
   }
 

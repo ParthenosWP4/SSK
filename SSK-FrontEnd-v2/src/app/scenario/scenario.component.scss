@@ -41,8 +41,31 @@ ol{
   }
 }
 p span{
- // color: red;
+ text-transform: capitalize;
 }
+
+.resource {
+  background-color: $color-3;
+  .title {
+    font-size: 24px;
+    font-family: $roboto-medium;
+    width: 100%;
+  }
+  .head{
+    border-bottom: 1px solid $color-35;
+  }
+
+  .complete {
+    font-family: $roboto-italic;
+    font-size: medium;
+  }
+  .desc{
+    font-size: small !important;
+    font-family: $roboto-light !important;
+  }
+}
+
+
 
 
 
