@@ -22,7 +22,7 @@
         <div class="events-wrapper">
           <div class="events" [ngStyle]= "{width: timelineTotWidth + 'px'}">
             <ol >
-              <li *ngFor="let step of scenarioElt?.steps; let i = index">
+              <li *ngFor="let step of scenarioElt?.steps; let i = index; let nextStepIndex = i">
 								<span  (click)="updateContent(step, i, $event)" [ngStyle]="{left: ((i) *left) + 'px'}" [ngClass]="(i==idSelectedStep)? 'selected':''">{{i+1}}
 								</span>
               </li>
@@ -58,8 +58,8 @@
   <div class="row  resource mt-lg-5" >
     <div class="col-lg-7  my-lg-5">
       <div class="ml-lg-5  col-md-12 col-sm-12 text-center  text-lg-left desc">
-        <div *ngIf="selectedStep?.generals">
-          <div class="head" >
+        <div *ngIf="selectedStep?.generals" class="res">
+          <div class="head mb-lg-2" >
           <span  class="title">
           <i class="ic ssk-resources mr-3" aria-hidden="true"></i>
             GENERAL RESOURCES
@@ -67,26 +67,32 @@
           </div>
           <app-resource-card  *ngFor = "let res of selectedStep?.generals" [border]="border" [res]="res"></app-resource-card>
         </div >
-        <div   *ngIf="selectedStep?.projects">
-        <div class="head" >
-          <span  class="title">
+        <div   *ngIf="selectedStep?.projects" class="res">
+        <div class=" col head" >
+          <span  class="title  ">
           <i class="ic ssk-projects mr-3" aria-hidden="true"></i>
            PROJECT-SPECIFIC RESOURCES
         </span>
         </div>
-        <app-resource-card *ngFor = "let res of selectedStep?.projects" [border]="border" [res]="res"></app-resource-card>
+        <app-resource-card *ngFor = "let res of selectedStep?.projects; " [border]="border" [res]="res"></app-resource-card>
       </div>
       </div>
     </div>
     <div class="col-md-12 col-sm-12 col-lg  ml-lg-5  desc my-lg-5">
       <div *ngIf="selectedStep?.metadata?.standards"> <p><span>standards  <img  src="../../assets/images/interrogationDot.png" class="pb-1" alt="Responsive image"></span></p>
         <div *ngFor=" let elt of selectedStep?.metadata?.standards" class="my-2">
-        <button type="button" class="btn btn-secondary disabled m-1" >{{elt?.abbr}} </button>
-        <span class="complete"> - {{elt?.complete}}</span>
-        <p class="desc">{{elt?.desc[0]?.eng}}</p>
+        <button type="button" class="btn btn-secondary disabled m-1" >{{elt?.abbr}} {{elt?.key}}</button>
+        <span *ngIf="elt?.complete != null" class="complete"> - {{elt?.complete}}</span>
+        <p *ngIf="elt?.desc != null" class="desc">{{elt?.desc[0]?.eng}}</p>
     </div>
       </div>
 
     </div>
+    <div class="w-100"></div>
+    <div class="row mx-auto bottom my-lg-5">
+      <button [routerLink]="['/', 'scenarios']"  type="button" class="btn btn-secondary  m-1 mr-lg-3" > <img  src="../../assets/images/backToScenarios.png" class="pb-1 mr-2" alt="Responsive image">back to scenarios</button>
+      <button (click)="nextStep()" type="button" class="btn btn-primary  m-1 ml-lg-3" [ngClass]="(idSelectedStep + 1 == scenarioElt?.steps?.length) ? 'disabled':''"> NEXT STEP <i class="fa fa-chevron-circle-right "></i></button>
+    </div>
   </div>
+
 </div>

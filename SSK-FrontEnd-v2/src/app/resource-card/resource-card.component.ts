@@ -12,14 +12,19 @@ export class ResourceCardComponent implements OnInit {
 
   @Input() res: any;
   @Input() border: any;
+  url: string
   constructor(public sanitizer: DomSanitizer, private elasticServices: ElastichsearchServicesService) {
 
   }
   ngOnInit() {
+    this.res.redirect = this.res.url;
     this.res.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.res.url);
     if (!isUndefined(this.res.creators) ) {
       this.res.creators = this.res.creators.replace('[', '').replace(']', '');
     }
   }
 
+  open() {
+      window.open(this.res.redirect, '_blank');
+  }
 }

@@ -25,7 +25,12 @@ const routes: Routes = [
   },
   { path: 'steps', component: ScenariosComponent, outlet: 'target'},
   { path: 'resources', component: ScenariosComponent, outlet: 'target'},
-  { path: 'scenarios/:id', component: ScenarioComponent}
+
+  { path: 'scenarios/:id', component: ScenarioComponent, children:
+    [
+      {path: '', component: ScenarioComponent, outlet: 'step'}
+    ]},
+  { path: 'scenarios/:id/:stepId', component: ScenarioComponent}
 ];
 
 export const appRoutingProviders: any[] = [

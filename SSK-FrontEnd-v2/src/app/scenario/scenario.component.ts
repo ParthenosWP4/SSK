@@ -25,6 +25,7 @@ export class ScenarioComponent implements OnInit {
   tags = ['discipline', 'objects', 'techniques', 'activity', 'standards']
   private data: Observable<any>;
   border: any = {};
+  nextStepIndex;
 
 
   constructor(
@@ -40,6 +41,7 @@ export class ScenarioComponent implements OnInit {
     this.scenarioElt = {};
     this.border.class = 'col-2';
     this.border.border = '1px dashed #979797';
+
 
   }
 
@@ -105,16 +107,16 @@ export class ScenarioComponent implements OnInit {
         result => {},
         err => console.error('Get All Steps: 500 - Internal Server Error : ' + err ),
         () => {
-          this.scenarioElt.steps = _.groupBy(this.elasticServices.getSteps(), (item) => {
+          this.scenarioElt.steps = _.sortBy(_.groupBy(this.elasticServices.getSteps(), (item) => {
             return item._parent === this.scenarioId;
-          }).true;
+          }).true, [ 'position']);
           this.initializeCurrentStep(this.scenarioElt);
         }
       );
     } else {
-      this.scenarioElt.steps = _.groupBy(this.elasticServices.getSteps(), (item) => {
+      this.scenarioElt.steps = _.sortBy(_.groupBy(this.elasticServices.getSteps(), (item) => {
         return item._parent === this.scenarioId;
-      }).true;
+      }).true, [ 'position']);
     }
     setTimeout(() => {
       this.initializeCurrentStep(this.scenarioElt);
@@ -123,7 +125,7 @@ export class ScenarioComponent implements OnInit {
   }
 
   tagExist(tag: string, type: string  ) {
-    if ( tag === 'standards') { return false}
+    if ( tag === 'standards') { return false }
      if (type === 'scenario' && !isUndefined(this.scenarioElt.scenario_metadata) &&
        !isUndefined(this.scenarioElt.scenario_metadata[tag])) { return this.scenarioElt.scenario_metadata[tag] ; }
      if (type === 'step' && !isUndefined(this.selectedStep.metadata) &&
@@ -135,16 +137,18 @@ export class ScenarioComponent implements OnInit {
     this.timelines = $('.cd-horizontal-timeline');
     this.timelineTotWidth = this.timelines.width();
     this.left = this.timelineTotWidth / 7;
+
     if (!isUndefined(this.scenarioElt.steps) && this.scenarioElt.steps.length > 5) {
       this.timelineTotWidth = this.timelineTotWidth + this.left * (this.scenarioElt.steps.length - 5);
     }
+
     (this.timelines.length > 0) && this.initTimeline(this.timelines);
     this.timelineTranslate = 0;
     this.initTimeline(this.timelines)
     if (!isUndefined(scenario.steps)) {
       this.selectedStep = scenario.steps[0];
-      this.selectedStep.ref = this.selectedStep._id;
-     this.setTitleAndDescription();
+     this.selectedStep.ref = this.selectedStep._id;
+     this.setStepTitleAndDescription();
      if (this.elasticServices.getStepsMetadata().length  === 0) {
        this.elasticServices.getAllStepsMetaData().subscribe(result => {},
          err => console.error('get All Steps MetaData: 500 - Internal Server Error : ' + err ),
@@ -153,20 +157,23 @@ export class ScenarioComponent implements OnInit {
            this.setResources();
          });
      } else {
-       this.setStepMetadata()
+       this.setStepMetadata();
        this.setResources();
       }
     }
   }
 
   setStepMetadata() {
-    console.log(this.elasticServices.getStepsMetadata())
     const temp  = _.groupBy(this.elasticServices.getStepsMetadata(),  (item) => {
       return item._parent ===  this.selectedStep._id;
     }).true;
     if (temp[0] != null && !isUndefined(temp[0]._source)) {
       this.selectedStep.metadata = temp[0]._source;
     }
+    if(!isUndefined(this.selectedStep.metadata.standards)) {
+      this.selectedStep.metadata.standards = _.uniqBy(this.selectedStep.metadata.standards, 'abbr');
+    }
+
   }
 
   setResources() {
@@ -182,7 +189,6 @@ export class ScenarioComponent implements OnInit {
       return item.category ===  'general';
     }).true;
 
-    console.log(this.selectedStep);
   }
 
 
@@ -200,7 +206,7 @@ export class ScenarioComponent implements OnInit {
     }
 
 
-    setTitleAndDescription() {
+  setStepTitleAndDescription() {
     if (this.selectedStep.head instanceof Array) {
       this.selectedStep.title = this.selectedStep.head[0];
     } else {
@@ -215,13 +221,34 @@ export class ScenarioComponent implements OnInit {
   }
 
   updateContent(step: any, index: number, event: any) {
+    this.router.navigate(['scenarios', this.scenarioId,  step.position]);
     this.idSelectedStep = index;
-    this.updateFilling(event.target, this.timelineComponents['fillingLine'], this.timelineTotWidth);
-    this.selectedStep = this.scenarioElt.steps[index]
-    this.selectedStep['id'] =  index + 1
-    this.selectedStep['ref'] = this.scenarioElt.stepKeys[index]
-
+    this.updateSlide()
+    //this.updateFilling(event.target, this.timelineComponents['fillingLine'], this.timelineTotWidth);
+     this.selectedStep = step;
+    this.selectedStep.id  =  index + 1
+    console.log(this.selectedStep)
+    this.selectedStep.ref = this.selectedStep._id;
+    //this.initializeCurrentStep(this.scenarioElt);
+    this.setStepTitleAndDescription();
+    this.setStepMetadata()
+    this.setResources();
+    console.log(this.selectedStep)
   }
+
+  nextStep() {
+    this.idSelectedStep = this.selectedStep.position ;
+    this.router.navigate(['scenarios', this.scenarioId,  this.idSelectedStep + 1]);
+    this.updateSlide()
+    this.selectedStep = _.find(this.scenarioElt.steps, (item) => {
+      return item.position === this.idSelectedStep + 1;
+    });
+    this.selectedStep.ref = this.selectedStep._id;
+    this.setStepTitleAndDescription();
+    this.setStepMetadata()
+    this.setResources();
+  }
+
 
   // Timeline Functions
   initTimeline(timelines: any) {
@@ -247,15 +274,22 @@ export class ScenarioComponent implements OnInit {
     });
   }
 
-  updateSlide(timelineComponents: any, timelineTotWidth, string) {
-    //retrieve translateX value of timelineComponents['eventsWrapper']
-    var translateValue = this.getTranslateValue(timelineComponents['eventsWrapper']),
-      wrapperWidth = Number(timelineComponents['timelineWrapper'].css('width').replace('px', ''));
-    //translate the timeline to the left('next')/right('prev')
-    (string == 'next')
-      ? this.translateTimeline(timelineComponents, translateValue - wrapperWidth + this.left, wrapperWidth - timelineTotWidth)
-      : this.translateTimeline(timelineComponents, translateValue + wrapperWidth - this.left);
-  };
+  updateSlide() {
+    var eventsWrapper = this.timelineComponents['eventsWrapper'].get(0);
+    const  halfStep = this.scenarioElt.steps.length / 2;
+    const translateValue = this.getTranslateValue(this.timelineComponents['eventsWrapper']),
+      wrapperWidth = Number(this.timelineComponents['timelineWrapper'].css('width').replace('px', ''));
+    console.log(halfStep)
+    console.log(this.idSelectedStep);
+
+   /* (this.idSelectedStep - 1 >=  halfStep)
+      ? this.translateTimeline(this.timelineComponents, translateValue - wrapperWidth + this.left, wrapperWidth - this.timelineTotWidth)
+      : this.translateTimeline(this.timelineComponents, translateValue + wrapperWidth - this.left);*/
+
+    (this.idSelectedStep +1   >  halfStep)
+      ? this.setTransformValue(eventsWrapper, 'translateX', -200 + 'px')
+      : this.setTransformValue(eventsWrapper, 'translateX', 200 + 'px');
+  }
 
 
   showNewContent(timelineComponents, timelineTotWidth, string) {
@@ -292,6 +326,8 @@ export class ScenarioComponent implements OnInit {
   translateTimeline(timelineComponents: any, value: number, totWidth?: number) {
     var eventsWrapper = timelineComponents['eventsWrapper'].get(0);
     value = (value > 0) ? 0 : value; //only negative translate value
+    console.log('value: ' +  value);
+    value = value /2;
     value = (!(typeof totWidth === 'undefined') && value < totWidth) ? totWidth : value; //do not translate more than timeline width
     this.setTransformValue(eventsWrapper, 'translateX', value + 'px');
     //update navigation arrows visibility

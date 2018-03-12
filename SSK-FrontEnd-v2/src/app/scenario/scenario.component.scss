@@ -65,7 +65,21 @@ p span{
   }
 }
 
+.bottom {
 
+button{
+  border-radius: 50px;
+  font-family: $roboto-medium !important;
+  text-transform: uppercase;
+  }
+  .btn-primary {
+    background-color: $color-12 !important;
+  }
+  .btn-secondary{
+    border-color: $color-12 !important;
+    color:  $color-12 !important;
+  }
+}
 
 
 
