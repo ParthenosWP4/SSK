@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {isUndefined} from "util";
-import {SskServicesService} from "../ssk-services.service";
-import {Router} from "@angular/router";
+import {SskServicesService} from '../ssk-services.service';
+import {Router} from '@angular/router';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-scenario-card',
@@ -11,16 +11,18 @@ import {Router} from "@angular/router";
 export class ScenarioCardComponent implements OnInit {
 
   @Input() scenario: any;
-  private title: any
-  private desc: any
-  private metadata: Array<any> = new Array();
-  private defaultImage: string;
-  private shortTitle: any = {}
-  private shortDesc: any = {}
-  constructor(private sskServices: SskServicesService,  private router: Router) { }
+  public title: any
+  public desc: any
+  public metadata: Array<any> = new Array();
+  public metadataPart1: Array<any> = new Array();
+  public metadataPart2: Array<any>
+  public defaultImage: string;
+  public shortTitle: any = {}
+  public shortDesc: any = {}
+
+  constructor(private sskServices: SskServicesService,  private router: Router, private domSanitizer: DomSanitizer) { }
 
   ngOnInit() {
-    console.log(this.scenario)
     if (this.scenario.title instanceof Array) {
       this.title = this.scenario.title[0];
     } else {
@@ -58,10 +60,21 @@ export class ScenarioCardComponent implements OnInit {
     if (this.scenario.scenario_metadata.standards instanceof Array) {
       this.metadata  =  this.metadata.concat(this.scenario.scenario_metadata.standards);
     }
+
+    if (this.metadata.length > 5) {
+      this.metadataPart2 = this.metadata.slice(4, this.metadata.length );
+    }
+    this.metadataPart1 = this.metadata.slice(0, 3);
   }
 
+
+
   goToScenario(scenarioId: string) {
-    this.router.navigate(['/scenarios', scenarioId]);
+    this.router.navigate(['scenarios', scenarioId,  1]);
+  }
+
+  getInnerHTMLValue(text: string ) {
+    return this.domSanitizer.bypassSecurityTrustHtml(text);
   }
 
 

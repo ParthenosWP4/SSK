@@ -84,15 +84,12 @@ export class ScenarioDetailsComponent implements OnInit {
 	}
 
 	updateContent(step: any, index: number, event: any) {
-		//console.log(this.scenarioElt.stepKeys[index])
-
 		this.idSelectedStep = index;
 		this.updateFilling(event.target, this.timelineComponents['fillingLine'], this.timelineTotWidth);
 		this.selectedStep = this.scenarioElt.steps[index]
 		this.selectedStep['id'] =  index + 1
 		this.selectedStep['ref'] = this.scenarioElt.stepKeys[index]
 		//console.log(this.selectedStep)
-		
 	}
 
 	// Timeline Functions

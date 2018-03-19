@@ -5,6 +5,7 @@ import {Observable} from 'rxjs/Observable';
 import {ElastichsearchServicesService} from '../elastichsearch-services.service';
 import * as _ from 'lodash';
 import {isUndefined} from 'util';
+import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-scenario',
@@ -22,7 +23,7 @@ export class ScenarioComponent implements OnInit {
   timelineTotWidth: number;
   scenarioId: string;
   timelineTranslate: any;
-  tags = ['discipline', 'objects', 'techniques', 'activity', 'standards']
+  tags: any ;
   private data: Observable<any>;
   border: any = {};
   nextStepIndex;
@@ -32,12 +33,12 @@ export class ScenarioComponent implements OnInit {
     private sskService: SskServicesService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private elasticServices: ElastichsearchServicesService) {
+    private elasticServices: ElastichsearchServicesService,
+    private sanitizer: DomSanitizer) {
+    this.tags = this.elasticServices.getTags();
     this.left = 0;
     this.timelineTotWidth = 0
-    this.idSelectedStep = 0
     this.selectedStep = {}
-    this.selectedStep.id = 1;
     this.scenarioElt = {};
     this.border.class = 'col-2';
     this.border.border = '1px dashed #979797';
@@ -49,7 +50,8 @@ export class ScenarioComponent implements OnInit {
     this.activatedRoute.params
       .subscribe((params: Params) => {
         this.scenarioId = params['id'];
-        console.log(this.scenarioId);
+        this.selectedStep.id = params['stepId'] ;
+        this.idSelectedStep = this.selectedStep.id - 1;
       });
     this.initializeScenarioElt();
 
@@ -125,7 +127,7 @@ export class ScenarioComponent implements OnInit {
   }
 
   tagExist(tag: string, type: string  ) {
-    if ( tag === 'standards') { return false }
+    if ( tag === 'standards') { return false ; }
      if (type === 'scenario' && !isUndefined(this.scenarioElt.scenario_metadata) &&
        !isUndefined(this.scenarioElt.scenario_metadata[tag])) { return this.scenarioElt.scenario_metadata[tag] ; }
      if (type === 'step' && !isUndefined(this.selectedStep.metadata) &&
@@ -146,7 +148,7 @@ export class ScenarioComponent implements OnInit {
     this.timelineTranslate = 0;
     this.initTimeline(this.timelines)
     if (!isUndefined(scenario.steps)) {
-      this.selectedStep = scenario.steps[0];
+      this.selectedStep = scenario.steps[this.selectedStep.id - 1 ];
      this.selectedStep.ref = this.selectedStep._id;
      this.setStepTitleAndDescription();
      if (this.elasticServices.getStepsMetadata().length  === 0) {
@@ -170,7 +172,10 @@ export class ScenarioComponent implements OnInit {
     if (temp[0] != null && !isUndefined(temp[0]._source)) {
       this.selectedStep.metadata = temp[0]._source;
     }
-    if(!isUndefined(this.selectedStep.metadata.standards)) {
+
+
+
+    if ( !isUndefined(this.selectedStep.metadata.standards)) {
       this.selectedStep.metadata.standards = _.uniqBy(this.selectedStep.metadata.standards, 'abbr');
     }
 
@@ -194,7 +199,6 @@ export class ScenarioComponent implements OnInit {
 
   tagShow(tag: any) {
     if ( this.sskService.isUrl(tag.key)) {
-      let value: any;
       tag.url  = tag.key;
       tag.key = tag.url.substr(tag.url.lastIndexOf('/') + 1, tag.url.length);
       const otherKey = tag.key.split('=');
@@ -213,40 +217,46 @@ export class ScenarioComponent implements OnInit {
       this.selectedStep.title = this.selectedStep.head;
     }
     if ( this.selectedStep.desc instanceof Array) {
-      // 'description' is new field
+      // 'description' is a new field
       this.selectedStep.description = this.selectedStep.desc[0];
     } else {
       this.selectedStep.description = this.selectedStep.desc;
     }
+    console.log(this.selectedStep);
   }
 
   updateContent(step: any, index: number, event: any) {
     this.router.navigate(['scenarios', this.scenarioId,  step.position]);
     this.idSelectedStep = index;
-    this.updateSlide()
-    //this.updateFilling(event.target, this.timelineComponents['fillingLine'], this.timelineTotWidth);
      this.selectedStep = step;
     this.selectedStep.id  =  index + 1
-    console.log(this.selectedStep)
     this.selectedStep.ref = this.selectedStep._id;
-    //this.initializeCurrentStep(this.scenarioElt);
     this.setStepTitleAndDescription();
     this.setStepMetadata()
     this.setResources();
-    console.log(this.selectedStep)
+
   }
 
-  nextStep() {
-    this.idSelectedStep = this.selectedStep.position ;
-    this.router.navigate(['scenarios', this.scenarioId,  this.idSelectedStep + 1]);
-    this.updateSlide()
-    this.selectedStep = _.find(this.scenarioElt.steps, (item) => {
-      return item.position === this.idSelectedStep + 1;
-    });
-    this.selectedStep.ref = this.selectedStep._id;
-    this.setStepTitleAndDescription();
-    this.setStepMetadata()
-    this.setResources();
+  /*nextStep() {
+      this.idSelectedStep = this.selectedStep.position ;
+      this.router.navigate(['scenarios', this.scenarioId,  this.idSelectedStep + 1]);
+      this.passSlide();
+      this.selectedStep = _.find(this.scenarioElt.steps, (item) => {
+        return item.position === this.idSelectedStep + 1;
+      });
+      this.selectedStep.ref = this.selectedStep._id;
+      this.setStepTitleAndDescription();
+      this.setStepMetadata()
+      this.setResources();
+  }*/
+
+  clean(text: string) {
+    return text.replace(/\\n/g, '');
+  }
+
+  cleanAndOpen( text: string ) {
+   // console.log((text.indexOf('://') === -1) ? 'http://' + text.replace(/\\n/g, '') : text.replace(/\\n/g, ''));
+    window.open((text.indexOf('://') === -1) ? 'http://' + text.replace(/\\n/g, '') : text.replace(/\\n/g, ''), '_blank');
   }
 
 
@@ -274,7 +284,7 @@ export class ScenarioComponent implements OnInit {
     });
   }
 
-  updateSlide() {
+  /*passSlide() {
     var eventsWrapper = this.timelineComponents['eventsWrapper'].get(0);
     const  halfStep = this.scenarioElt.steps.length / 2;
     const translateValue = this.getTranslateValue(this.timelineComponents['eventsWrapper']),
@@ -284,11 +294,19 @@ export class ScenarioComponent implements OnInit {
 
    /* (this.idSelectedStep - 1 >=  halfStep)
       ? this.translateTimeline(this.timelineComponents, translateValue - wrapperWidth + this.left, wrapperWidth - this.timelineTotWidth)
-      : this.translateTimeline(this.timelineComponents, translateValue + wrapperWidth - this.left);*/
+      : this.translateTimeline(this.timelineComponents, translateValue + wrapperWidth - this.left);
 
-    (this.idSelectedStep +1   >  halfStep)
+    (this.idSelectedStep + 1   >  halfStep)
       ? this.setTransformValue(eventsWrapper, 'translateX', -200 + 'px')
       : this.setTransformValue(eventsWrapper, 'translateX', 200 + 'px');
+  }*/
+
+  updateSlide(string: string) {
+    let translateValue = this.getTranslateValue(this.timelineComponents['eventsWrapper']),
+      wrapperWidth = Number(this.timelineComponents['timelineWrapper'].css('width').replace('px', ''));
+    (string === 'next')
+      ? this.translateTimeline(this.timelineComponents, translateValue - wrapperWidth + this.left, wrapperWidth - this.timelineTotWidth)
+      : this.translateTimeline(this.timelineComponents, translateValue + wrapperWidth - this.left);
   }
 
 
@@ -326,8 +344,6 @@ export class ScenarioComponent implements OnInit {
   translateTimeline(timelineComponents: any, value: number, totWidth?: number) {
     var eventsWrapper = timelineComponents['eventsWrapper'].get(0);
     value = (value > 0) ? 0 : value; //only negative translate value
-    console.log('value: ' +  value);
-    value = value /2;
     value = (!(typeof totWidth === 'undefined') && value < totWidth) ? totWidth : value; //do not translate more than timeline width
     this.setTransformValue(eventsWrapper, 'translateX', value + 'px');
     //update navigation arrows visibility
@@ -383,6 +399,7 @@ export class ScenarioComponent implements OnInit {
   updateOlderEvents(event) {
     event.parent('li').prevAll('li').children('a').addClass('older-event').end().end().nextAll('li').children('a').removeClass('older-event');
   }
+
 
   getTranslateValue(timeline) {
     let translateValue = 0;

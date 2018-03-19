@@ -1,0 +1,35 @@
+
+@import '../../partials/variables';
+
+.research{
+  background-color: $color-3;
+}
+
+.research-title {
+  font-family: $raleway-medium;
+  font-size: 24px;
+  color: $color-27;
+
+}
+
+
+.form-check-input {
+  position: absolute !important;
+}
+
+.form-check {
+  margin: 0px !important;
+}
+
+.group {
+  font-family: $roboto-regular;
+  color: $color-27;
+  text-transform: uppercase;
+}
+.form-check-label{
+    color: $color-12;
+}
+
+.elt-tab {
+  border-top: 2px solid $color-28;
+}

@@ -5,18 +5,18 @@
   </div>
   <div class="row vdivide">
     <div class="col ">
-      <a href="#">{{scenarioTitle?.content}}</a>
+      <a [href]="'#/scenarios/' + scenario?.id + '/1'">{{scenarioTitle?.content}}</a>
     </div>
     <div class="col mx-auto">
-      <button type="button" class="btn btn-step">
+      <a  class="btn btn-step" [href]="'#/scenarios/' + scenario?.id + '/' + step.position">
         Step {{step?.position}}
-      </button>
+      </a>
     </div>
   </div>
   <div class="descmt-2 mb-5">
     {{shortDesc?.content}}
   </div>
   <p>
-    <button type="button" class="btn btn-secondary disabled m-1" *ngFor=" let elt of step?.metadata">{{elt?.key}} {{elt?.abbr}} </button>
+    <button  tooltip ="{{'Type: '  +elt?.type +  ' / Source : '+ elt?.source  }}" type="button" class="btn btn-secondary disabled m-1" *ngFor=" let elt of step?.metadata">{{elt?.key}} {{elt?.abbr}} </button >
   </p>
 </div>

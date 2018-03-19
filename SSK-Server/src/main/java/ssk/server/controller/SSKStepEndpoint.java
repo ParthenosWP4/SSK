@@ -19,7 +19,7 @@ import ssk.server.service.ElasticServices;
 import ssk.server.service.SSKServices;
 
 @Controller
-@RequestMapping(value = "/ssk/steps")
+@RequestMapping(value = "/steps")
 public class SSKStepEndpoint {
 	
 	@Autowired

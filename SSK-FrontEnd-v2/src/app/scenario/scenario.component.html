@@ -12,9 +12,15 @@
   </div>
     <div class="col-md-12 col-sm-12 col-lg mr-3 mt-lg-2  mr-lg-5 my-lg-5 desc">
       <img src={{scenarioElt?.image}} class="img-fluid" alt="Responsive image">
-      <p *ngFor=" let item of tags" class="ml-lg-4">  <span *ngIf="tagExist(item, 'scenario')"> {{item}}</span>   <img  *ngIf="tagExist(item, 'scenario')" src="../../assets/images/interrogationDot.png" class="pb-1" alt="Responsive image">
-         <button type="button" class="btn btn-secondary disabled m-1" *ngFor=" let elt of tagExist(item, 'scenario')">{{elt?.key}} </button>
-      </p>
+      <ng-container *ngFor=" let item of tags; let m = index">
+        <p *ngIf="tagExist(item, 'scenario')" class="ml-lg-4">  <span *ngIf="tagExist(item, 'scenario')"> {{item}}</span>   <img  *ngIf="tagExist(item, 'scenario')" src="https://ssk-application.parthenos.d4science.org/ssk/assets/images/interrogationDot.png" class="pb-1" alt="Responsive image">
+           <button type="button" class="btn btn-secondary disabled m-1" *ngFor="let elt of (tagExist(item, 'scenario')| slice:0:2)"  tooltip ="{{'Type: '  +elt?.type +  ' | Source : '+ elt?.source  }}">{{elt?.key}} </button>
+          <span  *ngIf = "tagExist(item, 'scenario')?.length > 2" class="collapsed text-center" data-toggle="collapse"  [attr.data-target]="'#tag' +m"  aria-expanded="false"> More ...</span>
+        </p>
+          <p *ngIf = "tagExist(item, 'scenario')?.length > 2"  [attr.id]="'tag' + m" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <button *ngFor=" let elt of tagExist(item, 'scenario')?.slice(2,tagExist(item, 'scenario')?.length)"  tooltip ="{{'Type: '  +elt?.type +  ' | Source : '+ elt?.source  }}"  type="button"  class="btn btn-secondary  m-1" >{{elt?.key}}  {{elt?.abbr}}</button>
+          </p>
+      </ng-container>
     </div>
   </div>
     <div class=" row cd-horizontal-timeline mx-5">
@@ -22,17 +28,17 @@
         <div class="events-wrapper">
           <div class="events" [ngStyle]= "{width: timelineTotWidth + 'px'}">
             <ol >
-              <li *ngFor="let step of scenarioElt?.steps; let i = index; let nextStepIndex = i">
+              <li *ngFor="let step of scenarioElt?.steps; let i = index">
 								<span  (click)="updateContent(step, i, $event)" [ngStyle]="{left: ((i) *left) + 'px'}" [ngClass]="(i==idSelectedStep)? 'selected':''">{{i+1}}
 								</span>
               </li>
             </ol>
           </div> <!-- .events -->
         </div> <!-- .events-wrapper -->
-       <!-- <ul class="cd-timeline-navigation">
-          <li><span (click)="updateSlide(timelineComponents, timelineTotWidth, 'prev')" class="prev inactive">&nbsp;<i class="fa fa-chevron-circle-left fa-2x" aria-hidden="true"></i></span></li>
-          <li ><span  (click)="updateSlide(timelineComponents, timelineTotWidth, 'next')"  class="next" >&nbsp;<i class="fa fa-chevron-circle-right fa-2x" aria-hidden="true"></i></span></li>
-        </ul> --><!-- .cd-timeline-navigation -->
+       <ul class="cd-timeline-navigation">
+          <li><span (click)="updateSlide('prev')" class="prev inactive">&nbsp;<i class="fa fa-chevron-circle-left fa-2x" aria-hidden="true"></i></span></li>
+          <li ><span  (click)="updateSlide('next')"  class="next" >&nbsp;<i class="fa fa-chevron-circle-right fa-2x" aria-hidden="true"></i></span></li>
+        </ul> <!-- .cd-timeline-navigation -->
       </div> <!-- .timeline -->
     </div>
   <div class=" row mb-lg-2">
@@ -48,17 +54,26 @@
          </div>
     </div>
     <div class="col-md-12 col-sm-12 col-lg  ml-lg-5 desc">
-      <ng-container *ngFor=" let item of tags">
-        <p *ngIf="tagExist(item, 'step')"> <span>{{item}}  <img  src="../../assets/images/interrogationDot.png" class="pb-1" alt="Responsive image"></span>
-          <button type="button" class="btn btn-secondary disabled m-1" *ngFor=" let elt of tagExist(item, 'step')">{{tagShow(elt)?.key}} </button>
+      <ng-container *ngFor=" let item of tags; let i = index">
+        <p *ngIf="tagExist(item, 'step')"> <span>{{item}}  <img  src="https://ssk-application.parthenos.d4science.org/ssk/assets/images/interrogationDot.png" class="pb-1" alt="Responsive image"></span>
+          <button type="button" class="btn btn-secondary disabled m-1" *ngFor=" let elt of tagExist(item, 'step')?.slice(0,2)" tooltip ="{{'Type: '  +elt?.type +  ' | Source : '+ elt?.source  }}">{{tagShow(elt)?.key}} </button>
+          <span  *ngIf = "tagExist(item, 'step')?.length > 2" class="collapsed text-center" data-toggle="collapse"  [attr.data-target]="'#tag' +m"  aria-expanded="false"> More ...</span>
+        </p>
+        <p *ngIf = "tagExist(item, 'step')?.length > 2"  [attr.id]="'tag' + m" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <button *ngFor=" let elt of tagExist(item, 'step')?.slice(2,tagExist(item, 'step')?.length); let j = index"  tooltip ="{{'Type: '  +elt?.type +  ' | Source : '+ elt?.source  }}"  type="button"  class="btn btn-secondary  m-1" >{{elt?.key}}  {{elt?.abbr}}</button>
         </p>
       </ng-container>
     </div>
   </div>
   <div class="row  resource mt-lg-5" >
-    <div class="col-lg-7  my-lg-5">
+    <div class=" mx-auto text-center" *ngIf="!selectedStep?.generals && !selectedStep?.projects" >
+          <span  class="nohead  ">
+           No resources for this step
+        </span>
+    </div>
+    <div *ngIf="selectedStep?.generals" class="  my-lg-5" [ngClass]="(selectedStep?.metadata?.standards?.length > 0  )? 'col-lg-7':'col-lg-12'" >
       <div class="ml-lg-5  col-md-12 col-sm-12 text-center  text-lg-left desc">
-        <div *ngIf="selectedStep?.generals" class="res">
+        <div  class="res">
           <div class="head mb-lg-2" >
           <span  class="title">
           <i class="ic ssk-resources mr-3" aria-hidden="true"></i>
@@ -78,20 +93,20 @@
       </div>
       </div>
     </div>
-    <div class="col-md-12 col-sm-12 col-lg  ml-lg-5  desc my-lg-5">
-      <div *ngIf="selectedStep?.metadata?.standards"> <p><span>standards  <img  src="../../assets/images/interrogationDot.png" class="pb-1" alt="Responsive image"></span></p>
+    <div *ngIf="selectedStep?.metadata?.standards" class="  ml-lg-5  desc my-lg-5"  [ngClass]="(selectedStep?.generals?.length > 0  )? 'col-md-12 col-sm-12 col-lg':'col-lg-12'">
+      <div > <p><span>standards  <img  src="https://ssk-application.parthenos.d4science.org/ssk/assets/images/interrogationDot.png" class="pb-1" alt="Responsive image"></span></p>
         <div *ngFor=" let elt of selectedStep?.metadata?.standards" class="my-2">
         <button type="button" class="btn btn-secondary disabled m-1" >{{elt?.abbr}} {{elt?.key}}</button>
-        <span *ngIf="elt?.complete != null" class="complete"> - {{elt?.complete}}</span>
-        <p *ngIf="elt?.desc != null" class="desc">{{elt?.desc[0]?.eng}}</p>
+        <span *ngIf="elt?.complete != null"  (click)="cleanAndOpen(elt?.link)"  class="complete" [innerHtml]="clean(elt?.complete)"></span>
+        <p *ngIf="elt?.desc != null" class="desc" [innerHtml]="clean(elt?.desc[0]?.eng)"></p>
     </div>
       </div>
-
     </div>
     <div class="w-100"></div>
     <div class="row mx-auto bottom my-lg-5">
-      <button [routerLink]="['/', 'scenarios']"  type="button" class="btn btn-secondary  m-1 mr-lg-3" > <img  src="../../assets/images/backToScenarios.png" class="pb-1 mr-2" alt="Responsive image">back to scenarios</button>
-      <button (click)="nextStep()" type="button" class="btn btn-primary  m-1 ml-lg-3" [ngClass]="(idSelectedStep + 1 == scenarioElt?.steps?.length) ? 'disabled':''"> NEXT STEP <i class="fa fa-chevron-circle-right "></i></button>
+      <button disabled   type="button" class="btn btn-primary  m-1 mr-lg-4" [disabled]="(idSelectedStep - 1 == scenarioElt?.steps?.length)"> <i class="fa fa-chevron-circle-left "></i> PREVIOUS STEP </button>
+      <button [routerLink]="['/', 'scenarios']"  type="button" class="btn btn-secondary  m-1 mr-lg-3" > <img  src="https://ssk-application.parthenos.d4science.org/ssk/assets/images/backToScenarios.png" class="pb-1 mr-2" alt="Responsive image">back to scenarios</button>
+      <button disabled  type="button" class="btn btn-primary  m-1 ml-lg-3" [disabled]="(idSelectedStep + 1 == scenarioElt?.steps?.length)"> NEXT STEP <i class="fa fa-chevron-circle-right "></i></button>
     </div>
   </div>
 

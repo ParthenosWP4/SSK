@@ -7,9 +7,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.Banner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.elasticsearch.ElasticsearchException;
 import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
@@ -25,9 +28,10 @@ import java.nio.file.Paths;
 import java.util.Map;
 
 @SpringBootApplication
-@ComponentScan("ssk.server")
+@ComponentScan
 public class SSKApplication
-       implements CommandLineRunner
+        extends SpringBootServletInitializer
+       // implements CommandLineRunner
 {
 
     @Autowired
@@ -48,17 +52,26 @@ public class SSKApplication
 
     boolean firstLaunch = false;
     private static final Logger logger = LoggerFactory.getLogger(SSKApplication.class);
-
     
     
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+        return configureApplication(builder);
+    }
     
-
+   
+    
+    private static SpringApplicationBuilder configureApplication(SpringApplicationBuilder builder) {
+        return builder.sources(SSKApplication.class).bannerMode(Banner.Mode.OFF);
+    }
+    
     public static void main(String args[]) {
         SpringApplication.run(SSKApplication.class, args);
-
+        
     }
+    
 
-    //useful for debug, print elastic search details
+    /*useful for debug, print elastic search details
     private void printElasticSearchInfo() {
         logger.info("--ElasticSearch--");
         Client client = es.getClient();
@@ -86,11 +99,12 @@ public class SSKApplication
         logger.info("--ElasticSearch--");
     }
 
-    @Override
+  @Override
     public void run(String... args) throws Exception {
-       printElasticSearchInfo();
-       //sskServices.initializeData();
-    }
+      printElasticSearchInfo();
+      //sskServices.initializeData();
+    
+    }*/
     
     
     

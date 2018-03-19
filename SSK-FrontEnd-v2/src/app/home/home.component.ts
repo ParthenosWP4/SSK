@@ -21,12 +21,12 @@ export class HomeComponent implements OnInit {
   sItemTwo = 'Fostering the adoption of standards.'
   sItemThree = 'Communicating with research communities.'
   thirdTitle = 'How does the ssk work ?'
-  lastContent = 'Guidelines and tools are easier to understand and use when presented through examples. </br></br>' +
-    '\n The SSK provides a variety of standardized resources in a meaningful context. The <a href="#">research scenarios</a> brought together here will help you identify the most useful material to help you carry out your research project, step by step. '
+  lastContent = 'Guidelines and tools are easier to understand and use when presented through examples. </br></br>' + '\n The SSK provides a variety of standardized resources in a meaningful context. The <a href="#">research scenarios</a> brought together here will help you identify the most useful material to help you carry out your research project, step by step. '
 
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

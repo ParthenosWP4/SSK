@@ -20,7 +20,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Controller
-@RequestMapping(value = "/ssk")
+@RequestMapping(value = "/")
 public class SSKScenarioEndpoint {
 
 

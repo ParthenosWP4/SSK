@@ -52,7 +52,7 @@
    of the contained page. They are then scaled down to one-
    tenth their original size */
 .preview iframe {
-  width: 1020px; height: 768px;
+  width: 500%; height: 500%;
   -webkit-transform: scale(.2); -webkit-transform-origin: 0 0;
   -moz-transform: scale(.2); -moz-transform-origin: 0 0;
   -ms-transform: scale(.2); -ms-transform-origin: 0 0;

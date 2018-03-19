@@ -1,0 +1,33 @@
+<div class="research pl-lg-2 pt-lg-3">
+  <span class="research-title">
+    Refine your search
+  </span>
+  <div>
+    <div class="ml-lg-2 mt-lg-2 elt-tab" *ngFor="let item of tags" >
+
+      <i class="fa fa-question-circle" aria-hidden="true"></i>
+      <span class="mx-lg-2 group mb-lg-2"  data-toggle="collapse"  [attr.data-target]="'#' + item"  aria-expanded="false">By {{item}} <i ngClass="{{activityCaret}}" class="fa fa-2x pull-right  mr-lg-3" aria-hidden="true"></i></span>
+
+      <div [id]="item" class="collapse show mt-lg-2" role="tabpanel" >
+        <div class="form-check"  *ngFor="let elt of data[item]?.slice(0,4)">
+          <label class="form-check-label">
+            <input type="checkbox" [attr.name]="elt" [id]="elt" class="form-check-input"(change)="change($event, elt)" >{{elt}}
+          </label>
+        </div>
+        <span *ngIf=" data[item]?.length > 5" class="" data-toggle="collapse"  [attr.data-target]="'#' + item + '2'">See more</span>
+          <div [id] =" item + '2'" class="collapse" role="tabpanel">
+            <div class="form-check" *ngFor="let elt of data[item]?.slice(5, data[item]?.length )">
+              <label class="form-check-label">
+                <input type="checkbox" [id]="elt" class="form-check-input" (change)="change($event, elt)" >{{elt}}
+              </label>
+            </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+<!--<span  *ngIf = "tagExist(item, 'scenario')?.length > 2" class="collapsed text-center" data-toggle="collapse"  [attr.data-target]="'#tag' +m"  aria-expanded="false"> More ...</span>
+</p>
+<p *ngIf = "tagExist(item, 'scenario')?.length > 2"  [attr.id]="'tag' + m" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+  <button *ngFor=" let elt of tagExist(item, 'scenario')?.slice(2,tagExist(item, 'scenario')?.length)"  tooltip ="{{'Type: '  +elt?.type +  ' | Source : '+ elt?.source  }}"  type="button"  class="btn btn-secondary  m-1" >{{elt?.key}}  {{elt?.abbr}}</button>
+</p>-->

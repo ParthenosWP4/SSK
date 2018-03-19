@@ -2,19 +2,38 @@ import { Injectable } from '@angular/core';
 import {ElastichsearchServicesService} from './elastichsearch-services.service';
 import * as _ from 'lodash';
 import {isUndefined} from 'util';
-import {Observable} from "rxjs/Observable";
-import {flatMap} from "tslint/lib/utils";
+
 
 
 @Injectable()
 export class SskServicesService {
+
+  private filters = [];
+
+  public options = {
+    shouldSort: true,
+    threshold: 0.4,
+    location: 0,
+    distance: 100,
+    maxPatternLength: 32,
+    minMatchCharLength: 3
+
+  };
+
+  public  scenarioKeys = ['id', 'desc.content', 'desc[0].content', 'title.content', 'title[0].content',
+    'scenario_metadata.discipline.key', 'scenario_metadata.objects.key' , 'scenario_metadata.standards.key', 'scenario_metadata.techniques.key'];
+
+  public resourcesKeys = ['_id', 'category', 'title', 'redirect', 'date', 'creators', 'type'];
+
+  public stepsKeys = ['_id', 'desc.content', 'description.content',  'desc[0].content', 'head.content', 'head[0].content', 'metadata.key',
+    'date', 'creators'];
 
   constructor(private elasticService: ElastichsearchServicesService) {
   }
 
 
   shorten(content: any, length: number) {
-
+    let result: any  = {};
     const contentArray = new Array(content.content);
     if (contentArray[0] instanceof Array) {
       let newContent = '';
@@ -37,12 +56,15 @@ export class SskServicesService {
           newContent = newContent + ' ' + value.toString();
         }
       });
-      content.content = newContent;
+      result.content = newContent;
     }
     if (content.content.length > length) {
-      content.content = content.content.substring(0, length) + '...';
+      result.content = content.content.substring(0, length) + '...';
     }
-    return content;
+    else {
+      result.content = content.content;
+    }
+    return result;
   }
 
   addStepMetadata(stepId: string): any {
@@ -100,4 +122,17 @@ export class SskServicesService {
     const regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/
     return regexp.test(s);
   }
+
+  getFilters() {
+    return this.filters;
+  }
+
+  setFilters(elts: any ) {
+     this.filters = elts;
+  }
+
+  addToFilters(elt: string) {
+    this.filters.push(elt);
+  }
+
 }

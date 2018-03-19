@@ -3,14 +3,16 @@ import {Http,  Response, Headers, URLSearchParams, RequestOptions} from '@angula
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-
-import {flatMap} from "tslint/lib/utils";
+import * as _ from 'lodash';
+import {isUndefined} from 'util';
 
 
 @Injectable()
 export class ElastichsearchServicesService {
 
-  private sskBackendEndpoint = 'http://localhost:8080/ssk/';
+  //private sskBackendEndpoint = '../ssk_services-0.0.1/';
+  private sskBackendEndpoint = 'https://ssk-application.parthenos.d4science.org/ssk_services-0.0.1/';
+ //private sskBackendEndpoint = 'http://localhost:9000/ssk_services-0.0.1/';
   private headers = new Headers({'Content-Type': 'application/json'});
 
   private scenarioNumber: number;
@@ -23,7 +25,13 @@ export class ElastichsearchServicesService {
   private stepsMetaData: any = [];
   private options: any;
   private params: URLSearchParams;
-
+  private disciplines: any;
+  private activities: any;
+  private techniques: any;
+  private objects: any;
+  private standards: any;
+  private tags = ['discipline', 'objects', 'techniques', 'activity', 'standards'] ;
+  private regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/
 
   constructor(private http: Http) {
     this.scenarios = new Array();
@@ -62,6 +70,7 @@ export class ElastichsearchServicesService {
         this.setStepNumber(result['total']);
         this.setSteps(result['steps'])
         this.getAllStepsMetaData();
+
         return result;
       }).catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
@@ -72,8 +81,38 @@ export class ElastichsearchServicesService {
       .map((response: Response) => {
         const result = JSON.parse(response.text());
         this.setStepsMetadata(result['step_metadata']);
+
+
       }).catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
+
+  setSearchData() {
+
+    this.setActivities(_.uniq(_.map(Object.keys(_.groupBy(_.flattenDeep(_.map(_.map(this.getStepsMetadata(), '_source'), 'activity'))
+      , 'key')), v => this.tagSanitize(v.toLowerCase()).replace(/[0-9]/g, '').replace('_', '').trim())));
+
+    this.setObjects(_.map(Object.keys(_.groupBy(_.groupBy(_.flattenDeep(_.remove(_.map(_.map(this.getStepsMetadata(), '_source'), 'objects'),
+      function(n) { return !isUndefined(n); })), 'type').object, 'key')), item => item.toLowerCase()));
+
+    this.setTechniques(_.map(Object.keys(_.groupBy(_.groupBy(_.flattenDeep(_.remove(_.map(_.map(this.getStepsMetadata(), '_source'),
+      'objects'), function(n) { return !isUndefined(n); })), 'type').technique, 'key')), item => item.toLowerCase()));
+
+    this.setStandards(_.concat(Object.keys(_.groupBy(_.flattenDeep(_.remove(_.map(_.map(this.getStepsMetadata(), '_source'),
+      'standards'),  function(n) { return !isUndefined(n); })), 'abbr')), Object.keys(_.groupBy(_.flattenDeep(_.remove(_.map(
+      _.map(this.getStepsMetadata(), '_source'), 'standards'), function(n) { return !isUndefined(n); })), 'key'))));
+
+  }
+
+  tagSanitize(tag: string) {
+        tag = tag.substr(tag.lastIndexOf('/') + 1, tag.length);
+        const otherKey = tag.split('=');
+        if (otherKey.length > 0) {
+          tag = otherKey[otherKey.length - 1];
+        }
+      return tag;
+  }
+
+
 
   getAllResources() {
     this.setOptions(this.headers, null);
@@ -92,6 +131,12 @@ export class ElastichsearchServicesService {
       .map((response: Response) => {
         console.log(response.headers);
       }).catch((error: any) => Observable.throw( console.log(error.json()) || console.log('Server error')));
+  }
+
+  setResearchFacettes(){
+
+    let data = this.getAllStepsMetaData()[0]._source;
+
   }
 
 
@@ -166,6 +211,55 @@ export class ElastichsearchServicesService {
 
   setResources(resources: any): any  {
     this.resources = resources;
+  }
+
+  getActivities() {
+    return this.activities;
+  }
+
+  setActivities(activities: any): any  {
+    this.activities = activities;
+  }
+
+  getDisciplines() {
+    return this.disciplines;
+  }
+
+  setDisciplines(disciplines: any): any  {
+    this.disciplines = disciplines;
+  }
+
+  getObjects() {
+    return this.objects;
+  }
+
+  setObjects(objects: any): any  {
+    this.objects = objects;
+  }
+
+  getTechniques() {
+    return this.techniques;
+  }
+
+  setTechniques(techniques: any): any  {
+    this.techniques = techniques;
+  }
+
+  getStandards() {
+    return this.standards;
+  }
+
+  setStandards(standards: any): any  {
+    this.standards = standards;
+  }
+
+  getTags() {
+    return this.tags;
+  }
+
+  isUrl(s) {
+
+    return this.regexp.test(s);
   }
 
 }

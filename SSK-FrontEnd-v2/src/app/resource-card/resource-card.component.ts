@@ -25,6 +25,9 @@ export class ResourceCardComponent implements OnInit {
   }
 
   open() {
-      window.open(this.res.redirect, '_blank');
+    console.log(this.res.redirect.indexOf('://') === -1 ? 'http://' + this.res.redirect.replace(/\\n/g, '')
+      : this.res.redirect.replace(/\\n/g, ''));
+      window.open((this.res.redirect.indexOf('://') === -1) ? 'http://' + this.res.redirect.replace(/\\n/g, '')
+        : this.res.redirect.replace(/\\n/g, ''), '_blank');
   }
 }

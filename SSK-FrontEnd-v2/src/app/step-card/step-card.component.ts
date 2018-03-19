@@ -3,6 +3,7 @@ import * as _ from 'lodash';
 import {ElastichsearchServicesService} from '../elastichsearch-services.service';
 import {SskServicesService} from '../ssk-services.service';
 import {isUndefined} from 'util';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-step-card',
@@ -12,14 +13,15 @@ import {isUndefined} from 'util';
 export class StepCardComponent implements OnInit {
 
   @Input() step: any;
-  private shortTitle: any
-  private shortDesc: any
-  private scenarioTitle: any
-  private scenario: any
+  public  shortTitle: any
+  public shortDesc: any
+  public scenarioTitle: any
+  public scenario: any
 
-  constructor(private elastichServices: ElastichsearchServicesService, private sskServices: SskServicesService) { }
+  constructor(private elastichServices: ElastichsearchServicesService, private sskServices: SskServicesService,  private router: Router,) { }
 
   ngOnInit() {
+
 
     if (this.step.head instanceof Array) {
       this.step.title = this.step.head[0];
@@ -59,6 +61,10 @@ export class StepCardComponent implements OnInit {
       }
       this.step.metadata.push(value);
     });
+  }
+
+  toStep() {
+    this.router.navigate(['/', 'scenarios', this.scenario.id,  this.step.position]);
   }
 
 

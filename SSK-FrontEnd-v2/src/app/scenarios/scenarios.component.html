@@ -1,21 +1,18 @@
-<div class="home">
+<div class="">
   <div class="row bg-info py-lg-3 ">
     <div class="col-lg-3 "></div>
     <div class="col-lg-6 ">
       <div class="input-group search-div ">
-        <i class="fa fa-search fa-3x fa-inverse fa-flip-horizontal mr-lg-3 " aria-hidden="true" data-toggle="collapse" href="#demo" role="button" aria-expanded="false" aria-controls="demo" (click)="search()"></i>
+        <i class="fa fa-search fa-3x fa-inverse fa-flip-horizontal mr-lg-3 " aria-hidden="true" data-toggle="collapse" href="#demo" role="button" aria-expanded="false" aria-controls="demo" (click)="searchTab()"></i>
         <input type="text" class="form-control search" placeholder='{{searchPlaceholder}}' aria-describedby="basic-addon1" (keyup)="onKey($event)">
       </div>
       </div>
     <div class="col-lg-3 "></div>
   </div>
 
-  <div class="row ">
-    <div class=" col-lg-3 mt-lg-2 collapse" id="demo"  [ngClass]="collapse">
-      <h1>REFINE YOUR SEARCH</h1>
-      <div class="">
-        Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.
-      </div>
+  <div class="row home">
+    <div class=" col-lg-3  collapse" id="demo"  [ngClass]="collapse">
+      <app-search-tab [data] = "searchData" ></app-search-tab>
     </div>
     <div [ngClass]="contentCol" >
       <div class="col-lg-6 mt-lg-5">
@@ -27,11 +24,13 @@
       </div>
     <div class="tab-content  mx-5" >
       <div class=" row my-lg-5 vdivide result pb-5 ">
-        <div class="col-lg-3  ">
+        <div class="col-lg-2 ">
           <span class="result-tab">{{resultCount}}</span> results for  <span class="result-tab">{{selectTab}}</span>
         </div>
-        <div class="col-lg-3 text-center">
+        <div class="col-lg-4 text-center">
            Your filters :
+          <span *ngFor = "let elt of filters" class="badge badge-default mx-lg-1"><i class="fa fa-times" aria-hidden="true" (click)="remove(elt)"></i>
+{{elt}}</span>
         </div>
         <div class="col ">
             <span id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -78,4 +77,10 @@
     </div>
   </div>
 </div>
+  <script>
+    $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+  </script>
 </div>
+

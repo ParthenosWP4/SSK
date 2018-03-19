@@ -16,6 +16,11 @@ import {SskServicesService} from './ssk-services.service';
 import { ResourceCardComponent } from './resource-card/resource-card.component';
 import { ScenarioComponent } from './scenario/scenario.component';
 import * as $ from 'jquery';
+import { TooltipModule } from 'ngx-bootstrap';
+import { SearchTabComponent } from './search-tab/search-tab.component';
+import {FormsModule} from '@angular/forms';
+
+
 
 
 
@@ -30,16 +35,19 @@ import * as $ from 'jquery';
     ScenarioTemplateComponent,
     StepCardComponent,
     ResourceCardComponent,
-    ScenarioComponent
+    ScenarioComponent,
+    SearchTabComponent
   ],
   imports:
     [
+      TooltipModule.forRoot(),
       routing,
       BrowserModule,
       CommonModule,
       HttpModule,
-      NgxPaginationModule
-  ],
+      NgxPaginationModule,
+      FormsModule
+    ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],

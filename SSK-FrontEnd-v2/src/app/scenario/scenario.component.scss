@@ -55,9 +55,17 @@ p span{
     border-bottom: 1px solid $color-35;
   }
 
+  .nohead{
+    color: $color-10 !important;
+    font-size: 24px;
+    font-family: $roboto-medium;
+    width: 100%;
+  }
+
   .complete {
     font-family: $roboto-italic;
     font-size: medium;
+    cursor: pointer;
   }
   .desc{
     font-size: small !important;
@@ -81,5 +89,33 @@ button{
   }
 }
 
+:host /deep/ div.tooltip.show {
+  opacity: 1 !important;
+}
 
+:host /deep/ div.tooltip-inner {
+  background-color: $color-3 !important;
+  font-family: $roboto-light !important;
+  border: 1px solid  $color-32;
+  color: $color-32;
+  font-size: larger !important;
+  font-weight: bold !important;
+
+}
+
+:host /deep/ div.tooltip-inner::before{
+
+
+}
+:host /deep/ .tooltip.top .tooltip-arrow .arrow:before,
+:host /deep/ .tooltip.right .tooltip-arrow .arrow:before,
+:host /deep/ .tooltip.top .tooltip-arrow .arrow,
+:host /deep/ .tooltip.right .tooltip-arrow .arrow
+{
+  border: #009688;
+}
+
+dl, ol, ul {
+  list-style-type: none;
+}
 
