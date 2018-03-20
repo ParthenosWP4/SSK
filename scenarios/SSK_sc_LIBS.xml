@@ -50,9 +50,9 @@
                <term source="aurehal" type="discipline" key="AAH">Art and art history</term>
                <term source="aurehal" type="discipline" key="CHM">Cultural heritage and
                   museology</term>
-               <term type="objects" key="research_results" source="tadirah"/>
-               <term type="objects" key="standards" source="tadirah"/>
-               <term type="techniques" key="tecnology_preservation" source="tadirah"/>
+               <term type="objects" key="Research results" source="tadirah"/>
+               <term type="objects" key="Standards" source="tadirah"/>
+               <term type="techniques" key="Technology preservation" source="tadirah"/>
             </desc>
             <figure type="image">
                <head></head>
