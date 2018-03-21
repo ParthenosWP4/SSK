@@ -36,9 +36,7 @@
    <text>
       <body>
          <div type="scenario" xml:id="sc_laserconservationrestoration">
-            <head xml:lang="en" type="scenarioTitle">Researcher using lasers in
-               conservation/restoration identifies the necessity of standardized reports of the
-               laser application conditions and the evaluation of the obtained results</head>
+            <head xml:lang="en" type="scenarioTitle">Documenting application of lasers in conservation/restoration</head>
             <desc type="definition" xml:lang="en">The standard will indicate a methodology to
                document the kind, extent, and objectives of the laser cleaning, the employed laser
                cleaning parameters and the obtained results including cleaning quality as well as
