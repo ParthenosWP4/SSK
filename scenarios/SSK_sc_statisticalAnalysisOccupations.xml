@@ -54,8 +54,7 @@
             </desc>
             <figure type="image">
                <head>Acorns vendor</head>
-               <graphic url="http://historyofwork.iisg.nl/docs/images/bramer_iisg2-0020.jpg"/>
-               <figDesc>Acorns vendor, drawing by Lenaert Bramer (c. 1659)</figDesc>
+               <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/statisticalAnalysis.png"/>
             </figure>
             <listEvent>
                <event xml:id="s1" type="researchStep" ref="step_Rv_121017"/>
