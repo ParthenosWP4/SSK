@@ -36,14 +36,13 @@
                <term source="aureHAL" type="discipline">Library and information sciences</term>
                <term source="aureHAL" type="discipline">Cultural heritage and museology</term>
                <term type="objects" key="Catalogs" source="nemo"/>
-               <term type="techniques" source="tadirah" key="encoding"/>
-               <term type="techniques" source="tadirah" key="mapping"/>
+               <term type="techniques" source="tadirah" key="Encoding"/>
+               <term type="techniques" source="tadirah" key="Mapping"/>
             </desc>
             <figure type="image">
                <head/>
                <graphic
                   url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/SSK-schemCust.jpg"/>
-               <figDesc>Photo by Chris Lawton on Unsplash</figDesc>
             </figure>
             <listEvent>
                <event xml:id="s1" type="researchStep" ref="step_EaXswO_150917"/>

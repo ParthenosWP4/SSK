@@ -51,12 +51,12 @@
                standardized procedures for multispectral imaging analysis in order to accomplish
                qualitative results during the study of artworks.</desc>
             <desc xml:lang="en" type="terms">
-               <term source="aurehal" type="discipline" key="AAH">Art and art history</term>
-               <term source="aurehal" type="discipline" key="CHM">Cultural heritage and museology</term>
-               <term type="objects" key="artifacts" source="tadirah"/>
-               <term type="objects" key="data" source="tadirah"/>
-               <term type="objects" key="images" source="tadirah"/>
-               <term type="techniques" key="photography" source="tadirah"/>
+               <term source="aurehal" type="discipline">Art and art history</term>
+               <term source="aurehal" type="discipline">Cultural heritage and museology</term>
+               <term type="objects" key="Artifacts" source="tadirah"/>
+               <term type="objects" key="Data" source="tadirah"/>
+               <term type="objects" key="Images" source="tadirah"/>
+               <term type="techniques" key="Photography" source="tadirah"/>
             </desc>
             <figure type="image">
                <head/>

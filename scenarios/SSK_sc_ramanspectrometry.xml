@@ -36,7 +36,7 @@
       <body>
          <div type="scenario" xml:id="sc_ramanspectrometry">
             <head xml:lang="en" type="scenarioTitle">Raman spectrometry for the analysis and
-               identification of pigments directly on cultural heritage objects</head>
+               identification of pigments on cultural heritage objects</head>
             <desc type="definition" xml:lang="en">Raman spectrometry is a widely used technique for
                examining various types of cultural heritage objects, with significant contributions
                in studies concentrating on pigment identification. The Raman effect provides a quick
@@ -50,12 +50,12 @@
                heritage. The current scenario presents a methodology for Raman analysis directly on
                cultural heritage object (no sampling).</desc>
             <desc xml:lang="en" type="terms">
-               <term source="aurehal" type="discipline" key="AAH">Art and art history</term>
-               <term source="aurehal" type="discipline" key="CHM">Cultural heritage and
+               <term source="aurehal" type="discipline">Art and art history</term>
+               <term source="aurehal" type="discipline">Cultural heritage and
                   museology</term>
-               <term type="objects" key="artifacts" source="tadirah"/>
-               <term type="objects" key="data" source="tadirah"/>
-               <term type="techniques" key="scanning" source="tadirah"/>
+               <term type="objects" key="Artifacts" source="tadirah"/>
+               <term type="objects" key="Data" source="tadirah"/>
+               <term type="techniques" key="Scanning" source="tadirah"/>
 		 </desc>
             <figure type="image">
                <head></head>
