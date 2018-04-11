@@ -4,6 +4,7 @@ The Standardization Survival Kit is developed within the PARTHENOS project, by t
 
 Piotr Banski (Clarin, IDS)
 Jack Bowers (OeAW)
+Esther Carrasco (CSIC)
 Emiliano Degl’innocenti (CNR)
 Matej Ďurčo (OeAW)
 Hélène Gauthier (Huma-Num)
