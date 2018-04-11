@@ -59,7 +59,6 @@
                             key="meta-assessing">assessing</term>
                         <term type="activity" source="http://tadirah.dariah.eu/"
                             key="cleanup">Cleanup</term>
-                        <term type="policies" source="WP3Wizard" key="CD"/>
                     </desc>
                 </event>
             </listEvent>
