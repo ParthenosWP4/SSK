@@ -86,7 +86,7 @@
                   by Susanne Haaf)</figDesc>
             </figure>
             <listEvent>
-               <event xml:id="s1" type="researchScenario" ref="SSK_sc_digitization"/>
+               <event xml:id="s1" type="researchScenario" subtype="prerequisite" ref="SSK_sc_digitization"/>
                <event xml:id="s2" type="researchStep" ref="step_corpusComposition"/>
                <event xml:id="s3" type="researchStep" ref="step_verificationAndCleanup"/>
                <event xml:id="s4" type="researchStep" ref="step_conversionToTEI"/>
