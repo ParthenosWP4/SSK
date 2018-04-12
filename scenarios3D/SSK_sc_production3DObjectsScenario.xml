@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario">
+<teiHeader>
+  <fileDesc>
+    <titleStmt>
+      <title>Production and processing of 3D objects</title>
+      <author>
+        <persName>Hélène Gautier</persName>
+        <affiliation>Huma-Num/CNRS</affiliation>
+      </author>
+      <author>
+        <persName>Adeline Joffres</persName>
+        <affiliation>Huma-Num/CNRS</affiliation>
+      </author>
+      <author>
+        <persName>Paulin Ribbe</persName>
+        <affiliation>Huma-Num/CNRS</affiliation>
+      </author>
+      <author>
+        <persName>XXX</persName>
+        <affiliation>3D-SHS Huma-Num's consortium</affiliation>
+      </author>
+    </titleStmt>
+    <publicationStmt>
+      <authority>PARTHENOS</authority>
+      <availability>
+        <licence target="http://creativecommons.org/licenses/by/4.0/">
+          <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+            to this document.</p>
+        </licence>
+      </availability>
+    </publicationStmt>
+    <sourceDesc>
+      <p>Created from scratch</p>
+    </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+    <listPrefixDef>
+      <prefixDef ident="wp2" matchPattern="(.*?)" replacementPattern="groups/368112">
+        <p>The prefix wp2 needs to be used before resources taken from the <ref
+          type="url" target="https://www.zotero.org/groups/368112/parthenos_wp2"
+          >Parthenos WP2 Zotero Library</ref>.</p>
+        <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID
+          by a colon ":". Ex: target="wp2:JHSD76DS"</p>
+      </prefixDef>
+      <prefixDef ident="wp3" matchPattern="(.*?)" replacementPattern="groups/520841">
+        <p>The prefix wp3 needs to be used before resources taken from the <ref
+          type="url" target="https://www.zotero.org/groups/520841/parthenos_wp3"
+          >Parthenos WP3 Zotero Library</ref>.</p>
+        <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID
+          by a colon ":". Ex: target="wp2:JHSD76DS"</p>
+      </prefixDef>
+      <prefixDef ident="wp4" matchPattern="(.*?)" replacementPattern="groups/427927">
+        <p>The prefix wp4 needs to be used before resources taken from the <ref
+          type="url" target="https://www.zotero.org/groups/427927/parthenos_wp4"
+          >Parthenos WP4 Zotero Library</ref>.</p>
+        <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID
+          by a colon ":". Ex: target="wp2:JHSD76DS"</p>
+      </prefixDef>
+    </listPrefixDef>
+  </encodingDesc>
+  <revisionDesc>
+    <change/>
+  </revisionDesc>
+</teiHeader>
+<text>
+<body>
+  <div type="scenario" xml:id="sc_Production_3D_Objects">
+    <head xml:lang="en" type="scenarioTitle">Production and processing of 3D objects</head>
+    <desc type="definition" xml:lang="en"></desc>
+    <desc xml:lang="en" type="terms">
+      <term source="aurehal" type="discipline">Archaeology and Prehistory</term>
+      <term source="aurehal" type="discipline">Cultural heritage and museology</term>
+      <term type="techniques" key="" source="tadirah"/>
+      <term type="objects" key="" source="nemo"/>
+    </desc>
+    <figure type="image">
+      <head/>
+      <graphic url=""/>
+      <figDesc/>
+    </figure>
+    <listEvent>
+      <event xml:id="s1" type="researchStep" ref="step_A3DOBS"/>
+      <event xml:id="s2" type="researchStep" ref="step_A3DOBP"/>
+      <event xml:id="s3" type="researchStep" ref="step_MTF"/>
+      <event xml:id="s4" type="researchStep" ref="step_VQD"/>
+      <event xml:id="s5" type="researchStep" ref="step_V3D0"/>
+      </listEvent>
+  </div>
+  
+  
+  
+
+  STEPS
+
+  Acquisition of 3D object (by scanning) 	"Scanning system:
+  -Triangulation based artefact scanners
+  -Terrestrial time of flight laser scanners
+  -Airborne laser scanning
+  -Mobile Mapping systems
+
+  Methodological framework:
+  -Data acquisition
+  -Register scan
+  -Georeference scan
+  -Creation polygonal mesh
+  -Optimization/Decimation mesh
+  "	Proprietary formats : lesquels?				Capture/ Imaging
+  report		JQA2HGXG
+
+
+
+
+
+
+
+
+
+  Acquisition of 3D object (by photogrammetry) 	"Photogrammetry device and related software
+
+  Photogrammetry device:
+  -Digital SLR camera
+  -Bridge camera
+  -Compact Camera
+  -Mobile phone
+  -UAV photogrammetry
+
+  Methodological framework photogrammetry
+  - Data acquisition (overlapping photographs)
+  -Calibration
+  -Align photo
+  -Point cloud creation
+  -Mesh generation
+  -Texture generation "	OBJ				Capture/ Imaging
+  PLY
+  3DS
+  VRML
+  COLLADA			https://www.khronos.org/collada/
+  COLLADA	specification		https://www.khronos.org/files/collada_spec_1_5.pdf
+  COLLADA	schema		https://www.khronos.org/files/collada_schema_1_5
+  COLLADA	code		https://github.com/khronosGroup/OpenCOLLADA/
+  report		JQA2HGXG
+
+  JPEG
+  TIFF
+  Agisoft photoscan 	software		http://www.agisoft.com/
+  Agisoft photoscan 	tutorial		http://www.agisoft.com/support/tutorials/beginner-level/
+  Acute 3D 	software		https://www.acute3d.com/
+  Acute 3D 	tutorial		https://www.acute3d.com/tutorials/
+  MICMAC 	software
+  MICMAC 	code		https://github.com/micmacIGN/micmac
+  MICMAC 	documentation		https://github.com/micmacIGN/Documentation
+  MICMAC 	documentation		http://micmac.ensg.eu/index.php/Accueil
+  Reality Capture 	software		https://www.capturingreality.com/
+  Reality Capture 	tutorial		https://support.capturingreality.com/hc/en-us/categories/115000560989-Tutorials
+  Visual SFM 	software		http://ccwu.me/vsfm/
+  Visual SFM 	documentation		http://ccwu.me/vsfm/doc.html
+  123 catch 	software
+  DXF
+  PNG
+  BMP
+  Migration to target format		OBJ				Interpretation/ Modeling
+  DAE
+  DXF
+  DWG
+  VRML
+
+
+
+  3ds Max	software		https://www.autodesk.fr/products/3ds-max/overview
+  3ds Max	tutorial		http://docs.autodesk.com/3DSMAX/16/ENU/3ds-Max-Tutorials/
+  Autocad	software
+  Google Sketchup	software		https://www.sketchup.com/fr
+  Blender	software		https://www.blender.org/
+  Blender	tutorial		https://www.blender.org/support/tutorials/
+  Blender	documentation		https://docs.blender.org/
+  Maya	tutorial		https://www.youtube.com/mayahowtos
+  Maya	software		https://www.autodesk.fr/products/maya/overview
+  Verification of quality data	Human and technical verification on content and structure	PLY				Interpretation/Modeling
+  COLLADA			https://www.khronos.org/collada/
+  COLLADA	specification		https://www.khronos.org/files/collada_spec_1_5.pdf
+  COLLADA	schema		https://www.khronos.org/files/collada_schema_1_5
+  COLLADA	code		https://github.com/khronosGroup/OpenCOLLADA/
+
+
+
+  Visualisation	Viewer tools, specific software					Dissemination/Publishing
+
+
+  report		JQA2HGXG
+  A360 viewer	software		https://a360.autodesk.com/
+  CC viewer	software
+  CC viewer	code		https://github.com/openaq/cc-viewer
+  CC viewer	documentation		http://www.vela.com/ProductDocumentation/CC%20Viewer.pdf
+  Potree	software		http://www.potree.org/
+  Potree	code		https://github.com/potree/potree
+  Sketchfab	software		https://sketchfab.com/
+  Sketchfab	tutorial		https://blog.sketchfab.com/category/tutorial/
+  3D Hop	software		http://vcg.isti.cnr.it/3dhop/
+  3D Hop	code		https://github.com/cnr-isti-vclab/3DHOP
+  3D Hop	tutorial		http://vcg.isti.cnr.it/3dhop/howto.php
+  CRYENGINE	software		https://www.cryengine.com/
+  CRYENGINE	tutorial		https://www.cryengine.com/tutorials
+  CRYENGINE	documentation		http://docs.cryengine.com/display/CEMANUAL/CRYENGINE+V+Manual
+  Unity	tutorial		https://unity3d.com/fr/learn/tutorials
+  Unity	documentation		https://docs.unity3d.com/Manual/index.html
+  Unity	software		https://unity3d.com/fr
+</body>
+</text>
+</TEI>
