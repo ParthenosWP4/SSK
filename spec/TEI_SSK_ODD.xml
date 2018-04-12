@@ -789,26 +789,42 @@
                                         target="http://it.dariah.eu:8983/solr/#/WP4/documents"
                                         >here</ref>: choose <code>XML</code> for Document Type,
                                     paste the content of the file in Document(s) and submit.</p>
-                                <p>Note that the value to indicate in the <att>key</att> is the value of the field "standard_abbr_name". See below the sample file</p>
-                                
+                                <p>Note that the value to indicate in the <att>key</att> is the
+                                    value of the field "standard_abbr_name". See below the sample
+                                    file</p>
+
                                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                     <doc>
-                                        <field name="id">33 (must be incremented by 1 for each new standard)</field>
-                                        <field name="standard_abbr_name">Standard abbreviated Name : This information will be used in the TEI file to refer to this description</field>
-                                        <field name="standard_complete_name">Standard Complete name</field>
-                                        <field name="standard_type">Two values: 'standard' OR 'method'. When describing a format, use 'standard', when describing a protocol or a set of techniques, use 'method'</field>
+                                        <field name="id">33 (must be incremented by 1 for each new
+                                            standard)</field>
+                                        <field name="standard_abbr_name">Standard abbreviated Name :
+                                            This information will be used in the TEI file to refer
+                                            to this description</field>
+                                        <field name="standard_complete_name">Standard Complete
+                                            name</field>
+                                        <field name="standard_type">Two values: 'standard' OR
+                                            'method'. When describing a format, use 'standard', when
+                                            describing a protocol or a set of techniques, use
+                                            'method'</field>
                                         <field name="standard_desc_eng">English Description</field>
                                         <field name="standard_desc_fr">French Description</field>
                                         <field name="standard_desc_deu">German Description</field>
                                         <field name="standard_desc_esp">Spanish Description</field>
-                                        <field name="standard_data_type">select from: Horizontal->e.g. XML, CSV and vertical ->e.g.
+                                        <field name="standard_data_type">select from:
+                                            Horizontal->e.g. XML, CSV and vertical ->e.g.
                                             EDM</field>
-                                        <field name="standard_link">http://link_to_standard_official_page.com</field>
-                                        <field name="standard_tags">Tag1: example-> Classification</field>
-                                        <field name="standard_tags">Tag2: example-> Human-history</field>
-                                        <field name="standard_tags">Tag3: example-> Research Activities - Organizing</field>
-                                        <field name="standard_tags">Tag4: example-> Research Objects - Digital Humanities</field>
-                                        <field name="standard_resources">http://link_to_resource_about_the _standard.com</field>
+                                        <field name="standard_link"
+                                            >http://link_to_standard_official_page.com</field>
+                                        <field name="standard_tags">Tag1: example->
+                                            Classification</field>
+                                        <field name="standard_tags">Tag2: example->
+                                            Human-history</field>
+                                        <field name="standard_tags">Tag3: example-> Research
+                                            Activities - Organizing</field>
+                                        <field name="standard_tags">Tag4: example-> Research Objects
+                                            - Digital Humanities</field>
+                                        <field name="standard_resources"
+                                            >http://link_to_resource_about_the _standard.com</field>
                                     </doc>
                                 </egXML>
                             </div>
@@ -825,12 +841,14 @@
                                             examples of real projects using the described standard,
                                             protocol, ...</item>
                                     </list></item>
-                                <item>When <att>type</att> has <code>projectResources</code> for value, two more attributes are required:
-                                <list>
-                                    <item><att>source</att> for the name of the project mentioned</item>
-                                    <item><att>corresp</att> for a url pointing to or identifying the project</item>
-                                </list></item>
-                                
+                                <item>When <att>type</att> has <code>projectResources</code> for
+                                    value, two more attributes are required: <list>
+                                        <item><att>source</att> for the name of the project
+                                            mentioned</item>
+                                        <item><att>corresp</att> for a url pointing to or
+                                            identifying the project</item>
+                                    </list></item>
+
                             </list>
                         </p>
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -850,15 +868,16 @@
                                 <item>The attribute <att>type</att> is required. Its values are
                                     taken from the Zotero item types, plus SSK specific values.
                                     Possible values are:<list>
-                                        <item><code>spec</code>: the specification, of a standard for
-                                            instance.</item>
+                                        <item><code>spec</code>: the specification, of a standard
+                                            for instance.</item>
                                         <item><code>report</code>: technical reports</item>
                                         <item><code>blog</code>: blog posts</item>
                                         <item><code>tutorial</code>: tutorials or guidelines</item>
                                         <item><code>script</code>: Scripts and code samples</item>
                                         <item><code>paper</code>: Scholarly papers</item>
                                         <item><code>library</code>: Computing libraries</item>
-                                        <item><code>tool</code>: a link to a service or a software useful for a given step.</item>
+                                        <item><code>tool</code>: a link to a service or a software
+                                            useful for a given step.</item>
                                         <item><code>database</code>: </item>
                                         <item><code>method</code></item>
                                         <item><code>bibliography</code></item>
@@ -1048,6 +1067,7 @@
                         </attList>
                     </elementSpec>
 
+                    <!-- What is this ? -->
                     <elementSpec ident="alternate" mode="change">
                         <classes mode="change">
                             <memberOf key="model.eventLike"/>
@@ -1134,6 +1154,17 @@
                         of att.combinable -->
                             <memberOf key="att.combinable"/>
                         </classes>
+                        <attList>
+                            <attDef ident="type" mode="change">
+                                <datatype>
+                                    <dataRef key="teidata.enumerated"/>
+                                </datatype>
+                                <valList type="semi" mode="replace">
+                                    <valItem ident="stepTitle"/>
+                                    <valItem ident="scenarioTitle"/>
+                                </valList>
+                            </attDef>
+                        </attList>
                     </elementSpec>
                     <!--  <elementSpec ident="listRef" mode="change">
                         <classes mode="change">
@@ -1151,6 +1182,17 @@
                                 <elementRef key="linkGrp"/>
                             </alternate>
                         </content>
+                        <attList>
+                            <attDef ident="type" usage="req" mode="change">
+                                <datatype>
+                                    <dataRef key="teidata.enumerated"/>
+                                </datatype>
+                                <valList type="semi" mode="replace">
+                                    <valItem ident="generalResources"/>
+                                    <valItem ident="projectResources"/>
+                                </valList>
+                            </attDef>
+                        </attList>
                     </elementSpec>
                     <elementSpec ident="ref" mode="change">
                         <classes mode="change">
@@ -1162,6 +1204,14 @@
                                     <dataRef key="teidata.enumerated"/>
                                 </datatype>
                                 <valList type="semi" mode="replace">
+                                    <valItem ident="documentation">
+                                        <gloss xml:lang="en">Documentation</gloss>
+                                        <gloss xml:lang="fr">Documentation</gloss>
+                                    </valItem>
+                                    <valItem ident="software">
+                                        <gloss xml:lang="en">Software</gloss>
+                                        <gloss xml:lang="fr">Logiciel</gloss>
+                                    </valItem>
                                     <valItem ident="specification">
                                         <gloss xml:lang="en">Specification</gloss>
                                         <gloss xml:lang="fr">Spécification</gloss>
@@ -1181,6 +1231,10 @@
                                     <valItem ident="code_script">
                                         <gloss xml:lang="en">Scripts and code</gloss>
                                         <gloss xml:lang="fr">Scripts et code</gloss>
+                                    </valItem>
+                                    <valItem ident="schema">
+                                        <gloss xml:lang="en">schema</gloss>
+                                        <gloss xml:lang="fr">Schéma</gloss>
                                     </valItem>
                                     <valItem ident="paper">
                                         <gloss xml:lang="en">Scholarly paper</gloss>
@@ -1215,6 +1269,19 @@
                         of att.combinable -->
                             <memberOf key="att.combinable"/>
                         </classes>
+                        <attList>
+                            <attDef ident="type" usage="req" mode="change">
+                                <datatype>
+                                    <dataRef key="teidata.enumerated"/>
+                                </datatype>
+                                <valList type="closed" mode="replace">
+                                    <valItem ident="standard"/>
+                                    <valItem ident="activity"/>
+                                    <valItem ident="object"/>
+                                    <valItem ident="technique"/>
+                                </valList>
+                            </attDef>
+                        </attList>
                     </elementSpec>
                     <elementSpec ident="desc" mode="change">
                         <classes mode="change">
@@ -1225,6 +1292,15 @@
                             <memberOf key="att.combinable"/>
                         </classes>
                         <attList>
+                            <attDef ident="type" usage="req" mode="change">
+                                <datatype>
+                                    <dataRef key="teidata.enumerated"/>
+                                </datatype>
+                                <valList type="semi" mode="replace">
+                                    <valItem ident="definition"/>
+                                    <valItem ident="terms"/>
+                                </valList>
+                            </attDef>
                             <!-- @xml:lang is required -->
                             <attDef ident="xml:lang" usage="req" mode="change"/>
                         </attList>
