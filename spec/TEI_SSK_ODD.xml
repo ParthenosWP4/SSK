@@ -983,38 +983,37 @@
                             <head>Parameter #2 : include partially a scenario into another</head>
                             <p>This mechanism records : <list>
                                     <item>The reference to a scenario</item>
-                                    <item>The first step to include </item>
-                                    <item>The last step to include</item>
-                                    <item>OR:</item>
                                     <item>A set of steps, not necessarily consecutive.</item>
                                 </list> In this case, the attributes of <gi>param</gi> are also
                                     <att>name</att> and <att>value</att>, but they have a different
-                                behaviour. The <att>name</att> can have three different values: <list>
-                                    <item>start</item>
-                                    <item>end</item>
-                                    <item>range</item>
-                                </list> The attribute <att>value</att> records the index of the
-                                steps (i.e. their order number) in the scenario to include. </p>
-                            <div>
-                                <head>A list of consecutive steps</head>
-                                <p>
-                                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                                        <event xml:id="jjjj" type="researchScenario"
-                                            ref="scenario_to_Be_Included">
-                                            <param name="start" value="3"/>
-                                            <param name="end" value="6"/>
-                                        </event></egXML> This parameter would include steps 3, 4, 5
-                                    and 6 of the selected scenario in the target scenario.</p>
-                            </div>
+                                behaviour. The <att>name</att> value is <code>range</code>. The
+                                attribute <att>value</att> records the interval of the steps (i.e.
+                                their order number) in the scenario to include. To indicate an
+                                consecutive interval, the steps indexes should be separated by an
+                                hyphen: <code>-</code>. To indicate non-consecutive steps, the steps
+                                indexes should be separated by a comma: <code>,</code>. These two behaviours can be mixed (<ref target="#range3"></ref>see examples below)
+                            </p>
+
                             <div>
                                 <head>A set of steps, sometimes consecutive, sometimes not
                                     consecutive</head>
-                                <p><egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                <p xml:id="range1"><egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                        <event xml:id="jjjj" type="researchScenario"
+                                            ref="scenario_to_Be_Included">
+                                            <param name="range" value="1-3"/>
+                                        </event></egXML> This parameter would select steps 1, 2 and
+                                    3.</p>
+                                <p xml:id="range2"><egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                        <event xml:id="jjjj" type="researchScenario"
+                                            ref="scenario_to_Be_Included">
+                                            <param name="range" value="1,3"/>
+                                        </event></egXML> This parameter would select steps 1 and 3.</p>
+                                <p xml:id="range3"><egXML xmlns="http://www.tei-c.org/ns/Examples">
                                         <event xml:id="jjjj" type="researchScenario"
                                             ref="scenario_to_Be_Included">
                                             <param name="range" value="1,3,5-7"/>
                                         </event></egXML> This parameter would select steps 1, 3, 5,
-                                    6, 7. </p>
+                                    6 and 7.</p>
                             </div>
                         </div>
                         <div>
