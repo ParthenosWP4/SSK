@@ -1,97 +1,150 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario">
-   <teiHeader>
-      <fileDesc>
-         <titleStmt>
-            <title>"Documenting application of lasers in conservation/restoration" Scenario</title>
-            <author>
-               <persName>Marta Castillejo</persName>
-               <affiliation>CSIC</affiliation>
-            </author>
-            <author>
-               <persName>Mikel Sanz</persName>
-               <affiliation>CSIC</affiliation>
-            </author>
-         </titleStmt>
-         <publicationStmt>
-            <authority>Parthenos</authority>
-            <availability>
-               <licence target="http://creativecommons.org/licenses/by/4.0/">
-                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
-                     this document.</p>
-               </licence>
-            </availability>
-         </publicationStmt>
-         <sourceDesc>
-            <p>Created from an Excel sheet by Marie Puren</p>
-         </sourceDesc>
-      </fileDesc>
-      <encodingDesc>
-         <listPrefixDef>
-            <prefixDef ident="wp2" matchPattern="(.*?)" replacementPattern="groups/368112">
-               <p>The prefix wp2 needs to be used before resources taken from the <ref
-                  type="url" target="https://www.zotero.org/groups/368112/parthenos_wp2"
-                  >Parthenos WP2 Zotero Library</ref>.</p>
-               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID
-                  by a colon ":". Ex: target="wp2:JHSD76DS"</p>
-            </prefixDef>
-            <prefixDef ident="wp3" matchPattern="(.*?)" replacementPattern="groups/520841">
-               <p>The prefix wp3 needs to be used before resources taken from the <ref
-                  type="url" target="https://www.zotero.org/groups/520841/parthenos_wp3"
-                  >Parthenos WP3 Zotero Library</ref>.</p>
-               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID
-                  by a colon ":". Ex: target="wp2:JHSD76DS"</p>
-            </prefixDef>
-            <prefixDef ident="wp4" matchPattern="(.*?)" replacementPattern="groups/427927">
-               <p>The prefix wp4 needs to be used before resources taken from the <ref
-                  type="url" target="https://www.zotero.org/groups/427927/parthenos_wp4"
-                  >Parthenos WP4 Zotero Library</ref>.</p>
-               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID
-                  by a colon ":". Ex: target="wp2:JHSD76DS"</p>
-            </prefixDef>
-         </listPrefixDef>
-      </encodingDesc>
-      <revisionDesc>
-         <change/>
-      </revisionDesc>
-   </teiHeader>
-   <text>
-      <body>
-         <div type="scenario" xml:id="sc_laserconservationrestoration">
-            <head xml:lang="en" type="scenarioTitle">Documenting application of lasers in conservation/restoration</head>
-            <desc type="definition" xml:lang="en">The standard will indicate a methodology to
+<TEI type="researchScenario" xml:id="SSK_sc_laserconservationrestoration" xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader>
+  <fileDesc>
+   <titleStmt>
+    <title>
+     "Documenting application of lasers in conservation/restoration" Scenario
+    </title>
+    <author>
+     <persName>
+      Marta Castillejo
+     </persName>
+     <affiliation>
+      CSIC
+     </affiliation>
+    </author>
+    <author>
+     <persName>
+      Mikel Sanz
+     </persName>
+     <affiliation>
+      CSIC
+     </affiliation>
+    </author>
+   </titleStmt>
+   <publicationStmt>
+    <authority>
+     Parthenos
+    </authority>
+    <availability>
+     <licence target="http://creativecommons.org/licenses/by/4.0/">
+      <p>
+       The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
+                     this document.
+      </p>
+     </licence>
+    </availability>
+   </publicationStmt>
+   <sourceDesc>
+    <p>
+     Created from an Excel sheet by Marie Puren
+    </p>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <listPrefixDef>
+    <prefixDef ident="wp2" matchPattern="(.*?)" replacementPattern="groups/368112">
+     <p>
+      The prefix wp2 needs to be used before resources taken from the
+      <ref target="https://www.zotero.org/groups/368112/parthenos_wp2" type="url">
+       Parthenos WP2 Zotero Library
+      </ref>
+      .
+     </p>
+     <p>
+      In the
+      <att>
+       target
+      </att>
+      attribute, the prefix in separated by the Zotero ID
+                  by a colon ":". Ex: target="wp2:JHSD76DS"
+     </p>
+    </prefixDef>
+    <prefixDef ident="wp3" matchPattern="(.*?)" replacementPattern="groups/520841">
+     <p>
+      The prefix wp3 needs to be used before resources taken from the
+      <ref target="https://www.zotero.org/groups/520841/parthenos_wp3" type="url">
+       Parthenos WP3 Zotero Library
+      </ref>
+      .
+     </p>
+     <p>
+      In the
+      <att>
+       target
+      </att>
+      attribute, the prefix in separated by the Zotero ID
+                  by a colon ":". Ex: target="wp2:JHSD76DS"
+     </p>
+    </prefixDef>
+    <prefixDef ident="wp4" matchPattern="(.*?)" replacementPattern="groups/427927">
+     <p>
+      The prefix wp4 needs to be used before resources taken from the
+      <ref target="https://www.zotero.org/groups/427927/parthenos_wp4" type="url">
+       Parthenos WP4 Zotero Library
+      </ref>
+      .
+     </p>
+     <p>
+      In the
+      <att>
+       target
+      </att>
+      attribute, the prefix in separated by the Zotero ID
+                  by a colon ":". Ex: target="wp2:JHSD76DS"
+     </p>
+    </prefixDef>
+   </listPrefixDef>
+  </encodingDesc>
+  <revisionDesc>
+   <change/>
+  </revisionDesc>
+ </teiHeader>
+ <text>
+  <body>
+   <div type="scenario" xml:id="sc_laserconservationrestoration">
+    <head type="scenarioTitle" xml:lang="en">
+     Documenting application of lasers in conservation/restoration
+    </head>
+    <desc type="definition" xml:lang="en">
+     The standard will indicate a methodology to
                document the kind, extent, and objectives of the laser cleaning, the employed laser
                cleaning parameters and the obtained results including cleaning quality as well as
                side effects or induced damage. The standard will contain guidelines to report the
                aforementioned required steps in the employ of lasers for conservation/restoration in
                order to allow the comparison of results with different treatments performed in
-               different studies.</desc>
-            <desc xml:lang="en" type="terms">
-               <term source="aurehal" type="discipline" key="AAH">Art and art history</term>
-               <term source="aurehal" type="discipline" key="CHM">Cultural heritage and
-                  museology</term>
-               <term type="objects" key="Research results" source="tadirah"/>
-               <term type="objects" key="Standards" source="tadirah"/>
-               <term type="techniques" key="Technology preservation" source="tadirah"/>
-            </desc>
-            <figure type="image">
-               <head/>
-               <graphic
-                  url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/SSK-Laser-cleaning.png"/>
-               <figDesc/>
-            </figure>
-            <listEvent>
-               <event xml:id="s1" type="researchStep" ref="step_RLCP_081117"/>
-               <event xml:id="s2" type="researchStep" ref="step_DLC_081117"/>
-               <event xml:id="s3" type="researchStep" ref="step_SAn_081117"/>
-               <event xml:id="s4" type="researchStep" ref="step_CLE_081117"/>
-               <event xml:id="s5" type="researchStep" ref="step_MLMI_081117"/>
-               <event xml:id="s6" type="researchStep" ref="step_DoLE_081117"/>
-               <event xml:id="s7" type="researchStep" ref="step_Pb_081117"/>
-               <event xml:id="s8" type="researchStep" ref="step_Pres_081117"/>
-            </listEvent>
-         </div>
-      </body>
-   </text>
+               different studies.
+    </desc>
+    <desc type="terms" xml:lang="en">
+     <term key="AAH" source="aurehal" type="discipline">
+      Art and art history
+     </term>
+     <term key="CHM" source="aurehal" type="discipline">
+      Cultural heritage and
+                  museology
+     </term>
+     <term key="Research results" source="tadirah" type="objects"/>
+     <term key="Standards" source="tadirah" type="objects"/>
+     <term key="Technology preservation" source="tadirah" type="techniques"/>
+    </desc>
+    <figure type="image">
+     <head/>
+     <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/SSK-Laser-cleaning.png"/>
+     <figDesc/>
+    </figure>
+    <listEvent>
+     <event ref="step_RLCP_081117" type="researchStep" xml:id="s1"/>
+     <event ref="step_DLC_081117" type="researchStep" xml:id="s2"/>
+     <event ref="step_SAn_081117" type="researchStep" xml:id="s3"/>
+     <event ref="step_CLE_081117" type="researchStep" xml:id="s4"/>
+     <event ref="step_MLMI_081117" type="researchStep" xml:id="s5"/>
+     <event ref="step_DoLE_081117" type="researchStep" xml:id="s6"/>
+     <event ref="step_Pb_081117" type="researchStep" xml:id="s7"/>
+     <event ref="step_Pres_081117" type="researchStep" xml:id="s8"/>
+    </listEvent>
+   </div>
+  </body>
+ </text>
 </TEI>

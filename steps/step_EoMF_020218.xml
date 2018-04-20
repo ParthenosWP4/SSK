@@ -1,87 +1,106 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="../Sc%C3%A9nario%20DDI/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Step "Enrichment of MEI files"</title>
-                <author>
-                    <persName>Vincent Besson</persName>
-                    <affiliation>CNRS</affiliation>
-                </author>
-                <author>
-                    <persName>Adeline Joffres</persName>
-                    <affiliation>CNRS</affiliation>
-                </author>
-                <author>
-                    <persName>Hélène Gautier</persName>
-                    <affiliation>CNRS</affiliation>
-                </author>
-            </titleStmt>
-            <publicationStmt>
-                <authority>Parthenos</authority>
-                <availability>
-                    <licence target="http://creativecommons.org/licenses/by/4.0/">
-                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
-                            to this document.</p>
-                    </licence>
-                </availability>
-            </publicationStmt>
-            <sourceDesc>
-                <p>Created from scratch</p>
-            </sourceDesc>
-        </fileDesc>
-        <revisionDesc>
-            <change/>
-        </revisionDesc>
-    </teiHeader>
-    <text>
-        <body>
-            <listEvent>
-                <event type="researchStep">
-                    <head xml:lang="en">Enrichment of MEI files</head>
-                    <head xml:lang="fr">Enrichir les fichiers MEI.</head>
-                    <desc xml:lang="en" type="definition">Correct errors occurred during the
+<TEI type="researchStep" xml:id="step_EoMF_020218" xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader>
+  <fileDesc>
+   <titleStmt>
+    <title>
+     Step "Enrichment of MEI files"
+    </title>
+    <author>
+     <persName>
+      Vincent Besson
+     </persName>
+     <affiliation>
+      CNRS
+     </affiliation>
+    </author>
+    <author>
+     <persName>
+      Adeline Joffres
+     </persName>
+     <affiliation>
+      CNRS
+     </affiliation>
+    </author>
+    <author>
+     <persName>
+      Hélène Gautier
+     </persName>
+     <affiliation>
+      CNRS
+     </affiliation>
+    </author>
+   </titleStmt>
+   <publicationStmt>
+    <authority>
+     Parthenos
+    </authority>
+    <availability>
+     <licence target="http://creativecommons.org/licenses/by/4.0/">
+      <p>
+       The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.
+      </p>
+     </licence>
+    </availability>
+   </publicationStmt>
+   <sourceDesc>
+    <p>
+     Created from scratch
+    </p>
+   </sourceDesc>
+  </fileDesc>
+  <revisionDesc>
+   <change/>
+  </revisionDesc>
+ </teiHeader>
+ <text>
+  <body>
+   <listEvent>
+    <event type="researchStep">
+     <head xml:lang="en">
+      Enrichment of MEI files
+     </head>
+     <head xml:lang="fr">
+      Enrichir les fichiers MEI.
+     </head>
+     <desc type="definition" xml:lang="en">
+      Correct errors occurred during the
                         conversion process. Enrich the files with MEIMassaging depending on the
                         required output. Convert MEI files into drawing instructions for the VexFlow
-                        online music notation rendering API (MEItoVexFlow) and/or Verovio.</desc>
-                    <desc xml:lang="fr" type="definition">Corriger les erreurs survenues lors de la
+                        online music notation rendering API (MEItoVexFlow) and/or Verovio.
+     </desc>
+     <desc type="definition" xml:lang="fr">
+      Corriger les erreurs survenues lors de la
                         conversion. Enrichir les fichiers à l'aide de MEIMassaging selon le résultat
                         attendu. Convertir les fichiers MEI en instructions de dessin pour l'API de
-                        rendu de notation musicale VexFlow (MEItoVexFlow) et/ou Verovio.</desc>
-                    <desc xml:lang="en" type="term">
-                        <term type="activity" source="http://tadirah.dariah.eu/"
-                            key="http://tadirah.dariah.eu/vocab/index.php?_search_expresion=Editing"
-                        />
-                    </desc>
-                    <desc xml:lang="en" type="term">
-                        <term type="activity" source="http://tadirah.dariah.eu/"
-                            key="http://tadirah.dariah.eu/vocab/index.php?_search_expresion=Conversion"
-                        />
-                    </desc>
-                    <desc xml:lang="en" type="term">
-                        <term type="activity" source="http://tadirah.dariah.eu/"
-                            key="http://tadirah.dariah.eu/vocab/index.php?_search_expresion=Cleanup"
-                        />
-                    </desc>
-                    <linkGrp type="generalResources">
-                        <ref type="code" subtype="tool" source="github"
-                            target="https://github.com/DuChemin/MEIMassaging">
-                            <term type="tool" key="MEIMassaging"/>
-                        </ref>
-                        <ref type="tool" source="github"
-                            target="https://github.com/zolaemil/meiView">
-                            <term type="tool" key="MeiView"/>
-                        </ref>
-                        <ref type="code" subtype="tool" source="github"
-                            target="https://github.com/TEI-Music-SIG/MEItoVexFlow">
-                            <term type="tool" key="MEItoVexFlow"/>
-                        </ref>
-                    </linkGrp>
-                </event>
-            </listEvent>
-        </body>
-    </text>
+                        rendu de notation musicale VexFlow (MEItoVexFlow) et/ou Verovio.
+     </desc>
+     <desc type="term" xml:lang="en">
+      <term key="http://tadirah.dariah.eu/vocab/index.php?_search_expresion=Editing" source="http://tadirah.dariah.eu/" type="activity"/>
+     </desc>
+     <desc type="term" xml:lang="en">
+      <term key="http://tadirah.dariah.eu/vocab/index.php?_search_expresion=Conversion" source="http://tadirah.dariah.eu/" type="activity"/>
+     </desc>
+     <desc type="term" xml:lang="en">
+      <term key="http://tadirah.dariah.eu/vocab/index.php?_search_expresion=Cleanup" source="http://tadirah.dariah.eu/" type="activity"/>
+     </desc>
+     <linkGrp type="generalResources">
+      <ref source="github" subtype="tool" target="https://github.com/DuChemin/MEIMassaging" type="code">
+       <term key="MEIMassaging" type="tool"/>
+      </ref>
+      <ref source="github" target="https://github.com/zolaemil/meiView" type="tool">
+       <term key="MeiView" type="tool"/>
+      </ref>
+      <ref source="github" subtype="tool" target="https://github.com/TEI-Music-SIG/MEItoVexFlow" type="code">
+       <term key="MEItoVexFlow" type="tool"/>
+      </ref>
+     </linkGrp>
+    </event>
+   </listEvent>
+  </body>
+ </text>
 </TEI>

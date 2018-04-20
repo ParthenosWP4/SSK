@@ -1,53 +1,71 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Step "Store edited files"</title>
-                <author>
-                    <persName>Frank Uiterwaal</persName>
-                    <affiliation>NIOD-KNAW</affiliation>
-                </author>
-            </titleStmt>
-            <publicationStmt>
-                <authority>Parthenos</authority>
-                <availability>
-                    <licence target="http://creativecommons.org/licenses/by/4.0/">
-                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
-                            to this document.</p>
-                    </licence>
-                </availability>
-            </publicationStmt>
-            <sourceDesc>
-                <p>Created from scratch</p>
-            </sourceDesc>
-        </fileDesc>
-        <revisionDesc>
-            <change/>
-        </revisionDesc>
-    </teiHeader>
-    <text>
-        <body>
-            <listEvent>
-                <event type="researchStep">
-                    <head xml:lang="en">Store edited files</head>
-                    <head xml:lang="fr">Conserver les fichies édités</head>
-                    <desc xml:lang="en" type="definition">After first storing the master file, it is time to store the edited file as well.</desc>
-                    <desc xml:lang="fr" type="definition"/>
-                    <desc xml:lang="en" type="term">
-                        <term type="activity" source="TaDiRAH" key="archiving"/>
-                        <term type="object" source="TaDiRAH" key="File"/>
-                        <term type="object" source="TaDiRAH" key="Images"/>
-                        <term type="object" source="TaDiRAH" key="Data"/>
-                    </desc>
-                    <linkGrp type="generalResources">
-                        <ref type="report" source="zotero" target="SFKU6E2E"/>
-                    </linkGrp>
-                </event>
-            </listEvent>
-        </body>
-    </text>
+<TEI type="researchStep" xml:id="step_SEF_06022018" xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader>
+  <fileDesc>
+   <titleStmt>
+    <title>
+     Step "Store edited files"
+    </title>
+    <author>
+     <persName>
+      Frank Uiterwaal
+     </persName>
+     <affiliation>
+      NIOD-KNAW
+     </affiliation>
+    </author>
+   </titleStmt>
+   <publicationStmt>
+    <authority>
+     Parthenos
+    </authority>
+    <availability>
+     <licence target="http://creativecommons.org/licenses/by/4.0/">
+      <p>
+       The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.
+      </p>
+     </licence>
+    </availability>
+   </publicationStmt>
+   <sourceDesc>
+    <p>
+     Created from scratch
+    </p>
+   </sourceDesc>
+  </fileDesc>
+  <revisionDesc>
+   <change/>
+  </revisionDesc>
+ </teiHeader>
+ <text>
+  <body>
+   <listEvent>
+    <event type="researchStep">
+     <head xml:lang="en">
+      Store edited files
+     </head>
+     <head xml:lang="fr">
+      Conserver les fichies édités
+     </head>
+     <desc type="definition" xml:lang="en">
+      After first storing the master file, it is time to store the edited file as well.
+     </desc>
+     <desc type="definition" xml:lang="fr"/>
+     <desc type="term" xml:lang="en">
+      <term key="archiving" source="TaDiRAH" type="activity"/>
+      <term key="File" source="TaDiRAH" type="object"/>
+      <term key="Images" source="TaDiRAH" type="object"/>
+      <term key="Data" source="TaDiRAH" type="object"/>
+     </desc>
+     <linkGrp type="generalResources">
+      <ref source="zotero" target="SFKU6E2E" type="report"/>
+     </linkGrp>
+    </event>
+   </listEvent>
+  </body>
+ </text>
 </TEI>

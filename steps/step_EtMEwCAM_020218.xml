@@ -1,84 +1,106 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="../Sc%C3%A9nario%20DDI/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Step "Enrich the musical edition with critical apparatus metadata"</title>
-                <author>
-                    <persName>Vincent Besson</persName>
-                    <affiliation>CNRS</affiliation>
-                </author>
-                <author>
-                    <persName>Adeline Joffres</persName>
-                    <affiliation>CNRS</affiliation>
-                </author>
-                <author>
-                    <persName>Hélène Gautier</persName>
-                    <affiliation>CNRS</affiliation>
-                </author>
-            </titleStmt>
-            <publicationStmt>
-                <authority>Parthenos</authority>
-                <availability>
-                    <licence target="http://creativecommons.org/licenses/by/4.0/">
-                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
-                            to this document.</p>
-                    </licence>
-                </availability>
-            </publicationStmt>
-            <sourceDesc>
-                <p>Created from scratch</p>
-            </sourceDesc>
-        </fileDesc>
-        <revisionDesc>
-            <change/>
-        </revisionDesc>
-    </teiHeader>
-    <text>
-        <body>
-            <listEvent>
-                <event type="researchStep">
-                    <head xml:lang="en">Enrich the musical edition with critical apparatus
-                        metadata</head>
-                    <head xml:lang="fr">Enrichir l'édition musicale avec un apparat critique.</head>
-                    <desc xml:lang="en" type="definition">Add to music edition one staff for each
+<TEI type="researchStep" xml:id="step_EtMEwCAM_020218" xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader>
+  <fileDesc>
+   <titleStmt>
+    <title>
+     Step "Enrich the musical edition with critical apparatus metadata"
+    </title>
+    <author>
+     <persName>
+      Vincent Besson
+     </persName>
+     <affiliation>
+      CNRS
+     </affiliation>
+    </author>
+    <author>
+     <persName>
+      Adeline Joffres
+     </persName>
+     <affiliation>
+      CNRS
+     </affiliation>
+    </author>
+    <author>
+     <persName>
+      Hélène Gautier
+     </persName>
+     <affiliation>
+      CNRS
+     </affiliation>
+    </author>
+   </titleStmt>
+   <publicationStmt>
+    <authority>
+     Parthenos
+    </authority>
+    <availability>
+     <licence target="http://creativecommons.org/licenses/by/4.0/">
+      <p>
+       The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.
+      </p>
+     </licence>
+    </availability>
+   </publicationStmt>
+   <sourceDesc>
+    <p>
+     Created from scratch
+    </p>
+   </sourceDesc>
+  </fileDesc>
+  <revisionDesc>
+   <change/>
+  </revisionDesc>
+ </teiHeader>
+ <text>
+  <body>
+   <listEvent>
+    <event type="researchStep">
+     <head xml:lang="en">
+      Enrich the musical edition with critical apparatus
+                        metadata
+     </head>
+     <head xml:lang="fr">
+      Enrichir l'édition musicale avec un apparat critique.
+     </head>
+     <desc type="definition" xml:lang="en">
+      Add to music edition one staff for each
                         source attesting variants or person suggesting emendation. Encode
-                        variants/emendations only in the measures where interventions occur.</desc>
-                    <desc xml:lang="fr" type="definition">Ajouter à l'édition musicale une portée
+                        variants/emendations only in the measures where interventions occur.
+     </desc>
+     <desc type="definition" xml:lang="fr">
+      Ajouter à l'édition musicale une portée
                         pour chaque source attestant d'une variante, pour chaque personne suggérant
                         une correction. Encoder les variantes, les corrections uniquement dans les
-                        mesures où les interventions ont lieu.</desc>
-                    <desc xml:lang="en" type="term">
-                        <term type="activity" source="http://tadirah.dariah.eu/"
-                            key="http://tadirah.dariah.eu/vocab/index.php?_search_expresion=Annotating"
-                        />
-                    </desc>
-                    <linkGrp type="generalResources">
-                        <ref type="software" source="zotero" target="3FSG8F5I">
-                            <term type="software" key="Sibelius"/>
-                        </ref>
-                        <ref type="documentation" subtype="standard" source="zotero"
-                            target="983UF5N4">
-                            <term type="standard" source="standard_list" key="MEI"/>
-                        </ref>
-                        <ref type="schema" subtype="standard" source="zotero" target="US7FCT9X">
-                            <term type="standard" source="standard_list" key="MEI"/>
-                        </ref>
-                    </linkGrp>
-                    <linkGrp type="projectResources" source="Gesualdo Online"
-                        corresp="https://ricercar.gesualdo-online.cesr.univ-tours.fr/">
-                        <ref type="database"
-                            target="https://ricercar.gesualdo-online.cesr.univ-tours.fr/"/>
-                    </linkGrp>
-                    <linkGrp type="projectResources" source="The Lost Voices Project"
-                        corresp="http://digitalduchemin.org/">
-                        <ref type="database" target="http://digitalduchemin.org/"/>
-                    </linkGrp>
-                </event>
-            </listEvent>
-        </body>
-    </text>
+                        mesures où les interventions ont lieu.
+     </desc>
+     <desc type="term" xml:lang="en">
+      <term key="http://tadirah.dariah.eu/vocab/index.php?_search_expresion=Annotating" source="http://tadirah.dariah.eu/" type="activity"/>
+     </desc>
+     <linkGrp type="generalResources">
+      <ref source="zotero" target="3FSG8F5I" type="software">
+       <term key="Sibelius" type="software"/>
+      </ref>
+      <ref source="zotero" subtype="standard" target="983UF5N4" type="documentation">
+       <term key="MEI" source="standard_list" type="standard"/>
+      </ref>
+      <ref source="zotero" subtype="standard" target="US7FCT9X" type="schema">
+       <term key="MEI" source="standard_list" type="standard"/>
+      </ref>
+     </linkGrp>
+     <linkGrp corresp="https://ricercar.gesualdo-online.cesr.univ-tours.fr/" source="Gesualdo Online" type="projectResources">
+      <ref target="https://ricercar.gesualdo-online.cesr.univ-tours.fr/" type="database"/>
+     </linkGrp>
+     <linkGrp corresp="http://digitalduchemin.org/" source="The Lost Voices Project" type="projectResources">
+      <ref target="http://digitalduchemin.org/" type="database"/>
+     </linkGrp>
+    </event>
+   </listEvent>
+  </body>
+ </text>
 </TEI>

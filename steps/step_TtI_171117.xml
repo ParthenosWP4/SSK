@@ -1,67 +1,89 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="../../TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Step "Transcribe the interviews"</title>
-                <author>
-                    <persName>Hélène Gautier</persName>
-                    <affiliation>Huma-Num/CNRS</affiliation>
-                </author>
-                <author>
-                    <persName>Marie Puren</persName>
-                    <affiliation>INRIA</affiliation>
-                </author>
-            </titleStmt>
-            <publicationStmt>
-                <authority>Parthenos</authority>
-                <availability>
-                    <licence target="http://creativecommons.org/licenses/by/4.0/">
-                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
-                            to this document.</p>
-                    </licence>
-                </availability>
-            </publicationStmt>
-            <sourceDesc>
-                <p>Created from scratch</p>
-            </sourceDesc>
-        </fileDesc>
-        <revisionDesc>
-            <change/>
-        </revisionDesc>
-    </teiHeader>
-    <text>
-        <body>
-            <listEvent>
-                <event type="researchStep">
-                    <head xml:lang="en">Transcribe the interviews</head>
-                    <head xml:lang="fr">Transcription des entretiens</head>
-                    <desc xml:lang="en" type="definition">Provide a digital transcript of the
+<TEI type="researchStep" xml:id="step_TtI_171117" xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader>
+  <fileDesc>
+   <titleStmt>
+    <title>
+     Step "Transcribe the interviews"
+    </title>
+    <author>
+     <persName>
+      Hélène Gautier
+     </persName>
+     <affiliation>
+      Huma-Num/CNRS
+     </affiliation>
+    </author>
+    <author>
+     <persName>
+      Marie Puren
+     </persName>
+     <affiliation>
+      INRIA
+     </affiliation>
+    </author>
+   </titleStmt>
+   <publicationStmt>
+    <authority>
+     Parthenos
+    </authority>
+    <availability>
+     <licence target="http://creativecommons.org/licenses/by/4.0/">
+      <p>
+       The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.
+      </p>
+     </licence>
+    </availability>
+   </publicationStmt>
+   <sourceDesc>
+    <p>
+     Created from scratch
+    </p>
+   </sourceDesc>
+  </fileDesc>
+  <revisionDesc>
+   <change/>
+  </revisionDesc>
+ </teiHeader>
+ <text>
+  <body>
+   <listEvent>
+    <event type="researchStep">
+     <head xml:lang="en">
+      Transcribe the interviews
+     </head>
+     <head xml:lang="fr">
+      Transcription des entretiens
+     </head>
+     <desc type="definition" xml:lang="en">
+      Provide a digital transcript of the
                         interviews using XML-TEI and more especially the module "Transcriptions of
                         speech" and not forgetting to mark up the data that need to be
-                        anonymized.</desc>
-                    <desc xml:lang="fr" type="definition">Faire une édition numérique des entretiens
+                        anonymized.
+     </desc>
+     <desc type="definition" xml:lang="fr">
+      Faire une édition numérique des entretiens
                         à l'aide de la TEI et plus particulièrement du module "Transcriptions of
                         speech" sans oublier de baliser les données qui doivent être
-                        anonymisées.</desc>
-                    <desc xml:lang="en" type="term">
-                        <term type="activity" source="http://tadirah.dariah.eu/"
-                            key="http://tadirah.dariah.eu/vocab/index.php?tema=14&amp;/transcription"
-                        />
-                    </desc>
-                    <linkGrp type="generalResources">
-                       <!-- <ref type="schema" subtype="standard" source="zotero" target="">
+                        anonymisées.
+     </desc>
+     <desc type="term" xml:lang="en">
+      <term key="http://tadirah.dariah.eu/vocab/index.php?tema=14&amp;/transcription" source="http://tadirah.dariah.eu/" type="activity"/>
+     </desc>
+     <linkGrp type="generalResources">
+      <!-- <ref type="schema" subtype="standard" source="zotero" target="">
                             <term type="standard" source="standard_list" key="TEI"/>
                         </ref> -->
-                        <ref type="tutorial" subtype="standard" source="zotero" target="MGAJZAUQ">
-                            <term type="standard" source="standard_list" key="TEI"/>
-                        </ref>
-                    </linkGrp>
-                </event>
-            </listEvent>
-        </body>
-    </text>
+      <ref source="zotero" subtype="standard" target="MGAJZAUQ" type="tutorial">
+       <term key="TEI" source="standard_list" type="standard"/>
+      </ref>
+     </linkGrp>
+    </event>
+   </listEvent>
+  </body>
+ </text>
 </TEI>

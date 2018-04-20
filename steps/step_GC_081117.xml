@@ -1,68 +1,85 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="../../TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
-   <teiHeader>
-      <fileDesc>
-         <titleStmt>
-            <title>Step "Glass characterization"</title>
-            <author>
-               <persName>Marta Castillejo</persName>
-               <affiliation>CSIC</affiliation>
-            </author>
-            <author>
-               <persName>Mikel Sanz</persName>
-               <affiliation>CSIC</affiliation>
-            </author>
-         </titleStmt>
-         <publicationStmt>
-            <authority>Parthenos</authority>
-            <availability>
-               <licence target="http://creativecommons.org/licenses/by/4.0/">
-                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
-                     this document.</p>
-               </licence>
-            </availability>
-         </publicationStmt>
-         <sourceDesc>
-            <p>Created from an Excel sheet by Marie Puren</p>
-         </sourceDesc>
-      </fileDesc>
-      <revisionDesc>
-         <change/>
-      </revisionDesc>
-   </teiHeader>
-   <text>
-      <body>
-         <listEvent>
-            <event type="researchStep">
-               <head xml:lang="en">Glass characterization</head>
-               <desc xml:lang="en" type="definition">Determining glass composition, glass
+<TEI type="researchStep" xml:id="step_GC_081117" xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader>
+  <fileDesc>
+   <titleStmt>
+    <title>
+     Step "Glass characterization"
+    </title>
+    <author>
+     <persName>
+      Marta Castillejo
+     </persName>
+     <affiliation>
+      CSIC
+     </affiliation>
+    </author>
+    <author>
+     <persName>
+      Mikel Sanz
+     </persName>
+     <affiliation>
+      CSIC
+     </affiliation>
+    </author>
+   </titleStmt>
+   <publicationStmt>
+    <authority>
+     Parthenos
+    </authority>
+    <availability>
+     <licence target="http://creativecommons.org/licenses/by/4.0/">
+      <p>
+       The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
+                     this document.
+      </p>
+     </licence>
+    </availability>
+   </publicationStmt>
+   <sourceDesc>
+    <p>
+     Created from an Excel sheet by Marie Puren
+    </p>
+   </sourceDesc>
+  </fileDesc>
+  <revisionDesc>
+   <change/>
+  </revisionDesc>
+ </teiHeader>
+ <text>
+  <body>
+   <listEvent>
+    <event type="researchStep">
+     <head xml:lang="en">
+      Glass characterization
+     </head>
+     <desc type="definition" xml:lang="en">
+      Determining glass composition, glass
                   classification, provenance, cromophores, opacifiers, surface alteration and
                   degradation of usefulness for preservation and restoration of glass artefacts in
-                  the CH field.</desc>
-               <desc xml:lang="fr" type="definition"/>
-               <desc xml:lang="en" type="term">
-                  <term type="standard" source="standard_list" key="LIBS"/>
-                  <term type="activity" source="http://tadirah.dariah.eu/"
-                     key="http://tadirah.dariah.eu/vocab/index.php?tema=36&amp;/theorizing"/>
-               </desc>
-               <linkGrp type="generalResources">
-                  <ref type="tutorial" subtype="article" source="zotero" target="D2WE387F">
-                     <term type="technique" key="LIBS"/>
-                  </ref>
-                  <ref type="tutorial" subtype="article" source="zotero" target="SZDQC8BF">
-                     <term type="technique" key="LIBS"/>
-                  </ref>
-               </linkGrp>
-               <linkGrp type="projectResources"
-                  source="Modern and Contemporary Art in the laboratory"
-                  corresp="https://modern.kikirpa.be/">
-                  <ref type="webpage" target="https://modern.kikirpa.be/"/>
-               </linkGrp>
-            </event>
-         </listEvent>
-      </body>
-   </text>
+                  the CH field.
+     </desc>
+     <desc type="definition" xml:lang="fr"/>
+     <desc type="term" xml:lang="en">
+      <term key="LIBS" source="standard_list" type="standard"/>
+      <term key="http://tadirah.dariah.eu/vocab/index.php?tema=36&amp;/theorizing" source="http://tadirah.dariah.eu/" type="activity"/>
+     </desc>
+     <linkGrp type="generalResources">
+      <ref source="zotero" subtype="article" target="D2WE387F" type="tutorial">
+       <term key="LIBS" type="technique"/>
+      </ref>
+      <ref source="zotero" subtype="article" target="SZDQC8BF" type="tutorial">
+       <term key="LIBS" type="technique"/>
+      </ref>
+     </linkGrp>
+     <linkGrp corresp="https://modern.kikirpa.be/" source="Modern and Contemporary Art in the laboratory" type="projectResources">
+      <ref target="https://modern.kikirpa.be/" type="webpage"/>
+     </linkGrp>
+    </event>
+   </listEvent>
+  </body>
+ </text>
 </TEI>

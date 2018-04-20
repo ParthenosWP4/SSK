@@ -1,86 +1,110 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="../Sc%C3%A9nario%20DDI/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Step "Collect and organize metadata"</title>
-                <author>
-                    <persName>Vincent Besson</persName>
-                    <affiliation>CNRS</affiliation>
-                </author>
-                <author>
-                    <persName>Adeline Joffres</persName>
-                    <affiliation>CNRS</affiliation>
-                </author>
-                <author>
-                    <persName>Hélène Gautier</persName>
-                    <affiliation>CNRS</affiliation>
-                </author>
-            </titleStmt>
-            <publicationStmt>
-                <authority>Parthenos</authority>
-                <availability>
-                    <licence target="http://creativecommons.org/licenses/by/4.0/">
-                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
-                            to this document.</p>
-                    </licence>
-                </availability>
-            </publicationStmt>
-            <sourceDesc>
-                <p>Created from scratch</p>
-            </sourceDesc>
-        </fileDesc>
-        <revisionDesc>
-            <change/>
-        </revisionDesc>
-    </teiHeader>
-    <text>
-        <body>
-            <listEvent>
-                <event type="researchStep">
-                    <head xml:lang="en">Collect and organize metadata</head>
-                    <head xml:lang="fr">Collecter et organiser les métadonnées.</head>
-                    <desc xml:lang="en" type="definition">Add metadata according to Dublin Core
+<TEI type="researchStep" xml:id="step_CaOM_020218" xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader>
+  <fileDesc>
+   <titleStmt>
+    <title>
+     Step "Collect and organize metadata"
+    </title>
+    <author>
+     <persName>
+      Vincent Besson
+     </persName>
+     <affiliation>
+      CNRS
+     </affiliation>
+    </author>
+    <author>
+     <persName>
+      Adeline Joffres
+     </persName>
+     <affiliation>
+      CNRS
+     </affiliation>
+    </author>
+    <author>
+     <persName>
+      Hélène Gautier
+     </persName>
+     <affiliation>
+      CNRS
+     </affiliation>
+    </author>
+   </titleStmt>
+   <publicationStmt>
+    <authority>
+     Parthenos
+    </authority>
+    <availability>
+     <licence target="http://creativecommons.org/licenses/by/4.0/">
+      <p>
+       The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.
+      </p>
+     </licence>
+    </availability>
+   </publicationStmt>
+   <sourceDesc>
+    <p>
+     Created from scratch
+    </p>
+   </sourceDesc>
+  </fileDesc>
+  <revisionDesc>
+   <change/>
+  </revisionDesc>
+ </teiHeader>
+ <text>
+  <body>
+   <listEvent>
+    <event type="researchStep">
+     <head xml:lang="en">
+      Collect and organize metadata
+     </head>
+     <head xml:lang="fr">
+      Collecter et organiser les métadonnées.
+     </head>
+     <desc type="definition" xml:lang="en">
+      Add metadata according to Dublin Core
                         standard. Create a structured database about people, places, sources, etc.
                         related to the musical edition conforming to Dublin Core standards and
-                        organised through the Omeka CMS web publishing system.</desc>
-                    <desc xml:lang="fr" type="definition">Ajouter des métadonnées selon le standard
+                        organised through the Omeka CMS web publishing system.
+     </desc>
+     <desc type="definition" xml:lang="fr">
+      Ajouter des métadonnées selon le standard
                         Dublin Core. Créer une base de données structurée sur les personnes, les
                         lieux, les sources etc. liés à l'édition musicale, conforme aux normes
-                        Dublin Core et organisée à l'aide du CMS Omeka.</desc>
-                    <desc xml:lang="en" type="term">
-                        <term type="activity" source="http://tadirah.dariah.eu/"
-                            key="http://tadirah.dariah.eu/vocab/index.php?_search_expresion=Annotating"
-                        />
-                    </desc>
-                    <linkGrp type="generalResources">
-                        <ref type="software" source="zotero" target="42NXBJNP">
-                            <term type="software" key="Omeka"/>
-                        </ref>
-                        <ref type="tutorial" subtype="software" source="zotero" target="VWVP5NB3"/>
-                        <ref type="documentation" subtype="standard" source="zotero"
-                            target="9HWG6835">
-                            <term type="standard" source="standard_list" key="DC"/>
-                        </ref>
-                        <ref type="tutorial" subtype="standard" source="zotero" target="7RRWQ6MS">
-                            <term type="standard" source="standard_list" key="DC"/>
-                        </ref>
-                        <ref type="documentation" subtype="standard" source="zotero"
-                            target="PEAH9HAQ">
-                            <term type="standard" source="standard_list" key="DC"/>
-                        </ref>
-                        <ref type="schema" subtype="standard" source="zotero" target="CNPB6HA6">
-                            <term type="standard" source="standard_list" key="DC"/>
-                        </ref>
-                        <ref type="tutorial" subtype="standard" source="zotero" target="VKU5HQMF">
-                            <term type="standard" source="standard_list" key="DC"/>
-                        </ref>
-                    </linkGrp>
-                </event>
-            </listEvent>
-        </body>
-    </text>
+                        Dublin Core et organisée à l'aide du CMS Omeka.
+     </desc>
+     <desc type="term" xml:lang="en">
+      <term key="http://tadirah.dariah.eu/vocab/index.php?_search_expresion=Annotating" source="http://tadirah.dariah.eu/" type="activity"/>
+     </desc>
+     <linkGrp type="generalResources">
+      <ref source="zotero" target="42NXBJNP" type="software">
+       <term key="Omeka" type="software"/>
+      </ref>
+      <ref source="zotero" subtype="software" target="VWVP5NB3" type="tutorial"/>
+      <ref source="zotero" subtype="standard" target="9HWG6835" type="documentation">
+       <term key="DC" source="standard_list" type="standard"/>
+      </ref>
+      <ref source="zotero" subtype="standard" target="7RRWQ6MS" type="tutorial">
+       <term key="DC" source="standard_list" type="standard"/>
+      </ref>
+      <ref source="zotero" subtype="standard" target="PEAH9HAQ" type="documentation">
+       <term key="DC" source="standard_list" type="standard"/>
+      </ref>
+      <ref source="zotero" subtype="standard" target="CNPB6HA6" type="schema">
+       <term key="DC" source="standard_list" type="standard"/>
+      </ref>
+      <ref source="zotero" subtype="standard" target="VKU5HQMF" type="tutorial">
+       <term key="DC" source="standard_list" type="standard"/>
+      </ref>
+     </linkGrp>
+    </event>
+   </listEvent>
+  </body>
+ </text>
 </TEI>

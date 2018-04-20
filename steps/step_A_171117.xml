@@ -1,45 +1,66 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="../../TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Step "Anonymize"</title>
-                <author>
-                    <persName>Hélène Gautier</persName>
-                    <affiliation>Huma-Num/CNRS</affiliation>
-                </author>
-                <author>
-                    <persName>Marie Puren</persName>
-                    <affiliation>INRIA</affiliation>
-                </author>
-            </titleStmt>
-            <publicationStmt>
-                <authority>Parthenos</authority>
-                <availability>
-                    <licence target="http://creativecommons.org/licenses/by/4.0/">
-                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
-                            to this document.</p>
-                    </licence>
-                </availability>
-            </publicationStmt>
-            <sourceDesc>
-                <p>Created from scratch</p>
-            </sourceDesc>
-        </fileDesc>
-        <revisionDesc>
-            <change/>
-        </revisionDesc>
-    </teiHeader>
-    <text>
-        <body>
-            <listEvent>
-                <event type="researchStep">
-                    <head xml:lang="en">Anonymize</head>
-                    <head xml:lang="fr">Anonymisation</head>
-                    <desc xml:lang="en" type="definition">If the document contains sensitive or
+<TEI type="researchStep" xml:id="step_A_171117" xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader>
+  <fileDesc>
+   <titleStmt>
+    <title>
+     Step "Anonymize"
+    </title>
+    <author>
+     <persName>
+      Hélène Gautier
+     </persName>
+     <affiliation>
+      Huma-Num/CNRS
+     </affiliation>
+    </author>
+    <author>
+     <persName>
+      Marie Puren
+     </persName>
+     <affiliation>
+      INRIA
+     </affiliation>
+    </author>
+   </titleStmt>
+   <publicationStmt>
+    <authority>
+     Parthenos
+    </authority>
+    <availability>
+     <licence target="http://creativecommons.org/licenses/by/4.0/">
+      <p>
+       The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.
+      </p>
+     </licence>
+    </availability>
+   </publicationStmt>
+   <sourceDesc>
+    <p>
+     Created from scratch
+    </p>
+   </sourceDesc>
+  </fileDesc>
+  <revisionDesc>
+   <change/>
+  </revisionDesc>
+ </teiHeader>
+ <text>
+  <body>
+   <listEvent>
+    <event type="researchStep">
+     <head xml:lang="en">
+      Anonymize
+     </head>
+     <head xml:lang="fr">
+      Anonymisation
+     </head>
+     <desc type="definition" xml:lang="en">
+      If the document contains sensitive or
                         personal data, it may be necessary to make them not public available and
                         therefore anonymize them.The point is to do that without reducing the
                         usefulness of data (need of thinking what should be the scale/scope of the
@@ -49,24 +70,23 @@
                         effective way of handling sensitive data and easier than spending time later
                         removing it from a recording or transcript. Do the anonymization on file
                         copies: use repositionable tapes for paper documents and XML markers for
-                        digital documents.</desc>
-                    <desc xml:lang="fr" type="definition"/>
-                    <desc xml:lang="en" type="term">
-                        <term type="activity" source="http://tadirah.dariah.eu/"
-                            key="http://tadirah.dariah.eu/vocab/index.php?tema=50&amp;/meta-assessing"
-                        />
-                    </desc>
-                    <linkGrp type="generalResources">
-                        <ref type="tutorial" source="zotero" target="673LJBJ2"/>
-                        <ref type="tutorial" source="zotero" target="DAQWR4BJ"/>
-                        <ref type="tutorial" source="zotero" target="T4U6MW6B"/>
-                        <ref type="tutorial" source="zotero" target="33SBJ9VI"/>
-                        <ref type="tutorial" source="zotero" target="HELIB4BM"/>
-                        <ref type="tutorial" source="zotero" target="G4DJB3XJ"/>
-                        <ref type="tutorial" source="zotero" target="WQTH8KRJ"/>
-                    </linkGrp>
-                </event>
-            </listEvent>
-        </body>
-    </text>
+                        digital documents.
+     </desc>
+     <desc type="definition" xml:lang="fr"/>
+     <desc type="term" xml:lang="en">
+      <term key="http://tadirah.dariah.eu/vocab/index.php?tema=50&amp;/meta-assessing" source="http://tadirah.dariah.eu/" type="activity"/>
+     </desc>
+     <linkGrp type="generalResources">
+      <ref source="zotero" target="673LJBJ2" type="tutorial"/>
+      <ref source="zotero" target="DAQWR4BJ" type="tutorial"/>
+      <ref source="zotero" target="T4U6MW6B" type="tutorial"/>
+      <ref source="zotero" target="33SBJ9VI" type="tutorial"/>
+      <ref source="zotero" target="HELIB4BM" type="tutorial"/>
+      <ref source="zotero" target="G4DJB3XJ" type="tutorial"/>
+      <ref source="zotero" target="WQTH8KRJ" type="tutorial"/>
+     </linkGrp>
+    </event>
+   </listEvent>
+  </body>
+ </text>
 </TEI>

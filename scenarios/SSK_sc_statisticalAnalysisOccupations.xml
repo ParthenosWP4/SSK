@@ -1,65 +1,110 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="file:/d:/Users/hgautier/Desktop/TEI%20WP4/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario"  xml:id="sc_statisticalAnalysisOccupations">
-   <teiHeader>
-      <fileDesc>
-         <titleStmt>
-            <title>Perform Statistical Analysis on Historical and Contemporary Occupations</title>
-            <author>
-               <persName>Emilie Kraikamp</persName>
-               <affiliation>DANS</affiliation>
-            </author>
-         </titleStmt>
-         <publicationStmt>
-            <authority>Parthenos</authority>
-            <availability>
-               <licence target="http://creativecommons.org/licenses/by/4.0/">
-                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
-                     this document.</p>
-               </licence>
-            </availability>
-         </publicationStmt>
-         <sourceDesc>
-            <p>Created from scratch</p>
-         </sourceDesc>
-      </fileDesc>
-      <encodingDesc>
-         <listPrefixDef>
-            <prefixDef ident="wp2" matchPattern="(.*?)" replacementPattern="groups/368112">
-               <p>The prefix wp2 needs to be used before resources taken from the <ref
-                  type="url" target="https://www.zotero.org/groups/368112/parthenos_wp2"
-                  >Parthenos WP2 Zotero Library</ref>.</p>
-               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID
-                  by a colon ":". Ex: target="wp2:JHSD76DS"</p>
-            </prefixDef>
-            <prefixDef ident="wp3" matchPattern="(.*?)" replacementPattern="groups/520841">
-               <p>The prefix wp3 needs to be used before resources taken from the <ref
-                  type="url" target="https://www.zotero.org/groups/520841/parthenos_wp3"
-                  >Parthenos WP3 Zotero Library</ref>.</p>
-               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID
-                  by a colon ":". Ex: target="wp2:JHSD76DS"</p>
-            </prefixDef>
-            <prefixDef ident="wp4" matchPattern="(.*?)" replacementPattern="groups/427927">
-               <p>The prefix wp4 needs to be used before resources taken from the <ref
-                  type="url" target="https://www.zotero.org/groups/427927/parthenos_wp4"
-                  >Parthenos WP4 Zotero Library</ref>.</p>
-               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID
-                  by a colon ":". Ex: target="wp2:JHSD76DS"</p>
-            </prefixDef>
-         </listPrefixDef>
-      </encodingDesc>
-      <revisionDesc>
-         <change/>
-      </revisionDesc>
-   </teiHeader>
-   <text>
-      <body>
-         <div type="scenario" xml:id="sc_statisticalAnalysisOccupations">
-            <head xml:lang="en" type="scenarioTitle">Perform Statistical Analysis on
-               Historical and Contemporary Occupations</head>
-            <desc type="definition" xml:lang="en">Given a large dataset with several raw variables,
+<TEI type="researchScenario" xml:id="SSK_sc_statisticalAnalysisOccupations" xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader>
+  <fileDesc>
+   <titleStmt>
+    <title>
+     Perform Statistical Analysis on Historical and Contemporary Occupations
+    </title>
+    <author>
+     <persName>
+      Emilie Kraikamp
+     </persName>
+     <affiliation>
+      DANS
+     </affiliation>
+    </author>
+   </titleStmt>
+   <publicationStmt>
+    <authority>
+     Parthenos
+    </authority>
+    <availability>
+     <licence target="http://creativecommons.org/licenses/by/4.0/">
+      <p>
+       The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
+                     this document.
+      </p>
+     </licence>
+    </availability>
+   </publicationStmt>
+   <sourceDesc>
+    <p>
+     Created from scratch
+    </p>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <listPrefixDef>
+    <prefixDef ident="wp2" matchPattern="(.*?)" replacementPattern="groups/368112">
+     <p>
+      The prefix wp2 needs to be used before resources taken from the
+      <ref target="https://www.zotero.org/groups/368112/parthenos_wp2" type="url">
+       Parthenos WP2 Zotero Library
+      </ref>
+      .
+     </p>
+     <p>
+      In the
+      <att>
+       target
+      </att>
+      attribute, the prefix in separated by the Zotero ID
+                  by a colon ":". Ex: target="wp2:JHSD76DS"
+     </p>
+    </prefixDef>
+    <prefixDef ident="wp3" matchPattern="(.*?)" replacementPattern="groups/520841">
+     <p>
+      The prefix wp3 needs to be used before resources taken from the
+      <ref target="https://www.zotero.org/groups/520841/parthenos_wp3" type="url">
+       Parthenos WP3 Zotero Library
+      </ref>
+      .
+     </p>
+     <p>
+      In the
+      <att>
+       target
+      </att>
+      attribute, the prefix in separated by the Zotero ID
+                  by a colon ":". Ex: target="wp2:JHSD76DS"
+     </p>
+    </prefixDef>
+    <prefixDef ident="wp4" matchPattern="(.*?)" replacementPattern="groups/427927">
+     <p>
+      The prefix wp4 needs to be used before resources taken from the
+      <ref target="https://www.zotero.org/groups/427927/parthenos_wp4" type="url">
+       Parthenos WP4 Zotero Library
+      </ref>
+      .
+     </p>
+     <p>
+      In the
+      <att>
+       target
+      </att>
+      attribute, the prefix in separated by the Zotero ID
+                  by a colon ":". Ex: target="wp2:JHSD76DS"
+     </p>
+    </prefixDef>
+   </listPrefixDef>
+  </encodingDesc>
+  <revisionDesc>
+   <change/>
+  </revisionDesc>
+ </teiHeader>
+ <text>
+  <body>
+   <div type="scenario" xml:id="sc_statisticalAnalysisOccupations">
+    <head type="scenarioTitle" xml:lang="en">
+     Perform Statistical Analysis on
+               Historical and Contemporary Occupations
+    </head>
+    <desc type="definition" xml:lang="en">
+     Given a large dataset with several raw variables,
                a social science researcher needs to (re)code some of the data in order to properly
                conduct statistical analysis and modelling techniques. To allow comparison across
                studies, researchers often develop and use certain standards for recoding some
@@ -70,26 +115,33 @@
                researchers. Statistical analyses and modelling also have certain software standards.
                Finally, reporting the results is done within a consistent style, such as APA Style.
                Some of these coding, software and reporting standards are covered in this use
-               case.</desc>
-            <desc xml:lang="en" type="terms">
-               <term source="aurehal" type="discipline">History</term>
-               <term source="aurehal" type="discipline">Sociology</term>
-               <term source="aurehal" type="discipline">Methods and statistics</term>
-               <term type="objects" key="Data" source="tadirah"/>
-               <term type="techniques" key="Encoding" source="tadirah"/>
-            </desc>
-            <figure type="image">
-               <head/>
-               <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/statisticalAnalysis.png"/>
-            </figure>
-            <listEvent>
-               <event xml:id="s1" type="researchStep" ref="step_Rv_121017"/>
-               <event xml:id="s2" type="researchStep" ref="step_CViS_121017"/>
-               <event xml:id="s3" type="researchStep" ref="step_TfRotS_121017"/>
-               <event xml:id="s4" type="researchStep" ref="step_MtRbV_121017"/>
-               <event xml:id="s5" type="researchStep" ref="step_A_121017"/>
-            </listEvent>
-         </div>
-      </body>
-   </text>
+               case.
+    </desc>
+    <desc type="terms" xml:lang="en">
+     <term source="aurehal" type="discipline">
+      History
+     </term>
+     <term source="aurehal" type="discipline">
+      Sociology
+     </term>
+     <term source="aurehal" type="discipline">
+      Methods and statistics
+     </term>
+     <term key="Data" source="tadirah" type="objects"/>
+     <term key="Encoding" source="tadirah" type="techniques"/>
+    </desc>
+    <figure type="image">
+     <head/>
+     <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/statisticalAnalysis.png"/>
+    </figure>
+    <listEvent>
+     <event ref="step_Rv_121017" type="researchStep" xml:id="s1"/>
+     <event ref="step_CViS_121017" type="researchStep" xml:id="s2"/>
+     <event ref="step_TfRotS_121017" type="researchStep" xml:id="s3"/>
+     <event ref="step_MtRbV_121017" type="researchStep" xml:id="s4"/>
+     <event ref="step_A_121017" type="researchStep" xml:id="s5"/>
+    </listEvent>
+   </div>
+  </body>
+ </text>
 </TEI>

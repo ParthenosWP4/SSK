@@ -1,71 +1,86 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="file:/d:/Users/hgautier/Desktop/TEI%20WP4/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
-   <teiHeader>
-      <fileDesc>
-         <titleStmt>
-            <title>Step "Recode variables"</title>
-            <author>
-               <persName>Emilie Kraikamp</persName>
-               <affiliation>DANS</affiliation>
-            </author>
-         </titleStmt>
-         <publicationStmt>
-            <authority>Parthenos</authority>
-            <availability>
-               <licence target="http://creativecommons.org/licenses/by/4.0/">
-                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
-                     this document.</p>
-               </licence>
-            </availability>
-         </publicationStmt>
-         <sourceDesc>
-            <p>Created from scratch</p>
-         </sourceDesc>
-      </fileDesc>
-      <revisionDesc>
-         <change/>
-      </revisionDesc>
-   </teiHeader>
-   <text>
-      <body>
-         <listEvent>
-            <event type="researchStep">
-               <head xml:lang="en">Recode variables</head>
-               <head xml:lang="fr">Ré-encoder les variables</head>
-               <desc xml:lang="en" type="definition">Recode occupation variable into a class and
+<TEI type="researchStep" xml:id="step_Rv_121017" xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader>
+  <fileDesc>
+   <titleStmt>
+    <title>
+     Step "Recode variables"
+    </title>
+    <author>
+     <persName>
+      Emilie Kraikamp
+     </persName>
+     <affiliation>
+      DANS
+     </affiliation>
+    </author>
+   </titleStmt>
+   <publicationStmt>
+    <authority>
+     Parthenos
+    </authority>
+    <availability>
+     <licence target="http://creativecommons.org/licenses/by/4.0/">
+      <p>
+       The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
+                     this document.
+      </p>
+     </licence>
+    </availability>
+   </publicationStmt>
+   <sourceDesc>
+    <p>
+     Created from scratch
+    </p>
+   </sourceDesc>
+  </fileDesc>
+  <revisionDesc>
+   <change/>
+  </revisionDesc>
+ </teiHeader>
+ <text>
+  <body>
+   <listEvent>
+    <event type="researchStep">
+     <head xml:lang="en">
+      Recode variables
+     </head>
+     <head xml:lang="fr">
+      Ré-encoder les variables
+     </head>
+     <desc type="definition" xml:lang="en">
+      Recode occupation variable into a class and
                   status score for occupations in the 19th and 20th century, and for contemporary
-                  occupations by using the HISCO occupational coding scheme</desc>
-               <desc xml:lang="fr" type="definition"/>
-               <desc xml:lang="en" type="term">
-                  <term type="standard" source="standard_list" key="HISCO"/>
-                  <term type="standard" source="standard_list" key="ISCO"/>
-                  <term type="activity" source="http://tadirah.dariah.eu/"
-                     key="http://tadirah.dariah.eu/vocab/index.php?tema=34&amp;/contextualizing"/>
-               </desc>
-               <linkGrp type="generalResources">
-                  <ref type="spec" subtype="standard" source="zotero" target="S6AKYT7L">
-                     <term type="standard" source="standard_list" key="HISCO"/>
-                  </ref>
-                  <ref type="webpage" subtype="standard" source="zotero" target="MDBMD762">
-                     <term type="standard" source="standard_list" key="HISCO"/>
-                  </ref>
-                  <ref type="webpage" subtype="standard" target="Y9J5QM7B">
-                     <term type="standard" source="standard_list" key="ISCO"/>
-                  </ref>
-               </linkGrp>
-               <linkGrp type="projectResources" source="History of Work Information System"
-                  corresp="http://historyofwork.iisg.nl/">
-                  <ref type="webpage" target="http://historyofwork.iisg.nl/"/>
-               </linkGrp>
-               <linkGrp type="projectResources" source="HISCAM"
-                  corresp="http://www.hisma.org/HISMA/HISCAM.html">
-                  <ref type="webpage" target="http://www.hisma.org/HISMA/HISCAM.html"/>
-               </linkGrp>
-            </event>
-         </listEvent>
-      </body>
-   </text>
+                  occupations by using the HISCO occupational coding scheme
+     </desc>
+     <desc type="definition" xml:lang="fr"/>
+     <desc type="term" xml:lang="en">
+      <term key="HISCO" source="standard_list" type="standard"/>
+      <term key="ISCO" source="standard_list" type="standard"/>
+      <term key="http://tadirah.dariah.eu/vocab/index.php?tema=34&amp;/contextualizing" source="http://tadirah.dariah.eu/" type="activity"/>
+     </desc>
+     <linkGrp type="generalResources">
+      <ref source="zotero" subtype="standard" target="S6AKYT7L" type="spec">
+       <term key="HISCO" source="standard_list" type="standard"/>
+      </ref>
+      <ref source="zotero" subtype="standard" target="MDBMD762" type="webpage">
+       <term key="HISCO" source="standard_list" type="standard"/>
+      </ref>
+      <ref subtype="standard" target="Y9J5QM7B" type="webpage">
+       <term key="ISCO" source="standard_list" type="standard"/>
+      </ref>
+     </linkGrp>
+     <linkGrp corresp="http://historyofwork.iisg.nl/" source="History of Work Information System" type="projectResources">
+      <ref target="http://historyofwork.iisg.nl/" type="webpage"/>
+     </linkGrp>
+     <linkGrp corresp="http://www.hisma.org/HISMA/HISCAM.html" source="HISCAM" type="projectResources">
+      <ref target="http://www.hisma.org/HISMA/HISCAM.html" type="webpage"/>
+     </linkGrp>
+    </event>
+   </listEvent>
+  </body>
+ </text>
 </TEI>

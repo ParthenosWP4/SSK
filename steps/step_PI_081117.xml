@@ -1,80 +1,95 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="../../TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
-   <teiHeader>
-      <fileDesc>
-         <titleStmt>
-            <title>Step "Pigment identification"</title>
-            <author>
-               <persName>Panayotis Siozos</persName>
-               <affiliation>IESL-FORTH</affiliation>
-            </author>
-            <author>
-               <persName>Demetrios Anglos</persName>
-               <affiliation>IESL-FORTH</affiliation>
-            </author>
-         </titleStmt>
-         <publicationStmt>
-            <authority>Parthenos</authority>
-            <availability>
-               <licence target="http://creativecommons.org/licenses/by/4.0/">
-                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
-                     this document.</p>
-               </licence>
-            </availability>
-         </publicationStmt>
-         <sourceDesc>
-            <p>Created from an Excel sheet by Marie Puren</p>
-         </sourceDesc>
-      </fileDesc>
-      <revisionDesc>
-         <change/>
-      </revisionDesc>
-   </teiHeader>
-   <text>
-      <body>
-         <listEvent>
-            <event type="researchStep">
-               <head xml:lang="en">Pigment identification</head>
-               <desc xml:lang="en" type="definition">The accurate identification of pigments
+<TEI type="researchStep" xml:id="step_PI_081117" xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader>
+  <fileDesc>
+   <titleStmt>
+    <title>
+     Step "Pigment identification"
+    </title>
+    <author>
+     <persName>
+      Panayotis Siozos
+     </persName>
+     <affiliation>
+      IESL-FORTH
+     </affiliation>
+    </author>
+    <author>
+     <persName>
+      Demetrios Anglos
+     </persName>
+     <affiliation>
+      IESL-FORTH
+     </affiliation>
+    </author>
+   </titleStmt>
+   <publicationStmt>
+    <authority>
+     Parthenos
+    </authority>
+    <availability>
+     <licence target="http://creativecommons.org/licenses/by/4.0/">
+      <p>
+       The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
+                     this document.
+      </p>
+     </licence>
+    </availability>
+   </publicationStmt>
+   <sourceDesc>
+    <p>
+     Created from an Excel sheet by Marie Puren
+    </p>
+   </sourceDesc>
+  </fileDesc>
+  <revisionDesc>
+   <change/>
+  </revisionDesc>
+ </teiHeader>
+ <text>
+  <body>
+   <listEvent>
+    <event type="researchStep">
+     <head xml:lang="en">
+      Pigment identification
+     </head>
+     <desc type="definition" xml:lang="en">
+      The accurate identification of pigments
                   requires the comparison of the Raman peaks with those reported in databases of
                   Raman spectra of interest for cultural heritage studies. Several databases are
                   available that cover a wide range of materials, from pigments and minerals to
-                  organic media and plastics.</desc>
-               <desc xml:lang="fr" type="definition"/>
-               <desc xml:lang="en" type="term">
-                  <term type="standard" source="standard_list" key="Raman Spectroscopy"/>
-                  <term type="activity" source="http://tadirah.dariah.eu/"
-                     key="http://tadirah.dariah.eu/vocab/index.php?tema=34&amp;/contextualizing
-                     "
-                  />
-               </desc>
-               <linkGrp type="generalResources">
-                  <ref type="article" subtype="library" source="zotero" target="HBESBCV2">
-                     <term type="library" key="Raman Spectroscopy"/>
-                  </ref>
-                  <ref type="website" subtype="database" source="zotero" target="BBJZZKB3">
-                     <term type="database" key="IBeA"/>
-                  </ref>
-                  <ref type="website" subtype="database" source="zotero" target="C9HGUF6H">
-                     <term type="database" key="RRUFF"/>
-                  </ref>
-                  <ref type="article" subtype="library" source="zotero" target="TXUVH8U3">
-                     <term type="library" key="Raman Spectroscopy"/>
-                  </ref>
-                  <ref type="article" subtype="library" source="zotero" target="43Z8M7H4">
-                     <term type="library" key="Raman Spectroscopy"/>
-                  </ref>
-               </linkGrp>
-               <linkGrp type="projectResources"
-                  source="Modern and Contemporary Art in the laboratory"
-                  corresp="https://modern.kikirpa.be/">
-                  <ref type="webpage" target="https://modern.kikirpa.be/" />
-               </linkGrp>
-            </event>
-         </listEvent>
-      </body>
-   </text>
+                  organic media and plastics.
+     </desc>
+     <desc type="definition" xml:lang="fr"/>
+     <desc type="term" xml:lang="en">
+      <term key="Raman Spectroscopy" source="standard_list" type="standard"/>
+      <term key="http://tadirah.dariah.eu/vocab/index.php?tema=34&amp;/contextualizing                      " source="http://tadirah.dariah.eu/" type="activity"/>
+     </desc>
+     <linkGrp type="generalResources">
+      <ref source="zotero" subtype="library" target="HBESBCV2" type="article">
+       <term key="Raman Spectroscopy" type="library"/>
+      </ref>
+      <ref source="zotero" subtype="database" target="BBJZZKB3" type="website">
+       <term key="IBeA" type="database"/>
+      </ref>
+      <ref source="zotero" subtype="database" target="C9HGUF6H" type="website">
+       <term key="RRUFF" type="database"/>
+      </ref>
+      <ref source="zotero" subtype="library" target="TXUVH8U3" type="article">
+       <term key="Raman Spectroscopy" type="library"/>
+      </ref>
+      <ref source="zotero" subtype="library" target="43Z8M7H4" type="article">
+       <term key="Raman Spectroscopy" type="library"/>
+      </ref>
+     </linkGrp>
+     <linkGrp corresp="https://modern.kikirpa.be/" source="Modern and Contemporary Art in the laboratory" type="projectResources">
+      <ref target="https://modern.kikirpa.be/" type="webpage"/>
+     </linkGrp>
+    </event>
+   </listEvent>
+  </body>
+ </text>
 </TEI>

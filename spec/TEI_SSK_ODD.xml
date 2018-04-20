@@ -1278,6 +1278,7 @@
                                     <valItem ident="activity"/>
                                     <valItem ident="object"/>
                                     <valItem ident="technique"/>
+                                    <valItem ident="policy"/>
                                 </valList>
                             </attDef>
                         </attList>
@@ -1295,6 +1296,9 @@
                                 <textNode/>
                                 <elementRef key="list" minOccurs="0"/>
                                 <elementRef key="ref" minOccurs="0"/>
+                                <elementRef key="abbr" minOccurs="0"/>
+                                <elementRef key="expan" minOccurs="0"/>
+                                <elementRef key="term" minOccurs="0"/>
                             </alternate>
                         </content>
                         <attList>

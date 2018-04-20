@@ -1,66 +1,78 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <!-- You have to type the TEI file, with researchStep or researchScenario -->
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="st_0000000001">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>step_SaRR.xml</title>
-                <author>
-                    <persName>Maurizio Sanesi</persName>
-                    <affiliation>SISMEL</affiliation>
-				  </author>
-	              <author>
-                    <persName>Roberta Giacomi</persName>
-                    <affiliation>SISMEL</affiliation>
-                </author>
-            </titleStmt>
-            <publicationStmt>
-                <authority>Parthenos</authority>
-                <availability>
-                    <licence target="http://creativecommons.org/licenses/by/4.0/">
-                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
-                            to this document.</p>
-                    </licence>
-                </availability>
-            </publicationStmt>
-            <sourceDesc>
-                <p>Created from scratch</p>
-            </sourceDesc>
-        </fileDesc>
-        <revisionDesc>
-            <!-- Use only for major changes -->
-            <change/>
-        </revisionDesc>
-    </teiHeader>
-    <text>
-        <body>
-            <listEvent>
-                <event type="researchStep">
-                    <!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
-                    <head type="stepTitle" xml:lang="en">Select appropriate reference resource</head>
-                    <desc xml:lang="en" type="terms">
-                                   
-                        <term type="activity" source="http://tadirah.dariah.eu/"
-                            key="Gathering" />
-                        <term type="policies" source="WP3Wizard" key="CD"/>
-                    </desc>
-<linkGrp type="generalResources">
-						<ref type="code" source="EAC-CPF"
-                            target="http://eac.staatsbibliothek-berlin.de/">
-                        </ref>
-                        <ref type="code" source="FOAF"
-                            target="http://www.foaf-project.org/">                            
-                        </ref>
-						<ref type="code" source="GND (ex PND)"
-                            target="http://www.dnb.de/EN/Standardisierung/GND/gnd_node.html">                            
-                        </ref>
-						<ref type="code" source="VIAF"
-                            target="https://viaf.org/">                            
-                        </ref>
-					</linkGrp>
-                </event>
-            </listEvent>
-        </body>
-    </text>
+<TEI type="researchStep" xml:id="step_Sarr" xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader>
+  <fileDesc>
+   <titleStmt>
+    <title>
+     step_SaRR.xml
+    </title>
+    <author>
+     <persName>
+      Maurizio Sanesi
+     </persName>
+     <affiliation>
+      SISMEL
+     </affiliation>
+    </author>
+    <author>
+     <persName>
+      Roberta Giacomi
+     </persName>
+     <affiliation>
+      SISMEL
+     </affiliation>
+    </author>
+   </titleStmt>
+   <publicationStmt>
+    <authority>
+     Parthenos
+    </authority>
+    <availability>
+     <licence target="http://creativecommons.org/licenses/by/4.0/">
+      <p>
+       The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.
+      </p>
+     </licence>
+    </availability>
+   </publicationStmt>
+   <sourceDesc>
+    <p>
+     Created from scratch
+    </p>
+   </sourceDesc>
+  </fileDesc>
+  <revisionDesc>
+   <!-- Use only for major changes -->
+   <change/>
+  </revisionDesc>
+ </teiHeader>
+ <text>
+  <body>
+   <listEvent>
+    <event type="researchStep">
+     <!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
+     <head type="stepTitle" xml:lang="en">
+      Select appropriate reference resource
+     </head>
+     <desc type="terms" xml:lang="en">
+      <term key="Gathering" source="http://tadirah.dariah.eu/" type="activity"/>
+      <term key="CD" source="WP3Wizard" type="policies"/>
+     </desc>
+     <linkGrp type="generalResources">
+      <ref source="EAC-CPF" target="http://eac.staatsbibliothek-berlin.de/" type="code">
+      </ref>
+      <ref source="FOAF" target="http://www.foaf-project.org/" type="code">
+      </ref>
+      <ref source="GND (ex PND)" target="http://www.dnb.de/EN/Standardisierung/GND/gnd_node.html" type="code">
+      </ref>
+      <ref source="VIAF" target="https://viaf.org/" type="code">
+      </ref>
+     </linkGrp>
+    </event>
+   </listEvent>
+  </body>
+ </text>
 </TEI>

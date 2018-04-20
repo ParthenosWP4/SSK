@@ -1,44 +1,63 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="../../TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
-   <teiHeader>
-      <fileDesc>
-         <titleStmt>
-            <title>Step "Multispectral imaging setup"</title>
-            <author>
-               <persName>Panayotis Siozos</persName>
-               <affiliation>IESL-FORTH</affiliation>
-            </author>
-            <author>
-               <persName>Demetrios Anglos</persName>
-               <affiliation>IESL-FORTH</affiliation>
-            </author>
-         </titleStmt>
-         <publicationStmt>
-            <authority>Parthenos</authority>
-            <availability>
-               <licence target="http://creativecommons.org/licenses/by/4.0/">
-                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
-                     this document.</p>
-               </licence>
-            </availability>
-         </publicationStmt>
-         <sourceDesc>
-            <p>Created from an Excel sheet by Marie Puren</p>
-         </sourceDesc>
-      </fileDesc>
-      <revisionDesc>
-         <change/>
-      </revisionDesc>
-   </teiHeader>
-   <text>
-      <body>
-         <listEvent>
-            <event type="researchStep">
-               <head xml:lang="en">Multispectral imaging setup</head>
-               <desc xml:lang="en" type="definition">The setup for the acquisition of multispectral
+<TEI type="researchStep" xml:id="step_MIS_201017" xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader>
+  <fileDesc>
+   <titleStmt>
+    <title>
+     Step "Multispectral imaging setup"
+    </title>
+    <author>
+     <persName>
+      Panayotis Siozos
+     </persName>
+     <affiliation>
+      IESL-FORTH
+     </affiliation>
+    </author>
+    <author>
+     <persName>
+      Demetrios Anglos
+     </persName>
+     <affiliation>
+      IESL-FORTH
+     </affiliation>
+    </author>
+   </titleStmt>
+   <publicationStmt>
+    <authority>
+     Parthenos
+    </authority>
+    <availability>
+     <licence target="http://creativecommons.org/licenses/by/4.0/">
+      <p>
+       The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
+                     this document.
+      </p>
+     </licence>
+    </availability>
+   </publicationStmt>
+   <sourceDesc>
+    <p>
+     Created from an Excel sheet by Marie Puren
+    </p>
+   </sourceDesc>
+  </fileDesc>
+  <revisionDesc>
+   <change/>
+  </revisionDesc>
+ </teiHeader>
+ <text>
+  <body>
+   <listEvent>
+    <event type="researchStep">
+     <head xml:lang="en">
+      Multispectral imaging setup
+     </head>
+     <desc type="definition" xml:lang="en">
+      The setup for the acquisition of multispectral
                   images consists of: 1) One or more radiation sources which provide the incident
                   radiation to the object being studied and in the case of luminescence techniques
                   also provide the means to induce the luminescence (the excitation source) in the
@@ -48,27 +67,22 @@
                   this work is a commercially available digital camera with a silicon-based sensor,
                   modified by removal of the IR-blocking filter to provide sensitivity from
                   approximately 350 nm to 1100 nm; 4) A set of standards to enable the
-                  post-processing methods</desc>
-               <desc xml:lang="fr" type="definition"/>
-               <desc xml:lang="en" type="term">
-                  <term type="activity" source="http://tadirah.dariah.eu/"
-                     key="http://tadirah.dariah.eu/vocab/index.php?tema=11&amp;/gathering"/>
-               </desc>
-               <linkGrp type="generalResources">
-                  <ref type="user_manual" subtype="report" source="zotero" target="CIWQJSBR">
-                     <term type="report"
-                        key="Multispectral Imaging in Reflectance
-                        and Photo-induced Luminescence
-                        modes"
-                     />
-                  </ref>
-               </linkGrp>
-               <linkGrp type="projectResources" source="CHARISMA"
-                  corresp="http://www.charismaproject.eu/">
-                  <ref type="webpage" target="http://www.charismaproject.eu"/>
-               </linkGrp>
-            </event>
-         </listEvent>
-      </body>
-   </text>
+                  post-processing methods
+     </desc>
+     <desc type="definition" xml:lang="fr"/>
+     <desc type="term" xml:lang="en">
+      <term key="http://tadirah.dariah.eu/vocab/index.php?tema=11&amp;/gathering" source="http://tadirah.dariah.eu/" type="activity"/>
+     </desc>
+     <linkGrp type="generalResources">
+      <ref source="zotero" subtype="report" target="CIWQJSBR" type="user_manual">
+       <term key="Multispectral Imaging in Reflectance                         and Photo-induced Luminescence                         modes" type="report"/>
+      </ref>
+     </linkGrp>
+     <linkGrp corresp="http://www.charismaproject.eu/" source="CHARISMA" type="projectResources">
+      <ref target="http://www.charismaproject.eu" type="webpage"/>
+     </linkGrp>
+    </event>
+   </listEvent>
+  </body>
+ </text>
 </TEI>

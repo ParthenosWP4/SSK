@@ -1,74 +1,97 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="../Sc%C3%A9nario%20DDI/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Step "Have a reflexion on the quality of the produced data."</title>
-                <author>
-                    <persName>Vincent Besson</persName>
-                    <affiliation>CNRS</affiliation>
-                </author>
-                <author>
-                    <persName>Adeline Joffres</persName>
-                    <affiliation>CNRS</affiliation>
-                </author>
-                <author>
-                    <persName>Hélène Gautier</persName>
-                    <affiliation>CNRS</affiliation>
-                </author>
-            </titleStmt>
-            <publicationStmt>
-                <authority>Parthenos</authority>
-                <availability>
-                    <licence target="http://creativecommons.org/licenses/by/4.0/">
-                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
-                            to this document.</p>
-                    </licence>
-                </availability>
-            </publicationStmt>
-            <sourceDesc>
-                <p>Created from scratch</p>
-            </sourceDesc>
-        </fileDesc>
-        <revisionDesc>
-            <change/>
-        </revisionDesc>
-    </teiHeader>
-    <text>
-        <body>
-            <listEvent>
-                <event type="researchStep">
-                    <head xml:lang="en">Have a reflexion on the quality of the produced data.</head>
-                    <head xml:lang="fr">Mener une réflexion sur la qualité des données
-                        produites.</head>
-                    <desc xml:lang="en" type="definition">Evaluate the quality of the data thanks to
-                        dedicated tools.</desc>
-                    <desc xml:lang="fr" type="definition">Evaluer la qualité des données à l'aide
-                        d'outils dédiés.</desc>
-                    <desc xml:lang="en" type="term">
-                        <term type="activity" source="http://tadirah.dariah.eu/"
-                            key="http://tadirah.dariah.eu/vocab/index.php?_search_expresion=Cleanup"
-                        />
-                    </desc>
-                    <desc xml:lang="en" type="term">
-                        <term type="activity" source="http://tadirah.dariah.eu/"
-                            key="http://tadirah.dariah.eu/vocab/index.php?_search_expresion=Meta%3A+Assessing"
-                        />
-                    </desc>
-                    <linkGrp type="generalResources">
-                        <ref type="webpage" subtype="tool" source="zotero" target="U9RU3G53">
-                            <term type="tool" key="Neuma Quality Dashboard"/>
-                        </ref>
-                    </linkGrp>
-                    <linkGrp type="projectResources" source="GioQoso"
-                        corresp="https://gioqoso.irisa.fr/">
-                        <ref type="webpage" target="https://gioqoso.irisa.fr/"/>
-                    </linkGrp>
-                </event>
-            </listEvent>
-        </body>
-    </text>
+<TEI type="researchStep" xml:id="step_HaRotQotPD_020218" xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader>
+  <fileDesc>
+   <titleStmt>
+    <title>
+     Step "Have a reflexion on the quality of the produced data."
+    </title>
+    <author>
+     <persName>
+      Vincent Besson
+     </persName>
+     <affiliation>
+      CNRS
+     </affiliation>
+    </author>
+    <author>
+     <persName>
+      Adeline Joffres
+     </persName>
+     <affiliation>
+      CNRS
+     </affiliation>
+    </author>
+    <author>
+     <persName>
+      Hélène Gautier
+     </persName>
+     <affiliation>
+      CNRS
+     </affiliation>
+    </author>
+   </titleStmt>
+   <publicationStmt>
+    <authority>
+     Parthenos
+    </authority>
+    <availability>
+     <licence target="http://creativecommons.org/licenses/by/4.0/">
+      <p>
+       The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.
+      </p>
+     </licence>
+    </availability>
+   </publicationStmt>
+   <sourceDesc>
+    <p>
+     Created from scratch
+    </p>
+   </sourceDesc>
+  </fileDesc>
+  <revisionDesc>
+   <change/>
+  </revisionDesc>
+ </teiHeader>
+ <text>
+  <body>
+   <listEvent>
+    <event type="researchStep">
+     <head xml:lang="en">
+      Have a reflexion on the quality of the produced data.
+     </head>
+     <head xml:lang="fr">
+      Mener une réflexion sur la qualité des données
+                        produites.
+     </head>
+     <desc type="definition" xml:lang="en">
+      Evaluate the quality of the data thanks to
+                        dedicated tools.
+     </desc>
+     <desc type="definition" xml:lang="fr">
+      Evaluer la qualité des données à l'aide
+                        d'outils dédiés.
+     </desc>
+     <desc type="term" xml:lang="en">
+      <term key="http://tadirah.dariah.eu/vocab/index.php?_search_expresion=Cleanup" source="http://tadirah.dariah.eu/" type="activity"/>
+     </desc>
+     <desc type="term" xml:lang="en">
+      <term key="http://tadirah.dariah.eu/vocab/index.php?_search_expresion=Meta%3A+Assessing" source="http://tadirah.dariah.eu/" type="activity"/>
+     </desc>
+     <linkGrp type="generalResources">
+      <ref source="zotero" subtype="tool" target="U9RU3G53" type="webpage">
+       <term key="Neuma Quality Dashboard" type="tool"/>
+      </ref>
+     </linkGrp>
+     <linkGrp corresp="https://gioqoso.irisa.fr/" source="GioQoso" type="projectResources">
+      <ref target="https://gioqoso.irisa.fr/" type="webpage"/>
+     </linkGrp>
+    </event>
+   </listEvent>
+  </body>
+ </text>
 </TEI>

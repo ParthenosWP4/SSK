@@ -1,69 +1,92 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="../../TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Step "Select and digitize"</title>
-                <author>
-                    <persName>Hélène Gautier</persName>
-                    <affiliation>Huma-Num/CNRS</affiliation>
-                </author>
-                <author>
-                    <persName>Marie Puren</persName>
-                    <affiliation>INRIA</affiliation>
-                </author>
-            </titleStmt>
-            <publicationStmt>
-                <authority>Parthenos</authority>
-                <availability>
-                    <licence target="http://creativecommons.org/licenses/by/4.0/">
-                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
-                            to this document.</p>
-                    </licence>
-                </availability>
-            </publicationStmt>
-            <sourceDesc>
-                <p>Created from scratch</p>
-            </sourceDesc>
-        </fileDesc>
-        <revisionDesc>
-            <change/>
-        </revisionDesc>
-    </teiHeader>
-    <text>
-        <body>
-            <listEvent>
-                <event type="researchStep">
-                    <head xml:lang="en">Select and digitize</head>
-                    <head xml:lang="fr">Sélection et numérisation</head>
-                    <desc xml:lang="en" type="definition">Prepare paper documents for digitization:
+<TEI type="researchStep" xml:id="step_SaD_171117" xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader>
+  <fileDesc>
+   <titleStmt>
+    <title>
+     Step "Select and digitize"
+    </title>
+    <author>
+     <persName>
+      Hélène Gautier
+     </persName>
+     <affiliation>
+      Huma-Num/CNRS
+     </affiliation>
+    </author>
+    <author>
+     <persName>
+      Marie Puren
+     </persName>
+     <affiliation>
+      INRIA
+     </affiliation>
+    </author>
+   </titleStmt>
+   <publicationStmt>
+    <authority>
+     Parthenos
+    </authority>
+    <availability>
+     <licence target="http://creativecommons.org/licenses/by/4.0/">
+      <p>
+       The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.
+      </p>
+     </licence>
+    </availability>
+   </publicationStmt>
+   <sourceDesc>
+    <p>
+     Created from scratch
+    </p>
+   </sourceDesc>
+  </fileDesc>
+  <revisionDesc>
+   <change/>
+  </revisionDesc>
+ </teiHeader>
+ <text>
+  <body>
+   <listEvent>
+    <event type="researchStep">
+     <head xml:lang="en">
+      Select and digitize
+     </head>
+     <head xml:lang="fr">
+      Sélection et numérisation
+     </head>
+     <desc type="definition" xml:lang="en">
+      Prepare paper documents for digitization:
                         removal of metal paper clips and staples, pagination, repairs, possibly
                         light dusting and erasing in order to extend the contrasts when digitizing.
-                        Digitize. Check the quality of digitized documents.</desc>
-                    <desc xml:lang="fr" type="definition">Préparer les documents papier pour la
+                        Digitize. Check the quality of digitized documents.
+     </desc>
+     <desc type="definition" xml:lang="fr">
+      Préparer les documents papier pour la
                         numérisation: retrait des pièces métalliques (agrafes, trombones, etc.),
                         pagination, petites réparations, si besoin léger dépoussiérage/gommage pour
                         augmenter les contrastes à la numérisation. Numériser. Vérifier la qualité
-                        des documents numérisés.</desc>
-                    <desc xml:lang="en" type="term">
-                        <term type="activity" source="http://tadirah.dariah.eu/"
-                            key="http://tadirah.dariah.eu/vocab/index.php?tema=12&amp;/imaging"/>
-                    </desc>
-                    <linkGrp type="generalResources">
-                        <ref type="tutorial" source="zotero" target="IHKLZ4WH"></ref>
-                        <ref type="software" source="zotero" target="XL3PBJSK">
-                            <term type="software" key="JPYLYZER"></term>
-                        </ref>
-                        <ref type="service" source="zotero" target="RTEB2B2G"></ref>
-                        <ref type="standard" source="zotero" target="YDA8MSA2">
-                            <term type="standard" key="ISO 2859"></term>
-                        </ref>
-                    </linkGrp>
-                </event>
-            </listEvent>
-        </body>
-    </text>
+                        des documents numérisés.
+     </desc>
+     <desc type="term" xml:lang="en">
+      <term key="http://tadirah.dariah.eu/vocab/index.php?tema=12&amp;/imaging" source="http://tadirah.dariah.eu/" type="activity"/>
+     </desc>
+     <linkGrp type="generalResources">
+      <ref source="zotero" target="IHKLZ4WH" type="tutorial"/>
+      <ref source="zotero" target="XL3PBJSK" type="software">
+       <term key="JPYLYZER" type="software"/>
+      </ref>
+      <ref source="zotero" target="RTEB2B2G" type="service"/>
+      <ref source="zotero" target="YDA8MSA2" type="standard">
+       <term key="ISO 2859" type="standard"/>
+      </ref>
+     </linkGrp>
+    </event>
+   </listEvent>
+  </body>
+ </text>
 </TEI>

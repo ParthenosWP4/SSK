@@ -1,68 +1,88 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="st_dtabf_004">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>step_DoRftRC.xml</title>
-                <author>
-                    <!--<persName><surname>Haaf</surname><forename>Susanne</forename></persName>-->
-                    <persName>Haaf Susanne</persName>
-                    <affiliation>Berlin-Brandenburg Academy of Sciences and Humanities</affiliation>
-                </author>
-            </titleStmt>
-            <publicationStmt>
-                <authority>Parthenos</authority>
-                <availability>
-                    <licence target="http://creativecommons.org/licenses/by/4.0/">
-                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
-                            to this document.</p>
-                    </licence>
-                </availability>
-            </publicationStmt>
-            <sourceDesc>
-                <p>Created from scratch</p>
-            </sourceDesc>
-        </fileDesc>
-        <revisionDesc>
-            <change/>
-        </revisionDesc>
-    </teiHeader>
-    <text>
-        <body>
-            <listEvent>
-                <event type="researchStep">
-                    
-                    <head type="stepTitle" xml:lang="en">Digitization of resources for the research corpus</head>
-                    
-                    <desc type="definition" xml:lang="en">If written works should be included in the corpus which are not yet available as full texts, text recognition has to be considered. This step usually includes not only text recognition but also the enrichment of the text with logical and layout TEI structures. For text recognition, depending on the quality and condition of the sources, it can be feasible to perform Optical Character Recognition (OCR) and manually correct and enrich the output, or to carry out the whole text transcription and annotation task manually. In any case, text recognition should be performed with the goal of high recognition reliability, quality, and proximity to the text source in mind. There are several tools and resources to support this text processing step based on the DTABf: 
-                    	<list>
-                    	  <item>DTABf transcription and annotation guidelines</item>
-                    	  <item>a DTABf conformant template document containing the schema and the most important elements</item>
-                    		<item>DTAoX: a framework for DTABf conformant text annotation in oXygen XML Author</item>
-                    	</list> 
-                    </desc>
-                    <desc xml:lang="en" type="terms">
-                      <term type="activity" source="http://tadirah.dariah.eu/" key="DataRecognition"/>
-                      <term type="activity" source="http://tadirah.dariah.eu/" key="Transcription"/>
-                      <term type="activity" source="http://tadirah.dariah.eu/" key="Annotating"/>
-                      <term type="activity" source="http://tadirah..eu/" key="Cleanup"/>
-                      <term type="technique" source="http://tadirah.dariah.eu/" key="Encoding"/>
-                      <term type="object" source="http://tadirah.dariah.eu/" key="Data"/>
-                      <term type="object" source="http://tadirah.dariah.eu/" key="Text"/>
-                    	
-                      <term type="standard" source="standard_list" key="XML"/>
-                      <term type="standard" source="standard_list" key="TEI"/>
-                    </desc>
-                    <linkGrp type="generalResources">
-                        <!-- Ressources: DTAoX, DTABf-TR, DTABf-Vorlagedatei -->
-                    	<ref type="specification" source="github" target="https://github.com/deutschestextarchiv/dtabf/tree/master/schema">
-                    	  Formal specification of the DTABf: ODDs, schemas, Schematron Constraints
-                    	</ref>
-                        <ref type="specification" source="zotero" target="T7672NJ8">DTABf transcription and annotation guidelines</ref>
-                    </linkGrp>
-                </event>
-            </listEvent>
-        </body>
-    </text>
+<TEI type="researchStep" xml:id="step_DoRftRC" xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader>
+  <fileDesc>
+   <titleStmt>
+    <title>
+     step_DoRftRC.xml
+    </title>
+    <author>
+     <!--<persName><surname>Haaf</surname><forename>Susanne</forename></persName>-->
+     <persName>
+      Haaf Susanne
+     </persName>
+     <affiliation>
+      Berlin-Brandenburg Academy of Sciences and Humanities
+     </affiliation>
+    </author>
+   </titleStmt>
+   <publicationStmt>
+    <authority>
+     Parthenos
+    </authority>
+    <availability>
+     <licence target="http://creativecommons.org/licenses/by/4.0/">
+      <p>
+       The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.
+      </p>
+     </licence>
+    </availability>
+   </publicationStmt>
+   <sourceDesc>
+    <p>
+     Created from scratch
+    </p>
+   </sourceDesc>
+  </fileDesc>
+  <revisionDesc>
+   <change/>
+  </revisionDesc>
+ </teiHeader>
+ <text>
+  <body>
+   <listEvent>
+    <event type="researchStep">
+     <head type="stepTitle" xml:lang="en">
+      Digitization of resources for the research corpus
+     </head>
+     <desc type="definition" xml:lang="en">
+      If written works should be included in the corpus which are not yet available as full texts, text recognition has to be considered. This step usually includes not only text recognition but also the enrichment of the text with logical and layout TEI structures. For text recognition, depending on the quality and condition of the sources, it can be feasible to perform Optical Character Recognition (OCR) and manually correct and enrich the output, or to carry out the whole text transcription and annotation task manually. In any case, text recognition should be performed with the goal of high recognition reliability, quality, and proximity to the text source in mind. There are several tools and resources to support this text processing step based on the DTABf:
+      <list>
+       <item>
+        DTABf transcription and annotation guidelines
+       </item>
+       <item>
+        a DTABf conformant template document containing the schema and the most important elements
+       </item>
+       <item>
+        DTAoX: a framework for DTABf conformant text annotation in oXygen XML Author
+       </item>
+      </list>
+     </desc>
+     <desc type="terms" xml:lang="en">
+      <term key="DataRecognition" source="http://tadirah.dariah.eu/" type="activity"/>
+      <term key="Transcription" source="http://tadirah.dariah.eu/" type="activity"/>
+      <term key="Annotating" source="http://tadirah.dariah.eu/" type="activity"/>
+      <term key="Cleanup" source="http://tadirah..eu/" type="activity"/>
+      <term key="Encoding" source="http://tadirah.dariah.eu/" type="technique"/>
+      <term key="Data" source="http://tadirah.dariah.eu/" type="object"/>
+      <term key="Text" source="http://tadirah.dariah.eu/" type="object"/>
+      <term key="XML" source="standard_list" type="standard"/>
+      <term key="TEI" source="standard_list" type="standard"/>
+     </desc>
+     <linkGrp type="generalResources">
+      <!-- Ressources: DTAoX, DTABf-TR, DTABf-Vorlagedatei -->
+      <ref source="github" target="https://github.com/deutschestextarchiv/dtabf/tree/master/schema" type="specification">
+       Formal specification of the DTABf: ODDs, schemas, Schematron Constraints
+      </ref>
+      <ref source="zotero" target="T7672NJ8" type="specification">
+       DTABf transcription and annotation guidelines
+      </ref>
+     </linkGrp>
+    </event>
+   </listEvent>
+  </body>
+ </text>
 </TEI>

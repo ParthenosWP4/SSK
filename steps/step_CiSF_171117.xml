@@ -1,77 +1,98 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="../../TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Step "Convert into sustainable formats"</title>
-                <author>
-                    <persName>Hélène Gautier</persName>
-                    <affiliation>Huma-Num/CNRS</affiliation>
-                </author>
-                <author>
-                    <persName>Marie Puren</persName>
-                    <affiliation>INRIA</affiliation>
-                </author>
-            </titleStmt>
-            <publicationStmt>
-                <authority>Parthenos</authority>
-                <availability>
-                    <licence target="http://creativecommons.org/licenses/by/4.0/">
-                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
-                            to this document.</p>
-                    </licence>
-                </availability>
-            </publicationStmt>
-            <sourceDesc>
-                <p>Created from scratch</p>
-            </sourceDesc>
-        </fileDesc>
-        <revisionDesc>
-            <change/>
-        </revisionDesc>
-    </teiHeader>
-    <text>
-        <body>
-            <listEvent>
-                <event type="researchStep">
-                    <head xml:lang="en">Convert into sustainable formats</head>
-                    <head xml:lang="fr">Conversion dans des formats pérennes</head>
-                    <desc xml:lang="en" type="definition">Choose a sustainable (open, interoperable
+<TEI type="researchStep" xml:id="step_CiSF_171117" xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader>
+  <fileDesc>
+   <titleStmt>
+    <title>
+     Step "Convert into sustainable formats"
+    </title>
+    <author>
+     <persName>
+      Hélène Gautier
+     </persName>
+     <affiliation>
+      Huma-Num/CNRS
+     </affiliation>
+    </author>
+    <author>
+     <persName>
+      Marie Puren
+     </persName>
+     <affiliation>
+      INRIA
+     </affiliation>
+    </author>
+   </titleStmt>
+   <publicationStmt>
+    <authority>
+     Parthenos
+    </authority>
+    <availability>
+     <licence target="http://creativecommons.org/licenses/by/4.0/">
+      <p>
+       The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.
+      </p>
+     </licence>
+    </availability>
+   </publicationStmt>
+   <sourceDesc>
+    <p>
+     Created from scratch
+    </p>
+   </sourceDesc>
+  </fileDesc>
+  <revisionDesc>
+   <change/>
+  </revisionDesc>
+ </teiHeader>
+ <text>
+  <body>
+   <listEvent>
+    <event type="researchStep">
+     <head xml:lang="en">
+      Convert into sustainable formats
+     </head>
+     <head xml:lang="fr">
+      Conversion dans des formats pérennes
+     </head>
+     <desc type="definition" xml:lang="en">
+      Choose a sustainable (open, interoperable
                         and maintained) format according to the nature of the data. Consult a
-                        up-to-date list of maintained formats.</desc>
-                    <desc xml:lang="fr" type="definition"/>
-                    <desc xml:lang="en" type="term">
-                        <term type="activity" source="http://tadirah.dariah.eu/"
-                            key="http://tadirah.dariah.eu/vocab/index.php?tema=8&amp;/conversion"/>
-                    </desc>
-                    <linkGrp type="generalResources">
-                        <ref type="service" source="zotero" target="5UIZH29M">
-                            <term type="standard" source="standard_list" key="ODT"/>
-                        </ref>
-                        <ref type="service">
-                            <term type="standard" source="standard_list" key="CSV"/>
-                        </ref>
-                        <ref type="service" source="zotero" target="5UIZH29M">
-                            <term type="standard" source="standard_list" key="PDF"/>
-                        </ref>
-                        <ref type="service" source="zotero" target="5UIZH29M">
-                            <term type="standard" source="standard_list" key="TXT"/>
-                        </ref>
-                        <ref type="service" source="zotero" target="5UIZH29M">
-                            <term type="standard" source="standard_list" key="XML"/>
-                        </ref>
-                        <ref type="service" source="zotero" target="5UIZH29M">
-                            <term type="standard" source="standard_list" key="JPEG"/>
-                        </ref>
-                        <ref type="service" source="zotero" target="5UIZH29M">
-                            <term type="standard" source="standard_list" key="MPEG-4"/>
-                        </ref>
-                    </linkGrp>
-                </event>
-            </listEvent>
-        </body>
-    </text>
+                        up-to-date list of maintained formats.
+     </desc>
+     <desc type="definition" xml:lang="fr"/>
+     <desc type="term" xml:lang="en">
+      <term key="http://tadirah.dariah.eu/vocab/index.php?tema=8&amp;/conversion" source="http://tadirah.dariah.eu/" type="activity"/>
+     </desc>
+     <linkGrp type="generalResources">
+      <ref source="zotero" target="5UIZH29M" type="service">
+       <term key="ODT" source="standard_list" type="standard"/>
+      </ref>
+      <ref type="service">
+       <term key="CSV" source="standard_list" type="standard"/>
+      </ref>
+      <ref source="zotero" target="5UIZH29M" type="service">
+       <term key="PDF" source="standard_list" type="standard"/>
+      </ref>
+      <ref source="zotero" target="5UIZH29M" type="service">
+       <term key="TXT" source="standard_list" type="standard"/>
+      </ref>
+      <ref source="zotero" target="5UIZH29M" type="service">
+       <term key="XML" source="standard_list" type="standard"/>
+      </ref>
+      <ref source="zotero" target="5UIZH29M" type="service">
+       <term key="JPEG" source="standard_list" type="standard"/>
+      </ref>
+      <ref source="zotero" target="5UIZH29M" type="service">
+       <term key="MPEG-4" source="standard_list" type="standard"/>
+      </ref>
+     </linkGrp>
+    </event>
+   </listEvent>
+  </body>
+ </text>
 </TEI>
