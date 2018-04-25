@@ -1273,12 +1273,13 @@
                                 <datatype>
                                     <dataRef key="teidata.enumerated"/>
                                 </datatype>
-                                <valList type="closed" mode="replace">
+                                <valList type="semi" mode="replace">
                                     <valItem ident="standard"/>
                                     <valItem ident="activity"/>
                                     <valItem ident="object"/>
                                     <valItem ident="technique"/>
                                     <valItem ident="policy"/>
+                                    <valItem ident="discipline"/>
                                 </valList>
                             </attDef>
                         </attList>
