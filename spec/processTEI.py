@@ -8,16 +8,21 @@ python processTEI.py path/to/directory/1 path/to/directory/2 ...
 '''
 
 from bs4 import BeautifulSoup
-from os import listdir
+import os
 import sys
 
+
+def file_is_empty(path):
+    return os.stat(path).st_size==0
+
 def listXMLfiles(repertoire):
-    #List all XML files in a given directory
-	fichiersTexte = [] #liste fichiers
-	for nomFichier in listdir(repertoire):
-		if nomFichier.endswith(".xml"):
-			fichiersTexte.append(repertoire + "/" + nomFichier)
-	return fichiersTexte
+    fichierstexte = [] #liste fichiers
+    for nomFichier in os.listdir(repertoire):
+        if nomFichier.endswith(".xml"):
+            pathFile = repertoire + "/" + nomFichier
+            if file_is_empty(pathFile) == False:
+                fichierstexte.append(pathFile)
+    return fichierstexte
 
 
 def load(file):
@@ -42,21 +47,33 @@ def checkXmlId(dirList):
                 if soup.TEI['xml:id'] != getID:
                     soup.TEI['xml:id'] = getID
                     with open(file, 'w') as output:
-                        output.write(soup.prettify())
+                        output.write(soup)
                     print("CHANGE " + file + " = " + soup.TEI['xml:id'])
                     countchanges+=1
 
             else:
                 soup.TEI['xml:id'] = getID
                 with open(file, 'w') as output:
-                    output.write(soup.prettify())
+                    output.write(soup)
                 print("ADD " + file + " = " + soup.TEI['xml:id'])
                 countadds+=1
     return countadds, countchanges
 
+def normalizeSPace(dirList):
+    for folder in dirList:
+        files = (listXMLfiles(folder))
+        for file in files:
+            with open(file) as file:
+                soup = BeautifulSoup(file, "xml")
+                print(str(soup).replace("> ", ">").replace(" </", "</"))
+    return
 
 if __name__ == '__main__':
-    dirList = sys.argv[1:]
-    adds,changes=checkXmlId(dirList)
-    print("Nombre d'xml:id ajoutés : "+str(adds))
-    print("Nombre d'xml:id modifiés : "+str(changes))
+    funcChoice = sys.argv[1]
+    dirList = sys.argv[2:]
+    if funcChoice == "checkId":
+        adds,changes=checkXmlId(dirList)
+        print("Nombre d'xml:id ajoutés : "+str(adds))
+        print("Nombre d'xml:id modifiés : "+str(changes))
+    elif funcChoice == "normalizeSpace":
+        normalizeSPace(dirList)
