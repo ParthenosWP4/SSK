@@ -68,12 +68,35 @@ def normalizeSPace(dirList):
                 print(str(soup).replace("> ", ">").replace(" </", "</"))
     return
 
+
+def getContributors(dirList):
+    for folder in dirList:
+        files = (listXMLfiles(folder))
+        authors = []
+        for file in files:
+            with open(file) as file:
+                soup = BeautifulSoup(file, "xml")
+                scontribs = soup.find_all("author")
+                for contrib in scontribs:
+                    line = str(contrib.persName.text).strip()+" ("+str(contrib.affiliation.text).strip()+")\n"
+                    authors.append(line)
+        with open("../scenariosContributors.txt", "w") as contributors:
+            authors = list(set(authors))
+            authors.insert(0, '''SSK Scenarios contributors\n*************************\n\n''')
+            contributors.writelines(authors)
+    return
+
 if __name__ == '__main__':
     funcChoice = sys.argv[1]
-    dirList = sys.argv[2:]
+
+    # update dirList when needed, or uncomment the line below (and comment the following one) to pass the paths are arguments
+    #dirList = sys.argv[2:]
+    dirList = ["../scenarios", "../steps"]
     if funcChoice == "checkId":
         adds,changes=checkXmlId(dirList)
         print("Nombre d'xml:id ajoutés : "+str(adds))
         print("Nombre d'xml:id modifiés : "+str(changes))
     elif funcChoice == "normalizeSpace":
         normalizeSPace(dirList)
+    elif funcChoice == "getContributors":
+        getContributors(dirList)
