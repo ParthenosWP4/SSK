@@ -1,40 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--<?xml-model href="../spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
--->
-<?xml-model href="../spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI type="researchScenario" xml:id="SSK_sc_schemaCustomization" xmlns="http://www.tei-c.org/ns/1.0">
  <teiHeader>
   <fileDesc>
    <titleStmt>
-    <title>
-     Project-centered EAD customization scenario
-    </title>
+    <title> Project-centered EAD customization scenario </title>
     <author>
-     <persName>
-      Charles Riondet
-     </persName>
-     <affiliation>
-      Inria
-     </affiliation>
+     <persName> Charles Riondet </persName>
+     <affiliation> Inria </affiliation>
     </author>
    </titleStmt>
    <publicationStmt>
-    <authority>
-     Parthenos
-    </authority>
+    <authority> Parthenos </authority>
     <availability>
      <licence target="http://creativecommons.org/licenses/by/4.0/">
-      <p>
-       The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
-                     this document.
-      </p>
+      <p> The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+       document. </p>
      </licence>
     </availability>
    </publicationStmt>
    <sourceDesc>
-    <p>
-     Created from scratch
-    </p>
+    <p> Created from scratch </p>
    </sourceDesc>
   </fileDesc>
   <revisionDesc>
@@ -44,25 +30,17 @@
  <text>
   <body>
    <div type="scenario">
-    <head type="scenarioTitle" xml:lang="en">
-     Project-centered EAD customization
-    </head>
-    <desc type="definition" xml:lang="en">
-     TEI ODD can be used to document data models
-               external to the TEI environment. Several projects working with archival standards (in
-               particular EAD) use it as well. PARTHENOS created and maintain an instance of the EAD
-               specification in ODD, that can be used to create project oriented customizations.
-    </desc>
+    <head type="scenarioTitle" xml:lang="en">Project-centered EAD customization</head>
+    <desc type="definition" xml:lang="en">TEI ODD can be used to document data models external to
+     the TEI environment. Several projects working with archival standards (in particular EAD) use
+     it as well. PARTHENOS created and maintain an instance of the EAD specification in ODD, that
+     can be used to create project oriented customizations.</desc>
     <desc type="terms" xml:lang="en">
-     <term source="aureHAL" type="discipline">
-      Library and information sciences
-     </term>
-     <term source="aureHAL" type="discipline">
-      Cultural heritage and museology
-     </term>
-     <term key="Catalogs" source="nemo" type="objects"/>
-     <term key="Encoding" source="tadirah" type="techniques"/>
-     <term key="Mapping" source="tadirah" type="techniques"/>
+     <term source="aureHAL" type="discipline">Library and information sciences</term>
+     <term source="aureHAL" type="discipline">Cultural heritage and museology</term>
+     <term key="Catalogs" source="nemo" type="object"/>
+     <term key="Encoding" source="tadirah" type="technique"/>
+     <term key="Mapping" source="tadirah" type="technique"/>
     </desc>
     <figure type="image">
      <head/>

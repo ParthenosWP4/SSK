@@ -1,38 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-model href="../spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI type="researchStep" xml:id="step_Sapditnf_300517" xmlns="http://www.tei-c.org/ns/1.0">
  <teiHeader>
   <fileDesc>
    <titleStmt>
-    <title>
-     Step "Share and publish data in this new format"
-    </title>
+    <title> Step "Share and publish data in this new format" </title>
     <author>
-     <persName>
-      Charles Riondet
-     </persName>
-     <affiliation>
-      Inria
-     </affiliation>
+     <persName> Charles Riondet </persName>
+     <affiliation> Inria </affiliation>
     </author>
    </titleStmt>
    <publicationStmt>
-    <authority>
-     Parthenos
-    </authority>
+    <authority> Parthenos </authority>
     <availability>
      <licence target="http://creativecommons.org/licenses/by/4.0/">
-      <p>
-       The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence
-                            applies to this document.
-      </p>
+      <p> The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+       document. </p>
      </licence>
     </availability>
    </publicationStmt>
    <sourceDesc>
-    <p>
-     Created from scratch
-    </p>
+    <p> Created from scratch </p>
    </sourceDesc>
   </fileDesc>
   <revisionDesc>
@@ -43,15 +31,13 @@
   <body>
    <listEvent>
     <event type="researchStep">
-     <head xml:lang="en">
-      Share and publish data in this new format
-     </head>
-     <desc type="definition" xml:lang="en">
-      ...
-     </desc>
+     <head xml:lang="en">Share and publish data in this new format</head>
+     <desc type="definition" xml:lang="en"></desc>
      <desc type="terms" xml:lang="en">
-      <term key="http://tadirah.dariah.eu/vocab/index.php?tema=47&amp;/publishing" source="http://tadirah.dariah.eu/" type="activity"/>
-      <term key="http://tadirah.dariah.eu/vocab/index.php?tema=48&amp;/sharing" source="http://tadirah.dariah.eu/" type="activity"/>
+      <term key="Publishing"
+       source="tadirah" type="activity"/>
+      <term key="Sharing"
+       source="tadirah" type="activity"/>
      </desc>
     </event>
    </listEvent>

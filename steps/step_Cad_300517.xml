@@ -1,38 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-model href="../spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI type="researchStep" xml:id="step_Cad_300517" xmlns="http://www.tei-c.org/ns/1.0">
  <teiHeader>
   <fileDesc>
    <titleStmt>
-    <title>
-     Step "Create associated documentation"
-    </title>
+    <title> Step "Create associated documentation" </title>
     <author>
-     <persName>
-      Charles Riondet
-     </persName>
-     <affiliation>
-      Inria
-     </affiliation>
+     <persName> Charles Riondet </persName>
+     <affiliation> Inria </affiliation>
     </author>
    </titleStmt>
    <publicationStmt>
-    <authority>
-     Parthenos
-    </authority>
+    <authority> Parthenos </authority>
     <availability>
      <licence target="http://creativecommons.org/licenses/by/4.0/">
-      <p>
-       The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
-                            to this document.
-      </p>
+      <p> The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+       document. </p>
      </licence>
     </availability>
    </publicationStmt>
    <sourceDesc>
-    <p>
-     Created from scratch
-    </p>
+    <p> Created from scratch </p>
    </sourceDesc>
   </fileDesc>
   <revisionDesc>
@@ -43,36 +31,32 @@
   <body>
    <listEvent>
     <event type="researchStep">
-     <head xml:lang="en">
-      Create associated documentation
-     </head>
-     <head xml:lang="fr">
-      Création de la documentation associée
-     </head>
-     <desc type="definition" xml:lang="en">
-      To make you customization easy to read and understand by
-                        others, it is important to document all the changes made and present them
-                        clearly. ODD allows you to generate such documentation in various formats
-                        (HTML, PDF, Docx, etc.)
-     </desc>
-     <desc type="definition" xml:lang="fr">
-      Pour rendre votre personnalisation facile à lire et à comprendre par
-                        d'autres, il est important de documenter tous les changements apportés et de les présenter
-                        clairement. ODD vous permet de générer une telle documentation dans différents formats (HTML, PDF, Docx, etc.)
-     </desc>
+     <head xml:lang="en"> Create associated documentation </head>
+     <head xml:lang="fr"> Création de la documentation associée </head>
+     <desc type="definition" xml:lang="en"> To make you customization easy to read and understand by
+      others, it is important to document all the changes made and present them clearly. ODD allows
+      you to generate such documentation in various formats (HTML, PDF, Docx, etc.) </desc>
+     <desc type="definition" xml:lang="fr"> Pour rendre votre personnalisation facile à lire et à
+      comprendre par d'autres, il est important de documenter tous les changements apportés et de
+      les présenter clairement. ODD vous permet de générer une telle documentation dans différents
+      formats (HTML, PDF, Docx, etc.) </desc>
      <desc type="terms" xml:lang="en">
       <term key="XML" source="standard_list" type="standard"/>
       <term key="TEI" source="standard_list" type="standard"/>
       <term key="EAD" source="standard_list" type="standard"/>
-      <term key="http://tadirah.dariah.eu/vocab/index.php?tema=22&amp;/annotating" source="http://tadirah.dariah.eu/" type="activity"/>
+      <term key="Annotating" source="tadirah" type="activity"/>
      </desc>
      <linkGrp type="generalResources">
       <ref source="zotero" subtype="standard" target="QVUGK2B2" type="spec"/>
       <ref source="zotero" subtype="standard" target="BEVAWMPX" type="spec"/>
      </linkGrp>
      <linkGrp corresp="http://ehri-project.eu" source="EHRI" type="projectResources">
-      <ref source="github" target="https://github.com/EHRI/data-validations/blob/master/ODD-RelaxNG/EAD/EHRI_EAD_doc.html" type="code"/>
-      <ref source="ssk" subtype="copyBibl" target="step_Eprimf_3000517.xml#b1" type="report"/>
+      <ref source="zotero" target="XDZWRCUG" type="documentation"/>
+      <ref source="hal" target="https://hal.inria.fr/hal-01503235" type="report">
+       <term key="Schematron" source="standard_list" type="standard"/>
+       <term key="EAD" source="standard_list" type="standard"/>
+       <term key="TEI" source="standard_list" type="standard"/>
+      </ref>
      </linkGrp>
     </event>
    </listEvent>
