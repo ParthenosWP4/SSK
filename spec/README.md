@@ -1,3 +1,21 @@
+# Specification of the SSK data model
+
+The SSK underlying format is TEI.
+The scenarios are described using the TEI format (Text Encoding Initiative). All the information displayed within the SSK proceed from TEI files.
+
+A scenario is a list of events (`<tei:listEvent>`), each step in a scenario is an event (`<tei:event>`).
+
+## The `processTEI.py` script
+
+This script is used to perform some manipulations on and with the TEI files, by using arguments
+
+It is made for Python3.
+
+The possible manipulations are:
+* check `xml:id`: process all the files and add or change the `<TEI>` root element `@xml:id` with by the name of the file.
+* Get contributors: update the [scenariosContributors.txt](https://github.com/ParthenosWP4/SSK/blob/master/scenariosContributors.txt) file, by fetching all the `<author>` elements found in TEI files
+* Normalize Space: delete additional white spaces within the TEI tags (not 100% efficient)
+
 # `<term>` and `<ref>` typing
 
 ## term/@type

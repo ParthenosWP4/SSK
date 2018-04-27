@@ -3,8 +3,6 @@
 #######
 '''
 This script is made for Python3
-To run it, you need to add a path to the directories you want to process as a paramter:
-python processTEI.py path/to/directory/1 path/to/directory/2 ...
 '''
 
 from bs4 import BeautifulSoup
