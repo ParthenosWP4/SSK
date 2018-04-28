@@ -108,7 +108,6 @@
     <desc type="definition" xml:lang="en">
      Scenario consisting of a step-by-step guide to make metadata in a specific application profile from data structured in different manners
     </desc>
-    <!--<desc type=""></desc>-->
     <desc type="terms" xml:lang="en">
      <term key="Metadata" source="TaDiRAH" type="object"/>
      <term key="Standards" source="TaDiRAH" type="object"/>
