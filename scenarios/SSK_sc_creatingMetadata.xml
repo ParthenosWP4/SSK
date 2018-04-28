@@ -130,7 +130,7 @@
      <event ref="step_1_creating_metadata_scenario" type="researchStep" xml:id="s1"/>
      <event ref="step_2_defining_responsabilities_and_policies" type="researchStep" xml:id="s2"/>
      <event ref="step_3_adopting_standard" type="researchStep" xml:id="s3"/>
-     <event ref="step_4_metadata°enrichment" type="researchStep" xml:id="s4"/>
+     <event ref="step_4_metadata_enrichment" type="researchStep" xml:id="s4"/>
      <event ref="step_5_mapping_data" type="researchStep" xml:id="s5"/>
      <event ref="step_6_creating_or_converting_metadata_in_a_standard_format" type="researchStep" xml:id="s6"/>
      <event ref="step_7_quality_checking" type="researchStep" xml:id="s7"/>
