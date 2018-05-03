@@ -18,7 +18,7 @@ export class StepCardComponent implements OnInit {
   public scenarioTitle: any
   public scenario: any
 
-  constructor(private elastichServices: ElastichsearchServicesService, private sskServices: SskServicesService,  private router: Router,) { }
+  constructor(private elastichServices: ElastichsearchServicesService, private sskServices: SskServicesService,  private router: Router) { }
 
   ngOnInit() {
 

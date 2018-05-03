@@ -40,8 +40,7 @@ export class SearchTabComponent implements OnInit {
 
   change(e, tag: string) {
     let  fuse ;
-    //this.results[tag] =  fuse.search(tag);
-    if ($("input[name='"+tag+"']").is(':checked')  &&  _.findIndex(this.ssKServices.getFilters(), function(o) { return o === tag; } ) === -1 ) {
+    if ($("input[name='" + tag + "']").is(':checked')  &&  _.findIndex(this.ssKServices.getFilters(), function(o) { return o === tag; } ) === -1 ) {
       this.ssKServices.addToFilters(tag) ;
 
       if ( this.scenarioComponent.tabScenarios) {

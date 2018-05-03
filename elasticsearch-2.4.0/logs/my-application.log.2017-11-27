@@ -1,0 +1,19 @@
+[2017-11-27 11:00:10,764][INFO ][node                     ] [Quentin Beck] version[2.4.0], pid[2751], build[ce9f0c7/2016-08-29T09:14:17Z]
+[2017-11-27 11:00:10,766][INFO ][node                     ] [Quentin Beck] initializing ...
+[2017-11-27 11:00:11,587][INFO ][plugins                  ] [Quentin Beck] modules [reindex, lang-expression, lang-groovy], plugins [], sites []
+[2017-11-27 11:00:11,614][INFO ][env                      ] [Quentin Beck] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [99.3gb], net total_space [232.5gb], spins? [unknown], types [hfs]
+[2017-11-27 11:00:11,614][INFO ][env                      ] [Quentin Beck] heap size [989.8mb], compressed ordinary object pointers [true]
+[2017-11-27 11:00:11,615][WARN ][env                      ] [Quentin Beck] max file descriptors [10240] for elasticsearch process likely too low, consider increasing to at least [65536]
+[2017-11-27 11:00:13,191][INFO ][node                     ] [Quentin Beck] initialized
+[2017-11-27 11:00:13,191][INFO ][node                     ] [Quentin Beck] starting ...
+[2017-11-27 11:00:13,255][INFO ][transport                ] [Quentin Beck] publish_address {127.0.0.1:9300}, bound_addresses {[fe80::1]:9300}, {[::1]:9300}, {127.0.0.1:9300}
+[2017-11-27 11:00:13,259][INFO ][discovery                ] [Quentin Beck] my-application/FKzUU9jcQw6hqZOMnwKqDg
+[2017-11-27 11:00:16,310][INFO ][cluster.service          ] [Quentin Beck] new_master {Quentin Beck}{FKzUU9jcQw6hqZOMnwKqDg}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2017-11-27 11:00:16,321][INFO ][http                     ] [Quentin Beck] publish_address {127.0.0.1:9200}, bound_addresses {[fe80::1]:9200}, {[::1]:9200}, {127.0.0.1:9200}
+[2017-11-27 11:00:16,321][INFO ][node                     ] [Quentin Beck] started
+[2017-11-27 11:00:16,481][INFO ][gateway                  ] [Quentin Beck] recovered [3] indices into cluster_state
+[2017-11-27 11:00:16,984][INFO ][cluster.routing.allocation] [Quentin Beck] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[scenarios][2]] ...]).
+[2017-11-27 18:38:19,703][INFO ][node                     ] [Quentin Beck] stopping ...
+[2017-11-27 18:38:19,819][INFO ][node                     ] [Quentin Beck] stopped
+[2017-11-27 18:38:19,819][INFO ][node                     ] [Quentin Beck] closing ...
+[2017-11-27 18:38:19,824][INFO ][node                     ] [Quentin Beck] closed

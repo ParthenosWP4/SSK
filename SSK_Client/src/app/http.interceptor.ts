@@ -38,7 +38,7 @@ export class InterceptedHttp extends Http {
     }
 
     private updateUrl(param: any) {
-      if(param.target == undefined  ) return param
+      if (param.target === undefined  ) return param
         return  environment[param.target] + param.req
     }
 
@@ -46,7 +46,7 @@ export class InterceptedHttp extends Http {
 
         if (options == null) {
             options = new RequestOptions();
-            let headers: Headers = new Headers();
+            const headers: Headers = new Headers();
             options.headers = new Headers();
         }
         else{

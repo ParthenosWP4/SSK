@@ -1,0 +1,19 @@
+[2018-02-23 07:33:25,426][INFO ][node                     ] [Goblin Queen] stopping ...
+[2018-02-23 07:33:25,823][INFO ][node                     ] [Goblin Queen] stopped
+[2018-02-23 07:33:25,823][INFO ][node                     ] [Goblin Queen] closing ...
+[2018-02-23 07:33:25,848][INFO ][node                     ] [Goblin Queen] closed
+[2018-02-23 07:33:35,329][INFO ][node                     ] [Nate Grey] version[2.4.0], pid[27019], build[ce9f0c7/2016-08-29T09:14:17Z]
+[2018-02-23 07:33:35,330][INFO ][node                     ] [Nate Grey] initializing ...
+[2018-02-23 07:33:36,220][INFO ][plugins                  ] [Nate Grey] modules [reindex, lang-expression, lang-groovy], plugins [], sites []
+[2018-02-23 07:33:36,246][INFO ][env                      ] [Nate Grey] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [61.2gb], net total_space [232.5gb], spins? [unknown], types [hfs]
+[2018-02-23 07:33:36,247][INFO ][env                      ] [Nate Grey] heap size [989.8mb], compressed ordinary object pointers [true]
+[2018-02-23 07:33:36,247][WARN ][env                      ] [Nate Grey] max file descriptors [10240] for elasticsearch process likely too low, consider increasing to at least [65536]
+[2018-02-23 07:33:38,062][INFO ][node                     ] [Nate Grey] initialized
+[2018-02-23 07:33:38,062][INFO ][node                     ] [Nate Grey] starting ...
+[2018-02-23 07:33:38,158][INFO ][transport                ] [Nate Grey] publish_address {127.0.0.1:9300}, bound_addresses {[fe80::1]:9300}, {[::1]:9300}, {127.0.0.1:9300}
+[2018-02-23 07:33:38,165][INFO ][discovery                ] [Nate Grey] my-application/qjpYV7HmQlqb8GppbuAQzQ
+[2018-02-23 07:33:41,248][INFO ][cluster.service          ] [Nate Grey] new_master {Nate Grey}{qjpYV7HmQlqb8GppbuAQzQ}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2018-02-23 07:33:41,260][INFO ][http                     ] [Nate Grey] publish_address {127.0.0.1:9200}, bound_addresses {[fe80::1]:9200}, {[::1]:9200}, {127.0.0.1:9200}
+[2018-02-23 07:33:41,261][INFO ][node                     ] [Nate Grey] started
+[2018-02-23 07:33:41,293][INFO ][gateway                  ] [Nate Grey] recovered [1] indices into cluster_state
+[2018-02-23 07:33:42,173][INFO ][cluster.routing.allocation] [Nate Grey] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[ssk][0]] ...]).

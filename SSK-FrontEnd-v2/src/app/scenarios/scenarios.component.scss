@@ -2,19 +2,18 @@
 @import '../../partials/variables';
 
 
-.home {
-  background-color: $color-33;
-}
-.bg-info{
-  background-color: $color-33;
-}
 
-.search{
+
+
+input.search{
   border: none;
   border-bottom: 1px solid $color-3 !important;
   background: transparent;
   size: 30px;
   border-radius: unset;
+  color: $color-3;
+  font-size: 30px;
+  text-shadow: 0px 0px 0px #000;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */

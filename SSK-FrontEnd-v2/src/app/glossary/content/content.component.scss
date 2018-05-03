@@ -1,0 +1,21 @@
+
+@import '../../../partials/variables';
+
+.card-img-top{
+  max-height: 50px ;
+}
+
+.title {
+    font-family: $roboto-regular;
+   text-transform: capitalize;
+  font-size: 30px;
+  color: $color-3;
+}
+
+.item-desc{
+  font-family: $roboto-light;
+  font-size: 21px;
+  color: $color-16;
+}
+
+

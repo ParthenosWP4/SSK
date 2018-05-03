@@ -1,0 +1,11 @@
+<ul>
+  <li *ngFor="let elt of menuItem">
+    <div class="row">
+    <div class="col-12 glossary-menu-item d-flex align-items-center">
+      <span  [ngClass]="(elt === 'objects' || elt === 'disciplines') ? 'm-3' : 'm-4' ">
+        <i [ngClass]="'ic2 ssk-'+ elt "    aria-hidden="true" ></i></span>
+      <span >{{elt}}</span>
+    </div>
+    </div>
+  </li>
+</ul>

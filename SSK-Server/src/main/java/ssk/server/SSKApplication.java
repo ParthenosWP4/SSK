@@ -1,8 +1,38 @@
 package ssk.server;
 
+/**
+ * = Application
+ *
+ * Project version: {projectVersion}.
+ *
+ * Sample Java application in project {projectName}
+ * to show Asciidoclet as replacement for the
+ * default Javadoclet.
+ *
+ * We can apply Asciidoc syntax in our Javadoclet
+ * comments, like:
+ *
+ *  - `code`
+ *  - **bold**
+ *  - _italics_
+ *
+ * include::./src/main/javadoc/usage.adoc[]
+ *
+ * [plantuml]
+ * ....
+ * hide footbox
+ *
+ * actor Client
+ * Client -> Application : main()
+ * ....
+ *
+ * @author mrhaki
+ * @version 1.0
+ */
+
 
 import org.apache.commons.lang.StringEscapeUtils;
-import org.elasticsearch.client.Client;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +50,7 @@ import ssk.server.service.ElasticServices;
 import ssk.server.service.GithubApiService;
 import ssk.server.service.SSKServices;
 
+import java.awt.*;
 import java.io.*;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -30,34 +61,19 @@ import java.util.Map;
 @SpringBootApplication
 @ComponentScan
 public class SSKApplication
-        extends SpringBootServletInitializer
+       // extends SpringBootServletInitializer
        // implements CommandLineRunner
 {
-
-    @Autowired
-    private ElasticsearchOperations es;
-    @Autowired
-    private ElasticServices elServices;
-
-    @Autowired
-    private SSKServices sskServices;
-
-    @Autowired
-    private GithubApiService githubApiService;
-
-    @Value("${elasticsearch.index}")
-    private String sskIndex;
-
-    public static  final String [] mappings  = { "resource_metadata", "resource", "step_metadata", "scenario_metadata", "step" ,"scenario"};
-
-    boolean firstLaunch = false;
+        @Autowired
+        SSKServices sskServices;
+    
     private static final Logger logger = LoggerFactory.getLogger(SSKApplication.class);
     
     
-    @Override
+    /*@Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
         return configureApplication(builder);
-    }
+    }*/
     
    
     
@@ -68,43 +84,35 @@ public class SSKApplication
     public static void main(String args[]) {
         SpringApplication.run(SSKApplication.class, args);
         
+        
     }
     
-
-    /*useful for debug, print elastic search details
-    private void printElasticSearchInfo() {
-        logger.info("--ElasticSearch--");
-        Client client = es.getClient();
-        Map<String, String> asMap = client.settings().getAsMap();
-
-        asMap.forEach((k, v) -> {
-            logger.info(k + " = " + v);
-        });
-
-        if(!es.indexExists(sskIndex)){
-            logger.info("index :" + es.createIndex(sskIndex));
-            firstLaunch = true;
-        }
-
-        for (String mapping : mappings ) {
+    public Boolean  runElasticSearch(){
+       
+        File command = sskServices.getFile("/elasticsearch-2.4.0/bin/elasticsearch.bat");
+        boolean result = false;
+        if(command != null){
+            ProcessBuilder processBuilder = new ProcessBuilder(command.getPath());
+            
             try {
-                Map existsMappings = es.getMapping("ssk", mapping);
-                if(elServices.createMappings(mapping)) logger.info("Type '"+mapping+ "' successful updated ");
-
-            } catch (ElasticsearchException e) {
-               logger.error(e.getMessage());
-               if(elServices.createMappings(mapping)) logger.info("Type '"+mapping+ "' successful created ");
+                Process process = processBuilder.start();
+                BufferedReader reader  =  new BufferedReader(new InputStreamReader(process.getInputStream()));
+                StringBuilder output = new StringBuilder();
+                String line = "";
+                while ((line = reader.readLine())!= null) {
+                    output.append(line + "\n");
+                }
+                logger.info(output.toString());
+                result = true;
+            } catch (IOException e) {
+                logger.error(e.getMessage());
+                System.out.println(e.getMessage());
+                result = Boolean.parseBoolean(null);
             }
         }
-        logger.info("--ElasticSearch--");
+        return result;
     }
-
-  @Override
-    public void run(String... args) throws Exception {
-      printElasticSearchInfo();
-      //sskServices.initializeData();
-    
-    }*/
+   
     
     
     

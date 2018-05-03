@@ -1,0 +1,19 @@
+[2018-04-04 10:42:21,791][INFO ][node                     ] [Lord Chaos] version[2.4.0], pid[1053], build[ce9f0c7/2016-08-29T09:14:17Z]
+[2018-04-04 10:42:21,793][INFO ][node                     ] [Lord Chaos] initializing ...
+[2018-04-04 10:42:22,657][INFO ][plugins                  ] [Lord Chaos] modules [reindex, lang-expression, lang-groovy], plugins [], sites []
+[2018-04-04 10:42:22,683][INFO ][env                      ] [Lord Chaos] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [69.1gb], net total_space [232.5gb], spins? [unknown], types [hfs]
+[2018-04-04 10:42:22,683][INFO ][env                      ] [Lord Chaos] heap size [989.8mb], compressed ordinary object pointers [true]
+[2018-04-04 10:42:22,684][WARN ][env                      ] [Lord Chaos] max file descriptors [10240] for elasticsearch process likely too low, consider increasing to at least [65536]
+[2018-04-04 10:42:24,260][INFO ][node                     ] [Lord Chaos] initialized
+[2018-04-04 10:42:24,260][INFO ][node                     ] [Lord Chaos] starting ...
+[2018-04-04 10:42:24,325][INFO ][transport                ] [Lord Chaos] publish_address {127.0.0.1:9300}, bound_addresses {[fe80::1]:9300}, {[::1]:9300}, {127.0.0.1:9300}
+[2018-04-04 10:42:24,330][INFO ][discovery                ] [Lord Chaos] my-application/WSkoEAKcQg28vWhXSWVi6w
+[2018-04-04 10:42:27,380][INFO ][cluster.service          ] [Lord Chaos] new_master {Lord Chaos}{WSkoEAKcQg28vWhXSWVi6w}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2018-04-04 10:42:27,391][INFO ][http                     ] [Lord Chaos] publish_address {127.0.0.1:9200}, bound_addresses {[fe80::1]:9200}, {[::1]:9200}, {127.0.0.1:9200}
+[2018-04-04 10:42:27,392][INFO ][node                     ] [Lord Chaos] started
+[2018-04-04 10:42:27,421][INFO ][gateway                  ] [Lord Chaos] recovered [1] indices into cluster_state
+[2018-04-04 10:42:28,109][INFO ][cluster.routing.allocation] [Lord Chaos] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[ssk][1]] ...]).
+[2018-04-04 13:44:20,158][INFO ][node                     ] [Lord Chaos] stopping ...
+[2018-04-04 13:44:20,298][INFO ][node                     ] [Lord Chaos] stopped
+[2018-04-04 13:44:20,298][INFO ][node                     ] [Lord Chaos] closing ...
+[2018-04-04 13:44:20,303][INFO ][node                     ] [Lord Chaos] closed

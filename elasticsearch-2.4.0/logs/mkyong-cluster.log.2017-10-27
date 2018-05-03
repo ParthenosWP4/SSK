@@ -1,0 +1,1445 @@
+[2017-10-27 11:34:02,407][INFO ][node                     ] [ssk] version[2.4.0], pid[14534], build[ce9f0c7/2016-08-29T09:14:17Z]
+[2017-10-27 11:34:02,407][INFO ][node                     ] [ssk] initializing ...
+[2017-10-27 11:34:03,301][INFO ][plugins                  ] [ssk] modules [reindex, lang-expression, lang-groovy], plugins [], sites []
+[2017-10-27 11:34:03,327][INFO ][env                      ] [ssk] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [105.7gb], net total_space [232.5gb], spins? [unknown], types [hfs]
+[2017-10-27 11:34:03,327][INFO ][env                      ] [ssk] heap size [989.8mb], compressed ordinary object pointers [true]
+[2017-10-27 11:34:03,327][WARN ][env                      ] [ssk] max file descriptors [10240] for elasticsearch process likely too low, consider increasing to at least [65536]
+[2017-10-27 11:34:04,846][INFO ][node                     ] [ssk] initialized
+[2017-10-27 11:34:04,847][INFO ][node                     ] [ssk] starting ...
+[2017-10-27 11:34:04,916][INFO ][transport                ] [ssk] publish_address {127.0.0.1:9300}, bound_addresses {[fe80::1]:9300}, {[::1]:9300}, {127.0.0.1:9300}
+[2017-10-27 11:34:04,920][INFO ][discovery                ] [ssk] mkyong-cluster/Gn7gfsX9Q3urrAbMfXhbkw
+[2017-10-27 11:34:07,963][INFO ][cluster.service          ] [ssk] new_master {ssk}{Gn7gfsX9Q3urrAbMfXhbkw}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2017-10-27 11:34:07,978][INFO ][http                     ] [ssk] publish_address {127.0.0.1:9200}, bound_addresses {[fe80::1]:9200}, {[::1]:9200}, {127.0.0.1:9200}
+[2017-10-27 11:34:07,978][INFO ][node                     ] [ssk] started
+[2017-10-27 11:34:07,997][INFO ][gateway                  ] [ssk] recovered [0] indices into cluster_state
+[2017-10-27 11:34:15,098][INFO ][cluster.metadata         ] [ssk] [.kibana] creating index, cause [api], templates [], shards [1]/[1], mappings [config]
+[2017-10-27 11:34:15,271][INFO ][cluster.routing.allocation] [ssk] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[.kibana][0]] ...]).
+[2017-10-27 11:35:10,463][INFO ][cluster.metadata         ] [ssk] [scenarios] creating index, cause [api], templates [], shards [5]/[1], mappings []
+[2017-10-27 11:35:10,534][INFO ][cluster.routing.allocation] [ssk] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[scenarios][4]] ...]).
+[2017-10-27 11:36:54,686][INFO ][cluster.metadata         ] [ssk] [scenarios] creating index, cause [api], templates [], shards [5]/[1], mappings []
+[2017-10-27 11:36:54,778][INFO ][cluster.routing.allocation] [ssk] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[scenarios][4]] ...]).
+[2017-10-27 11:36:54,784][INFO ][cluster.metadata         ] [ssk] [scenarios] create_mapping [scenario]
+[2017-10-27 11:36:55,100][INFO ][cluster.metadata         ] [ssk] [scenarios] creating index, cause [api], templates [], shards [5]/[1], mappings []
+[2017-10-27 11:36:55,156][INFO ][cluster.metadata         ] [ssk] [scenarios] create_mapping [scenario]
+[2017-10-27 11:36:55,202][INFO ][cluster.routing.allocation] [ssk] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[scenarios][4]] ...]).
+[2017-10-27 11:36:55,452][DEBUG][action.index             ] [ssk] failed to execute [index {[scenarios][scenario][AV9dMQiV2zMRYXn4dpTn], source[{"teiHeader":null,"teiModelResourceLikes":[{"name":"{http://www.tei-c.org/ns/1.0}text","declaredType":"org.tei_c.TeiModelResourceLike2","scope":"javax.xml.bind.JAXBElement$GlobalScope","value":{"teiModelGlobalMetasAndTeiModelMilestoneLikesAndNotes":[{"teiModelGlobalMetasAndTeiModelMilestoneLikesAndNotes":[{"name":"{http://www.tei-c.org/ns/1.0}div","declaredType":"org.tei_c.TeiModelDivLike","scope":"javax.xml.bind.JAXBElement$GlobalScope","value":{"meetingsAndBylinesAndDatelines":[{"content":["Project-centered EAD customization"],"type":"scenarioTitle","subtype":null,"sources":[],"n":null,"copyOf":null,"synches":[],"prev":null,"next":null,"sameAs":null,"selects":[],"corresps":[],"excludes":[],"id":null,"rends":[],"style":null,"rendering":[],"lang":"en","base":null,"resps":[],"cert":null,"space":null,"hand":null,"mode":"add","validUntil":null},{"content":["TEI ODD can be used to document data models  external to the TEI environment. Several projects working with archival standards (in  particular EAD) use it as well. PARTHENOS created and maintain an instance of the EAD specification in ODD, that can be used to create project oriented customizations. "],"lang":"en","rends":[],"n":null,"selects":[],"space":null,"resps":[],"copyOf":null,"style":null,"versionDate":null,"mode":"add","validUntil":null,"id":null,"type":"definition","subtype":null,"corresps":[],"sources":[],"excludes":[],"next":null,"base":null,"cert":null,"sameAs":null,"synches":[],"prev":null,"rendering":[]},{"content":[{"content":["Studies of the past"],"reves":[],"key":"SOPT","sortKey":null,"decls":[],"type":"discipline","subtype":null,"targets":[],"targetLang":null,"evaluate":null,"mode":"add","validUntil":null,"sources":["parthenos"],"n":null,"copyOf":null,"synches":[],"prev":null,"next":null,"sameAs":null,"selects":[],"corresps":[],"excludes":[],"id":null,"rends":[],"style":null,"rendering":[],"lang":null,"base":null,"resps":[],"cert":null,"space":null,"cref":null},{"content":["Heritage and applied disciplines"],"reves":[],"key":"HAD","sortKey":null,"decls":[],"type":"discipline","subtype":null,"targets":[],"targetLang":null,"evaluate":null,"mode":"add","validUntil":null,"sources":["parthenos"],"n":null,"copyOf":null,"synches":[],"prev":null,"next":null,"sameAs":null,"selects":[],"corresps":[],"excludes":[],"id":null,"rends":[],"style":null,"rendering":[],"lang":null,"base":null,"resps":[],"cert":null,"space":null,"cref":null}],"lang":"en","rends":[],"n":null,"selects":[],"space":null,"resps":[],"copyOf":null,"style":null,"versionDate":null,"mode":"add","validUntil":null,"id":null,"type":"terms","subtype":null,"corresps":[],"sources":[],"excludes":[],"next":null,"base":null,"cert":null,"sameAs":null,"synches":[],"prev":null,"rendering":[]},{"headsAndLSAndPS":[{"content":[],"type":null,"subtype":null,"sources":[],"n":null,"copyOf":null,"synches":[],"prev":null,"next":null,"sameAs":null,"selects":[],"corresps":[],"excludes":[],"id":null,"rends":[],"style":null,"rendering":[],"lang":null,"base":null,"resps":[],"cert":null,"space":null,"hand":null,"mode":"add","validUntil":null},{"descs":[],"sources":[],"n":null,"copyOf":null,"synches":[],"prev":null,"next":null,"sameAs":null,"selects":[],"corresps":[],"excludes":[],"id":null,"rends":[],"style":null,"rendering":[],"lang":null,"base":null,"resps":[],"cert":null,"space":null,"decls":[],"width":null,"scale":null,"height":null,"mimeTypes":[],"url":"https://c.pxhere.com/photos/c0/57/book_read_library_spine_hardcover-1397643.jpg!d"},{"content":["Photo by Chris Lawton on Unsplash"],"sources":[],"n":null,"copyOf":null,"synches":[],"prev":null,"next":null,"sameAs":null,"selects":[],"corresps":[],"excludes":[],"id":null,"rends":[],"style":null,"rendering":[],"lang":null,"base":null,"resps":[],"cert":null,"space":null}],"places":[],"sources":[],"n":null,"copyOf":null,"synches":[],"prev":null,"next":null,"sameAs":null,"selects":[],"corresps":[],"excludes":[],"id":null,"rends":[],"style":null,"rendering":[],"lang":null,"base":null,"resps":[],"cert":null,"space":null,"type":"image","subtype":null},{"heads":[],"eventsAndListEvents":[{"heads":[],"notesAndBiblsAndBiblStructs":[],"events":[],"type":"researchStep","where":null,"sources":[],"n":null,"copyOf":null,"synches":[],"prev":null,"next":null,"sameAs":null,"selects":[],"corresps":[],"excludes":[],"id":"S1","rends":[],"style":null,"rendering":[],"lang":null,"base":null,"resps":[],"cert":null,"space":null,"evidences":[],"quantity":null,"precision":null,"scope":null,"extent":null,"unit":null,"max":null,"min":null,"confidence":null,"atMost":null,"atLeast":null,"instant":"false","nymReves":[],"reves":["step_EaXswO_150917"],"key":null,"roles":[],"sortKey":null,"period":null,"notBeforeIso":null,"fromIso":null,"notAfterIso":null,"whenIso":null,"toIso":null,"from":null,"when":null,"notBefore":null,"notAfter":null,"to":null,"fromCustoms":[],"datingMethod":null,"datingPoint":null,"whenCustoms":[],"toCustoms":[],"notBeforeCustoms":[],"notAfterCustoms":[],"calendar":null,"subtype":null,"mode":"add","validUntil":null,"psandAbsAndDescs":[]},{"heads":[],"notesAndBiblsAndBiblStructs":[],"events":[],"type":"researchStep","where":null,"sources":[],"n":null,"copyOf":null,"synches":[],"prev":null,"next":null,"sameAs":null,"selects":[],"corresps":[],"excludes":[],"id":"S2","rends":[],"style":null,"rendering":[],"lang":null,"base":null,"resps":[],"cert":null,"space":null,"evidences":[],"quantity":null,"precision":null,"scope":null,"extent":null,"unit":null,"max":null,"min":null,"confidence":null,"atMost":null,"atLeast":null,"instant":"false","nymReves":[],"reves":["step_Eprimrf_300517"],"key":null,"roles":[],"sortKey":null,"period":null,"notBeforeIso":null,"fromIso":null,"notAfterIso":null,"whenIso":null,"toIso":null,"from":null,"when":null,"notBefore":null,"notAfter":null,"to":null,"fromCustoms":[],"datingMethod":null,"datingPoint":null,"whenCustoms":[],"toCustoms":[],"notBeforeCustoms":[],"notAfterCustoms":[],"calendar":null,"subtype":null,"mode":"add","validUntil":null,"psandAbsAndDescs":[]},{"heads":[],"notesAndBiblsAndBiblStructs":[],"events":[],"type":"researchStep","where":null,"sources":[],"n":null,"copyOf":null,"synches":[],"prev":null,"next":null,"sameAs":null,"selects":[],"corresps":[],"excludes":[],"id":"S3","rends":[],"style":null,"rendering":[],"lang":null,"base":null,"resps":[],"cert":null,"space":null,"evidences":[],"quantity":null,"precision":null,"scope":null,"extent":null,"unit":null,"max":null,"min":null,"confidence":null,"atMost":null,"atLeast":null,"instant":"false","nymReves":[],"reves":["step_Cad_300517"],"key":null,"roles":[],"sortKey":null,"period":null,"notBeforeIso":null,"fromIso":null,"notAfterIso":null,"whenIso":null,"toIso":null,"from":null,"when":null,"notBefore":null,"notAfter":null,"to":null,"fromCustoms":[],"datingMethod":null,"datingPoint":null,"whenCustoms":[],"toCustoms":[],"notBeforeCustoms":[],"notAfterCustoms":[],"calendar":null,"subtype":null,"mode":"add","validUntil":null,"psandAbsAndDescs":[]}],"relationsAndListRelations":[],"sources":[],"n":null,"copyOf":null,"synches":[],"prev":null,"next":null,"sameAs":null,"selects":[],"corresps":[],"excludes":[],"id":null,"rends":[],"style":null,"rendering":[],"lang":null,"base":null,"resps":[],"cert":null,"space":null,"type":null,"subtype":null,"sortKey":null,"default":"false"}],"sources":[],"n":null,"copyOf":null,"synches":[],"prev":null,"next":null,"sameAs":null,"selects":[],"corresps":[],"excludes":[],"id":"sc_schemaCustomization","rends":[],"style":null,"rendering":[],"lang":null,"base":null,"resps":[],"cert":null,"space":null,"type":"scenario","subtype":null,"decls":[],"hand":null,"part":"N","sample":"complete","org":"uniform"},"nil":false,"globalScope":true,"typeSubstituted":false}],"decls":[],"sources":[],"n":null,"copyOf":null,"synches":[],"prev":null,"next":null,"sameAs":null,"selects":[],"corresps":[],"excludes":[],"id":null,"rends":[],"style":null,"rendering":[],"lang":null,"base":null,"resps":[],"cert":null,"space":null}],"type":null,"subtype":null,"sources":[],"n":null,"copyOf":null,"synches":[],"prev":null,"next":null,"sameAs":null,"selects":[],"corresps":[],"excludes":[],"id":null,"rends":[],"style":null,"rendering":[],"lang":null,"base":null,"resps":[],"cert":null,"space":null,"decls":[],"hand":null},"nil":false,"globalScope":true,"typeSubstituted":false}],"type":null,"version":null,"sources":[],"n":null,"copyOf":null,"synches":[],"prev":null,"next":null,"sameAs":null,"selects":[],"corresps":[],"excludes":[],"id":null,"rends":[],"style":null,"rendering":[],"lang":null,"base":null,"resps":[],"cert":null,"space":null,"subtype":null,"fileDesc":null,"titleStmt":null,"title":null,"author":null,"persName":null,"affiliation":null,"publicationStmt":null,"authority":null,"availability":null,"licencePara":null,"licence":null,"text":null,"body":null,"div":null,"bodyHead":null,"descList":null,"termList":null,"figure":null,"figureHead":null,"graphic":null,"figDesc":null,"listEvent":null,"eventList":null}]}] on [[scenarios][3]]
+MapperParsingException[failed to parse]; nested: IllegalArgumentException[mapper [teiModelResourceLikes.value.teiModelGlobalMetasAndTeiModelMilestoneLikesAndNotes.teiModelGlobalMetasAndTeiModelMilestoneLikesAndNotes.value.meetingsAndBylinesAndDatelines.content] of different type, current_type [string], merged_type [ObjectMapper]];
+	at org.elasticsearch.index.mapper.DocumentParser.parseDocument(DocumentParser.java:156)
+	at org.elasticsearch.index.mapper.DocumentMapper.parse(DocumentMapper.java:309)
+	at org.elasticsearch.index.shard.IndexShard.prepareCreate(IndexShard.java:529)
+	at org.elasticsearch.index.shard.IndexShard.prepareCreateOnPrimary(IndexShard.java:506)
+	at org.elasticsearch.action.index.TransportIndexAction.prepareIndexOperationOnPrimary(TransportIndexAction.java:214)
+	at org.elasticsearch.action.index.TransportIndexAction.executeIndexRequestOnPrimary(TransportIndexAction.java:223)
+	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:157)
+	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:66)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryPhase.doRun(TransportReplicationAction.java:648)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:279)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:271)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:77)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.IllegalArgumentException: mapper [teiModelResourceLikes.value.teiModelGlobalMetasAndTeiModelMilestoneLikesAndNotes.teiModelGlobalMetasAndTeiModelMilestoneLikesAndNotes.value.meetingsAndBylinesAndDatelines.content] of different type, current_type [string], merged_type [ObjectMapper]
+	at org.elasticsearch.index.mapper.FieldMapper.doMerge(FieldMapper.java:378)
+	at org.elasticsearch.index.mapper.core.StringFieldMapper.doMerge(StringFieldMapper.java:382)
+	at org.elasticsearch.index.mapper.FieldMapper.merge(FieldMapper.java:364)
+	at org.elasticsearch.index.mapper.FieldMapper.merge(FieldMapper.java:53)
+	at org.elasticsearch.index.mapper.object.ObjectMapper.doMerge(ObjectMapper.java:528)
+	at org.elasticsearch.index.mapper.object.ObjectMapper.merge(ObjectMapper.java:501)
+	at org.elasticsearch.index.mapper.object.ObjectMapper.merge(ObjectMapper.java:60)
+	at org.elasticsearch.index.mapper.object.ObjectMapper.doMerge(ObjectMapper.java:528)
+	at org.elasticsearch.index.mapper.object.ObjectMapper.merge(ObjectMapper.java:501)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:271)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseNonDynamicArray(DocumentParser.java:416)
+	at org.elasticsearch.index.mapper.DocumentParser.parseArray(DocumentParser.java:394)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:256)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseNonDynamicArray(DocumentParser.java:416)
+	at org.elasticsearch.index.mapper.DocumentParser.parseArray(DocumentParser.java:394)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:256)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseNonDynamicArray(DocumentParser.java:416)
+	at org.elasticsearch.index.mapper.DocumentParser.parseArray(DocumentParser.java:394)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:256)
+	at org.elasticsearch.index.mapper.DocumentParser.parseDocument(DocumentParser.java:124)
+	... 17 more
+[2017-10-27 11:39:38,848][DEBUG][action.index             ] stant": "false"
+                            },
+                            "\n                    ",
+                            {
+                                "content": [
+                                    "Inria"
+                                ],
+                                "instant": "false"
+                            },
+                            "\n                "
+                        ]
+                    }
+                ]
+            },
+            "publicationStmt": {
+                "publishersAndDistributorsAndAuthorities": [
+                    {
+                        "content": [
+                            "Parthenos"
+                        ]
+                    },
+                    {
+                        "teiModelAvailabilityPartsAndPSAndAbs": [
+                            {
+                                "name": "{http://www.tei-c.org/ns/1.0}licence",
+                                "declaredType": "org.tei_c.TeiModelAvailabilityPart",
+                                "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+                                "value": {
+                                    "content": [
+                                        "\n                        ",
+                                        {
+                                            "content": [
+                                                "he Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this document."
+                                            ],
+                                            "part": "N"
+                                        },
+                                        "\n                    "
+                                    ],
+                                    "targets": [
+                                        "http://creativecommons.org/licenses/by/4.0/"
+                                    ]
+                                },
+                                "nil": false,
+                                "globalScope": true,
+                                "typeSubstituted": false
+                            }
+                        ],
+                        "status": "unknown",
+                        "default": "false"
+                    }
+                ]
+            }
+        }
+    },
+    "teiModelResourceLikes": [
+        {
+            "name": "{http://www.tei-c.org/ns/1.0}text",
+            "declaredType": "org.tei_c.TeiModelResourceLike2",
+            "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+            "value": {
+                "teiModelGlobalMetasAndTeiModelMilestoneLikesAndNotes": [
+                    {
+                        "teiModelGlobalMetasAndTeiModelMilestoneLikesAndNotes": [
+                            {
+                                "name": "{http://www.tei-c.org/ns/1.0}div",
+                                "declaredType": "org.tei_c.TeiModelDivLike",
+                                "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+                                "value": {
+                                    "meetingsAndBylinesAndDatelines": [
+                                        {
+                                            "content": [
+                                                "Project-centered EAD customization"
+                                            ],
+                                            "type": "scenarioTitle",
+                                            "lang": "en",
+                                            "mode": "add"
+                                        },
+                                        {
+                                            "content": [
+                                                "TEI ODD can be used to document data models  external to the TEI environment. Several projects working with archival standards (in  particular EAD) use it as well. PARTHENOS created and maintain an instance of the EAD specification in ODD, that can be used to create project oriented customizations. "
+                                            ],
+                                            "lang": "en",
+                                            "mode": "add",
+                                            "type": "definition"
+                                        },
+                                        {
+                                            "content": [
+                                                "\n                    ",
+                                                {
+                                                    "content": [
+                                                        "Studies of the past"
+                                                    ],
+                                                    "key": "SOPT",
+                                                    "type": "discipline",
+                                                    "mode": "add",
+                                                    "sources": [
+                                                        "parthenos"
+                                                    ]
+                                                },
+                                                "\n                    ",
+                                                {
+                                                    "content": [
+                                                        "Heritage and applied disciplines"
+                                                    ],
+                                                    "key": "HAD",
+                                                    "type": "discipline",
+                                                    "mode": "add",
+                                                    "sources": [
+                                                        "parthenos"
+                                                    ]
+                                                },
+                                                "\n                "
+                                            ],
+                                            "lang": "en",
+                                            "mode": "add",
+                                            "type": "terms"
+                                        },
+                                        {
+                                            "headsAndLSAndPS": [
+                                                {
+                                                    "mode": "add"
+                                                },
+                                                {
+                                                    "url": "https://c.pxhere.com/photos/c0/57/book_read_library_spine_hardcover-1397643.jpg!d"
+                                                },
+                                                {
+                                                    "content": [
+                                                        "Photo by Chris Lawton on Unsplash"
+                                                    ]
+                                                }
+                                            ],
+                                            "type": "image"
+                                        },
+                                        {
+                                            "eventsAndListEvents": [
+                                                {
+                                                    "type": "researchStep",
+                                                    "id": "S1",
+                                                    "instant": "false",
+                                                    "reves": [
+                                                        "step_EaXswO_150917"
+                                                    ],
+                                                    "mode": "add"
+                                                },
+                                                {
+                                                    "type": "researchStep",
+                                                    "id": "S2",
+                                                    "instant": "false",
+                                                    "reves": [
+                                                        "step_Eprimrf_300517"
+                                                    ],
+                                                    "mode": "add"
+                                                },
+                                                {
+                                                    "type": "researchStep",
+                                                    "id": "S3",
+                                                    "instant": "false",
+                                                    "reves": [
+                                                        "step_Cad_300517"
+                                                    ],
+                                                    "mode": "add"
+                                                }
+                                            ],
+                                            "default": "false"
+                                        }
+                                    ],
+                                    "id": "sc_schemaCustomization",
+                                    "type": "scenario",
+                                    "part": "N",
+                                    "sample": "complete",
+                                    "org": "uniform"
+                                },
+                                "nil": false,
+                                "globalScope": true,
+                                "typeSubstituted": false
+                            }
+                        ]
+                    }
+                ]
+            },
+            "nil": false,
+            "globalScope": true,
+            "typeSubstituted": false
+        }
+    ]
+}]}] on [[scenarios][2]]
+MapperParsingException[failed to parse]; nested: IllegalArgumentException[mapper [teiHeader.fileDesc.titleStmt.authorsAndEditorsAndRespStmts.content] of different type, current_type [string], merged_type [ObjectMapper]];
+	at org.elasticsearch.index.mapper.DocumentParser.parseDocument(DocumentParser.java:156)
+	at org.elasticsearch.index.mapper.DocumentMapper.parse(DocumentMapper.java:309)
+	at org.elasticsearch.index.shard.IndexShard.prepareCreate(IndexShard.java:529)
+	at org.elasticsearch.index.shard.IndexShard.prepareCreateOnPrimary(IndexShard.java:506)
+	at org.elasticsearch.action.index.TransportIndexAction.prepareIndexOperationOnPrimary(TransportIndexAction.java:214)
+	at org.elasticsearch.action.index.TransportIndexAction.executeIndexRequestOnPrimary(TransportIndexAction.java:223)
+	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:157)
+	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:66)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryPhase.doRun(TransportReplicationAction.java:648)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:279)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:271)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:77)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.IllegalArgumentException: mapper [teiHeader.fileDesc.titleStmt.authorsAndEditorsAndRespStmts.content] of different type, current_type [string], merged_type [ObjectMapper]
+	at org.elasticsearch.index.mapper.FieldMapper.doMerge(FieldMapper.java:378)
+	at org.elasticsearch.index.mapper.core.StringFieldMapper.doMerge(StringFieldMapper.java:382)
+	at org.elasticsearch.index.mapper.FieldMapper.merge(FieldMapper.java:364)
+	at org.elasticsearch.index.mapper.FieldMapper.merge(FieldMapper.java:53)
+	at org.elasticsearch.index.mapper.object.ObjectMapper.doMerge(ObjectMapper.java:528)
+	at org.elasticsearch.index.mapper.object.ObjectMapper.merge(ObjectMapper.java:501)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:271)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseNonDynamicArray(DocumentParser.java:416)
+	at org.elasticsearch.index.mapper.DocumentParser.parseArray(DocumentParser.java:394)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:256)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseDocument(DocumentParser.java:124)
+	... 17 more
+[2017-10-27 11:40:51,949][DEBUG][action.index             ]                    ],
+                                "full": "yes",
+                                "instant": "false"
+                            },
+                            {
+                                "content": [
+                                    "Inria"
+                                ],
+                                "instant": "false"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "publicationStmt": {
+                "publishersAndDistributorsAndAuthorities": [
+                    {
+                        "content": [
+                            "Parthenos"
+                        ]
+                    },
+                    {
+                        "teiModelAvailabilityPartsAndPSAndAbs": [
+                            {
+                                "name": "{http://www.tei-c.org/ns/1.0}licence",
+                                "declaredType": "org.tei_c.TeiModelAvailabilityPart",
+                                "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+                                "value": {
+                                    "content": [
+                                        "\n                        ",
+                                        {
+                                            "content": [
+                                                "he Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this document."
+                                            ],
+                                            "part": "N"
+                                        },
+                                        "\n                    "
+                                    ],
+                                    "targets": [
+                                        "http://creativecommons.org/licenses/by/4.0/"
+                                    ]
+                                },
+                                "nil": false,
+                                "globalScope": true,
+                                "typeSubstituted": false
+                            }
+                        ],
+                        "status": "unknown",
+                        "default": "false"
+                    }
+                ]
+            }
+        }
+    },
+    "teiModelResourceLikes": [
+        {
+            "name": "{http://www.tei-c.org/ns/1.0}text",
+            "declaredType": "org.tei_c.TeiModelResourceLike2",
+            "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+            "value": {
+                "teiModelGlobalMetasAndTeiModelMilestoneLikesAndNotes": [
+                    {
+                        "teiModelGlobalMetasAndTeiModelMilestoneLikesAndNotes": [
+                            {
+                                "name": "{http://www.tei-c.org/ns/1.0}div",
+                                "declaredType": "org.tei_c.TeiModelDivLike",
+                                "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+                                "value": {
+                                    "meetingsAndBylinesAndDatelines": [
+                                        {
+                                            "content": [
+                                                "Project-centered EAD customization"
+                                            ],
+                                            "type": "scenarioTitle",
+                                            "lang": "en",
+                                            "mode": "add"
+                                        },
+                                        {
+                                            "content": [
+                                                "TEI ODD can be used to document data models  external to the TEI environment. Several projects working with archival standards (in  particular EAD) use it as well. PARTHENOS created and maintain an instance of the EAD specification in ODD, that can be used to create project oriented customizations. "
+                                            ],
+                                            "lang": "en",
+                                            "mode": "add",
+                                            "type": "definition"
+                                        },
+                                        {
+                                            "content": [
+                                                "\n                    ",
+                                                {
+                                                    "content": [
+                                                        "Studies of the past"
+                                                    ],
+                                                    "key": "SOPT",
+                                                    "type": "discipline",
+                                                    "mode": "add",
+                                                    "sources": [
+                                                        "parthenos"
+                                                    ]
+                                                },
+                                                "\n                    ",
+                                                {
+                                                    "content": [
+                                                        "Heritage and applied disciplines"
+                                                    ],
+                                                    "key": "HAD",
+                                                    "type": "discipline",
+                                                    "mode": "add",
+                                                    "sources": [
+                                                        "parthenos"
+                                                    ]
+                                                },
+                                                "\n                "
+                                            ],
+                                            "lang": "en",
+                                            "mode": "add",
+                                            "type": "terms"
+                                        },
+                                        {
+                                            "headsAndLSAndPS": [
+                                                {
+                                                    "mode": "add"
+                                                },
+                                                {
+                                                    "url": "https://c.pxhere.com/photos/c0/57/book_read_library_spine_hardcover-1397643.jpg!d"
+                                                },
+                                                {
+                                                    "content": [
+                                                        "Photo by Chris Lawton on Unsplash"
+                                                    ]
+                                                }
+                                            ],
+                                            "type": "image"
+                                        },
+                                        {
+                                            "eventsAndListEvents": [
+                                                {
+                                                    "type": "researchStep",
+                                                    "id": "S1",
+                                                    "instant": "false",
+                                                    "reves": [
+                                                        "step_EaXswO_150917"
+                                                    ],
+                                                    "mode": "add"
+                                                },
+                                                {
+                                                    "type": "researchStep",
+                                                    "id": "S2",
+                                                    "instant": "false",
+                                                    "reves": [
+                                                        "step_Eprimrf_300517"
+                                                    ],
+                                                    "mode": "add"
+                                                },
+                                                {
+                                                    "type": "researchStep",
+                                                    "id": "S3",
+                                                    "instant": "false",
+                                                    "reves": [
+                                                        "step_Cad_300517"
+                                                    ],
+                                                    "mode": "add"
+                                                }
+                                            ],
+                                            "default": "false"
+                                        }
+                                    ],
+                                    "id": "sc_schemaCustomization",
+                                    "type": "scenario",
+                                    "part": "N",
+                                    "sample": "complete",
+                                    "org": "uniform"
+                                },
+                                "nil": false,
+                                "globalScope": true,
+                                "typeSubstituted": false
+                            }
+                        ]
+                    }
+                ]
+            },
+            "nil": false,
+            "globalScope": true,
+            "typeSubstituted": false
+        }
+    ]
+}]}] on [[scenarios][2]]
+MapperParsingException[failed to parse]; nested: IllegalArgumentException[mapper [teiHeader.fileDesc.publicationStmt.publishersAndDistributorsAndAuthorities.teiModelAvailabilityPartsAndPSAndAbs.value.content] of different type, current_type [string], merged_type [ObjectMapper]];
+	at org.elasticsearch.index.mapper.DocumentParser.parseDocument(DocumentParser.java:156)
+	at org.elasticsearch.index.mapper.DocumentMapper.parse(DocumentMapper.java:309)
+	at org.elasticsearch.index.shard.IndexShard.prepareCreate(IndexShard.java:529)
+	at org.elasticsearch.index.shard.IndexShard.prepareCreateOnPrimary(IndexShard.java:506)
+	at org.elasticsearch.action.index.TransportIndexAction.prepareIndexOperationOnPrimary(TransportIndexAction.java:214)
+	at org.elasticsearch.action.index.TransportIndexAction.executeIndexRequestOnPrimary(TransportIndexAction.java:223)
+	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:157)
+	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:66)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryPhase.doRun(TransportReplicationAction.java:648)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:279)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:271)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:77)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.IllegalArgumentException: mapper [teiHeader.fileDesc.publicationStmt.publishersAndDistributorsAndAuthorities.teiModelAvailabilityPartsAndPSAndAbs.value.content] of different type, current_type [string], merged_type [ObjectMapper]
+	at org.elasticsearch.index.mapper.FieldMapper.doMerge(FieldMapper.java:378)
+	at org.elasticsearch.index.mapper.core.StringFieldMapper.doMerge(StringFieldMapper.java:382)
+	at org.elasticsearch.index.mapper.FieldMapper.merge(FieldMapper.java:364)
+	at org.elasticsearch.index.mapper.FieldMapper.merge(FieldMapper.java:53)
+	at org.elasticsearch.index.mapper.object.ObjectMapper.doMerge(ObjectMapper.java:528)
+	at org.elasticsearch.index.mapper.object.ObjectMapper.merge(ObjectMapper.java:501)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:271)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseNonDynamicArray(DocumentParser.java:416)
+	at org.elasticsearch.index.mapper.DocumentParser.parseArray(DocumentParser.java:394)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:256)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseDocument(DocumentParser.java:124)
+	... 17 more
+[2017-10-27 11:41:32,917][DEBUG][action.index             ] ered EAD customization scenario"
+                        ]
+                    }
+                ],
+                "authorsAndEditorsAndRespStmts": [
+                    {
+                        "content": [
+                            {
+                                "content": [
+                                    "Charles Riondet"
+                                ],
+                                "full": "yes",
+                                "instant": "false"
+                            },
+                            {
+                                "content": [
+                                    "Inria"
+                                ],
+                                "instant": "false"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "publicationStmt": {
+                "publishersAndDistributorsAndAuthorities": [
+                    {
+                        "content": [
+                            "Parthenos"
+                        ]
+                    },
+                    {
+                        "teiModelAvailabilityPartsAndPSAndAbs": [
+                            {
+                                "name": "{http://www.tei-c.org/ns/1.0}licence",
+                                "declaredType": "org.tei_c.TeiModelAvailabilityPart",
+                                "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+                                "value": {
+                                    "content": [
+                                        {
+                                            "content": [
+                                                "he Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this document."
+                                            ],
+                                            "part": "N"
+                                        },
+                                    ],
+                                    "targets": [
+                                        "http://creativecommons.org/licenses/by/4.0/"
+                                    ]
+                                },
+                                "nil": false,
+                                "globalScope": true,
+                                "typeSubstituted": false
+                            }
+                        ],
+                        "status": "unknown",
+                        "default": "false"
+                    }
+                ]
+            }
+        }
+    },
+    "teiModelResourceLikes": [
+        {
+            "name": "{http://www.tei-c.org/ns/1.0}text",
+            "declaredType": "org.tei_c.TeiModelResourceLike2",
+            "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+            "value": {
+                "teiModelGlobalMetasAndTeiModelMilestoneLikesAndNotes": [
+                    {
+                        "teiModelGlobalMetasAndTeiModelMilestoneLikesAndNotes": [
+                            {
+                                "name": "{http://www.tei-c.org/ns/1.0}div",
+                                "declaredType": "org.tei_c.TeiModelDivLike",
+                                "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+                                "value": {
+                                    "meetingsAndBylinesAndDatelines": [
+                                        {
+                                            "content": [
+                                                "Project-centered EAD customization"
+                                            ],
+                                            "type": "scenarioTitle",
+                                            "lang": "en",
+                                            "mode": "add"
+                                        },
+                                        {
+                                            "content": [
+                                                "TEI ODD can be used to document data models  external to the TEI environment. Several projects working with archival standards (in  particular EAD) use it as well. PARTHENOS created and maintain an instance of the EAD specification in ODD, that can be used to create project oriented customizations. "
+                                            ],
+                                            "lang": "en",
+                                            "mode": "add",
+                                            "type": "definition"
+                                        },
+                                        {
+                                            "content": [
+                                                {
+                                                    "content": [
+                                                        "Studies of the past"
+                                                    ],
+                                                    "key": "SOPT",
+                                                    "type": "discipline",
+                                                    "mode": "add",
+                                                    "sources": [
+                                                        "parthenos"
+                                                    ]
+                                                },
+                                                {
+                                                    "content": [
+                                                        "Heritage and applied disciplines"
+                                                    ],
+                                                    "key": "HAD",
+                                                    "type": "discipline",
+                                                    "mode": "add",
+                                                    "sources": [
+                                                        "parthenos"
+                                                    ]
+                                                },
+                                            ],
+                                            "lang": "en",
+                                            "mode": "add",
+                                            "type": "terms"
+                                        },
+                                        {
+                                            "headsAndLSAndPS": [
+                                                {
+                                                    "mode": "add"
+                                                },
+                                                {
+                                                    "url": "https://c.pxhere.com/photos/c0/57/book_read_library_spine_hardcover-1397643.jpg!d"
+                                                },
+                                                {
+                                                    "content": [
+                                                        "Photo by Chris Lawton on Unsplash"
+                                                    ]
+                                                }
+                                            ],
+                                            "type": "image"
+                                        },
+                                        {
+                                            "eventsAndListEvents": [
+                                                {
+                                                    "type": "researchStep",
+                                                    "id": "S1",
+                                                    "instant": "false",
+                                                    "reves": [
+                                                        "step_EaXswO_150917"
+                                                    ],
+                                                    "mode": "add"
+                                                },
+                                                {
+                                                    "type": "researchStep",
+                                                    "id": "S2",
+                                                    "instant": "false",
+                                                    "reves": [
+                                                        "step_Eprimrf_300517"
+                                                    ],
+                                                    "mode": "add"
+                                                },
+                                                {
+                                                    "type": "researchStep",
+                                                    "id": "S3",
+                                                    "instant": "false",
+                                                    "reves": [
+                                                        "step_Cad_300517"
+                                                    ],
+                                                    "mode": "add"
+                                                }
+                                            ],
+                                            "default": "false"
+                                        }
+                                    ],
+                                    "id": "sc_schemaCustomization",
+                                    "type": "scenario",
+                                    "part": "N",
+                                    "sample": "complete",
+                                    "org": "uniform"
+                                },
+                                "nil": false,
+                                "globalScope": true,
+                                "typeSubstituted": false
+                            }
+                        ]
+                    }
+                ]
+            },
+            "nil": false,
+            "globalScope": true,
+            "typeSubstituted": false
+        }
+    ]
+}]}] on [[scenarios][0]]
+MapperParsingException[failed to parse]; nested: JsonParseException[Unexpected character (']' (code 93)): expected a value
+ at [Source: org.elasticsearch.common.io.stream.InputStreamStreamInput@742559b; line: 53, column: 38]];
+	at org.elasticsearch.index.mapper.DocumentParser.parseDocument(DocumentParser.java:156)
+	at org.elasticsearch.index.mapper.DocumentMapper.parse(DocumentMapper.java:309)
+	at org.elasticsearch.index.shard.IndexShard.prepareCreate(IndexShard.java:529)
+	at org.elasticsearch.index.shard.IndexShard.prepareCreateOnPrimary(IndexShard.java:506)
+	at org.elasticsearch.action.index.TransportIndexAction.prepareIndexOperationOnPrimary(TransportIndexAction.java:214)
+	at org.elasticsearch.action.index.TransportIndexAction.executeIndexRequestOnPrimary(TransportIndexAction.java:223)
+	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:157)
+	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:66)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryPhase.doRun(TransportReplicationAction.java:648)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:279)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:271)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:77)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unexpected character (']' (code 93)): expected a value
+ at [Source: org.elasticsearch.common.io.stream.InputStreamStreamInput@742559b; line: 53, column: 38]
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:1702)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:558)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportUnexpectedChar(ParserMinimalBase.java:456)
+	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser._handleUnexpectedValue(UTF8StreamJsonParser.java:2653)
+	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser._nextTokenNotInObject(UTF8StreamJsonParser.java:878)
+	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser.nextToken(UTF8StreamJsonParser.java:772)
+	at org.elasticsearch.common.xcontent.json.JsonXContentParser.nextToken(JsonXContentParser.java:53)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:266)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseNonDynamicArray(DocumentParser.java:416)
+	at org.elasticsearch.index.mapper.DocumentParser.parseArray(DocumentParser.java:394)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:256)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseDocument(DocumentParser.java:124)
+	... 17 more
+[2017-10-27 11:43:11,705][DEBUG][action.index             ]                      {
+                                "content": [
+                                    "Charles Riondet"
+                                ],
+                                "full": "yes",
+                                "instant": "false"
+                            },
+                            {
+                                "content": [
+                                    "Inria"
+                                ],
+                                "instant": "false"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "publicationStmt": {
+                "publishersAndDistributorsAndAuthorities": [
+                    {
+                        "content": [
+                            "Parthenos"
+                        ]
+                    },
+                    {
+                        "teiModelAvailabilityPartsAndPSAndAbs": [
+                            {
+                                "name": "{http://www.tei-c.org/ns/1.0}licence",
+                                "declaredType": "org.tei_c.TeiModelAvailabilityPart",
+                                "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+                                "value": {
+                                    "content": [
+                                        {
+                                            "content": [
+                                                "he Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this document."
+                                            ],
+                                            "part": "N"
+                                        },
+                                    ],
+                                    "targets": [
+                                        "http://creativecommons.org/licenses/by/4.0/"
+                                    ]
+                                },
+                                "nil": false,
+                                "globalScope": true,
+                                "typeSubstituted": false
+                            }
+                        ],
+                        "status": "unknown",
+                        "default": "false"
+                    }
+                ]
+            }
+        }
+    },
+    "teiModelResourceLikes": [
+        {
+            "name": "{http://www.tei-c.org/ns/1.0}text",
+            "declaredType": "org.tei_c.TeiModelResourceLike2",
+            "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+            "value": {
+                "teiModelGlobalMetasAndTeiModelMilestoneLikesAndNotes": [
+                    {
+                        "teiModelGlobalMetasAndTeiModelMilestoneLikesAndNotes": [
+                            {
+                                "name": "{http://www.tei-c.org/ns/1.0}div",
+                                "declaredType": "org.tei_c.TeiModelDivLike",
+                                "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+                                "value": {
+                                    "meetingsAndBylinesAndDatelines": [
+                                        {
+                                            "content": [
+                                                "Project-centered EAD customization"
+                                            ],
+                                            "type": "scenarioTitle",
+                                            "lang": "en",
+                                            "mode": "add"
+                                        },
+                                        {
+                                            "content": [
+                                                "TEI ODD can be used to document data models  external to the TEI environment. Several projects working with archival standards (in  particular EAD) use it as well. PARTHENOS created and maintain an instance of the EAD specification in ODD, that can be used to create project oriented customizations. "
+                                            ],
+                                            "lang": "en",
+                                            "mode": "add",
+                                            "type": "definition"
+                                        },
+                                        {
+                                            "content": [
+                                                "\n                    ",
+                                                {
+                                                    "content": [
+                                                        "Studies of the past"
+                                                    ],
+                                                    "key": "SOPT",
+                                                    "type": "discipline",
+                                                    "mode": "add",
+                                                    "sources": [
+                                                        "parthenos"
+                                                    ]
+                                                },
+                                                "\n                    ",
+                                                {
+                                                    "content": [
+                                                        "Heritage and applied disciplines"
+                                                    ],
+                                                    "key": "HAD",
+                                                    "type": "discipline",
+                                                    "mode": "add",
+                                                    "sources": [
+                                                        "parthenos"
+                                                    ]
+                                                },
+                                                "\n                "
+                                            ],
+                                            "lang": "en",
+                                            "mode": "add",
+                                            "type": "terms"
+                                        },
+                                        {
+                                            "headsAndLSAndPS": [
+                                                {
+                                                    "mode": "add"
+                                                },
+                                                {
+                                                    "url": "https://c.pxhere.com/photos/c0/57/book_read_library_spine_hardcover-1397643.jpg!d"
+                                                },
+                                                {
+                                                    "content": [
+                                                        "Photo by Chris Lawton on Unsplash"
+                                                    ]
+                                                }
+                                            ],
+                                            "type": "image"
+                                        },
+                                        {
+                                            "eventsAndListEvents": [
+                                                {
+                                                    "type": "researchStep",
+                                                    "id": "S1",
+                                                    "instant": "false",
+                                                    "reves": [
+                                                        "step_EaXswO_150917"
+                                                    ],
+                                                    "mode": "add"
+                                                },
+                                                {
+                                                    "type": "researchStep",
+                                                    "id": "S2",
+                                                    "instant": "false",
+                                                    "reves": [
+                                                        "step_Eprimrf_300517"
+                                                    ],
+                                                    "mode": "add"
+                                                },
+                                                {
+                                                    "type": "researchStep",
+                                                    "id": "S3",
+                                                    "instant": "false",
+                                                    "reves": [
+                                                        "step_Cad_300517"
+                                                    ],
+                                                    "mode": "add"
+                                                }
+                                            ],
+                                            "default": "false"
+                                        }
+                                    ],
+                                    "id": "sc_schemaCustomization",
+                                    "type": "scenario",
+                                    "part": "N",
+                                    "sample": "complete",
+                                    "org": "uniform"
+                                },
+                                "nil": false,
+                                "globalScope": true,
+                                "typeSubstituted": false
+                            }
+                        ]
+                    }
+                ]
+            },
+            "nil": false,
+            "globalScope": true,
+            "typeSubstituted": false
+        }
+    ]
+}]}] on [[scenarios][1]]
+MapperParsingException[failed to parse]; nested: JsonParseException[Unexpected character (']' (code 93)): expected a value
+ at [Source: org.elasticsearch.common.io.stream.InputStreamStreamInput@5c1a533a; line: 53, column: 38]];
+	at org.elasticsearch.index.mapper.DocumentParser.parseDocument(DocumentParser.java:156)
+	at org.elasticsearch.index.mapper.DocumentMapper.parse(DocumentMapper.java:309)
+	at org.elasticsearch.index.shard.IndexShard.prepareCreate(IndexShard.java:529)
+	at org.elasticsearch.index.shard.IndexShard.prepareCreateOnPrimary(IndexShard.java:506)
+	at org.elasticsearch.action.index.TransportIndexAction.prepareIndexOperationOnPrimary(TransportIndexAction.java:214)
+	at org.elasticsearch.action.index.TransportIndexAction.executeIndexRequestOnPrimary(TransportIndexAction.java:223)
+	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:157)
+	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:66)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryPhase.doRun(TransportReplicationAction.java:648)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:279)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:271)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:77)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unexpected character (']' (code 93)): expected a value
+ at [Source: org.elasticsearch.common.io.stream.InputStreamStreamInput@5c1a533a; line: 53, column: 38]
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:1702)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:558)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportUnexpectedChar(ParserMinimalBase.java:456)
+	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser._handleUnexpectedValue(UTF8StreamJsonParser.java:2653)
+	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser._nextTokenNotInObject(UTF8StreamJsonParser.java:878)
+	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser.nextToken(UTF8StreamJsonParser.java:772)
+	at org.elasticsearch.common.xcontent.json.JsonXContentParser.nextToken(JsonXContentParser.java:53)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:266)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseNonDynamicArray(DocumentParser.java:416)
+	at org.elasticsearch.index.mapper.DocumentParser.parseArray(DocumentParser.java:394)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:256)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseDocument(DocumentParser.java:124)
+	... 17 more
+[2017-10-27 11:44:12,783][DEBUG][action.index             ]                       {
+                                "content": [
+                                    "Charles Riondet"
+                                ],
+                                "full": "yes",
+                                "instant": "false"
+                            },
+                            {
+                                "content": [
+                                    "Inria"
+                                ],
+                                "instant": "false"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "publicationStmt": {
+                "publishersAndDistributorsAndAuthorities": [
+                    {
+                        "content": [
+                            "Parthenos"
+                        ]
+                    },
+                    {
+                        "teiModelAvailabilityPartsAndPSAndAbs": [
+                            {
+                                "name": "{http://www.tei-c.org/ns/1.0}licence",
+                                "declaredType": "org.tei_c.TeiModelAvailabilityPart",
+                                "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+                                "value": {
+                                    "content": [
+                                        {
+                                            "content": [
+                                                "he Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this document."
+                                            ],
+                                            "part": "N"
+                                        },
+                                    ]
+                                    "targets": [
+                                        "http://creativecommons.org/licenses/by/4.0/"
+                                    ]
+                                },
+                                "nil": false,
+                                "globalScope": true,
+                                "typeSubstituted": false
+                            }
+                        ],
+                        "status": "unknown",
+                        "default": "false"
+                    }
+                ]
+            }
+        }
+    },
+    "teiModelResourceLikes": [
+        {
+            "name": "{http://www.tei-c.org/ns/1.0}text",
+            "declaredType": "org.tei_c.TeiModelResourceLike2",
+            "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+            "value": {
+                "teiModelGlobalMetasAndTeiModelMilestoneLikesAndNotes": [
+                    {
+                        "teiModelGlobalMetasAndTeiModelMilestoneLikesAndNotes": [
+                            {
+                                "name": "{http://www.tei-c.org/ns/1.0}div",
+                                "declaredType": "org.tei_c.TeiModelDivLike",
+                                "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+                                "value": {
+                                    "meetingsAndBylinesAndDatelines": [
+                                        {
+                                            "content": [
+                                                "Project-centered EAD customization"
+                                            ],
+                                            "type": "scenarioTitle",
+                                            "lang": "en",
+                                            "mode": "add"
+                                        },
+                                        {
+                                            "content": [
+                                                "TEI ODD can be used to document data models  external to the TEI environment. Several projects working with archival standards (in  particular EAD) use it as well. PARTHENOS created and maintain an instance of the EAD specification in ODD, that can be used to create project oriented customizations. "
+                                            ],
+                                            "lang": "en",
+                                            "mode": "add",
+                                            "type": "definition"
+                                        },
+                                        {
+                                            "content": [
+                                                "\n                    ",
+                                                {
+                                                    "content": [
+                                                        "Studies of the past"
+                                                    ],
+                                                    "key": "SOPT",
+                                                    "type": "discipline",
+                                                    "mode": "add",
+                                                    "sources": [
+                                                        "parthenos"
+                                                    ]
+                                                },
+                                                "\n                    ",
+                                                {
+                                                    "content": [
+                                                        "Heritage and applied disciplines"
+                                                    ],
+                                                    "key": "HAD",
+                                                    "type": "discipline",
+                                                    "mode": "add",
+                                                    "sources": [
+                                                        "parthenos"
+                                                    ]
+                                                },
+                                                "\n                "
+                                            ],
+                                            "lang": "en",
+                                            "mode": "add",
+                                            "type": "terms"
+                                        },
+                                        {
+                                            "headsAndLSAndPS": [
+                                                {
+                                                    "mode": "add"
+                                                },
+                                                {
+                                                    "url": "https://c.pxhere.com/photos/c0/57/book_read_library_spine_hardcover-1397643.jpg!d"
+                                                },
+                                                {
+                                                    "content": [
+                                                        "Photo by Chris Lawton on Unsplash"
+                                                    ]
+                                                }
+                                            ],
+                                            "type": "image"
+                                        },
+                                        {
+                                            "eventsAndListEvents": [
+                                                {
+                                                    "type": "researchStep",
+                                                    "id": "S1",
+                                                    "instant": "false",
+                                                    "reves": [
+                                                        "step_EaXswO_150917"
+                                                    ],
+                                                    "mode": "add"
+                                                },
+                                                {
+                                                    "type": "researchStep",
+                                                    "id": "S2",
+                                                    "instant": "false",
+                                                    "reves": [
+                                                        "step_Eprimrf_300517"
+                                                    ],
+                                                    "mode": "add"
+                                                },
+                                                {
+                                                    "type": "researchStep",
+                                                    "id": "S3",
+                                                    "instant": "false",
+                                                    "reves": [
+                                                        "step_Cad_300517"
+                                                    ],
+                                                    "mode": "add"
+                                                }
+                                            ],
+                                            "default": "false"
+                                        }
+                                    ],
+                                    "id": "sc_schemaCustomization",
+                                    "type": "scenario",
+                                    "part": "N",
+                                    "sample": "complete",
+                                    "org": "uniform"
+                                },
+                                "nil": false,
+                                "globalScope": true,
+                                "typeSubstituted": false
+                            }
+                        ]
+                    }
+                ]
+            },
+            "nil": false,
+            "globalScope": true,
+            "typeSubstituted": false
+        }
+    ]
+}]}] on [[scenarios][3]]
+MapperParsingException[failed to parse]; nested: JsonParseException[Unexpected character (']' (code 93)): expected a value
+ at [Source: org.elasticsearch.common.io.stream.InputStreamStreamInput@66c927bd; line: 53, column: 38]];
+	at org.elasticsearch.index.mapper.DocumentParser.parseDocument(DocumentParser.java:156)
+	at org.elasticsearch.index.mapper.DocumentMapper.parse(DocumentMapper.java:309)
+	at org.elasticsearch.index.shard.IndexShard.prepareCreate(IndexShard.java:529)
+	at org.elasticsearch.index.shard.IndexShard.prepareCreateOnPrimary(IndexShard.java:506)
+	at org.elasticsearch.action.index.TransportIndexAction.prepareIndexOperationOnPrimary(TransportIndexAction.java:214)
+	at org.elasticsearch.action.index.TransportIndexAction.executeIndexRequestOnPrimary(TransportIndexAction.java:223)
+	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:157)
+	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:66)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryPhase.doRun(TransportReplicationAction.java:648)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:279)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:271)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:77)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unexpected character (']' (code 93)): expected a value
+ at [Source: org.elasticsearch.common.io.stream.InputStreamStreamInput@66c927bd; line: 53, column: 38]
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:1702)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:558)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportUnexpectedChar(ParserMinimalBase.java:456)
+	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser._handleUnexpectedValue(UTF8StreamJsonParser.java:2653)
+	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser._nextTokenNotInObject(UTF8StreamJsonParser.java:878)
+	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser.nextToken(UTF8StreamJsonParser.java:772)
+	at org.elasticsearch.common.xcontent.json.JsonXContentParser.nextToken(JsonXContentParser.java:53)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:266)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseNonDynamicArray(DocumentParser.java:416)
+	at org.elasticsearch.index.mapper.DocumentParser.parseArray(DocumentParser.java:394)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:256)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseDocument(DocumentParser.java:124)
+	... 17 more
+[2017-10-27 11:45:56,077][DEBUG][action.index             ] [ssk] failed to execute [index {[scenarios][scenario][AV9dOUhs2zMRYXn4dpTz], source[{
+	"titleStmt": {
+                "titles": [
+                    {
+                        "content": [
+                            "Project-centered EAD customization scenario"
+                        ]
+                    }
+                ],
+                "authorsAndEditorsAndRespStmts": [
+                    {
+                        "content": [
+                            "\n                    ",
+                            {
+                                "content": [
+                                    "Charles Riondet"
+                                ],
+                                "full": "yes",
+                                "instant": "false"
+                            },
+                            "\n                    ",
+                            {
+                                "content": [
+                                    "Inria"
+                                ],
+                                "instant": "false"
+                            },
+                            "\n                "
+                        ]
+                    }
+                ]
+            }
+}]}] on [[scenarios][2]]
+MapperParsingException[failed to parse]; nested: IllegalArgumentException[mapper [titleStmt.authorsAndEditorsAndRespStmts.content] of different type, current_type [string], merged_type [ObjectMapper]];
+	at org.elasticsearch.index.mapper.DocumentParser.parseDocument(DocumentParser.java:156)
+	at org.elasticsearch.index.mapper.DocumentMapper.parse(DocumentMapper.java:309)
+	at org.elasticsearch.index.shard.IndexShard.prepareCreate(IndexShard.java:529)
+	at org.elasticsearch.index.shard.IndexShard.prepareCreateOnPrimary(IndexShard.java:506)
+	at org.elasticsearch.action.index.TransportIndexAction.prepareIndexOperationOnPrimary(TransportIndexAction.java:214)
+	at org.elasticsearch.action.index.TransportIndexAction.executeIndexRequestOnPrimary(TransportIndexAction.java:223)
+	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:157)
+	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:66)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryPhase.doRun(TransportReplicationAction.java:648)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:279)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:271)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:77)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.IllegalArgumentException: mapper [titleStmt.authorsAndEditorsAndRespStmts.content] of different type, current_type [string], merged_type [ObjectMapper]
+	at org.elasticsearch.index.mapper.FieldMapper.doMerge(FieldMapper.java:378)
+	at org.elasticsearch.index.mapper.core.StringFieldMapper.doMerge(StringFieldMapper.java:382)
+	at org.elasticsearch.index.mapper.FieldMapper.merge(FieldMapper.java:364)
+	at org.elasticsearch.index.mapper.FieldMapper.merge(FieldMapper.java:53)
+	at org.elasticsearch.index.mapper.object.ObjectMapper.doMerge(ObjectMapper.java:528)
+	at org.elasticsearch.index.mapper.object.ObjectMapper.merge(ObjectMapper.java:501)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:271)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseNonDynamicArray(DocumentParser.java:416)
+	at org.elasticsearch.index.mapper.DocumentParser.parseArray(DocumentParser.java:394)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:256)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseDocument(DocumentParser.java:124)
+	... 17 more
+[2017-10-27 11:46:08,528][DEBUG][action.index             ] [ssk] failed to execute [index {[scenarios][scenario][AV9dOXkP2zMRYXn4dpT0], source[{
+	"titleStmt": {
+                "titles": [
+                    {
+                        "content": [
+                            "Project-centered EAD customization scenario"
+                        ]
+                    }
+                ],
+                "authorsAndEditorsAndRespStmts": [
+                    {
+                        "content": [
+                            {
+                                "content": [
+                                    "Charles Riondet"
+                                ],
+                                "full": "yes",
+                                "instant": "false"
+                            },
+                            {
+                                "content": [
+                                    "Inria"
+                                ],
+                                "instant": "false"
+                            },
+                        ]
+                    }
+                ]
+            }
+}]}] on [[scenarios][1]]
+MapperParsingException[failed to parse]; nested: JsonParseException[Unexpected character (']' (code 93)): expected a value
+ at [Source: org.elasticsearch.common.io.stream.InputStreamStreamInput@3db49927; line: 26, column: 26]];
+	at org.elasticsearch.index.mapper.DocumentParser.parseDocument(DocumentParser.java:156)
+	at org.elasticsearch.index.mapper.DocumentMapper.parse(DocumentMapper.java:309)
+	at org.elasticsearch.index.shard.IndexShard.prepareCreate(IndexShard.java:529)
+	at org.elasticsearch.index.shard.IndexShard.prepareCreateOnPrimary(IndexShard.java:506)
+	at org.elasticsearch.action.index.TransportIndexAction.prepareIndexOperationOnPrimary(TransportIndexAction.java:214)
+	at org.elasticsearch.action.index.TransportIndexAction.executeIndexRequestOnPrimary(TransportIndexAction.java:223)
+	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:157)
+	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:66)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryPhase.doRun(TransportReplicationAction.java:648)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:279)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:271)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:77)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unexpected character (']' (code 93)): expected a value
+ at [Source: org.elasticsearch.common.io.stream.InputStreamStreamInput@3db49927; line: 26, column: 26]
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:1702)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:558)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportUnexpectedChar(ParserMinimalBase.java:456)
+	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser._handleUnexpectedValue(UTF8StreamJsonParser.java:2653)
+	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser._nextTokenNotInObject(UTF8StreamJsonParser.java:878)
+	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser.nextToken(UTF8StreamJsonParser.java:772)
+	at org.elasticsearch.common.xcontent.json.JsonXContentParser.nextToken(JsonXContentParser.java:53)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:266)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseNonDynamicArray(DocumentParser.java:416)
+	at org.elasticsearch.index.mapper.DocumentParser.parseArray(DocumentParser.java:394)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:256)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseAndMergeUpdate(DocumentParser.java:740)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:354)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseDocument(DocumentParser.java:124)
+	... 17 more
+[2017-10-27 11:55:49,775][INFO ][cluster.metadata         ] [ssk] [scenarios] update_mapping [scenario]
+[2017-10-27 18:11:54,139][INFO ][node                     ] [ssk] stopping ...
+[2017-10-27 18:11:54,238][INFO ][node                     ] [ssk] stopped
+[2017-10-27 18:11:54,238][INFO ][node                     ] [ssk] closing ...
+[2017-10-27 18:11:54,247][INFO ][node                     ] [ssk] closed

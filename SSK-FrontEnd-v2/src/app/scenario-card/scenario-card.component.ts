@@ -70,7 +70,7 @@ export class ScenarioCardComponent implements OnInit {
 
 
   goToScenario(scenarioId: string) {
-    this.router.navigate(['scenarios', scenarioId,  1]);
+    this.router.navigate(['scenarios', scenarioId, 1]);
   }
 
   getInnerHTMLValue(text: string ) {

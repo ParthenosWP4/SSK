@@ -8,14 +8,12 @@ import org.json.JSONObject;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.util.UriComponentsBuilder;
-import org.w3c.dom.NodeList;
+
 
 import java.util.*;
 import java.util.regex.Pattern;
@@ -23,86 +21,53 @@ import java.util.regex.Pattern;
 @Service
 public class ElasticServices {
 	
-	
-	@Autowired
-	private ElasticsearchOperations es;
-	
-	@Autowired
-	private SSKServices sskServices;
-	
-	@Autowired
-	private GithubApiService githubApiService;
-	
-	@Autowired
-	private RequestHeadersParams requestHeadersParams;
-	
 	@Value("${elasticsearch.port2}")
 	private String elasticSearchPort;
 	
 	@Value("${elasticsearch.index}")
 	private String sskIndex;
 	
-	private static JsonParser parser  = new JsonParser();
-	
+	private ElasticsearchOperations es;
+	private SSKServices sskServices;
+	private GithubApiService githubApiService;
+	private RequestHeadersParams requestHeadersParams;
 	private Gson gson;
+	private List<String> targetList ;
+	private static HttpEntity<String> entity;
 	
-	List<String> targetList ;
-	
+	private static JsonParser parser  = new JsonParser();
 	private RestTemplate restTemplate = new RestTemplate();
 	private List<String> lastProperties = new ArrayList<>();
 	private static final Logger logger = LoggerFactory.getLogger(ElasticServices.class.getName());
-	private static StringBuilder xmlStringBuilder;
-	private static HttpEntity<String> entity;
 	
-	public static final List<String> nestedStepMappings = Arrays.asList("TEI.teiHeader.fileDesc.titleStmt.author","TEI.teiHeader.fileDesc.titleStmt.author.persName ", "TEI.text.body.listEvent.event", "TEI.text.body.listEvent.event.head", "TEI.text.body.listEvent.event.head.content", "TEI.text.body.listEvent.event.head.term", "TEI.text.body.listEvent.event.head.ref",
+	private static final List<String> nestedStepMappings = Arrays.asList("TEI.teiHeader.fileDesc.titleStmt.author","TEI.teiHeader.fileDesc.titleStmt.author.persName ", "TEI.text.body.listEvent.event", "TEI.text.body.listEvent.event.head", "TEI.text.body.listEvent.event.head.content", "TEI.text.body.listEvent.event.head.term", "TEI.text.body.listEvent.event.head.ref",
 			"TEI.text.body.listEvent.event.desc.term", "TEI.text.body.listEvent.event.desc.content");
-	public static final List<String> nestedScenarioMappings = Arrays.asList("TEI.teiHeader.fileDesc.titleStmt.author", "TEI.text.body.div.desc.content", "TEI.text.body.div.desc.term", "TEI.text.body.listEvent.event");
 	
-	public static final List<String> metadata = Arrays.asList("techniques", "objects", "disciplines", "standards", "standards.desc", "activities");
-	public static final List<String> nestedREsMappings = Arrays.asList("general", "project");
+	private static final List<String> nestedScenarioMappings = Arrays.asList("TEI.teiHeader.fileDesc.titleStmt.author", "TEI.text.body.div.desc.content", "TEI.text.body.div.desc.term", "TEI.text.body.listEvent.event");
 	
+	private static final List<String> metadata = Arrays.asList("techniques", "objects", "disciplines", "standards", "standards.desc", "activities");
 	
-	public static final List<String> toolTypeVariants = Arrays.asList("tool", "service", "software");
-	public static final List<String> specTypeVariants = Arrays.asList("spec", "specification", "standard");
-	public static final List<String> documentationTypeVariants = Arrays.asList("documentation", "official_documentation");
+	private static final List<String> nestedREsMappings = Arrays.asList("general", "project");
 	
-	private static List<String>  stringfields=  Arrays.asList("title", "description");
+	private HashMap<String, List<String>> resourceTypeVariant = new HashMap<>();
 	
-	HashMap<String, List<String>> resourceTypeVariant = new HashMap<>();
-	
-	
-	public ElasticServices() {
+	public ElasticServices(ElasticsearchOperations es, SSKServices sskServices,
+	                       GithubApiService githubApiService, RequestHeadersParams requestHeadersParams){
+		this.es = es;
+		this.sskServices = sskServices;
+		this.githubApiService = githubApiService;
+		this.requestHeadersParams  = requestHeadersParams;
 		resourceTypeVariant.put("tool", Arrays.asList("tool", "service", "software"));
 		resourceTypeVariant.put("specification", Arrays.asList("spec", "specification", "standard"));
 		resourceTypeVariant.put("documentation", Arrays.asList("documentation", "official_documentation"));
-		gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+		this.gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
 		targetList = new ArrayList<>();
 	}
 	
 	
-	public ElasticsearchOperations getEs() {
-		return es;
-	}
-	
-	public void setEs(ElasticsearchOperations es) {
-		this.es = es;
-	}
 	
 	
-	public ResponseEntity<Object> getElasticSearchHealth() {
-		HttpStatus status;
-		JSONObject jsonObject = new JSONObject();
-		jsonObject.put("content", "AVAILABLE");
-		ResponseEntity<String> response = this.restTemplate.getForEntity(elasticSearchPort + "_cat/health", String.class);
-		if (response.getStatusCode().equals(HttpStatus.NOT_FOUND) || response.getBody().contains("red")) {
-			jsonObject.put("content", "NOT AVAILABLE");
-		}
-		return ResponseEntity.status(HttpStatus.OK)
-				       .headers(requestHeadersParams.getHeaders())
-				       .body(sskServices.toJson(jsonObject));
-	}
-	
-	public boolean createMappings(String mappingType) {
+	public  boolean createMappings(String mappingType) {
 		
 		List<String> nested = new ArrayList<>();
 		JSONObject enabled = new JSONObject();
@@ -166,6 +131,7 @@ public class ElasticServices {
 		}
 		return result;
 	}
+	
 	
 	private void createResourcesMapping() {
 		
@@ -313,6 +279,7 @@ public class ElasticServices {
 							}
 						}
 					} catch (Exception e) {
+						logger.error("informations " + source + "  " +resource.get("target").getAsString());
 						logger.error(e.getMessage());
 						elt = this.sskServices.scraptWebPage(source, resource.get("target").getAsString(),resourceType);
 						//resourceData.add(this.sskServices.scraptWebPage(source, resource.get("target").getAsString(),resourceType));
@@ -482,6 +449,13 @@ public class ElasticServices {
 	
 	
 	
+	public ElasticsearchOperations getEs() {
+		return es;
+	}
+	
+	public void setEs(ElasticsearchOperations es) {
+		this.es = es;
+	}
 	
 	
 	

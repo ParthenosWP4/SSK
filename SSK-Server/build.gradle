@@ -16,7 +16,13 @@ war {
     version = '0.0.1'
 }
 
+
+
 apply plugin: 'java'
+
+configurations {
+    jaxDoclet
+}
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
@@ -25,6 +31,13 @@ repositories {
     mavenCentral()
 }
 
+sourceSets {
+    build {
+        java.srcDir file('src/java')
+    }
+}
+
+
 dependencies {
 
 
@@ -32,7 +45,7 @@ dependencies {
 
    // testCompile group: 'org.springframework.boot', name: "spring-boot-starter-test", version: '1.5.7.RELEASE'
 
-    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+    //providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 
     //providedRuntime 'org.slf4j:slf4j-api:1.7.25'
 
@@ -80,10 +93,10 @@ dependencies {
     compile group: 'org.jsoup', name: 'jsoup', version: '1.10.2'
 
     // https://mvnrepository.com/artifact/org.slf4j/log4j-over-slf4j
-    //compile group: 'org.slf4j', name: 'log4j-over-slf4j', version: '1.7.25'
+    compile group: 'org.slf4j', name: 'log4j-over-slf4j', version: '1.7.25'
 
 // https://mvnrepository.com/artifact/org.slf4j/jul-to-slf4j
-   // compile group: 'org.slf4j', name: 'jul-to-slf4j', version: '1.7.25'
+    compile group: 'org.slf4j', name: 'jul-to-slf4j', version: '1.7.25'
 
     compile 'commons-logging:commons-logging:1.2'
 
@@ -94,10 +107,17 @@ dependencies {
 
 }
 
+task myJavadocs(type: Javadoc) {
+    source = sourceSets.main.allJava
+    classpath = configurations.compile
+}
+
+
+
 configurations.all {
-    exclude group: 'ch.qos.logback', module:'logback-classic'
-    exclude group: 'org.slf4j', module:'jcl-over-slf4j'
-    exclude group: 'org.slf4j', module:'jul-to-slf4j'
-    exclude group: 'org.slf4j', module:'log4j-over-slf4j'
+    //exclude group: 'ch.qos.logback', module:'logback-classic'
+    //exclude group: 'org.slf4j', module:'jcl-over-slf4j'
+   // exclude group: 'org.slf4j', module:'jul-to-slf4j'
+   // exclude group: 'org.slf4j', module:'log4j-over-slf4j'
     //exclude group: 'org.slf4j', module:'slf4j-api'
 }

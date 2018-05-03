@@ -14,6 +14,16 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'icomoon2';
+  src:  url('./assets/icomoon/fonts/icomoon2.eot?1y86zq');
+  src:  url('./assets/icomoon/fonts/icomoon2.eot?1y86zq#iefix') format('embedded-opentype'),
+  url('./assets/icomoon/fonts/icomoon2.ttf?1y86zq') format('truetype'),
+  url('./assets/icomoon/fonts/icomoon2.woff?1y86zq') format('woff'),
+  url('./assets/icomoon/fonts/icomoon2.svg?1y86zq#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
 @font-face {
   font-family: 'Roboto-Medium';
@@ -99,6 +109,17 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.ic2 {
+  display: inline-block;
+  font: normal normal normal 16px/1  icomoon2;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
 .ssk-home:before {
   content: "\e940";
 }
@@ -142,6 +163,54 @@
 }
 .ssk-projects:before {
   content: "\e945";
+}
+
+.search-div {
+  top:0px;
+  position:fixed;
+}
+
+/* Glossary's icons*/
+.ssk-standards:before {
+  content: "\e800";
+}
+.ssk-activities:before {
+  content: "\e801";
+}
+
+.ssk-techniques:before {
+  content: "\e802";
+}
+.ssk-objects:before {
+  content: "\e803";
+}
+.ssk-disciplines:before {
+  content: "\e804";
+}
+
+
+
+
+.search-div {
+  top:0px;
+  position:fixed;
+}
+
+
+
+
+
+
+.home {
+  background-color: $color-33;
+}
+
+.breadcrumb {
+  background-color: transparent !important;
+}
+
+.bg-info{
+  background-color: $color-33;
 }
 
 

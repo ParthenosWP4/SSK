@@ -40,6 +40,7 @@ export class ScenariosComponent implements OnInit {
   private scenarioResults = [];
   private stepsResults = [];
   private resourcesResults = [];
+  private detailsResult = {};
 
   constructor(
     private appComponent: AppComponent,
@@ -59,26 +60,27 @@ export class ScenariosComponent implements OnInit {
     this.tabList = this.appComponent.browseItems;
     this.selectTab = this.tabList[0];
     if (this.elasticServices.getScenarios().length === 0 ) {
-      this.elasticServices.countItems('scenarios').subscribe(result => {
+      this.elasticServices.countItems('scenarios').subscribe(
+        result => {
           this.elasticServices.setScenariosID(result['scenarios']);
           this.elasticServices.setScenarioNumber(result['total']);
           this.scenariosTemp = new Array<any>(this.elasticServices.getScenarioNumber());
           this.elasticServices.getScenariosID().forEach((obj)  => {
             this.asynchFunction(obj);
           });
-
         }, error => {
           this.error = '500 - Internal Server Error';
         },
         () => {
           this.scenarios = this.elasticServices.getScenarios();
-          this.elasticServices.getAllSteps().subscribe(result => {});
-          this.loadStepsMetaData();
-          this.loadResources();
-          this.resultCount = this.elasticServices.getScenarios().length;
-
+          this.elasticServices.getAllSteps().subscribe(result => {},
+            error => {},
+            () => {
+              this.loadStepsMetaData();
+              this.loadResources();
+              this.resultCount = this.elasticServices.getScenarios().length;
+            });
         });
-
     } else {
       this.resultCount = this.elasticServices.getScenarios().length;
       this.scenarios = this.elasticServices.getScenarios();
@@ -87,48 +89,50 @@ export class ScenariosComponent implements OnInit {
 
    asynchFunction(scenario: any) {
      setTimeout(() => {
-       this.elasticServices.getScenarioDetails(scenario._id).subscribe(detailsResult => {
-         detailsResult.id = scenario._id;
-         this.elasticServices.addScenario(detailsResult);
-         this.scenariosTemp.pop();
-         this.resultCount += 1;
-         if (this.scenarios.length === this.elasticServices.getScenarioNumber()) {
+       this.elasticServices.getScenarioDetails(scenario._id).subscribe(
+         result => {
+            result.id = scenario._id;
+            this.detailsResult = result;
+         },
+         error => { this.error = '500 - Internal Server Error'; },
+         () => {
+           this.elasticServices.addScenario(this.detailsResult);
+           this.scenariosTemp.pop();
+           this.resultCount += 1;
+           if (this.scenarios.length === this.elasticServices.getScenarioNumber()) {
+             this.elasticServices.setObjects(_.uniq(_.concat(this.elasticServices.getObjects(),
+               _.map(Object.keys(_.groupBy(_.flattenDeep(_.remove(_.map(_.map(this.elasticServices.getScenarios(), 'scenario_metadata'),
+                 'objects'), function(n) { return !isUndefined(n); })), 'key')), v => v.toLowerCase()))));
 
-           this.elasticServices.setObjects(_.uniq(_.concat(this.elasticServices.getObjects(),
-             _.map(Object.keys(_.groupBy(_.flattenDeep(_.remove(_.map(_.map(this.elasticServices.getScenarios(), 'scenario_metadata'),
-               'objects'), function(n) { return !isUndefined(n); })), 'key')), v => v.toLowerCase()))));
+             this.elasticServices.setDisciplines(_.map(Object.keys(_.groupBy(_.flattenDeep(_.remove(_.map(_.map(
+               this.elasticServices.getScenarios(), 'scenario_metadata'), 'discipline'), function(n) {
+               return !isUndefined(n); })), 'key')), v => v.replace(/\s+/g, ' ')));
 
-           this.elasticServices.setDisciplines(_.map(Object.keys(_.groupBy(_.flattenDeep(_.remove(_.map(_.map(
-             this.elasticServices.getScenarios(), 'scenario_metadata'), 'discipline'), function(n) {
-             return !isUndefined(n); })), 'key')), v => v.replace(/\s+/g, ' ')));
+             this.elasticServices.setTechniques(_.uniq(_.concat(this.elasticServices.getTechniques(),
+               _.map(Object.keys(_.groupBy(_.flattenDeep(_.remove(_.map(_.map(this.elasticServices.getScenarios(), 'scenario_metadata'),
+                 'techniques'), function(n) { return !isUndefined(n); })), 'key')), v => v.toLowerCase()))));
 
-           this.elasticServices.setTechniques(_.uniq(_.concat(this.elasticServices.getTechniques(),
-             _.map(Object.keys(_.groupBy(_.flattenDeep(_.remove(_.map(_.map(this.elasticServices.getScenarios(), 'scenario_metadata'),
-               'techniques'), function(n) { return !isUndefined(n); })), 'key')), v => v.toLowerCase()))));
-
-           this.searchData['disciplines'] = this.elasticServices.getDisciplines();
-           this.searchData['activities'] = this.elasticServices.getActivities();
-           this.searchData['techniques'] = this.elasticServices.getTechniques();
-           this.searchData['objects'] = this.elasticServices.getObjects();
-           this.searchData['standards'] = this.elasticServices.getStandards();
+             this.searchData['disciplines'] = this.elasticServices.getDisciplines();
+             this.searchData['activities'] = this.elasticServices.getActivities();
+             this.searchData['techniques'] = this.elasticServices.getTechniques();
+             this.searchData['objects'] = this.elasticServices.getObjects();
+             this.searchData['standards'] = this.elasticServices.getStandards();
 
 
-           /*console.log(this.elasticServices.getDisciplines());
-           console.log(this.elasticServices.getTechniques());
-           console.log(this.elasticServices.getStandards());
-           console.log(this.elasticServices.getObjects());
-           console.log(this.elasticServices.getActivities());*/
+             /*console.log(this.elasticServices.getDisciplines());
+             console.log(this.elasticServices.getTechniques());
+             console.log(this.elasticServices.getStandards());
+             console.log(this.elasticServices.getObjects());
+             console.log(this.elasticServices.getActivities());*/
 
+           }
          }
-       }, error => {
-         this.error = '500 - Internal Server Error';
-       });
+       );
      }, 1000);
    }
 
 
   onKey(event: any) { // without type info
-   // this.contentCol = '';
     if (event.target.value.length >= 3 ) {
       this.search(event.target.value);
     }else {
@@ -138,7 +142,6 @@ export class ScenariosComponent implements OnInit {
   }
 
   searchInit() {
-
       if (this.tabScenarios) {
         this.scenarios = this.elasticServices.getScenarios();
         this.resultCount = this.elasticServices.getScenarios().length;

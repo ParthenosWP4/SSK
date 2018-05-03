@@ -7,11 +7,19 @@ import {ScenarioTemplateComponent} from './scenario-template/scenario-template.c
 import {ScenarioCardComponent} from './scenario-card/scenario-card.component';
 import {StepCardComponent} from './step-card/step-card.component';
 import {ScenarioComponent} from './scenario/scenario.component';
+import {GlossaryComponent} from "./glossary/glossary.component";
+import {ContentComponent} from "./glossary/content/content.component";
+import {GlossaryResolver} from "./glossary/glossary.resolver";
 
 
 const routes: Routes = [
   { path: '#', redirectTo: '/', pathMatch: 'full' },
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent,
+    data: {
+      // Uses static text (Home)
+      breadcrumbs: 'Home'
+    }
+  },
   { path: 'scenarios', component: ScenariosComponent , children:
     [
       { path: '', component: ScenarioTemplateComponent, outlet: 'scenario-template' },
@@ -26,15 +34,28 @@ const routes: Routes = [
   { path: 'steps', component: ScenariosComponent, outlet: 'target'},
   { path: 'resources', component: ScenariosComponent, outlet: 'target'},
 
-  { path: 'scenarios/:id', component: ScenarioComponent, children:
-    [
-      {path: '', component: ScenarioComponent, outlet: 'step'}
-    ]},
-  { path: 'scenarios/:id/:stepId', component: ScenarioComponent}
+  { path: 'scenarios/:id', component: ScenarioComponent},
+  { path: 'scenarios/:id/:stepId', component: ScenarioComponent},
+  {
+    path: 'glossary', component: GlossaryComponent,
+    data: {
+      // Uses static text (Glossary)
+      breadcrumbs: true,
+      text: 'Glossary'
+    },
+  children: [
+    { path: ':item', component: ContentComponent,
+      resolve: {
+        item: GlossaryResolver
+      },
+      data: {
+        breadcrumbs: '{{item}}',
+      }
+    }
+  ]
+  }
 ];
 
-export const appRoutingProviders: any[] = [
-
-];
+export const appRoutingProviders: any[] = [];
 
 export const routing = RouterModule.forRoot(routes, { useHash: true });

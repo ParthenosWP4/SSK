@@ -5,13 +5,13 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import * as _ from 'lodash';
 import {isUndefined} from 'util';
+import {environment} from "../environments/environment";
 
 
 @Injectable()
 export class ElastichsearchServicesService {
 
-  //private sskBackendEndpoint = '../ssk_services-0.0.1/';
-  private sskBackendEndpoint = 'https://ssk-application.parthenos.d4science.org/ssk_services-0.0.1/';
+  private sskBackendEndpoint = environment.sskBackendEndpoint
  //private sskBackendEndpoint = 'http://localhost:9000/ssk_services-0.0.1/';
   private headers = new Headers({'Content-Type': 'application/json'});
 
@@ -91,7 +91,7 @@ export class ElastichsearchServicesService {
     this.setActivities(_.uniq(_.map(Object.keys(_.groupBy(_.flattenDeep(_.map(_.map(this.getStepsMetadata(), '_source'), 'activity'))
       , 'key')), v => this.tagSanitize(v.toLowerCase()).replace(/[0-9]/g, '').replace('_', '').trim())));
 
-    this.setObjects(_.map(Object.keys(_.groupBy(_.groupBy(_.flattenDeep(_.remove(_.map(_.map(this.getStepsMetadata(), '_source'), 'objects'),
+   this.setObjects(_.map(Object.keys(_.groupBy(_.groupBy(_.flattenDeep(_.remove(_.map(_.map(this.getStepsMetadata(), '_source'), 'objects'),
       function(n) { return !isUndefined(n); })), 'type').object, 'key')), item => item.toLowerCase()));
 
     this.setTechniques(_.map(Object.keys(_.groupBy(_.groupBy(_.flattenDeep(_.remove(_.map(_.map(this.getStepsMetadata(), '_source'),
@@ -192,6 +192,7 @@ export class ElastichsearchServicesService {
   setOptions(headers: Headers, params: URLSearchParams) {
     this.options = new RequestOptions({headers: this.headers, params: params});
   }
+
   setParams(fields: Array<string>) {
     this.params.delete('fields')
     this.params.append('fields', fields.toString());

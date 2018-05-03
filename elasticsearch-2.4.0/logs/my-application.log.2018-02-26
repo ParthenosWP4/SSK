@@ -1,0 +1,85 @@
+[2018-02-26 06:21:42,924][DEBUG][action.admin.indices.mapping.put] [Nate Grey] failed to put mappings on indices [[ssk]], type [scenario]
+java.lang.IllegalArgumentException: Field [_source] is defined both as an object and a field in [scenario]
+	at org.elasticsearch.index.mapper.MapperService.checkFieldUniqueness(MapperService.java:494)
+	at org.elasticsearch.index.mapper.MapperService.merge(MapperService.java:376)
+	at org.elasticsearch.index.mapper.MapperService.merge(MapperService.java:320)
+	at org.elasticsearch.cluster.metadata.MetaDataMappingService$PutMappingExecutor.applyRequest(MetaDataMappingService.java:306)
+	at org.elasticsearch.cluster.metadata.MetaDataMappingService$PutMappingExecutor.execute(MetaDataMappingService.java:230)
+	at org.elasticsearch.cluster.service.InternalClusterService.runTasksForExecutor(InternalClusterService.java:468)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:772)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:231)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:194)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[2018-02-26 06:21:42,943][DEBUG][action.index             ] [Nate Grey] failed to execute [index {[ssk][scenario][AWG5HcARCiWRXbc2VaaZ], source[
+{
+	"_source": {
+        "include": [ "*.url", "*.head.*","*.desc.*"],
+        "exclude": ["*.head.type", "*.listEvent.*", "*.text.div", "*.teiHeader.*", "*.desc.term", "*.desc.type", "*.desc.lang"]
+ }
+}]}] on [[ssk][0]]
+java.lang.IllegalArgumentException: Field [_source] is defined both as an object and a field in [scenario]
+	at org.elasticsearch.index.mapper.MapperService.checkFieldUniqueness(MapperService.java:494)
+	at org.elasticsearch.index.mapper.MapperService.merge(MapperService.java:376)
+	at org.elasticsearch.index.mapper.MapperService.merge(MapperService.java:320)
+	at org.elasticsearch.cluster.metadata.MetaDataMappingService$PutMappingExecutor.applyRequest(MetaDataMappingService.java:306)
+	at org.elasticsearch.cluster.metadata.MetaDataMappingService$PutMappingExecutor.execute(MetaDataMappingService.java:230)
+	at org.elasticsearch.cluster.service.InternalClusterService.runTasksForExecutor(InternalClusterService.java:468)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:772)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:231)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:194)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[2018-02-26 06:25:14,672][DEBUG][action.admin.indices.mapping.put] [Nate Grey] failed to put mappings on indices [[ssk]], type [scenario]
+java.lang.IllegalArgumentException: Field [_source] is defined both as an object and a field in [scenario]
+	at org.elasticsearch.index.mapper.MapperService.checkFieldUniqueness(MapperService.java:494)
+	at org.elasticsearch.index.mapper.MapperService.merge(MapperService.java:376)
+	at org.elasticsearch.index.mapper.MapperService.merge(MapperService.java:320)
+	at org.elasticsearch.cluster.metadata.MetaDataMappingService$PutMappingExecutor.applyRequest(MetaDataMappingService.java:306)
+	at org.elasticsearch.cluster.metadata.MetaDataMappingService$PutMappingExecutor.execute(MetaDataMappingService.java:230)
+	at org.elasticsearch.cluster.service.InternalClusterService.runTasksForExecutor(InternalClusterService.java:468)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:772)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:231)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:194)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[2018-02-26 06:25:14,673][DEBUG][action.index             ] [Nate Grey] failed to execute [index {[ssk][scenario][AWG5HcARCiWRXbc2VaaZ], source[
+{
+	"_source": {
+        "include": [ "*.url", "*.head.*","*.desc.*"],
+        "exclude": ["*.head.type", "*.listEvent.*", "*.text.div", "*.teiHeader.*", "*.desc.term", "*.desc.type", "*.desc.lang"]
+ }
+}]}] on [[ssk][0]]
+java.lang.IllegalArgumentException: Field [_source] is defined both as an object and a field in [scenario]
+	at org.elasticsearch.index.mapper.MapperService.checkFieldUniqueness(MapperService.java:494)
+	at org.elasticsearch.index.mapper.MapperService.merge(MapperService.java:376)
+	at org.elasticsearch.index.mapper.MapperService.merge(MapperService.java:320)
+	at org.elasticsearch.cluster.metadata.MetaDataMappingService$PutMappingExecutor.applyRequest(MetaDataMappingService.java:306)
+	at org.elasticsearch.cluster.metadata.MetaDataMappingService$PutMappingExecutor.execute(MetaDataMappingService.java:230)
+	at org.elasticsearch.cluster.service.InternalClusterService.runTasksForExecutor(InternalClusterService.java:468)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:772)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:231)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:194)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[2018-02-26 06:26:23,595][DEBUG][action.get               ] [Nate Grey] null: failed to execute [get [ssk][scenario][AWG5HcARCiWRXbc2VaaZ]: routing [null]]
+RemoteTransportException[[Nate Grey][127.0.0.1:9300][indices:data/read/get[s]]]; nested: IllegalArgumentException[field [TEI.text.body.div.head] isn't a leaf field];
+Caused by: java.lang.IllegalArgumentException: field [TEI.text.body.div.head] isn't a leaf field
+	at org.elasticsearch.index.get.ShardGetService.innerGetLoadFromStoredFields(ShardGetService.java:360)
+	at org.elasticsearch.index.get.ShardGetService.innerGet(ShardGetService.java:190)
+	at org.elasticsearch.index.get.ShardGetService.get(ShardGetService.java:86)
+	at org.elasticsearch.action.get.TransportGetAction.shardOperation(TransportGetAction.java:101)
+	at org.elasticsearch.action.get.TransportGetAction.shardOperation(TransportGetAction.java:44)
+	at org.elasticsearch.action.support.single.shard.TransportSingleShardAction$ShardTransportHandler.messageReceived(TransportSingleShardAction.java:282)
+	at org.elasticsearch.action.support.single.shard.TransportSingleShardAction$ShardTransportHandler.messageReceived(TransportSingleShardAction.java:275)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:77)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)

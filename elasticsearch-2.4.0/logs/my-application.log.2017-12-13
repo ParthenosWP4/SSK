@@ -1,0 +1,42 @@
+[2017-12-13 08:39:49,700][INFO ][node                     ] [Longneck] stopping ...
+[2017-12-13 08:39:49,803][INFO ][node                     ] [Longneck] stopped
+[2017-12-13 08:39:49,803][INFO ][node                     ] [Longneck] closing ...
+[2017-12-13 08:39:49,809][INFO ][node                     ] [Longneck] closed
+[2017-12-13 10:13:46,150][INFO ][node                     ] [Rachel Summers] version[2.4.0], pid[1616], build[ce9f0c7/2016-08-29T09:14:17Z]
+[2017-12-13 10:13:46,150][INFO ][node                     ] [Rachel Summers] initializing ...
+[2017-12-13 10:13:47,112][INFO ][plugins                  ] [Rachel Summers] modules [reindex, lang-expression, lang-groovy], plugins [], sites []
+[2017-12-13 10:13:47,144][INFO ][env                      ] [Rachel Summers] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [88.3gb], net total_space [232.5gb], spins? [unknown], types [hfs]
+[2017-12-13 10:13:47,144][INFO ][env                      ] [Rachel Summers] heap size [989.8mb], compressed ordinary object pointers [true]
+[2017-12-13 10:13:47,145][WARN ][env                      ] [Rachel Summers] max file descriptors [10240] for elasticsearch process likely too low, consider increasing to at least [65536]
+[2017-12-13 10:13:49,073][INFO ][node                     ] [Rachel Summers] initialized
+[2017-12-13 10:13:49,073][INFO ][node                     ] [Rachel Summers] starting ...
+[2017-12-13 10:13:49,141][INFO ][transport                ] [Rachel Summers] publish_address {127.0.0.1:9300}, bound_addresses {[fe80::1]:9300}, {[::1]:9300}, {127.0.0.1:9300}
+[2017-12-13 10:13:49,146][INFO ][discovery                ] [Rachel Summers] my-application/yf5rj8cLTQOV5mNkKZ14Fw
+[2017-12-13 10:13:52,198][INFO ][cluster.service          ] [Rachel Summers] new_master {Rachel Summers}{yf5rj8cLTQOV5mNkKZ14Fw}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2017-12-13 10:13:52,209][INFO ][http                     ] [Rachel Summers] publish_address {127.0.0.1:9200}, bound_addresses {[fe80::1]:9200}, {[::1]:9200}, {127.0.0.1:9200}
+[2017-12-13 10:13:52,209][INFO ][node                     ] [Rachel Summers] started
+[2017-12-13 10:13:52,239][INFO ][gateway                  ] [Rachel Summers] recovered [1] indices into cluster_state
+[2017-12-13 10:13:52,649][INFO ][cluster.routing.allocation] [Rachel Summers] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[ssk][3]] ...]).
+[2017-12-13 17:30:25,593][INFO ][node                     ] [Rachel Summers] stopping ...
+[2017-12-13 17:30:25,757][INFO ][node                     ] [Rachel Summers] stopped
+[2017-12-13 17:30:25,757][INFO ][node                     ] [Rachel Summers] closing ...
+[2017-12-13 17:30:25,762][INFO ][node                     ] [Rachel Summers] closed
+[2017-12-13 17:31:09,475][INFO ][node                     ] [Chamber] version[2.4.0], pid[4072], build[ce9f0c7/2016-08-29T09:14:17Z]
+[2017-12-13 17:31:09,476][INFO ][node                     ] [Chamber] initializing ...
+[2017-12-13 17:31:10,357][INFO ][plugins                  ] [Chamber] modules [reindex, lang-expression, lang-groovy], plugins [], sites []
+[2017-12-13 17:31:10,380][INFO ][env                      ] [Chamber] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [87.1gb], net total_space [232.5gb], spins? [unknown], types [hfs]
+[2017-12-13 17:31:10,381][INFO ][env                      ] [Chamber] heap size [989.8mb], compressed ordinary object pointers [true]
+[2017-12-13 17:31:10,381][WARN ][env                      ] [Chamber] max file descriptors [10240] for elasticsearch process likely too low, consider increasing to at least [65536]
+[2017-12-13 17:31:12,348][INFO ][node                     ] [Chamber] initialized
+[2017-12-13 17:31:12,349][INFO ][node                     ] [Chamber] starting ...
+[2017-12-13 17:31:12,464][INFO ][transport                ] [Chamber] publish_address {127.0.0.1:9300}, bound_addresses {[fe80::1]:9300}, {[::1]:9300}, {127.0.0.1:9300}
+[2017-12-13 17:31:12,468][INFO ][discovery                ] [Chamber] my-application/vLX7A92aQ2G32BE_yG52oQ
+[2017-12-13 17:31:15,503][INFO ][cluster.service          ] [Chamber] new_master {Chamber}{vLX7A92aQ2G32BE_yG52oQ}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2017-12-13 17:31:15,515][INFO ][http                     ] [Chamber] publish_address {127.0.0.1:9200}, bound_addresses {[fe80::1]:9200}, {[::1]:9200}, {127.0.0.1:9200}
+[2017-12-13 17:31:15,516][INFO ][node                     ] [Chamber] started
+[2017-12-13 17:31:15,549][INFO ][gateway                  ] [Chamber] recovered [1] indices into cluster_state
+[2017-12-13 17:31:15,922][INFO ][cluster.routing.allocation] [Chamber] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[ssk][3]] ...]).
+[2017-12-13 18:06:38,808][INFO ][node                     ] [Chamber] stopping ...
+[2017-12-13 18:06:39,004][INFO ][node                     ] [Chamber] stopped
+[2017-12-13 18:06:39,004][INFO ][node                     ] [Chamber] closing ...
+[2017-12-13 18:06:39,009][INFO ][node                     ] [Chamber] closed

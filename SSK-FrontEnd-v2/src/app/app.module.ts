@@ -19,6 +19,11 @@ import * as $ from 'jquery';
 import { TooltipModule } from 'ngx-bootstrap';
 import { SearchTabComponent } from './search-tab/search-tab.component';
 import {FormsModule} from '@angular/forms';
+import { GlossaryComponent } from './glossary/glossary.component';
+import {McBreadcrumbsConfig, McBreadcrumbsModule} from 'ngx-breadcrumbs';
+import { RightMenuComponent } from './glossary/right-menu/right-menu.component';
+import { ContentComponent } from './glossary/content/content.component';
+import {GlossaryResolver} from './glossary/glossary.resolver';
 
 
 
@@ -36,7 +41,10 @@ import {FormsModule} from '@angular/forms';
     StepCardComponent,
     ResourceCardComponent,
     ScenarioComponent,
-    SearchTabComponent
+    SearchTabComponent,
+    GlossaryComponent,
+    RightMenuComponent,
+    ContentComponent
   ],
   imports:
     [
@@ -46,12 +54,34 @@ import {FormsModule} from '@angular/forms';
       CommonModule,
       HttpModule,
       NgxPaginationModule,
-      FormsModule
+      FormsModule,
+      McBreadcrumbsModule.forRoot()
     ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],
-  providers: [appRoutingProviders, SafeHtmlPipe, ElastichsearchServicesService, SskServicesService],
+  providers: [appRoutingProviders, SafeHtmlPipe, ElastichsearchServicesService, SskServicesService, GlossaryResolver],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(breadcrumbsConfig: McBreadcrumbsConfig, private sskServ: SskServicesService) {
+
+    breadcrumbsConfig.postProcess = (x) => {
+      // Ensure the first breadcrumb points to home
+      let y = x;
+
+      if (x.length && x[0].text !== 'Home') {
+        y = [
+          {
+            text: 'Home',
+            path: ''
+          }].concat(x);
+        if (x.length = 2) {
+          this.sskServ.setGlossarylink(undefined);
+        }
+      }
+      console.log(y)
+      return y;
+    };
+  }
+}

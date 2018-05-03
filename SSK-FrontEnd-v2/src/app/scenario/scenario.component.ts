@@ -26,8 +26,8 @@ export class ScenarioComponent implements OnInit {
   tags: any ;
   private data: Observable<any>;
   border: any = {};
-  nextStepIndex;
-
+  scenarioDetails = {};
+  itemResult = {};
 
   constructor(
     private sskService: SskServicesService,
@@ -37,8 +37,8 @@ export class ScenarioComponent implements OnInit {
     private sanitizer: DomSanitizer) {
     this.tags = this.elasticServices.getTags();
     this.left = 0;
-    this.timelineTotWidth = 0
-    this.selectedStep = {}
+    this.timelineTotWidth = 0;
+    this.selectedStep = {};
     this.scenarioElt = {};
     this.border.class = 'col-2';
     this.border.border = '1px dashed #979797';
@@ -47,6 +47,7 @@ export class ScenarioComponent implements OnInit {
   }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
     this.activatedRoute.params
       .subscribe((params: Params) => {
         this.scenarioId = params['id'];
@@ -62,35 +63,42 @@ export class ScenarioComponent implements OnInit {
       this.elasticServices.countItems('scenarios')
         .subscribe(
           result => {
-            this.elasticServices.setScenarioNumber(result['total']);
-            this.elasticServices.setScenariosID(result['scenarios']);
+            this.itemResult = result;
           },
           err => console.error('Initialize Scenarios Id Error : ' + err ),
           () =>  {
-            this.elasticServices.getAllResources().subscribe(result => {});
-            this.elasticServices.getScenariosID().forEach((obj)  => {
-              this.elasticServices.getScenarioDetails(obj._id)
-                .subscribe(detailsResult => {
-                    detailsResult.id = obj._id;
-                    this.elasticServices.addScenario(detailsResult);
-                  },
-                  error => console.error('500 - Internal Server Error :' + error),
-                  () =>  {
-                    if (obj._id === this.scenarioId) {
-                      this.scenarioElt = _.find(this.elasticServices.getScenarios(), (item) => {
-                        return item.id === this.scenarioId;
+            this.elasticServices.setScenarioNumber(this.itemResult['total']);
+            this.elasticServices.setScenariosID(this.itemResult['scenarios']);
+            this.elasticServices.getAllResources().subscribe(
+              result => {},
+              error2 => {},
+              () => {
+                this.elasticServices.getScenariosID().forEach((obj)  => {
+                  this.elasticServices.getScenarioDetails(obj._id)
+                    .subscribe(
+                      detailsResult => {
+                        detailsResult.id = obj._id;
+                        this.scenarioDetails = detailsResult;
+                      },
+                      error => console.error('500 - Internal Server Error :' + error),
+                      () =>  {
+                        this.elasticServices.addScenario(this.scenarioDetails);
+                        if (obj._id === this.scenarioId) {
+                          this.scenarioElt = _.find(this.elasticServices.getScenarios(), (item) => {
+                            return item.id === this.scenarioId;
+                          });
+                          // setTimeout(() => {
+                          this.scenarioElt.title = (this.scenarioElt.title instanceof Array) ? this.scenarioElt.title[0]
+                            : this.scenarioElt.title;
+                          this.scenarioElt.descrip = (this.scenarioElt.desc instanceof Array) ? this.scenarioElt.desc[0]
+                            : this.scenarioElt.desc;
+                          // }, 100);
+                          this.setScenarioSteps(this.scenarioId);
+                        }
                       });
-                      setTimeout(() => {
-                        this.scenarioElt.title = (this.scenarioElt.title instanceof Array) ? this.scenarioElt.title[0]
-                          : this.scenarioElt.title;
-                        this.scenarioElt.descrip = (this.scenarioElt.desc instanceof Array) ? this.scenarioElt.desc[0]
-                          : this.scenarioElt.desc;
-                      }, 100);
-                      this.setScenarioSteps(this.scenarioId);
-                    }
-                  });
-            });
-
+                });
+              }
+            );
           }
         );
     } else {
@@ -120,9 +128,9 @@ export class ScenarioComponent implements OnInit {
         return item._parent === this.scenarioId;
       }).true, [ 'position']);
     }
-    setTimeout(() => {
+   // setTimeout(() => {
       this.initializeCurrentStep(this.scenarioElt);
-    },100);
+   // },1000);
 
   }
 
@@ -146,7 +154,7 @@ export class ScenarioComponent implements OnInit {
 
     (this.timelines.length > 0) && this.initTimeline(this.timelines);
     this.timelineTranslate = 0;
-    this.initTimeline(this.timelines)
+    this.initTimeline(this.timelines);
     if (!isUndefined(scenario.steps)) {
       this.selectedStep = scenario.steps[this.selectedStep.id - 1 ];
      this.selectedStep.ref = this.selectedStep._id;
@@ -188,7 +196,7 @@ export class ScenarioComponent implements OnInit {
 
     this.selectedStep.projects =  _.groupBy(resources,  (item) => {
       return item.category ===  'project';
-    }).true
+    }).true;
 
     this.selectedStep.generals =  _.groupBy(resources,  (item) => {
       return item.category ===  'general';
@@ -229,10 +237,10 @@ export class ScenarioComponent implements OnInit {
     this.router.navigate(['scenarios', this.scenarioId,  step.position]);
     this.idSelectedStep = index;
      this.selectedStep = step;
-    this.selectedStep.id  =  index + 1
+    this.selectedStep.id  =  index + 1;
     this.selectedStep.ref = this.selectedStep._id;
     this.setStepTitleAndDescription();
-    this.setStepMetadata()
+    this.setStepMetadata();
     this.setResources();
 
   }
@@ -262,9 +270,9 @@ export class ScenarioComponent implements OnInit {
 
   // Timeline Functions
   initTimeline(timelines: any) {
-    let _self = this;
+    const _self = this;
     timelines.each(function () {
-      var timeline = $(this);
+      const timeline = $(this);
       //cache timeline components
       _self.timelineComponents['timelineWrapper'] = timeline.find('.events-wrapper');
       _self.timelineComponents['eventsWrapper'] = _self.timelineComponents['timelineWrapper'].children('.events');
@@ -302,7 +310,7 @@ export class ScenarioComponent implements OnInit {
   }*/
 
   updateSlide(string: string) {
-    let translateValue = this.getTranslateValue(this.timelineComponents['eventsWrapper']),
+    const translateValue = this.getTranslateValue(this.timelineComponents['eventsWrapper']),
       wrapperWidth = Number(this.timelineComponents['timelineWrapper'].css('width').replace('px', ''));
     (string === 'next')
       ? this.translateTimeline(this.timelineComponents, translateValue - wrapperWidth + this.left, wrapperWidth - this.timelineTotWidth)
@@ -312,11 +320,11 @@ export class ScenarioComponent implements OnInit {
 
   showNewContent(timelineComponents, timelineTotWidth, string) {
     //go from one event to the next/previous one
-    var visibleContent = timelineComponents['eventsContent'].find('.selected'),
+    const visibleContent = timelineComponents['eventsContent'].find('.selected'),
       newContent = (string == 'next') ? visibleContent.next() : visibleContent.prev();
 
     if (newContent.length > 0) { //if there's a next/prev event - show it
-      var selectedDate = timelineComponents['eventsWrapper'].find('.selected'),
+      const selectedDate = timelineComponents['eventsWrapper'].find('.selected'),
         newEvent = (string == 'next') ? selectedDate.parent('li').next('li').children('a') : selectedDate.parent('li').prev('li').children('a');
 
       this.updateFilling(newEvent, timelineComponents['fillingLine'], timelineTotWidth);
@@ -330,43 +338,44 @@ export class ScenarioComponent implements OnInit {
 
   updateTimelinePosition(string, event, timelineComponents) {
     //translate timeline to the left/right according to the position of the selected event
-    var eventStyle = window.getComputedStyle(event.get(0), null),
-      eventLeft = Number(eventStyle.getPropertyValue("left").replace('px', '')),
+    const eventStyle = window.getComputedStyle(event.get(0), null),
+      eventLeft = Number(eventStyle.getPropertyValue('left').replace('px', '')),
       timelineWidth = Number(timelineComponents['timelineWrapper'].css('width').replace('px', '')),
       timelineTotWidth = Number(timelineComponents['eventsWrapper'].css('width').replace('px', ''));
     this.timelineTranslate = this.getTranslateValue(timelineComponents['eventsWrapper']);
 
-    if ((string == 'next' && eventLeft > timelineWidth - this.timelineTranslate) || (string == 'prev' && eventLeft < - this.timelineTranslate)) {
+    if ((string === 'next' && eventLeft > timelineWidth - this.timelineTranslate) || (string == 'prev' && eventLeft < - this.timelineTranslate)) {
       this.translateTimeline(timelineComponents, - eventLeft + timelineWidth / 2, timelineWidth - timelineTotWidth);
     }
   }
 
   translateTimeline(timelineComponents: any, value: number, totWidth?: number) {
-    var eventsWrapper = timelineComponents['eventsWrapper'].get(0);
-    value = (value > 0) ? 0 : value; //only negative translate value
-    value = (!(typeof totWidth === 'undefined') && value < totWidth) ? totWidth : value; //do not translate more than timeline width
+    const eventsWrapper = timelineComponents['eventsWrapper'].get(0);
+    value = (value > 0) ? 0 : value;
+    //only negative translate value
+    value = (!(typeof totWidth === 'undefined') && value < totWidth) ? totWidth : value;
     this.setTransformValue(eventsWrapper, 'translateX', value + 'px');
     //update navigation arrows visibility
-    (value == 0) ? timelineComponents['timelineNavigation'].find('.prev').addClass('inactive') : timelineComponents['timelineNavigation'].find('.prev').removeClass('inactive');
-    (value == totWidth) ? timelineComponents['timelineNavigation'].find('.next').addClass('inactive') : timelineComponents['timelineNavigation'].find('.next').removeClass('inactive');
+    (value === 0) ? timelineComponents['timelineNavigation'].find('.prev').addClass('inactive') : timelineComponents['timelineNavigation'].find('.prev').removeClass('inactive');
+    (value === totWidth) ? timelineComponents['timelineNavigation'].find('.next').addClass('inactive') : timelineComponents['timelineNavigation'].find('.next').removeClass('inactive');
   }
 
   updateFilling(selectedEvent, filling, totWidth) {
     //change .filling-line length according to the selected event
-    let eventStyle = window.getComputedStyle(selectedEvent, null);
+    const eventStyle = window.getComputedStyle(selectedEvent, null);
 
-    let eventLeft = eventStyle.getPropertyValue("left")
-    let eventWidth = eventStyle.getPropertyValue("width");
-    let eventLef = Number(eventLeft.replace('px', '')) + Number(eventWidth.replace('px', '')) / 2;
-    var scaleValue = eventLef / totWidth;
+    const eventLeft = eventStyle.getPropertyValue('left');
+    const eventWidth = eventStyle.getPropertyValue('width');
+    const eventLef = Number(eventLeft.replace('px', '')) + Number(eventWidth.replace('px', '')) / 2;
+    const scaleValue = eventLef / totWidth;
     this.setTransformValue(filling.get(0), 'scaleX', scaleValue);
   }
 
   setTimelineWidth(timelineComponents, width) {
-    var timeSpan = this.daydiff(timelineComponents['timelineDates'][0], timelineComponents['timelineDates'][timelineComponents['timelineDates'].length - 1]),
-      timeSpanNorm = timeSpan / timelineComponents['eventsMinLapse'],
-      timeSpanNorm = Math.round(timeSpanNorm) + 4,
-      totalWidth = timeSpanNorm * width;
+    let timeSpan = this.daydiff(timelineComponents['timelineDates'][0], timelineComponents['timelineDates'][timelineComponents['timelineDates'].length - 1]);
+      let timeSpanNorm = timeSpan / timelineComponents['eventsMinLapse'];
+      timeSpanNorm = Math.round(timeSpanNorm) + 4;
+      let totalWidth = timeSpanNorm * width;
     timelineComponents['eventsWrapper'].css('width', totalWidth + 'px');
     this.updateFilling(timelineComponents['eventsWrapper'].find('a.selected'), timelineComponents['fillingLine'], totalWidth);
     this.updateTimelinePosition('next', timelineComponents['eventsWrapper'].find('a.selected'), timelineComponents);
@@ -375,16 +384,16 @@ export class ScenarioComponent implements OnInit {
   }
 
   updateVisibleContent(event, eventsContent) {
-    var eventDate = event.data('date'),
+    const eventDate = event.data('date'),
       visibleContent = eventsContent.find('.selected'),
       selectedContent = eventsContent.find('[data-date="' + eventDate + '"]'),
       selectedContentHeight = selectedContent.height();
-
+    let  classEnetering, classLeaving : any;
     if (selectedContent.index() > visibleContent.index()) {
-      var classEnetering = 'selected enter-right',
+       classEnetering = 'selected enter-right',
         classLeaving = 'leave-left';
     } else {
-      var classEnetering = 'selected enter-left',
+       classEnetering = 'selected enter-left',
         classLeaving = 'leave-right';
     }
 
@@ -403,12 +412,12 @@ export class ScenarioComponent implements OnInit {
 
   getTranslateValue(timeline) {
     let translateValue = 0;
-    let timelineStyle = window.getComputedStyle(timeline.get(0), null);
-    this.timelineTranslate = timelineStyle.getPropertyValue("-webkit-transform") ||
-      timelineStyle.getPropertyValue("-moz-transform") ||
-      timelineStyle.getPropertyValue("-ms-transform") ||
-      timelineStyle.getPropertyValue("-o-transform") ||
-      timelineStyle.getPropertyValue("transform");
+    const timelineStyle = window.getComputedStyle(timeline.get(0), null);
+    this.timelineTranslate = timelineStyle.getPropertyValue('-webkit-transform') ||
+      timelineStyle.getPropertyValue('-moz-transform') ||
+      timelineStyle.getPropertyValue('-ms-transform') ||
+      timelineStyle.getPropertyValue('-o-transform') ||
+      timelineStyle.getPropertyValue('transform');
 
     if (this.timelineTranslate.indexOf('(') >= 0) {
       let timelineTranslate = this.timelineTranslate.split('(')[1];
@@ -421,11 +430,11 @@ export class ScenarioComponent implements OnInit {
   }
 
   setTransformValue(element, property, value) {
-    element.style["-webkit-transform"] = property + "(" + value + ")";
-    element.style["-moz-transform"] = property + "(" + value + ")";
-    element.style["-ms-transform"] = property + "(" + value + ")";
-    element.style["-o-transform"] = property + "(" + value + ")";
-    element.style["transform"] = property + "(" + value + ")";
+    element.style['-webkit-transform'] = property + '(' + value + ')';
+    element.style['-moz-transform'] = property + '(' + value + ')';
+    element.style['-ms-transform'] = property + '(' + value + ')';
+    element.style['-o-transform'] = property + '(' + value + ')';
+    element.style['transform'] = property + '(' + value + ')';
   }
 
   daydiff(first, second) {
@@ -441,8 +450,8 @@ export class ScenarioComponent implements OnInit {
   elementInViewport(el) {
     let top = el.offsetTop;
     let left = el.offsetLeft;
-    let width = el.offsetWidth;
-    let height = el.offsetHeight;
+    const width = el.offsetWidth;
+    const height = el.offsetHeight;
 
     while (el.offsetParent) {
       el = el.offsetParent;
@@ -460,10 +469,9 @@ export class ScenarioComponent implements OnInit {
 
   checkMQ() {
     //check if mobile or desktop device
-    return window.getComputedStyle(document.querySelector('.cd-horizontal-timeline'), '::before').getPropertyValue('content').replace(/'/g, "").replace(/"/g, "");
+    return window.getComputedStyle(document.querySelector('.cd-horizontal-timeline'),
+      '::before').getPropertyValue('content').replace(/'/g, '').replace(/"/g, '');
   }
-
-
 }
 
 

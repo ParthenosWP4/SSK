@@ -1,0 +1,19 @@
+[2018-03-12 15:04:49,936][INFO ][node                     ] [Stygorr] stopping ...
+[2018-03-12 15:04:51,268][INFO ][node                     ] [Stygorr] stopped
+[2018-03-12 15:04:51,269][INFO ][node                     ] [Stygorr] closing ...
+[2018-03-12 15:04:51,339][INFO ][node                     ] [Stygorr] closed
+[2018-03-12 15:20:19,582][INFO ][node                     ] [Asp] version[2.4.0], pid[25803], build[ce9f0c7/2016-08-29T09:14:17Z]
+[2018-03-12 15:20:19,582][INFO ][node                     ] [Asp] initializing ...
+[2018-03-12 15:20:20,616][INFO ][plugins                  ] [Asp] modules [reindex, lang-expression, lang-groovy], plugins [], sites []
+[2018-03-12 15:20:20,645][INFO ][env                      ] [Asp] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [57.9gb], net total_space [232.5gb], spins? [unknown], types [hfs]
+[2018-03-12 15:20:20,645][INFO ][env                      ] [Asp] heap size [989.8mb], compressed ordinary object pointers [true]
+[2018-03-12 15:20:20,646][WARN ][env                      ] [Asp] max file descriptors [10240] for elasticsearch process likely too low, consider increasing to at least [65536]
+[2018-03-12 15:20:22,228][INFO ][node                     ] [Asp] initialized
+[2018-03-12 15:20:22,228][INFO ][node                     ] [Asp] starting ...
+[2018-03-12 15:20:22,303][INFO ][transport                ] [Asp] publish_address {127.0.0.1:9300}, bound_addresses {[fe80::1]:9300}, {[::1]:9300}, {127.0.0.1:9300}
+[2018-03-12 15:20:22,308][INFO ][discovery                ] [Asp] my-application/FjK9gJaQQt-Gf4hHpMnLBw
+[2018-03-12 15:20:25,352][INFO ][cluster.service          ] [Asp] new_master {Asp}{FjK9gJaQQt-Gf4hHpMnLBw}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2018-03-12 15:20:25,364][INFO ][http                     ] [Asp] publish_address {127.0.0.1:9200}, bound_addresses {[fe80::1]:9200}, {[::1]:9200}, {127.0.0.1:9200}
+[2018-03-12 15:20:25,364][INFO ][node                     ] [Asp] started
+[2018-03-12 15:20:25,395][INFO ][gateway                  ] [Asp] recovered [1] indices into cluster_state
+[2018-03-12 15:20:26,178][INFO ][cluster.routing.allocation] [Asp] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[ssk][2]] ...]).

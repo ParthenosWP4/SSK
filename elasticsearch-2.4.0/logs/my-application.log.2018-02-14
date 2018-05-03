@@ -1,0 +1,112 @@
+[2018-02-14 10:49:10,231][INFO ][node                     ] [Stakar] version[2.4.0], pid[1502], build[ce9f0c7/2016-08-29T09:14:17Z]
+[2018-02-14 10:49:10,233][INFO ][node                     ] [Stakar] initializing ...
+[2018-02-14 10:49:11,127][INFO ][plugins                  ] [Stakar] modules [reindex, lang-expression, lang-groovy], plugins [], sites []
+[2018-02-14 10:49:11,154][INFO ][env                      ] [Stakar] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [61.2gb], net total_space [232.5gb], spins? [unknown], types [hfs]
+[2018-02-14 10:49:11,154][INFO ][env                      ] [Stakar] heap size [989.8mb], compressed ordinary object pointers [true]
+[2018-02-14 10:49:11,155][WARN ][env                      ] [Stakar] max file descriptors [10240] for elasticsearch process likely too low, consider increasing to at least [65536]
+[2018-02-14 10:49:12,847][INFO ][node                     ] [Stakar] initialized
+[2018-02-14 10:49:12,847][INFO ][node                     ] [Stakar] starting ...
+[2018-02-14 10:49:12,914][INFO ][transport                ] [Stakar] publish_address {127.0.0.1:9300}, bound_addresses {[fe80::1]:9300}, {[::1]:9300}, {127.0.0.1:9300}
+[2018-02-14 10:49:12,919][INFO ][discovery                ] [Stakar] my-application/Yre3ly95SPuzmDnqpXzj3g
+[2018-02-14 10:49:15,970][INFO ][cluster.service          ] [Stakar] new_master {Stakar}{Yre3ly95SPuzmDnqpXzj3g}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2018-02-14 10:49:15,981][INFO ][http                     ] [Stakar] publish_address {127.0.0.1:9200}, bound_addresses {[fe80::1]:9200}, {[::1]:9200}, {127.0.0.1:9200}
+[2018-02-14 10:49:15,981][INFO ][node                     ] [Stakar] started
+[2018-02-14 10:49:16,011][INFO ][gateway                  ] [Stakar] recovered [1] indices into cluster_state
+[2018-02-14 10:49:16,464][INFO ][cluster.routing.allocation] [Stakar] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[ssk][3]] ...]).
+[2018-02-14 14:11:36,454][INFO ][cluster.metadata         ] [Stakar] [ssk] creating index, cause [api], templates [], shards [5]/[1], mappings []
+[2018-02-14 14:11:36,676][INFO ][cluster.routing.allocation] [Stakar] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[ssk][4]] ...]).
+[2018-02-14 14:11:36,879][INFO ][cluster.metadata         ] [Stakar] [ssk] create_mapping [resource-metadata]
+[2018-02-14 14:11:36,933][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [resource-metadata]
+[2018-02-14 14:11:36,953][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [resource-metadata]
+[2018-02-14 14:11:36,970][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [resource-metadata]
+[2018-02-14 14:11:36,986][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [resource-metadata]
+[2018-02-14 14:11:36,994][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [resource-metadata]
+[2018-02-14 14:11:37,011][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [resource-metadata]
+[2018-02-14 14:11:37,035][INFO ][cluster.metadata         ] [Stakar] [ssk] create_mapping [resource]
+[2018-02-14 14:11:37,060][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [resource]
+[2018-02-14 14:11:37,081][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [resource]
+[2018-02-14 14:11:37,106][INFO ][cluster.metadata         ] [Stakar] [ssk] create_mapping [step-metadata]
+[2018-02-14 14:11:37,131][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [step-metadata]
+[2018-02-14 14:11:37,154][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [step-metadata]
+[2018-02-14 14:11:37,177][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [step-metadata]
+[2018-02-14 14:11:37,199][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [step-metadata]
+[2018-02-14 14:11:37,212][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [step-metadata]
+[2018-02-14 14:11:37,237][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [step-metadata]
+[2018-02-14 14:11:37,263][INFO ][cluster.metadata         ] [Stakar] [ssk] create_mapping [scenario-metadata]
+[2018-02-14 14:11:37,286][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [scenario-metadata]
+[2018-02-14 14:11:37,313][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [scenario-metadata]
+[2018-02-14 14:11:37,331][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [scenario-metadata]
+[2018-02-14 14:11:37,347][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [scenario-metadata]
+[2018-02-14 14:11:37,360][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [scenario-metadata]
+[2018-02-14 14:11:37,382][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [scenario-metadata]
+[2018-02-14 14:11:37,404][INFO ][cluster.metadata         ] [Stakar] [ssk] create_mapping [step]
+[2018-02-14 14:11:37,429][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [step]
+[2018-02-14 14:11:37,444][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [step]
+[2018-02-14 14:11:37,461][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [step]
+[2018-02-14 14:11:37,484][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [step]
+[2018-02-14 14:11:37,512][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [step]
+[2018-02-14 14:11:37,533][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [step]
+[2018-02-14 14:11:37,556][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [step]
+[2018-02-14 14:11:37,622][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [step]
+[2018-02-14 14:11:37,638][INFO ][cluster.metadata         ] [Stakar] [ssk] create_mapping [scenario]
+[2018-02-14 14:11:37,661][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [scenario]
+[2018-02-14 14:11:37,680][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [scenario]
+[2018-02-14 14:11:37,691][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [scenario]
+[2018-02-14 14:11:37,711][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [scenario]
+[2018-02-14 14:15:34,584][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [scenario]
+[2018-02-14 14:15:34,711][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [scenario-metadata]
+[2018-02-14 14:15:34,749][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [step]
+[2018-02-14 14:15:34,779][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [step-metadata]
+[2018-02-14 14:15:35,351][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [resource]
+[2018-02-14 14:15:35,622][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [step]
+[2018-02-14 14:15:45,709][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [step-metadata]
+[2018-02-14 14:15:46,316][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [resource]
+[2018-02-14 14:15:46,793][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [step-metadata]
+[2018-02-14 14:15:49,221][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [step]
+[2018-02-14 14:15:51,233][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [step]
+[2018-02-14 14:15:55,574][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [step]
+[2018-02-14 14:19:07,570][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [scenario]
+[2018-02-14 14:21:22,436][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [scenario]
+[2018-02-14 14:21:22,489][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [step]
+[2018-02-14 14:21:22,528][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [step-metadata]
+[2018-02-14 14:21:25,495][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [step-metadata]
+[2018-02-14 14:24:24,696][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [scenario]
+[2018-02-14 14:24:24,727][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [step]
+[2018-02-14 14:24:25,152][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [step]
+[2018-02-14 14:25:25,628][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [resource]
+[2018-02-14 14:38:20,555][INFO ][cluster.metadata         ] [Stakar] [ssk] update_mapping [step]
+[2018-02-14 14:38:22,106][DEBUG][action.index             ] [Stakar] failed to execute [index {[ssk][resource][AWGUiZ0ZwowBmi40tXvf], source[{"general":{"title":"Snapshot","url":"http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-constraintSpec.html"},"project":{"title":"XPath and Schematron for TEI Customization","url":"http://www.wwp.neu.edu/outreach/seminars/_current/presentations/schematron/schematron_odd_tutorial.xhtml","date":""}}]}] on [[ssk][4]]
+MapperParsingException[failed to parse [project.date]]; nested: IllegalArgumentException[Invalid format: ""];
+	at org.elasticsearch.index.mapper.FieldMapper.parse(FieldMapper.java:329)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:311)
+	at org.elasticsearch.index.mapper.DocumentParser.parseValue(DocumentParser.java:438)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:264)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:328)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseDocument(DocumentParser.java:124)
+	at org.elasticsearch.index.mapper.DocumentMapper.parse(DocumentMapper.java:309)
+	at org.elasticsearch.index.shard.IndexShard.prepareCreate(IndexShard.java:529)
+	at org.elasticsearch.index.shard.IndexShard.prepareCreateOnPrimary(IndexShard.java:506)
+	at org.elasticsearch.action.index.TransportIndexAction.prepareIndexOperationOnPrimary(TransportIndexAction.java:214)
+	at org.elasticsearch.action.index.TransportIndexAction.executeIndexRequestOnPrimary(TransportIndexAction.java:223)
+	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:157)
+	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:66)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryPhase.doRun(TransportReplicationAction.java:648)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:279)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:271)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:77)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.IllegalArgumentException: Invalid format: ""
+	at org.joda.time.format.DateTimeParserBucket.doParseMillis(DateTimeParserBucket.java:187)
+	at org.joda.time.format.DateTimeFormatter.parseMillis(DateTimeFormatter.java:826)
+	at org.elasticsearch.index.mapper.core.DateFieldMapper$DateFieldType.parseStringValue(DateFieldMapper.java:366)
+	at org.elasticsearch.index.mapper.core.DateFieldMapper.innerParseCreateField(DateFieldMapper.java:534)
+	at org.elasticsearch.index.mapper.core.NumberFieldMapper.parseCreateField(NumberFieldMapper.java:241)
+	at org.elasticsearch.index.mapper.FieldMapper.parse(FieldMapper.java:321)
+	... 24 more

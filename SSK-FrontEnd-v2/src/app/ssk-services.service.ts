@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import {ElastichsearchServicesService} from './elastichsearch-services.service';
 import * as _ from 'lodash';
 import {isUndefined} from 'util';
+import {Http} from '@angular/http';
+import {Observable} from "rxjs/Observable";
 
 
 
@@ -28,7 +30,9 @@ export class SskServicesService {
   public stepsKeys = ['_id', 'desc.content', 'description.content',  'desc[0].content', 'head.content', 'head[0].content', 'metadata.key',
     'date', 'creators'];
 
-  constructor(private elasticService: ElastichsearchServicesService) {
+  glossaryLink: string ;
+
+  constructor(private elasticService: ElastichsearchServicesService, private http: Http) {
   }
 
 
@@ -104,7 +108,7 @@ export class SskServicesService {
             res = result;
             this.elasticService.setScenarioNumber(result['total']);
           },
-          err => console.error('Initialize Scenarios Id Error : '+ err ),
+          err => console.error('Initialize Scenarios Id Error : ' + err ),
           () =>  {
             this.elasticService.setScenariosID(res['scenarios']);
           }
@@ -116,6 +120,16 @@ export class SskServicesService {
       this.elasticService.getAllSteps().subscribe(result => {
       });
     }
+  }
+
+  loadPageContent(url: any) {
+    console.log(url.changingThisBreaksApplicationSecurity)
+    console.log(url.changingThisBreaksApplicationSecurity)
+    return this.http.get(url.changingThisBreaksApplicationSecurity)
+      .map((response) => {
+      console.log(response)
+        return response.text();
+      }).catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
 
   isUrl(s) {
@@ -133,6 +147,14 @@ export class SskServicesService {
 
   addToFilters(elt: string) {
     this.filters.push(elt);
+  }
+
+  getGlossarylink() {
+    return this.glossaryLink;
+  }
+
+  setGlossarylink(elt: string ) {
+    this.glossaryLink = elt;
   }
 
 }

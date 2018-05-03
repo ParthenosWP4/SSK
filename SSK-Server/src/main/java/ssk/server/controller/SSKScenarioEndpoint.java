@@ -36,13 +36,7 @@ public class SSKScenarioEndpoint {
     private static final Logger logger = LoggerFactory.getLogger(SSKScenarioEndpoint.class.getName());
     
     HttpHeaders headers = new HttpHeaders();
-
-
-    @ResponseBody
-    @RequestMapping(method = { RequestMethod.GET  }, produces="application/json")
-    public  ResponseEntity  getElasticHealth(){
-        return esServices.getElasticSearchHealth();
-    }
+    
     
     
     @ResponseBody

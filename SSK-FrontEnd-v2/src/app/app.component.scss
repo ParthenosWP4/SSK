@@ -18,6 +18,9 @@
 
 .dropdown:hover .dropdown-menu {
   display: block;
+  .dropdown-item{
+    text-transform: capitalize;
+  }
 }
 
 .caret {
@@ -43,10 +46,18 @@
 }
 
 
-@media (min-width: 992px){
+@media (min-width: 1280px){
   .navbar li {
-    margin-left : 1em;
+    margin-left : 1.5em;
     margin-right : 1em;
+
+  }
+}
+
+@media (min-width: 1440px){
+  .navbar li {
+    margin-left : 1.2em;
+    margin-right : 1.2em;
 
   }
 }
@@ -54,6 +65,11 @@
 @media (min-width: 1650px) {
   .container-fluid{
     width: 55%;
+  }
+  .navbar li {
+    margin-left : .1em;
+    margin-right : .2em;
+    font-size: unset !important;
   }
 }
 
