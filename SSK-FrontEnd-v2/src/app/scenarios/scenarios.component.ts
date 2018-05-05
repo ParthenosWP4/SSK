@@ -50,7 +50,7 @@ export class ScenariosComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute) {
     this.border.class = 'col-1';
-    this.border.border ='1px solid #979797';
+    this.border.border = '1px solid #979797';
     this.filters = this.sskServices.getFilters();
   }
 

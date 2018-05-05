@@ -12,14 +12,19 @@
       </p>
 
   <div class="w-100"></div>
-  <div class="col-9">
+  <div class="col-8">
       <ul>
-        <li>
-          trn,knktkljrylkjljrt
+        <li  *ngFor = "let elt of data">
+          <i class="fa fa-play" aria-hidden="true"></i>
+          {{elt}}
+          <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-code fa-stack-1x fa-inverse"></i>
+          </span>
         </li>
       </ul>
   </div>
   <div class="col">
-       <app-right-menu [current]="item"></app-right-menu>
+       <app-right-menu [current]="item" (itemChanged)="itemChangedHandler($event)"></app-right-menu>
   </div>
   </div>

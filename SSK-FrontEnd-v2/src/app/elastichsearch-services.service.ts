@@ -33,6 +33,7 @@ export class ElastichsearchServicesService {
   private tags = ['discipline', 'objects', 'techniques', 'activity', 'standards'] ;
   private regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/
 
+  glossaryData: any;
   constructor(private http: Http) {
     this.scenarios = new Array();
     this.params = new URLSearchParams();
@@ -40,6 +41,7 @@ export class ElastichsearchServicesService {
     this.headers.set('Access-Control-Allow-Origin', '*');
     this.headers.set('Access-Control-Allow-Methods', 'GET');
   }
+
 
 
   countItems(type: string): Observable<any> {
@@ -81,8 +83,6 @@ export class ElastichsearchServicesService {
       .map((response: Response) => {
         const result = JSON.parse(response.text());
         this.setStepsMetadata(result['step_metadata']);
-
-
       }).catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
 
@@ -133,11 +133,7 @@ export class ElastichsearchServicesService {
       }).catch((error: any) => Observable.throw( console.log(error.json()) || console.log('Server error')));
   }
 
-  setResearchFacettes(){
 
-    let data = this.getAllStepsMetaData()[0]._source;
-
-  }
 
 
 
@@ -261,6 +257,35 @@ export class ElastichsearchServicesService {
   isUrl(s) {
 
     return this.regexp.test(s);
+  }
+
+  getGlossaryData() {
+    return this.glossaryData;
+  }
+
+  setGlossaryData(elt: any ) {
+    this.glossaryData = elt;
+  }
+
+  glossaryChange(item: string) {
+    switch (item) {
+      case 'objects':
+        this.setGlossaryData(this.getObjects())
+        break;
+      case 'standards':
+        this.setGlossaryData(this.getStandards())
+        break;
+      case 'techniques':
+        this.setGlossaryData(this.getTechniques())
+        break;
+      case 'avtivities':
+        this.setGlossaryData(this.getTechniques())
+        break;
+      case 'disciplines':
+        this.setGlossaryData(this.getDisciplines())
+        break;
+    }
+    return this.getGlossaryData();
   }
 
 }

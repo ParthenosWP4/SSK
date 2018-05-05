@@ -1,6 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {GlossaryComponent} from '../glossary.component';
 import * as _ from 'lodash';
+import {ElastichsearchServicesService} from '../../elastichsearch-services.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-right-menu',
@@ -11,16 +13,30 @@ export class RightMenuComponent implements OnInit {
 
   @Input() current: any
 
+  @Output() itemChanged: EventEmitter<string> = new EventEmitter();
+
+
   menuItem: Array<string> = [];
 
-  constructor(private glossaryComponent: GlossaryComponent) { }
+  constructor(private glossaryComponent: GlossaryComponent, private elasticServ: ElastichsearchServicesService, private location: Location) { }
 
   ngOnInit() {
-    console.log(this.current);
-    this.menuItem = this.glossaryComponent.glossaryItems;
-    this.menuItem = _.remove(this.glossaryComponent.glossaryItems, (elt) =>  {
+
+    this.menuItem = _.clone(this.glossaryComponent.glossaryItems);
+    console.log(this.menuItem);
+    this.menuItem = _.remove(this.menuItem, (elt) =>  {
       return elt !== this.current;
     });
+  }
+
+  changeItem(item: string) {
+    this.location.replaceState('/glossary/' + item)
+    this.menuItem = _.clone(this.glossaryComponent.glossaryItems);
+    console.log(this.menuItem);
+    this.menuItem = _.remove(this.menuItem, (elt) =>  {
+      return elt !== item;
+    });
+    this.itemChanged.emit(item);
   }
 
 }

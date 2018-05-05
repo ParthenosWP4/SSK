@@ -65,7 +65,6 @@ import {GlossaryResolver} from './glossary/glossary.resolver';
 })
 export class AppModule {
   constructor(breadcrumbsConfig: McBreadcrumbsConfig, private sskServ: SskServicesService) {
-
     breadcrumbsConfig.postProcess = (x) => {
       // Ensure the first breadcrumb points to home
       let y = x;
@@ -80,7 +79,6 @@ export class AppModule {
           this.sskServ.setGlossarylink(undefined);
         }
       }
-      console.log(y)
       return y;
     };
   }

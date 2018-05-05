@@ -32,6 +32,8 @@ export class SskServicesService {
 
   glossaryLink: string ;
 
+
+
   constructor(private elasticService: ElastichsearchServicesService, private http: Http) {
   }
 
@@ -156,5 +158,6 @@ export class SskServicesService {
   setGlossarylink(elt: string ) {
     this.glossaryLink = elt;
   }
+
 
 }

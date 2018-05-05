@@ -46,12 +46,15 @@ export class GlossaryComponent implements OnInit {
   }
 
  getLink() {
-   console.log(this.ssKService.getGlossarylink());
     if (isUndefined(this.ssKService.getGlossarylink())) {
       return true;
     } else {
       return false;
     }
  }
+
+  changedHandler(item: string) {
+    this.router.navigate(['/', 'glossary', item]);
+  }
 
 }

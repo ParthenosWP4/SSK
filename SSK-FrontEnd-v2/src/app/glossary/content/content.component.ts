@@ -1,7 +1,10 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
-import {ActivatedRoute, Params} from '@angular/router';
-import {SskServicesService} from "../../ssk-services.service";
-import {Observable} from "rxjs/Observable";
+import {
+  ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnInit,
+  Output
+} from '@angular/core';
+import {ActivatedRoute, Params, Router} from '@angular/router';
+import {SskServicesService} from '../../ssk-services.service';
+import {ElastichsearchServicesService} from '../../elastichsearch-services.service';
 
 @Component({
   selector: 'app-content',
@@ -10,13 +13,24 @@ import {Observable} from "rxjs/Observable";
 })
 export class ContentComponent implements OnInit {
 
-  //@Input() data: Observable<any>;
   item: any
-  constructor(private  sskServ: SskServicesService) { }
+  data: any
+  constructor(private  sskServ: SskServicesService, private elastiServ: ElastichsearchServicesService) { }
 
   ngOnInit() {
-    console.log(this.sskServ.getGlossarylink())
     this.item = this.sskServ.getGlossarylink();
+    this.elastiServ.getAllStepsMetaData().subscribe(
+      result => {},
+      error => console.log(error),
+      () => {
+        this.elastiServ.setSearchData();
+        this.data = this.elastiServ.glossaryChange(this.item);
+      }
+    );
   }
 
+  itemChangedHandler(item: string) {
+    this.item = item;
+    this.data = this.elastiServ.glossaryChange(item);
+  }
 }
