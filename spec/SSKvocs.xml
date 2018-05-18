@@ -408,6 +408,123 @@
                </list>
             </div>
          </div>
+         <div xml:id="tadirahObject">
+            <head>Digital Humanities Research Objects</head>
+            <desc/>
+            <list>
+               <item><term>Artifacts</term></item>
+               <item><term>Bibliographic Listings</term></item>
+               <item><term>Code</term></item>
+               <item><term>Computers</term></item>
+               <item><term>Curricula</term></item>
+               <item><term>Digital Humanities</term></item>
+               <item><term>Data</term></item>
+               <item><term>File</term></item>
+               <item><term>Images</term></item>
+               <item><term>Images (3D)</term></item>
+               <item><term>Infrastructure</term></item>
+               <item><term>Interaction</term></item>
+               <item><term>Language</term></item>
+               <item><term>Link</term></item>
+               <item><term>Literature</term></item>
+               <item><term>Manuscript</term></item>
+               <item><term>Map</term></item>
+               <item><term>Metadata</term></item>
+               <item><term>Methods</term></item>
+               <item><term>Multimedia</term></item>
+               <item><term>Multimodal</term></item>
+               <item><term>Named Entities</term></item>
+               <item><term>Persons</term></item>
+               <item><term>Projects</term></item>
+               <item><term>Research</term></item>
+               <item><term>Research Process</term></item>
+               <item><term>Research Results</term></item>
+               <item><term>Sheet Music</term></item>
+               <item><term>Software</term></item>
+               <item><term>Sound</term></item>
+               <item><term>Standards</term></item>
+               <item><term>Text</term></item>
+               <item><term>Text Bearing Objects</term></item>
+               <item><term>Tools</term></item>
+               <item><term>Video</term></item>
+               <item><term>VREs</term></item>
+            </list>
+         </div>
+         <div xml:id="tadirahTechniques">
+            <head>Research Techniques</head>
+            <desc></desc>
+            <list>
+               <item><term>Bit Stream Preservation</term></item>
+               <item><term>Brainstorming</term></item>
+               <item><term>Browsing</term></item>
+               <item><term>Cluster Analysis</term></item>
+               <item><term>Collocation Analysis</term></item>
+               <item><term>Commenting</term></item>
+               <item><term>Concordancing</term></item>
+               <item><term>Debugging</term></item>
+               <item><term>Distance Measures</term></item>
+               <item><term>Durable Persistent Media</term></item>
+               <item><term>Emulation</term></item>
+               <item><term>Encoding</term></item>
+               <item><term>Gamification</term></item>
+               <item><term>Georeferencing</term></item>
+               <item><term>Information Retrieval</term></item>
+               <item><term>Linked Open Data</term></item>
+               <item><term>Machine Learning</term></item>
+               <item><term>Mapping</term></item>
+               <item><term>Migration</term></item>
+               <item><term>Named Entity Recognition</term></item>
+               <item><term>Open Archival Information Systems</term></item>
+               <item><term>Pattern Recognition</term></item>
+               <item><term>Photography</term></item>
+               <item><term>POS-Tagging</term></item>
+               <item><term>Preservation Metadata</term></item>
+               <item><term>Principal Component Analysis</term></item>
+               <item><term>Replication</term></item>
+               <item><term>Scanning</term></item>
+               <item><term>Searching</term></item>
+               <item><term>Sentiment Analysis</term></item>
+               <item><term>Sequence Alignment</term></item>
+               <item><term>Technology Preservation</term></item>
+               <item><term>Topic Modeling</term></item>
+               <item><term>Versioning</term></item>
+               <item><term>Web Crawling</term></item>
+               <item><term>Text Mining</term></item>
+            </list>
+         </div>
+         <div xml:id="Disciplines">
+            <head>aureHAL disciplines</head>
+            <desc></desc>
+            <list>
+               <item><term>Biological anthropology</term></item>
+               <item><term>Social Anthropology and ethnology</term></item>
+               <item><term>Archaeology and Prehistory</term></item>
+               <item><term>Architecture, space management</term></item>
+               <item><term>Art and art history</term></item>
+               <item><term>Classical studies</term></item>
+               <item><term>Demography</term></item>
+               <item><term>Law</term></item>
+               <item><term>Economies and finances</term></item>
+               <item><term>Education</term></item>
+               <item><term>Environmental studies</term></item>
+               <item><term>Gender studies</term></item>
+               <item><term>Geography</term></item>
+               <item><term>Management</term></item>
+               <item><term>History, Philosophy and Sociology of Sciences</term></item>
+               <item><term>History</term></item>
+               <item><term>Communication sciences</term></item>
+               <item><term>Linguistics</term></item>
+               <item><term>Literature</term></item>
+               <item><term>Cultural heritage and museology</term></item>
+               <item><term>Musicology and performing arts</term></item>
+               <item><term>Philosophy</term></item>
+               <item><term>Psychology</term></item>
+               <item><term>Religions</term></item>
+               <item><term>Political science</term></item>
+               <item><term>Sociology</term></item>
+               <item><term>Methods and statistics</term></item>
+            </list>
+         </div>
          <div xml:id="nemo">
             <head>NEMO taxonomy on Information Resource Types</head>
             <desc/>
