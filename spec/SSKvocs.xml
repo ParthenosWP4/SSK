@@ -20,7 +20,7 @@
       <body>
          <div xml:id="tadirahActivities"
             source="https://github.com/dhtaxonomy/TaDiRAH/blob/master/reference/activities.md">
-            <!--<head>TaDirAH Activities</head>-->
+            <head xml:lang="en">TaDirAH Activities</head>
             <desc  xml:lang="en">Research activities are usually applied to one or several research objects. An
                article about modeling of manuscript properties would therefore be tagged with the
                tags “modeling” and “manuscript”. A plain text editor would be tagged with the tags
@@ -410,7 +410,7 @@
             </div>
          </div>
          <div xml:id="tadirahObject">
-            <head>Digital Humanities Research Objects</head>
+            <head xml:lang="en">Digital Humanities Research Objects</head>
             <desc/>
             <list>
                <item><term>Artifacts</term></item>
@@ -452,7 +452,7 @@
             </list>
          </div>
          <div xml:id="tadirahTechniques">
-            <head>Research Techniques</head>
+            <head xml:lang="en" >Research Techniques</head>
             <desc></desc>
             <list>
                <item><term>Bit Stream Preservation</term></item>
@@ -494,7 +494,7 @@
             </list>
          </div>
          <div xml:id="Disciplines">
-            <head>aureHAL disciplines</head>
+            <head xml:lang="en">aureHAL disciplines</head>
             <desc></desc>
             <list>
                <item><term>Biological anthropology</term></item>
@@ -527,7 +527,7 @@
             </list>
          </div>
          <div xml:id="nemo">
-            <head>NEMO taxonomy on Information Resource Types</head>
+            <head xml:lang="en">NEMO taxonomy on Information Resource Types</head>
             <desc/>
             <div>
                <head>Books</head>
