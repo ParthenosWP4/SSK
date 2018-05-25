@@ -7,7 +7,7 @@
   <fileDesc>
    <titleStmt>
     <title>
-     Step "Assess legal issues"
+     Step "Define imaging specifications"
     </title>
     <author>
      <persName>
@@ -52,9 +52,9 @@
       Définir les spécifications de la numérisation
      </head>
      <desc type="definition" xml:lang="en">
-      After the scanning method was chosen,
-                        setting requirements for the digital fascimile helps to make sure that it is
-                        suitable for intended purposes.
+      Setting requirements for the digital fascimile helps to make sure that it is
+      suitable for intended purposes. This includes defining image file format(s),
+      resoultion, metadata, naming protocol, color schema, etc.
      </desc>
      <desc type="definition" xml:lang="fr"/>
      <desc type="term" xml:lang="en">
