@@ -27,7 +27,7 @@
                "writing" and "code" and "text".</desc>
             <desc  xml:lang="fr">...</desc>
             <div>
-               <head>Capture </head>
+               <head>Capture</head>
                <desc>"capture" generally refers to the activity of creating digital surrogates of
                   existing cultural artefacts, or expressing existing artifacts in a digital
                   representation (digitization). This could be a manual process (as in
@@ -411,7 +411,7 @@
          </div>
          <div xml:id="tadirahObject">
             <head xml:lang="en">Digital Humanities Research Objects</head>
-            <desc/>
+            <desc></desc>
             <list>
                <item><term>Artifacts</term></item>
                <item><term>Bibliographic Listings</term></item>
