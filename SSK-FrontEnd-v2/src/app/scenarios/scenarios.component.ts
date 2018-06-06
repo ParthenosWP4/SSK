@@ -1,7 +1,6 @@
 import {Component, ElementRef, HostListener, OnInit} from '@angular/core';
-import {AppComponent} from '../app.component';
 import {ElastichsearchServicesService} from '../elastichsearch-services.service';
-import {ActivatedRoute, Router} from '@angular/router';
+import { Router} from '@angular/router';
 import {isUndefined} from 'util';
 import * as _ from 'lodash';
 import * as Fuse from 'fuse-js-latest';
@@ -25,11 +24,12 @@ export class ScenariosComponent implements OnInit {
   resources: any[];
   selectTab: string;
   error: string;
-  resultCount = 0;
-  scenariosTemp: any[];
   p  = 1;
   title: boolean;
-  border: any = {} ;
+  border: any = {
+    'class' : 'col-1',
+    'border' : '1px solid #979797'
+  } ;
   searchData = {};
   filters = {};
   tabStep  = false;
@@ -40,27 +40,36 @@ export class ScenariosComponent implements OnInit {
   private scenarioResults = [];
   private stepsResults = [];
   private resourcesResults = [];
-  private detailsResult = {};
-
+  resultCount =  0
   constructor(
-    private appComponent: AppComponent,
     private elasticServices: ElastichsearchServicesService,
     private sskServices: SskServicesService,
     public el: ElementRef,
-    private router: Router,
-    private route: ActivatedRoute) {
-    this.border.class = 'col-1';
-    this.border.border = '1px solid #979797';
-    this.filters = this.sskServices.getFilters();
+    private router: Router) {
+
   }
 
   ngOnInit() {
+    this.filters = this.sskServices.getFilters();
     this.options = this.sskServices.options;
-    this.router.navigate([{ outlets: { target: null }}]);
-    this.tabList = this.appComponent.browseItems;
+    this.router.navigate([{outlets: {target: null}}]);
+    this.tabList = this.sskServices.browseItems;
     this.selectTab = this.tabList[0];
-    if (this.elasticServices.getScenarios().length === 0 ) {
-      this.elasticServices.countItems('scenarios').subscribe(
+     //setTimeout(() => {
+
+
+        this.scenarios = this.elasticServices.getScenarios();
+        this.searchData['disciplines'] = this.elasticServices.getDisciplines();
+        this.searchData['activities'] = _.flattenDeep(_.map(_.map(this.elasticServices.getActivities(), 'list'), 'item'));
+        this.searchData['techniques'] = this.elasticServices.getTechniques();
+        this.searchData['objects'] = this.elasticServices.getObjects();
+        this.searchData['standards'] = this.elasticServices.getStandards();
+        this.resultCount = this.elasticServices.getResultCount();
+    console.log(this.elasticServices.getResultCount()
+    );
+    //  }, 1000);
+
+      /*this.elasticServices.countItems('scenarios').subscribe(
         result => {
           this.elasticServices.setScenariosID(result['scenarios']);
           this.elasticServices.setScenarioNumber(result['total']);
@@ -84,10 +93,9 @@ export class ScenariosComponent implements OnInit {
     } else {
       this.resultCount = this.elasticServices.getScenarios().length;
       this.scenarios = this.elasticServices.getScenarios();
-    }
+    }*/
   }
-
-   asynchFunction(scenario: any) {
+   /*asynchFunction(scenario: any) {
      setTimeout(() => {
        this.elasticServices.getScenarioDetails(scenario._id).subscribe(
          result => {
@@ -100,7 +108,7 @@ export class ScenariosComponent implements OnInit {
            this.scenariosTemp.pop();
            this.resultCount += 1;
            if (this.scenarios.length === this.elasticServices.getScenarioNumber()) {
-             this.elasticServices.setObjects(_.uniq(_.concat(this.elasticServices.getObjects(),
+             this.elasticServices.setObjects(_.uniqBy(_.concat(this.elasticServices.getObjects(),
                _.map(Object.keys(_.groupBy(_.flattenDeep(_.remove(_.map(_.map(this.elasticServices.getScenarios(), 'scenario_metadata'),
                  'objects'), function(n) { return !isUndefined(n); })), 'key')), v => v.toLowerCase()))));
 
@@ -108,7 +116,7 @@ export class ScenariosComponent implements OnInit {
                this.elasticServices.getScenarios(), 'scenario_metadata'), 'discipline'), function(n) {
                return !isUndefined(n); })), 'key')), v => v.replace(/\s+/g, ' ')));
 
-             this.elasticServices.setTechniques(_.uniq(_.concat(this.elasticServices.getTechniques(),
+             this.elasticServices.setTechniques(_.uniqBy(_.concat(this.elasticServices.getTechniques(),
                _.map(Object.keys(_.groupBy(_.flattenDeep(_.remove(_.map(_.map(this.elasticServices.getScenarios(), 'scenario_metadata'),
                  'techniques'), function(n) { return !isUndefined(n); })), 'key')), v => v.toLowerCase()))));
 
@@ -123,16 +131,17 @@ export class ScenariosComponent implements OnInit {
              console.log(this.elasticServices.getTechniques());
              console.log(this.elasticServices.getStandards());
              console.log(this.elasticServices.getObjects());
-             console.log(this.elasticServices.getActivities());*/
+             console.log(this.elasticServices.getActivities());
 
            }
          }
        );
      }, 1000);
-   }
+   }*/
 
 
   onKey(event: any) { // without type info
+    console.log(event);
     if (event.target.value.length >= 3 ) {
       this.search(event.target.value);
     }else {
@@ -142,25 +151,25 @@ export class ScenariosComponent implements OnInit {
   }
 
   searchInit() {
-      if (this.tabScenarios) {
-        this.scenarios = this.elasticServices.getScenarios();
-        this.resultCount = this.elasticServices.getScenarios().length;
-      }
+    if (this.tabScenarios) {
+      this.scenarios = this.elasticServices.getScenarios();
+      this.resultCount = this.elasticServices.getScenarios().length;
+    }
 
-      if (this.tabStep) {
-        this.setSteps(this.elasticServices.getSteps());
-        this.resultCount = this.getSteps().length;
-      }
+    if (this.tabStep) {
+      this.setSteps(this.elasticServices.getSteps());
+      this.resultCount = this.getSteps().length;
+    }
 
-      if (this.tabRes) {
-        this.resources = this.elasticServices.getResources();
-        this.resultCount = this.resources.length;
-      }
+    if (this.tabRes) {
+      this.resources = this.elasticServices.getResources();
+      this.resultCount = this.resources.length;
+    }
   }
 
-searchTab() {
-  this.resize();
-}
+  searchTab() {
+    this.resize();
+  }
 
   search(tag: string) {
 
@@ -171,7 +180,7 @@ searchTab() {
       fuse = new Fuse(this.elasticServices.getScenarios(), this.options);
       this.results[tag] =  fuse.search(tag.trim());
       this.scenarioResults = _.concat(this.scenarioResults, this.results[tag])
-      this.scenarios = _.uniq(this.scenarioResults, 'id');
+      this.scenarios = _.uniqBy(this.scenarioResults, 'id');
       this.resultCount = this.scenarios.length;
     }
 
@@ -180,7 +189,7 @@ searchTab() {
       fuse = new Fuse(this.elasticServices.getSteps(), this.options);
       this.results[tag] =  fuse.search(tag.trim());
       this.stepsResults = _.concat(this.stepsResults, this.results[tag]);
-      this.setSteps(_.uniq(this.stepsResults, 'id'))  ;
+      this.setSteps(_.uniqBy(this.stepsResults, 'id'))  ;
       this.resultCount = this.getSteps().length;
     }
 
@@ -189,13 +198,25 @@ searchTab() {
       fuse = new Fuse(this.resources, this.options);
       this.results[tag] =  fuse.search(tag.trim());
       this.resourcesResults = _.concat(this.resourcesResults, this.results[tag]);
-      this.resources = _.uniq(this.resourcesResults, 'id');
+      this.resources = _.uniqBy(this.resourcesResults, 'id');
       this.resultCount = this.resources.length;
     }
 
 
 
 
+  }
+
+  toggle(item: string) {
+    this.selectTab = item;
+    if (item === 'scenarios') {
+      this.router.navigate([{ outlets: { target: null }}]);
+      console.log(this.elasticServices.getScenarioNumber())
+      this.elasticServices.setResultCount(this.elasticServices.getScenarioNumber());
+    }else {
+      this.router.navigate([{ outlets: { target : item}}]);
+      this.loadContents(item);
+    }
   }
 
   private resize() {
@@ -206,23 +227,13 @@ searchTab() {
     }
   }
 
-  toggle(item: string) {
-    this.selectTab = item;
-    if (item === 'scenarios') {
-      this.router.navigate([{ outlets: { target: null }}]);
-      this.resultCount = this.elasticServices.getScenarioNumber();
-    }else {
-      this.router.navigate([{ outlets: { target : item}}]);
-      this.loadContents(item);
-    }
-  }
-
-  loadContents(type: string) {
+  loadContents(type: string) {console.log(type)
         switch (type) {
           case 'steps':
             this.steps = new Array();
-            this.loadSteps();
-            this.resultCount = this.elasticServices.getstepNumber();
+            //this.loadSteps();
+           this.steps = this.elasticServices.getSteps();
+            this.elasticServices.setResultCount(this.elasticServices.getSteps().length);
             this.tabStep = true;
             this.tabRes = false
             this.tabScenarios = false
@@ -231,20 +242,24 @@ searchTab() {
             this.tabStep = false;
             this.tabRes = true;
             this.tabScenarios = false
-              this.loadResources();
-              this.resultCount = this.elasticServices.getResourceCount()
+            this.resources = this.elasticServices.getResources();
+            this.elasticServices.setResultCount(this.elasticServices.getResourceCount());
+            this.resultCount = this.elasticServices.getResourceCount();
             break;
         }
   }
 
-  loadSteps() {
+  /*loadSteps() {
+    console.log(this.elasticServices.getSteps())
     if (isUndefined(this.steps)) {
       this.elasticServices.getAllSteps().subscribe(result => {
-        this.resultCount = this.elasticServices.getstepNumber();
+        this.elasticServices.setResultCount(this.elasticServices.getstepNumber());
+        //this.resultCount = this.elasticServices.getstepNumber();
         this.steps = this.elasticServices.getSteps();
       });
     }else {
-      this.resultCount = this.elasticServices.getstepNumber();
+      this.elasticServices.setResultCount(this.elasticServices.getResourceCount());
+      //this.resultCount = this.elasticServices.getstepNumber();
       this.steps = this.elasticServices.getSteps();
     }
 
@@ -268,15 +283,15 @@ searchTab() {
       () => {
         this.elasticServices.setSearchData();
       } );
-  }
+  }*/
 
   @HostListener('window:scroll', ['$event']) checkScroll() {
     const componentPosition = this.el.nativeElement.offsetTop
     const scrollPosition = window.pageYOffset
     if ( !isUndefined(this.scenarios) &&  this.scenarios.length  < this.elasticServices.getScenarioNumber() && scrollPosition >= componentPosition) {
       const  elt: any = {};
-      if (!isUndefined(this.scenariosTemp.length)  && this.scenariosTemp.length === 1) {
-        this.scenariosTemp.pop();
+      if (!isUndefined(this.elasticServices.getscenariosTemp().length)  && this.elasticServices.getscenariosTemp().length === 1) {
+        this.elasticServices.getscenariosTemp().pop();
       }
     } else if ( this.scenarios.length >= this.elasticServices.getScenarioNumber()) {
 
@@ -296,7 +311,7 @@ searchTab() {
       fuse = new Fuse(this.elasticServices.getScenarios(), this.options);
       this.results[tag] =  fuse.search(tag);
       this.scenarioResults = _.differenceWith(this.scenarios, this.results[tag]    , _.isEqual);
-      this.scenarios = _.uniq(this.scenarioResults, 'id');
+      this.scenarios = _.uniqBy(this.scenarioResults, 'id');
       this.resultCount = this.scenarios.length;
     }
 
@@ -305,7 +320,7 @@ searchTab() {
       fuse = new Fuse(this.elasticServices.getSteps(), this.options);
       this.results[tag] =  fuse.search(tag);
       this.stepsResults = _.differenceWith(this.steps, this.results[tag] ,   _.isEqual);
-      this.steps = _.uniq(this.stepsResults, 'id');
+      this.steps = _.uniqBy(this.stepsResults, 'id');
       this.resultCount = this.steps.length;
     }
 
@@ -315,28 +330,28 @@ searchTab() {
       fuse = new Fuse(this.resources, this.options);
       this.results[tag] =  fuse.search(tag);
       this.resourcesResults = _.differenceWith(this.resources, this.results[tag] , _.isEqual);
-      this.resources = _.uniq(this.resourcesResults, 'id');
+      this.resources = _.uniqBy(this.resourcesResults, 'id');
       this.resultCount = this.resources.length;
     }
 
-  if ( this.sskServices.getFilters().length === 0 ) {
+    if ( this.sskServices.getFilters().length === 0 ) {
 
-  if (this.tabScenarios) {
-  this.scenarios = this.elasticServices.getScenarios();
-  this.resultCount = this.scenarios.length;
-}
+      if (this.tabScenarios) {
+        this.scenarios = this.elasticServices.getScenarios();
+        this.resultCount = this.scenarios.length;
+      }
 
-if (this.tabStep) {
-  this.steps = this.elasticServices.getSteps();
-  this.resultCount = this.steps.length;
-}
+      if (this.tabStep) {
+        this.steps = this.elasticServices.getSteps();
+        this.resultCount = this.steps.length;
+      }
 
-if (this.tabRes) {
-  this.resources = this.elasticServices.getResources();
-  this.resultCount = this.resources.length;
-}
+      if (this.tabRes) {
+        this.resources = this.elasticServices.getResources();
+        this.resultCount = this.resources.length;
+      }
 
-}
+    }
   }
 
 
@@ -345,7 +360,32 @@ if (this.tabRes) {
   }
 
   getSteps() {
-    return this.steps;
+    return this.elasticServices.getSteps();
+  }
+
+  getScenarios() {
+    return this.elasticServices.getScenarios();
+  }
+
+  getResources() {
+    return this.elasticServices.getResources();
+  }
+
+  getResultCount() {
+      return this.elasticServices.getResultCount();
+  }
+
+  getScenarioTemp() {
+    return this.elasticServices.getscenariosTemp();
+  }
+
+  getStepScenario(step: any) {
+    return _.find(this.elasticServices.getScenarios(), (o)  => {
+      return o.id === step._parent; });
+  }
+
+  setResultCount(elt: number ) {
+    this.resultCount = elt;
   }
 
 }

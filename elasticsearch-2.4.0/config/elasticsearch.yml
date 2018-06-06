@@ -14,7 +14,7 @@
 #
 # Use a descriptive name for your cluster:
 #
-cluster.name: my-application
+cluster.name: SSK-Cluster
 #
 # ------------------------------------ Node ------------------------------------
 #
@@ -94,3 +94,7 @@ cluster.name: my-application
 # action.destructive_requires_name: true
 
 # cluster.name: mkyong-cluster
+
+cluster.routing.allocation.disk.threshold_enabled: true 
+cluster.routing.allocation.disk.watermark.low: 1gb
+cluster.routing.allocation.disk.watermark.high: 0.5gb

@@ -9,7 +9,6 @@ import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -21,19 +20,22 @@ import java.util.regex.Pattern;
 @Service
 public class ElasticServices {
 	
-	@Value("${elasticsearch.port2}")
+	@Value("${elasticsearch.host}")
+	private String host;
+	
+	@Value("${elasticsearch.link}")
 	private String elasticSearchPort;
 	
 	@Value("${elasticsearch.index}")
 	private String sskIndex;
 	
-	private ElasticsearchOperations es;
 	private SSKServices sskServices;
 	private GithubApiService githubApiService;
 	private RequestHeadersParams requestHeadersParams;
 	private Gson gson;
 	private List<String> targetList ;
 	private static HttpEntity<String> entity;
+	
 	
 	private static JsonParser parser  = new JsonParser();
 	private RestTemplate restTemplate = new RestTemplate();
@@ -45,15 +47,20 @@ public class ElasticServices {
 	
 	private static final List<String> nestedScenarioMappings = Arrays.asList("TEI.teiHeader.fileDesc.titleStmt.author", "TEI.text.body.div.desc.content", "TEI.text.body.div.desc.term", "TEI.text.body.listEvent.event");
 	
+	private static final List<String> nestedGlossary = Arrays.asList("TEI.text.body.div.div.list.item", "TEI.text.body.div.desc.content");
+	
 	private static final List<String> metadata = Arrays.asList("techniques", "objects", "disciplines", "standards", "standards.desc", "activities");
 	
 	private static final List<String> nestedREsMappings = Arrays.asList("general", "project");
 	
 	private HashMap<String, List<String>> resourceTypeVariant = new HashMap<>();
 	
-	public ElasticServices(ElasticsearchOperations es, SSKServices sskServices,
+	public ElasticServices(
+			
+			//ElasticsearchOperations es,
+			SSKServices sskServices,
 	                       GithubApiService githubApiService, RequestHeadersParams requestHeadersParams){
-		this.es = es;
+		//this.es = es;
 		this.sskServices = sskServices;
 		this.githubApiService = githubApiService;
 		this.requestHeadersParams  = requestHeadersParams;
@@ -71,7 +78,7 @@ public class ElasticServices {
 		
 		List<String> nested = new ArrayList<>();
 		JSONObject enabled = new JSONObject();
-		JSONObject nestedMapping;
+		//JSONObject relation = new JSONObject();
 		enabled.put("enabled", false);
 		JSONObject typeContent = new JSONObject();
 		typeContent.put("_all", enabled);
@@ -84,37 +91,63 @@ public class ElasticServices {
 			case "step":
 				parentType.put("type", "scenario");
 				typeContent.put("_parent", parentType);
+				/*relation.put("scenario", "step");
+				parentType.put("relations", relation);
+				parentType.put("type", "join");
+				typeContent.put("scenario_"+mappingType, parentType);*/
 				nested = nestedStepMappings;
-				break;
+			break;
 			case "step_metadata":
 				parentType.put("type", "step");
 				typeContent.put("_parent", parentType);
+				/*relation.put("step", mappingType);
+				parentType.put("relations", relation);
+				parentType.put("type", "join");
+				typeContent.put(mappingType, parentType);*/
 				nested = metadata;
-				break;
+			break;
 			case "scenario_metadata":
 				parentType.put("type", "scenario");
 				typeContent.put("_parent", parentType);
+				/*relation.put("scenario", mappingType);
+				parentType.put("relations", relation);
+				parentType.put("type", "join");
+				typeContent.put(mappingType, parentType);*/
 				nested = metadata;
-				break;
+			break;
 			case "resource":
 				parentType.put("type", "step");
 				typeContent.put("_parent", parentType);
+				/*relation.put("step", mappingType);
+				parentType.put("relations", relation);
+				parentType.put("type", "join");
+				typeContent.put("step_"+mappingType, parentType);*/
 				nested = nestedREsMappings;
-				break;
+			break;
 			case "resource_metadata":
 				parentType.put("type", "resource");
 				typeContent.put("_parent", parentType);
+				/*relation.put("resource", mappingType);
+				parentType.put("relations", relation);
+				parentType.put("type", "join");
+				typeContent.put(mappingType, parentType);*/
 				nested = metadata;
-				break;
+			break;
+			case "glossary":
+				nested = nestedGlossary;
+			break;
 			default:
 				nested = nestedScenarioMappings;
-				break;
+			break;
 			
 		}
+		/*JSONObject  properties = new JSONObject();
+		properties.put("properties", typeContent);*/
 		
 		requestHeadersParams.setHeaders();
 		HttpEntity<String> entity = new HttpEntity<>(typeContent.toString(), requestHeadersParams.getHeaders());
 		ResponseEntity<String> response = this.restTemplate.exchange(elasticSearchPort + "/" + sskIndex + "/_mapping/" + mappingType, HttpMethod.PUT, entity, String.class);
+		//ResponseEntity<String> response = this.restTemplate.exchange(elasticSearchPort + "/" + sskIndex + "/_mapping/_doc", HttpMethod.PUT, entity, String.class);
 		String responseBody = response.getBody();
 		mapping = new JSONObject(responseBody);
 		boolean result = false;
@@ -133,7 +166,7 @@ public class ElasticServices {
 	}
 	
 	
-	private void createResourcesMapping() {
+	/*private void createResourcesMapping() {
 		
 		JSONObject element = new JSONObject();
 		JSONObject properties = new JSONObject();
@@ -168,7 +201,7 @@ public class ElasticServices {
 		requestHeadersParams.setHeaders();
 		HttpEntity<String> entity = new HttpEntity<>(properties.toString(), requestHeadersParams.getHeaders());
 		ResponseEntity<String> response = this.restTemplate.exchange(elasticSearchPort + "/" + sskIndex + "/_mapping/resource", HttpMethod.PUT, entity, String.class);
-	}
+	}*/
 	
 	public boolean pushData(JsonArray scenarioAndStep, int iteration) throws Exception {
 		String type;
@@ -357,6 +390,7 @@ public class ElasticServices {
 		requestHeadersParams.setHeaders();
 		HttpEntity<String> entity = new HttpEntity<>(properties.toString(), requestHeadersParams.getHeaders());
 		ResponseEntity<String> response = this.restTemplate.exchange( elasticSearchPort + "/" + sskIndex + "/_mapping/" + mappingType, HttpMethod.PUT, entity, String.class);
+		//ResponseEntity<String> response = this.restTemplate.exchange( elasticSearchPort + "/" + sskIndex + "/_mapping/_doc" , HttpMethod.PUT, entity, String.class);
 		return elt;
 	}
 	
@@ -448,18 +482,7 @@ public class ElasticServices {
 	}*/
 	
 	
-	
-	public ElasticsearchOperations getEs() {
-		return es;
+	public String getElasticSearchPort() {
+		return elasticSearchPort;
 	}
-	
-	public void setEs(ElasticsearchOperations es) {
-		this.es = es;
-	}
-	
-	
-	
-	
-	
-	
 }

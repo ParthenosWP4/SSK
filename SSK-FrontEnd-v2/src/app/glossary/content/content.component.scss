@@ -22,4 +22,39 @@
   font-size: .75em !important;
 }
 
+[data-toggle="collapse"] .fa-open:before {
+  content: "\f0a4";
+}
+
+[data-toggle="collapse"].collapsed .fa-open:before {
+  content: "\f0a7";
+}
+
+[data-toggle="collapse"] .fa-sub:before {
+  content: "\f04b";
+}
+
+[data-toggle="collapse"].collapsed .fa-sub:before {
+  content: "\f04b";
+  display: inline-block;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.head{
+  font-family: $raleway-medium;
+  text-transform: capitalize;
+  color: #64B9D8;
+  font-size: x-large;
+}
+
+.collapse {
+  font-family: $roboto-light;
+}
+.btn {
+  cursor: pointer;
+}
+
 

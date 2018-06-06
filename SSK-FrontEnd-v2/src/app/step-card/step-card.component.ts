@@ -13,15 +13,15 @@ import {Router} from '@angular/router';
 export class StepCardComponent implements OnInit {
 
   @Input() step: any;
+  @Input() scenario: any;
   public  shortTitle: any
   public shortDesc: any
   public scenarioTitle: any
-  public scenario: any
+  //public scenario: any
 
   constructor(private elastichServices: ElastichsearchServicesService, private sskServices: SskServicesService,  private router: Router) { }
 
   ngOnInit() {
-
 
     if (this.step.head instanceof Array) {
       this.step.title = this.step.head[0];
@@ -41,14 +41,14 @@ export class StepCardComponent implements OnInit {
       this.shortDesc = this.sskServices.shorten(this.step.description, 470);
     }
 
-    this.scenario = _.find(this.elastichServices.getScenarios(), (o)  => {
-      return o.id === this.step._parent; });
     if (this.scenario.title instanceof Array) {
       this.scenarioTitle = this.scenario.title[0];
     } else {
       this.scenarioTitle = this.scenario.title;
     }
-    this.step['metadata'] = this.sskServices.addStepMetadata(this.step._id);
+
+    //this.step['metadata'] = this.sskServices.addStepMetadata(this.step._id);
+
     const urlTag: Array<any>  = _.remove(this.step.metadata, (tag) => {
         return this.sskServices.isUrl(tag.key);
     });

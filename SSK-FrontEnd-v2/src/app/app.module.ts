@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
+import {APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA, NgModule, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SafeHtmlPipe } from './safe-html.pipe';
 import { AppComponent } from './app.component';
@@ -26,7 +26,9 @@ import { ContentComponent } from './glossary/content/content.component';
 import {GlossaryResolver} from './glossary/glossary.resolver';
 
 
-
+export function dataProviderFactory(provider: ElastichsearchServicesService) {
+  return () => provider.loadData();
+}
 
 
 
@@ -60,11 +62,13 @@ import {GlossaryResolver} from './glossary/glossary.resolver';
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],
-  providers: [appRoutingProviders, SafeHtmlPipe, ElastichsearchServicesService, SskServicesService, GlossaryResolver],
+  providers: [appRoutingProviders, SafeHtmlPipe, ElastichsearchServicesService, SskServicesService, GlossaryResolver,
+    { provide: APP_INITIALIZER, useFactory: dataProviderFactory, deps: [ElastichsearchServicesService], multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(breadcrumbsConfig: McBreadcrumbsConfig, private sskServ: SskServicesService) {
+  constructor(breadcrumbsConfig: McBreadcrumbsConfig, private sskServ: SskServicesService,
+              ) {
     breadcrumbsConfig.postProcess = (x) => {
       // Ensure the first breadcrumb points to home
       let y = x;
@@ -82,4 +86,6 @@ export class AppModule {
       return y;
     };
   }
+
+
 }

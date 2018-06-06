@@ -25,7 +25,7 @@
     <div class="tab-content  mx-5" >
       <div class=" row my-lg-5 vdivide result pb-5 ">
         <div class="col-lg-2 ">
-          <span class="result-tab">{{resultCount}}</span> results for  <span class="result-tab">{{selectTab}}</span>
+          <span class="result-tab" [innerHTML]="getResultCount()"></span> results for  <span class="result-tab">{{selectTab}}</span>
         </div>
         <div class="col-lg-4 text-center">
            Your filters :
@@ -52,11 +52,11 @@
           <div>
           <app-scenario-card  *ngFor="let scen of scenarios " [scenario]="scen "></app-scenario-card>
           </div>
-          <app-scenario-template   *ngFor="let elt of scenariosTemp"  ></app-scenario-template>
+          <app-scenario-template   *ngFor="let elt of getScenarioTemp()"  ></app-scenario-template>
       </div>
       </div>
       <div class="tab-pane " id="steps-tab">
-        <app-step-card  *ngFor="let step of steps | paginate: { itemsPerPage: 10, currentPage: p,  totalItems: steps?.length }"  [step]="step "></app-step-card>
+        <app-step-card  *ngFor="let step of steps | paginate: { itemsPerPage: 10, currentPage: p,  totalItems: steps?.length }"  [step]="step " [scenario]="getStepScenario(step)"></app-step-card>
         <pagination-controls
           (pageChange)="p = $event"
           class="text-center ssk-pagination"

@@ -67,7 +67,7 @@ public class SSKStepEndpoint {
 	@ResponseBody
 	@RequestMapping(value = "resources", method = { RequestMethod.GET  }, produces="application/json")
 	public ResponseEntity<String> getResources(){
-		JsonObject jsonResult =  this.elasticGetServices.getAllResources().getAsJsonObject();
+		JsonObject jsonResult =  this.elasticGetServices.getAllResources("resource").getAsJsonObject();
 		ResponseEntity<String> result;
 		if(jsonResult != null) {
 			result = new ResponseEntity<>(jsonResult.toString(), this.headers, HttpStatus.OK);

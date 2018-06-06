@@ -1,34 +1,23 @@
 package ssk.server.service;
 
 
-import com.google.gson.JsonObject;
-import org.json.JSONObject;
+import org.elasticsearch.ElasticsearchException;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.slf4j.Marker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ExitCodeGenerator;
 import org.springframework.boot.SpringApplication;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.data.elasticsearch.ElasticsearchException;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.elasticsearch.client.Client;
-import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
-import ssk.server.SSKApplication;
 
 import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.ConnectException;
 import java.util.Map;
 
 @Component
@@ -37,7 +26,8 @@ public class InitData {
 	private static final Logger logger = LoggerFactory.getLogger(InitData.class);
 	
 	@Autowired
-	private ElasticsearchOperations es;
+	 private ElasticsearchOperations es;
+	
 	
 	@Autowired
 	private ElasticServices elServices;
@@ -45,13 +35,9 @@ public class InitData {
 	@Autowired
 	private SSKServices sskServices;
 	
-	@Autowired
-	private GithubApiService githubApiService;
 	
 	private RestTemplate restTemplate = new RestTemplate();
 	
-	@Value("${elasticsearch.port2}")
-	private String elasticSearchPort;
 	
 	@Value("${elasticsearch.index}")
 	private String sskIndex;
@@ -61,86 +47,107 @@ public class InitData {
 	
 	
 	
-	public static  final String [] mappings  = { "resource_metadata", "resource", "step_metadata", "scenario_metadata", "step" ,"scenario"};
+	
+	public static  final String [] mappings  = { "resource_metadata", "resource", "step_metadata", "scenario_metadata", "step" ,"scenario", "glossary"};
 	
 	boolean firstLaunch = false;
 	
 	@PostConstruct
 	public void init() {
-		
+		//builder = RestClient.builder(new HttpHost(elasticSearchHost,Integer.valueOf(elasticSearchPort), "http"));
+		//client = new RestHighLevelClient(builder);
 			getElasticSearchHealthAndRunIt();
 		
 	}
 	
 	
-	 /*useful for debug, print elastic search details*/
-    private void printElasticSearchInfo() {
-        logger.info("--ElasticSearch--");
-        Client client = es.getClient();
-        Map<String, String> asMap = client.settings().getAsMap();
-        asMap.forEach((k, v) -> {
-            logger.info(k + " = " + v);
-        });
-        if(!es.indexExists(sskIndex)){
-            logger.info("index :" + es.createIndex(sskIndex));
-            firstLaunch = true;
-        }
-        for (String mapping : mappings ) {
-            try {
-                Map existsMappings = es.getMapping("ssk", mapping);
-                if(elServices.createMappings(mapping)) logger.info("Type '"+mapping+ "' successful updated in mapping");
-
-            } catch (ElasticsearchException e) {
-               logger.error(e.getMessage());
-               if(elServices.createMappings(mapping)) logger.info("Type '"+mapping+ "' successful created in mapping");
-            }
-        }
-        logger.info("--ElasticSearch--");
-    }
-
-  
 	
 	
-	public Boolean  runElasticSearch(){
-		File command = sskServices.getFile("/elasticsearch-2.4.0/bin/elasticsearch-service-mgr.exe");
-		boolean result = false;
-		if(command != null){
-			// = Runtime.getRuntime();
+	private void printElasticSearchInfo() {
+		logger.info("--ElasticSearch--");
+		Client client = es.getClient();
+		Map<String, String> asMap = client.settings().getAsMap();
+		asMap.forEach((k, v) -> {
+			logger.info(k + " = " + v);
+		});
+		if(!es.indexExists(sskIndex)){
+			logger.info("index :" + es.createIndex(sskIndex));
+			firstLaunch = true;
+		}
+		for (String mapping : mappings ) {
 			try {
-				Runtime rt  = Runtime.getRuntime();
-				//.exec("/bin/bash /tmp/test.sh").getInputStream();
-				//Process pr = rt.exec(new String[]{"/bin/bash", command.getPath()});
-				Process pr = rt.exec(new String[]{"/bin/bash", command.getPath()});
-				//Process pr = new ProcessBuilder(new String[]{"sh", "-c", command.getPath()}).start();
-				pr.waitFor();
-				System.out.println("Script executed successfully");
-				BufferedReader reader  =  new BufferedReader(new InputStreamReader(pr.getInputStream()));
-				StringBuilder output = new StringBuilder();
-				String line = "";
-				while ((line = reader.readLine())!= null) {
-					output.append(line + "\n");
-				}
-				logger.info(output.toString());
-				result = true;
-			} catch (Exception e) {
+				//Map existsMappings = es.getMapping(sskIndex, mapping);
+				if(elServices.createMappings(mapping)) logger.info("Type '"+mapping+ "' successful updated in mapping");
+				
+			} catch (ElasticsearchException e) {
 				logger.error(e.getMessage());
-				System.out.println(e.getMessage());
-				result = Boolean.parseBoolean(null);
+				if(elServices.createMappings(mapping)) logger.info("Type '"+mapping+ "' successful created in mapping");
 			}
 		}
-		return result;
+		logger.info("--ElasticSearch--");
 	}
+	
 	
 	public boolean getElasticSearchHealthAndRunIt() {
 		HttpStatus status;
 		boolean result = true;
 		try {
-			this.restTemplate.delete(elasticSearchPort + "ssk");
+			this.restTemplate.delete(this.elServices.getElasticSearchPort() + "ssk");
 			printElasticSearchInfo();
 			this.sskServices.initializeData();
 		}
 		catch (Exception e){
-			//logger.error(e.getMessage());
+			logger.error(e.getMessage());
+			if(e.getMessage().contains("404")){
+				printElasticSearchInfo();
+			}
+			else{
+				logger.error("ElasticSearch is not running !!!");
+				int exitCode = SpringApplication.exit(context, new ExitCodeGenerator() {
+					@Override
+					public int getExitCode() {
+						return 0;
+					}
+				} );
+				context.refresh();
+				System.exit(exitCode);
+			}
+		}
+		return result;
+	}
+	
+	
+	 /*
+	    useful for debug, print elastic search details : Elasticsearch 6.2.4
+    private void printElasticSearchInfo() throws IOException {
+        logger.info("--ElasticSearch--");
+        
+	    MainResponse response = this.client.info(new BasicHeader(HTTP.CONTENT_TYPE, ContentType.APPLICATION_JSON.toString()));
+	    logger.info("Cluster Name: " + response.getClusterName().value());
+	    logger.info("Cluster Uuid: " + response.getClusterUuid());
+	    logger.info("Node Name: " + response.getNodeName());
+	    logger.info("Build : " + response.getBuild().toString());
+	
+	    logger.warn(String.valueOf(this.client.exists(new GetRequest().index(sskIndex).id("1"))));
+	    if(!this.client.exists(new GetRequest().index(sskIndex))){
+		    //CreateIndexRequest request; = new CreateIndexRequest(sskIndex);
+		    //logger.info("index :" + this.client.indices().create(new CreateIndexRequest( sskIndex)));
+		    firstLaunch = true;
+		    
+	    }
+        logger.info("--ElasticSearch--");
+    }
+	public boolean getElasticSearchHealthAndRunIt() {
+		HttpStatus status;
+		boolean result = true;
+		try {
+			if(this.client.ping( new BasicHeader(HTTP.CONTENT_TYPE, ContentType.APPLICATION_JSON.toString())) &&
+					   this.client.exists(new GetRequest(sskIndex).id("1"))){
+				this.client.indices().delete(new DeleteIndexRequest("ssk"));
+			}
+			printElasticSearchInfo();
+			
+		} catch (IOException e) {
 			logger.error("ElasticSearch is not running !!!");
 			int exitCode = SpringApplication.exit(context, new ExitCodeGenerator() {
 				@Override
@@ -151,9 +158,5 @@ public class InitData {
 			System.exit(exitCode);
 		}
 		return result;
-	}
-
-	
-	
-	
+	}*/
 }

@@ -2,12 +2,15 @@ package ssk.server.service;
 
 
 import com.google.gson.*;
+import org.json.JSONObject;
 import org.jsoup.Jsoup;
 import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.StringHttpMessageConverter;
@@ -38,8 +41,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Service
 public class SSKServices {
     
-    @Value("${elasticsearch.port2}")
-    private String elasticSearchPort;
     
     @Autowired
     private GithubApiService githubApiService;
@@ -57,6 +58,7 @@ public class SSKServices {
     private static final String sskContentFileName = "SSK_Content.xml";
     private static final String teiToJsonFileName = "xml-to-json.xsl";
     private static final String teiSSKODDPath = "TEI_SSK_ODD.xml";
+    private static final String glossagy = "SSKvocs.xml";
     private static final String scenarioMetaData = "/TEI/text/body/div/desc/term";
     private static final String stepMetaData = "/TEI/text/body/listEvent/event/desc/term";
     private static final String resourcesPath = "/TEI/text/body/listEvent/event/linkGrp";
@@ -116,13 +118,7 @@ public class SSKServices {
         SSKServices.node = node;
     }
     
-    public String getElasticSearchPort() {
-        return elasticSearchPort;
-    }
     
-    public void setElasticSearchPort(String elasticSearchPort) {
-        this.elasticSearchPort = elasticSearchPort;
-    }
     
     public RestTemplate getRestTemplate() {
         return restTemplate;
@@ -168,13 +164,17 @@ public class SSKServices {
      */
     
     
-    public void initializeData() {
+    public void initializeData()  throws  Exception{
         //JsonArray scenarioAndStep;
         String relaxNgContent = githubApiService.getGithubFileContent("spec", teiSSKRelaxNgPath);
         convertStringToFile(relaxNgContent, teiSSKRelaxNgPath);
         String xsltContent = githubApiService.getGithubFileContent("spec", teiToJsonFileName);
         convertStringToFile(xsltContent, teiToJsonFileName);
         this.teiToJsonFile = getFile(teiToJsonFileName);
+        
+        //load Glossary's terms
+        this.loadGlossaryTerms();
+        
         // Get List of Scenarios
         JsonArray scenarios = githubApiService.getSSKElementsList("scenarios");
         AtomicInteger ordinal = new AtomicInteger();
@@ -186,6 +186,8 @@ public class SSKServices {
                 logger.info("SCENARIO " + scenarioName);
     
                 if (scenarioName.equals("1_ScenarioTest.xml")) return;
+                if (scenarioName.equals("0_test.xml")) return;
+                if (scenarioName.equals("1_SSK_sc_loremIpsum.xml")) return;
                 if (scenarioName.equals("README.md")) return;
                 if (scenarioName.contains("unst")) return;
     
@@ -272,7 +274,7 @@ public class SSKServices {
     }
     
     public void generateRelaxNgFromXML(String teiODDContent) {
-        File command = getFile("/Stylesheets-dev/bin/teitorelaxng");
+        File command = getFile("/lib/bin/teitorelaxng");
         if (command != null) {
             convertStringToFile(teiODDContent, teiSSKODDPath);
             File teiSSKODD = getFile(teiSSKODDPath);
@@ -288,7 +290,7 @@ public class SSKServices {
     // Here I have to send mail to Scenario Author if content is not valide against relaxNg
     public boolean validateSSKFile(String sskContent, boolean deleteFile) {
         boolean result = false;
-        File command = getFile("/Stylesheets-dev/lib/lib/jing.jar");
+        File command = getFile("/lib/jing.jar");
     
         if (command != null) {
             convertStringToFile(sskContent, sskContentFileName);
@@ -307,7 +309,7 @@ public class SSKServices {
     
     public JsonObject teiToJson(String sskContent, boolean deleteFile, String type) throws IOException, SAXException, XPathExpressionException, ParserConfigurationException {
         sskContent = sskContent.replaceAll("<!--[\\s\\S]*?-->", "");
-        File command = getFile("./Stylesheets-dev/lib/saxon9he.jar");
+        File command = getFile("./lib/saxon9he.jar");
         JsonObject result = null;
         if (command != null) {
             convertStringToFile(sskContent, sskContentFileName);
@@ -315,14 +317,14 @@ public class SSKServices {
             if (teiToJsonFile != null && sskFile != null) {
                 String jSon = executeCommand(true, "java -jar " + command.getPath(), "", sskFile.getPath(), teiToJsonFile.getPath());
                 result = this.parser.parse(jSon).getAsJsonObject();
+                
             }
-            if (result != null) {
+            if (result != null && type != null) {
                 result.add("metadata", this.parser.parse(getMetadata(sskContent, type)));
                 if (type.equals("step")) {
                     updateStandard(result, sskContent);
                 }
             }
-    
             if (deleteFile) deleteFiles(sskFile);
         }
         return result;
@@ -423,7 +425,6 @@ public class SSKServices {
                 }
             }
         }
-        //logger.info(mapMetaData.toString());
         return gson.toJson(mapMetaData);
     }
     
@@ -474,7 +475,6 @@ public class SSKServices {
                 }
             }
         }
-        //logger.info(resourcesMap.toString());
         result.add("resources", this.parser.parse(resourcesMap.toString()));
     }
     
@@ -557,7 +557,6 @@ public class SSKServices {
         if (data.has("url") && removeDoubleQuote(data.get("url").toString()) != "")
             result.addProperty("url", removeDoubleQuote(data.get("url").toString()));
         if (data.has("date") && !removeDoubleQuote(data.get("date").toString()).isEmpty()){
-            logger.warn(data.get("date").toString());
             result.addProperty("date", data.get("date").toString());
            /* for (String elt : dateFormats)  {
                 Date date;
@@ -650,11 +649,12 @@ public class SSKServices {
             while ((line = reader.readLine()) != null) {
                 output.append(line + "\n");
             }
+           
             if (!content)
                 result = (output.toString().contains("SUCCESSFUL") || (output.toString().isEmpty())) ? "true" : "false";
             if (content) result = output.toString();
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error(e.getMessage());
         }
         return result;
     }
@@ -810,5 +810,41 @@ public class SSKServices {
         return this.stepProcessing(stepReference, positionInTargetScenario);
     }
     
- 
+    
+    private void loadGlossaryTerms() throws Exception{
+        boolean result = true;
+        String termsContentTEI = githubApiService.getGithubFileContent("spec", glossagy);
+        JsonObject termsContentJSON = teiToJson(termsContentTEI, true, null);
+        HttpEntity entity = new HttpEntity<>(termsContentJSON.toString(), new RequestHeadersParams().getHeaders());
+        ResponseEntity<String> response = this.restTemplate.exchange( this.elasticServices.getElasticSearchPort() + "/ssk/glossary" , HttpMethod.POST, entity, String.class);
+        JSONObject responseBody = new JSONObject(response.getBody());
+        result = result && Boolean.parseBoolean(responseBody.get("created").toString());
+        if (result) {
+            logger.info("Successful loading  glossary terms");
+        }
+        else{
+            logger.error("Failure loading  glossary terms");
+        }
+    
+    }
+    
+    public JsonArray getTermsByType(JsonArray terms, String type){
+         JsonArray result = new JsonArray();
+        
+        for(JsonElement termsBlock: terms){
+            JsonObject block = termsBlock.getAsJsonObject();
+            String termId =block.get("id").getAsString();
+            if(termId.toLowerCase().contains(type.toLowerCase())) {
+                if(type.equals("activities")){
+                    result = block.getAsJsonArray("div");
+                }else{
+                    result = block.getAsJsonObject("list").getAsJsonArray("item");
+                }
+                
+                break;
+            }
+        }
+        return result;
+    }
 }
+

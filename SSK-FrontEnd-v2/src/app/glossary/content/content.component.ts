@@ -5,6 +5,7 @@ import {
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {SskServicesService} from '../../ssk-services.service';
 import {ElastichsearchServicesService} from '../../elastichsearch-services.service';
+import {isDefined} from "@angular/compiler/src/util";
 
 @Component({
   selector: 'app-content',
@@ -18,19 +19,24 @@ export class ContentComponent implements OnInit {
   constructor(private  sskServ: SskServicesService, private elastiServ: ElastichsearchServicesService) { }
 
   ngOnInit() {
+    console.log(this.sskServ.getGlossarylink())
     this.item = this.sskServ.getGlossarylink();
-    this.elastiServ.getAllStepsMetaData().subscribe(
-      result => {},
-      error => console.log(error),
-      () => {
-        this.elastiServ.setSearchData();
-        this.data = this.elastiServ.glossaryChange(this.item);
-      }
-    );
+
+    setTimeout(() => {
+      this.data = this.elastiServ.glossaryChange(this.item)
+    }, 2000);
   }
 
   itemChangedHandler(item: string) {
     this.item = item;
     this.data = this.elastiServ.glossaryChange(item);
+  }
+
+  trim(text: string) {
+    return text.trim()
+      .replace(' ', '')
+      .replace('/', '')
+      .replace('-', '')
+      .replace(':', '');
   }
 }

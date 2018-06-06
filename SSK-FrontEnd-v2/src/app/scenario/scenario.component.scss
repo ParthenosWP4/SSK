@@ -6,7 +6,7 @@
 
 .scenario {
   background-color: $color-33;
-  .title{
+  .stitle{
     font-family: $roboto-regular;
     font-size: 48px;
     color: $color-34;
@@ -46,7 +46,7 @@ p span{
 
 .resource {
   background-color: $color-3;
-  .title {
+  .rtitle {
     font-size: 24px;
     font-family: $roboto-medium;
     width: 100%;
@@ -117,5 +117,41 @@ button{
 
 dl, ol, ul {
   list-style-type: none;
+}
+
+.hide{
+  visibility: visible;
+}
+.mhide{
+  display: none;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .cd-horizontal-timeline .events li  span:nth-child(2n+1){
+    height: 25px;
+    width: 25px;
+    line-height: 16px;
+    top:-11px;
+    font-size: 1rem !important;
+  }
+  .step {
+    font-size: inherit;
+  }
+
+    .rtitle{
+      font-size: inherit !important;
+    }
+
+  .stitle {
+    font-size: 20px !important;
+  }
+
+  .hide{
+    display: none;
+  }
+  .mhide{
+    visibility: visible;
+  }
+
 }
 

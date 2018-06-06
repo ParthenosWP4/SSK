@@ -5,17 +5,17 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import * as _ from 'lodash';
 import {isUndefined} from 'util';
-import {environment} from "../environments/environment";
+import {environment} from '../environments/environment';
 
 
 @Injectable()
 export class ElastichsearchServicesService {
 
-  private sskBackendEndpoint = environment.sskBackendEndpoint
- //private sskBackendEndpoint = 'http://localhost:9000/ssk_services-0.0.1/';
+  private sskBackendEndpoint = environment.sskBackendEndpoint;
   private headers = new Headers({'Content-Type': 'application/json'});
 
   private scenarioNumber: number;
+  private resultCount: number;
   private stepNumber: any;
   private resourceNumber: any;
   private scenariosId: any;
@@ -30,16 +30,21 @@ export class ElastichsearchServicesService {
   private techniques: any;
   private objects: any;
   private standards: any;
-  private tags = ['discipline', 'objects', 'techniques', 'activity', 'standards'] ;
+  private tags = ['disciplines', 'object', 'techniques', 'activities'] ;
   private regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/
-
+  ;searchData = {};
+  private detailsResult = {};
   glossaryData: any;
+  scenariosTemp: any[];
+
+
   constructor(private http: Http) {
     this.scenarios = new Array();
     this.params = new URLSearchParams();
     this.params.append('fromSSK', 'true');
     this.headers.set('Access-Control-Allow-Origin', '*');
     this.headers.set('Access-Control-Allow-Methods', 'GET');
+    this.setResultCount(0);
   }
 
 
@@ -69,10 +74,9 @@ export class ElastichsearchServicesService {
     return this.http.get(this.sskBackendEndpoint + 'steps/', this.options)
       .map((response: Response) => {
         const result = JSON.parse(response.text());
+        console.log(result)
         this.setStepNumber(result['total']);
         this.setSteps(result['steps'])
-        this.getAllStepsMetaData();
-
         return result;
       }).catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
@@ -88,7 +92,7 @@ export class ElastichsearchServicesService {
 
   setSearchData() {
 
-    this.setActivities(_.uniq(_.map(Object.keys(_.groupBy(_.flattenDeep(_.map(_.map(this.getStepsMetadata(), '_source'), 'activity'))
+    /*this.setActivities(_.uniq(_.map(Object.keys(_.groupBy(_.flattenDeep(_.map(_.map(this.getStepsMetadata(), '_source'), 'activity'))
       , 'key')), v => this.tagSanitize(v.toLowerCase()).replace(/[0-9]/g, '').replace('_', '').trim())));
 
    this.setObjects(_.map(Object.keys(_.groupBy(_.groupBy(_.flattenDeep(_.remove(_.map(_.map(this.getStepsMetadata(), '_source'), 'objects'),
@@ -100,7 +104,7 @@ export class ElastichsearchServicesService {
     this.setStandards(_.concat(Object.keys(_.groupBy(_.flattenDeep(_.remove(_.map(_.map(this.getStepsMetadata(), '_source'),
       'standards'),  function(n) { return !isUndefined(n); })), 'abbr')), Object.keys(_.groupBy(_.flattenDeep(_.remove(_.map(
       _.map(this.getStepsMetadata(), '_source'), 'standards'), function(n) { return !isUndefined(n); })), 'key'))));
-
+  */
   }
 
   tagSanitize(tag: string) {
@@ -112,6 +116,34 @@ export class ElastichsearchServicesService {
       return tag;
   }
 
+  addStepMetadata(stepId: string): any {
+    let metadata: Array<any> = []
+    if (this.getStepsMetadata().length > 0) {
+      const item: any = _.find(this.getStepsMetadata(), (elt) => {
+        return elt._parent === stepId;
+      });
+      let source: any;
+      if (!isUndefined(item) && !isUndefined(item._source)) {
+        source = item._source;
+        if (source.objects instanceof Array) {
+          metadata = metadata.concat(source.objects);
+        }
+        if (source.discipline instanceof Array) {
+          metadata = metadata.concat(source.discipline);
+        }
+        if (source.activity instanceof Array) {
+          metadata = metadata.concat(source.activity);
+        }
+        if (source.techniques instanceof Array) {
+          metadata = metadata.concat(source.techniques);
+        }
+        if (source.standards instanceof Array) {
+          metadata = metadata.concat(source.standards);
+        }
+      }
+    }
+    return metadata;
+  }
 
 
   getAllResources() {
@@ -125,12 +157,45 @@ export class ElastichsearchServicesService {
   }
 
   testUrl(url: string) {
-    console.log(url);
     this.setOptions(this.headers, null);
     return this.http.get ('https://cors-anywhere.herokuapp.com/' + url, this.options)
       .map((response: Response) => {
         console.log(response.headers);
       }).catch((error: any) => Observable.throw( console.log(error.json()) || console.log('Server error')));
+  }
+
+  loadTermsFromServer(type: string) {
+    this.setOptions(this.headers, null);
+    return this.http.get(this.sskBackendEndpoint + 'glossary/terms/' + type, this.options)
+      .map((response: Response) => {
+        const result = JSON.parse(response.text());
+        switch (type.toLowerCase()) {
+          case 'activities':
+            this.setActivities(result);
+          break;
+          case 'object':
+            this.setObjects(result);
+          break;
+          case 'techniques':
+            this.setTechniques(result);
+          break;
+          case 'disciplines':
+            this.setDisciplines(result);
+          break;
+
+        }
+      }).catch((error: any) => Observable.throw(error.json().error ||  console.log('Server error')));
+  }
+
+
+  loadStandards() {
+    this.headers.set('origin', 'localhost')
+    return this.http.get ('https://cors-anywhere.herokuapp.com/' + environment.standardEndpoint, this.options)
+      .map((response: Response) => {
+      const result = JSON.parse(response.text());
+      this.setStandards(result['response']['docs']);
+      }).catch((error: any) => Observable.throw(error.json().error ||  console.log('Server error')));
+
   }
 
 
@@ -171,6 +236,10 @@ export class ElastichsearchServicesService {
 
   getScenarios() {
     return this.scenarios;
+  }
+
+  setScenarios(elt: any) {
+     this.scenarios =  elt;
   }
 
   addScenario(scenario: any) {
@@ -267,6 +336,22 @@ export class ElastichsearchServicesService {
     this.glossaryData = elt;
   }
 
+  getscenariosTemp() {
+    return this.scenariosTemp;
+  }
+
+  setScenariosTemp(elt: any ) {
+    this.scenariosTemp = elt;
+  }
+
+  getResultCount() {
+    return this.resultCount;
+  }
+
+  setResultCount(elt: number ) {
+    this.resultCount = elt;
+  }
+
   glossaryChange(item: string) {
     switch (item) {
       case 'objects':
@@ -278,8 +363,8 @@ export class ElastichsearchServicesService {
       case 'techniques':
         this.setGlossaryData(this.getTechniques())
         break;
-      case 'avtivities':
-        this.setGlossaryData(this.getTechniques())
+      case 'activities':
+        this.setGlossaryData(this.getActivities())
         break;
       case 'disciplines':
         this.setGlossaryData(this.getDisciplines())
@@ -288,4 +373,71 @@ export class ElastichsearchServicesService {
     return this.getGlossaryData();
   }
 
+
+  loadData () {
+    let res: any;
+    return new Promise ((resolve, reject) => {
+        this.countItems('scenarios').subscribe(
+          response => {
+          res = response;
+        },
+        err => {},
+        () => {
+          this.setScenarioNumber(res['total']);
+          this.setScenariosID(res['scenarios']);
+          this.setScenariosTemp(new Array<any>(this.getScenarioNumber()));
+          this.getScenariosID().forEach((obj)  => {
+            this.asynchFunction(obj);
+          });
+          resolve(true);
+        });
+    });
+  }
+
+  asynchFunction(scenario: any) {
+    setTimeout(() => {
+      this.getScenarioDetails(scenario._id).subscribe(
+        result => {
+          result.id = scenario._id;
+          this.detailsResult = result;
+        },
+        error => {  },
+        () => {
+          this.addScenario(this.detailsResult);
+          this.scenariosTemp.pop();
+          this.setResultCount((this.getResultCount() + 1));
+          if (this.getScenarios().length === this.getScenarioNumber()) {
+            this.getAllSteps().subscribe(result => {},
+              error => {},
+              () => {
+                this.getAllStepsMetaData().subscribe(
+                  result => {   },
+                  error => {  },
+                  () => {
+                    _.forEach(this.getSteps(), (step) => {
+                      step['metadata'] = this.addStepMetadata(step._id);
+                    });
+                  } );
+                this.getAllResources().subscribe(
+                  result => {},
+                  error => {  },
+                  () => {}
+                  );
+
+                this.loadStandards().subscribe(result => {},
+                  error => {},
+                  () => {
+                  });
+                this.tags.forEach((obj)  => {
+                  this.loadTermsFromServer(obj).subscribe(
+                    result => {},
+                    error => {},
+                    () => {});
+                });
+              });
+          }
+        }
+      );
+   }, 1000);
+  }
 }

@@ -19,8 +19,7 @@ import ssk.server.service.InitData;
 @RequestMapping(value = "/ssk")
 public class SSKLaunchController {
 	
-	@Autowired
-	private InitData initData;
+	
 	
 	HttpHeaders headers = new HttpHeaders();
 	
@@ -29,21 +28,10 @@ public class SSKLaunchController {
 	private static Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
 	
 	
-	
-	
-	@RequestMapping(value = "/init",  method = { RequestMethod.GET  }, produces="application/json")
+	@RequestMapping(method = { RequestMethod.GET  }, produces="application/json")
 	@ResponseBody
 	ResponseEntity<String> home() {
 		HttpStatus status = HttpStatus.OK;
-		/*HttpStatus status;
-		JsonObject result = new JsonObject();
-		if(initData.getElasticSearchHealth()){
-			
-			result.addProperty("", "");
-		}
-		else{
-			status = HttpStatus.INTERNAL_SERVER_ERROR;
-		}*/
 		return new ResponseEntity<>(gson.toJson("content: OK"), this.headers, status);
 	}
 }

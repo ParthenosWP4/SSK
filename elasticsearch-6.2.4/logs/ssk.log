@@ -1,0 +1,457 @@
+[2018-05-22T14:10:44,860][INFO ][o.e.n.Node               ] [] initializing ...
+[2018-05-22T14:10:44,931][INFO ][o.e.e.NodeEnvironment    ] [TfNBFOZ] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [23.7gb], net total_space [232.5gb], types [hfs]
+[2018-05-22T14:10:44,932][INFO ][o.e.e.NodeEnvironment    ] [TfNBFOZ] heap size [989.8mb], compressed ordinary object pointers [true]
+[2018-05-22T14:10:44,933][INFO ][o.e.n.Node               ] node name [TfNBFOZ] derived from node ID [TfNBFOZRQkSQVDI-FXN-WQ]; set [node.name] to override
+[2018-05-22T14:10:44,934][INFO ][o.e.n.Node               ] version[6.2.4], pid[3425], build[ccec39f/2018-04-12T20:37:28.497551Z], OS[Mac OS X/10.12.6/x86_64], JVM[Oracle Corporation/Java HotSpot(TM) 64-Bit Server VM/1.8.0_144/25.144-b01]
+[2018-05-22T14:10:44,934][INFO ][o.e.n.Node               ] JVM arguments [-Xms1g, -Xmx1g, -XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -XX:-OmitStackTraceInFastThrow, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Djava.io.tmpdir=/var/folders/0g/qvlhsndj4l7_tzcc0ywm_s8w00m21k/T/elasticsearch.wF54v5as, -XX:+HeapDumpOnOutOfMemoryError, -XX:+PrintGCDetails, -XX:+PrintGCDateStamps, -XX:+PrintTenuringDistribution, -XX:+PrintGCApplicationStoppedTime, -Xloggc:logs/gc.log, -XX:+UseGCLogFileRotation, -XX:NumberOfGCLogFiles=32, -XX:GCLogFileSize=64m, -Des.path.home=/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4, -Des.path.conf=/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/config]
+[2018-05-22T14:10:48,083][INFO ][o.e.p.PluginsService     ] [TfNBFOZ] loaded module [aggs-matrix-stats]
+[2018-05-22T14:10:48,083][INFO ][o.e.p.PluginsService     ] [TfNBFOZ] loaded module [analysis-common]
+[2018-05-22T14:10:48,083][INFO ][o.e.p.PluginsService     ] [TfNBFOZ] loaded module [ingest-common]
+[2018-05-22T14:10:48,083][INFO ][o.e.p.PluginsService     ] [TfNBFOZ] loaded module [lang-expression]
+[2018-05-22T14:10:48,083][INFO ][o.e.p.PluginsService     ] [TfNBFOZ] loaded module [lang-mustache]
+[2018-05-22T14:10:48,083][INFO ][o.e.p.PluginsService     ] [TfNBFOZ] loaded module [lang-painless]
+[2018-05-22T14:10:48,084][INFO ][o.e.p.PluginsService     ] [TfNBFOZ] loaded module [mapper-extras]
+[2018-05-22T14:10:48,084][INFO ][o.e.p.PluginsService     ] [TfNBFOZ] loaded module [parent-join]
+[2018-05-22T14:10:48,084][INFO ][o.e.p.PluginsService     ] [TfNBFOZ] loaded module [percolator]
+[2018-05-22T14:10:48,084][INFO ][o.e.p.PluginsService     ] [TfNBFOZ] loaded module [rank-eval]
+[2018-05-22T14:10:48,084][INFO ][o.e.p.PluginsService     ] [TfNBFOZ] loaded module [reindex]
+[2018-05-22T14:10:48,084][INFO ][o.e.p.PluginsService     ] [TfNBFOZ] loaded module [repository-url]
+[2018-05-22T14:10:48,085][INFO ][o.e.p.PluginsService     ] [TfNBFOZ] loaded module [transport-netty4]
+[2018-05-22T14:10:48,085][INFO ][o.e.p.PluginsService     ] [TfNBFOZ] loaded module [tribe]
+[2018-05-22T14:10:48,085][INFO ][o.e.p.PluginsService     ] [TfNBFOZ] no plugins loaded
+[2018-05-22T14:10:50,488][INFO ][o.e.d.DiscoveryModule    ] [TfNBFOZ] using discovery type [zen]
+[2018-05-22T14:10:50,983][INFO ][o.e.n.Node               ] initialized
+[2018-05-22T14:10:50,983][INFO ][o.e.n.Node               ] [TfNBFOZ] starting ...
+[2018-05-22T14:10:51,130][INFO ][o.e.t.TransportService   ] [TfNBFOZ] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
+[2018-05-22T14:10:54,188][INFO ][o.e.c.s.MasterService    ] [TfNBFOZ] zen-disco-elected-as-master ([0] nodes joined), reason: new_master {TfNBFOZ}{TfNBFOZRQkSQVDI-FXN-WQ}{8VDRlwH6TjWbSSiDZ4Xs-A}{127.0.0.1}{127.0.0.1:9300}
+[2018-05-22T14:10:54,192][INFO ][o.e.c.s.ClusterApplierService] [TfNBFOZ] new_master {TfNBFOZ}{TfNBFOZRQkSQVDI-FXN-WQ}{8VDRlwH6TjWbSSiDZ4Xs-A}{127.0.0.1}{127.0.0.1:9300}, reason: apply cluster state (from master [master {TfNBFOZ}{TfNBFOZRQkSQVDI-FXN-WQ}{8VDRlwH6TjWbSSiDZ4Xs-A}{127.0.0.1}{127.0.0.1:9300} committed version [1] source [zen-disco-elected-as-master ([0] nodes joined)]])
+[2018-05-22T14:10:54,207][INFO ][o.e.h.n.Netty4HttpServerTransport] [TfNBFOZ] publish_address {127.0.0.1:9200}, bound_addresses {[::1]:9200}, {127.0.0.1:9200}
+[2018-05-22T14:10:54,207][INFO ][o.e.n.Node               ] [TfNBFOZ] started
+[2018-05-22T14:10:54,212][INFO ][o.e.g.GatewayService     ] [TfNBFOZ] recovered [0] indices into cluster_state
+[2018-05-22T14:11:12,460][WARN ][o.e.t.n.Netty4Transport  ] [TfNBFOZ] exception caught on transport layer [NettyTcpChannel{localAddress=/127.0.0.1:9300, remoteAddress=/127.0.0.1:54956}], closing connection
+java.lang.IllegalStateException: Received message from unsupported version: [2.0.0] minimal compatible version is: [5.6.0]
+	at org.elasticsearch.transport.TcpTransport.ensureVersionCompatibility(TcpTransport.java:1430) ~[elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.transport.TcpTransport.messageReceived(TcpTransport.java:1377) ~[elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.transport.netty4.Netty4MessageChannelHandler.channelRead(Netty4MessageChannelHandler.java:64) ~[transport-netty4-6.2.4.jar:6.2.4]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:310) [netty-codec-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:297) [netty-codec-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:413) [netty-codec-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:265) [netty-codec-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.handler.logging.LoggingHandler.channelRead(LoggingHandler.java:241) [netty-handler-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1359) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:935) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:134) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:645) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:545) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:499) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:459) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858) [netty-common-4.1.16.Final.jar:4.1.16.Final]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_144]
+[2018-05-22T14:11:24,206][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:11:24,207][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:11:54,215][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:12:24,216][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:12:24,216][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:12:54,218][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:13:24,220][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:13:24,220][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:13:54,225][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:14:23,350][WARN ][o.e.t.n.Netty4Transport  ] [TfNBFOZ] exception caught on transport layer [NettyTcpChannel{localAddress=/127.0.0.1:9300, remoteAddress=/127.0.0.1:54984}], closing connection
+java.lang.IllegalStateException: Received message from unsupported version: [2.0.0] minimal compatible version is: [5.6.0]
+	at org.elasticsearch.transport.TcpTransport.ensureVersionCompatibility(TcpTransport.java:1430) ~[elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.transport.TcpTransport.messageReceived(TcpTransport.java:1377) ~[elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.transport.netty4.Netty4MessageChannelHandler.channelRead(Netty4MessageChannelHandler.java:64) ~[transport-netty4-6.2.4.jar:6.2.4]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:310) [netty-codec-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:297) [netty-codec-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:413) [netty-codec-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:265) [netty-codec-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.handler.logging.LoggingHandler.channelRead(LoggingHandler.java:241) [netty-handler-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1359) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:935) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:134) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:645) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:545) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:499) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:459) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858) [netty-common-4.1.16.Final.jar:4.1.16.Final]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_144]
+[2018-05-22T14:14:24,227][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:14:24,228][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:14:54,232][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:15:24,238][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:15:24,238][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:15:54,241][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:16:24,244][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:16:24,245][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:16:54,250][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:17:24,250][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:17:24,252][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:17:54,257][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:18:24,260][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:18:24,261][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:18:54,265][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:19:24,267][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:19:24,267][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:19:54,273][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:20:24,274][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:20:24,274][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:20:54,278][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:21:24,284][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:21:24,284][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:21:54,289][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:22:24,293][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:22:24,293][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:22:54,301][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:23:24,312][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:23:24,313][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:23:54,319][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:24:24,324][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:24:24,325][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:24:54,329][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:25:24,334][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:25:24,334][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:25:54,339][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:26:24,344][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:26:24,346][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:26:54,352][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:27:24,358][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:27:24,358][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:27:54,360][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:28:24,363][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:28:24,363][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:28:54,369][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:29:24,371][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:29:24,372][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:29:54,375][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:30:24,378][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:30:24,380][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:30:54,382][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:31:24,386][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:31:24,386][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:31:54,390][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:32:24,399][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:32:24,400][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:32:54,405][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:33:24,410][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:33:24,412][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:33:54,418][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:34:24,424][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:34:24,425][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:34:54,426][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:35:24,431][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:35:24,431][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:35:54,449][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:36:24,454][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:36:24,454][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:36:54,460][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:37:24,464][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:37:24,465][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:37:54,470][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:38:24,476][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:38:24,476][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:38:54,478][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:39:24,483][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:39:24,484][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:39:54,489][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:40:24,492][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:40:24,493][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:40:54,498][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:41:24,502][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:41:24,503][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:41:54,504][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:42:24,509][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:42:24,509][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:42:54,515][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:43:24,517][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:43:24,518][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:43:54,520][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:44:24,524][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:44:24,524][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:44:54,528][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:45:24,529][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:45:24,530][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:45:54,532][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:46:24,535][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:46:24,536][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:46:54,541][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:47:24,545][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:47:24,545][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:47:54,547][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:48:24,552][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:48:24,553][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:48:54,559][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:49:24,564][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:49:24,564][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:49:54,568][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:50:24,572][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:50:24,572][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:50:54,575][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:51:24,581][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:51:24,582][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:51:54,585][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:52:24,589][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:52:24,589][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:52:54,593][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:53:24,597][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:53:24,597][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:53:54,602][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:54:24,608][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:54:24,609][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:54:54,615][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:55:24,615][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:55:24,616][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:55:54,621][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:56:24,625][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:56:24,626][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:56:54,629][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.6gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:57:24,630][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:57:24,630][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:57:54,632][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:58:24,635][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:58:24,637][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:58:54,641][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:59:24,645][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T14:59:24,645][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T14:59:54,647][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T15:00:24,652][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T15:00:24,653][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:00:54,659][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T15:01:24,665][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T15:01:24,666][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:01:54,669][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T15:02:24,670][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T15:02:24,670][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:02:54,674][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T15:03:24,675][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T15:03:24,675][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:03:54,675][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T15:04:24,680][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T15:04:24,680][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:04:54,685][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T15:04:55,273][WARN ][o.e.t.n.Netty4Transport  ] [TfNBFOZ] exception caught on transport layer [NettyTcpChannel{localAddress=/127.0.0.1:9300, remoteAddress=/127.0.0.1:63805}], closing connection
+java.lang.IllegalStateException: Received message from unsupported version: [2.0.0] minimal compatible version is: [5.6.0]
+	at org.elasticsearch.transport.TcpTransport.ensureVersionCompatibility(TcpTransport.java:1430) ~[elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.transport.TcpTransport.messageReceived(TcpTransport.java:1377) ~[elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.transport.netty4.Netty4MessageChannelHandler.channelRead(Netty4MessageChannelHandler.java:64) ~[transport-netty4-6.2.4.jar:6.2.4]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:310) [netty-codec-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:297) [netty-codec-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:413) [netty-codec-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:265) [netty-codec-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.handler.logging.LoggingHandler.channelRead(LoggingHandler.java:241) [netty-handler-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1359) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:935) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:134) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:645) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:545) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:499) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:459) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858) [netty-common-4.1.16.Final.jar:4.1.16.Final]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_144]
+[2018-05-22T15:05:24,686][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T15:05:24,687][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:05:53,757][INFO ][o.e.n.Node               ] [TfNBFOZ] stopping ...
+[2018-05-22T15:05:53,781][INFO ][o.e.n.Node               ] [TfNBFOZ] stopped
+[2018-05-22T15:05:53,781][INFO ][o.e.n.Node               ] [TfNBFOZ] closing ...
+[2018-05-22T15:05:53,791][INFO ][o.e.n.Node               ] [TfNBFOZ] closed
+[2018-05-22T15:24:51,223][INFO ][o.e.n.Node               ] [] initializing ...
+[2018-05-22T15:24:51,314][INFO ][o.e.e.NodeEnvironment    ] [TfNBFOZ] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [22.7gb], net total_space [232.5gb], types [hfs]
+[2018-05-22T15:24:51,314][INFO ][o.e.e.NodeEnvironment    ] [TfNBFOZ] heap size [989.8mb], compressed ordinary object pointers [true]
+[2018-05-22T15:24:51,316][INFO ][o.e.n.Node               ] node name [TfNBFOZ] derived from node ID [TfNBFOZRQkSQVDI-FXN-WQ]; set [node.name] to override
+[2018-05-22T15:24:51,316][INFO ][o.e.n.Node               ] version[6.2.4], pid[6455], build[ccec39f/2018-04-12T20:37:28.497551Z], OS[Mac OS X/10.12.6/x86_64], JVM[Oracle Corporation/Java HotSpot(TM) 64-Bit Server VM/1.8.0_144/25.144-b01]
+[2018-05-22T15:24:51,316][INFO ][o.e.n.Node               ] JVM arguments [-Xms1g, -Xmx1g, -XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -XX:-OmitStackTraceInFastThrow, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Djava.io.tmpdir=/var/folders/0g/qvlhsndj4l7_tzcc0ywm_s8w00m21k/T/elasticsearch.wb9CVyIc, -XX:+HeapDumpOnOutOfMemoryError, -XX:+PrintGCDetails, -XX:+PrintGCDateStamps, -XX:+PrintTenuringDistribution, -XX:+PrintGCApplicationStoppedTime, -Xloggc:logs/gc.log, -XX:+UseGCLogFileRotation, -XX:NumberOfGCLogFiles=32, -XX:GCLogFileSize=64m, -Des.path.home=/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4, -Des.path.conf=/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/config]
+[2018-05-22T15:24:51,953][INFO ][o.e.p.PluginsService     ] [TfNBFOZ] loaded module [aggs-matrix-stats]
+[2018-05-22T15:24:51,953][INFO ][o.e.p.PluginsService     ] [TfNBFOZ] loaded module [analysis-common]
+[2018-05-22T15:24:51,954][INFO ][o.e.p.PluginsService     ] [TfNBFOZ] loaded module [ingest-common]
+[2018-05-22T15:24:51,954][INFO ][o.e.p.PluginsService     ] [TfNBFOZ] loaded module [lang-expression]
+[2018-05-22T15:24:51,954][INFO ][o.e.p.PluginsService     ] [TfNBFOZ] loaded module [lang-mustache]
+[2018-05-22T15:24:51,954][INFO ][o.e.p.PluginsService     ] [TfNBFOZ] loaded module [lang-painless]
+[2018-05-22T15:24:51,954][INFO ][o.e.p.PluginsService     ] [TfNBFOZ] loaded module [mapper-extras]
+[2018-05-22T15:24:51,954][INFO ][o.e.p.PluginsService     ] [TfNBFOZ] loaded module [parent-join]
+[2018-05-22T15:24:51,954][INFO ][o.e.p.PluginsService     ] [TfNBFOZ] loaded module [percolator]
+[2018-05-22T15:24:51,954][INFO ][o.e.p.PluginsService     ] [TfNBFOZ] loaded module [rank-eval]
+[2018-05-22T15:24:51,955][INFO ][o.e.p.PluginsService     ] [TfNBFOZ] loaded module [reindex]
+[2018-05-22T15:24:51,955][INFO ][o.e.p.PluginsService     ] [TfNBFOZ] loaded module [repository-url]
+[2018-05-22T15:24:51,955][INFO ][o.e.p.PluginsService     ] [TfNBFOZ] loaded module [transport-netty4]
+[2018-05-22T15:24:51,955][INFO ][o.e.p.PluginsService     ] [TfNBFOZ] loaded module [tribe]
+[2018-05-22T15:24:51,955][INFO ][o.e.p.PluginsService     ] [TfNBFOZ] no plugins loaded
+[2018-05-22T15:24:54,116][INFO ][o.e.d.DiscoveryModule    ] [TfNBFOZ] using discovery type [zen]
+[2018-05-22T15:24:54,587][INFO ][o.e.n.Node               ] initialized
+[2018-05-22T15:24:54,587][INFO ][o.e.n.Node               ] [TfNBFOZ] starting ...
+[2018-05-22T15:24:54,757][INFO ][o.e.t.TransportService   ] [TfNBFOZ] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
+[2018-05-22T15:24:57,811][INFO ][o.e.c.s.MasterService    ] [TfNBFOZ] zen-disco-elected-as-master ([0] nodes joined), reason: new_master {TfNBFOZ}{TfNBFOZRQkSQVDI-FXN-WQ}{La2tcMRlQZasYno_FkQn5A}{127.0.0.1}{127.0.0.1:9300}
+[2018-05-22T15:24:57,815][INFO ][o.e.c.s.ClusterApplierService] [TfNBFOZ] new_master {TfNBFOZ}{TfNBFOZRQkSQVDI-FXN-WQ}{La2tcMRlQZasYno_FkQn5A}{127.0.0.1}{127.0.0.1:9300}, reason: apply cluster state (from master [master {TfNBFOZ}{TfNBFOZRQkSQVDI-FXN-WQ}{La2tcMRlQZasYno_FkQn5A}{127.0.0.1}{127.0.0.1:9300} committed version [1] source [zen-disco-elected-as-master ([0] nodes joined)]])
+[2018-05-22T15:24:57,834][INFO ][o.e.h.n.Netty4HttpServerTransport] [TfNBFOZ] publish_address {127.0.0.1:9200}, bound_addresses {[::1]:9200}, {127.0.0.1:9200}
+[2018-05-22T15:24:57,834][INFO ][o.e.n.Node               ] [TfNBFOZ] started
+[2018-05-22T15:24:57,839][INFO ][o.e.g.GatewayService     ] [TfNBFOZ] recovered [0] indices into cluster_state
+[2018-05-22T15:25:27,835][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T15:25:27,837][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:25:37,892][WARN ][o.e.t.n.Netty4Transport  ] [TfNBFOZ] exception caught on transport layer [NettyTcpChannel{localAddress=/127.0.0.1:9300, remoteAddress=/127.0.0.1:52728}], closing connection
+java.lang.IllegalStateException: Received message from unsupported version: [2.0.0] minimal compatible version is: [5.6.0]
+	at org.elasticsearch.transport.TcpTransport.ensureVersionCompatibility(TcpTransport.java:1430) ~[elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.transport.TcpTransport.messageReceived(TcpTransport.java:1377) ~[elasticsearch-6.2.4.jar:6.2.4]
+	at org.elasticsearch.transport.netty4.Netty4MessageChannelHandler.channelRead(Netty4MessageChannelHandler.java:64) ~[transport-netty4-6.2.4.jar:6.2.4]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:310) [netty-codec-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:297) [netty-codec-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:413) [netty-codec-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:265) [netty-codec-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.handler.logging.LoggingHandler.channelRead(LoggingHandler.java:241) [netty-handler-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1359) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:935) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:134) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:645) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:545) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:499) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:459) [netty-transport-4.1.16.Final.jar:4.1.16.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858) [netty-common-4.1.16.Final.jar:4.1.16.Final]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_144]
+[2018-05-22T15:25:57,861][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T15:26:27,862][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T15:26:27,863][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:26:57,869][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T15:27:27,872][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T15:27:27,873][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:27:57,877][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 22.7gb[9.7%], shards will be relocated away from this node
+[2018-05-22T15:28:27,883][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:28:27,884][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:28:57,889][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:29:27,893][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:29:27,895][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:29:57,897][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:30:27,899][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:30:27,900][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:30:57,903][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:31:27,910][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:31:27,911][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:31:57,915][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:32:27,917][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:32:27,919][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:32:57,923][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:33:27,926][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:33:27,926][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:33:57,929][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:34:27,934][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:34:27,935][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:34:57,938][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:35:27,942][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:35:27,942][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:35:57,944][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:36:27,952][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:36:27,952][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:36:57,958][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:37:27,962][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:37:27,962][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:37:57,966][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:38:27,971][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:38:27,973][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:38:57,979][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:39:27,986][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:39:27,987][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:39:57,987][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:40:27,992][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:40:27,993][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:40:57,996][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:41:28,001][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:41:28,002][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:41:58,006][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:42:28,009][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:42:28,009][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:42:58,011][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:43:28,017][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:43:28,019][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:43:58,023][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:44:28,027][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:44:28,027][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:44:58,034][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:45:28,038][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:45:28,038][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:45:58,040][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:46:28,043][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:46:28,044][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:46:58,050][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:47:28,052][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:47:28,052][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:47:58,056][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:48:28,064][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:48:28,065][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:48:58,070][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.7gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:49:28,083][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.6gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:49:28,083][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:49:58,086][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.6gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:50:28,092][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.6gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:50:28,093][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:50:58,097][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.6gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:51:28,102][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.6gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:51:28,102][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:51:58,104][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.6gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:52:28,107][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.6gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:52:28,108][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:52:58,113][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.6gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:53:28,118][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.6gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:53:28,118][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:53:58,121][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.6gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:54:28,127][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.6gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:54:28,128][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:54:58,133][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.6gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:55:28,137][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.6gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:55:28,138][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:55:58,140][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.6gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:56:28,144][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.6gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:56:28,144][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:56:58,149][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.6gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:57:28,158][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.6gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:57:28,160][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:57:58,166][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.6gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:58:28,170][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.6gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:58:28,170][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:58:58,174][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.6gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:59:28,179][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.6gb[9.3%], shards will be relocated away from this node
+[2018-05-22T15:59:28,179][INFO ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2018-05-22T15:59:58,182][WARN ][o.e.c.r.a.DiskThresholdMonitor] [TfNBFOZ] high disk watermark [90%] exceeded on [TfNBFOZRQkSQVDI-FXN-WQ][TfNBFOZ][/Users/ltadonfo/IdeaProjects/elasticsearch-6.2.4/data/nodes/0] free: 21.6gb[9.3%], shards will be relocated away from this node
+[2018-05-22T16:00:07,135][INFO ][o.e.n.Node               ] [TfNBFOZ] stopping ...
+[2018-05-22T16:00:07,154][INFO ][o.e.n.Node               ] [TfNBFOZ] stopped
+[2018-05-22T16:00:07,154][INFO ][o.e.n.Node               ] [TfNBFOZ] closing ...
+[2018-05-22T16:00:07,162][INFO ][o.e.n.Node               ] [TfNBFOZ] closed

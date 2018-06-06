@@ -19,7 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "../node_modules/bootstrap/dist/css/bootstrap.css",
         "../node_modules/font-awesome/css/font-awesome.css",
         "styles.scss"
       ],
@@ -29,6 +29,7 @@
         "../node_modules/popper.js/dist/umd/popper.js",
         "../node_modules/bootstrap/dist/js/bootstrap.min.js",
         "../node_modules/fuse-js-latest/dist/fuse.js"
+
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
@@ -63,6 +64,7 @@
   },
   "defaults": {
     "styleExt": "css",
-    "component": {}
+    "component": {
+    }
   }
 }

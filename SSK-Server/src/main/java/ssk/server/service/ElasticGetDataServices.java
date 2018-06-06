@@ -4,7 +4,6 @@ package ssk.server.service;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import org.apache.commons.lang.StringUtils;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,9 +25,6 @@ import java.util.regex.Pattern;
 
 @Service
 public class ElasticGetDataServices {
-	
-	@Value("${elasticsearch.port2}")
-	private String elasticSearchPort;
 	
 	@Value("${all_step_query}")
 	private String allStepQuery;
@@ -68,7 +64,7 @@ public class ElasticGetDataServices {
 		requestHeadersParams.setHeaders();
 		JsonObject result = new JsonObject();
 		entity = new HttpEntity<>(allStepQuery, requestHeadersParams.getHeaders());
-		ResponseEntity<String> response = this.restTemplate.exchange( elasticSearchPort + "/" + sskIndex, HttpMethod.POST, entity, String.class);
+		ResponseEntity<String> response = this.restTemplate.exchange( this.elasticServices.getElasticSearchPort() + "/" + sskIndex, HttpMethod.POST, entity, String.class);
 		if (response.getStatusCode().is2xxSuccessful()) {
 			JsonObject param = sskServices.getParser().parse(response.getBody()).getAsJsonObject().get("hits").getAsJsonObject();
 			result.addProperty("total", Integer.valueOf(param.get("total").getAsString()));
@@ -90,7 +86,7 @@ public class ElasticGetDataServices {
 	public JsonArray getAllStepMetaData(){
 		sskIndex = "ssk/step_metadata/_search?size=10000";
 		requestHeadersParams.setHeaders();
-		ResponseEntity<String> response = this.restTemplate.getForEntity( elasticSearchPort + "/" + sskIndex, String.class) ;
+		ResponseEntity<String> response = this.restTemplate.getForEntity( this.elasticServices.getElasticSearchPort() + "/" + sskIndex, String.class) ;
 		if (response.getStatusCode().is2xxSuccessful()) {
 			return sskServices.getParser().parse(response.getBody()).getAsJsonObject().get("hits").getAsJsonObject().get("hits").getAsJsonArray();
 		}
@@ -104,7 +100,7 @@ public class ElasticGetDataServices {
 		sskIndex = "ssk/scenario/_search?q=_id:" + scenarioId;
 		requestHeadersParams.setHeaders();
 		entity = new HttpEntity<>(scenarioMetadataQuery, requestHeadersParams.getHeaders());
-		ResponseEntity<String> response = this.restTemplate.exchange( elasticSearchPort + "/" + sskIndex, HttpMethod.POST, entity, String.class);
+		ResponseEntity<String> response = this.restTemplate.exchange( this.elasticServices.getElasticSearchPort() + "/" + sskIndex, HttpMethod.POST, entity, String.class);
 		if (response.getStatusCode().is2xxSuccessful()) {
 			JSONObject temp ;
 			temp = (JSONObject) new JSONObject(response.getBody()).getJSONObject("hits").getJSONArray("hits").get(0);
@@ -146,7 +142,7 @@ public class ElasticGetDataServices {
 		
 		sskIndex = "ssk/scenario/" + scenarioId;
 		UriComponentsBuilder builder ;
-		builder = UriComponentsBuilder.fromUriString( elasticSearchPort + "/" + sskIndex)
+		builder = UriComponentsBuilder.fromUriString( this.elasticServices.getElasticSearchPort() + "/" + sskIndex)
 				          .queryParam("_source_include", "*.head.*")
 				          .queryParam("_source_exclude", "*.head.type,*.listEvent,*.desc,*.author");
 		requestHeadersParams.setHeaders();
@@ -162,7 +158,7 @@ public class ElasticGetDataServices {
 		requestHeadersParams.setHeaders();
 		sskIndex = "ssk/scenario/_search?q=_id:" + scenarioId;
 		entity = new HttpEntity<>(scenarioDescQuery, requestHeadersParams.getHeaders());
-		ResponseEntity<String> response = this.restTemplate.exchange( elasticSearchPort + "/" + sskIndex, HttpMethod.POST, entity, String.class);
+		ResponseEntity<String> response = this.restTemplate.exchange( this.elasticServices.getElasticSearchPort() + "/" + sskIndex, HttpMethod.POST, entity, String.class);
 		if (response.getStatusCode().is2xxSuccessful()) {
 			final JsonArray result = new JsonArray();
 			source = loadContentByKey((JSONObject) new JSONObject(response.getBody()).getJSONObject("hits").getJSONArray("hits").get(0), "desc") ;
@@ -190,7 +186,7 @@ public class ElasticGetDataServices {
 		requestHeadersParams.setHeaders();
 		sskIndex = "ssk/scenario/_search?q=_id:" + scenarioId;
 		entity = new HttpEntity<>(scenarioImageQuery, requestHeadersParams.getHeaders());
-		ResponseEntity<String> response = this.restTemplate.exchange( elasticSearchPort + "/" + sskIndex, HttpMethod.POST, entity, String.class);
+		ResponseEntity<String> response = this.restTemplate.exchange( this.elasticServices.getElasticSearchPort() + "/" + sskIndex, HttpMethod.POST, entity, String.class);
 		if (response.getStatusCode().is2xxSuccessful()) {
 			jsonResult = loadContentByKey((JSONObject) new JSONObject(response.getBody()).getJSONObject("hits").getJSONArray("hits").get(0), "graphic") ;
 		}
@@ -219,23 +215,33 @@ public class ElasticGetDataServices {
 		return res;
 	}
 	
-	public JsonElement getAllResources() {
-		JsonObject jsonResult = new JsonObject();
+	public JsonElement getAllResources(String type) {
+		JsonElement jsonResult = new JsonObject();
 		requestHeadersParams.setHeaders();
-		sskIndex = "ssk/resource/_search?size=10000";
+		sskIndex = "ssk/" + type +"/_search?size=10000";
 		requestHeadersParams.setHeaders();
-		ResponseEntity<String> response = this.restTemplate.getForEntity( elasticSearchPort + "/" + sskIndex, String.class) ;
+		ResponseEntity<String> response = this.restTemplate.getForEntity( this.elasticServices.getElasticSearchPort() + "/" + sskIndex, String.class) ;
 		if (response.getStatusCode().is2xxSuccessful()) {
 			JsonObject param = sskServices.getParser().parse(response.getBody()).getAsJsonObject().get("hits").getAsJsonObject();
-			String input  = param.getAsJsonArray("hits").toString();
-			input = input.toString().replaceAll("\"_source\":\\{", "");
-			input = input.replaceAll("}}", "}");
-			jsonResult.addProperty("total", Integer.valueOf(param.get("total").getAsString()));
-			jsonResult.add("resources", this.sskServices.getParser().parse(input).getAsJsonArray());
+			String input = param.getAsJsonArray("hits").toString();
+			if (type.equals("resource")) {
+				input = input.toString().replaceAll("\"_source\":\\{", "");
+				input = input.replaceAll("}}", "}");
+				jsonResult.getAsJsonObject().addProperty("total", Integer.valueOf(param.get("total").getAsString()));
+				jsonResult.getAsJsonObject().add("resources", this.sskServices.getParser().parse(input).getAsJsonArray());
+			} else {
+				jsonResult = this.sskServices.getParser().parse(input).getAsJsonArray().get(0).getAsJsonObject()
+						             .getAsJsonObject("_source");
+				jsonResult = jsonResult.getAsJsonObject().get("TEI").getAsJsonObject()
+						             .getAsJsonObject("text").getAsJsonObject("body").getAsJsonArray("div");
+				
+			}
 		}
 		else{
 			 jsonResult = null;
 		}
 		return jsonResult;
 	}
+	
+	
 }
