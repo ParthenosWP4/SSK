@@ -2,48 +2,32 @@
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="../../../../../../SSK/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI type="researchScenario" xml:id="SSK_sc_mustispectralImaging" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI type="researchScenario" xml:id="SSK_sc_mustispectralImaging"
+ xmlns="http://www.tei-c.org/ns/1.0">
  <teiHeader>
   <fileDesc>
    <titleStmt>
-    <title>
-     Multispectral imaging for the in-situ characterization of painted works of
-               art
-    </title>
+    <title> Multispectral imaging for the in-situ characterization of painted works of art </title>
     <author>
-     <persName>
-      Panayotis Siozos
-     </persName>
-     <affiliation>
-      IESL-FORTH
-     </affiliation>
+     <persName> Panayotis Siozos </persName>
+     <affiliation> IESL-FORTH </affiliation>
     </author>
     <author>
-     <persName>
-      Demetrios Anglos
-     </persName>
-     <affiliation>
-      IESL-FORTH
-     </affiliation>
+     <persName> Demetrios Anglos </persName>
+     <affiliation> IESL-FORTH </affiliation>
     </author>
    </titleStmt>
    <publicationStmt>
-    <authority>
-     Parthenos
-    </authority>
+    <authority> Parthenos </authority>
     <availability>
      <licence target="http://creativecommons.org/licenses/by/4.0/">
-      <p>
-       The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
-                     this document.
-      </p>
+      <p> The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+       document. </p>
      </licence>
     </availability>
    </publicationStmt>
    <sourceDesc>
-    <p>
-     Created from an Excel sheet by Marie Puren
-    </p>
+    <p> Created from an Excel sheet by Marie Puren </p>
    </sourceDesc>
   </fileDesc>
   <revisionDesc>
@@ -53,30 +37,21 @@
  <text>
   <body>
    <div type="scenario" xml:id="sc_multipsectralImaging">
-    <head type="scenarioTitle" xml:lang="en">
-     Multispectral imaging for the in-situ
-               characterization of painted works of art
-    </head>
-    <desc type="definition" xml:lang="en">
-     Multispectral imaging is a commonly used technique
-               that is currently available to the scientist, conservator, archaeologist and art
-               historian for the non-invasive investigation of works of art. It has a relatively low
-               cost, since inexpensive and widely available equipment exists that provides
-               qualitative, non-invasive, affordable and portable tools for the spatial
-               characterization of specific materials or types of materials. Furthermore, extensive
-               research has been undertaken to develop optimized methodologies for the acquisition
-               and processing of multispectral images as published in the literature but also in the
-               context of the CHARISMA project. The main objective of the scenario is to establish
-               standardized procedures for multispectral imaging analysis in order to accomplish
-               qualitative results during the study of artworks.
-    </desc>
+    <head type="scenarioTitle" xml:lang="en"> Multispectral imaging for the in-situ characterization
+     of painted works of art </head>
+    <desc type="definition" xml:lang="en">Multispectral imaging is a commonly used technique that is
+     currently available to the scientist, conservator, archaeologist and art historian for the
+     non-invasive investigation of works of art. It has a relatively low cost, since inexpensive and
+     widely available equipment exists that provides qualitative, non-invasive, affordable and
+     portable tools for the spatial characterization of specific materials or types of materials.
+     Furthermore, extensive research has been undertaken to develop optimized methodologies for the
+     acquisition and processing of multispectral images as published in the literature but also in
+     the context of the CHARISMA project. The main objective of the scenario is to establish
+     standardized procedures for multispectral imaging analysis in order to accomplish qualitative
+     results during the study of artworks.</desc>
     <desc type="terms" xml:lang="en">
-     <term source="aurehal" type="discipline">
-      Art and art history
-     </term>
-     <term source="aurehal" type="discipline">
-      Cultural heritage and museology
-     </term>
+     <term source="aurehal" type="discipline"> Art and art history </term>
+     <term source="aurehal" type="discipline"> Cultural heritage and museology </term>
      <term key="Artifacts" source="tadirah" type="objects"/>
      <term key="Data" source="tadirah" type="objects"/>
      <term key="Images" source="tadirah" type="objects"/>
@@ -84,7 +59,8 @@
     </desc>
     <figure type="image">
      <head/>
-     <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/SSK-multispectral-photo1-1.jpg"/>
+     <graphic
+      url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/SSK-multispectral-photo1-1.jpg"/>
      <figDesc/>
     </figure>
     <listEvent>
