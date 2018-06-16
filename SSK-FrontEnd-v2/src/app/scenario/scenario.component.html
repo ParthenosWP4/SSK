@@ -1,6 +1,6 @@
-<div class="scenario" id="top">
+<div class="scenario" id="top" *ngIf="scenarioElt">
   <div class="row ">
-    <div class="col-lg-7 my-lg-5 mr-3">
+    <div class="col-lg-7 mr-3">
       <div class=" ml-lg-5 col-md-12 col-sm-12 text-left  stitle">
        {{scenarioElt?.title?.content}}
       </div>
@@ -23,35 +23,44 @@
       </ng-container>
     </div>
   </div>
-    <div class=" row cd-horizontal-timeline mx-lg-5  mx-md-5 mx-sm-0">
-      <div class="timeline mx-lg-5  mx-md-5 mx-sm-0">
-        <div class="events-wrapper">
-          <div class="events" [ngStyle]= "{width: timelineTotWidth + 'px'}">
-            <ol >
-              <li *ngFor="let step of scenarioElt?.steps; let i = index">
-								<span  (click)="updateContent(step, i, $event)" [ngStyle]="{left: ((i) *left) + 'px'}" [ngClass]="(i==idSelectedStep)? 'selected':''">{{i+1}}
-								</span>
-              </li>
-            </ol>
-          </div> <!-- .events -->
-        </div> <!-- .events-wrapper -->
-       <ul class="cd-timeline-navigation">
-          <li><span (click)="updateSlide('prev')" class="prev inactive">&nbsp;<i class="fa fa-chevron-circle-left fa-2x" aria-hidden="true"></i></span></li>
-          <li ><span  (click)="updateSlide('next')"  class="next" >&nbsp;<i class="fa fa-chevron-circle-right fa-2x" aria-hidden="true"></i></span></li>
+
+  <div class="row ">
+    <div class="col-10 mx-auto">
+      <div id="ontimeline">
+        <ul class="timeline timeline-horizontal">
+          <li class="timeline-item"  *ngFor="let step of scenarioElt?.steps; let i = index">
+            <div class="timeline-badge " [ngClass]="(i==idSelectedStep)? 'selected':''" (click)="updateContent(step, i, $event)">
+              <i class="glyphicon glyphicon-check" >{{i+1}}
+             </i>
+            </div>
+            <div class="timeline-panel">
+              <div class="timeline-body">
+                <p>{{getStepTitle(step)}}</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ul class="cd-timeline-navigation">
+          <li><span (click)="updateSlide('prev', $event)" class="prev ">&nbsp;<i class="fa fa-chevron-circle-left fa-2x ml-4" aria-hidden="true"></i></span></li>
+          <li ><span  (click)="updateSlide('next', $event)"  class="next"  >&nbsp;<i class="fa fa-chevron-circle-right fa-2x" aria-hidden="true"></i></span></li>
         </ul> <!-- .cd-timeline-navigation -->
-      </div> <!-- .timeline -->
+      </div>
     </div>
+  </div>
+  <div class="w-100"></div>
   <div class=" row mb-lg-2">
-    <div class=" col-lg step ml-lg-5">
+    <div style="display: block">
+    <div class=" col-12 step ml-lg-5">
       <span class="position  ml-lg-3">{{selectedStep?.position}}.</span>
       <span>{{selectedStep?.title?.content}}</span>
     </div>
-  </div>
-  <div class="row ">
-    <div class="col-lg-7 ">
-      <div class="ml-lg-5  col-md-12 col-sm-12 text-left desc">
+    <div class="w-100"></div>
+
+    <div class="col-12 ">
+      <div class="ml-lg-5  col-md-11 col-sm-11 text-left desc">
         {{selectedStep?.description?.content}}
          </div>
+    </div>
     </div>
     <div class="col-md-12 col-sm-12 col-lg  ml-lg-5 desc">
       <ng-container *ngFor=" let item of tags; let i = index">

@@ -1,12 +1,14 @@
-<div class=" item d-flex h-100 mr-3 my-3" [ngStyle]="{'border-bottom': border.border }" (click)="open()">
+<div class=" item d-flex h-100 mr-3 my-3" [ngStyle]="{'border-bottom': border.border, 'cursor': setCursor()}" (click)="open()">
   <div class=" mr-3" ngClass="border.class">
     <div class="preview mb-3" >
-      <iframe class=" e2e-iframe-trusted-src embed-responsive-item" [src]= "loadPage()" allowfullscreen></iframe>
+      <iframe *ngIf="!icon" id ="iframe" class=" embed-responsive-item" [src]= "res?.url" allowfullscreen></iframe>
+      <img *ngIf="icon" [src]="'./assets/images/' + icon" class="img-fluid" alt="Responsive image">
       <!-- <link class="embed-responsive-item" rel=“import” [href]='res?.url' onload="onImportReady()">
       <object [data]='res?.url' class="embed-responsive-item">
         <embed [src]= 'res?.url' class="embed-responsive-item"> </embed>
       <!--< Error: Embedded data could not be displayed.</object>
       <img src={{imgSrc}} class="img-fluid" alt="Responsive image">-->
+
 </div>
 </div>
 <div class="col  ">

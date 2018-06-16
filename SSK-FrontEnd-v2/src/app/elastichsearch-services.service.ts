@@ -164,6 +164,14 @@ export class ElastichsearchServicesService {
       }).catch((error: any) => Observable.throw( console.log(error.json()) || console.log('Server error')));
   }
 
+  testUrlForIframe(url: string) {
+    this.setOptions(this.headers, null);
+    return this.http.get ( url)
+      .map((response: Response) => {
+        console.log(response.headers.toString());
+      }).catch((error: any) => Observable.throw( console.log(error.headers) || console.log(url + ' can\'t beload into iframe')));
+  }
+
   loadTermsFromServer(type: string) {
     this.setOptions(this.headers, null);
     return this.http.get(this.sskBackendEndpoint + 'glossary/terms/' + type, this.options)

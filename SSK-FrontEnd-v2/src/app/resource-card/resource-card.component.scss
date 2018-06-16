@@ -42,7 +42,7 @@
 /* Without this class/container, the scaled iframes maintain
    their massive (pre-scaled) dimensions */
 .preview {
-  width: 110px; height: 110px;
+  //width: 110px; height: 110px;
   overflow: hidden;
   display: inline-block;
   position: relative;

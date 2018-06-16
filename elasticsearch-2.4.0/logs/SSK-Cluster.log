@@ -1,146 +1,32 @@
-[2018-06-06 14:15:50,981][INFO ][node                     ] [Yondu] version[2.4.0], pid[47641], build[ce9f0c7/2016-08-29T09:14:17Z]
-[2018-06-06 14:15:50,984][INFO ][node                     ] [Yondu] initializing ...
-[2018-06-06 14:15:52,610][INFO ][plugins                  ] [Yondu] modules [reindex, lang-expression, lang-groovy], plugins [], sites []
-[2018-06-06 14:15:52,639][INFO ][env                      ] [Yondu] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [15.4gb], net total_space [232.5gb], spins? [unknown], types [hfs]
-[2018-06-06 14:15:52,639][INFO ][env                      ] [Yondu] heap size [989.8mb], compressed ordinary object pointers [true]
-[2018-06-06 14:15:52,640][WARN ][env                      ] [Yondu] max file descriptors [10240] for elasticsearch process likely too low, consider increasing to at least [65536]
-[2018-06-06 14:15:54,339][INFO ][node                     ] [Yondu] initialized
-[2018-06-06 14:15:54,339][INFO ][node                     ] [Yondu] starting ...
-[2018-06-06 14:15:54,421][INFO ][transport                ] [Yondu] publish_address {127.0.0.1:9300}, bound_addresses {[fe80::1]:9300}, {[::1]:9300}, {127.0.0.1:9300}
-[2018-06-06 14:15:54,427][INFO ][discovery                ] [Yondu] SSK-Cluster/vDGBV7PmQpSxB2uNJkNstw
-[2018-06-06 14:15:57,479][INFO ][cluster.service          ] [Yondu] new_master {Yondu}{vDGBV7PmQpSxB2uNJkNstw}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
-[2018-06-06 14:15:57,490][INFO ][http                     ] [Yondu] publish_address {127.0.0.1:9200}, bound_addresses {[fe80::1]:9200}, {[::1]:9200}, {127.0.0.1:9200}
-[2018-06-06 14:15:57,490][INFO ][node                     ] [Yondu] started
-[2018-06-06 14:15:57,527][INFO ][gateway                  ] [Yondu] recovered [1] indices into cluster_state
-[2018-06-06 14:15:58,602][INFO ][cluster.routing.allocation] [Yondu] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[ssk][1]] ...]).
-[2018-06-06 14:33:22,531][INFO ][cluster.metadata         ] [Yondu] [ssk] creating index, cause [api], templates [], shards [5]/[1], mappings []
-[2018-06-06 14:33:22,590][INFO ][cluster.routing.allocation] [Yondu] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[ssk][4]] ...]).
-[2018-06-06 14:33:22,600][INFO ][cluster.metadata         ] [Yondu] [ssk] create_mapping [resource_metadata]
-[2018-06-06 14:33:22,612][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [resource_metadata]
-[2018-06-06 14:33:22,620][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [resource_metadata]
-[2018-06-06 14:33:22,628][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [resource_metadata]
-[2018-06-06 14:33:22,634][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [resource_metadata]
-[2018-06-06 14:33:22,641][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [resource_metadata]
-[2018-06-06 14:33:22,648][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [resource_metadata]
-[2018-06-06 14:33:22,655][INFO ][cluster.metadata         ] [Yondu] [ssk] create_mapping [resource]
-[2018-06-06 14:33:22,662][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [resource]
-[2018-06-06 14:33:22,668][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [resource]
-[2018-06-06 14:33:22,675][INFO ][cluster.metadata         ] [Yondu] [ssk] create_mapping [step_metadata]
-[2018-06-06 14:33:22,684][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step_metadata]
-[2018-06-06 14:33:22,693][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step_metadata]
-[2018-06-06 14:33:22,702][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step_metadata]
-[2018-06-06 14:33:22,709][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step_metadata]
-[2018-06-06 14:33:22,716][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step_metadata]
-[2018-06-06 14:33:22,722][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step_metadata]
-[2018-06-06 14:33:22,729][INFO ][cluster.metadata         ] [Yondu] [ssk] create_mapping [scenario_metadata]
-[2018-06-06 14:33:22,736][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [scenario_metadata]
-[2018-06-06 14:33:22,742][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [scenario_metadata]
-[2018-06-06 14:33:22,748][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [scenario_metadata]
-[2018-06-06 14:33:22,754][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [scenario_metadata]
-[2018-06-06 14:33:22,761][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [scenario_metadata]
-[2018-06-06 14:33:22,768][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [scenario_metadata]
-[2018-06-06 14:33:22,778][INFO ][cluster.metadata         ] [Yondu] [ssk] create_mapping [step]
-[2018-06-06 14:33:22,788][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step]
-[2018-06-06 14:33:22,798][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step]
-[2018-06-06 14:33:22,816][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step]
-[2018-06-06 14:33:22,844][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step]
-[2018-06-06 14:33:22,852][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step]
-[2018-06-06 14:33:22,859][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step]
-[2018-06-06 14:33:22,873][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step]
-[2018-06-06 14:33:22,889][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step]
-[2018-06-06 14:33:22,901][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step]
-[2018-06-06 14:33:22,912][INFO ][cluster.metadata         ] [Yondu] [ssk] create_mapping [scenario]
-[2018-06-06 14:33:22,921][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [scenario]
-[2018-06-06 14:33:22,932][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [scenario]
-[2018-06-06 14:33:22,939][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [scenario]
-[2018-06-06 14:33:22,948][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [scenario]
-[2018-06-06 14:33:22,955][INFO ][cluster.metadata         ] [Yondu] [ssk] create_mapping [glossary]
-[2018-06-06 14:33:22,962][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [glossary]
-[2018-06-06 14:33:22,970][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [glossary]
-[2018-06-06 14:33:26,921][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [glossary]
-[2018-06-06 14:33:40,680][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [scenario]
-[2018-06-06 14:33:40,887][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [scenario_metadata]
-[2018-06-06 14:33:40,942][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step]
-[2018-06-06 14:33:40,996][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step_metadata]
-[2018-06-06 14:33:41,034][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step]
-[2018-06-06 14:33:41,649][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [resource]
-[2018-06-06 14:33:42,217][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step_metadata]
-[2018-06-06 14:33:42,482][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [resource]
-[2018-06-06 14:33:43,613][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [resource]
-[2018-06-06 14:34:01,795][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [scenario]
-[2018-06-06 14:34:01,807][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [scenario_metadata]
-[2018-06-06 14:34:02,450][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step]
-[2018-06-06 14:34:03,096][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step_metadata]
-[2018-06-06 14:34:05,526][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step]
-[2018-06-06 14:34:05,887][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step]
-[2018-06-06 14:34:08,338][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step]
-[2018-06-06 14:34:24,527][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step_metadata]
-[2018-06-06 14:34:37,396][INFO ][cluster.metadata         ] [Yondu] [ssk] creating index, cause [api], templates [], shards [5]/[1], mappings []
-[2018-06-06 14:34:37,474][INFO ][cluster.routing.allocation] [Yondu] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[ssk][4]] ...]).
-[2018-06-06 14:34:37,481][INFO ][cluster.metadata         ] [Yondu] [ssk] create_mapping [resource_metadata]
-[2018-06-06 14:34:37,497][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [resource_metadata]
-[2018-06-06 14:34:37,509][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [resource_metadata]
-[2018-06-06 14:34:37,517][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [resource_metadata]
-[2018-06-06 14:34:37,530][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [resource_metadata]
-[2018-06-06 14:34:37,539][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [resource_metadata]
-[2018-06-06 14:34:37,556][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [resource_metadata]
-[2018-06-06 14:34:37,568][INFO ][cluster.metadata         ] [Yondu] [ssk] create_mapping [resource]
-[2018-06-06 14:34:37,583][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [resource]
-[2018-06-06 14:34:37,592][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [resource]
-[2018-06-06 14:34:37,597][INFO ][cluster.metadata         ] [Yondu] [ssk] create_mapping [step_metadata]
-[2018-06-06 14:34:37,602][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step_metadata]
-[2018-06-06 14:34:37,613][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step_metadata]
-[2018-06-06 14:34:37,618][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step_metadata]
-[2018-06-06 14:34:37,624][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step_metadata]
-[2018-06-06 14:34:37,637][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step_metadata]
-[2018-06-06 14:34:37,644][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step_metadata]
-[2018-06-06 14:34:37,651][INFO ][cluster.metadata         ] [Yondu] [ssk] create_mapping [scenario_metadata]
-[2018-06-06 14:34:37,658][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [scenario_metadata]
-[2018-06-06 14:34:37,663][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [scenario_metadata]
-[2018-06-06 14:34:37,673][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [scenario_metadata]
-[2018-06-06 14:34:37,686][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [scenario_metadata]
-[2018-06-06 14:34:37,693][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [scenario_metadata]
-[2018-06-06 14:34:37,701][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [scenario_metadata]
-[2018-06-06 14:34:37,707][INFO ][cluster.metadata         ] [Yondu] [ssk] create_mapping [step]
-[2018-06-06 14:34:37,717][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step]
-[2018-06-06 14:34:37,722][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step]
-[2018-06-06 14:34:37,728][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step]
-[2018-06-06 14:34:37,732][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step]
-[2018-06-06 14:34:37,738][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step]
-[2018-06-06 14:34:37,742][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step]
-[2018-06-06 14:34:37,746][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step]
-[2018-06-06 14:34:37,751][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step]
-[2018-06-06 14:34:37,757][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step]
-[2018-06-06 14:34:37,761][INFO ][cluster.metadata         ] [Yondu] [ssk] create_mapping [scenario]
-[2018-06-06 14:34:37,766][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [scenario]
-[2018-06-06 14:34:37,771][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [scenario]
-[2018-06-06 14:34:37,777][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [scenario]
-[2018-06-06 14:34:37,782][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [scenario]
-[2018-06-06 14:34:37,787][INFO ][cluster.metadata         ] [Yondu] [ssk] create_mapping [glossary]
-[2018-06-06 14:34:37,797][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [glossary]
-[2018-06-06 14:34:37,807][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [glossary]
-[2018-06-06 14:34:41,019][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [glossary]
-[2018-06-06 14:34:53,230][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [scenario]
-[2018-06-06 14:34:53,340][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [scenario_metadata]
-[2018-06-06 14:34:53,351][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step]
-[2018-06-06 14:34:53,359][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step_metadata]
-[2018-06-06 14:34:53,370][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step]
-[2018-06-06 14:34:53,882][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [resource]
-[2018-06-06 14:34:54,341][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step_metadata]
-[2018-06-06 14:34:54,533][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [resource]
-[2018-06-06 14:34:56,598][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [resource]
-[2018-06-06 14:35:19,788][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [scenario]
-[2018-06-06 14:35:19,812][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [scenario_metadata]
-[2018-06-06 14:35:20,552][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step]
-[2018-06-06 14:35:21,333][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step_metadata]
-[2018-06-06 14:35:23,765][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step]
-[2018-06-06 14:35:24,062][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step]
-[2018-06-06 14:35:26,342][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step]
-[2018-06-06 14:35:43,619][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step_metadata]
-[2018-06-06 14:36:12,477][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step_metadata]
-[2018-06-06 14:36:27,184][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [step]
-[2018-06-06 14:36:45,249][INFO ][cluster.metadata         ] [Yondu] [ssk] update_mapping [scenario]
-[2018-06-06 15:15:34,376][DEBUG][action.index             ] [Yondu] failed to execute [index {[ssk][scenario][AWPVGpHYCmgTSWA0JVaP], source[{"query":{"has_child" : {"type" : "scenario_metadata","query" : {"match_all": {}},"inner_hits" : {} }},"_source":false}"]}] on [[ssk][2]]
+[2018-06-16 06:12:53,336][DEBUG][action.admin.indices.mapping.put] [Stuntmaster] failed to put mappings on indices [[ssk]], type [scenario]
+java.lang.IllegalArgumentException: Field [_source] is defined both as an object and a field in [scenario]
+	at org.elasticsearch.index.mapper.MapperService.checkFieldUniqueness(MapperService.java:494)
+	at org.elasticsearch.index.mapper.MapperService.merge(MapperService.java:376)
+	at org.elasticsearch.index.mapper.MapperService.merge(MapperService.java:320)
+	at org.elasticsearch.cluster.metadata.MetaDataMappingService$PutMappingExecutor.applyRequest(MetaDataMappingService.java:306)
+	at org.elasticsearch.cluster.metadata.MetaDataMappingService$PutMappingExecutor.execute(MetaDataMappingService.java:230)
+	at org.elasticsearch.cluster.service.InternalClusterService.runTasksForExecutor(InternalClusterService.java:468)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:772)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:231)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:194)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[2018-06-16 06:12:53,375][DEBUG][action.index             ] [Stuntmaster] failed to execute [index {[ssk][scenario][AWP9aJLHP22ArcfgM5eM], source[{"_source": {"include": ["*.desc.lang","*.desc.content"],"exclude": ["*.listEvent.*","*.text.div","*.desc.term", "*.desc.type", "*.teiHeader.*" ]}}]}] on [[ssk][3]]
+java.lang.IllegalArgumentException: Field [_source] is defined both as an object and a field in [scenario]
+	at org.elasticsearch.index.mapper.MapperService.checkFieldUniqueness(MapperService.java:494)
+	at org.elasticsearch.index.mapper.MapperService.merge(MapperService.java:376)
+	at org.elasticsearch.index.mapper.MapperService.merge(MapperService.java:320)
+	at org.elasticsearch.cluster.metadata.MetaDataMappingService$PutMappingExecutor.applyRequest(MetaDataMappingService.java:306)
+	at org.elasticsearch.cluster.metadata.MetaDataMappingService$PutMappingExecutor.execute(MetaDataMappingService.java:230)
+	at org.elasticsearch.cluster.service.InternalClusterService.runTasksForExecutor(InternalClusterService.java:468)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:772)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:231)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:194)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[2018-06-16 06:16:54,781][DEBUG][action.index             ] [Stuntmaster] failed to execute [index {[ssk][scenario][AWP9avbTP22ArcfgM5iJ], source[{"query":{"has_child" : {"type" : "scenario_metadata","query" : {"match_all": {}},"inner_hits" : {} }},"_source":false}"]}] on [[ssk][4]]
 MapperParsingException[Cannot generate dynamic mappings of type [_source] for [_source]]
 	at org.elasticsearch.index.mapper.DocumentParser.createBuilderFromFieldType(DocumentParser.java:506)
 	at org.elasticsearch.index.mapper.DocumentParser.parseDynamicValue(DocumentParser.java:616)
@@ -164,59 +50,147 @@ MapperParsingException[Cannot generate dynamic mappings of type [_source] for [_
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
-[2018-06-06 15:27:05,272][DEBUG][action.admin.indices.mapping.put] [Yondu] failed to put mappings on indices [[ssk]], type [scenario]
-java.lang.IllegalArgumentException: Field [_source] is defined both as an object and a field in [scenario]
-	at org.elasticsearch.index.mapper.MapperService.checkFieldUniqueness(MapperService.java:494)
-	at org.elasticsearch.index.mapper.MapperService.merge(MapperService.java:376)
-	at org.elasticsearch.index.mapper.MapperService.merge(MapperService.java:320)
-	at org.elasticsearch.cluster.metadata.MetaDataMappingService$PutMappingExecutor.applyRequest(MetaDataMappingService.java:306)
-	at org.elasticsearch.cluster.metadata.MetaDataMappingService$PutMappingExecutor.execute(MetaDataMappingService.java:230)
-	at org.elasticsearch.cluster.service.InternalClusterService.runTasksForExecutor(InternalClusterService.java:468)
-	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:772)
-	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:231)
-	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:194)
+[2018-06-16 06:56:47,212][DEBUG][action.index             ] [Stuntmaster] failed to execute [index {[ssk][scenario][AWP9ae0VP22ArcfgM5gj], source[{"query":{"has_child" : {"type" : "scenario_metadata","query" : {"match_all": {}},"inner_hits" : {} }},"_source":false}"]}] on [[ssk][3]]
+MapperParsingException[Cannot generate dynamic mappings of type [_source] for [_source]]
+	at org.elasticsearch.index.mapper.DocumentParser.createBuilderFromFieldType(DocumentParser.java:506)
+	at org.elasticsearch.index.mapper.DocumentParser.parseDynamicValue(DocumentParser.java:616)
+	at org.elasticsearch.index.mapper.DocumentParser.parseValue(DocumentParser.java:444)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:264)
+	at org.elasticsearch.index.mapper.DocumentParser.parseDocument(DocumentParser.java:124)
+	at org.elasticsearch.index.mapper.DocumentMapper.parse(DocumentMapper.java:309)
+	at org.elasticsearch.index.shard.IndexShard.prepareIndex(IndexShard.java:580)
+	at org.elasticsearch.index.shard.IndexShard.prepareIndexOnPrimary(IndexShard.java:559)
+	at org.elasticsearch.action.index.TransportIndexAction.prepareIndexOperationOnPrimary(TransportIndexAction.java:211)
+	at org.elasticsearch.action.index.TransportIndexAction.executeIndexRequestOnPrimary(TransportIndexAction.java:223)
+	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:157)
+	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:66)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryPhase.doRun(TransportReplicationAction.java:648)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:279)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:271)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:77)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
-[2018-06-06 15:27:05,294][DEBUG][action.index             ] [Yondu] failed to execute [index {[ssk][scenario][AWPVGpHYCmgTSWA0JVaP], source[{"_source": {"include": ["*.desc.lang","*.desc.content"],"exclude": ["*.listEvent.*","*.text.div","*.desc.term", "*.desc.type", "*.teiHeader.*" ]}}]}] on [[ssk][2]]
-java.lang.IllegalArgumentException: Field [_source] is defined both as an object and a field in [scenario]
-	at org.elasticsearch.index.mapper.MapperService.checkFieldUniqueness(MapperService.java:494)
-	at org.elasticsearch.index.mapper.MapperService.merge(MapperService.java:376)
-	at org.elasticsearch.index.mapper.MapperService.merge(MapperService.java:320)
-	at org.elasticsearch.cluster.metadata.MetaDataMappingService$PutMappingExecutor.applyRequest(MetaDataMappingService.java:306)
-	at org.elasticsearch.cluster.metadata.MetaDataMappingService$PutMappingExecutor.execute(MetaDataMappingService.java:230)
-	at org.elasticsearch.cluster.service.InternalClusterService.runTasksForExecutor(InternalClusterService.java:468)
-	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:772)
-	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:231)
-	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:194)
+[2018-06-16 07:23:39,448][DEBUG][action.index             ] [Stuntmaster] failed to execute [index {[ssk][scenario][AWP9a7AiP22ArcfgM5jj], source[{"query":{"has_child" : {"type" : "scenario_metadata","query" : {"match_all": {}},"inner_hits" : {} }},"_source":false}"]}] on [[ssk][3]]
+MapperParsingException[Cannot generate dynamic mappings of type [_source] for [_source]]
+	at org.elasticsearch.index.mapper.DocumentParser.createBuilderFromFieldType(DocumentParser.java:506)
+	at org.elasticsearch.index.mapper.DocumentParser.parseDynamicValue(DocumentParser.java:616)
+	at org.elasticsearch.index.mapper.DocumentParser.parseValue(DocumentParser.java:444)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:264)
+	at org.elasticsearch.index.mapper.DocumentParser.parseDocument(DocumentParser.java:124)
+	at org.elasticsearch.index.mapper.DocumentMapper.parse(DocumentMapper.java:309)
+	at org.elasticsearch.index.shard.IndexShard.prepareIndex(IndexShard.java:580)
+	at org.elasticsearch.index.shard.IndexShard.prepareIndexOnPrimary(IndexShard.java:559)
+	at org.elasticsearch.action.index.TransportIndexAction.prepareIndexOperationOnPrimary(TransportIndexAction.java:211)
+	at org.elasticsearch.action.index.TransportIndexAction.executeIndexRequestOnPrimary(TransportIndexAction.java:223)
+	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:157)
+	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:66)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryPhase.doRun(TransportReplicationAction.java:648)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:279)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:271)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:77)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
-[2018-06-06 15:35:19,075][DEBUG][action.admin.indices.mapping.put] [Yondu] failed to put mappings on indices [[ssk]], type [scenario]
-java.lang.IllegalArgumentException: Field [_source] is defined both as an object and a field in [scenario]
-	at org.elasticsearch.index.mapper.MapperService.checkFieldUniqueness(MapperService.java:494)
-	at org.elasticsearch.index.mapper.MapperService.merge(MapperService.java:376)
-	at org.elasticsearch.index.mapper.MapperService.merge(MapperService.java:320)
-	at org.elasticsearch.cluster.metadata.MetaDataMappingService$PutMappingExecutor.applyRequest(MetaDataMappingService.java:306)
-	at org.elasticsearch.cluster.metadata.MetaDataMappingService$PutMappingExecutor.execute(MetaDataMappingService.java:230)
-	at org.elasticsearch.cluster.service.InternalClusterService.runTasksForExecutor(InternalClusterService.java:468)
-	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:772)
-	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:231)
-	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:194)
+[2018-06-16 07:27:14,222][DEBUG][action.index             ] [Stuntmaster] failed to execute [index {[ssk][scenario][AWP9ajtFP22ArcfgM5g8], source[{"query":{"has_child" : {"type" : "scenario_metadata","query" : {"match_all": {}},"inner_hits" : {} }},"_source":false}"]}] on [[ssk][3]]
+MapperParsingException[Cannot generate dynamic mappings of type [_source] for [_source]]
+	at org.elasticsearch.index.mapper.DocumentParser.createBuilderFromFieldType(DocumentParser.java:506)
+	at org.elasticsearch.index.mapper.DocumentParser.parseDynamicValue(DocumentParser.java:616)
+	at org.elasticsearch.index.mapper.DocumentParser.parseValue(DocumentParser.java:444)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:264)
+	at org.elasticsearch.index.mapper.DocumentParser.parseDocument(DocumentParser.java:124)
+	at org.elasticsearch.index.mapper.DocumentMapper.parse(DocumentMapper.java:309)
+	at org.elasticsearch.index.shard.IndexShard.prepareIndex(IndexShard.java:580)
+	at org.elasticsearch.index.shard.IndexShard.prepareIndexOnPrimary(IndexShard.java:559)
+	at org.elasticsearch.action.index.TransportIndexAction.prepareIndexOperationOnPrimary(TransportIndexAction.java:211)
+	at org.elasticsearch.action.index.TransportIndexAction.executeIndexRequestOnPrimary(TransportIndexAction.java:223)
+	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:157)
+	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:66)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryPhase.doRun(TransportReplicationAction.java:648)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:279)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:271)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:77)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
-[2018-06-06 15:35:19,080][DEBUG][action.index             ] [Yondu] failed to execute [index {[ssk][scenario][AWPVF76oCmgTSWA0JVVs], source[{"_source": {"include": ["*.desc.lang","*.desc.content"],"exclude": ["*.listEvent.*","*.text.div","*.desc.term", "*.desc.type", "*.teiHeader.*" ]}}]}] on [[ssk][1]]
-java.lang.IllegalArgumentException: Field [_source] is defined both as an object and a field in [scenario]
-	at org.elasticsearch.index.mapper.MapperService.checkFieldUniqueness(MapperService.java:494)
-	at org.elasticsearch.index.mapper.MapperService.merge(MapperService.java:376)
-	at org.elasticsearch.index.mapper.MapperService.merge(MapperService.java:320)
-	at org.elasticsearch.cluster.metadata.MetaDataMappingService$PutMappingExecutor.applyRequest(MetaDataMappingService.java:306)
-	at org.elasticsearch.cluster.metadata.MetaDataMappingService$PutMappingExecutor.execute(MetaDataMappingService.java:230)
-	at org.elasticsearch.cluster.service.InternalClusterService.runTasksForExecutor(InternalClusterService.java:468)
-	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:772)
-	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:231)
-	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:194)
+[2018-06-16 07:27:14,530][DEBUG][action.index             ] [Stuntmaster] failed to execute [index {[ssk][scenario][AWP9a7AiP22ArcfgM5jj], source[{"query":{"has_child" : {"type" : "scenario_metadata","query" : {"match_all": {}},"inner_hits" : {} }},"_source":false}"]}] on [[ssk][3]]
+MapperParsingException[Cannot generate dynamic mappings of type [_source] for [_source]]
+	at org.elasticsearch.index.mapper.DocumentParser.createBuilderFromFieldType(DocumentParser.java:506)
+	at org.elasticsearch.index.mapper.DocumentParser.parseDynamicValue(DocumentParser.java:616)
+	at org.elasticsearch.index.mapper.DocumentParser.parseValue(DocumentParser.java:444)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:264)
+	at org.elasticsearch.index.mapper.DocumentParser.parseDocument(DocumentParser.java:124)
+	at org.elasticsearch.index.mapper.DocumentMapper.parse(DocumentMapper.java:309)
+	at org.elasticsearch.index.shard.IndexShard.prepareIndex(IndexShard.java:580)
+	at org.elasticsearch.index.shard.IndexShard.prepareIndexOnPrimary(IndexShard.java:559)
+	at org.elasticsearch.action.index.TransportIndexAction.prepareIndexOperationOnPrimary(TransportIndexAction.java:211)
+	at org.elasticsearch.action.index.TransportIndexAction.executeIndexRequestOnPrimary(TransportIndexAction.java:223)
+	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:157)
+	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:66)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryPhase.doRun(TransportReplicationAction.java:648)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:279)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:271)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:77)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[2018-06-16 07:31:54,209][DEBUG][action.index             ] [Stuntmaster] failed to execute [index {[ssk][scenario][AWP9aSC3P22ArcfgM5fN], source[{"query":{"has_child" : {"type" : "scenario_metadata","query" : {"match_all": {}},"inner_hits" : {} }},"_source":false}"]}] on [[ssk][2]]
+MapperParsingException[Cannot generate dynamic mappings of type [_source] for [_source]]
+	at org.elasticsearch.index.mapper.DocumentParser.createBuilderFromFieldType(DocumentParser.java:506)
+	at org.elasticsearch.index.mapper.DocumentParser.parseDynamicValue(DocumentParser.java:616)
+	at org.elasticsearch.index.mapper.DocumentParser.parseValue(DocumentParser.java:444)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:264)
+	at org.elasticsearch.index.mapper.DocumentParser.parseDocument(DocumentParser.java:124)
+	at org.elasticsearch.index.mapper.DocumentMapper.parse(DocumentMapper.java:309)
+	at org.elasticsearch.index.shard.IndexShard.prepareIndex(IndexShard.java:580)
+	at org.elasticsearch.index.shard.IndexShard.prepareIndexOnPrimary(IndexShard.java:559)
+	at org.elasticsearch.action.index.TransportIndexAction.prepareIndexOperationOnPrimary(TransportIndexAction.java:211)
+	at org.elasticsearch.action.index.TransportIndexAction.executeIndexRequestOnPrimary(TransportIndexAction.java:223)
+	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:157)
+	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:66)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryPhase.doRun(TransportReplicationAction.java:648)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:279)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:271)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:77)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[2018-06-16 07:33:10,176][DEBUG][action.index             ] [Stuntmaster] failed to execute [index {[ssk][scenario][AWP9a4NgP22ArcfgM5jL], source[{"query":{"has_child" : {"type" : "scenario_metadata","query" : {"match_all": {}},"inner_hits" : {} }},"_source":false}"]}] on [[ssk][1]]
+MapperParsingException[Cannot generate dynamic mappings of type [_source] for [_source]]
+	at org.elasticsearch.index.mapper.DocumentParser.createBuilderFromFieldType(DocumentParser.java:506)
+	at org.elasticsearch.index.mapper.DocumentParser.parseDynamicValue(DocumentParser.java:616)
+	at org.elasticsearch.index.mapper.DocumentParser.parseValue(DocumentParser.java:444)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:264)
+	at org.elasticsearch.index.mapper.DocumentParser.parseDocument(DocumentParser.java:124)
+	at org.elasticsearch.index.mapper.DocumentMapper.parse(DocumentMapper.java:309)
+	at org.elasticsearch.index.shard.IndexShard.prepareIndex(IndexShard.java:580)
+	at org.elasticsearch.index.shard.IndexShard.prepareIndexOnPrimary(IndexShard.java:559)
+	at org.elasticsearch.action.index.TransportIndexAction.prepareIndexOperationOnPrimary(TransportIndexAction.java:211)
+	at org.elasticsearch.action.index.TransportIndexAction.executeIndexRequestOnPrimary(TransportIndexAction.java:223)
+	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:157)
+	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:66)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryPhase.doRun(TransportReplicationAction.java:648)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:279)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:271)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:77)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)

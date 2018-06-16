@@ -4,6 +4,7 @@ import * as _ from 'lodash';
 import {isUndefined} from 'util';
 import {Http} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
+import {Title} from "@angular/platform-browser";
 
 @Injectable()
 export class SskServicesService {
@@ -34,9 +35,7 @@ export class SskServicesService {
 
   glossaryLink: string ;
 
-
-
-  constructor(private elasticService: ElastichsearchServicesService, private http: Http) {
+  constructor(private elasticService: ElastichsearchServicesService, private http: Http, private titleService: Title) {
   }
 
 
@@ -129,6 +128,14 @@ export class SskServicesService {
 
   setGlossarylink(elt: string ) {
     this.glossaryLink = elt;
+  }
+
+  public setTitle( newTitle: string) {
+    this.titleService.setTitle( newTitle );
+  }
+
+  public getTitle() {
+    return this.titleService.getTitle();
   }
 
 

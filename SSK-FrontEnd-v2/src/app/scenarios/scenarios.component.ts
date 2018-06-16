@@ -50,6 +50,7 @@ export class ScenariosComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.sskServices.setTitle('SSK - Scenarios')
     this.filters = this.sskServices.getFilters();
     this.options = this.sskServices.options;
     this.router.navigate([{outlets: {target: null}}]);
@@ -230,6 +231,7 @@ export class ScenariosComponent implements OnInit {
   loadContents(type: string) {console.log(type)
         switch (type) {
           case 'steps':
+            this.sskServices.setTitle('SSK - Steps')
             this.steps = new Array();
             //this.loadSteps();
            this.steps = this.elasticServices.getSteps();
@@ -239,6 +241,7 @@ export class ScenariosComponent implements OnInit {
             this.tabScenarios = false
             break;
           case 'resources':
+            this.sskServices.setTitle('SSK - Resources')
             this.tabStep = false;
             this.tabRes = true;
             this.tabScenarios = false

@@ -14,7 +14,7 @@
     @include transform(translateX(-50%));
   }
   @else if $xy == y {
-    top: 30%;
+    //top: 30%;
     bottom: auto;
     @include transform(translateY(-50%));
   }

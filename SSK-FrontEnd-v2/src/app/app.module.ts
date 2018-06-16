@@ -24,7 +24,7 @@ import {McBreadcrumbsConfig, McBreadcrumbsModule} from 'ngx-breadcrumbs';
 import { RightMenuComponent } from './glossary/right-menu/right-menu.component';
 import { ContentComponent } from './glossary/content/content.component';
 import {GlossaryResolver} from './glossary/glossary.resolver';
-
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 export function dataProviderFactory(provider: ElastichsearchServicesService) {
   return () => provider.loadData();
@@ -57,7 +57,8 @@ export function dataProviderFactory(provider: ElastichsearchServicesService) {
       HttpModule,
       NgxPaginationModule,
       FormsModule,
-      McBreadcrumbsModule.forRoot()
+      McBreadcrumbsModule.forRoot(),
+      PdfViewerModule
     ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
