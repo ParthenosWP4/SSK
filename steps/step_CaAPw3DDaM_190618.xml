@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Step "Create an archiving packet with 3D data and metadata"</title>
+                <author>
+                    <persName>Sarah Tournon-Valiente</persName>
+                    <affiliation>3D-SHS Huma-Num's consortium</affiliation>
+                </author>
+                <author>
+                    <persName>Mehdi Chayani</persName>
+                    <affiliation>3D-SHS Huma-Num's consortium</affiliation>
+                </author>
+                <author>
+                    <persName>Valentin Grimaud</persName>
+                    <affiliation>3D-SHS Huma-Num's consortium</affiliation>
+                </author>
+                <author>
+                    <persName>Xavier Granier</persName>
+                    <affiliation>3D-SHS Huma-Num's consortium</affiliation>
+                </author>
+                <author>
+                    <persName>Hélène Gautier</persName>
+                    <affiliation>Huma-Num/CNRS</affiliation>
+                </author>
+                <author>
+                    <persName>Adeline Joffres</persName>
+                    <affiliation>Huma-Num/CNRS</affiliation>
+                </author>
+                <author>
+                    <persName>Paulin Ribbe</persName>
+                    <affiliation>Huma-Num/CNRS</affiliation>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <authority>PARTHENOS</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/">
+                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.</p>
+                    </licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Created from scratch</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listEvent>
+                <event type="researchStep">
+                    <head xml:lang="en">Create an archiving packet with 3D data and metadata</head>
+
+                    <desc xml:lang="en" type="definition">Bundle every needed file in an archive
+                        file and add related metadata. Use an application such as aLTAG3D in order
+                        to make the add of information easier, to reduce duplication and to generate
+                        an archive compliant with the long-term storage service.</desc>
+
+                    <desc xml:lang="en" type="term">
+                        <term type="activity" source="http://tadirah.dariah.eu/"
+                            key="http://tadirah.dariah.eu/vocab/index.php?tema=38#x26;/archiving"/>
+                    </desc>
+                    <linkGrp type="generalResources">
+                        <ref type="schema" source="zotero" target="GQ8J5PJT"/>
+                        <ref type="software" source="zotero" target="P2M6IPXW"/>
+
+                    </linkGrp>
+                    <linkGrp type="projectResources" source="CINES" corresp="https://www.cines.fr/">
+                        <ref type="webpage" target="https://www.cines.fr/"/>
+                    </linkGrp>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>
