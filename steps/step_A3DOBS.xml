@@ -53,8 +53,7 @@
                 <event type="researchStep">
                     <head xml:lang="en">Acquisition of 3D object (by scanning)</head>
                     <desc xml:lang="en" type="definition">
-                        <list>
-                            <item>The choice of an appropriate scanning system depends on the object
+                        The choice of an appropriate scanning system depends on the object
                                 to digitize. The main parameter is of course the size. The method
                                 will be different for a small artefact or for an excavation site. The main methods are: <list>
                                     <item>Triangulation based artefact scanners</item>
@@ -62,16 +61,13 @@
                                     <item>Airborne laser scanning</item>
                                     <item>Mobile Mapping systems</item>
                                 </list>
-                            </item>
-                            <item>For any system, the methodological framework should the following:<list>
+                            For any system, the methodological framework should the following:<list>
                                     <item>Data acquisition</item>
                                     <item>Register scan</item>
                                     <item>Georeference scan</item>
                                     <item>Creation polygonal mesh</item>
                                     <item>Optimization/Decimation mesh</item>
                                 </list>
-                            </item>
-                        </list>
                     </desc>
                     <desc xml:lang="en" type="term">
                         <term type="activity" source="TaDiRAH" key="Imaging"/>
