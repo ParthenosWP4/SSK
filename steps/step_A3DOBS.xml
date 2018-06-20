@@ -69,7 +69,7 @@
                                     <item>Optimization/Decimation mesh</item>
                                 </list>
                     </desc>
-                    <desc xml:lang="en" type="term">
+                    <desc xml:lang="en" type="terms">
                         <term type="activity" source="TaDiRAH" key="Imaging"/>
                         <term type="standard" key="STL (file format)"/>
                         <term type="standard" key="FLS"/>
