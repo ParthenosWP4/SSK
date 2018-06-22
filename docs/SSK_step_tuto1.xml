@@ -5,10 +5,10 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Title of the file, not title of the step</title>
+                <title>Meta scenario step "choose a title"</title>
                 <author>
-                    <persName>author</persName>
-                    <affiliation>...</affiliation>
+                    <persName>Riondet Charles</persName>
+                    <affiliation>Inria</affiliation>
                 </author>
             </titleStmt>
             <publicationStmt>
@@ -21,11 +21,10 @@
                 </availability>
             </publicationStmt>
             <sourceDesc>
-                <p>Created from scratch</p>
+                <p>Created from scratch, <date when="2018-06-23">June 23d 2018</date></p>
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
-            <!-- Use only for major changes -->
             <change/>
         </revisionDesc>
     </teiHeader>
@@ -34,16 +33,21 @@
             <listEvent>
                 <event type="researchStep">
                     <!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
-                    <head type="stepTitle" xml:lang="en">Choose an explicit title starting with a verb or a gerund</head>
-                    <desc type="definition" xml:lang="en">
-                    </desc>
+                    <head type="stepTitle" xml:lang="en">Choose explicit titles starting with a verb
+                        or a gerund</head>
+                    <desc type="definition" xml:lang="en">The choice of good titles for a scenario
+                        and its steps is crucial. It will be the entry point of the users, that need
+                        to understand at first reading the scope and the aim of a scenario. To do so, we advice to build titles :
+                    <list>
+                        <item>that starts with a verb or a gerund that describe the process (for a scenario) or the action (for a step) that the user will read about.</item>
+                        <item>with a number of characters comprised between 10 and 100</item>
+                    </list></desc>
                     <desc xml:lang="en" type="terms">
-                        <term type="activity" source="http://tadirah.dariah.eu/"
-                            key="identifying"
+                        <term type="activity" source="http://tadirah.dariah.eu/" key="identifying"
                             >identifying</term>
                     </desc>
                     <linkGrp type="generalResources">
-                        
+                        <ref type="documentation"/>
                     </linkGrp>
                 </event>
             </listEvent>

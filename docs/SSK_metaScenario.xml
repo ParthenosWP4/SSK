@@ -40,24 +40,31 @@
          <div type="scenario" xml:id="sc_meta">
             <head xml:lang="en" type="scenarioTitle">How to create a scenario for the SSK</head>
             <desc type="definition" xml:lang="en">This "meta" scenario will explain all the
-               necessary steps and requirements in order to build a relavant and readable
-               scenario.</desc>
+               necessary steps and requirements in order to build a relavant and readable scenario. Contributors should be aware<list>
+                  <item>that they can submit their new scenarios directly in TEI, or by using the dedicated SSK contribution workspace.</item>
+                  <item>that scenarios and steps follow the same data
+                     model. The difference is that a scenario points to a set of steps whereas a
+                     step points to a set of external resources.</item>
+               </list>
+            </desc>
             <desc xml:lang="en" type="terms">
-               <term source="SSK" type="discipline" key="Humanities and Heritage sciences">Humanities and Heritage sciences</term>
+               <term source="SSK" type="discipline" key="Humanities and Heritage sciences"
+                  >Humanities and Heritage sciences</term>
                <term source="SSK" type="technique" key="Best practices">Best practices</term>
                <term source="SSK" type="object" key="Tutorial">Tutorial</term>
                <term source="SSK" type="activity" key="Training">Training</term>
             </desc>
             <figure type="image">
-               <head></head>
-               <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/img-tuto.jpeg"/>
+               <head/>
+               <graphic
+                  url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/img-tuto.jpeg"/>
                <figDesc/>
             </figure>
             <listEvent>
-               <event xml:id="s3" type="researchStep" ref="step_Cad_300517"/>
-               <event xml:id="s4" type="researchStep" ref="step_Tdats_300517"/>
-               <event xml:id="s5" type="researchStep" ref="step_Sapditnf_300517"/>
-
+               <event xml:id="s1" type="researchStep" ref="SSK_step_tuto1"/>
+               <event xml:id="s2" type="researchStep" ref="SSK_step_tuto2"/>
+               <event xml:id="s3" type="researchStep" ref="SSK_step_tuto1"/>
+               <event xml:id="s4" type="researchStep" ref="SSK_step_tuto1"/>
             </listEvent>
          </div>
       </body>

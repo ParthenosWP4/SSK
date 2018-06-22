@@ -5,10 +5,10 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Title of the file, not title of the step</title>
+                <title>Meta scenario step "Add resources"</title>
                 <author>
-                    <persName>author</persName>
-                    <affiliation>...</affiliation>
+                    <persName>Riondet Charles</persName>
+                    <affiliation>Inria</affiliation>
                 </author>
             </titleStmt>
             <publicationStmt>
@@ -21,11 +21,10 @@
                 </availability>
             </publicationStmt>
             <sourceDesc>
-                <p>Created from scratch</p>
+                <p>Created from scratch, <date when="2018-06-23">June 23d 2018</date></p>
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
-            <!-- Use only for major changes -->
             <change/>
         </revisionDesc>
     </teiHeader>
@@ -33,17 +32,19 @@
         <body>
             <listEvent>
                 <event type="researchStep">
-                    <!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
-                    <head type="stepTitle" xml:lang="en">Choose an explicit title starting with a verb or a gerund</head>
-                    <desc type="definition" xml:lang="en">
-                    </desc>
+                    <head type="stepTitle" xml:lang="en">Identify relevant resources</head>
+                    <desc type="definition" xml:lang="en"> This step is a prerequiste before
+                        actually add the resources to the steps. When we are talking about
+                        resources, we mean a standardized tool, service or document helpful for the
+                        task completion. They take the form of a digital object : a webpage, a
+                        journal article referenced in an online catalog or an archive, a code
+                        repository, a blog, etc.</desc>
                     <desc xml:lang="en" type="terms">
-                        <term type="activity" source="http://tadirah.dariah.eu/"
-                            key="identifying"
-                            >identifying</term>
+                        <term type="activity" source="http://tadirah.dariah.eu/" key="contextualizing"
+                            >contextualizing</term>
                     </desc>
                     <linkGrp type="generalResources">
-                        
+                        <ref type="documentation"/>
                     </linkGrp>
                 </event>
             </listEvent>

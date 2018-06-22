@@ -132,9 +132,9 @@
                     <head>Zotero</head>
                     <p>The resources to be presented in the SSK are preferably stored in Zotero
                         Parthenos WP4 database, accessible <ref
-                            target="https://www.zotero.org/groups/427927/parthenos-wp4">here</ref>.
-                        To add a resource, an account on Zotero is required. Contact the SSK team to
-                        join the group (ssk [at] inria [dot] fr)</p>
+                            target="https://www.zotero.org/groups/427927">here</ref>. To add a
+                        resource, an account on Zotero is required. Contact the SSK team to join the
+                        group (ssk [at] inria [dot] fr)</p>
                     <p>The Zotero database fields required by the SSK are:<list>
                             <item><label>Item type</label>: <desc>The item type is most of the time
                                     identified by Zotero but it's important to check it. The most
@@ -161,7 +161,27 @@
                                             library catalog</item>
                                     </list></desc>
                             </item>
-                        </list></p>
+                        </list> NB: A short description of the resource should be provided when
+                        possible. In Zotero, the appropriate field is <hi>abstract</hi>, but it is
+                        also possible to add this description in the TEI, with a <gi>desc</gi>
+                        element, as shown in the following example: <egXML
+                            xmlns="http://www.tei-c.org/ns/Examples">
+                            <linkGrp type="generalResources">
+                                <ref source="zotero" subtype="book" target="PM5P3JDB"
+                                    type="tutorial">
+                                    <desc xml:lang="en" type="resourceDesc"> This booklet is
+                                        intended as an introductory textbook for students and
+                                        end-users interested in knowing more about the exciting
+                                        developments in this high-tech area of conservation and
+                                        conservation science. Their teachers are invited to use the
+                                        texts and photographic materials for educational purposes,
+                                        while the conservation scientist might appreciate the short
+                                        reviews of applications and of the science underlying the
+                                        described processes. </desc>
+                                    <term key="Laser cleaning" type="tutorial"/>
+                                </ref>
+                            </linkGrp>
+                        </egXML></p>
                 </div>
                 <div>
                     <head>GitHub</head>
@@ -224,7 +244,6 @@
                                     <teiHeader>
                                         <fileDesc>
                                             <titleStmt>
-
                                                 <title><!-- Title of the tei document, not title of the scenario --></title>
                                                 <author>
                                                   <persName>...</persName>
@@ -392,10 +411,10 @@
                         <p><gi>term</gi> elements are used to tag the scenarios, the steps and the
                             resources, according to the SSK taxonomies, that are:<list>
                                 <item><ref target="http://tadirah.dariah.eu/vocab/index.php">Tadirah
-                                        activities and techniques</ref></item>
+                                        activities, objects and techniques</ref></item>
                                 <item>The NEDIMAH type taxonomy for Information resource (or
                                         <hi>objects</hi>)</item>
-                                <item>the Dariah Standard Knowledge base</item>
+                                <item>the Dariah-IT Standard Knowledge base</item>
                                 <item>aureHAL disciplines</item>
                             </list>
                         </p>
@@ -991,8 +1010,8 @@
                                 their order number) in the scenario to include. To indicate an
                                 consecutive interval, the steps indexes should be separated by an
                                 hyphen: <code>-</code>. To indicate non-consecutive steps, the steps
-                                indexes should be separated by a comma: <code>,</code>. These two behaviours can be mixed (<ref target="#range3"></ref>see examples below)
-                            </p>
+                                indexes should be separated by a comma: <code>,</code>. These two
+                                behaviours can be mixed (<ref target="#range3"/>see examples below) </p>
 
                             <div>
                                 <head>A set of steps, sometimes consecutive, sometimes not
@@ -1007,7 +1026,8 @@
                                         <event xml:id="jjjj" type="researchScenario"
                                             ref="scenario_to_Be_Included">
                                             <param name="range" value="1,3"/>
-                                        </event></egXML> This parameter would select steps 1 and 3.</p>
+                                        </event></egXML> This parameter would select steps 1 and
+                                    3.</p>
                                 <p xml:id="range3"><egXML xmlns="http://www.tei-c.org/ns/Examples">
                                         <event xml:id="jjjj" type="researchScenario"
                                             ref="scenario_to_Be_Included">

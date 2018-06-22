@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!-- You have to type the TEI file, with researchStep or researchScenario -->
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="st_0000000001">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Meta scenario step "describe the scenario or the step"</title>
+                <author>
+                    <persName>Riondet Charles</persName>
+                    <affiliation>Inria</affiliation>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <authority>Parthenos</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/">
+                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.</p>
+                    </licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Created from scratch, <date when="2018-06-23">June 23d 2018</date></p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listEvent>
+                <event type="researchStep">
+                    <head type="stepTitle" xml:lang="en">Describing a scenario or a step</head>
+                    <desc type="definition" xml:lang="en">The description of the scenario and its
+                        steps is the longer text that the contributor has to provide.<list>
+                            <item>For a scenario, it should explain the scientific problematic and
+                                describe the solution put in place.</item>
+                            <item>For a step, It should describe the purpose of the action, how it
+                                relates with the previous ones and give an overall presentation of
+                                the different kind of methods and tools the resources would point to.</item>
+                            <item>For both, it is important to extend the acronyms cited and to briefly present the projects mentioned.</item>
+                        </list>
+                    The form of this text should respect the following constraints:
+                    <list>
+                        <item>It shouldn't exceed 1500 characters.</item>                        
+                        <item>It is possible to point to external links (in TEI, with the following: &lt;ref target="//url here//"&gt;text of the link&lt;/ref&gt;</item>
+                        <item>Lists are also available. The TEI elements are &lt;list&gt; and &lt;item&gt;</item>
+                    </list></desc>
+                    <desc xml:lang="en" type="terms">
+                        <term type="activity" source="http://tadirah.dariah.eu/" key="annotating"
+                            >annotating</term>
+                    </desc>
+                    <linkGrp type="generalResources">
+                        <ref type="documentation"/>
+                    </linkGrp>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>
