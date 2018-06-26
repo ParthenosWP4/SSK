@@ -35,9 +35,6 @@
         </revisionDesc>
     </teiHeader>
     <text>
-        <front>
-            <divGen type="toc"/>
-        </front>
         <body>
             <!--    <div>
                 <head>Introduction</head>
@@ -305,7 +302,9 @@
                                         ... </listEvent>
                                 </egXML>
                             </p>
-                            <p>It is possible to modify the content of an existing step directly in the scenario file. See <ref target="#custom">the advanced features</ref> for more information.</p>
+                            <p>It is possible to modify the content of an existing step directly in
+                                the scenario file. See <ref target="#custom">the advanced
+                                    features</ref> for more information.</p>
                         </div>
                     </div>
                     <div xml:id="SSKSteps">
@@ -917,163 +916,164 @@
                     </div>
                     <div>
                         <head>param</head>
-                        <p>See below the <ref target="#SSK_param">advanced features section</ref></p>
+                        <p>See below the <ref target="#SSK_param">advanced features
+                            section</ref></p>
                     </div>
                 </div>
             </div>
-                <div xml:id="advanced">
-                    <head>Advanced features</head>
-                    <div xml:id="custom">
-                        <head>Customize a step or a scenario</head>
-                        <p>It is possible to modify the content of a step directly in
-                            the scenario file, for instance, modifying the label to
-                            contextualize it, or adding a very specific resource. To do so,
-                            <gi>event</gi> and its children can be specified with the
-                            <att>mode</att> attribute; with the possible following values:<list>
-                                <item><code>change</code></item>
-                                <item><code>add</code></item>
-                            </list>
+            <div xml:id="advanced">
+                <head>Advanced features</head>
+                <div xml:id="custom">
+                    <head>Customize a step or a scenario</head>
+                    <p>It is possible to modify the content of a step directly in the scenario file,
+                        for instance, modifying the label to contextualize it, or adding a very
+                        specific resource. To do so, <gi>event</gi> and its children can be
+                        specified with the <att>mode</att> attribute; with the possible following values:<list>
+                            <item><code>change</code></item>
+                            <item><code>add</code></item>
+                        </list>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <event type="step" ref="step_EaXswO_290517">
+                                <head mode="add" xml:lang="jp">...</head>
+                                <desc type="definition" mode="change">...</desc> ... </event>
+                        </egXML>
+                    </p>
+                </div>
+                <div xml:id="SSK_param">
+                    <head>The parameters</head>
+                    <p>When pointing to a step inside a scenario, it is possible to use parameters
+                        to refine the behaviour of this step. This parametrization uses the element
+                            <gi>param</gi> in <gi>event</gi>. Two different uses are possible for
+                        the moment, <ref target="#param1">(1)</ref> to refine the resources
+                        selection in a given step, <ref target="#param2">(2)</ref> to include some
+                        steps of a scenario in another scenario.</p>
+                    <div xml:id="param1">
+                        <head>Parameter #1 : refine the resources</head>
+                        <p>It is possible to select the resources to be displayed in a scenario. The
+                            criteria are based on the taxonomies used by the SSK model : <list>
+                                <item>Tadirah Activities</item>
+                                <item>Tadirah techniques</item>
+                                <item>NEMO Data types</item>
+                                <item>aureHAL disciplines</item>
+                                <item>Standards</item>
+                            </list> The element <gi>param</gi> contains an attribute
+                            <att>name</att>, that contains a formal name to identify on which
+                            taxonomy the parameter is applied. The possible values are : <list>
+                                <item>activity</item>
+                                <item>technique</item>
+                                <item>datatype</item>
+                                <item>discipline</item>
+                                <item>standard</item>
+                            </list> Another attribute <att>value</att> contains the term used to
+                            select the wanted resources. In other words, in the example below, the
+                            resources displayed would only be the <gi>ref</gi> that contains one or
+                            more <gi>term</gi> elements with values "XML", "conversion" and "Text
+                            Bearing Objects". <egXML xmlns="http://www.tei-c.org/ns/Examples"><event
+                                    type="researchStep" ref="referencedStep">
+                                    <label mode="replace">New label</label>
+                                    <desc mode="replace">new description</desc>
+                                    <!-- resources -->
+                                    <param name="standard" value="XML"/>
+                                    <param name="activity" value="conversion"/>
+                                    <param name="technique" value="Text Bearing Objects"/> ...
+                                </event>
+                            </egXML> In this situation, all the following resources would be
+                            selected. <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                <ref type="code" target="// URL //">
+                                    <term type="activity" source="tadirah" key="conversion"/>
+                                    <term type="standard" key="XML"/>
+                                </ref>
+                            </egXML>
                             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                                <event type="step" ref="step_EaXswO_290517">
-                                    <head mode="add" xml:lang="jp">...</head>
-                                    <desc type="definition" mode="change">...</desc>
-                                    ... </event>
+                                <ref type="code" target="// URL //">
+                                    <term type="technique" source="tadirah"
+                                        key="Text Bearing Objects"/>
+                                    <term type="standard" key="XML"/>
+                                </ref>
+                            </egXML>
+                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                <ref type="code" target="// URL //">
+                                    <term type="technique" source="tadirah"
+                                        key="Text Bearing Objects"/>
+                                    <term type="activity" source="tadirah" key="conversion"/>
+                                </ref>
+                            </egXML>
+                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                <ref type="code" target="URL">
+                                    <term type="standard" key="XML"/>
+                                </ref>
                             </egXML>
                         </p>
                     </div>
-                    <div xml:id="SSK_param">
-                        <head>The parameters</head>
-                        <p>When pointing to a step inside a scenario, it is possible to use
-                            parameters to refine the behaviour of this step. This parametrization
-                            uses the element <gi>param</gi> in <gi>event</gi>. Two different uses
-                            are possible for the moment, <ref target="#param1">(1)</ref> to refine
-                            the resources selection in a given step, <ref target="#param2">(2)</ref>
-                            to include some steps of a scenario in another scenario.</p>
-                        <div xml:id="param1">
-                            <head>Parameter #1 : refine the resources</head>
-                            <p>It is possible to select the resources to be displayed in a scenario.
-                                The criteria are based on the taxonomies used by the SSK model : <list>
-                                    <item>Tadirah Activities</item>
-                                    <item>Tadirah techniques</item>
-                                    <item>NEMO Data types</item>
-                                    <item>aureHAL disciplines</item>
-                                    <item>Standards</item>
-                                </list> The element <gi>param</gi> contains an attribute
-                                <att>name</att>, that contains a formal name to identify on
-                                which taxonomy the parameter is applied. The possible values are : <list>
-                                    <item>activity</item>
-                                    <item>technique</item>
-                                    <item>datatype</item>
-                                    <item>discipline</item>
-                                    <item>standard</item>
-                                </list> Another attribute <att>value</att> contains the term used to
-                                select the wanted resources. In other words, in the example below,
-                                the resources displayed would only be the <gi>ref</gi> that contains
-                                one or more <gi>term</gi> elements with values "XML", "conversion"
-                                and "Text Bearing Objects". <egXML
-                                    xmlns="http://www.tei-c.org/ns/Examples"><event
-                                        type="researchStep" ref="referencedStep">
-                                        <label mode="replace">New label</label>
-                                        <desc mode="replace">new description</desc>
-                                        <!-- resources -->
-                                        <param name="standard" value="XML"/>
-                                        <param name="activity" value="conversion"/>
-                                        <param name="technique" value="Text Bearing Objects"/> ...
-                                    </event>
-                                </egXML> In this situation, all the following resources would be
-                                selected. <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                                    <ref type="code" target="// URL //">
-                                        <term type="activity" source="tadirah" key="conversion"/>
-                                        <term type="standard" key="XML"/>
-                                    </ref>
-                                </egXML>
-                                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                                    <ref type="code" target="// URL //">
-                                        <term type="technique" source="tadirah"
-                                            key="Text Bearing Objects"/>
-                                        <term type="standard" key="XML"/>
-                                    </ref>
-                                </egXML>
-                                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                                    <ref type="code" target="// URL //">
-                                        <term type="technique" source="tadirah"
-                                            key="Text Bearing Objects"/>
-                                        <term type="activity" source="tadirah" key="conversion"/>
-                                    </ref>
-                                </egXML>
-                                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                                    <ref type="code" target="URL">
-                                        <term type="standard" key="XML"/>
-                                    </ref>
-                                </egXML>
-                            </p>
-                        </div>
-                        <div xml:id="param2">
-                            <head>Parameter #2 : include partially a scenario into another</head>
-                            <p>This mechanism records : <list>
+                    <div xml:id="param2">
+                        <head>Parameter #2 : include partially a scenario into another</head>
+                        <p>This mechanism records : <list>
                                 <item>The reference to a scenario</item>
                                 <item>A set of steps, not necessarily consecutive.</item>
                             </list> In this case, the attributes of <gi>param</gi> are also
                                 <att>name</att> and <att>value</att>, but they have a different
-                                behaviour. The <att>name</att> value is <code>range</code>. The
-                                attribute <att>value</att> records the interval of the steps (i.e.
-                                their order number) in the scenario to include. To indicate an
-                                consecutive interval, the steps indexes should be separated by an
-                                hyphen: <code>-</code>. To indicate non-consecutive steps, the steps
-                                indexes should be separated by a comma: <code>,</code>. These two
-                                behaviours can be mixed (<ref target="#range3"/>see examples below) </p>
-                            
-                            <div>
-                                <head>A set of steps, sometimes consecutive, sometimes not
-                                    consecutive</head>
-                                <p xml:id="range1"><egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            behaviour. The <att>name</att> value is <code>range</code>. The
+                            attribute <att>value</att> records the interval of the steps (i.e. their
+                            order number) in the scenario to include. To indicate an consecutive
+                            interval, the steps indexes should be separated by an hyphen:
+                                <code>-</code>. To indicate non-consecutive steps, the steps indexes
+                            should be separated by a comma: <code>,</code>. These two behaviours can
+                            be mixed (<ref target="#range3"/>see examples below) </p>
+
+                        <div>
+                            <head>A set of steps, sometimes consecutive, sometimes not
+                                consecutive</head>
+                            <p xml:id="range1"><egXML xmlns="http://www.tei-c.org/ns/Examples">
                                     <event xml:id="jjjj" type="researchScenario"
                                         ref="scenario_to_Be_Included">
                                         <param name="range" value="1-3"/>
                                     </event></egXML> This parameter would select steps 1, 2 and
-                                    3.</p>
-                                <p xml:id="range2"><egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                3.</p>
+                            <p xml:id="range2"><egXML xmlns="http://www.tei-c.org/ns/Examples">
                                     <event xml:id="jjjj" type="researchScenario"
                                         ref="scenario_to_Be_Included">
                                         <param name="range" value="1,3"/>
-                                    </event></egXML> This parameter would select steps 1 and
-                                    3.</p>
-                                <p xml:id="range3"><egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                    </event></egXML> This parameter would select steps 1 and 3.</p>
+                            <p xml:id="range3"><egXML xmlns="http://www.tei-c.org/ns/Examples">
                                     <event xml:id="jjjj" type="researchScenario"
                                         ref="scenario_to_Be_Included">
                                         <param name="range" value="1,3,5-7"/>
-                                    </event></egXML> This parameter would select steps 1, 3, 5,
-                                    6 and 7.</p>
-                            </div>
-                        </div>
-                        <div>
-                            <head>Mixing parameters </head>
-                            <p>This example shows the inclusion of a scenario into another and a
-                                filter based on a keyword for a particular step in this subset. If
-                                the @corresp is not used, the <gi>param</gi> will be applied to all
-                                the included steps. <egXML xmlns="http://www.tei-c.org/ns/Examples"
-                                    ><event xml:id="jjjj" type="researchScenario"
-                                        ref="scenario_to_Be_Included">
-                                        <param name="range" value="1,2,4-6"/>
-                                        <!-- filter resources of the step nr 2 -->
-                                        <param name="standards" value="XML" corresp="#2"/>
-                                    </event></egXML></p>
+                                    </event></egXML> This parameter would select steps 1, 3, 5, 6
+                                and 7.</p>
                         </div>
                     </div>
+                    <div>
+                        <head>Mixing parameters </head>
+                        <p>This example shows the inclusion of a scenario into another and a filter
+                            based on a keyword for a particular step in this subset. If the @corresp
+                            is not used, the <gi>param</gi> will be applied to all the included
+                            steps. <egXML xmlns="http://www.tei-c.org/ns/Examples"><event
+                                    xml:id="jjjj" type="researchScenario"
+                                    ref="scenario_to_Be_Included">
+                                    <param name="range" value="1,2,4-6"/>
+                                    <!-- filter resources of the step nr 2 -->
+                                    <param name="standards" value="XML" corresp="#2"/>
+                                </event></egXML></p>
+                    </div>
                 </div>
-            
+            </div>
+
         </body>
         <back>
             <div>
-                <schemaSpec ident="TEI_SSK" docLang="en" prefix="tei_" xml:lang="en">
-                    <moduleRef key="core" except=""/>
-                    <moduleRef key="tei" except=""/>
-                    <moduleRef key="header" except=""/>
-                    <moduleRef key="textstructure" except=""/>
-                    <moduleRef key="namesdates" except=""/>
-                    <moduleRef key="linking" except=""/>
+                <schemaSpec ident="TEI_SSK" xml:lang="en">
+                    <moduleRef key="core"
+                        except="add cb cit citedRange corr del distinct divGen gap gb l lb lg mentioned orig pb q quote reg said sic soCalled sp speaker stage unclear"/>
+                    <moduleRef key="header"
+                        except="calendar calendarDesc catDesc catRef category classCode classDecl correction correspAction correspContext correspDesc handNote hyphenation interpretation punctuation quotation refState refsDecl rendition samplingDecl scriptNote segmentation stdVals styleDefDecl tagUsage tagsDecl taxonomy xenoData"/>
+                    <moduleRef key="textstructure"
+                        except="argument byline closer div1 div2 div3 div4 div5 div6 div7 docAuthor docDate docEdition docImprint docTitle epigraph floatingText group opener postscript salute signed titlePage titlePart trailer"/>
+                    <moduleRef key="namesdates"
+                        except="age birth bloc climate death faith geogFeat langKnowledge langKnown listNym nameLink nym persona population region sex socecStatus state terrain trait"/>
+                    <moduleRef key="linking"
+                        except="alt altGrp anchor join joinGrp link seg timeline when"/>
                     <moduleRef key="tagdocs"
-                        except="altIdent alternate anyElement attDef attList attRef classRef classSpec classes code constraint constraintSpec content dataFacet dataRef dataSpec datatype defaultVal eg egXML elementRef elementSpec empty equiv exemplum ident listRef macroRef macroSpec memberOf model modelGrp modelSequence moduleRef moduleSpec outputRendition paramList paramSpec remarks schemaSpec sequence specDesc specGrp specGrpRef specList tag textNode val valDesc valItem valList"/>
+                        except="altIdent alternate anyElement att attDef attList attRef classRef classSpec classes code constraint constraintSpec content dataFacet dataRef dataSpec datatype defaultVal eg egXML elementRef elementSpec empty equiv exemplum gi ident listRef macroRef macroSpec memberOf model modelGrp modelSequence moduleRef moduleSpec outputRendition paramList paramSpec remarks schemaSpec sequence specDesc specGrp specGrpRef specList tag textNode val valDesc valItem valList"/>
                     <moduleRef key="figures"/>
 
                     <!-- Elements changed-->
