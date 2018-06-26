@@ -21,7 +21,7 @@
                 </availability>
             </publicationStmt>
             <sourceDesc>
-                <p>Created from scratch, <date when="2018-06-23">June 23d 2018</date></p>
+                <p>Created from scratch, <date when="2018-06-23">June 26th 2018</date></p>
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
@@ -32,16 +32,22 @@
         <body>
             <listEvent>
                 <event type="researchStep">
-                    <head type="stepTitle" xml:lang="en">Advanced SSK functions (1) : customize a
-                        step or a scenario</head>
-                    <desc type="definition" xml:lang="en"> The SSK is adaptable by nature and
-                        contributors don't have to start from scratch their scenario. It is possible
-                        to create a scenario with existing steps as basis. But if the content of the
-                        step doesn't exactly fit, it is also possible to modify it, by updating the
-                        initial step (but with care), or, more safely, directly in the new scenario.
-                        In TEI, the update of element is made with the help of the attribute @mode.
-                        See more in the <ref type="documentation" target="https://parthenoswp4.github.io/SSK/SSKspec.html#index.xml-body.1_div.4_div.1">SSK TEI documentation</ref><list>
-                            <item>Use and modify existing scenarios and steps</item>
+                    <head type="stepTitle" xml:lang="en">Advanced SSK functions (2) : link
+                        scenarios</head>
+                    <desc type="definition" xml:lang="en"> Link scenarios together, or in other
+                        words, include a scenario (entirely or partially) into another is an
+                        interesting possibility when a scenario is a pre-condition or the
+                        continuation of another one. For instance, a scenario related to the
+                        preservation od 3D models can be preceded by a scenario explaining how to
+                        create such models. The most common use cases are the following:<list>
+                            <item>Add a prerequisite scenario (as a first step)</item>
+                            <item>Associate a scenario that can be the follow-up of the current (as
+                                a last step)</item>
+                            <item>Insert a scenario (totally or partially) inside the current
+                                scenario, with the use of parameters that allows the user to choose
+                                which step of the external scenario should be included. See the <ref type="documentation"
+                                    target="https://parthenoswp4.github.io/SSK/SSKspec.html#index.xml-body.1_div.4_div.2"
+                                    >SSK TEI documentation about parameters</ref></item>
                         </list></desc>
                     <desc xml:lang="en" type="terms">
                         <term type="activity" source="http://tadirah.dariah.eu/" key="editing"

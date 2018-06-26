@@ -305,23 +305,7 @@
                                         ... </listEvent>
                                 </egXML>
                             </p>
-                            <p>However, it is possible to modify the content of a step directly in
-                                the scenario file, for instance, modifying the label to
-                                contextualize it, or adding a very specific resource. To do so,
-                                    <gi>event</gi> and its children can be specified with the
-                                    <att>mode</att> attribute; with the possible following values:<list>
-                                    <item><code>change</code></item>
-                                    <item><code>add</code></item>
-                                </list>
-                                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                                    <event type="step" ref="step_EaXswO_290517">
-                                        <head mode="change">
-                                            <label mode="change" xml:lang="jp">...</label>
-                                            <term mode="add" type="standard"
-                                                source="source of the vocabulary" key="newTerm"/>
-                                        </head> ... </event>
-                                </egXML>
-                            </p>
+                            <p>It is possible to modify the content of an existing step directly in the scenario file. See <ref target="#custom">the advanced features</ref> for more information.</p>
                         </div>
                     </div>
                     <div xml:id="SSKSteps">
@@ -931,8 +915,34 @@
                             </egXML>
                         </p>
                     </div>
-                    <div xml:id="SSK_param">
+                    <div>
                         <head>param</head>
+                        <p>See below the <ref target="#SSK_param">advanced features section</ref></p>
+                    </div>
+                </div>
+            </div>
+                <div xml:id="advanced">
+                    <head>Advanced features</head>
+                    <div xml:id="custom">
+                        <head>Customize a step or a scenario</head>
+                        <p>It is possible to modify the content of a step directly in
+                            the scenario file, for instance, modifying the label to
+                            contextualize it, or adding a very specific resource. To do so,
+                            <gi>event</gi> and its children can be specified with the
+                            <att>mode</att> attribute; with the possible following values:<list>
+                                <item><code>change</code></item>
+                                <item><code>add</code></item>
+                            </list>
+                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                <event type="step" ref="step_EaXswO_290517">
+                                    <head mode="add" xml:lang="jp">...</head>
+                                    <desc type="definition" mode="change">...</desc>
+                                    ... </event>
+                            </egXML>
+                        </p>
+                    </div>
+                    <div xml:id="SSK_param">
+                        <head>The parameters</head>
                         <p>When pointing to a step inside a scenario, it is possible to use
                             parameters to refine the behaviour of this step. This parametrization
                             uses the element <gi>param</gi> in <gi>event</gi>. Two different uses
@@ -949,7 +959,7 @@
                                     <item>aureHAL disciplines</item>
                                     <item>Standards</item>
                                 </list> The element <gi>param</gi> contains an attribute
-                                    <att>name</att>, that contains a formal name to identify on
+                                <att>name</att>, that contains a formal name to identify on
                                 which taxonomy the parameter is applied. The possible values are : <list>
                                     <item>activity</item>
                                     <item>technique</item>
@@ -1001,10 +1011,10 @@
                         <div xml:id="param2">
                             <head>Parameter #2 : include partially a scenario into another</head>
                             <p>This mechanism records : <list>
-                                    <item>The reference to a scenario</item>
-                                    <item>A set of steps, not necessarily consecutive.</item>
-                                </list> In this case, the attributes of <gi>param</gi> are also
-                                    <att>name</att> and <att>value</att>, but they have a different
+                                <item>The reference to a scenario</item>
+                                <item>A set of steps, not necessarily consecutive.</item>
+                            </list> In this case, the attributes of <gi>param</gi> are also
+                                <att>name</att> and <att>value</att>, but they have a different
                                 behaviour. The <att>name</att> value is <code>range</code>. The
                                 attribute <att>value</att> records the interval of the steps (i.e.
                                 their order number) in the scenario to include. To indicate an
@@ -1012,27 +1022,27 @@
                                 hyphen: <code>-</code>. To indicate non-consecutive steps, the steps
                                 indexes should be separated by a comma: <code>,</code>. These two
                                 behaviours can be mixed (<ref target="#range3"/>see examples below) </p>
-
+                            
                             <div>
                                 <head>A set of steps, sometimes consecutive, sometimes not
                                     consecutive</head>
                                 <p xml:id="range1"><egXML xmlns="http://www.tei-c.org/ns/Examples">
-                                        <event xml:id="jjjj" type="researchScenario"
-                                            ref="scenario_to_Be_Included">
-                                            <param name="range" value="1-3"/>
-                                        </event></egXML> This parameter would select steps 1, 2 and
+                                    <event xml:id="jjjj" type="researchScenario"
+                                        ref="scenario_to_Be_Included">
+                                        <param name="range" value="1-3"/>
+                                    </event></egXML> This parameter would select steps 1, 2 and
                                     3.</p>
                                 <p xml:id="range2"><egXML xmlns="http://www.tei-c.org/ns/Examples">
-                                        <event xml:id="jjjj" type="researchScenario"
-                                            ref="scenario_to_Be_Included">
-                                            <param name="range" value="1,3"/>
-                                        </event></egXML> This parameter would select steps 1 and
+                                    <event xml:id="jjjj" type="researchScenario"
+                                        ref="scenario_to_Be_Included">
+                                        <param name="range" value="1,3"/>
+                                    </event></egXML> This parameter would select steps 1 and
                                     3.</p>
                                 <p xml:id="range3"><egXML xmlns="http://www.tei-c.org/ns/Examples">
-                                        <event xml:id="jjjj" type="researchScenario"
-                                            ref="scenario_to_Be_Included">
-                                            <param name="range" value="1,3,5-7"/>
-                                        </event></egXML> This parameter would select steps 1, 3, 5,
+                                    <event xml:id="jjjj" type="researchScenario"
+                                        ref="scenario_to_Be_Included">
+                                        <param name="range" value="1,3,5-7"/>
+                                    </event></egXML> This parameter would select steps 1, 3, 5,
                                     6 and 7.</p>
                             </div>
                         </div>
@@ -1042,7 +1052,7 @@
                                 filter based on a keyword for a particular step in this subset. If
                                 the @corresp is not used, the <gi>param</gi> will be applied to all
                                 the included steps. <egXML xmlns="http://www.tei-c.org/ns/Examples"
-                                        ><event xml:id="jjjj" type="researchScenario"
+                                    ><event xml:id="jjjj" type="researchScenario"
                                         ref="scenario_to_Be_Included">
                                         <param name="range" value="1,2,4-6"/>
                                         <!-- filter resources of the step nr 2 -->
@@ -1051,7 +1061,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            
         </body>
         <back>
             <div>

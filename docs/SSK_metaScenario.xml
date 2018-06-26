@@ -63,8 +63,12 @@
             <listEvent>
                <event xml:id="s1" type="researchStep" ref="SSK_step_tuto1"/>
                <event xml:id="s2" type="researchStep" ref="SSK_step_tuto2"/>
-               <event xml:id="s3" type="researchStep" ref="SSK_step_tuto1"/>
-               <event xml:id="s4" type="researchStep" ref="SSK_step_tuto1"/>
+               <event xml:id="s3" type="researchStep" ref="SSK_step_tuto3"/>
+               <event xml:id="s4" type="researchStep" ref="SSK_step_tuto4"/>
+               <event xml:id="s5" type="researchStep" ref="SSK_step_tuto5"/>
+               <event xml:id="s6" type="researchStep" ref="SSK_step_tuto6"/>
+               <event xml:id="s7" type="researchStep" ref="SSK_step_tuto7"/>
+               <event xml:id="s8" type="researchStep" ref="SSK_step_tuto8"/>
             </listEvent>
          </div>
       </body>
