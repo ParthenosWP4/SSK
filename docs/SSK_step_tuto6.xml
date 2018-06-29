@@ -70,7 +70,8 @@
                             key="gathering">gathering</term>
                     </desc>
                     <linkGrp type="generalResources">
-                        <ref type="documentation"/>
+                        <ref type="documentation" source="zotero" target="Z28CSGGN"/>
+                        <ref type="documentation" source="zotero" target="BN2ABRWT"/>
                     </linkGrp>
                 </event>
             </listEvent>
