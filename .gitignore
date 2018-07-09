@@ -1,3 +1,7 @@
 misc
 .idea
 scenarios1
+spec/out
+TeiMeta.app
+diagnostics
+testDiag

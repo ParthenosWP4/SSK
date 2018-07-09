@@ -32,16 +32,17 @@
         <body>
             <listEvent>
                 <event type="researchStep">
-                    <!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
                     <head type="stepTitle" xml:lang="en">Choose explicit titles starting with a verb
                         or a gerund</head>
                     <desc type="definition" xml:lang="en">The choice of good titles for a scenario
                         and its steps is crucial. It will be the entry point of the users, that need
-                        to understand at first reading the scope and the aim of a scenario. To do so, we advice to build titles :
-                    <list>
-                        <item>that starts with a verb or a gerund that describe the process (for a scenario) or the action (for a step) that the user will read about.</item>
-                        <item>with a number of characters comprised between 10 and 100</item>
-                    </list></desc>
+                        to understand at first reading the scope and the aim of a scenario. To do
+                        so, we advice to build titles : <list>
+                            <item>that starts with a verb or a gerund that describe the process (for
+                                a scenario) or the action (for a step) that the user will read
+                                about.</item>
+                            <item>with a number of characters comprised between 10 and 100</item>
+                        </list></desc>
                     <desc xml:lang="en" type="terms">
                         <term type="activity" source="http://tadirah.dariah.eu/" key="identifying"
                             >identifying</term>

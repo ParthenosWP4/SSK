@@ -29,7 +29,7 @@ def parseSteps(files):
                 hText = head.text.replace('\n', ' ').replace('\r', '').replace('  ', '').strip()
                 step = {
                     "name" : hText,
-                    "url" : xmlBase + xml_file
+                    "url" : xmlBase + xml_file[3:]
                     }
                 dictSteps.append(step)
     return dictSteps
@@ -45,7 +45,7 @@ def parseSSK(files):
         hText = head.text.replace('\n',' ').replace('\r', '').replace('  ', '').strip()
         dictScen = {
             "name" : hText,
-            "url" : xmlBase + xml_file
+            "url" : xmlBase + xml_file[3:]
         }
         dictScen["steps"] = []
         events = soup.find_all("event")
@@ -71,4 +71,3 @@ parsedSSK = parseSSK(get_files("../scenarios"))
 
 with open('scenariosStepsSSK2.json', 'w') as file:
     json.dump(parsedSSK, file)
-

@@ -1061,7 +1061,7 @@
         </body>
         <back>
             <div>
-                <schemaSpec ident="TEI_SSK" xml:lang="en">
+                <schemaSpec ident="TEI_SSK" xml:lang="en" start="TEI">
                     <moduleRef key="core"
                         except="add cb cit citedRange corr del distinct divGen gap gb l lb lg mentioned orig pb q quote reg said sic soCalled sp speaker stage unclear"/>
                     <moduleRef key="header"
@@ -1097,7 +1097,7 @@
                     </elementSpec>
 
                     <!-- What is this ? -->
-                    <elementSpec ident="alternate" mode="change">
+<!--                    <elementSpec ident="alternate" mode="change">
                         <classes mode="change">
                             <memberOf key="model.eventLike"/>
                         </classes>
@@ -1109,7 +1109,7 @@
                                 </alternate>
                             </sequence>
                         </content>
-                    </elementSpec>
+                    </elementSpec>-->
 
                     <elementSpec ident="listEvent" mode="change">
                         <content>
@@ -1188,7 +1188,7 @@
                                 <datatype>
                                     <dataRef key="teidata.enumerated"/>
                                 </datatype>
-                                <valList type="semi" mode="replace">
+                                <valList type="closed" mode="replace">
                                     <valItem ident="stepTitle"/>
                                     <valItem ident="scenarioTitle"/>
                                 </valList>

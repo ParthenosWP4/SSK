@@ -39,15 +39,18 @@
                                 describe the solution put in place.</item>
                             <item>For a step, It should describe the purpose of the action, how it
                                 relates with the previous ones and give an overall presentation of
-                                the different kind of methods and tools the resources would point to.</item>
-                            <item>For both, it is important to extend the acronyms cited and to briefly present the projects mentioned.</item>
-                        </list>
-                    The form of this text should respect the following constraints:
-                    <list>
-                        <item>It shouldn't exceed 1500 characters.</item>                        
-                        <item>It is possible to point to external links (in TEI, with the following: &lt;ref target="//url here//"&gt;text of the link&lt;/ref&gt;</item>
-                        <item>Lists are also available. The TEI elements are &lt;list&gt; and &lt;item&gt;</item>
-                    </list></desc>
+                                the different kind of methods and tools the resources would point
+                                to.</item>
+                            <item>For both, it is important to extend the acronyms cited and to
+                                briefly present the projects mentioned.</item>
+                        </list> The form of this text should respect the following constraints: <list>
+                            <item>It shouldn't exceed 1500 characters.</item>
+                            <item>It is possible to point to external links (in TEI, with the
+                                following: &lt;ref target="//url here//"&gt;text of the
+                                link&lt;/ref&gt;</item>
+                            <item>Lists are also available. The TEI elements are &lt;list&gt; and
+                                &lt;item&gt;</item>
+                        </list></desc>
                     <desc xml:lang="en" type="terms">
                         <term type="activity" source="http://tadirah.dariah.eu/" key="annotating"
                             >annotating</term>

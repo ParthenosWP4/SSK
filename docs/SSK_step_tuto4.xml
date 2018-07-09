@@ -32,16 +32,18 @@
         <body>
             <listEvent>
                 <event type="researchStep">
-                    <head type="stepTitle" xml:lang="en">Choose an illustration for the scenario</head>
+                    <head type="stepTitle" xml:lang="en">Choose an illustration for the
+                        scenario</head>
                     <desc type="definition" xml:lang="en">
                         <list>
-                            <item>This illustration must closey relates with the purpose of the scenario, i.e. not only with the discipline or the period. Screenshots are accepted</item>
+                            <item>This illustration must closey relates with the purpose of the
+                                scenario, i.e. not only with the discipline or the period.
+                                Screenshots are accepted</item>
                             <item>Landscape orientation image are recommended</item>
                             <item>Maximum size : 2 Mo</item>
                             <item>Accepted formats : png, jpg</item>
                             <item>It must be published under the licence CC-BY or CC-0.</item>
                         </list>
-                         
                     </desc>
                     <desc xml:lang="en" type="terms">
                         <term type="activity" source="http://tadirah.dariah.eu/" key="editing"

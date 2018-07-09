@@ -63,11 +63,12 @@
                             <item>It is possible and recommended to add a description of the
                                 resource, in addition of the zotero metadata. This description
                                 should make the link between the resource and the SSK step that
-                                references it. In TEI, the element to use is &lt;desc&gt;, inside a &lt;ref&gt; element</item>
+                                references it. In TEI, the element to use is &lt;desc&gt;, inside a
+                                &lt;ref&gt; element</item>
                         </list></desc>
                     <desc xml:lang="en" type="terms">
-                        <term type="activity" source="http://tadirah.dariah.eu/"
-                            key="gathering">gathering</term>
+                        <term type="activity" source="http://tadirah.dariah.eu/" key="gathering"
+                            >gathering</term>
                     </desc>
                     <linkGrp type="generalResources">
                         <ref type="documentation" source="zotero" target="Z28CSGGN"/>

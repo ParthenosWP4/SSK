@@ -4,113 +4,59 @@
  <teiHeader>
   <fileDesc>
    <titleStmt>
-    <title>
-     Research standards for scholars
-    </title>
+    <title> Research standards for scholars </title>
     <author>
-     <persName>
-      Maurizio Sanesi
-     </persName>
-     <affiliation>
-      SISMEL
-     </affiliation>
+     <persName> Maurizio Sanesi </persName>
+     <affiliation> SISMEL </affiliation>
     </author>
     <author>
-     <persName>
-      Roberta Giacomi
-     </persName>
-     <affiliation>
-      SISMEL
-     </affiliation>
+     <persName> Roberta Giacomi </persName>
+     <affiliation> SISMEL </affiliation>
     </author>
     <author>
-     <persName>
-      Claus Spiecker
-     </persName>
-     <affiliation>
-      FHP
-     </affiliation>
+     <persName> Claus Spiecker </persName>
+     <affiliation> FHP </affiliation>
     </author>
     <author>
-     <persName>
-      Karolien Verbrugge
-     </persName>
-     <affiliation>
-      NIOD
-     </affiliation>
+     <persName> Karolien Verbrugge </persName>
+     <affiliation> NIOD </affiliation>
     </author>
    </titleStmt>
    <publicationStmt>
-    <authority>
-     Parthenos
-    </authority>
+    <authority> Parthenos </authority>
     <availability>
      <licence target="http://creativecommons.org/licenses/by/4.0/">
-      <p>
-       The Creative Commons Attribution 4.0 Unported (CC BY 4.0)
-                                          Licence applies to this document.
-      </p>
+      <p> The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+       document. </p>
      </licence>
     </availability>
    </publicationStmt>
    <sourceDesc>
-    <p>
-     Created from scratch
-    </p>
+    <p> Created from scratch </p>
    </sourceDesc>
   </fileDesc>
   <encodingDesc>
    <listPrefixDef>
     <prefixDef ident="wp2" matchPattern="(.*?)" replacementPattern="groups/368112">
-     <p>
-      The prefix wp2 needs to be used before resources taken from the
-      <ref target="https://www.zotero.org/groups/368112/parthenos_wp2" type="url">
-       Parthenos WP2 Zotero Library
-      </ref>
-      .
-     </p>
-     <p>
-      In the
-      <att>
-       target
-      </att>
-      attribute, the prefix in separated by the
-                                    Zotero ID by a colon ":". Ex: target="wp2:JHSD76DS"
-     </p>
+     <p> The prefix wp2 needs to be used before resources taken from the <ref
+       target="https://www.zotero.org/groups/368112/parthenos_wp2" type="url"> Parthenos WP2 Zotero
+       Library </ref> . </p>
+     <p> In the <att> target </att> attribute, the prefix in separated by the Zotero ID by a colon
+      ":". Ex: target="wp2:JHSD76DS" </p>
     </prefixDef>
     <prefixDef ident="wp3" matchPattern="(.*?)" replacementPattern="groups/520841">
-     <p>
-      The prefix wp3 needs to be used before resources taken from the
-      <ref target="https://www.zotero.org/groups/520841/parthenos_wp3" type="url">
-       Parthenos WP3 Zotero Library
-      </ref>
-      .
-     </p>
-     <p>
-      In the
-      <att>
-       target
-      </att>
-      attribute, the prefix in separated by the
-                                    Zotero ID by a colon ":". Ex: target="wp2:JHSD76DS"
-     </p>
+     <p> The prefix wp3 needs to be used before resources taken from the <ref
+       target="https://www.zotero.org/groups/520841/parthenos_wp3" type="url"> Parthenos WP3 Zotero
+       Library </ref> . </p>
+     <p> In the <att> target </att> attribute, the prefix in separated by the Zotero ID by a colon
+      ":". Ex: target="wp2:JHSD76DS" </p>
     </prefixDef>
     <prefixDef ident="wp4" matchPattern="(.*?)" replacementPattern="groups/427927">
-     <p>
-      The prefix wp4 needs to be used before resources taken from the
-      <ref target="https://www.zotero.org/groups/427927/parthenos_wp4" type="url">
-       Parthenos WP4 Zotero Library
-      </ref>
-      .
-     </p>
-     <p>
-      In the
-      <att>
-       target
-      </att>
-      attribute, the prefix in separated by the
-                                    Zotero ID by a colon ":". Ex: target="wp2:JHSD76DS"
-     </p>
+     <p> The prefix wp4 needs to be used before resources taken from the <ref
+       target="https://www.zotero.org/groups/427927/parthenos_wp4" type="url"> Parthenos WP4 Zotero
+       Library </ref> . </p>
+     <p> In the <att> target </att> attribute, the prefix in separated by the Zotero ID by a colon
+      ":". Ex: target="wp2:JHSD76DS" </p>
     </prefixDef>
    </listPrefixDef>
   </encodingDesc>
@@ -121,25 +67,17 @@
  <text>
   <body>
    <div type="scenario">
-    <head type="scenarioTitle" xml:lang="en">
-     Representing information about
-                              authors, works, documents
-    </head>
-    <desc type="definition" xml:lang="en">
-     In medieval studies, it is often
-                              needed to define in an unambiguous way information like person names
-                              (i.e.: authors), titles of works and documents identifiers (i.e.:
-                              shelfmarks). In fact, information can frequently be ambiguous: there
-                              are several cases of homonimy; an author can have more than one
-                              appellation known; the title of a work can have different forms, and
-                              also shelfmarks may have different structures. The quantity of
-                              material involved in the research and the time employed to perform it
-                              may vary depending on the subject of the research itself.
-    </desc>
+    <head type="scenarioTitle" xml:lang="en"> Representing information about authors, works,
+     documents </head>
+    <desc type="definition" xml:lang="en"> In medieval studies, it is often needed to define in an
+     unambiguous way information like person names (i.e.: authors), titles of works and documents
+     identifiers (i.e.: shelfmarks). In fact, information can frequently be ambiguous: there are
+     several cases of homonimy; an author can have more than one appellation known; the title of a
+     work can have different forms, and also shelfmarks may have different structures. The quantity
+     of material involved in the research and the time employed to perform it may vary depending on
+     the subject of the research itself. </desc>
     <desc type="terms" xml:lang="en">
-     <term key="History" source="aurehal" type="discipline">
-      History
-     </term>
+     <term key="History" source="aurehal" type="discipline"> History </term>
      <term key="Metadata" source="tadirah" type="objects"/>
      <term key="Bibliographies" source="nemo" type="objects"/>
      <term key="Biography" source="nemo" type="objects"/>

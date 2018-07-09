@@ -17,7 +17,7 @@
                <affiliation>Inria</affiliation></author>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos ...</authority>
+            <authority>Parthenos</authority>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
@@ -40,11 +40,15 @@
          <div type="scenario" xml:id="sc_meta">
             <head xml:lang="en" type="scenarioTitle">How to create a scenario for the SSK</head>
             <desc type="definition" xml:lang="en">This "meta" scenario will explain all the
-               necessary steps and requirements in order to build a relavant and readable scenario. Contributors should be aware<list>
-                  <item>that they can submit their new scenarios directly in TEI, or by using the dedicated SSK contribution workspace.</item>
-                  <item>that scenarios and steps follow the same data
-                     model. The difference is that a scenario points to a set of steps whereas a
-                     step points to a set of external resources.</item>
+               necessary steps and requirements in order to build a relavant and readable scenario.
+               Contributors should be aware<list>
+                  <item>that they can submit their new scenarios directly in TEI, or by using the
+                     dedicated SSK contribution workspace.</item>
+                  <item>that scenarios and steps follow the same data model. The difference is that
+                     a scenario points to a set of steps whereas a step points to a set of external
+                     resources.</item>
+                  <item>In TEI, it is possible to translate the prose, by duplicating the elements head,
+                     desc or term, and adding xml:lang attribute</item>
                </list>
             </desc>
             <desc xml:lang="en" type="terms">

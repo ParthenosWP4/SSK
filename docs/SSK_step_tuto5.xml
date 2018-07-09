@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <!-- You have to type the TEI file, with researchStep or researchScenario -->
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="st_0000000001">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="SSK_step_tuto5">
     <teiHeader>
         <fileDesc>
             <titleStmt>
@@ -25,23 +25,25 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
-            <change/>
+            <change>
+                <persName/><affiliation/><date/><desc/>
+            </change>
         </revisionDesc>
     </teiHeader>
     <text>
         <body>
             <listEvent>
                 <event type="researchStep">
-                    <head type="stepTitle" xml:lang="en">Identify relevant resources</head>
-                    <desc type="definition" xml:lang="en"> This step is a prerequiste before
+                    <head type="stepTitle" xml:lang="en">Identify relevant resources processing</head>
+                    <desc type="definition" xml:lang="en">This step is a prerequiste before
                         actually add the resources to the steps. When we are talking about
-                        resources, we mean a standardized tool, service or document helpful for the
+                        resources, we mean a standardized tool, -service or document helpful for the
                         task completion. They take the form of a digital object : a webpage, a
                         journal article referenced in an online catalog or an archive, a code
                         repository, a blog, etc.</desc>
                     <desc xml:lang="en" type="terms">
-                        <term type="activity" source="http://tadirah.dariah.eu/" key="contextualizing"
-                            >contextualizing</term>
+                        <term type="activity" source="http://tadirah.dariah.eu/"
+                            key="contextualizing">contextualizing</term>
                     </desc>
                     <linkGrp type="generalResources">
                         <ref type="documentation" source="zotero" target="8TP2F3SS"/>
