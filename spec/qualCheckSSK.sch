@@ -13,8 +13,9 @@
         <sch:rule context="tei:TEI">
             <sch:let name="fileName" value="tokenize(document-uri(/), '/')[last()]"/>
             <sch:assert test="@xml:id = substring-before($fileName, '.xml')"> The xml:id of the TEI
-                element should be equal to the name of the file, without the file extension
-            </sch:assert>
+                element should be equal to the name of the file, without the file extension </sch:assert>
+            <sch:assert test="@type = 'researchScenario' or @type = 'researchStep'">TEI/@type should
+                be either "researchScenario" or "researchStep".</sch:assert>
         </sch:rule>
     </sch:pattern>
     <sch:pattern>
@@ -113,30 +114,92 @@
         <sch:title>Image</sch:title>
         <sch:p>png or jpg</sch:p>
         <sch:rule context="tei:figure/tei:graphic/@url">
-            <sch:assert test="matches(., '(JPG|JPEG|PNG|jpg|png|jpeg)$')">The image format should be JPG or PNG. Accepted extensions are: jpg, JPG, jpeg, JPEG, png, PNG</sch:assert>
+            <sch:assert test="matches(., '\.(JPG|JPEG|PNG|jpg|png|jpeg)$')">The image format should
+                be JPG or PNG. Accepted extensions are: jpg, JPG, jpeg, JPEG, png, PNG</sch:assert>
         </sch:rule>
     </sch:pattern>
 
     <sch:pattern>
         <sch:title>desc term</sch:title>
-        <sch:p>For each type, Max 4</sch:p>
-        <sch:p>source attribute</sch:p>
-        <sch:p>key</sch:p>
-        <sch:p>step file: Tadirah activity is mandatory</sch:p>
-    </sch:pattern>
 
+        <sch:rule context="tei:desc[@type = 'terms']">
+            <sch:p>For each type, Max 4</sch:p>
+            <sch:assert test="count(tei:term[@type = 'standard']) lt 5">More than 4 terms of the
+                same vocabulary type may be too much: STANDARD</sch:assert>
+            <sch:assert test="count(tei:term[@type = 'discipline']) lt 5">More than 4 terms of the
+                same vocabulary type may be too much: DISCIPLINE</sch:assert>
+            <sch:assert test="count(tei:term[@type = 'technique']) lt 5">More than 4 terms of the
+                same vocabulary type may be too much: TECHNIQUE</sch:assert>
+            <sch:assert test="count(tei:term[@type = 'object']) lt 5">More than 4 terms of the same
+                vocabulary type may be too much: OBJECT</sch:assert>
+
+        </sch:rule>
+    </sch:pattern>
+    <sch:pattern>
+        <sch:p>source attribute</sch:p>
+        <sch:rule context="tei:term/@source">
+            <sch:assert test=".">The attribute source is important to specifiy which vocabulary was
+                used. The main ones are "tadirah", "nedimah", aurehal, "standard".</sch:assert>
+        </sch:rule>
+        <sch:p>step file: Tadirah activity is mandatory</sch:p>
+        <sch:rule context="tei:term[ancestor::tei:TEI[@type = 'researchStep']]">
+            <sch:assert test="@type = 'activity'">A step should be described by an activity term,
+                taken from the TADirAH taxonomy.</sch:assert>
+        </sch:rule>
+        <sch:rule context="tei:term[ancestor::tei:TEI[@type = 'researchScenario']]">
+            <sch:report test="@type = 'activity'">The activity terms are more suitable for
+                describing steps rather than scenarios. It is recommended to choose one activity
+                term per scenario step.</sch:report>
+        </sch:rule>
+        <sch:rule context="tei:term/@key">
+            <sch:report test="matches(., '\w*/\w*')">No hierarchy in the term @key
+                attribute.</sch:report>
+        </sch:rule>
+    </sch:pattern>
     <sch:pattern>
         <sch:title>Resources</sch:title>
         <sch:p>General or project : if project, need a source and a corresp attributes</sch:p>
+        <sch:rule context="tei:linkGrp[@type = 'projectResources']">
+            <sch:assert test="normalize-space(@corresp)">Need a value for @corresp</sch:assert>
+            <sch:assert test="matches(@corresp, '^https?:')">Value of @corresp should be a valid
+                URI</sch:assert>
+            <sch:assert test="normalize-space(@source)">The attribute @source should contain the
+                name of the project whose references are listed inside the
+                &lt;linkGrp&gt;</sch:assert>
+        </sch:rule>
         <sch:p>Zotero = prefix + ^[A-Z0-9]{8}$</sch:p>
+        <sch:rule context="tei:linkGrp/tei:ref[@source = 'zotero']">
+            <sch:assert
+                test="matches(@target, '(wp2|wp3|wp4):[A-Z0-9]{8}') or matches(@target, '[A-Z0-9]{8}')"
+                >The reference of a Zotero frecord is made with the Zotero item key (8 capitals or
+                digits)</sch:assert>
+        </sch:rule>
     </sch:pattern>
     <sch:pattern>
         <sch:title>@type</sch:title>
-        <sch:p>TEI</sch:p>
         <sch:p>body/div</sch:p>
+        <sch:rule context="tei:body[ancestor::tei:TEI[@type = 'researchScenario']]/tei:div/@type">
+            <sch:assert test=". = 'researchScenario'">@type attribute incoherence</sch:assert>
+        </sch:rule>
+        <sch:rule context="tei:body[ancestor::tei:TEI[@type = 'researchStep']]/tei:div/@type">
+            <sch:assert test=". = 'researchStep'">@type attribute incoherence</sch:assert>
+        </sch:rule>
         <sch:p>head</sch:p>
+        <sch:rule context="tei:head[ancestor::tei:TEI[@type = 'researchScenario']]/@type">
+            <sch:assert test=". = 'scenarioTitle'">@type attribute incoherence</sch:assert>
+        </sch:rule>
+        <sch:rule context="tei:head[ancestor::tei:TEI[@type = 'researchStep']]/@type">
+            <sch:assert test=". = 'stepTitle'">@type attribute incoherence</sch:assert>
+        </sch:rule>
         <sch:p>desc x 2</sch:p>
+        <sch:rule context="tei:event">
+            <sch:assert test="tei:desc[@type = 'definition'] and tei:desc[@type = 'terms']">we need a
+                desc element for the description of the step or the scenario and a desc element for
+                the associated terms.</sch:assert>
+        </sch:rule>
         <sch:p>event</sch:p>
+        <sch:rule context="tei:event/@type">
+            <sch:assert test=". = 'researchStep'">An event element should be type with 'researchStep'</sch:assert>
+        </sch:rule>
     </sch:pattern>
-
 </sch:schema>
