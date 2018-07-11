@@ -1063,17 +1063,17 @@
             <div>
                 <schemaSpec ident="TEI_SSK" xml:lang="en" start="TEI">
                     <moduleRef key="core"
-                        except="add cb cit citedRange corr del distinct divGen gap gb l lb lg mentioned orig pb q quote reg said sic soCalled sp speaker stage unclear"/>
+                        except=""/>
                     <moduleRef key="header"
-                        except="calendar calendarDesc catDesc catRef category classCode classDecl correction correspAction correspContext correspDesc handNote hyphenation interpretation punctuation quotation refState refsDecl rendition samplingDecl scriptNote segmentation stdVals styleDefDecl tagUsage tagsDecl taxonomy xenoData"/>
+                        except=""/>
                     <moduleRef key="textstructure"
-                        except="argument byline closer div1 div2 div3 div4 div5 div6 div7 docAuthor docDate docEdition docImprint docTitle epigraph floatingText group opener postscript salute signed titlePage titlePart trailer"/>
+                        except=""/>
                     <moduleRef key="namesdates"
-                        except="age birth bloc climate death faith geogFeat langKnowledge langKnown listNym nameLink nym persona population region sex socecStatus state terrain trait"/>
+                        except=""/>
                     <moduleRef key="linking"
-                        except="alt altGrp anchor join joinGrp link seg timeline when"/>
+                        except=""/>
                     <moduleRef key="tagdocs"
-                        except="altIdent alternate anyElement att attDef attList attRef classRef classSpec classes code constraint constraintSpec content dataFacet dataRef dataSpec datatype defaultVal eg egXML elementRef elementSpec empty equiv exemplum gi ident listRef macroRef macroSpec memberOf model modelGrp modelSequence moduleRef moduleSpec outputRendition paramList paramSpec remarks schemaSpec sequence specDesc specGrp specGrpRef specList tag textNode val valDesc valItem valList"/>
+                        except=""/>
                     <moduleRef key="figures"/>
 
                     <!-- Elements changed-->

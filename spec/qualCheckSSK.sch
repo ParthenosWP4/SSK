@@ -176,6 +176,12 @@
         </sch:rule>
     </sch:pattern>
     <sch:pattern>
+        <sch:rule context="tei:linkGrp/tei:ref">
+            <sch:assert test="tei:term">It is possible to add terms to resources, for instance a
+                standard or a technique.</sch:assert>
+        </sch:rule>
+    </sch:pattern>
+    <sch:pattern>
         <sch:title>@type</sch:title>
         <sch:p>body/div</sch:p>
         <sch:rule context="tei:body[ancestor::tei:TEI[@type = 'researchScenario']]/tei:div/@type">
@@ -193,13 +199,14 @@
         </sch:rule>
         <sch:p>desc x 2</sch:p>
         <sch:rule context="tei:event">
-            <sch:assert test="tei:desc[@type = 'definition'] and tei:desc[@type = 'terms']">we need a
-                desc element for the description of the step or the scenario and a desc element for
-                the associated terms.</sch:assert>
+            <sch:assert test="tei:desc[@type = 'definition'] and tei:desc[@type = 'terms']">we need
+                a desc element for the description of the step or the scenario and a desc element
+                for the associated terms.</sch:assert>
         </sch:rule>
         <sch:p>event</sch:p>
         <sch:rule context="tei:event/@type">
-            <sch:assert test=". = 'researchStep'">An event element should be type with 'researchStep'</sch:assert>
+            <sch:assert test=". = 'researchStep'">An event element should be type with
+                'researchStep'</sch:assert>
         </sch:rule>
     </sch:pattern>
 </sch:schema>
