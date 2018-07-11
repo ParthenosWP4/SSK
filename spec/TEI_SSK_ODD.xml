@@ -1062,18 +1062,13 @@
         <back>
             <div>
                 <schemaSpec ident="TEI_SSK" xml:lang="en" start="TEI">
-                    <moduleRef key="core"
-                        except=""/>
-                    <moduleRef key="header"
-                        except=""/>
-                    <moduleRef key="textstructure"
-                        except=""/>
-                    <moduleRef key="namesdates"
-                        except=""/>
-                    <moduleRef key="linking"
-                        except=""/>
-                    <moduleRef key="tagdocs"
-                        except=""/>
+                    <moduleRef key="core"/>
+                    <moduleRef key="tei"/>
+                    <moduleRef key="header"/>
+                    <moduleRef key="textstructure"/>
+                    <moduleRef key="namesdates"/>
+                    <moduleRef key="linking"/>
+                    <moduleRef key="tagdocs"/>
                     <moduleRef key="figures"/>
 
                     <!-- Elements changed-->
@@ -1097,7 +1092,7 @@
                     </elementSpec>
 
                     <!-- What is this ? -->
-<!--                    <elementSpec ident="alternate" mode="change">
+                    <!--                    <elementSpec ident="alternate" mode="change">
                         <classes mode="change">
                             <memberOf key="model.eventLike"/>
                         </classes>
