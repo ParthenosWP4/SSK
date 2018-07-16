@@ -8,7 +8,8 @@ This script is made for Python3
 from bs4 import BeautifulSoup
 import os
 import sys
-
+import re
+import vkbeautify as vkb
 
 def file_is_empty(path):
     return os.stat(path).st_size==0
@@ -21,7 +22,6 @@ def listXMLfiles(repertoire):
             if file_is_empty(pathFile) == False:
                 fichierstexte.append(pathFile)
     return fichierstexte
-
 
 def load(file):
     #load XML files with Beautiful Soup
@@ -61,9 +61,19 @@ def normalizeSPace(dirList):
     for folder in dirList:
         files = (listXMLfiles(folder))
         for file in files:
-            with open(file) as file:
-                soup = BeautifulSoup(file, "xml")
-                print(str(soup).replace("> ", ">").replace(" </", "</"))
+            pretty = vkb.xml(file)
+            normalized = re.sub(r'> ', r'>', pretty)
+            normalized = re.sub(r' </', r'</', normalized)
+            with open(file, 'w') as output:
+                output.write(normalized)
+            # with open(file, 'r+') as file:
+            #     old=file.read()
+            #     normalized=re.sub(r'> ', r'>', old)
+            #     normalized=re.sub(r' </', r'</', normalized)
+            #     file.seek(0)
+            #     file.truncate()
+            #     file.write(normalized)
+            #     file.close()
     return
 
 
@@ -89,7 +99,7 @@ if __name__ == '__main__':
 
     # update dirList when needed, or uncomment the line below (and comment the following one) to pass the paths are arguments
     #dirList = sys.argv[2:]
-    dirList = ["../scenarios", "../steps"]
+    dirList = ["../tst"]
     if funcChoice == "checkId":
         adds,changes=checkXmlId(dirList)
         print("Nombre d'xml:id ajoutés : "+str(adds))
