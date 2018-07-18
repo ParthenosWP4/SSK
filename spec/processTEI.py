@@ -30,6 +30,7 @@ def load(file):
     return soup
 
 
+### DON'T USE, HANDLED WITH XSLT => processTEI.xsl
 def checkXmlId(dirList):
     # Check in all XML files of one or more directory the xml:id of the TEI root element
     # If there is not : add one (from the file name without the ".xml" extension
@@ -57,6 +58,7 @@ def checkXmlId(dirList):
                 countadds+=1
     return countadds, countchanges
 
+### DON'T USE, HANDLED WITH XSLT => processTEI.xsl
 def normalizeSPace(dirList):
     for folder in dirList:
         files = (listXMLfiles(folder))
@@ -99,12 +101,6 @@ if __name__ == '__main__':
 
     # update dirList when needed, or uncomment the line below (and comment the following one) to pass the paths are arguments
     #dirList = sys.argv[2:]
-    dirList = ["../tst"]
-    if funcChoice == "checkId":
-        adds,changes=checkXmlId(dirList)
-        print("Nombre d'xml:id ajoutés : "+str(adds))
-        print("Nombre d'xml:id modifiés : "+str(changes))
-    elif funcChoice == "normalizeSpace":
-        normalizeSPace(dirList)
-    elif funcChoice == "getContributors":
+    dirList = ["../scenarios", "../steps"]
+    if funcChoice == "getContributors":
         getContributors(dirList)

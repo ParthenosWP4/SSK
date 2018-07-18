@@ -1,75 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Step "Archive"</title>
-                <author>
-                    <persName>Sarah Tournon-Valiente</persName>
-                    <affiliation>3D-SHS Huma-Num's consortium</affiliation>
-                </author>
-                <author>
-                    <persName>Mehdi Chayani</persName>
-                    <affiliation>3D-SHS Huma-Num's consortium</affiliation>
-                </author>
-                <author>
-                    <persName>Valentin Grimaud</persName>
-                    <affiliation>3D-SHS Huma-Num's consortium</affiliation>
-                </author>
-                <author>
-                    <persName>Xavier Granier</persName>
-                    <affiliation>3D-SHS Huma-Num's consortium</affiliation>
-                </author>
-                <author>
-                    <persName>Hélène Gautier</persName>
-                    <affiliation>Huma-Num/CNRS</affiliation>
-                </author>
-                <author>
-                    <persName>Adeline Joffres</persName>
-                    <affiliation>Huma-Num/CNRS</affiliation>
-                </author>
-                <author>
-                    <persName>Paulin Ribbe</persName>
-                    <affiliation>Huma-Num/CNRS</affiliation>
-                </author>
-            </titleStmt>
-            <publicationStmt>
-                <authority>PARTHENOS</authority>
-                <availability>
-                    <licence target="http://creativecommons.org/licenses/by/4.0/">
-                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     xml:id="step_A_190618"
+     type="researchStep">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Step "Archive"</title>
+            <author>
+               <persName>Sarah Tournon-Valiente</persName>
+               <affiliation>3D-SHS Huma-Num's consortium</affiliation>
+            </author>
+            <author>
+               <persName>Mehdi Chayani</persName>
+               <affiliation>3D-SHS Huma-Num's consortium</affiliation>
+            </author>
+            <author>
+               <persName>Valentin Grimaud</persName>
+               <affiliation>3D-SHS Huma-Num's consortium</affiliation>
+            </author>
+            <author>
+               <persName>Xavier Granier</persName>
+               <affiliation>3D-SHS Huma-Num's consortium</affiliation>
+            </author>
+            <author>
+               <persName>Hélène Gautier</persName>
+               <affiliation>Huma-Num/CNRS</affiliation>
+            </author>
+            <author>
+               <persName>Adeline Joffres</persName>
+               <affiliation>Huma-Num/CNRS</affiliation>
+            </author>
+            <author>
+               <persName>Paulin Ribbe</persName>
+               <affiliation>Huma-Num/CNRS</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>PARTHENOS</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
                             to this document.</p>
-                    </licence>
-                </availability>
-            </publicationStmt>
-            <sourceDesc>
-                <p>Created from scratch</p>
-            </sourceDesc>
-        </fileDesc>
-        <revisionDesc>
-            <change/>
-        </revisionDesc>
-    </teiHeader>
-    <text>
-        <body>
-            <listEvent>
-                <event type="researchStep">
-                    <head xml:lang="en">Archive</head>
-
-                    <desc xml:lang="en" type="definition">Submit the packet to a long-term storage
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head xml:lang="en">Archive</head>
+               <desc xml:lang="en" type="definition">Submit the packet to a long-term storage
                         service, preferably an official academic public permanent structure (like
                         CINES in France for instance).</desc>
-
-                    <desc xml:lang="en" type="term">
-                        <term type="activity" source="http://tadirah.dariah.eu/"
-                            key="http://tadirah.dariah.eu/vocab/index.php?tema=38#x26;/archiving"/>
-                    </desc>
-                    <linkGrp type="projectResources" source="CINES" corresp="https://www.cines.fr/">
-                        <ref type="webpage" target="https://www.cines.fr/"/>
-                    </linkGrp>
-                </event>
-            </listEvent>
-        </body>
-    </text>
+               <desc xml:lang="en" type="term">
+                  <term type="activity"
+                        source="http://tadirah.dariah.eu/"
+                        key="http://tadirah.dariah.eu/vocab/index.php?tema=38#x26;/archiving"/>
+               </desc>
+               <linkGrp type="projectResources"
+                        source="CINES"
+                        corresp="https://www.cines.fr/">
+                  <ref type="webpage" target="https://www.cines.fr/"/>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

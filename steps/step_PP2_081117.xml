@@ -1,87 +1,72 @@
-<?xml version="1.0" encoding="utf-8"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-	schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-model href="../../TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI type="researchStep" xml:id="step_PP2_081117" xmlns="http://www.tei-c.org/ns/1.0">
- <teiHeader>
-  <fileDesc>
-   <titleStmt>
-    <title>
-     Step "Post processing 2: Raman Peak identification"
-    </title>
-    <author>
-     <persName>
-      Panayotis Siozos
-     </persName>
-     <affiliation>
-      IESL-FORTH
-     </affiliation>
-    </author>
-    <author>
-     <persName>
-      Demetrios Anglos
-     </persName>
-     <affiliation>
-      IESL-FORTH
-     </affiliation>
-    </author>
-   </titleStmt>
-   <publicationStmt>
-    <authority>
-     Parthenos
-    </authority>
-    <availability>
-     <licence target="http://creativecommons.org/licenses/by/4.0/">
-      <p>
-       The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
-                     this document.
-      </p>
-     </licence>
-    </availability>
-   </publicationStmt>
-   <sourceDesc>
-    <p>
-     Created from an Excel sheet by Marie Puren
-    </p>
-   </sourceDesc>
-  </fileDesc>
-  <revisionDesc>
-   <change/>
-  </revisionDesc>
- </teiHeader>
- <text>
-  <body>
-   <listEvent>
-    <event type="researchStep">
-     <head xml:lang="en">
-      Post processing 2: Raman Peak identification
-     </head>
-     <desc type="definition" xml:lang="en">
-      In this step the wavelength and the relative
-                  intensity of the observed peaks in the Raman spectrum are identified and
-                  documented. The relative intensity can be expressed as weak, moderate or
-                  strong.
-     </desc>
-     <desc type="definition" xml:lang="fr"/>
-     <desc type="term" xml:lang="en">
-      <term key="http://tadirah.dariah.eu/vocab/index.php?tema=26&amp;/content-analysis" source="http://tadirah.dariah.eu/" type="activity"/>
-     </desc>
-     <linkGrp type="generalResources">
-      <ref source="zotero" subtype="tool" target="4W7QUMZF" type="software">
-       <!--<term type="tool" key="MOVIDA"/>-->
-      </ref>
-      <ref source="zotero" subtype="tool" target="2NZPNEAN" type="software">
-       <!--<term type="tool" key="GNU Octave"/>-->
-      </ref>
-      <ref source="zotero" subtype="website" target="US2HB3DN" type="service">
-       <!--<term type="service" key="DIAGNOSIS"/>-->
-      </ref>
-      <ref source="zotero" subtype="tool" target="S5TDK87K" type="software">
-       <!--<term type="tool" key="Origin"/>-->
-      </ref>
-     </linkGrp>
-    </event>
-   </listEvent>
-  </body>
- </text>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_PP2_081117">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Step "Post processing 2: Raman Peak identification"</title>
+            <author>
+               <persName>Panayotis Siozos</persName>
+               <affiliation>IESL-FORTH</affiliation>
+            </author>
+            <author>
+               <persName>Demetrios Anglos</persName>
+               <affiliation>IESL-FORTH</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+       document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from an Excel sheet by Marie Puren</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head xml:lang="en">Post processing 2: Raman Peak identification</head>
+               <desc type="definition" xml:lang="en">In this step the wavelength and the relative intensity
+      of the observed peaks in the Raman spectrum are identified and documented. The relative
+      intensity can be expressed as weak, moderate or strong.</desc>
+               <desc type="definition" xml:lang="fr"/>
+               <desc type="term" xml:lang="en">
+                  <term key="http://tadirah.dariah.eu/vocab/index.php?tema=26&amp;/content-analysis"
+                        source="http://tadirah.dariah.eu/"
+                        type="activity"/>
+               </desc>
+               <linkGrp type="generalResources">
+                  <ref source="zotero"
+                       subtype="tool"
+                       target="4W7QUMZF"
+                       type="software"><!--<term type="tool" key="MOVIDA"/>--></ref>
+                  <ref source="zotero"
+                       subtype="tool"
+                       target="2NZPNEAN"
+                       type="software"><!--<term type="tool" key="GNU Octave"/>--></ref>
+                  <ref source="zotero"
+                       subtype="website"
+                       target="US2HB3DN"
+                       type="service"><!--<term type="service" key="DIAGNOSIS"/>--></ref>
+                  <ref source="zotero"
+                       subtype="tool"
+                       target="S5TDK87K"
+                       type="software"><!--<term type="tool" key="Origin"/>--></ref>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

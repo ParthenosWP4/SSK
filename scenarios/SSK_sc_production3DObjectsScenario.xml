@@ -1,112 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario">
-  <teiHeader>
-    <fileDesc>
-      <titleStmt>
-        <title>Production and processing of 3D objects</title>
-        <author>
-          <persName>Hélène Gautier</persName>
-          <affiliation>Huma-Num/CNRS</affiliation>
-        </author>
-        <author>
-          <persName>Adeline Joffres</persName>
-          <affiliation>Huma-Num/CNRS</affiliation>
-        </author>
-        <author>
-          <persName>Paulin Ribbe</persName>
-          <affiliation>Huma-Num/CNRS</affiliation>
-        </author>
-        <author>
-          <persName>Mehdi Chayani</persName>
-          <affiliation>3D-SHS Huma-Num's consortium</affiliation>
-        </author>
-        <author>
-          <persName>Xavier Granier</persName>
-          <affiliation>3D-SHS Huma-Num's consortium</affiliation>
-        </author>
-        <author>
-          <persName>Sarah Tournon-Valiente</persName>
-          <affiliation>3D-SHS Huma-Num's consortium</affiliation>
-        </author>
-      </titleStmt>
-      <publicationStmt>
-        <authority>PARTHENOS</authority>
-        <availability>
-          <licence target="http://creativecommons.org/licenses/by/4.0/">
-            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     xml:id="SSK_sc_production3DObjectsScenario"
+     type="researchScenario">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Production and processing of 3D objects</title>
+            <author>
+               <persName>Hélène Gautier</persName>
+               <affiliation>Huma-Num/CNRS</affiliation>
+            </author>
+            <author>
+               <persName>Adeline Joffres</persName>
+               <affiliation>Huma-Num/CNRS</affiliation>
+            </author>
+            <author>
+               <persName>Paulin Ribbe</persName>
+               <affiliation>Huma-Num/CNRS</affiliation>
+            </author>
+            <author>
+               <persName>Mehdi Chayani</persName>
+               <affiliation>3D-SHS Huma-Num's consortium</affiliation>
+            </author>
+            <author>
+               <persName>Xavier Granier</persName>
+               <affiliation>3D-SHS Huma-Num's consortium</affiliation>
+            </author>
+            <author>
+               <persName>Sarah Tournon-Valiente</persName>
+               <affiliation>3D-SHS Huma-Num's consortium</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>PARTHENOS</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
               document.</p>
-          </licence>
-        </availability>
-      </publicationStmt>
-      <sourceDesc>
-        <p>Created from scratch</p>
-      </sourceDesc>
-    </fileDesc>
-    <encodingDesc>
-      <listPrefixDef>
-        <prefixDef ident="wp2" matchPattern="(.*?)" replacementPattern="groups/368112">
-          <p>The prefix wp2 needs to be used before resources taken from the <ref type="url"
-              target="https://www.zotero.org/groups/368112/parthenos_wp2">Parthenos WP2 Zotero
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <listPrefixDef>
+            <prefixDef ident="wp2" matchPattern="(.*?)" replacementPattern="groups/368112">
+               <p>The prefix wp2 needs to be used before resources taken from the <ref type="url" target="https://www.zotero.org/groups/368112/parthenos_wp2">Parthenos WP2 Zotero
               Library</ref>.</p>
-          <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a colon
+               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a colon
             ":". Ex: target="wp2:JHSD76DS"</p>
-        </prefixDef>
-        <prefixDef ident="wp3" matchPattern="(.*?)" replacementPattern="groups/520841">
-          <p>The prefix wp3 needs to be used before resources taken from the <ref type="url"
-              target="https://www.zotero.org/groups/520841/parthenos_wp3">Parthenos WP3 Zotero
+            </prefixDef>
+            <prefixDef ident="wp3" matchPattern="(.*?)" replacementPattern="groups/520841">
+               <p>The prefix wp3 needs to be used before resources taken from the <ref type="url" target="https://www.zotero.org/groups/520841/parthenos_wp3">Parthenos WP3 Zotero
               Library</ref>.</p>
-          <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a colon
+               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a colon
             ":". Ex: target="wp2:JHSD76DS"</p>
-        </prefixDef>
-        <prefixDef ident="wp4" matchPattern="(.*?)" replacementPattern="groups/427927">
-          <p>The prefix wp4 needs to be used before resources taken from the <ref type="url"
-              target="https://www.zotero.org/groups/427927/parthenos_wp4">Parthenos WP4 Zotero
+            </prefixDef>
+            <prefixDef ident="wp4" matchPattern="(.*?)" replacementPattern="groups/427927">
+               <p>The prefix wp4 needs to be used before resources taken from the <ref type="url" target="https://www.zotero.org/groups/427927/parthenos_wp4">Parthenos WP4 Zotero
               Library</ref>.</p>
-          <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a colon
+               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a colon
             ":". Ex: target="wp2:JHSD76DS"</p>
-        </prefixDef>
-      </listPrefixDef>
-    </encodingDesc>
-    <revisionDesc>
-      <change/>
-    </revisionDesc>
-  </teiHeader>
-  <text>
-    <body>
-      <div type="scenario" xml:id="sc_Production_3D_Objects">
-        <head xml:lang="en" type="scenarioTitle">Production and processing of 3D objects</head>
-        <desc type="definition" xml:lang="en">The project aim is to digitize objects at different
+            </prefixDef>
+         </listPrefixDef>
+      </encodingDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div type="scenario" xml:id="sc_Production_3D_Objects">
+            <head xml:lang="en" type="scenarioTitle">Production and processing of 3D objects</head>
+            <desc type="definition" xml:lang="en">The project aim is to digitize objects at different
           scale from an artefact to cultural heritage site to help scientific community to
           visualize, analyze, simulate and synthesize the result of their research. It allows for
           better comprehension of the case studies. The 3D object is also a powerfull mean to bring
-          out new hypotheses of research. In some cases, producing an &quot;accurate&quot; virtual
+          out new hypotheses of research. In some cases, producing an "accurate" virtual
           version of cultural heritage site is a mean of preserving it. Those best practices and
-          methods are detailed in the <ref type="report" target="https://hal.archives-ouvertes.fr/hal-01683842">3D-SHS consortium white paper</ref> published in 2017, and in the
-          <ref target="https://hal.inria.fr/PARTHENOS/hal-01526713" type="report">Parthenos White Paper</ref> &quot;Digital 3D Objects in Art and Humanities: challenges of creation,
-          interoperability and preservation&quot; </desc>
-        <desc xml:lang="en" type="terms">
-          <term source="aurehal" type="discipline">Archaeology and Prehistory</term>
-          <term source="aurehal" type="discipline">Cultural heritage and museology</term>
-          <term type="techniques" key="Georeferencing" source="tadirah"/>
-          <term type="techniques" key="Photography" source="tadirah"/>
-          <term type="techniques" key="Preservation Metadata" source="tadirah"/>
-          <term type="techniques" key="Scanning" source="tadirah"/>
-          <term type="techniques" key="Technology Preservation" source="tadirah"/>
-          <term type="object" key="Images (3D)" source="nemo"/>
-        </desc>
-        <figure type="image">
-          <head/>
-          <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/scenario3D.jpg"/>
-          <figDesc/>
-        </figure>
-        <listEvent>
-          <event xml:id="s1" type="researchStep" ref="step_A3DOBS"/>
-          <event xml:id="s2" type="researchStep" ref="step_A3DOBP"/>
-          <event xml:id="s3" type="researchStep" ref="step_3DMtTF"/>
-          <event xml:id="s4" type="researchStep" ref="step_3DV"/>
-        </listEvent>
-      </div>
-    </body>
-  </text>
+          methods are detailed in the <ref type="report" target="https://hal.archives-ouvertes.fr/hal-01683842">3D-SHS consortium white
+            paper</ref>published in 2017, and in the <ref target="https://hal.inria.fr/PARTHENOS/hal-01526713" type="report">Parthenos White
+            Paper</ref> "Digital 3D Objects in Art and Humanities: challenges of creation,
+          interoperability and preservation"</desc>
+            <desc xml:lang="en" type="terms">
+               <term source="aurehal" type="discipline">Archaeology and Prehistory</term>
+               <term source="aurehal" type="discipline">Cultural heritage and museology</term>
+               <term type="techniques" key="Georeferencing" source="tadirah"/>
+               <term type="techniques" key="Photography" source="tadirah"/>
+               <term type="techniques" key="Preservation Metadata" source="tadirah"/>
+               <term type="techniques" key="Scanning" source="tadirah"/>
+               <term type="techniques" key="Technology Preservation" source="tadirah"/>
+               <term type="object" key="Images (3D)" source="nemo"/>
+            </desc>
+            <figure type="image">
+               <head/>
+               <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/scenario3D.jpg"/>
+               <figDesc/>
+            </figure>
+            <listEvent>
+               <event xml:id="s1" type="researchStep" ref="step_A3DOBS"/>
+               <event xml:id="s2" type="researchStep" ref="step_A3DOBP"/>
+               <event xml:id="s3" type="researchStep" ref="step_3DMtTF"/>
+               <event xml:id="s4" type="researchStep" ref="step_3DV"/>
+            </listEvent>
+         </div>
+      </body>
+   </text>
 </TEI>

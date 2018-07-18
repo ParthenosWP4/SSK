@@ -1,103 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_annotation">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Step Annotation</title>
-                <author>
-                    <persName>Klaus Illmayer</persName>
-                    <affiliation>OEAW-ACDH</affiliation>
-                </author>
-                <author>
-                    <persName>Susanne Haaf</persName>
-                    <affiliation>BBAW, CLARIN-D</affiliation>
-                </author>
-                <author>
-                    <persName>Piotr Bański</persName>
-                    <affiliation>IDS Mannheim, CLARIN</affiliation>
-                </author>
-            </titleStmt>
-            <publicationStmt>
-                <authority>PARTHENOS</authority>
-                <availability>
-                    <licence target="http://creativecommons.org/licenses/by/4.0/">
-                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_annotation">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Step Annotation</title>
+            <author>
+               <persName>Klaus Illmayer</persName>
+               <affiliation>OEAW-ACDH</affiliation>
+            </author>
+            <author>
+               <persName>Susanne Haaf</persName>
+               <affiliation>BBAW, CLARIN-D</affiliation>
+            </author>
+            <author>
+               <persName>Piotr Bański</persName>
+               <affiliation>IDS Mannheim, CLARIN</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>PARTHENOS</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
                             to this document.</p>
-                    </licence>
-                </availability>
-            </publicationStmt>
-            <sourceDesc>
-                <p>Created from scratch</p>
-            </sourceDesc>
-        </fileDesc>
-        <revisionDesc>
-            <!-- Use only for major changes -->
-            <change/>
-        </revisionDesc>
-    </teiHeader>
-    <text>
-        <body>
-            <listEvent>
-                <event type="researchStep">
-                    <head type="stepTitle" xml:lang="en">Linguistic Annotation</head>
-                    <desc type="definition" xml:lang="en">The corpus texts containing TEI text structuring can be further enhanced by adding linguistic markup, e.g. information on tokens, lemmas, Parts-of-Speech or results of higher level linguistic analysis). Here, a wide range of NLP tools are available to perform the task of linguistic analysis and tagging automatically. For example, the CLARIN infrastructure offers the WebLicht service which allows for data analysis with various NLP tools and for the building of analysis chains. In- and output format here is the Text Corpus Format (TCF; for conversion between TEI and TCF use the TEI2TCF-webservice). Another toolkit is e.g. Apache OpenNLP. As tools you may use e.g. the Stanford Tokenizer or TreeTagger for tokenization, POS tagging and more, or e.g. enrich corpus with Named Entity Recognition annotation (e.g. by usage of Apache Stanbol or Babelfy). Manual annotation may e.g. be performed in WebAnno.</desc>
-                    <desc xml:lang="en" type="terms">
-                        <term type="standard" source="standard_list" key="XML"/>
-                        <term type="standard" source="standard_list" key="TEI"/>
-                        <term type="standard" source="standard_list" key="TCF"/>
-                        <term type="standard" source="standard_list" key="LAF"/>
-                        <term type="activity" source="http://tadirah.dariah.eu/" key="annotating"/>
-                    </desc>
-                    <linkGrp type="generalResources">
-                        <ref type="software" source="zotero" target="PDEZULGR">
-                            <!-- WebLicht main page -->
-                            <term type="software" key="WebLicht"/>
-                        </ref>
-                        <ref type="documentation" source="zotero" target="HNU9RXFC">
-                            <!-- WebLicht documentation -->
-                            <term type="software" key="WebLicht"/>
-                        </ref>
-                        <ref type="standard" source="zotero" target="IHWJQT9N">
-                            <!-- WebLicht TCF format -->
-                            <term type="software" key="WebLicht"/>
-                        </ref>
-                        <ref type="documentation" source="zotero" target="HNU9RXFC">
-                            <!-- WebLicht documentation -->
-                            <term type="software" key="WebLicht"/>
-                        </ref>
-                        <ref type="software" source="zotero" target="7HN4C98S">
-                            <!-- WebAnno -->
-                            <term type="software" key="WebAnno"/>
-                        </ref>
-                        <ref type="software" source="zotero" target="IA92LHEW">
-                            <!-- OpenNLP -->
-                            <term type="software" key="OpenNLP"/>
-                        </ref>
-                        <ref type="software" source="zotero" target="AB2FM77V">
-                            <!-- Stanford NLP Software -->
-                            <term type="software" key="StanfordNLP"/>
-                            <term type="activity" key="tokenize"/>
-                        </ref>
-                        <ref type="software" source="zotero" target="MN5XVQ82">
-                            <!-- TreeTagger -->
-                            <term type="software" key="TreeTagger"/>
-                        </ref>
-                        <ref type="software" source="zotero" target="W95ELYYT">
-                            <!-- Apache Stanbol -->
-                            <term type="software" key="Apache Stanbol"/>
-                        </ref>
-                        <ref type="software" source="zotero" target="V44YQVT3">
-                            <!-- Babelfy -->
-                            <term type="software" key="Babelfy"/>
-                        </ref>
-                        <ref type="software" source="zotero" target="A5NVUWZB">
-                            <!-- TEI-TCF encoder/decoder -->
-                            <term type="software" key="TEI-TCF encoder+decoder"/>
-                        </ref>
-                  </linkGrp>
-                </event>
-            </listEvent>
-        </body>
-    </text>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc><!-- Use only for major changes -->
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head type="stepTitle" xml:lang="en">Linguistic Annotation</head>
+               <desc type="definition" xml:lang="en">The corpus texts containing TEI text
+                        structuring can be further enhanced by adding linguistic markup, e.g.
+                        information on tokens, lemmas, Parts-of-Speech or results of higher level
+                        linguistic analysis). Here, a wide range of NLP tools are available to
+                        perform the task of linguistic analysis and tagging automatically. For
+                        example, the CLARIN infrastructure offers the WebLicht service which allows
+                        for data analysis with various NLP tools and for the building of analysis
+                        chains. In- and output format here is the Text Corpus Format (TCF; for
+                        conversion between TEI and TCF use the TEI2TCF-webservice). Another toolkit
+                        is e.g. Apache OpenNLP. As tools you may use e.g. the Stanford Tokenizer or
+                        TreeTagger for tokenization, POS tagging and more, or e.g. enrich corpus
+                        with Named Entity Recognition annotation (e.g. by usage of Apache Stanbol or
+                        Babelfy). Manual annotation may e.g. be performed in WebAnno.</desc>
+               <desc xml:lang="en" type="terms">
+                  <term type="standard" source="standard_list" key="XML"/>
+                  <term type="standard" source="standard_list" key="TEI"/>
+                  <term type="standard" source="standard_list" key="TCF"/>
+                  <term type="standard" source="standard_list" key="LAF"/>
+                  <term type="activity" source="http://tadirah.dariah.eu/" key="annotating"/>
+               </desc>
+               <linkGrp type="generalResources">
+                  <ref type="software" source="zotero" target="PDEZULGR"><!-- WebLicht main page -->
+                     <term type="software" key="WebLicht"/>
+                  </ref>
+                  <ref type="documentation" source="zotero" target="HNU9RXFC"><!-- WebLicht documentation -->
+                     <term type="software" key="WebLicht"/>
+                  </ref>
+                  <ref type="standard" source="zotero" target="IHWJQT9N"><!-- WebLicht TCF format -->
+                     <term type="software" key="WebLicht"/>
+                  </ref>
+                  <ref type="documentation" source="zotero" target="HNU9RXFC"><!-- WebLicht documentation -->
+                     <term type="software" key="WebLicht"/>
+                  </ref>
+                  <ref type="software" source="zotero" target="7HN4C98S"><!-- WebAnno -->
+                     <term type="software" key="WebAnno"/>
+                  </ref>
+                  <ref type="software" source="zotero" target="IA92LHEW"><!-- OpenNLP -->
+                     <term type="software" key="OpenNLP"/>
+                  </ref>
+                  <ref type="software" source="zotero" target="AB2FM77V"><!-- Stanford NLP Software -->
+                     <term type="software" key="StanfordNLP"/>
+                     <term type="activity" key="tokenize"/>
+                  </ref>
+                  <ref type="software" source="zotero" target="MN5XVQ82"><!-- TreeTagger -->
+                     <term type="software" key="TreeTagger"/>
+                  </ref>
+                  <ref type="software" source="zotero" target="W95ELYYT"><!-- Apache Stanbol -->
+                     <term type="software" key="Apache Stanbol"/>
+                  </ref>
+                  <ref type="software" source="zotero" target="V44YQVT3"><!-- Babelfy -->
+                     <term type="software" key="Babelfy"/>
+                  </ref>
+                  <ref type="software" source="zotero" target="A5NVUWZB"><!-- TEI-TCF encoder/decoder -->
+                     <term type="software" key="TEI-TCF encoder+decoder"/>
+                  </ref>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

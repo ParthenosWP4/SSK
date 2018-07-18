@@ -1,125 +1,97 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<!-- You have to type the TEI file, with researchStep or researchScenario -->
-<TEI type="researchStep" xml:id="step_atGPaLR" xmlns="http://www.tei-c.org/ns/1.0">
- <teiHeader>
-  <fileDesc>
-   <titleStmt>
-    <title>
-     step_atGPaLR.xml
-    </title>
-    <author>
-     <persName>
-      Maurizio Sanesi
-     </persName>
-     <affiliation>
-      SISMEL
-     </affiliation>
-    </author>
-    <author>
-     <persName>
-      Karolien Verbrugge
-     </persName>
-     <affiliation>
-      NIOD
-     </affiliation>
-    </author>
-    <author>
-     <persName>
-      Claus Spiecker
-     </persName>
-     <affiliation>
-      FHP
-     </affiliation>
-    </author>
-    <author>
-     <persName>
-      Roberta Giacomi
-     </persName>
-     <affiliation>
-      SISMEL
-     </affiliation>
-    </author>
-   </titleStmt>
-   <publicationStmt>
-    <authority>
-     Parthenos
-    </authority>
-    <availability>
-     <licence target="http://creativecommons.org/licenses/by/4.0/">
-      <p>
-       The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
-                            to this document.
-      </p>
-     </licence>
-    </availability>
-   </publicationStmt>
-   <sourceDesc>
-    <p>
-     Created from scratch
-    </p>
-   </sourceDesc>
-  </fileDesc>
-  <revisionDesc>
-   <!-- Use only for major changes -->
-   <change/>
-  </revisionDesc>
- </teiHeader>
- <text>
-  <body>
-   <listEvent>
-    <event type="researchStep">
-     <!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
-     <head type="stepTitle" xml:lang="en">
-      Adhere to guidance, policies and legal requirements
-     </head>
-     <head type="stepTitle" xml:lang="fr">
-      Titre de l'étape en Français
-     </head>
-     <desc type="definition" xml:lang="en">
-      Search for Policies and guidelines suitable for data selected for research
-     </desc>
-     <desc type="terms" xml:lang="en">
-      <term key="XML" source="standard_list" type="standard"/>
-      <term key="TEI" source="standard_list" type="standard"/>
-      <term key="organizing" source="http://tadirah.dariah.eu/" type="activity"/>
-      <term key="CD" source="WP3Wizard" type="policies"/>
-     </desc>
-     <linkGrp type="generalResources">
-      <ref source="zotero" target="ZABRV5VD" type="spec">
-       <term key="TEI" source="standard_list" type="standard"/>
-      </ref>
-      <ref source="zotero" target="SS93B7B8" type="spec">
-       <term key="TEI" source="standard_list" type="standard"/>
-      </ref>
-      <ref source="zotero" target="ZE34VR34" type="spec">
-       <term key="TEI" source="standard_list" type="standard"/>
-      </ref>
-      <ref source="zotero" target="UBE86XKI" type="tutorial">
-       <term key="TEI" source="standard_list" type="standard"/>
-      </ref>
-      <ref source="zotero" target="QQT6NQA6" type="tutorial">
-       <term key="TEI" source="standard_list" type="standard"/>
-      </ref>
-      <ref source="zotero" target="IE9EQ2QK" type="tutorial">
-       <term key="TEI" source="standard_list" type="standard"/>
-      </ref>
-      <ref source="zotero" target="69CGH77A" type="tutorial">
-       <term key="TEI" source="standard_list" type="standard"/>
-      </ref>
-      <ref source="zotero" target="XPDZH8WZ" type="spec">
-       <term key="EAD" source="standard_list" type="standard"/>
-      </ref>
-      <ref source="zotero" target="2Z29AVQV" type="spec">
-       <term key="EAD" source="standard_list" type="standard"/>
-      </ref>
-      <ref source="github" target="https://github.com/PARTHENOSWP4/standardsLibrary/tree/master/archivalDescription/EAD/odd" type="spec">
-       <term key="TEI" source="standard_list" type="standard"/>
-       <term key="EAD" source="standard_list" type="standard"/>
-      </ref>
-     </linkGrp>
-    </event>
-   </listEvent>
-  </body>
- </text>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_atGPaLR">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>step_atGPaLR.xml</title>
+            <author>
+               <persName>Maurizio Sanesi</persName>
+               <affiliation>SISMEL</affiliation>
+            </author>
+            <author>
+               <persName>Karolien Verbrugge</persName>
+               <affiliation>NIOD</affiliation>
+            </author>
+            <author>
+               <persName>Claus Spiecker</persName>
+               <affiliation>FHP</affiliation>
+            </author>
+            <author>
+               <persName>Roberta Giacomi</persName>
+               <affiliation>SISMEL</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+       document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc><!-- Use only for major changes -->
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep"><!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
+               <head type="stepTitle" xml:lang="en">Adhere to guidance, policies and legal requirements</head>
+               <head type="stepTitle" xml:lang="fr">Titre de l'étape en Français</head>
+               <desc type="definition" xml:lang="en">Search for Policies and guidelines suitable for data
+      selected for research</desc>
+               <desc type="terms" xml:lang="en">
+                  <term key="XML" source="standard_list" type="standard"/>
+                  <term key="TEI" source="standard_list" type="standard"/>
+                  <term key="organizing" source="http://tadirah.dariah.eu/" type="activity"/>
+                  <term key="CD" source="WP3Wizard" type="policies"/>
+               </desc>
+               <linkGrp type="generalResources">
+                  <ref source="zotero" target="ZABRV5VD" type="spec">
+                     <term key="TEI" source="standard_list" type="standard"/>
+                  </ref>
+                  <ref source="zotero" target="SS93B7B8" type="spec">
+                     <term key="TEI" source="standard_list" type="standard"/>
+                  </ref>
+                  <ref source="zotero" target="ZE34VR34" type="spec">
+                     <term key="TEI" source="standard_list" type="standard"/>
+                  </ref>
+                  <ref source="zotero" target="UBE86XKI" type="tutorial">
+                     <term key="TEI" source="standard_list" type="standard"/>
+                  </ref>
+                  <ref source="zotero" target="QQT6NQA6" type="tutorial">
+                     <term key="TEI" source="standard_list" type="standard"/>
+                  </ref>
+                  <ref source="zotero" target="IE9EQ2QK" type="tutorial">
+                     <term key="TEI" source="standard_list" type="standard"/>
+                  </ref>
+                  <ref source="zotero" target="69CGH77A" type="tutorial">
+                     <term key="TEI" source="standard_list" type="standard"/>
+                  </ref>
+                  <ref source="zotero" target="XPDZH8WZ" type="spec">
+                     <term key="EAD" source="standard_list" type="standard"/>
+                  </ref>
+                  <ref source="zotero" target="2Z29AVQV" type="spec">
+                     <term key="EAD" source="standard_list" type="standard"/>
+                  </ref>
+                  <ref source="github"
+                       target="https://github.com/PARTHENOSWP4/standardsLibrary/tree/master/archivalDescription/EAD/odd"
+                       type="spec">
+                     <term key="TEI" source="standard_list" type="standard"/>
+                     <term key="EAD" source="standard_list" type="standard"/>
+                  </ref>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

@@ -1,92 +1,68 @@
-<?xml version="1.0" encoding="utf-8"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-	schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-model href="../Sc%C3%A9nario%20DDI/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI type="researchStep" xml:id="step_EtMoMF_020218" xmlns="http://www.tei-c.org/ns/1.0">
- <teiHeader>
-  <fileDesc>
-   <titleStmt>
-    <title>
-     Step "Enrich the metadata of MEI files"
-    </title>
-    <author>
-     <persName>
-      Vincent Besson
-     </persName>
-     <affiliation>
-      CNRS
-     </affiliation>
-    </author>
-    <author>
-     <persName>
-      Adeline Joffres
-     </persName>
-     <affiliation>
-      CNRS
-     </affiliation>
-    </author>
-    <author>
-     <persName>
-      Hélène Gautier
-     </persName>
-     <affiliation>
-      CNRS
-     </affiliation>
-    </author>
-   </titleStmt>
-   <publicationStmt>
-    <authority>
-     Parthenos
-    </authority>
-    <availability>
-     <licence target="http://creativecommons.org/licenses/by/4.0/">
-      <p>
-       The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
-                            to this document.
-      </p>
-     </licence>
-    </availability>
-   </publicationStmt>
-   <sourceDesc>
-    <p>
-     Created from scratch
-    </p>
-   </sourceDesc>
-  </fileDesc>
-  <revisionDesc>
-   <change/>
-  </revisionDesc>
- </teiHeader>
- <text>
-  <body>
-   <listEvent>
-    <event type="researchStep">
-     <head xml:lang="en">
-      Enrich the metadata of MEI files
-     </head>
-     <head xml:lang="fr">
-      Enrichir les métadonnées des fichiers MEI.
-     </head>
-     <desc type="definition" xml:lang="en">
-      Add metadata in the header of MEI files
-                        using MerMEId.
-     </desc>
-     <desc type="definition" xml:lang="fr">
-      Ajouter des métadonnées dans l'en-tête des
-                        fichiers MEI en utilisant MerMEId.
-     </desc>
-     <desc type="term" xml:lang="en">
-      <term key="http://tadirah.dariah.eu/vocab/index.php?_search_expresion=Annotating" source="http://tadirah.dariah.eu/" type="activity"/>
-     </desc>
-     <linkGrp type="generalResources">
-      <ref source="zotero" target="PAFCE6CF" type="tutorial"/>
-      <ref source="zotero" target="HA3HBEA6" type="documentation"/>
-      <ref source="github" subtype="tool" target="https://github.com/Det-Kongelige-Bibliotek/MerMEId" type="code">
-       <term key="MerMEId" type="tool"/>
-      </ref>
-     </linkGrp>
-    </event>
-   </listEvent>
-  </body>
- </text>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_EtMoMF_020218">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Step "Enrich the metadata of MEI files"</title>
+            <author>
+               <persName>Vincent Besson</persName>
+               <affiliation>CNRS</affiliation>
+            </author>
+            <author>
+               <persName>Adeline Joffres</persName>
+               <affiliation>CNRS</affiliation>
+            </author>
+            <author>
+               <persName>Hélène Gautier</persName>
+               <affiliation>CNRS</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+       document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head xml:lang="en">Enrich the metadata of MEI files</head>
+               <head xml:lang="fr">Enrichir les métadonnées des fichiers MEI.</head>
+               <desc type="definition" xml:lang="en">Add metadata in the header of MEI files using MerMEId.</desc>
+               <desc type="definition" xml:lang="fr">Ajouter des métadonnées dans l'en-tête des fichiers MEI
+      en utilisant MerMEId.</desc>
+               <desc type="term" xml:lang="en">
+                  <term key="http://tadirah.dariah.eu/vocab/index.php?_search_expresion=Annotating"
+                        source="http://tadirah.dariah.eu/"
+                        type="activity"/>
+               </desc>
+               <linkGrp type="generalResources">
+                  <ref source="zotero" target="PAFCE6CF" type="tutorial"/>
+                  <ref source="zotero" target="HA3HBEA6" type="documentation"/>
+                  <ref source="github"
+                       subtype="tool"
+                       target="https://github.com/Det-Kongelige-Bibliotek/MerMEId"
+                       type="code">
+                     <term key="MerMEId" type="tool"/>
+                  </ref>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

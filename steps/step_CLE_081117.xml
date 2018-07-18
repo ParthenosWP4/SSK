@@ -1,76 +1,61 @@
-<?xml version="1.0" encoding="utf-8"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-	schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-model href="../../TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI type="researchStep" xml:id="step_CLE_081117" xmlns="http://www.tei-c.org/ns/1.0">
- <teiHeader>
-  <fileDesc>
-   <titleStmt>
-    <title>
-     Step "Characterization of laser effects"
-    </title>
-    <author>
-     <persName>
-      Marta Castillejo
-     </persName>
-     <affiliation>
-      CSIC
-     </affiliation>
-    </author>
-    <author>
-     <persName>
-      Mikel Sanz
-     </persName>
-     <affiliation>
-      CSIC
-     </affiliation>
-    </author>
-   </titleStmt>
-   <publicationStmt>
-    <authority>
-     Parthenos
-    </authority>
-    <availability>
-     <licence target="http://creativecommons.org/licenses/by/4.0/">
-      <p>
-       The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
-                     this document.
-      </p>
-     </licence>
-    </availability>
-   </publicationStmt>
-   <sourceDesc>
-    <p>
-     Created from an Excel sheet by Marie Puren
-    </p>
-   </sourceDesc>
-  </fileDesc>
-  <revisionDesc>
-   <change/>
-  </revisionDesc>
- </teiHeader>
- <text>
-  <body>
-   <listEvent>
-    <event type="researchStep">
-     <head xml:lang="en">
-      Characterization of laser effects
-     </head>
-     <desc type="definition" xml:lang="en">
-      Assessing the physicochemical effects of the
-                  laser on the material.
-     </desc>
-     <desc type="definition" xml:lang="fr"/>
-     <desc type="term" xml:lang="en">
-      <term key="http://tadirah.dariah.eu/vocab/index.php?tema=33&amp;/5_interpretation" source="http://tadirah.dariah.eu/" type="activity"/>
-     </desc>
-     <linkGrp type="generalResources">
-      <ref source="github" subtype="library_(computing)" target="https://github.com/jcupitt/libvips" type="code">
-       <term key="libvips" type="library_(computing)"/>
-      </ref>
-     </linkGrp>
-    </event>
-   </listEvent>
-  </body>
- </text>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_CLE_081117">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Step "Characterization of laser effects"</title>
+            <author>
+               <persName>Marta Castillejo</persName>
+               <affiliation>CSIC</affiliation>
+            </author>
+            <author>
+               <persName>Mikel Sanz</persName>
+               <affiliation>CSIC</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+       document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from an Excel sheet by Marie Puren</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head xml:lang="en">Characterization of laser effects</head>
+               <desc type="definition" xml:lang="en">Assessing the physicochemical effects of the laser on
+      the material.</desc>
+               <desc type="definition" xml:lang="fr"/>
+               <desc type="term" xml:lang="en">
+                  <term key="http://tadirah.dariah.eu/vocab/index.php?tema=33&amp;/5_interpretation"
+                        source="http://tadirah.dariah.eu/"
+                        type="activity"/>
+               </desc>
+               <linkGrp type="generalResources">
+                  <ref source="github"
+                       subtype="library_(computing)"
+                       target="https://github.com/jcupitt/libvips"
+                       type="code">
+                     <term key="libvips" type="library_(computing)"/>
+                  </ref>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

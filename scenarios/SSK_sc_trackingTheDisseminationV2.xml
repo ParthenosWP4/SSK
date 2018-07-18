@@ -1,107 +1,105 @@
-<?xml version="1.0" encoding="utf-8"?>
-<?xml-model href="../spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI type="researchScenario" xml:id="SSK_sc_trackingTheDisseminationV2"
- xmlns="http://www.tei-c.org/ns/1.0">
- <teiHeader>
-  <fileDesc>
-   <titleStmt>
-    <title> Dissemination of a work </title>
-    <author>
-     <persName> Maurizio Sanesi </persName>
-     <affiliation> SISMEL </affiliation>
-    </author>
-    <author>
-     <persName> Roberta Giacomi </persName>
-     <affiliation> SISMEL </affiliation>
-    </author>
-    <author>
-     <persName> Claus Spiecker </persName>
-     <affiliation> FHP </affiliation>
-    </author>
-    <author>
-     <persName> Karolien Verbrugge </persName>
-     <affiliation> NIOD </affiliation>
-    </author>
-   </titleStmt>
-   <publicationStmt>
-    <authority> Parthenos </authority>
-    <availability>
-     <licence target="http://creativecommons.org/licenses/by/4.0/">
-      <p> The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
-       document. </p>
-     </licence>
-    </availability>
-   </publicationStmt>
-   <sourceDesc>
-    <p> Created from scratch </p>
-   </sourceDesc>
-  </fileDesc>
-  <encodingDesc>
-   <listPrefixDef>
-    <prefixDef ident="wp2" matchPattern="(.*?)" replacementPattern="groups/368112">
-     <p> The prefix wp2 needs to be used before resources taken from the <ref
-       target="https://www.zotero.org/groups/368112/parthenos_wp2" type="url"> Parthenos WP2 Zotero
-       Library </ref> . </p>
-     <p> In the <att> target </att> attribute, the prefix in separated by the Zotero ID by a colon
-      ":". Ex: target="wp2:JHSD76DS" </p>
-    </prefixDef>
-    <prefixDef ident="wp3" matchPattern="(.*?)" replacementPattern="groups/520841">
-     <p> The prefix wp3 needs to be used before resources taken from the <ref
-       target="https://www.zotero.org/groups/520841/parthenos_wp3" type="url"> Parthenos WP3 Zotero
-       Library </ref> . </p>
-     <p> In the <att> target </att> attribute, the prefix in separated by the Zotero ID by a colon
-      ":". Ex: target="wp2:JHSD76DS" </p>
-    </prefixDef>
-    <prefixDef ident="wp4" matchPattern="(.*?)" replacementPattern="groups/427927">
-     <p> The prefix wp4 needs to be used before resources taken from the <ref
-       target="https://www.zotero.org/groups/427927/parthenos_wp4" type="url"> Parthenos WP4 Zotero
-       Library </ref> . </p>
-     <p> In the <att> target </att> attribute, the prefix in separated by the Zotero ID by a colon
-      ":". Ex: target="wp2:JHSD76DS" </p>
-    </prefixDef>
-   </listPrefixDef>
-  </encodingDesc>
-  <revisionDesc>
-   <change/>
-  </revisionDesc>
- </teiHeader>
- <text>
-  <body>
-   <div type="scenario">
-    <head type="scenarioTitle" xml:lang="en"> Tracking the dissemination of a specific work </head>
-    <desc type="definition" xml:lang="en"> In medieval studies, the dissemination of a work can give
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchScenario"
+     xml:id="SSK_sc_trackingTheDisseminationV2">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Dissemination of a work</title>
+            <author>
+               <persName>Maurizio Sanesi</persName>
+               <affiliation>SISMEL</affiliation>
+            </author>
+            <author>
+               <persName>Roberta Giacomi</persName>
+               <affiliation>SISMEL</affiliation>
+            </author>
+            <author>
+               <persName>Claus Spiecker</persName>
+               <affiliation>FHP</affiliation>
+            </author>
+            <author>
+               <persName>Karolien Verbrugge</persName>
+               <affiliation>NIOD</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+       document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <listPrefixDef>
+            <prefixDef ident="wp2" matchPattern="(.*?)" replacementPattern="groups/368112">
+               <p>The prefix wp2 needs to be used before resources taken from the <ref target="https://www.zotero.org/groups/368112/parthenos_wp2" type="url">Parthenos WP2 Zotero
+       Library</ref> .</p>
+               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a colon
+      ":". Ex: target="wp2:JHSD76DS"</p>
+            </prefixDef>
+            <prefixDef ident="wp3" matchPattern="(.*?)" replacementPattern="groups/520841">
+               <p>The prefix wp3 needs to be used before resources taken from the <ref target="https://www.zotero.org/groups/520841/parthenos_wp3" type="url">Parthenos WP3 Zotero
+       Library</ref> .</p>
+               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a colon
+      ":". Ex: target="wp2:JHSD76DS"</p>
+            </prefixDef>
+            <prefixDef ident="wp4" matchPattern="(.*?)" replacementPattern="groups/427927">
+               <p>The prefix wp4 needs to be used before resources taken from the <ref target="https://www.zotero.org/groups/427927/parthenos_wp4" type="url">Parthenos WP4 Zotero
+       Library</ref> .</p>
+               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a colon
+      ":". Ex: target="wp2:JHSD76DS"</p>
+            </prefixDef>
+         </listPrefixDef>
+      </encodingDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div type="scenario">
+            <head type="scenarioTitle" xml:lang="en">Tracking the dissemination of a specific work</head>
+            <desc type="definition" xml:lang="en">In medieval studies, the dissemination of a work can give
      important information on life and movements of the author; plus, it can influence local history
      and everyday activities: i.e. some medical practices were performed just in places where the
      work carrying information about them was spread. Moreover, it can be useful also to understand
      if the work was disseminated alone or together with other works, and why: for instance, in
      medieval universities the essential works for the study of a discipline were often gathered in
      the same manuscript. Therefore, scholars may have interest in the itinerary made by a given
-     work, and may want to track it. </desc>
-    <desc type="terms" xml:lang="en">
-     <term source="aurehal" type="discipline"> History </term>
-     <term key="Metadata" source="tadirah" type="objects"/>
-    </desc>
-    <figure type="image">
-     <head/>
-     <graphic url="https://upload.wikimedia.org/wikipedia/commons/f/f8/Dante_and_beatrice.jpg"/>
-     <figDesc> Photo from Wikimedia </figDesc>
-    </figure>
-    <listEvent>
-     <event ref="step_StWowtSiC" type="researchStep" xml:id="s1"/>
-     <event ref="step_DtGatCBV2" type="researchStep" xml:id="s2"/>
-     <event ref="step_SDtatRfCV2" type="researchStep" xml:id="s3"/>
-     <event ref="step_CaSARDCooCwDwbsV2" type="researchStep" xml:id="s4"/>
-     <event ref="step_atGPaLRV2" type="researchStep" xml:id="s5"/>
-     <event ref="step_CaeEotSWV2" type="researchStep" xml:id="s6"/>
-     <event ref="step_AtuotEitSP" type="researchStep" xml:id="s7"/>
-     <event ref="step_UtPaCotW" type="researchStep" xml:id="s8"/>
-     <event ref="step_EIoDV2" type="researchStep" xml:id="s9"/>
-     <event ref="step_BCDV2" type="researchStep" xml:id="s10"/>
-     <event ref="step_ItdaoeoSIMooMautAtC" type="researchStep" xml:id="s11"/>
-     <event ref="step_SdtAaPV2" type="researchStep" xml:id="s12"/>
-     <event ref="step_EttrLPaAV2" type="researchStep" xml:id="s13"/>
-    </listEvent>
-   </div>
-  </body>
- </text>
+     work, and may want to track it.</desc>
+            <desc type="terms" xml:lang="en">
+               <term source="aurehal" type="discipline">History</term>
+               <term key="Metadata" source="tadirah" type="objects"/>
+            </desc>
+            <figure type="image">
+               <head/>
+               <graphic url="https://upload.wikimedia.org/wikipedia/commons/f/f8/Dante_and_beatrice.jpg"/>
+               <figDesc>Photo from Wikimedia</figDesc>
+            </figure>
+            <listEvent>
+               <event ref="step_StWowtSiC" type="researchStep" xml:id="s1"/>
+               <event ref="step_DtGatCBV2" type="researchStep" xml:id="s2"/>
+               <event ref="step_SDtatRfCV2" type="researchStep" xml:id="s3"/>
+               <event ref="step_CaSARDCooCwDwbsV2" type="researchStep" xml:id="s4"/>
+               <event ref="step_atGPaLRV2" type="researchStep" xml:id="s5"/>
+               <event ref="step_CaeEotSWV2" type="researchStep" xml:id="s6"/>
+               <event ref="step_AtuotEitSP" type="researchStep" xml:id="s7"/>
+               <event ref="step_UtPaCotW" type="researchStep" xml:id="s8"/>
+               <event ref="step_EIoDV2" type="researchStep" xml:id="s9"/>
+               <event ref="step_BCDV2" type="researchStep" xml:id="s10"/>
+               <event ref="step_ItdaoeoSIMooMautAtC" type="researchStep" xml:id="s11"/>
+               <event ref="step_SdtAaPV2" type="researchStep" xml:id="s12"/>
+               <event ref="step_EttrLPaAV2" type="researchStep" xml:id="s13"/>
+            </listEvent>
+         </div>
+      </body>
+   </text>
 </TEI>

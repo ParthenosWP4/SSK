@@ -1,67 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<!-- You have to type the TEI file, with researchStep or researchScenario -->
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_finalize">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Step Finalize</title>
-                <author>
-                    <persName>Klaus Illmayer</persName>
-                    <affiliation>OEAW-ACDH</affiliation>
-                </author>
-                <author>
-                    <persName>Susanne Haaf</persName>
-                    <affiliation>BBAW</affiliation>
-                </author>
-                <author>
-                    <persName>Piotr Bański</persName>
-                    <affiliation>IDS Mannheim, CLARIN</affiliation>
-                </author>
-            </titleStmt>
-            <publicationStmt>
-                <authority>PARTHENOS</authority>
-                <availability>
-                    <licence target="http://creativecommons.org/licenses/by/4.0/">
-                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_finalize">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Step Finalize</title>
+            <author>
+               <persName>Klaus Illmayer</persName>
+               <affiliation>OEAW-ACDH</affiliation>
+            </author>
+            <author>
+               <persName>Susanne Haaf</persName>
+               <affiliation>BBAW</affiliation>
+            </author>
+            <author>
+               <persName>Piotr Bański</persName>
+               <affiliation>IDS Mannheim, CLARIN</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>PARTHENOS</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
                             to this document.</p>
-                    </licence>
-                </availability>
-            </publicationStmt>
-            <sourceDesc>
-                <p>Created from scratch</p>
-            </sourceDesc>
-        </fileDesc>
-        <revisionDesc>
-            <!-- Use only for major changes -->
-            <change/>
-        </revisionDesc>
-    </teiHeader>
-    <text>
-        <body>
-            <listEvent>
-                <event type="researchStep">
-                    <head type="stepTitle" xml:lang="en">Finalize</head>
-                    <desc type="definition" xml:lang="en">
-                      Finalize corpus creation by providing the corpus, its format and bibliographic
-                      information on it to the community. Ensure that the FAIR principles are met by
-                      its publication. It should be findable (F), accessible (A), interoperable (I)
-                      and re-usable (R).
-                    </desc>
-                    <desc xml:lang="en" type="terms">
-                        <term type="standard" source="standard_list" key="XML"/>
-                        <term type="standard" source="standard_list" key="TEI"/>
-                        <term type="activity" source="http://tadirah.dariah.eu/" key="publishing"/>
-                        <!--<term type="policies" source="WP3Wizard" key="CD"/>-->
-                    </desc>
-                    <linkGrp type="generalResources">
-                        <!-- FAIR principles -->
-                        <ref type="spec" source="zotero" target="ZJ7ZSJWT">
-                            <term type="standard" source="policy" key="FAIR"/>
-                        </ref>
-                    </linkGrp>
-                </event>
-            </listEvent>
-        </body>
-    </text>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc><!-- Use only for major changes -->
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head type="stepTitle" xml:lang="en">Finalize</head>
+               <desc type="definition" xml:lang="en">Finalize corpus creation by providing the
+                        corpus, its format and bibliographic information on it to the community.
+                        Ensure that the FAIR principles are met by its publication. It should be
+                        findable (F), accessible (A), interoperable (I) and re-usable (R).</desc>
+               <desc xml:lang="en" type="terms">
+                  <term type="standard" source="standard_list" key="XML"/>
+                  <term type="standard" source="standard_list" key="TEI"/>
+                  <term type="activity" source="http://tadirah.dariah.eu/" key="publishing"/>
+                  <!--<term type="policies" source="WP3Wizard" key="CD"/>-->
+               </desc>
+               <linkGrp type="generalResources"><!-- FAIR principles -->
+                  <ref type="spec" source="zotero" target="ZJ7ZSJWT">
+                     <term type="standard" source="policy" key="FAIR"/>
+                  </ref>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

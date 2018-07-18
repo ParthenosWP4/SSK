@@ -1,98 +1,95 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI type="researchScenario" xml:id="SSK_sc_creatingMetadata" xmlns="http://www.tei-c.org/ns/1.0">
- <teiHeader>
-  <!-- teiHeader TBC -->
-  <fileDesc>
-   <titleStmt>
-    <!-- Title of the tei document, not title of the scenario -->
-    <title> Creation of Metadata scenario </title>
-    <author>
-     <persName> Antonio Davide Madonna </persName>
-     <affiliation> MIBACT-ICCU </affiliation>
-    </author>
-   </titleStmt>
-   <publicationStmt>
-    <authority> PARTHENOS </authority>
-    <availability>
-     <licence target="http://creativecommons.org/licenses/by/4.0/">
-      <p> The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
-       document. </p>
-     </licence>
-    </availability>
-   </publicationStmt>
-   <sourceDesc>
-    <p> This Google doc:
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchScenario"
+     xml:id="SSK_sc_creatingMetadata">
+   <teiHeader><!-- teiHeader TBC -->
+      <fileDesc>
+         <titleStmt><!-- Title of the tei document, not title of the scenario -->
+            <title>Creation of Metadata scenario</title>
+            <author>
+               <persName>Antonio Davide Madonna</persName>
+               <affiliation>MIBACT-ICCU</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>PARTHENOS</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+       document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>This Google doc:
      https://docs.google.com/document/d/1K_JSaML4bjXPNs83JB00UVnO8OpniwJiX4UkYeifCAw/edit#heading=h.26xtcwgdha6a
-    </p>
-   </sourceDesc>
-  </fileDesc>
-  <encodingDesc>
-   <listPrefixDef>
-    <prefixDef ident="wp2" matchPattern="(.*?)" replacementPattern="groups/368112">
-     <p> The prefix wp2 needs to be used before resources taken from the <ref
-       target="https://www.zotero.org/groups/368112/parthenos_wp2" type="url"> Parthenos WP2 Zotero
-       Library </ref> . </p>
-     <p> In the <att> target </att> attribute, the prefix in separated by the Zotero ID by a colon
-      ":". Ex: target="wp2:JHSD76DS" </p>
-    </prefixDef>
-    <prefixDef ident="wp3" matchPattern="(.*?)" replacementPattern="groups/520841">
-     <p> The prefix wp3 needs to be used before resources taken from the <ref
-       target="https://www.zotero.org/groups/520841/parthenos_wp3" type="url"> Parthenos WP3 Zotero
-       Library </ref> . </p>
-     <p> In the <att> target </att> attribute, the prefix in separated by the Zotero ID by a colon
-      ":". Ex: target="wp2:JHSD76DS" </p>
-    </prefixDef>
-    <prefixDef ident="wp4" matchPattern="(.*?)" replacementPattern="groups/427927">
-     <p> The prefix wp4 needs to be used before resources taken from the <ref
-       target="https://www.zotero.org/groups/427927/parthenos_wp4" type="url"> Parthenos WP4 Zotero
-       Library </ref> . </p>
-     <p> In the <att> target </att> attribute, the prefix in separated by the Zotero ID by a colon
-      ":". Ex: target="wp2:JHSD76DS" </p>
-    </prefixDef>
-   </listPrefixDef>
-  </encodingDesc>
-  <revisionDesc>
-   <change>
-    <!-- Only for major changes: addition of an author, of a step, etc. -->
-   </change>
-  </revisionDesc>
- </teiHeader>
- <text>
-  <body>
-   <div type="reseachScenario" xml:id="sc_creatingMetadata">
-    <!-- All the textual information about scenarios and steps is now contained in the <head> element-->
-    <head type="scenarioTitle" xml:lang="en"> Creating Metadata </head>
-    <desc type="definition" xml:lang="en"> Scenario consisting of a step-by-step guide to make
-     metadata in a specific application profile from data structured in different manners </desc>
-    <!--<desc type=""></desc>-->
-    <desc type="terms" xml:lang="en">
-     <term key="Metadata" source="TaDiRAH" type="object"/>
-     <term key="Standards" source="TaDiRAH" type="object"/>
-     <term key="Mapping" source="TaDiRAH" type="technique"/>
-     <term key="Creation" source="TaDiRAH" type="activity"/>
-     <term key="Conversion" source="TaDiRAH" type="activity"/>
-    </desc>
-    <figure type="image">
-     <!-- Illustration of the scenario. Can also be used in the steps -->
-     <head> Mapping schema </head>
-     <graphic
-      url="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Figure-1-A-schema-mapping-in-Clio.png/640px-Figure-1-A-schema-mapping-in-Clio.png"/>
-     <figDesc> example of mapping between original data and a specific application profile
-     </figDesc>
-    </figure>
-    <listEvent>
-     <event ref="step_1_creating_metadata_scenario" type="researchStep" xml:id="s1"/>
-     <event ref="step_2_defining_responsabilities_and_policies" type="researchStep" xml:id="s2"/>
-     <event ref="step_3_adopting_standard" type="researchStep" xml:id="s3"/>
-     <event ref="step_4_metadata_enrichment" type="researchStep" xml:id="s4"/>
-     <event ref="step_5_mapping_data" type="researchStep" xml:id="s5"/>
-     <event ref="step_6_creating_or_converting_metadata_in_a_standard_format" type="researchStep"
-      xml:id="s6"/>
-     <event ref="step_7_quality_checking" type="researchStep" xml:id="s7"/>
-     <event ref="step_8_applying_license" type="researchStep" xml:id="s8"/>
-    </listEvent>
-   </div>
-  </body>
- </text>
+   </p>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <listPrefixDef>
+            <prefixDef ident="wp2" matchPattern="(.*?)" replacementPattern="groups/368112">
+               <p>The prefix wp2 needs to be used before resources taken from the <ref target="https://www.zotero.org/groups/368112/parthenos_wp2" type="url">Parthenos WP2 Zotero
+       Library</ref> .</p>
+               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a colon
+      ":". Ex: target="wp2:JHSD76DS"</p>
+            </prefixDef>
+            <prefixDef ident="wp3" matchPattern="(.*?)" replacementPattern="groups/520841">
+               <p>The prefix wp3 needs to be used before resources taken from the <ref target="https://www.zotero.org/groups/520841/parthenos_wp3" type="url">Parthenos WP3 Zotero
+       Library</ref> .</p>
+               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a colon
+      ":". Ex: target="wp2:JHSD76DS"</p>
+            </prefixDef>
+            <prefixDef ident="wp4" matchPattern="(.*?)" replacementPattern="groups/427927">
+               <p>The prefix wp4 needs to be used before resources taken from the <ref target="https://www.zotero.org/groups/427927/parthenos_wp4" type="url">Parthenos WP4 Zotero
+       Library</ref> .</p>
+               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a colon
+      ":". Ex: target="wp2:JHSD76DS"</p>
+            </prefixDef>
+         </listPrefixDef>
+      </encodingDesc>
+      <revisionDesc>
+         <change><!-- Only for major changes: addition of an author, of a step, etc. --></change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div type="reseachScenario" xml:id="sc_creatingMetadata"><!-- All the textual information about scenarios and steps is now contained in the <head> element-->
+            <head type="scenarioTitle" xml:lang="en">Creating Metadata</head>
+            <desc type="definition" xml:lang="en">Scenario consisting of a step-by-step guide to make
+     metadata in a specific application profile from data structured in different manners</desc>
+            <!--<desc type=""></desc>-->
+            <desc type="terms" xml:lang="en">
+               <term key="Metadata" source="TaDiRAH" type="object"/>
+               <term key="Standards" source="TaDiRAH" type="object"/>
+               <term key="Mapping" source="TaDiRAH" type="technique"/>
+               <term key="Creation" source="TaDiRAH" type="activity"/>
+               <term key="Conversion" source="TaDiRAH" type="activity"/>
+            </desc>
+            <figure type="image"><!-- Illustration of the scenario. Can also be used in the steps -->
+               <head>Mapping schema</head>
+               <graphic url="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Figure-1-A-schema-mapping-in-Clio.png/640px-Figure-1-A-schema-mapping-in-Clio.png"/>
+               <figDesc>example of mapping between original data and a specific application profile
+    </figDesc>
+            </figure>
+            <listEvent>
+               <event ref="step_1_creating_metadata_scenario"
+                      type="researchStep"
+                      xml:id="s1"/>
+               <event ref="step_2_defining_responsabilities_and_policies"
+                      type="researchStep"
+                      xml:id="s2"/>
+               <event ref="step_3_adopting_standard" type="researchStep" xml:id="s3"/>
+               <event ref="step_4_metadata_enrichment" type="researchStep" xml:id="s4"/>
+               <event ref="step_5_mapping_data" type="researchStep" xml:id="s5"/>
+               <event ref="step_6_creating_or_converting_metadata_in_a_standard_format"
+                      type="researchStep"
+                      xml:id="s6"/>
+               <event ref="step_7_quality_checking" type="researchStep" xml:id="s7"/>
+               <event ref="step_8_applying_license" type="researchStep" xml:id="s8"/>
+            </listEvent>
+         </div>
+      </body>
+   </text>
 </TEI>

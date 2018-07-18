@@ -1,104 +1,80 @@
-<?xml version="1.0" encoding="utf-8"?>
-<?xml-model href="../spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI type="researchScenario" xml:id="SSK_sc_ramanspectrometry" xmlns="http://www.tei-c.org/ns/1.0">
- <teiHeader>
-  <fileDesc>
-   <titleStmt>
-    <title>
-     Raman spectrometry for the analysis and identification of pigments directly on
-               cultural heritage objects
-    </title>
-    <author>
-     <persName>
-      Panayotis Siozos
-     </persName>
-     <affiliation>
-      IESL-FORTH
-     </affiliation>
-    </author>
-    <author>
-     <persName>
-      Demetrios Anglos
-     </persName>
-     <affiliation>
-      IESL-FORTH
-     </affiliation>
-    </author>
-   </titleStmt>
-   <publicationStmt>
-    <authority>
-     Parthenos
-    </authority>
-    <availability>
-     <licence target="http://creativecommons.org/licenses/by/4.0/">
-      <p>
-       The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
-                     this document.
-      </p>
-     </licence>
-    </availability>
-   </publicationStmt>
-   <sourceDesc>
-    <p>
-     Created from an Excel sheet by Marie Puren
-    </p>
-   </sourceDesc>
-  </fileDesc>
-  <revisionDesc>
-   <change/>
-  </revisionDesc>
- </teiHeader>
- <text>
-  <body>
-   <div type="scenario" xml:id="sc_ramanspectrometry">
-    <head type="scenarioTitle" xml:lang="en">
-     Raman spectrometry for the analysis and
-               identification of pigments on cultural heritage objects
-    </head>
-    <desc type="definition" xml:lang="en">
-     Raman spectrometry is a widely used technique for
-               examining various types of cultural heritage objects, with significant contributions
-               in studies concentrating on pigment identification. The Raman effect provides a quick
-               and relatively straightforward molecular identification of a material under
-               examination due to the fact that the Raman spectrum can be considered as a
-               fingerprint that is used for compound identification. The method is considered
-               significantly versatile therefore different types of equipment are commercially
-               available such as bench top and laboratory instruments, probes/portable and handheld
-               instruments. These advantages including the simplicity, accuracy and speed of the
-               analysis has made Raman spectroscopy very successful in the field of cultural
-               heritage. The current scenario presents a methodology for Raman analysis directly on
-               cultural heritage object (no sampling).
-    </desc>
-    <desc type="terms" xml:lang="en">
-     <term source="aurehal" type="discipline">
-      Art and art history
-     </term>
-     <term source="aurehal" type="discipline">
-      Cultural heritage and
-                  museology
-     </term>
-     <term key="Artifacts" source="tadirah" type="objects"/>
-     <term key="Data" source="tadirah" type="objects"/>
-     <term key="Scanning" source="tadirah" type="techniques"/>
-    </desc>
-    <figure type="image">
-     <head/>
-     <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/SSK-Raman-photo1.png"/>
-     <figDesc/>
-    </figure>
-    <listEvent>
-     <event ref="step_RoA_081117" type="researchStep" xml:id="s1"/>
-     <event ref="step_P_081117" type="researchStep" xml:id="s2"/>
-     <event ref="step_IPDP_081117" type="researchStep" xml:id="s3"/>
-     <event ref="step_SPA_081117" type="researchStep" xml:id="s4"/>
-     <event ref="step_RRS_081117" type="researchStep" xml:id="s5"/>
-     <event ref="step_PP1_081117" type="researchStep" xml:id="s6"/>
-     <event ref="step_PP2_081117" type="researchStep" xml:id="s7"/>
-     <event ref="step_PI_081117" type="researchStep" xml:id="s8"/>
-     <event ref="step_PR_081117" type="researchStep" xml:id="s9"/>
-     <event ref="step_Pu_081117" type="researchStep" xml:id="s10"/>
-    </listEvent>
-   </div>
-  </body>
- </text>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchScenario"
+     xml:id="SSK_sc_ramanspectrometry">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Raman spectrometry for the analysis and identification of pigments directly on cultural
+     heritage objects</title>
+            <author>
+               <persName>Panayotis Siozos</persName>
+               <affiliation>IESL-FORTH</affiliation>
+            </author>
+            <author>
+               <persName>Demetrios Anglos</persName>
+               <affiliation>IESL-FORTH</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+       document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from an Excel sheet by Marie Puren</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div type="scenario" xml:id="sc_ramanspectrometry">
+            <head type="scenarioTitle" xml:lang="en">Raman spectrometry for the analysis and identification
+     of pigments on cultural heritage objects</head>
+            <desc type="definition" xml:lang="en">Raman spectrometry is a widely used technique for
+     examining various types of cultural heritage objects, with significant contributions in studies
+     concentrating on pigment identification. The Raman effect provides a quick and relatively
+     straightforward molecular identification of a material under examination due to the fact that
+     the Raman spectrum can be considered as a fingerprint that is used for compound identification.
+     The method is considered significantly versatile therefore different types of equipment are
+     commercially available such as bench top and laboratory instruments, probes/portable and
+     handheld instruments. These advantages including the simplicity, accuracy and speed of the
+     analysis has made Raman spectroscopy very successful in the field of cultural heritage. The
+     current scenario presents a methodology for Raman analysis directly on cultural heritage object
+     (no sampling).</desc>
+            <desc type="terms" xml:lang="en">
+               <term source="aurehal" type="discipline">Art and art history</term>
+               <term source="aurehal" type="discipline">Cultural heritage and museology</term>
+               <term key="Artifacts" source="tadirah" type="objects"/>
+               <term key="Data" source="tadirah" type="objects"/>
+               <term key="Scanning" source="tadirah" type="techniques"/>
+            </desc>
+            <figure type="image">
+               <head/>
+               <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/SSK-Raman-photo1.png"/>
+               <figDesc/>
+            </figure>
+            <listEvent>
+               <event ref="step_RoA_081117" type="researchStep" xml:id="s1"/>
+               <event ref="step_P_081117" type="researchStep" xml:id="s2"/>
+               <event ref="step_IPDP_081117" type="researchStep" xml:id="s3"/>
+               <event ref="step_SPA_081117" type="researchStep" xml:id="s4"/>
+               <event ref="step_RRS_081117" type="researchStep" xml:id="s5"/>
+               <event ref="step_PP1_081117" type="researchStep" xml:id="s6"/>
+               <event ref="step_PP2_081117" type="researchStep" xml:id="s7"/>
+               <event ref="step_PI_081117" type="researchStep" xml:id="s8"/>
+               <event ref="step_PR_081117" type="researchStep" xml:id="s9"/>
+               <event ref="step_Pu_081117" type="researchStep" xml:id="s10"/>
+            </listEvent>
+         </div>
+      </body>
+   </text>
 </TEI>

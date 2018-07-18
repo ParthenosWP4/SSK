@@ -1,66 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<!-- You have to type the TEI file, with researchStep or researchScenario -->
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_createWorkbench">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Description of the "Create Workbench" step</title>
-                <author>
-                    <persName>Piotr Bański</persName>
-                    <affiliation>IDS Mannheim, CLARIN</affiliation>
-                </author>
-                <author>
-                    <persName>Susanne Haaf</persName>
-                    <affiliation>BBAW</affiliation>
-                </author>
-                <author>
-                    <persName>Klaus Illmayer</persName>
-                    <affiliation>OEAW-ACDH</affiliation>
-                </author>
-            </titleStmt>
-            <publicationStmt>
-                <authority>PARTHENOS</authority>
-                <availability>
-                    <licence target="http://creativecommons.org/licenses/by/4.0/">
-                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_createWorkbench">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Description of the "Create Workbench" step</title>
+            <author>
+               <persName>Piotr Bański</persName>
+               <affiliation>IDS Mannheim, CLARIN</affiliation>
+            </author>
+            <author>
+               <persName>Susanne Haaf</persName>
+               <affiliation>BBAW</affiliation>
+            </author>
+            <author>
+               <persName>Klaus Illmayer</persName>
+               <affiliation>OEAW-ACDH</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>PARTHENOS</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
                             to this document.</p>
-                    </licence>
-                </availability>
-            </publicationStmt>
-            <sourceDesc>
-                <p>Created from scratch</p>
-            </sourceDesc>
-        </fileDesc>
-        <revisionDesc>
-            <!-- Use only for major changes -->
-            <change/>
-        </revisionDesc>
-    </teiHeader>
-    <text>
-        <body>
-            <listEvent>
-                <event type="researchStep">
-                    <head type="stepTitle" xml:lang="en">Create Workbench</head>
-                    <desc type="definition" xml:lang="en">
-                      After the data has been gathered and homogenized in one similar
-                      format, it should be compiled into a proper corpus. This can be
-                      done by just bundling the data into one repository, either a file
-                      directory or a Github repository.
-                    </desc>
-                    <desc xml:lang="en" type="terms">
-                        <term type="standard" source="standard_list" key="XML"/>
-                        <term type="standard" source="standard_list" key="TEI"/>
-                        <term type="activity" source="http://tadirah.dariah.eu/" key="organizing">Organizing</term>
-                    </desc>
-                      <!-- todo: include github / other repos like zenodo <linkGrp type="generalResources">
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc><!-- Use only for major changes -->
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head type="stepTitle" xml:lang="en">Create Workbench</head>
+               <desc type="definition" xml:lang="en">After the data has been gathered and
+                        homogenized in one similar format, it should be compiled into a proper
+                        corpus. This can be done by just bundling the data into one repository,
+                        either a file directory or a Github repository.</desc>
+               <desc xml:lang="en" type="terms">
+                  <term type="standard" source="standard_list" key="XML"/>
+                  <term type="standard" source="standard_list" key="TEI"/>
+                  <term type="activity" source="http://tadirah.dariah.eu/" key="organizing">Organizing</term>
+               </desc>
+               <!-- todo: include github / other repos like zenodo <linkGrp type="generalResources">
                         <ref type="spec" source="zotero" target="...">
                             <term type="standard" source="standard_list" key="TEI"/>
                             - github.com -
                         </ref>
                       </linkGrp>-->
-                </event>
-            </listEvent>
-        </body>
-    </text>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

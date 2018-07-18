@@ -1,99 +1,82 @@
-<?xml version="1.0" encoding="utf-8"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-	schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-model href="../Sc%C3%A9nario%20DDI/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI type="researchStep" xml:id="step_CFiMFin_020218" xmlns="http://www.tei-c.org/ns/1.0">
- <teiHeader>
-  <fileDesc>
-   <titleStmt>
-    <title>
-     Step "Change format into MEI files if necessary"
-    </title>
-    <author>
-     <persName>
-      Vincent Besson
-     </persName>
-     <affiliation>
-      CNRS
-     </affiliation>
-    </author>
-    <author>
-     <persName>
-      Adeline Joffres
-     </persName>
-     <affiliation>
-      CNRS
-     </affiliation>
-    </author>
-    <author>
-     <persName>
-      Hélène Gautier
-     </persName>
-     <affiliation>
-      CNRS
-     </affiliation>
-    </author>
-   </titleStmt>
-   <publicationStmt>
-    <authority>
-     Parthenos
-    </authority>
-    <availability>
-     <licence target="http://creativecommons.org/licenses/by/4.0/">
-      <p>
-       The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
-                            to this document.
-      </p>
-     </licence>
-    </availability>
-   </publicationStmt>
-   <sourceDesc>
-    <p>
-     Created from scratch
-    </p>
-   </sourceDesc>
-  </fileDesc>
-  <revisionDesc>
-   <change/>
-  </revisionDesc>
- </teiHeader>
- <text>
-  <body>
-   <listEvent>
-    <event type="researchStep">
-     <head xml:lang="en">
-      Change format into MEI files if necessary.
-     </head>
-     <head xml:lang="fr">
-      Si nécessaire, changer de format et utiliser la MEI.
-     </head>
-     <desc type="definition" xml:lang="en">
-      Convert the Sibelius files into MEI files
-                        through the plugin SibMei.
-     </desc>
-     <desc type="definition" xml:lang="fr">
-      Convertir les fichiers Sibelius en
-                        fichiers MEI à l'aide du plugin SibMei.
-     </desc>
-     <desc type="term" xml:lang="en">
-      <term key="http://tadirah.dariah.eu/vocab/index.php?_search_expresion=Conversion" source="http://tadirah.dariah.eu/" type="activity"/>
-     </desc>
-     <linkGrp type="generalResources">
-      <ref source="zotero" target="3FSG8F5I" type="software">
-       <term key="Sibelius" type="software"/>
-      </ref>
-      <ref source="zotero" subtype="standard" target="983UF5N4" type="documentation">
-       <term key="MEI" source="standard_list" type="standard"/>
-      </ref>
-      <ref source="zotero" subtype="standard" target="US7FCT9X" type="schema">
-       <term key="MEI" source="standard_list" type="standard"/>
-      </ref>
-      <ref source="github" subtype="tool" target="https://github.com/music-encoding/sibmei" type="code">
-       <term key="Sibmei" type="tool"/>
-      </ref>
-     </linkGrp>
-    </event>
-   </listEvent>
-  </body>
- </text>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_CFiMFin_020218">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Step "Change format into MEI files if necessary"</title>
+            <author>
+               <persName>Vincent Besson</persName>
+               <affiliation>CNRS</affiliation>
+            </author>
+            <author>
+               <persName>Adeline Joffres</persName>
+               <affiliation>CNRS</affiliation>
+            </author>
+            <author>
+               <persName>Hélène Gautier</persName>
+               <affiliation>CNRS</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+       document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head xml:lang="en">Change format into MEI files if necessary.</head>
+               <head xml:lang="fr">Si nécessaire, changer de format et utiliser la MEI.</head>
+               <desc type="definition" xml:lang="en">Convert the Sibelius files into MEI files through the
+      plugin SibMei.</desc>
+               <desc type="definition" xml:lang="fr">Convertir les fichiers Sibelius en fichiers MEI à l'aide
+      du plugin SibMei.</desc>
+               <desc type="term" xml:lang="en">
+                  <term key="http://tadirah.dariah.eu/vocab/index.php?_search_expresion=Conversion"
+                        source="http://tadirah.dariah.eu/"
+                        type="activity"/>
+               </desc>
+               <linkGrp type="generalResources">
+                  <ref source="zotero" target="3FSG8F5I" type="software">
+                     <term key="Sibelius" type="software"/>
+                  </ref>
+                  <ref source="zotero"
+                       subtype="standard"
+                       target="983UF5N4"
+                       type="documentation">
+                     <term key="MEI" source="standard_list" type="standard"/>
+                  </ref>
+                  <ref source="zotero"
+                       subtype="standard"
+                       target="US7FCT9X"
+                       type="schema">
+                     <term key="MEI" source="standard_list" type="standard"/>
+                  </ref>
+                  <ref source="github"
+                       subtype="tool"
+                       target="https://github.com/music-encoding/sibmei"
+                       type="code">
+                     <term key="Sibmei" type="tool"/>
+                  </ref>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

@@ -1,89 +1,85 @@
-<?xml version="1.0" encoding="utf-8"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-	schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-model href="file:/d:/Users/hgautier/Desktop/TEI%20WP4/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI type="researchStep" xml:id="step_A_121017" xmlns="http://www.tei-c.org/ns/1.0">
- <teiHeader>
-  <fileDesc>
-   <titleStmt>
-    <title>
-     Step "Analyse"
-    </title>
-    <author>
-     <persName>
-      Emilie Kraikamp
-     </persName>
-     <affiliation>
-      DANS
-     </affiliation>
-    </author>
-   </titleStmt>
-   <publicationStmt>
-    <authority>
-     Parthenos
-    </authority>
-    <availability>
-     <licence target="http://creativecommons.org/licenses/by/4.0/">
-      <p>
-       The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
-                     this document.
-      </p>
-     </licence>
-    </availability>
-   </publicationStmt>
-   <sourceDesc>
-    <p>
-     Created from scratch
-    </p>
-   </sourceDesc>
-  </fileDesc>
-  <revisionDesc>
-   <change/>
-  </revisionDesc>
- </teiHeader>
- <text>
-  <body>
-   <listEvent>
-    <event type="researchStep">
-     <head xml:lang="en">
-      Analyse
-     </head>
-     <head xml:lang="fr">
-      Analyser
-     </head>
-     <desc type="definition" xml:lang="en">
-      Calculate p-values for significance, by using
-                  Analysis of Variance (ANOVA) or regression-analyses
-     </desc>
-     <desc type="definition" xml:lang="fr"/>
-     <desc type="term" xml:lang="en">
-      <term key="http://tadirah.dariah.eu/vocab/index.php?tema=30&amp;/structural-analysis" source="http://tadirah.dariah.eu/" type="activity"/>
-     </desc>
-     <linkGrp type="generalResources">
-      <ref source="zotero" subtype="tool" target="QP9WMGDS" type="tutorial">
-       <term key="R" type="tool"/>
-      </ref>
-      <ref source="zotero" subtype="tool" target="VAAKZ6JI" type="bibliography">
-       <term key="R" type="tool"/>
-      </ref>
-      <ref source="zotero" subtype="tool" target="PENH8EZE" type="journal">
-       <term key="R" type="tool"/>
-      </ref>
-      <ref source="github" subtype="tool" target="https://github.com/jasp-stats/jasp-desktop" type="code">
-       <term key="JASP" type="tool"/>
-      </ref>
-      <ref source="zotero" subtype="tool" target="P3WVDB2Z" type="tutorial">
-       <term key="PSPP" type="tool"/>
-      </ref>
-      <ref source="zotero" subtype="tool" target="2PCNPUUG" type="webpage">
-       <term key="STATA" type="tool"/>
-      </ref>
-      <ref source="zotero" subtype="tool" target="I828B5GI" type="webpage">
-       <term key="SPSS" type="tool"/>
-      </ref>
-     </linkGrp>
-    </event>
-   </listEvent>
-  </body>
- </text>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_A_121017">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Step "Analyse"</title>
+            <author>
+               <persName>Emilie Kraikamp</persName>
+               <affiliation>DANS</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+       document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head xml:lang="en">Analyse</head>
+               <head xml:lang="fr">Analyser</head>
+               <desc type="definition" xml:lang="en">Calculate p-values for significance, by using Analysis
+      of Variance (ANOVA) or regression-analyses</desc>
+               <desc type="definition" xml:lang="fr"/>
+               <desc type="term" xml:lang="en">
+                  <term key="http://tadirah.dariah.eu/vocab/index.php?tema=30&amp;/structural-analysis"
+                        source="http://tadirah.dariah.eu/"
+                        type="activity"/>
+               </desc>
+               <linkGrp type="generalResources">
+                  <ref source="zotero"
+                       subtype="tool"
+                       target="QP9WMGDS"
+                       type="tutorial">
+                     <term key="R" type="tool"/>
+                  </ref>
+                  <ref source="zotero"
+                       subtype="tool"
+                       target="VAAKZ6JI"
+                       type="bibliography">
+                     <term key="R" type="tool"/>
+                  </ref>
+                  <ref source="zotero" subtype="tool" target="PENH8EZE" type="journal">
+                     <term key="R" type="tool"/>
+                  </ref>
+                  <ref source="github"
+                       subtype="tool"
+                       target="https://github.com/jasp-stats/jasp-desktop"
+                       type="code">
+                     <term key="JASP" type="tool"/>
+                  </ref>
+                  <ref source="zotero"
+                       subtype="tool"
+                       target="P3WVDB2Z"
+                       type="tutorial">
+                     <term key="PSPP" type="tool"/>
+                  </ref>
+                  <ref source="zotero" subtype="tool" target="2PCNPUUG" type="webpage">
+                     <term key="STATA" type="tool"/>
+                  </ref>
+                  <ref source="zotero" subtype="tool" target="I828B5GI" type="webpage">
+                     <term key="SPSS" type="tool"/>
+                  </ref>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

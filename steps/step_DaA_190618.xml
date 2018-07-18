@@ -1,112 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Step "Describe and annotate"</title>
-                <author>
-                    <persName>Sarah Tournon-Valiente</persName>
-                    <affiliation>3D-SHS Huma-Num's consortium</affiliation>
-                </author>
-                <author>
-                    <persName>Mehdi Chayani</persName>
-                    <affiliation>3D-SHS Huma-Num's consortium</affiliation>
-                </author>
-                <author>
-                    <persName>Valentin Grimaud</persName>
-                    <affiliation>3D-SHS Huma-Num's consortium</affiliation>
-                </author>
-                <author>
-                    <persName>Xavier Granier</persName>
-                    <affiliation>3D-SHS Huma-Num's consortium</affiliation>
-                </author>
-                <author>
-                    <persName>Hélène Gautier</persName>
-                    <affiliation>Huma-Num/CNRS</affiliation>
-                </author>
-                <author>
-                    <persName>Adeline Joffres</persName>
-                    <affiliation>Huma-Num/CNRS</affiliation>
-                </author>
-                <author>
-                    <persName>Paulin Ribbe</persName>
-                    <affiliation>Huma-Num/CNRS</affiliation>
-                </author>
-            </titleStmt>
-            <publicationStmt>
-                <authority>PARTHENOS</authority>
-                <availability>
-                    <licence target="http://creativecommons.org/licenses/by/4.0/">
-                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     xml:id="step_DaA_190618"
+     type="researchStep">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Step "Describe and annotate"</title>
+            <author>
+               <persName>Sarah Tournon-Valiente</persName>
+               <affiliation>3D-SHS Huma-Num's consortium</affiliation>
+            </author>
+            <author>
+               <persName>Mehdi Chayani</persName>
+               <affiliation>3D-SHS Huma-Num's consortium</affiliation>
+            </author>
+            <author>
+               <persName>Valentin Grimaud</persName>
+               <affiliation>3D-SHS Huma-Num's consortium</affiliation>
+            </author>
+            <author>
+               <persName>Xavier Granier</persName>
+               <affiliation>3D-SHS Huma-Num's consortium</affiliation>
+            </author>
+            <author>
+               <persName>Hélène Gautier</persName>
+               <affiliation>Huma-Num/CNRS</affiliation>
+            </author>
+            <author>
+               <persName>Adeline Joffres</persName>
+               <affiliation>Huma-Num/CNRS</affiliation>
+            </author>
+            <author>
+               <persName>Paulin Ribbe</persName>
+               <affiliation>Huma-Num/CNRS</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>PARTHENOS</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
                             to this document.</p>
-                    </licence>
-                </availability>
-            </publicationStmt>
-            <sourceDesc>
-                <p>Created from scratch</p>
-            </sourceDesc>
-        </fileDesc>
-        <revisionDesc>
-            <change/>
-        </revisionDesc>
-    </teiHeader>
-    <text>
-        <body>
-            <listEvent>
-                <event type="researchStep">
-                    <head xml:lang="en">Describe and annotate</head>
-
-                    <desc xml:lang="en" type="definition">Enrich the 3D object with annotation
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head xml:lang="en">Describe and annotate</head>
+               <desc xml:lang="en" type="definition">Enrich the 3D object with annotation
                         and/or description based on existing Europeana format for metadata.</desc>
-
-                    <desc xml:lang="en" type="term">
-                        <term type="activity" source="http://tadirah.dariah.eu/"
-                            key="http://tadirah.dariah.eu/vocab/index.php?tema=22#x26;/annotating"/>
-                    </desc>
-                    <linkGrp type="generalResources">
-
-                        <ref type="schema" source="zotero" target="JH4RHXIX"/>
-                        <ref type="specification" source="zotero" target="97VDSZVB">
-                            <term type="standards" source="standard_list" key="EDM"/>
-                        </ref>
-                        <ref type="documentation" source="zotero" target="G3ADKTMA"/>
-                        <ref type="documentation" source="zotero" target="NP8RA6PN">
-                            <term type="standards" source="standard_list" key="CIDOC-CRM"/>
-                        </ref>
-                        <ref type="specification" source="zotero" target="5FHQ64PA">
-                            <term type="standards" source="standard_list" key="CIDOC-CRM"/>
-                        </ref>
-                        <ref type="specification" source="zotero" target="7R6QMZ97"/>
-                        <ref type="specification" source="zotero" target="J4NI2T8D">
-                            <term type="standards" source="standard_list" key="LIDO"/>
-                        </ref>
-                        <ref type="schema" source="zotero" target="FTCDGHB2">
-                            <term type="standards" source="standard_list" key="LIDO"/>
-                        </ref>
-                        <ref type="documentation" source="zotero" target="CQ4VK4MZ">
-                            <term type="standards" source="standard_list" key="METS"/>
-                        </ref>
-                        <ref type="documentation" source="zotero" target="G23PVP4B">
-                            <term type="standards" source="standard_list" key="METS"/>
-                        </ref>
-                        <ref type="schema" source="zotero" target="IE7HE58F">
-                            <term type="standards" source="standard_list" key="METS"/>
-                        </ref>
-                        <ref type="tutorial" source="zotero" target="JZETVVTF">
-                            <term type="standards" source="standard_list" key="METS"/>
-                        </ref>
-                        <ref type="report" source="zotero" target="JQA2HGXG"/>
-                    </linkGrp>
-                    <linkGrp type="projectResources" source="CARARE" corresp="http://www.carare.eu/">
-                        <ref type="webpage" target="http://www.carare.eu/"/>
-                    </linkGrp>
-                    <linkGrp type="projectResources" source="3D-ICONS"
+               <desc xml:lang="en" type="term">
+                  <term type="activity"
+                        source="http://tadirah.dariah.eu/"
+                        key="http://tadirah.dariah.eu/vocab/index.php?tema=22#x26;/annotating"/>
+               </desc>
+               <linkGrp type="generalResources">
+                  <ref type="schema" source="zotero" target="JH4RHXIX"/>
+                  <ref type="specification" source="zotero" target="97VDSZVB">
+                     <term type="standards" source="standard_list" key="EDM"/>
+                  </ref>
+                  <ref type="documentation" source="zotero" target="G3ADKTMA"/>
+                  <ref type="documentation" source="zotero" target="NP8RA6PN">
+                     <term type="standards" source="standard_list" key="CIDOC-CRM"/>
+                  </ref>
+                  <ref type="specification" source="zotero" target="5FHQ64PA">
+                     <term type="standards" source="standard_list" key="CIDOC-CRM"/>
+                  </ref>
+                  <ref type="specification" source="zotero" target="7R6QMZ97"/>
+                  <ref type="specification" source="zotero" target="J4NI2T8D">
+                     <term type="standards" source="standard_list" key="LIDO"/>
+                  </ref>
+                  <ref type="schema" source="zotero" target="FTCDGHB2">
+                     <term type="standards" source="standard_list" key="LIDO"/>
+                  </ref>
+                  <ref type="documentation" source="zotero" target="CQ4VK4MZ">
+                     <term type="standards" source="standard_list" key="METS"/>
+                  </ref>
+                  <ref type="documentation" source="zotero" target="G23PVP4B">
+                     <term type="standards" source="standard_list" key="METS"/>
+                  </ref>
+                  <ref type="schema" source="zotero" target="IE7HE58F">
+                     <term type="standards" source="standard_list" key="METS"/>
+                  </ref>
+                  <ref type="tutorial" source="zotero" target="JZETVVTF">
+                     <term type="standards" source="standard_list" key="METS"/>
+                  </ref>
+                  <ref type="report" source="zotero" target="JQA2HGXG"/>
+               </linkGrp>
+               <linkGrp type="projectResources"
+                        source="CARARE"
+                        corresp="http://www.carare.eu/">
+                  <ref type="webpage" target="http://www.carare.eu/"/>
+               </linkGrp>
+               <linkGrp type="projectResources"
+                        source="3D-ICONS"
                         corresp="http://3dicons-project.eu">
-                        <ref type="webpage" target="http://3dicons-project.eu"/>
-                    </linkGrp>
-                </event>
-            </listEvent>
-        </body>
-    </text>
+                  <ref type="webpage" target="http://3dicons-project.eu"/>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

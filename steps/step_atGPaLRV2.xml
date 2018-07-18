@@ -1,96 +1,96 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<!-- You have to type the TEI file, with researchStep or researchScenario -->
-<TEI type="researchStep" xml:id="step_atGPaLRV2" xmlns="http://www.tei-c.org/ns/1.0">
- <teiHeader>
-  <fileDesc>
-   <titleStmt>
-    <title>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_atGPaLRV2">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>
      step_atGPaLRstep_V2.xml
     </title>
-    <author>
-     <persName>
+            <author>
+               <persName>
       Maurizio Sanesi
      </persName>
-     <affiliation>
+               <affiliation>
       SISMEL
      </affiliation>
-    </author>
-    <author>
-     <persName>
+            </author>
+            <author>
+               <persName>
       Karolien Verbrugge
      </persName>
-     <affiliation>
+               <affiliation>
       NIOD
      </affiliation>
-    </author>
-    <author>
-     <persName>
+            </author>
+            <author>
+               <persName>
       Claus Spiecker
      </persName>
-     <affiliation>
+               <affiliation>
       FHP
      </affiliation>
-    </author>
-    <author>
-     <persName>
+            </author>
+            <author>
+               <persName>
       Roberta Giacomi
      </persName>
-     <affiliation>
+               <affiliation>
       SISMEL
      </affiliation>
-    </author>
-   </titleStmt>
-   <publicationStmt>
-    <authority>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>
      Parthenos
     </authority>
-    <availability>
-     <licence target="http://creativecommons.org/licenses/by/4.0/">
-      <p>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>
        The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
                             to this document.
       </p>
-     </licence>
-    </availability>
-   </publicationStmt>
-   <sourceDesc>
-    <p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>
      Created from scratch
     </p>
-   </sourceDesc>
-  </fileDesc>
-  <revisionDesc>
-   <!-- Use only for major changes -->
-   <change/>
-  </revisionDesc>
- </teiHeader>
- <text>
-  <body>
-   <listEvent>
-    <event type="researchStep">
-     <!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
-     <head type="stepTitle" xml:lang="en">
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc><!-- Use only for major changes -->
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep"><!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
+               <head type="stepTitle" xml:lang="en">
       Adhere to guidance, policies and legal requirements
      </head>
-     <head type="stepTitle" xml:lang="fr">
+               <head type="stepTitle" xml:lang="fr">
       Titre de l'étape en Français
      </head>
-     <desc type="definition" xml:lang="en">
+               <desc type="definition" xml:lang="en">
       Search for Policies and guidelines suitable for data selected for research
      </desc>
-     <desc type="terms" xml:lang="en">
-      <term key="organizing" source="http://tadirah.dariah.eu/" type="activity"/>
-      <term key="XML" source="standard_list" type="standard"/>
-      <term key="TEI" source="standard_list" type="standard"/>
-      <term key="CD" source="WP3Wizard" type="policies"/>
-     </desc>
-     <linkGrp type="generalResources">
-      <ref source="Common policies Guideline" target="http://www.parthenos-project.eu/Download/Deliverables/D3.1_Guidelines_for_Common_Policies_Implementation.pdf" type="code">
-      </ref>
-     </linkGrp>
-    </event>
-   </listEvent>
-  </body>
- </text>
+               <desc type="terms" xml:lang="en">
+                  <term key="organizing" source="http://tadirah.dariah.eu/" type="activity"/>
+                  <term key="XML" source="standard_list" type="standard"/>
+                  <term key="TEI" source="standard_list" type="standard"/>
+                  <term key="CD" source="WP3Wizard" type="policies"/>
+               </desc>
+               <linkGrp type="generalResources">
+                  <ref source="Common policies Guideline"
+                       target="http://www.parthenos-project.eu/Download/Deliverables/D3.1_Guidelines_for_Common_Policies_Implementation.pdf"
+                       type="code"/>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

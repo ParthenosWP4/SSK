@@ -1,78 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<!-- You have to type the TEI file, with researchStep or researchScenario -->
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_conversionToTEI">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Description of the "Conversion to TEI" step</title>
-                <author>
-                    <persName>Klaus Illmayer</persName>
-                    <affiliation>OEAW-ACDH</affiliation>
-                </author>
-                <author>
-                    <persName>Susanne Haaf</persName>
-                    <affiliation>BBAW</affiliation>
-                </author>
-                <author>
-                    <persName>Piotr Bański</persName>
-                    <affiliation>IDS Mannheim, CLARIN</affiliation>
-                </author>
-            </titleStmt>
-            <publicationStmt>
-                <authority>PARTHENOS</authority>
-                <availability>
-                    <licence target="http://creativecommons.org/licenses/by/4.0/">
-                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_conversionToTEI">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Description of the "Conversion to TEI" step</title>
+            <author>
+               <persName>Klaus Illmayer</persName>
+               <affiliation>OEAW-ACDH</affiliation>
+            </author>
+            <author>
+               <persName>Susanne Haaf</persName>
+               <affiliation>BBAW</affiliation>
+            </author>
+            <author>
+               <persName>Piotr Bański</persName>
+               <affiliation>IDS Mannheim, CLARIN</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>PARTHENOS</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
                             to this document.</p>
-                    </licence>
-                </availability>
-            </publicationStmt>
-            <sourceDesc>
-                <p>Created from scratch</p>
-            </sourceDesc>
-        </fileDesc>
-        <revisionDesc>
-            <!-- Use only for major changes -->
-            <change/>
-        </revisionDesc>
-    </teiHeader>
-    <text>
-        <body>
-            <listEvent>
-                <event type="researchStep">
-                    <head type="stepTitle" xml:lang="en">Conversion to TEI</head>
-                    <desc type="definition" xml:lang="en">
-                      For the project at hand, a TEI format has to be chosen or created
-                      (the latter by usage of the ODD language) which suits the markup
-                      necessities defined in the corpus composition step. Thus, if digitized
-                      data from other sources are to be re-used for corpus creation, these
-                      may very likely be available only in formats that aren't similar to the
-                      TEI format selected for the corpus creation project at hand. External data
-                      may either come in completely different formats or at least in different
-                      TEI dialects. In any case, it will be necessary to convert the data from
-                      different formats into the TEI output format. Conversion may be conducted
-                      semi-automatically.</desc>
-                    <desc xml:lang="en" type="terms">
-                        <term type="standard" source="standard_list" key="XML"/>
-                        <term type="standard" source="standard_list" key="TEI"/>
-                        <term type="activity" source="http://tadirah.dariah.eu/"
-                            key="conversion">Conversion</term>
-                    </desc>
-                    <linkGrp type="generalResources">
-                        <ref type="spec" source="zotero" target="ZABRV5VD">
-                            <term type="standard" source="standard_list" key="TEI"/>
-                        </ref>
-                        <ref type="spec" source="zotero" target="ZE34VR34">
-                            <term type="standard" source="standard_list" key="TEI"/>
-                        </ref>
-                        <ref type="spec" source="zotero" target="JKRT7H2E">
-                            <term type="standard" source="standard_list" key="XML"/>
-                        </ref>
-                        <!-- todo: include http://www.tei-c.org/Guidelines/Customization/ -->
-                    </linkGrp>
-                </event>
-            </listEvent>
-        </body>
-    </text>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc><!-- Use only for major changes -->
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head type="stepTitle" xml:lang="en">Conversion to TEI</head>
+               <desc type="definition" xml:lang="en"> For the project at hand, a TEI format has
+                        to be chosen or created (the latter by usage of the ODD language) which
+                        suits the markup necessities defined in the corpus composition step. Thus,
+                        if digitized data from other sources are to be re-used for corpus creation,
+                        these may very likely be available only in formats that aren't similar to
+                        the TEI format selected for the corpus creation project at hand. External
+                        data may either come in completely different formats or at least in
+                        different TEI dialects. In any case, it will be necessary to convert the
+                        data from different formats into the TEI output format. Conversion may be
+                        conducted semi-automatically.</desc>
+               <desc xml:lang="en" type="terms">
+                  <term type="standard" source="standard_list" key="XML"/>
+                  <term type="standard" source="standard_list" key="TEI"/>
+                  <term type="activity" source="http://tadirah.dariah.eu/" key="conversion">Conversion</term>
+               </desc>
+               <linkGrp type="generalResources">
+                  <ref type="spec" source="zotero" target="ZABRV5VD">
+                     <term type="standard" source="standard_list" key="TEI"/>
+                  </ref>
+                  <ref type="spec" source="zotero" target="ZE34VR34">
+                     <term type="standard" source="standard_list" key="TEI"/>
+                  </ref>
+                  <ref type="spec" source="zotero" target="JKRT7H2E">
+                     <term type="standard" source="standard_list" key="XML"/>
+                  </ref>
+                  <!-- todo: include http://www.tei-c.org/Guidelines/Customization/ -->
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

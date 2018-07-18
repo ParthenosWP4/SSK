@@ -1,70 +1,53 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <!-- You have to type the TEI file, with researchStep or researchScenario -->
-<TEI type="researchStep" xml:id="step_SEouDatttQV2" xmlns="http://www.tei-c.org/ns/1.0">
- <teiHeader>
-  <fileDesc>
-   <titleStmt>
-    <title>
-     step_SEouDatttQ_V2.xml
-    </title>
-    <author>
-     <persName>
-      Maurizio Sanesi
-     </persName>
-     <affiliation>
-      SISMEL
-     </affiliation>
-    </author>
-    <author>
-     <persName>
-      Roberta Giacomi
-     </persName>
-     <affiliation>
-      SISMEL
-     </affiliation>
-    </author>
-   </titleStmt>
-   <publicationStmt>
-    <authority>
-     Parthenos
-    </authority>
-    <availability>
-     <licence target="http://creativecommons.org/licenses/by/4.0/">
-      <p>
-       The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
-                            to this document.
-      </p>
-     </licence>
-    </availability>
-   </publicationStmt>
-   <sourceDesc>
-    <p>
-     Created from scratch
-    </p>
-   </sourceDesc>
-  </fileDesc>
-  <revisionDesc>
-   <!-- Use only for major changes -->
-   <change/>
-  </revisionDesc>
- </teiHeader>
- <text>
-  <body>
-   <listEvent>
-    <event type="researchStep">
-     <!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
-     <head type="stepTitle" xml:lang="en">
-      Select / Extrapolate only useful data according to the target question
-     </head>
-     <desc type="terms" xml:lang="en">
-      <term key="Gathering" source="http://tadirah.dariah.eu/" type="activity"/>
-      <term key="XML" source="standard_list" type="standard"/>
-      <term key="TEI" source="standard_list" type="standard"/>
-      <term key="CD" source="WP3Wizard" type="policies"/>
-     </desc>
-    </event>
-   </listEvent>
-  </body>
- </text>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_SEouDatttQV2">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>step_SEouDatttQ_V2.xml</title>
+            <author>
+               <persName>Maurizio Sanesi</persName>
+               <affiliation>SISMEL</affiliation>
+            </author>
+            <author>
+               <persName>Roberta Giacomi</persName>
+               <affiliation>SISMEL</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+       document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc><!-- Use only for major changes -->
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep"><!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
+               <head type="stepTitle" xml:lang="en">Select / Extrapolate only useful data according to the
+      target question</head>
+               <desc type="terms" xml:lang="en">
+                  <term key="Gathering" source="http://tadirah.dariah.eu/" type="activity"/>
+                  <term key="XML" source="standard_list" type="standard"/>
+                  <term key="TEI" source="standard_list" type="standard"/>
+                  <term key="CD" source="WP3Wizard" type="policies"/>
+               </desc>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

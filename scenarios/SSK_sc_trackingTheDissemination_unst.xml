@@ -1,114 +1,83 @@
-<?xml version="1.0" encoding="utf-8"?>
-<?xml-model href="../spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI type="researchScenario" xml:id="SSK_sc_trackingTheDissemination_unst" xmlns="http://www.tei-c.org/ns/1.0">
- <teiHeader>
-  <fileDesc>
-   <titleStmt>
-    <title>
-     Tracking the dissemination of a specific work
-    </title>
-    <author>
-     <persName>
-      Maurizio Sanesi
-     </persName>
-     <affiliation>
-      SISMEL
-     </affiliation>
-    </author>
-    <author>
-     <persName>
-      Roberta Giacomi
-     </persName>
-     <affiliation>
-      SISMEL
-     </affiliation>
-    </author>
-    <author>
-     <persName>
-      Claus Spiecker
-     </persName>
-     <affiliation>
-      FHP
-     </affiliation>
-    </author>
-    <author>
-     <persName>
-      Karolien Verbrugge
-     </persName>
-     <affiliation>
-      NIOD
-     </affiliation>
-    </author>
-   </titleStmt>
-   <publicationStmt>
-    <authority>
-     Parthenos
-    </authority>
-    <availability>
-     <licence target="http://creativecommons.org/licenses/by/4.0/">
-      <p>
-       The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
-                     this document.
-      </p>
-     </licence>
-    </availability>
-   </publicationStmt>
-   <sourceDesc>
-    <p>
-     Created from scratch
-    </p>
-   </sourceDesc>
-  </fileDesc>
-  <revisionDesc>
-   <change/>
-  </revisionDesc>
- </teiHeader>
- <text>
-  <body>
-   <div type="scenario">
-    <head type="scenarioTitle" xml:lang="en">
-     Tracking the dissemination of a specific work
-    </head>
-    <desc type="definition" xml:lang="en">
-     In medieval studies, the dissemination of a work
-               can give important information on life and movements of the author; plus, it can
-               influence local history and everyday activities: i.e. some medical practices were
-               performed just in places where the work carrying information about them was spread.
-               Moreover, it can be useful also to understand if the work was disseminated alone or
-               together with other works, and why: for instance, in medieval universities the
-               essential works for the study of a discipline were often gathered in the same
-               manuscript. Therefore, scholars may have interest in the itinerary made by a given
-               work, and may want to track it.
-    </desc>
-    <desc type="terms" xml:lang="en">
-     <term key="SOTP" source="parthenos" type="discipline">
-      Studies of the past
-     </term>
-     <term key="metadata" source="tadirah" type="objects"/>
-    </desc>
-    <figure type="image">
-     <head/>
-     <graphic url="https://upload.wikimedia.org/wikipedia/commons/6/6f/Portrait_de_Dante.jpg"/>
-     <figDesc>
-      Photo from Wikimedia
-     </figDesc>
-    </figure>
-    <listEvent>
-     <event ref="step_StWowtSiC" type="researchStep" xml:id="s1"/>
-     <event ref="step_DtGatCB" type="researchStep" xml:id="s2"/>
-     <event ref="step_SDtatRfC" type="researchStep" xml:id="s3"/>
-     <event ref="step_CaSARDCooCwDwbs" type="researchStep" xml:id="s4"/>
-     <event ref="step_atGPaLR" type="researchStep" xml:id="s5"/>
-     <event ref="step_CaeEotSW" type="researchStep" xml:id="s6"/>
-     <event ref="step_AtuotEitSP" type="researchStep" xml:id="s7"/>
-     <event ref="step_UtPaCotW" type="researchStep" xml:id="s8"/>
-     <event ref="step_EIoD" type="researchStep" xml:id="s9"/>
-     <event ref="step_BCD" type="researchStep" xml:id="s10"/>
-     <event ref="step_ItdaoeoSIMooMautAtC" type="researchStep" xml:id="s11"/>
-     <event ref="step_SdtAaP" type="researchStep" xml:id="s12"/>
-     <event ref="step_EttrLPaA" type="researchStep" xml:id="s13"/>
-    </listEvent>
-   </div>
-  </body>
- </text>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchScenario"
+     xml:id="SSK_sc_trackingTheDissemination_unst">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Tracking the dissemination of a specific work</title>
+            <author>
+               <persName>Maurizio Sanesi</persName>
+               <affiliation>SISMEL</affiliation>
+            </author>
+            <author>
+               <persName>Roberta Giacomi</persName>
+               <affiliation>SISMEL</affiliation>
+            </author>
+            <author>
+               <persName>Claus Spiecker</persName>
+               <affiliation>FHP</affiliation>
+            </author>
+            <author>
+               <persName>Karolien Verbrugge</persName>
+               <affiliation>NIOD</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+       document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div type="scenario">
+            <head type="scenarioTitle" xml:lang="en">Tracking the dissemination of a specific work</head>
+            <desc type="definition" xml:lang="en">In medieval studies, the dissemination of a work can give
+     important information on life and movements of the author; plus, it can influence local history
+     and everyday activities: i.e. some medical practices were performed just in places where the
+     work carrying information about them was spread. Moreover, it can be useful also to understand
+     if the work was disseminated alone or together with other works, and why: for instance, in
+     medieval universities the essential works for the study of a discipline were often gathered in
+     the same manuscript. Therefore, scholars may have interest in the itinerary made by a given
+     work, and may want to track it.</desc>
+            <desc type="terms" xml:lang="en">
+               <term key="SOTP" source="parthenos" type="discipline">Studies of the past</term>
+               <term key="metadata" source="tadirah" type="objects"/>
+            </desc>
+            <figure type="image">
+               <head/>
+               <graphic url="https://upload.wikimedia.org/wikipedia/commons/6/6f/Portrait_de_Dante.jpg"/>
+               <figDesc>Photo from Wikimedia</figDesc>
+            </figure>
+            <listEvent>
+               <event ref="step_StWowtSiC" type="researchStep" xml:id="s1"/>
+               <event ref="step_DtGatCB" type="researchStep" xml:id="s2"/>
+               <event ref="step_SDtatRfC" type="researchStep" xml:id="s3"/>
+               <event ref="step_CaSARDCooCwDwbs" type="researchStep" xml:id="s4"/>
+               <event ref="step_atGPaLR" type="researchStep" xml:id="s5"/>
+               <event ref="step_CaeEotSW" type="researchStep" xml:id="s6"/>
+               <event ref="step_AtuotEitSP" type="researchStep" xml:id="s7"/>
+               <event ref="step_UtPaCotW" type="researchStep" xml:id="s8"/>
+               <event ref="step_EIoD" type="researchStep" xml:id="s9"/>
+               <event ref="step_BCD" type="researchStep" xml:id="s10"/>
+               <event ref="step_ItdaoeoSIMooMautAtC" type="researchStep" xml:id="s11"/>
+               <event ref="step_SdtAaP" type="researchStep" xml:id="s12"/>
+               <event ref="step_EttrLPaA" type="researchStep" xml:id="s13"/>
+            </listEvent>
+         </div>
+      </body>
+   </text>
 </TEI>

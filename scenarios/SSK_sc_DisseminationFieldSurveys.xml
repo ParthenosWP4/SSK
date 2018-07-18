@@ -1,61 +1,65 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI type="researchScenario" xml:id="SSK_sc_DisseminationFieldSurveys"
-    xmlns="http://www.tei-c.org/ns/1.0">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Encode and modelize field surveys for their online dissemination</title>
-                <author><persName>Hélène
-                    Gautier</persName><affiliation>Huma-Num/CNRS</affiliation></author>
-                <author><persName>Marie Puren</persName><affiliation>INRIA</affiliation></author>
-            </titleStmt>
-            <publicationStmt>
-                <authority>PARTHENOS</authority>
-                <availability>
-                    <licence target="http://creativecommons.org/licenses/by/4.0/"><p>The Creative
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchScenario"
+     xml:id="SSK_sc_DisseminationFieldSurveys">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Encode and modelize field surveys for their online dissemination</title>
+            <author>
+               <persName>Hélène
+                    Gautier</persName>
+               <affiliation>Huma-Num/CNRS</affiliation>
+            </author>
+            <author>
+               <persName>Marie Puren</persName>
+               <affiliation>INRIA</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>PARTHENOS</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative
                             Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
-                            document.</p></licence>
-                </availability>
-            </publicationStmt>
-            <sourceDesc>
-                <p>Created from scratch</p>
-            </sourceDesc>
-        </fileDesc>
-        <encodingDesc>
-            <listPrefixDef>
-                <prefixDef ident="wp2" matchPattern="(.*?)" replacementPattern="groups/368112">
-                    <p>The prefix wp2 needs to be used before resources taken from the <ref
-                            target="https://www.zotero.org/groups/368112/parthenos_wp2" type="url"
-                            >Parthenos WP2 Zotero Library</ref>.</p>
-                    <p>In the <att>target</att>attribute, the prefix in separated by the Zotero ID
+                            document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <listPrefixDef>
+            <prefixDef ident="wp2" matchPattern="(.*?)" replacementPattern="groups/368112">
+               <p>The prefix wp2 needs to be used before resources taken from the <ref target="https://www.zotero.org/groups/368112/parthenos_wp2" type="url">Parthenos WP2 Zotero Library</ref>.</p>
+               <p>In the <att>target</att>attribute, the prefix in separated by the Zotero ID
                         by a colon ":". Ex: target="wp2:JHSD76DS"</p>
-                </prefixDef>
-                <prefixDef ident="wp3" matchPattern="(.*?)" replacementPattern="groups/520841">
-                    <p>The prefix wp3 needs to be used before resources taken from the <ref
-                            target="https://www.zotero.org/groups/520841/parthenos_wp3" type="url"
-                            >Parthenos WP3 Zotero Library</ref>.</p>
-                    <p>In the <att>target</att>attribute, the prefix in separated by the Zotero ID
+            </prefixDef>
+            <prefixDef ident="wp3" matchPattern="(.*?)" replacementPattern="groups/520841">
+               <p>The prefix wp3 needs to be used before resources taken from the <ref target="https://www.zotero.org/groups/520841/parthenos_wp3" type="url">Parthenos WP3 Zotero Library</ref>.</p>
+               <p>In the <att>target</att>attribute, the prefix in separated by the Zotero ID
                         by a colon ":". Ex: target="wp2:JHSD76DS"</p>
-                </prefixDef>
-                <prefixDef ident="wp4" matchPattern="(.*?)" replacementPattern="groups/427927">
-                    <p>The prefix wp4 needs to be used before resources taken from the <ref
-                            target="https://www.zotero.org/groups/427927/parthenos_wp4" type="url"
-                            >Parthenos WP4 Zotero Library</ref>.</p>
-                    <p>In the <att>target</att>attribute, the prefix in separated by the Zotero ID
+            </prefixDef>
+            <prefixDef ident="wp4" matchPattern="(.*?)" replacementPattern="groups/427927">
+               <p>The prefix wp4 needs to be used before resources taken from the <ref target="https://www.zotero.org/groups/427927/parthenos_wp4" type="url">Parthenos WP4 Zotero Library</ref>.</p>
+               <p>In the <att>target</att>attribute, the prefix in separated by the Zotero ID
                         by a colon ":". Ex: target="wp2:JHSD76DS"</p>
-                </prefixDef>
-            </listPrefixDef>
-        </encodingDesc>
-        <revisionDesc>
-            <change/>
-        </revisionDesc>
-    </teiHeader>
-    <text>
-        <body>
-            <div type="scenario" xml:id="sc_DisseminationFieldSurveys">
-                <head type="scenarioTitle" xml:lang="en">Encode and modelize field surveys for their
+            </prefixDef>
+         </listPrefixDef>
+      </encodingDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div type="scenario" xml:id="sc_DisseminationFieldSurveys">
+            <head type="scenarioTitle" xml:lang="en">Encode and modelize field surveys for their
                     online dissemination</head>
-                <desc type="definition" xml:lang="en">A researcher wants to preserve and to give
+            <desc type="definition" xml:lang="en">A researcher wants to preserve and to give
                     access to field surveys and their related materials. Indeed, to provide a
                     consistent context and make the reuse of raw data easier, the documentation has
                     to include not only field materials but also documents about the research
@@ -66,30 +70,31 @@
                     is organised according to a classification plan. It is supposed that people
                     interested have agreed that data will be made public available (potentially with
                     some restrictions).</desc>
-                <desc type="terms" xml:lang="en"><term source="aurehal" type="discipline"
-                        >Sociology</term><term key="Encoding" source="tadirah" type="techniques"
-                        /><term key="Document" source="nemo" type="objects"/><term key="Sound"
-                        source="nemo" type="objects"/><term key="Video recording" source="nemo"
-                        type="objects"/><term key="Technical reports" source="nemo" type="objects"
-                    /></desc>
-                <figure type="image">
-                    <head/>
-                    <graphic
-                        url="https://upload.wikimedia.org/wikipedia/commons/c/cb/Bronis%C5%82aw_Malinowski_among_Trobriand_tribe_3.jpg"/>
-                    <figDesc/>
-                </figure>
-                <listEvent>
-                    <event ref="step_OtICoP_171117" type="researchStep" xml:id="s1"/>
-                    <event ref="step_CaC_171117" type="researchStep" xml:id="s2"/>
-                    <event ref="step_SaD_171117" type="researchStep" xml:id="s3"/>
-                    <event ref="step_A_171117" type="researchStep" xml:id="s4"/>
-                    <event ref="step_CiSF_171117" type="researchStep" xml:id="s5"/>
-                    <event ref="step_TtI_171117" type="researchStep" xml:id="s6"/>
-                    <event ref="step_AM_171117" type="researchStep" xml:id="s7"/>
-                    <event ref="step_CtR_171117" type="researchStep" xml:id="s8"/>
-                    <event ref="step_DaA_171117" type="researchStep" xml:id="s9"/>
-                </listEvent>
-            </div>
-        </body>
-    </text>
+            <desc type="terms" xml:lang="en">
+               <term source="aurehal" type="discipline">Sociology</term>
+               <term key="Encoding" source="tadirah" type="techniques"/>
+               <term key="Document" source="nemo" type="objects"/>
+               <term key="Sound" source="nemo" type="objects"/>
+               <term key="Video recording" source="nemo" type="objects"/>
+               <term key="Technical reports" source="nemo" type="objects"/>
+            </desc>
+            <figure type="image">
+               <head/>
+               <graphic url="https://upload.wikimedia.org/wikipedia/commons/c/cb/Bronis%C5%82aw_Malinowski_among_Trobriand_tribe_3.jpg"/>
+               <figDesc/>
+            </figure>
+            <listEvent>
+               <event ref="step_OtICoP_171117" type="researchStep" xml:id="s1"/>
+               <event ref="step_CaC_171117" type="researchStep" xml:id="s2"/>
+               <event ref="step_SaD_171117" type="researchStep" xml:id="s3"/>
+               <event ref="step_A_171117" type="researchStep" xml:id="s4"/>
+               <event ref="step_CiSF_171117" type="researchStep" xml:id="s5"/>
+               <event ref="step_TtI_171117" type="researchStep" xml:id="s6"/>
+               <event ref="step_AM_171117" type="researchStep" xml:id="s7"/>
+               <event ref="step_CtR_171117" type="researchStep" xml:id="s8"/>
+               <event ref="step_DaA_171117" type="researchStep" xml:id="s9"/>
+            </listEvent>
+         </div>
+      </body>
+   </text>
 </TEI>
