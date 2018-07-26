@@ -24,10 +24,8 @@
 .home-second{
   margin-right: -15px;
   margin-left: -15px;
-  //@include backgroundShorthand("../../assets/images/Group.png");
   background :url("../../assets/images/background.svg") no-repeat ;
   background-size:cover;
-  //height: 60%;
 
   h1{
     font-family: $adventure;
@@ -50,7 +48,6 @@
   .home-second {
     margin-right: -15px;
     margin-left: -15px;
-    //@include backgroundShorthand("../../assets/images/Group.png");
     background: url("../../assets/images/background.svg") no-repeat;
     background-size: cover;
   }

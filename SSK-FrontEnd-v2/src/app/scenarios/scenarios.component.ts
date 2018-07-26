@@ -50,96 +50,23 @@ export class ScenariosComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.sskServices.setTitle('SSK - Scenarios')
+    this.sskServices.checkBackEndAvailability();
+    if (this.sskServices.getStatusError() === null ) {
+      this.sskServices.setTitle('SSK - Scenarios');
+    }
     this.filters = this.sskServices.getFilters();
     this.options = this.sskServices.options;
-    this.router.navigate([{outlets: {target: null}}]);
     this.tabList = this.sskServices.browseItems;
     this.selectTab = this.tabList[0];
-     //setTimeout(() => {
-
-
-        this.scenarios = this.elasticServices.getScenarios();
-        this.searchData['disciplines'] = this.elasticServices.getDisciplines();
-        this.searchData['activities'] = _.flattenDeep(_.map(_.map(this.elasticServices.getActivities(), 'list'), 'item'));
-        this.searchData['techniques'] = this.elasticServices.getTechniques();
-        this.searchData['objects'] = this.elasticServices.getObjects();
-        this.searchData['standards'] = this.elasticServices.getStandards();
-        this.resultCount = this.elasticServices.getResultCount();
-    console.log(this.elasticServices.getResultCount()
-    );
-    //  }, 1000);
-
-      /*this.elasticServices.countItems('scenarios').subscribe(
-        result => {
-          this.elasticServices.setScenariosID(result['scenarios']);
-          this.elasticServices.setScenarioNumber(result['total']);
-          this.scenariosTemp = new Array<any>(this.elasticServices.getScenarioNumber());
-          this.elasticServices.getScenariosID().forEach((obj)  => {
-            this.asynchFunction(obj);
-          });
-        }, error => {
-          this.error = '500 - Internal Server Error';
-        },
-        () => {
-          this.scenarios = this.elasticServices.getScenarios();
-          this.elasticServices.getAllSteps().subscribe(result => {},
-            error => {},
-            () => {
-              this.loadStepsMetaData();
-              this.loadResources();
-              this.resultCount = this.elasticServices.getScenarios().length;
-            });
-        });
-    } else {
-      this.resultCount = this.elasticServices.getScenarios().length;
       this.scenarios = this.elasticServices.getScenarios();
-    }*/
-  }
-   /*asynchFunction(scenario: any) {
-     setTimeout(() => {
-       this.elasticServices.getScenarioDetails(scenario._id).subscribe(
-         result => {
-            result.id = scenario._id;
-            this.detailsResult = result;
-         },
-         error => { this.error = '500 - Internal Server Error'; },
-         () => {
-           this.elasticServices.addScenario(this.detailsResult);
-           this.scenariosTemp.pop();
-           this.resultCount += 1;
-           if (this.scenarios.length === this.elasticServices.getScenarioNumber()) {
-             this.elasticServices.setObjects(_.uniqBy(_.concat(this.elasticServices.getObjects(),
-               _.map(Object.keys(_.groupBy(_.flattenDeep(_.remove(_.map(_.map(this.elasticServices.getScenarios(), 'scenario_metadata'),
-                 'objects'), function(n) { return !isUndefined(n); })), 'key')), v => v.toLowerCase()))));
+      this.searchData['disciplines'] = this.elasticServices.getDisciplines();
+      this.searchData['activities'] = _.flattenDeep(_.map(_.map(this.elasticServices.getActivities(), 'list'), 'item'));
+      this.searchData['techniques'] = this.elasticServices.getTechniques();
+      this.searchData['objects'] = this.elasticServices.getObjects();
+      this.searchData['standards'] = this.elasticServices.getStandards();
+      this.resultCount = this.elasticServices.getResultCount();
 
-             this.elasticServices.setDisciplines(_.map(Object.keys(_.groupBy(_.flattenDeep(_.remove(_.map(_.map(
-               this.elasticServices.getScenarios(), 'scenario_metadata'), 'discipline'), function(n) {
-               return !isUndefined(n); })), 'key')), v => v.replace(/\s+/g, ' ')));
-
-             this.elasticServices.setTechniques(_.uniqBy(_.concat(this.elasticServices.getTechniques(),
-               _.map(Object.keys(_.groupBy(_.flattenDeep(_.remove(_.map(_.map(this.elasticServices.getScenarios(), 'scenario_metadata'),
-                 'techniques'), function(n) { return !isUndefined(n); })), 'key')), v => v.toLowerCase()))));
-
-             this.searchData['disciplines'] = this.elasticServices.getDisciplines();
-             this.searchData['activities'] = this.elasticServices.getActivities();
-             this.searchData['techniques'] = this.elasticServices.getTechniques();
-             this.searchData['objects'] = this.elasticServices.getObjects();
-             this.searchData['standards'] = this.elasticServices.getStandards();
-
-
-             /*console.log(this.elasticServices.getDisciplines());
-             console.log(this.elasticServices.getTechniques());
-             console.log(this.elasticServices.getStandards());
-             console.log(this.elasticServices.getObjects());
-             console.log(this.elasticServices.getActivities());
-
-           }
-         }
-       );
-     }, 1000);
-   }*/
-
+ }
 
   onKey(event: any) { // without type info
     console.log(event);
@@ -212,11 +139,14 @@ export class ScenariosComponent implements OnInit {
     this.selectTab = item;
     if (item === 'scenarios') {
       this.router.navigate([{ outlets: { target: null }}]);
-      console.log(this.elasticServices.getScenarioNumber())
+      if(this.elasticServices.getScenarioNumber() === 0){
+        this.router.navigate([{ outlets: { target: null }}]);
+      }
       this.elasticServices.setResultCount(this.elasticServices.getScenarioNumber());
     }else {
-      this.router.navigate([{ outlets: { target : item}}]);
       this.loadContents(item);
+      this.router.navigate([{ outlets: { target : item}}]);
+
     }
   }
 
@@ -233,7 +163,6 @@ export class ScenariosComponent implements OnInit {
           case 'steps':
             this.sskServices.setTitle('SSK - Steps')
             this.steps = new Array();
-            //this.loadSteps();
            this.steps = this.elasticServices.getSteps();
             this.elasticServices.setResultCount(this.elasticServices.getSteps().length);
             this.tabStep = true;
@@ -251,42 +180,6 @@ export class ScenariosComponent implements OnInit {
             break;
         }
   }
-
-  /*loadSteps() {
-    console.log(this.elasticServices.getSteps())
-    if (isUndefined(this.steps)) {
-      this.elasticServices.getAllSteps().subscribe(result => {
-        this.elasticServices.setResultCount(this.elasticServices.getstepNumber());
-        //this.resultCount = this.elasticServices.getstepNumber();
-        this.steps = this.elasticServices.getSteps();
-      });
-    }else {
-      this.elasticServices.setResultCount(this.elasticServices.getResourceCount());
-      //this.resultCount = this.elasticServices.getstepNumber();
-      this.steps = this.elasticServices.getSteps();
-    }
-
-  }
-
-  loadResources() {
-    if (isUndefined(this.resources)) {
-      this.elasticServices.getAllResources().subscribe(result => {
-        this.resources = this.elasticServices.getResources();
-      });
-    } else {
-      this.resources = this.elasticServices.getResources();
-    }
-
-  }
-
-  loadStepsMetaData() {
-    this.elasticServices.getAllStepsMetaData().subscribe(
-      result => {   },
-      error => { this.error = '500 - Internal Server Error'; },
-      () => {
-        this.elasticServices.setSearchData();
-      } );
-  }*/
 
   @HostListener('window:scroll', ['$event']) checkScroll() {
     const componentPosition = this.el.nativeElement.offsetTop

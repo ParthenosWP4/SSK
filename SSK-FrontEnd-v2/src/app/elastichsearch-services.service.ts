@@ -1,18 +1,17 @@
-import { Injectable } from '@angular/core';
-import {Http,  Response, Headers, URLSearchParams, RequestOptions} from '@angular/http';
+import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import * as _ from 'lodash';
 import {isUndefined} from 'util';
 import {environment} from '../environments/environment';
+import {HttpClient} from '@angular/common/http';
 
 
 @Injectable()
 export class ElastichsearchServicesService {
 
   private sskBackendEndpoint = environment.sskBackendEndpoint;
-  private headers = new Headers({'Content-Type': 'application/json'});
 
   private scenarioNumber: number;
   private resultCount: number;
@@ -24,7 +23,7 @@ export class ElastichsearchServicesService {
   private resources: any[];
   private stepsMetaData: any = [];
   private options: any;
-  private params: URLSearchParams;
+  private params: any
   private disciplines: any;
   private activities: any;
   private techniques: any;
@@ -32,18 +31,16 @@ export class ElastichsearchServicesService {
   private standards: any;
   private tags = ['disciplines', 'object', 'techniques', 'activities'] ;
   private regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/
-  ;searchData = {};
+  itemsCount: any;
   private detailsResult = {};
   glossaryData: any;
   scenariosTemp: any[];
+  scenarioDetails: any
 
 
-  constructor(private http: Http) {
+  constructor(private http: HttpClient) {
     this.scenarios = new Array();
-    this.params = new URLSearchParams();
-    this.params.append('fromSSK', 'true');
-    this.headers.set('Access-Control-Allow-Origin', '*');
-    this.headers.set('Access-Control-Allow-Methods', 'GET');
+    this.params = {'fromSSK': 'true'}
     this.setResultCount(0);
   }
 
@@ -51,43 +48,38 @@ export class ElastichsearchServicesService {
 
   countItems(type: string): Observable<any> {
     this.setParams(['count'])
-    this.setOptions(this.headers, this.params)
-    return this.http.get(this.sskBackendEndpoint + type, this.options)
-      .map((response: Response) => {
-        return JSON.parse(response.text());
-      }).catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+    this.setOptions(this.params)
+    return this.http.get(this.sskBackendEndpoint + type, this.options);
+      /*.map((response: HttpResponse<any>) => {
+        this.itemsCount = response;
+      }).catch((error: any) => Observable.throw(console.log(error.status) || console.log('Server error')));*/
   }
 
   getScenarioDetails(scenarioId: string): Observable<any> {
     this.setParams(['title', 'desc', 'image', 'scenario_metadata'])
-    this.setOptions(this.headers, this.params)
+    this.setOptions(this.params)
     return this.http.get(this.sskBackendEndpoint + 'scenario/' + scenarioId, this.options)
-      .map((response: Response) => {
-        return JSON.parse(response.text());
-      }).catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+      /*.map((response: HttpResponse<any>) => {
+        this.scenarioDetails(response);
+      }).catch((error: any) => Observable.throw(error.json().error || 'Server error'));*/
   }
 
 
 
-  getAllSteps() {
-    this.setOptions(this.headers, null);
-    return this.http.get(this.sskBackendEndpoint + 'steps/', this.options)
-      .map((response: Response) => {
-        const result = JSON.parse(response.text());
+  getAllStepsFromServer() {
+    this.setOptions( null);
+    return this.http.get(this.sskBackendEndpoint + 'steps/', this.options);
+      /*.map((response: HttpResponse<any>) => {
+        const result = response;
         console.log(result)
         this.setStepNumber(result['total']);
-        this.setSteps(result['steps'])
-        return result;
-      }).catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+        this.setSteps(result['steps']);
+      }).catch((error: any) => Observable.throw(error.json().error || 'Server error'));*/
   }
 
-  getAllStepsMetaData() {
-    this.setOptions(this.headers, null);
-    return this.http.get(this.sskBackendEndpoint + 'steps/metadata', this.options)
-      .map((response: Response) => {
-        const result = JSON.parse(response.text());
-        this.setStepsMetadata(result['step_metadata']);
-      }).catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+  getAllStepsMetaDataFromServer() {
+    this.setOptions(null);
+    return this.http.get(this.sskBackendEndpoint + 'steps/metadata', this.options);
   }
 
   setSearchData() {
@@ -146,66 +138,180 @@ export class ElastichsearchServicesService {
   }
 
 
-  getAllResources() {
-    this.setOptions(this.headers, null);
-    return this.http.get(this.sskBackendEndpoint + 'steps/resources', this.options)
-      .map((response: Response) => {
-        const result = JSON.parse(response.text());
-        this.setResourceCount(result['total']);
-        this.setResources(result['resources']);
-      }).catch((error: any) => Observable.throw(error.json().error ||  console.log('Server error')));
+  getAllResourcesFromServer() {
+    this.setOptions(null);
+    return this.http.get(this.sskBackendEndpoint + 'steps/resources', this.options);
   }
 
+
   testUrl(url: string) {
-    this.setOptions(this.headers, null);
-    return this.http.get ('https://cors-anywhere.herokuapp.com/' + url, this.options)
-      .map((response: Response) => {
+    this.setOptions(null);
+    return this.http.get ('https://cors-anywhere.herokuapp.com/' + url, this.options);
+      /*.map((response: HttpResponse<any>) => {
         console.log(response.headers);
-      }).catch((error: any) => Observable.throw( console.log(error.json()) || console.log('Server error')));
+      }).catch((error: any) => Observable.throw( console.log(error.json()) || console.log('Server error')));*/
   }
 
   testUrlForIframe(url: string) {
-    this.setOptions(this.headers, null);
-    return this.http.get ( url)
-      .map((response: Response) => {
+    if (url.indexOf('http') === -1) {
+      url = 'http://' + url;
+    }
+    return this.http.get (url, this.options);
+     /* .map((response: HttpResponse<any>) => {
         console.log(response.headers.toString());
-      }).catch((error: any) => Observable.throw( console.log(error.headers) || console.log(url + ' can\'t beload into iframe')));
+      }).catch((error: any) => Observable.throw( console.log(error.headers) || console.log(url + ' can\'t beload into iframe')));*/
   }
 
   loadTermsFromServer(type: string) {
-    this.setOptions(this.headers, null);
-    return this.http.get(this.sskBackendEndpoint + 'glossary/terms/' + type, this.options)
-      .map((response: Response) => {
-        const result = JSON.parse(response.text());
-        switch (type.toLowerCase()) {
+    this.setOptions( null);
+    return this.http.get(this.sskBackendEndpoint + 'glossary/terms/' + type, this.options);
+  }
+
+
+  loadStandardsFromServer() {
+    return this.http.get ('https://cors-anywhere.herokuapp.com/' + environment.standardEndpoint, this.options);
+  }
+
+
+  glossaryChange(item: string) {
+    switch (item) {
+      case 'objects':
+        this.setGlossaryData(this.getObjects())
+        break;
+      case 'standards':
+        this.setGlossaryData(this.getStandards())
+        break;
+      case 'techniques':
+        this.setGlossaryData(this.getTechniques())
+        break;
+      case 'activities':
+        this.setGlossaryData(this.getActivities())
+        break;
+      case 'disciplines':
+        this.setGlossaryData(this.getDisciplines())
+        break;
+    }
+    return this.getGlossaryData();
+  }
+
+
+  loadData () {
+      return new Promise ((resolve, reject) => {
+        this.countItems('scenarios').subscribe(
+          response => {
+            this.setScenarioNumber(response['total']);
+            this.setScenariosID(response['scenarios']);
+          },
+          err => {
+            resolve(true);
+          },
+          () => {
+            this.setScenariosTemp(new Array<any>(this.getScenarioNumber()));
+            this.getAllSteps();
+            this.getScenariosID().forEach((obj)  => {
+              this.asynchFunction(obj);
+            });
+            resolve(true);
+          });
+      });
+    }
+
+
+  asynchFunction(scenario: any) {
+    setTimeout(() => {
+      this.getScenarioDetails(scenario._id).subscribe(
+        result => {
+          result.id = scenario._id;
+          this.detailsResult = result;
+        },
+        error => {  },
+        () => {
+          this.addScenario(this.detailsResult);
+          this.scenariosTemp.pop();
+          this.setResultCount((this.getResultCount() + 1));
+          if (this.getScenarios().length === this.getScenarioNumber()) {
+            _.forEach(this.getSteps(), (step) => {
+              step['metadata'] = this.addStepMetadata(step._id);
+            });
+          }
+        }
+      );
+   }, 1000);
+  }
+
+
+  getAllStepsMetaData() {
+    this.getAllStepsMetaDataFromServer().subscribe(
+      stepMetadataResult => {
+        this.setStepsMetadata(stepMetadataResult['step_metadata']);
+      },
+      error => {},
+      () => {
+        this.getGlossaryTerms();
+      }
+    );
+  }
+
+  getAllSteps() {
+    this.getAllStepsFromServer().subscribe(
+      stepResult => {
+        this.setStepNumber(stepResult['total']);
+        this.setSteps(stepResult['steps']);
+      },
+      error => {},
+      () => {
+          this.getAllResources();
+      });
+  }
+
+getGlossaryTerms() {
+  this.tags.forEach((obj)  => {
+    this.loadTermsFromServer(obj).subscribe(
+      result => {
+        switch (obj.toLowerCase()) {
           case 'activities':
             this.setActivities(result);
-          break;
+            break;
           case 'object':
             this.setObjects(result);
-          break;
+            break;
           case 'techniques':
             this.setTechniques(result);
-          break;
+            break;
           case 'disciplines':
             this.setDisciplines(result);
-          break;
-
+            break;
         }
-      }).catch((error: any) => Observable.throw(error.json().error ||  console.log('Server error')));
-  }
+      },
+      error => {},
+      () => {
+        this.getAllStandards();
+      });
+  });
+}
 
-
-  loadStandards() {
-    this.headers.set('origin', 'localhost')
-    return this.http.get ('https://cors-anywhere.herokuapp.com/' + environment.standardEndpoint, this.options)
-      .map((response: Response) => {
-      const result = JSON.parse(response.text());
+getAllStandards() {
+  this.loadStandardsFromServer().subscribe(
+    result => {
       this.setStandards(result['response']['docs']);
-      }).catch((error: any) => Observable.throw(error.json().error ||  console.log('Server error')));
+    },
+    error => {},
+    () => {
+    });
+}
 
+  getAllResources() {
+    this.getAllResourcesFromServer().subscribe(
+      resResult => {
+        this.setResourceCount(resResult['total']);
+        this.setResources(resResult['resources']);
+      },
+      error => {  },
+      () => {
+        this.getAllStepsMetaData();
+      }
+    );
   }
-
 
 
 
@@ -247,7 +353,7 @@ export class ElastichsearchServicesService {
   }
 
   setScenarios(elt: any) {
-     this.scenarios =  elt;
+    this.scenarios =  elt;
   }
 
   addScenario(scenario: any) {
@@ -262,13 +368,12 @@ export class ElastichsearchServicesService {
     this.steps = steps;
   }
 
-  setOptions(headers: Headers, params: URLSearchParams) {
-    this.options = new RequestOptions({headers: this.headers, params: params});
+  setOptions(params: any) {
+    this.options = {params: params};
   }
 
   setParams(fields: Array<string>) {
-    this.params.delete('fields')
-    this.params.append('fields', fields.toString());
+    this.params = {'fields': fields.toString(), 'fromSSK': true};
   }
 
   getStepsMetadata() {
@@ -360,92 +465,5 @@ export class ElastichsearchServicesService {
     this.resultCount = elt;
   }
 
-  glossaryChange(item: string) {
-    switch (item) {
-      case 'objects':
-        this.setGlossaryData(this.getObjects())
-        break;
-      case 'standards':
-        this.setGlossaryData(this.getStandards())
-        break;
-      case 'techniques':
-        this.setGlossaryData(this.getTechniques())
-        break;
-      case 'activities':
-        this.setGlossaryData(this.getActivities())
-        break;
-      case 'disciplines':
-        this.setGlossaryData(this.getDisciplines())
-        break;
-    }
-    return this.getGlossaryData();
-  }
 
-
-  loadData () {
-    let res: any;
-    return new Promise ((resolve, reject) => {
-        this.countItems('scenarios').subscribe(
-          response => {
-          res = response;
-        },
-        err => {},
-        () => {
-          this.setScenarioNumber(res['total']);
-          this.setScenariosID(res['scenarios']);
-          this.setScenariosTemp(new Array<any>(this.getScenarioNumber()));
-          this.getScenariosID().forEach((obj)  => {
-            this.asynchFunction(obj);
-          });
-          resolve(true);
-        });
-    });
-  }
-
-  asynchFunction(scenario: any) {
-    setTimeout(() => {
-      this.getScenarioDetails(scenario._id).subscribe(
-        result => {
-          result.id = scenario._id;
-          this.detailsResult = result;
-        },
-        error => {  },
-        () => {
-          this.addScenario(this.detailsResult);
-          this.scenariosTemp.pop();
-          this.setResultCount((this.getResultCount() + 1));
-          if (this.getScenarios().length === this.getScenarioNumber()) {
-            this.getAllSteps().subscribe(result => {},
-              error => {},
-              () => {
-                this.getAllStepsMetaData().subscribe(
-                  result => {   },
-                  error => {  },
-                  () => {
-                    _.forEach(this.getSteps(), (step) => {
-                      step['metadata'] = this.addStepMetadata(step._id);
-                    });
-                  } );
-                this.getAllResources().subscribe(
-                  result => {},
-                  error => {  },
-                  () => {}
-                  );
-
-                this.loadStandards().subscribe(result => {},
-                  error => {},
-                  () => {
-                  });
-                this.tags.forEach((obj)  => {
-                  this.loadTermsFromServer(obj).subscribe(
-                    result => {},
-                    error => {},
-                    () => {});
-                });
-              });
-          }
-        }
-      );
-   }, 1000);
-  }
 }

@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {SskServicesService} from '../ssk-services.service';
 import {Router} from '@angular/router';
 import {DomSanitizer} from '@angular/platform-browser';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-scenario-card',
@@ -23,6 +24,9 @@ export class ScenarioCardComponent implements OnInit {
   constructor(private sskServices: SskServicesService,  private router: Router, private domSanitizer: DomSanitizer) { }
 
   ngOnInit() {
+
+
+
     if (this.scenario.title instanceof Array) {
       this.title = this.scenario.title[0];
     } else {
@@ -40,6 +44,7 @@ export class ScenarioCardComponent implements OnInit {
       this.desc = this.scenario.desc;
     }
     this.shortDesc = this.sskServices.shorten(this.desc, 250);
+
 
     if (this.scenario.scenario_metadata.objects instanceof Array ) {
       this.metadata  =  this.metadata.concat(this.scenario.scenario_metadata.objects);
@@ -60,6 +65,32 @@ export class ScenarioCardComponent implements OnInit {
     if (this.scenario.scenario_metadata.standards instanceof Array) {
       this.metadata  =  this.metadata.concat(this.scenario.scenario_metadata.standards);
     }
+
+
+
+    this.metadata = _.forEach(this.metadata, function(value) {
+      switch (value.type) {
+        case 'objects':
+          value.type = 'object'
+        break;
+        case 'disciplines':
+          value.type = 'discipline'
+        break;
+        case 'techniques':
+        case 'technique':
+          value.type = 'technique'
+        break;
+        case 'datatype':
+          value.type = 'object'
+        break;
+        case 'activities':
+          value.type = 'activity'
+        break;
+        case 'standards':
+          value.type = 'standard'
+        break;
+      }
+    });
 
     if (this.metadata.length > 5) {
       this.metadataPart2 = this.metadata.slice(4, this.metadata.length );

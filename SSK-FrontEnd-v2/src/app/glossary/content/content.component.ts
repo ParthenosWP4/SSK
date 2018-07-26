@@ -19,7 +19,6 @@ export class ContentComponent implements OnInit {
   constructor(private  sskServ: SskServicesService, private elastiServ: ElastichsearchServicesService) { }
 
   ngOnInit() {
-    console.log(this.sskServ.getGlossarylink())
     this.item = this.sskServ.getGlossarylink();
 
     setTimeout(() => {

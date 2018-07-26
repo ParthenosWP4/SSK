@@ -13,8 +13,10 @@
 </div>
 <div class="col  ">
 <p><span  *ngIf="res?.type" class="badge badge-pill badge-secondary">{{res?.type}}</span>
-  <span class="author" >{{res?.creators}}</span>
+
 <span class="title" > {{res?.title}}</span>
+  <span class="" > {{res?.abstract}}</span>
+  <span class="author my-3" ><ins class="">Author(s):</ins>    {{res?.creators}}</span>
   <span class="date">{{res?.date}}</span>
 </p>
 </div>

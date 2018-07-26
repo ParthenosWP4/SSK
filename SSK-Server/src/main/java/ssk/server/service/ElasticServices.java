@@ -29,6 +29,26 @@ public class ElasticServices {
 	@Value("${elasticsearch.index}")
 	private String sskIndex;
 	
+	@Value("#{'${mapping.scenario}'.split(',')}")
+	private List<String> nestedScenarioMappings;
+	
+	@Value("#{'${mapping.step}'.split(',')}")
+	private List<String> nestedStepMappings;
+	
+	@Value("#{'${mapping.metadata}'.split(',')}")
+	private List<String> metadata;
+	
+	@Value("#{'${mapping.glossary}'.split(',')}")
+	private List<String> nestedGlossary;
+	
+	@Value("#{'${mapping.resource}'.split(',')}")
+	private List<String> nestedREsMappings;
+	
+	@Value("#{'${mapping.standard}'.split(',')}")
+	private List<String> nestedStandardMappings;
+	
+	
+	
 	private SSKServices sskServices;
 	private GithubApiService githubApiService;
 	private RequestHeadersParams requestHeadersParams;
@@ -42,8 +62,9 @@ public class ElasticServices {
 	private List<String> lastProperties = new ArrayList<>();
 	private static final Logger logger = LoggerFactory.getLogger(ElasticServices.class.getName());
 	
-	private static final List<String> nestedStepMappings = Arrays.asList("TEI.teiHeader.fileDesc.titleStmt.author","TEI.teiHeader.fileDesc.titleStmt.author.persName ", "TEI.text.body.listEvent.event", "TEI.text.body.listEvent.event.head", "TEI.text.body.listEvent.event.head.content", "TEI.text.body.listEvent.event.head.term", "TEI.text.body.listEvent.event.head.ref",
-			"TEI.text.body.listEvent.event.desc.term", "TEI.text.body.listEvent.event.desc.content");
+	/*private static final List<String> nestedStepMappings = Arrays.asList("TEI.teiHeader.fileDesc.titleStmt.author","TEI.teiHeader.fileDesc.titleStmt.author.persName ", "TEI.text.body.listEvent.event",
+	"TEI.text.body.listEvent.event.head", "TEI.text.body.listEvent.event.head.content", "TEI.text.body.listEvent.event.head.term", "TEI.text.body.listEvent.event.head.ref",
+	"TEI.text.body.listEvent.event.desc.term", "TEI.text.body.listEvent.event.desc.content","TEI.text.body.listEvent.event.desc.list", "TEI.text.body.listEvent.event.desc.list.item");
 	
 	private static final List<String> nestedScenarioMappings = Arrays.asList("TEI.teiHeader.fileDesc.titleStmt.author", "TEI.text.body.div.desc.content", "TEI.text.body.div.desc.term", "TEI.text.body.listEvent.event");
 	
@@ -51,7 +72,7 @@ public class ElasticServices {
 	
 	private static final List<String> metadata = Arrays.asList("techniques", "objects", "disciplines", "standards", "standards.desc", "activities");
 	
-	private static final List<String> nestedREsMappings = Arrays.asList("general", "project");
+	private static final List<String> nestedREsMappings = Arrays.asList("general", "project");*/
 	
 	private HashMap<String, List<String>> resourceTypeVariant = new HashMap<>();
 	
@@ -136,6 +157,9 @@ public class ElasticServices {
 			case "glossary":
 				nested = nestedGlossary;
 			break;
+			case "standard":
+				//nested = nestedStandardMappings;
+				break;
 			default:
 				nested = nestedScenarioMappings;
 			break;
@@ -166,42 +190,6 @@ public class ElasticServices {
 	}
 	
 	
-	/*private void createResourcesMapping() {
-		
-		JSONObject element = new JSONObject();
-		JSONObject properties = new JSONObject();
-		
-		element.put("type", "nested");
-		properties.put("desc", element);
-		
-		JSONObject term = new JSONObject();
-		term.put("type", "nested");
-		term.put("properties", properties);
-		JSONObject parent = new JSONObject();
-		parent.put("type", "resource");
-		term.put("_parent", parent);
-		
-		properties = new JSONObject();
-		properties.put("terms", term);
-		
-		JSONObject resourceContent = new JSONObject();
-		resourceContent.put("type", "nested");
-		resourceContent.put("properties", properties);
-		JSONObject resourceParent = new JSONObject();
-		resourceParent.put("type", "step");
-		resourceContent.put("_parent", resourceParent);
-		
-		JSONObject resources = new JSONObject();
-		resources.put("general", resourceContent);
-		resources.put("project", resourceContent);
-		
-		properties = new JSONObject();
-		properties.put("properties", resources);
-		
-		requestHeadersParams.setHeaders();
-		HttpEntity<String> entity = new HttpEntity<>(properties.toString(), requestHeadersParams.getHeaders());
-		ResponseEntity<String> response = this.restTemplate.exchange(elasticSearchPort + "/" + sskIndex + "/_mapping/resource", HttpMethod.PUT, entity, String.class);
-	}*/
 	
 	public boolean pushData(JsonArray scenarioAndStep, int iteration) throws Exception {
 		String type;
@@ -485,4 +473,6 @@ public class ElasticServices {
 	public String getElasticSearchPort() {
 		return elasticSearchPort;
 	}
+	
+	
 }

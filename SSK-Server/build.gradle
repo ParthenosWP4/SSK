@@ -25,7 +25,6 @@ configurations {
 
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
-
 repositories {
     mavenCentral()
 }
@@ -41,30 +40,17 @@ sourceSets {
 
 
 dependencies {
-
     //Fonctionnne lorsque commenté sur le serveur
     compile group: 'org.springframework.boot', name: "spring-boot-starter", version: '1.5.7.RELEASE'
 
-    //compile group: 'org.springframework.boot', name: "spring-boot-starter-parent", version: '1.5.7.RELEASE'
-
-   //testCompile group: 'org.springframework.boot', name: "spring-boot-starter-test", version: '1.5.7.RELEASE'
-
+    /*These two cannot be used either for deployment with an integrated tomcat nor for an external web server.*/
     //providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat:1.5.7.RELEASE'
-    //providedRuntime 'org.slf4j:slf4j-api:1.7.25'
+     //providedRuntime 'org.slf4j:slf4j-api:1.7.25'
 
     compile group: 'org.springframework.boot', name: "spring-boot-starter-web", version: '1.5.7.RELEASE'
 
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-elasticsearch
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-elasticsearch', version: '1.5.2.RELEASE'
-
-    // https://mvnrepository.com/artifact/org.elasticsearch.client/elasticsearch-rest-high-level-client
-    //compile group: 'org.elasticsearch.client', name: 'elasticsearch-rest-high-level-client', version: '6.2.4'
-
-    // https://mvnrepository.com/artifact/org.elasticsearch/elasticsearch
-    //compile group: 'org.elasticsearch', name: 'elasticsearch', version: '6.2.2'
-
-    // https://mvnrepository.com/artifact/org.elasticsearch.client/transport
-    //compile group: 'org.elasticsearch.client', name: 'transport', version: '6.2.4'
 
 
     // https://mvnrepository.com/artifact/net.java.dev.jna/jna
@@ -113,11 +99,3 @@ task myJavadocs(type: Javadoc) {
 }
 
 
-
-configurations.all {
-    //exclude group: 'ch.qos.logback', module:'logback-classic'
-    //exclude group: 'org.slf4j', module:'jcl-over-slf4j'
-    //exclude group: 'org.slf4j', module:'jul-to-slf4j'
-    //exclude group: 'org.slf4j', module:'log4j-over-slf4j'
-    //exclude group: 'org.slf4j', module:'slf4j-api'
-}

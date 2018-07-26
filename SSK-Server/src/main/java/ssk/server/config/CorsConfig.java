@@ -1,4 +1,4 @@
-package ssk.server;
+package ssk.server.config;
 
 import org.apache.tomcat.util.http.parser.Authorization;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;

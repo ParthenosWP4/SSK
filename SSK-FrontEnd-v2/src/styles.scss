@@ -99,6 +99,20 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Animeace2_ital';
+  src:  url('assets/fonts/animeace2_ital.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Adventure';
+  src:  url('assets/fonts/Adventure.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 
 .ic {
@@ -209,8 +223,6 @@
   background-color: $color-33;
 }
 
-ul {
-  list-style:  none !important;
-}
+
 
 

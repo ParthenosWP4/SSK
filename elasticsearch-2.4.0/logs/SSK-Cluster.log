@@ -1,42 +1,234 @@
-[2018-06-16 06:12:53,336][DEBUG][action.admin.indices.mapping.put] [Stuntmaster] failed to put mappings on indices [[ssk]], type [scenario]
-java.lang.IllegalArgumentException: Field [_source] is defined both as an object and a field in [scenario]
-	at org.elasticsearch.index.mapper.MapperService.checkFieldUniqueness(MapperService.java:494)
-	at org.elasticsearch.index.mapper.MapperService.merge(MapperService.java:376)
-	at org.elasticsearch.index.mapper.MapperService.merge(MapperService.java:320)
-	at org.elasticsearch.cluster.metadata.MetaDataMappingService$PutMappingExecutor.applyRequest(MetaDataMappingService.java:306)
-	at org.elasticsearch.cluster.metadata.MetaDataMappingService$PutMappingExecutor.execute(MetaDataMappingService.java:230)
-	at org.elasticsearch.cluster.service.InternalClusterService.runTasksForExecutor(InternalClusterService.java:468)
-	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:772)
-	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:231)
-	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:194)
+[2018-07-26 15:56:32,353][DEBUG][action.search            ] [Surge] [ssk][2], node[zjUAY7CNQsm8LA1lNh4dmg], [P], v[2], s[STARTED], a[id=CsOWskLBRqClMOnbyhInRw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@1d80d709] lastShard [true]
+RemoteTransportException[[Surge][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"size" : 10000, "has_child" : {"type" : "step_metadata","query" : {"match_all": {}},"inner_hits" : {} }},"_source":false}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+Caused by: SearchParseException[failed to parse search source [{"query":{"size" : 10000, "has_child" : {"type" : "step_metadata","query" : {"match_all": {}},"inner_hits" : {} }},"_source":false}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:873)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:667)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:633)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:377)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:77)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
-[2018-06-16 06:12:53,375][DEBUG][action.index             ] [Stuntmaster] failed to execute [index {[ssk][scenario][AWP9aJLHP22ArcfgM5eM], source[{"_source": {"include": ["*.desc.lang","*.desc.content"],"exclude": ["*.listEvent.*","*.text.div","*.desc.term", "*.desc.type", "*.teiHeader.*" ]}}]}] on [[ssk][3]]
-java.lang.IllegalArgumentException: Field [_source] is defined both as an object and a field in [scenario]
-	at org.elasticsearch.index.mapper.MapperService.checkFieldUniqueness(MapperService.java:494)
-	at org.elasticsearch.index.mapper.MapperService.merge(MapperService.java:376)
-	at org.elasticsearch.index.mapper.MapperService.merge(MapperService.java:320)
-	at org.elasticsearch.cluster.metadata.MetaDataMappingService$PutMappingExecutor.applyRequest(MetaDataMappingService.java:306)
-	at org.elasticsearch.cluster.metadata.MetaDataMappingService$PutMappingExecutor.execute(MetaDataMappingService.java:230)
-	at org.elasticsearch.cluster.service.InternalClusterService.runTasksForExecutor(InternalClusterService.java:468)
-	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:772)
-	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:231)
-	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:194)
+Caused by: [ssk] QueryParsingException[[_na] query malformed, no field after start_object]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:243)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:856)
+	... 12 more
+[2018-07-26 15:56:32,353][DEBUG][action.search            ] [Surge] [ssk][3], node[zjUAY7CNQsm8LA1lNh4dmg], [P], v[2], s[STARTED], a[id=1hPw20NiTd6YuH2l655S2w]: Failed to execute [org.elasticsearch.action.search.SearchRequest@1d80d709]
+RemoteTransportException[[Surge][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"size" : 10000, "has_child" : {"type" : "step_metadata","query" : {"match_all": {}},"inner_hits" : {} }},"_source":false}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+Caused by: SearchParseException[failed to parse search source [{"query":{"size" : 10000, "has_child" : {"type" : "step_metadata","query" : {"match_all": {}},"inner_hits" : {} }},"_source":false}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:873)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:667)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:633)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:377)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:77)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
-[2018-06-16 06:16:54,781][DEBUG][action.index             ] [Stuntmaster] failed to execute [index {[ssk][scenario][AWP9avbTP22ArcfgM5iJ], source[{"query":{"has_child" : {"type" : "scenario_metadata","query" : {"match_all": {}},"inner_hits" : {} }},"_source":false}"]}] on [[ssk][4]]
-MapperParsingException[Cannot generate dynamic mappings of type [_source] for [_source]]
-	at org.elasticsearch.index.mapper.DocumentParser.createBuilderFromFieldType(DocumentParser.java:506)
-	at org.elasticsearch.index.mapper.DocumentParser.parseDynamicValue(DocumentParser.java:616)
-	at org.elasticsearch.index.mapper.DocumentParser.parseValue(DocumentParser.java:444)
-	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:264)
+Caused by: [ssk] QueryParsingException[[_na] query malformed, no field after start_object]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:243)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:856)
+	... 12 more
+[2018-07-26 15:56:32,353][DEBUG][action.search            ] [Surge] [ssk][4], node[zjUAY7CNQsm8LA1lNh4dmg], [P], v[2], s[STARTED], a[id=9muS7n-7S-eoZg-EdZTqUg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@1d80d709] lastShard [true]
+RemoteTransportException[[Surge][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"size" : 10000, "has_child" : {"type" : "step_metadata","query" : {"match_all": {}},"inner_hits" : {} }},"_source":false}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+Caused by: SearchParseException[failed to parse search source [{"query":{"size" : 10000, "has_child" : {"type" : "step_metadata","query" : {"match_all": {}},"inner_hits" : {} }},"_source":false}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:873)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:667)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:633)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:377)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:77)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: [ssk] QueryParsingException[[_na] query malformed, no field after start_object]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:243)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:856)
+	... 12 more
+[2018-07-26 15:56:32,353][DEBUG][action.search            ] [Surge] [ssk][0], node[zjUAY7CNQsm8LA1lNh4dmg], [P], v[2], s[STARTED], a[id=9cjh10QJRbGcqMU8YXJpig]: Failed to execute [org.elasticsearch.action.search.SearchRequest@1d80d709] lastShard [true]
+RemoteTransportException[[Surge][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"size" : 10000, "has_child" : {"type" : "step_metadata","query" : {"match_all": {}},"inner_hits" : {} }},"_source":false}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+Caused by: SearchParseException[failed to parse search source [{"query":{"size" : 10000, "has_child" : {"type" : "step_metadata","query" : {"match_all": {}},"inner_hits" : {} }},"_source":false}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:873)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:667)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:633)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:377)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:77)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: [ssk] QueryParsingException[[_na] query malformed, no field after start_object]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:243)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:856)
+	... 12 more
+[2018-07-26 15:56:32,353][DEBUG][action.search            ] [Surge] [ssk][1], node[zjUAY7CNQsm8LA1lNh4dmg], [P], v[2], s[STARTED], a[id=djy1ZlBLT4GacRqCZsOWyg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@1d80d709] lastShard [true]
+RemoteTransportException[[Surge][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"size" : 10000, "has_child" : {"type" : "step_metadata","query" : {"match_all": {}},"inner_hits" : {} }},"_source":false}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+Caused by: SearchParseException[failed to parse search source [{"query":{"size" : 10000, "has_child" : {"type" : "step_metadata","query" : {"match_all": {}},"inner_hits" : {} }},"_source":false}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:873)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:667)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:633)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:377)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:77)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: [ssk] QueryParsingException[[_na] query malformed, no field after start_object]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:243)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:856)
+	... 12 more
+[2018-07-26 15:56:32,391][DEBUG][action.search            ] [Surge] All shards failed for phase: [query]
+RemoteTransportException[[Surge][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"size" : 10000, "has_child" : {"type" : "step_metadata","query" : {"match_all": {}},"inner_hits" : {} }},"_source":false}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+Caused by: SearchParseException[failed to parse search source [{"query":{"size" : 10000, "has_child" : {"type" : "step_metadata","query" : {"match_all": {}},"inner_hits" : {} }},"_source":false}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:873)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:667)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:633)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:377)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:77)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: [ssk] QueryParsingException[[_na] query malformed, no field after start_object]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:243)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:856)
+	... 12 more
+[2018-07-26 16:58:58,989][INFO ][cluster.metadata         ] [Surge] [ssk] creating index, cause [api], templates [], shards [5]/[1], mappings []
+[2018-07-26 16:58:59,074][INFO ][cluster.metadata         ] [Surge] [ssk] create_mapping [resource_metadata]
+[2018-07-26 16:58:59,080][INFO ][cluster.routing.allocation] [Surge] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[ssk][4], [ssk][4]] ...]).
+[2018-07-26 16:58:59,090][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [resource_metadata]
+[2018-07-26 16:58:59,100][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [resource_metadata]
+[2018-07-26 16:58:59,107][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [resource_metadata]
+[2018-07-26 16:58:59,117][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [resource_metadata]
+[2018-07-26 16:58:59,124][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [resource_metadata]
+[2018-07-26 16:58:59,134][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [resource_metadata]
+[2018-07-26 16:58:59,146][INFO ][cluster.metadata         ] [Surge] [ssk] create_mapping [resource]
+[2018-07-26 16:58:59,156][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [resource]
+[2018-07-26 16:58:59,170][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [resource]
+[2018-07-26 16:58:59,191][INFO ][cluster.metadata         ] [Surge] [ssk] create_mapping [step_metadata]
+[2018-07-26 16:58:59,218][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [step_metadata]
+[2018-07-26 16:58:59,237][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [step_metadata]
+[2018-07-26 16:58:59,249][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [step_metadata]
+[2018-07-26 16:58:59,258][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [step_metadata]
+[2018-07-26 16:58:59,268][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [step_metadata]
+[2018-07-26 16:58:59,282][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [step_metadata]
+[2018-07-26 16:58:59,295][INFO ][cluster.metadata         ] [Surge] [ssk] create_mapping [scenario_metadata]
+[2018-07-26 16:58:59,316][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [scenario_metadata]
+[2018-07-26 16:58:59,322][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [scenario_metadata]
+[2018-07-26 16:58:59,329][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [scenario_metadata]
+[2018-07-26 16:58:59,344][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [scenario_metadata]
+[2018-07-26 16:58:59,355][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [scenario_metadata]
+[2018-07-26 16:58:59,365][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [scenario_metadata]
+[2018-07-26 16:58:59,375][INFO ][cluster.metadata         ] [Surge] [ssk] create_mapping [step]
+[2018-07-26 16:58:59,386][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [step]
+[2018-07-26 16:58:59,400][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [step]
+[2018-07-26 16:58:59,410][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [step]
+[2018-07-26 16:58:59,426][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [step]
+[2018-07-26 16:58:59,442][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [step]
+[2018-07-26 16:58:59,461][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [step]
+[2018-07-26 16:58:59,482][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [step]
+[2018-07-26 16:58:59,496][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [step]
+[2018-07-26 16:58:59,515][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [step]
+[2018-07-26 16:58:59,521][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [step]
+[2018-07-26 16:58:59,527][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [step]
+[2018-07-26 16:58:59,531][INFO ][cluster.metadata         ] [Surge] [ssk] create_mapping [scenario]
+[2018-07-26 16:58:59,537][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [scenario]
+[2018-07-26 16:58:59,543][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [scenario]
+[2018-07-26 16:58:59,548][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [scenario]
+[2018-07-26 16:58:59,554][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [scenario]
+[2018-07-26 16:58:59,559][INFO ][cluster.metadata         ] [Surge] [ssk] create_mapping [glossary]
+[2018-07-26 16:58:59,564][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [glossary]
+[2018-07-26 16:58:59,569][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [glossary]
+[2018-07-26 16:58:59,575][INFO ][cluster.metadata         ] [Surge] [ssk] create_mapping [standard]
+[2018-07-26 16:58:59,666][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [standard]
+[2018-07-26 16:58:59,935][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [standard]
+[2018-07-26 16:59:04,619][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [glossary]
+[2018-07-26 16:59:19,557][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [scenario]
+[2018-07-26 16:59:19,641][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [scenario_metadata]
+[2018-07-26 16:59:19,652][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [step]
+[2018-07-26 16:59:19,659][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [step_metadata]
+[2018-07-26 16:59:19,669][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [step]
+[2018-07-26 16:59:20,240][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [resource]
+[2018-07-26 16:59:20,760][DEBUG][action.index             ] [Surge] failed to execute [index {[ssk][step][AWTXGfg3HrSWABn14Ihq], source[{"TEI":{"type":"researchStep","id":"step_DoDaAGftRC","teiHeader":{"fileDesc":{"titleStmt":{"title":"step_DoDaAGftRC.xml","author":{"persName":"Haaf Susanne","affiliation":"Berlin-Brandenburg Academy of Sciences and Humanities"}},"publicationStmt":{"authority":"Parthenos","availability":{"licence":{"target":"http://creativecommons.org/licenses/by/4.0/","p":"The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this\n       document."}}},"sourceDesc":{"p":"Created from scratch"}},"revisionDesc":{"change":null}},"text":{"body":{"listEvent":{"event":{"type":"researchStep","head":{"type":"stepTitle","lang":"en","content":"Determination of digitization and annotation guidelines\n      for the research corpus"},"desc":[{"type":"definition","lang":"en","content":["Corpus research should be based on interoperable data,\n      i.e. data that was harmonized with regard to transcription and encoding guidelines. Beforehand\n      the harmonization it is necessary to pick or define proper guidelines. For the encoding of\n      structural phenomena of text, it has become best practice in text processing contexts to apply\n      the tagset provided by the Text Encoding Initiative (TEI-P5). However, the TEI tagset as a\n      whole is broad offering tagging solutions for the most various domains. Hence, in order to\n      achieve unambiguous encoding, it has to be reduced and contoured for its intended application.\n      There are TEI formats published for re-use, e.g. those maintained by the TEI consortium, which\n      can be evaluated for possible re-use rather than creating a new format from scratch. With the\n      DTABf, a TEI format has been proposed, that was customized for the encoding of originally\n      written texts of various text types for the purpose of corpus-based work. Its components are: ",{"list":{"item":["Documentation: Guidelines for text annotation","Documentation: Guidelines for text recognition","Schema: Formal specification in ODD and RNG schemas (for print and manuscript\n        annotation)","Schema: Schematron constraints for quality checks beyond the schema"]}}]},{"type":"terms","lang":"en","term":[{"key":"Discovering","source":"http://tadirah.dariah.eu/","type":"activity"},{"key":"Designing","source":"http://tadirah.dariah.eu/","type":"activity"},{"key":"Meta: Assessing","source":"http://tadirah.dariah.eu/","type":"activity"},{"key":"StandardsSpecifications","source":"http://tadirah.dariah.eu/","type":"object"},{"key":"Standards","source":"NEMO","type":"object"},{"key":"XML","source":"standard_list","type":"standard"},{"key":"TEI","source":"standard_list","type":"standard"}]}],"linkGrp":{"type":"generalResources","ref":[{"source":"zotero","target":"https://www.zotero.org/groups/427927/items/T7672NJ8","type":"specification","content":"DTABf website"},{"source":"github","target":"https://github.com/deutschestextarchiv/dtabf/","type":"specification","content":"DTABf source documents"},{"source":"github","target":"https://github.com/deutschestextarchiv/dtabf/tree/master/schema","type":"specification","content":"DTABf ODDs and Schemas"},{"source":"zotero","target":"https://www.zotero.org/groups/427927/items/DVKJRRVU","type":"paper","content":"Haaf/Geyken/Wiegand (2015)"},{"source":"zotero","target":"https://www.zotero.org/groups/427927/items/ZEZE3HV8","type":"paper","content":"Haaf/Thomas (2017)"},{"source":"zotero","target":"https://www.zotero.org/groups/427927/items/8XCAEJXX","type":"blog","content":"\n       Haaf (2017) "},{"source":"zotero","target":"https://www.zotero.org/groups/427927/items/V6NJ5IBX","type":"website","content":"TEI Customizations"}]}}}}}},"position":3,"GithubRef":"step_DoDaAGftRC"}]}] on [[ssk][1]]
+MapperParsingException[failed to parse [TEI.text.body.listEvent.event.desc.content]]; nested: IllegalArgumentException[unknown property [list]];
+	at org.elasticsearch.index.mapper.FieldMapper.parse(FieldMapper.java:329)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:311)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:328)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:328)
+	at org.elasticsearch.index.mapper.DocumentParser.parseNonDynamicArray(DocumentParser.java:416)
+	at org.elasticsearch.index.mapper.DocumentParser.parseArray(DocumentParser.java:381)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:256)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:328)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:328)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:328)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:328)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObjectOrField(DocumentParser.java:308)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:328)
+	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:254)
 	at org.elasticsearch.index.mapper.DocumentParser.parseDocument(DocumentParser.java:124)
 	at org.elasticsearch.index.mapper.DocumentMapper.parse(DocumentMapper.java:309)
-	at org.elasticsearch.index.shard.IndexShard.prepareIndex(IndexShard.java:580)
-	at org.elasticsearch.index.shard.IndexShard.prepareIndexOnPrimary(IndexShard.java:559)
-	at org.elasticsearch.action.index.TransportIndexAction.prepareIndexOperationOnPrimary(TransportIndexAction.java:211)
+	at org.elasticsearch.index.shard.IndexShard.prepareCreate(IndexShard.java:529)
+	at org.elasticsearch.index.shard.IndexShard.prepareCreateOnPrimary(IndexShard.java:506)
+	at org.elasticsearch.action.index.TransportIndexAction.prepareIndexOperationOnPrimary(TransportIndexAction.java:214)
 	at org.elasticsearch.action.index.TransportIndexAction.executeIndexRequestOnPrimary(TransportIndexAction.java:223)
 	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:157)
 	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:66)
@@ -50,147 +242,19 @@ MapperParsingException[Cannot generate dynamic mappings of type [_source] for [_
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
-[2018-06-16 06:56:47,212][DEBUG][action.index             ] [Stuntmaster] failed to execute [index {[ssk][scenario][AWP9ae0VP22ArcfgM5gj], source[{"query":{"has_child" : {"type" : "scenario_metadata","query" : {"match_all": {}},"inner_hits" : {} }},"_source":false}"]}] on [[ssk][3]]
-MapperParsingException[Cannot generate dynamic mappings of type [_source] for [_source]]
-	at org.elasticsearch.index.mapper.DocumentParser.createBuilderFromFieldType(DocumentParser.java:506)
-	at org.elasticsearch.index.mapper.DocumentParser.parseDynamicValue(DocumentParser.java:616)
-	at org.elasticsearch.index.mapper.DocumentParser.parseValue(DocumentParser.java:444)
-	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:264)
-	at org.elasticsearch.index.mapper.DocumentParser.parseDocument(DocumentParser.java:124)
-	at org.elasticsearch.index.mapper.DocumentMapper.parse(DocumentMapper.java:309)
-	at org.elasticsearch.index.shard.IndexShard.prepareIndex(IndexShard.java:580)
-	at org.elasticsearch.index.shard.IndexShard.prepareIndexOnPrimary(IndexShard.java:559)
-	at org.elasticsearch.action.index.TransportIndexAction.prepareIndexOperationOnPrimary(TransportIndexAction.java:211)
-	at org.elasticsearch.action.index.TransportIndexAction.executeIndexRequestOnPrimary(TransportIndexAction.java:223)
-	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:157)
-	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:66)
-	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryPhase.doRun(TransportReplicationAction.java:648)
-	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
-	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:279)
-	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:271)
-	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:77)
-	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
-	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-[2018-06-16 07:23:39,448][DEBUG][action.index             ] [Stuntmaster] failed to execute [index {[ssk][scenario][AWP9a7AiP22ArcfgM5jj], source[{"query":{"has_child" : {"type" : "scenario_metadata","query" : {"match_all": {}},"inner_hits" : {} }},"_source":false}"]}] on [[ssk][3]]
-MapperParsingException[Cannot generate dynamic mappings of type [_source] for [_source]]
-	at org.elasticsearch.index.mapper.DocumentParser.createBuilderFromFieldType(DocumentParser.java:506)
-	at org.elasticsearch.index.mapper.DocumentParser.parseDynamicValue(DocumentParser.java:616)
-	at org.elasticsearch.index.mapper.DocumentParser.parseValue(DocumentParser.java:444)
-	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:264)
-	at org.elasticsearch.index.mapper.DocumentParser.parseDocument(DocumentParser.java:124)
-	at org.elasticsearch.index.mapper.DocumentMapper.parse(DocumentMapper.java:309)
-	at org.elasticsearch.index.shard.IndexShard.prepareIndex(IndexShard.java:580)
-	at org.elasticsearch.index.shard.IndexShard.prepareIndexOnPrimary(IndexShard.java:559)
-	at org.elasticsearch.action.index.TransportIndexAction.prepareIndexOperationOnPrimary(TransportIndexAction.java:211)
-	at org.elasticsearch.action.index.TransportIndexAction.executeIndexRequestOnPrimary(TransportIndexAction.java:223)
-	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:157)
-	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:66)
-	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryPhase.doRun(TransportReplicationAction.java:648)
-	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
-	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:279)
-	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:271)
-	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:77)
-	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
-	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-[2018-06-16 07:27:14,222][DEBUG][action.index             ] [Stuntmaster] failed to execute [index {[ssk][scenario][AWP9ajtFP22ArcfgM5g8], source[{"query":{"has_child" : {"type" : "scenario_metadata","query" : {"match_all": {}},"inner_hits" : {} }},"_source":false}"]}] on [[ssk][3]]
-MapperParsingException[Cannot generate dynamic mappings of type [_source] for [_source]]
-	at org.elasticsearch.index.mapper.DocumentParser.createBuilderFromFieldType(DocumentParser.java:506)
-	at org.elasticsearch.index.mapper.DocumentParser.parseDynamicValue(DocumentParser.java:616)
-	at org.elasticsearch.index.mapper.DocumentParser.parseValue(DocumentParser.java:444)
-	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:264)
-	at org.elasticsearch.index.mapper.DocumentParser.parseDocument(DocumentParser.java:124)
-	at org.elasticsearch.index.mapper.DocumentMapper.parse(DocumentMapper.java:309)
-	at org.elasticsearch.index.shard.IndexShard.prepareIndex(IndexShard.java:580)
-	at org.elasticsearch.index.shard.IndexShard.prepareIndexOnPrimary(IndexShard.java:559)
-	at org.elasticsearch.action.index.TransportIndexAction.prepareIndexOperationOnPrimary(TransportIndexAction.java:211)
-	at org.elasticsearch.action.index.TransportIndexAction.executeIndexRequestOnPrimary(TransportIndexAction.java:223)
-	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:157)
-	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:66)
-	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryPhase.doRun(TransportReplicationAction.java:648)
-	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
-	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:279)
-	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:271)
-	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:77)
-	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
-	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-[2018-06-16 07:27:14,530][DEBUG][action.index             ] [Stuntmaster] failed to execute [index {[ssk][scenario][AWP9a7AiP22ArcfgM5jj], source[{"query":{"has_child" : {"type" : "scenario_metadata","query" : {"match_all": {}},"inner_hits" : {} }},"_source":false}"]}] on [[ssk][3]]
-MapperParsingException[Cannot generate dynamic mappings of type [_source] for [_source]]
-	at org.elasticsearch.index.mapper.DocumentParser.createBuilderFromFieldType(DocumentParser.java:506)
-	at org.elasticsearch.index.mapper.DocumentParser.parseDynamicValue(DocumentParser.java:616)
-	at org.elasticsearch.index.mapper.DocumentParser.parseValue(DocumentParser.java:444)
-	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:264)
-	at org.elasticsearch.index.mapper.DocumentParser.parseDocument(DocumentParser.java:124)
-	at org.elasticsearch.index.mapper.DocumentMapper.parse(DocumentMapper.java:309)
-	at org.elasticsearch.index.shard.IndexShard.prepareIndex(IndexShard.java:580)
-	at org.elasticsearch.index.shard.IndexShard.prepareIndexOnPrimary(IndexShard.java:559)
-	at org.elasticsearch.action.index.TransportIndexAction.prepareIndexOperationOnPrimary(TransportIndexAction.java:211)
-	at org.elasticsearch.action.index.TransportIndexAction.executeIndexRequestOnPrimary(TransportIndexAction.java:223)
-	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:157)
-	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:66)
-	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryPhase.doRun(TransportReplicationAction.java:648)
-	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
-	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:279)
-	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:271)
-	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:77)
-	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
-	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-[2018-06-16 07:31:54,209][DEBUG][action.index             ] [Stuntmaster] failed to execute [index {[ssk][scenario][AWP9aSC3P22ArcfgM5fN], source[{"query":{"has_child" : {"type" : "scenario_metadata","query" : {"match_all": {}},"inner_hits" : {} }},"_source":false}"]}] on [[ssk][2]]
-MapperParsingException[Cannot generate dynamic mappings of type [_source] for [_source]]
-	at org.elasticsearch.index.mapper.DocumentParser.createBuilderFromFieldType(DocumentParser.java:506)
-	at org.elasticsearch.index.mapper.DocumentParser.parseDynamicValue(DocumentParser.java:616)
-	at org.elasticsearch.index.mapper.DocumentParser.parseValue(DocumentParser.java:444)
-	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:264)
-	at org.elasticsearch.index.mapper.DocumentParser.parseDocument(DocumentParser.java:124)
-	at org.elasticsearch.index.mapper.DocumentMapper.parse(DocumentMapper.java:309)
-	at org.elasticsearch.index.shard.IndexShard.prepareIndex(IndexShard.java:580)
-	at org.elasticsearch.index.shard.IndexShard.prepareIndexOnPrimary(IndexShard.java:559)
-	at org.elasticsearch.action.index.TransportIndexAction.prepareIndexOperationOnPrimary(TransportIndexAction.java:211)
-	at org.elasticsearch.action.index.TransportIndexAction.executeIndexRequestOnPrimary(TransportIndexAction.java:223)
-	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:157)
-	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:66)
-	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryPhase.doRun(TransportReplicationAction.java:648)
-	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
-	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:279)
-	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:271)
-	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:77)
-	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
-	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-[2018-06-16 07:33:10,176][DEBUG][action.index             ] [Stuntmaster] failed to execute [index {[ssk][scenario][AWP9a4NgP22ArcfgM5jL], source[{"query":{"has_child" : {"type" : "scenario_metadata","query" : {"match_all": {}},"inner_hits" : {} }},"_source":false}"]}] on [[ssk][1]]
-MapperParsingException[Cannot generate dynamic mappings of type [_source] for [_source]]
-	at org.elasticsearch.index.mapper.DocumentParser.createBuilderFromFieldType(DocumentParser.java:506)
-	at org.elasticsearch.index.mapper.DocumentParser.parseDynamicValue(DocumentParser.java:616)
-	at org.elasticsearch.index.mapper.DocumentParser.parseValue(DocumentParser.java:444)
-	at org.elasticsearch.index.mapper.DocumentParser.parseObject(DocumentParser.java:264)
-	at org.elasticsearch.index.mapper.DocumentParser.parseDocument(DocumentParser.java:124)
-	at org.elasticsearch.index.mapper.DocumentMapper.parse(DocumentMapper.java:309)
-	at org.elasticsearch.index.shard.IndexShard.prepareIndex(IndexShard.java:580)
-	at org.elasticsearch.index.shard.IndexShard.prepareIndexOnPrimary(IndexShard.java:559)
-	at org.elasticsearch.action.index.TransportIndexAction.prepareIndexOperationOnPrimary(TransportIndexAction.java:211)
-	at org.elasticsearch.action.index.TransportIndexAction.executeIndexRequestOnPrimary(TransportIndexAction.java:223)
-	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:157)
-	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:66)
-	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryPhase.doRun(TransportReplicationAction.java:648)
-	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
-	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:279)
-	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:271)
-	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:77)
-	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
-	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.IllegalArgumentException: unknown property [list]
+	at org.elasticsearch.index.mapper.core.StringFieldMapper.parseCreateFieldForString(StringFieldMapper.java:366)
+	at org.elasticsearch.index.mapper.core.StringFieldMapper.parseCreateField(StringFieldMapper.java:315)
+	at org.elasticsearch.index.mapper.FieldMapper.parse(FieldMapper.java:321)
+	... 41 more
+[2018-07-26 16:59:37,783][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [scenario]
+[2018-07-26 16:59:37,820][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [scenario_metadata]
+[2018-07-26 16:59:38,553][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [step]
+[2018-07-26 16:59:38,573][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [step_metadata]
+[2018-07-26 16:59:40,916][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [resource]
+[2018-07-26 16:59:41,629][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [step]
+[2018-07-26 16:59:41,667][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [step_metadata]
+[2018-07-26 16:59:41,872][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [step]
+[2018-07-26 16:59:44,175][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [step]
+[2018-07-26 17:00:58,369][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [step]
+[2018-07-26 17:01:22,099][INFO ][cluster.metadata         ] [Surge] [ssk] update_mapping [scenario]

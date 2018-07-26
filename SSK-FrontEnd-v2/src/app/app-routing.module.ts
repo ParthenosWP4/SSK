@@ -10,16 +10,12 @@ import {ScenarioComponent} from './scenario/scenario.component';
 import {GlossaryComponent} from "./glossary/glossary.component";
 import {ContentComponent} from "./glossary/content/content.component";
 import {GlossaryResolver} from "./glossary/glossary.resolver";
+import {ErrorpageComponent} from "./errorpage/errorpage.component";
 
 
 const routes: Routes = [
   { path: '#', redirectTo: '/', pathMatch: 'full' },
-  { path: '', component: HomeComponent,
-    data: {
-      // Uses static text (Home)
-      breadcrumbs: 'Home'
-    }
-  },
+  { path: '', component: HomeComponent},
   { path: 'scenarios', component: ScenariosComponent , children:
     [
       { path: '', component: ScenarioTemplateComponent, outlet: 'scenario-template' },
@@ -33,7 +29,6 @@ const routes: Routes = [
   },
   { path: 'steps', component: ScenariosComponent, outlet: 'target'},
   { path: 'resources', component: ScenariosComponent, outlet: 'target'},
-
   { path: 'scenarios/:id', component: ScenarioComponent},
   { path: 'scenarios/:id/:stepId', component: ScenarioComponent},
   {
@@ -53,7 +48,9 @@ const routes: Routes = [
       }
     }
   ]
-  }
+  },
+  { path: 'errorpage', component: ErrorpageComponent},
+  { path: '**',  component: ErrorpageComponent },
 ];
 
 export const appRoutingProviders: any[] = [];

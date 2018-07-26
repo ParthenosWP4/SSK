@@ -34,14 +34,21 @@ export class ResourceCardComponent implements OnInit {
       if ( this.url.indexOf('.pdf') !== -1) {
         this.icon = 'pdf.svg';
       } else {
-        this.elasticServ.testUrlForIframe(this.res.redirect).subscribe(
-          result => {},
+        this.icon = 'webpage.svg';
+        /*this.elasticServ.testUrlForIframe(this.res.redirect).subscribe(
+          result => {console.log(result)},
           err => {
-            this.icon = 'webpage.svg';
+            console.log(err)
+            if (err.status === 0) {
+              this.icon = 'webpage.svg';
+            } else {
+              this.icon = 'webpage.svg';
+            }
+
           },
           () => {
-
-          });
+                console.log('Iframe matchineg')
+          });*/
       }
     }
 

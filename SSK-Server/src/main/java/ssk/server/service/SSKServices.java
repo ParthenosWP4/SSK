@@ -8,7 +8,6 @@ import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
@@ -48,6 +47,9 @@ public class SSKServices {
     @Autowired
     private ElasticServices elasticServices;
     
+    @Autowired
+    private ElasticGetDataServices elasticGetDataServices;
+    
     private RestTemplate restTemplate;
     private ClassLoader classLoader;
     private HashMap<String, String> platforms = new HashMap<>();
@@ -65,7 +67,6 @@ public class SSKServices {
     private static final String resourceStandardPath = "/TEI/text/body/listEvent/event/linkGrp/ref/term[contains(@type, \"standard\")]";
     private static List<String> metaDataTab = Arrays.asList("techniques", "standard", "discipline", "objects", "activity");
     
-    private static String dariahApiUrl = "http://it.dariah.eu:8983/solr/WP4/select?indent=on&q=standard_abbr_name:";
     private static String zoteroApihUrl = "https://api.zotero.org/";
     private static List<String> dateFormats = Arrays.asList("yyyy-MM-dd", "dd MMMMM yyyy", "yyyy-MM",  "yyyy");
     
@@ -118,6 +119,8 @@ public class SSKServices {
         SSKServices.node = node;
     }
     
+    public boolean handleData;
+    
     
     
     public RestTemplate getRestTemplate() {
@@ -165,6 +168,7 @@ public class SSKServices {
     
     
     public void initializeData()  throws  Exception{
+        this.handleData = true;
         //JsonArray scenarioAndStep;
         String relaxNgContent = githubApiService.getGithubFileContent("spec", teiSSKRelaxNgPath);
         convertStringToFile(relaxNgContent, teiSSKRelaxNgPath);
@@ -186,11 +190,11 @@ public class SSKServices {
                 logger.info("SCENARIO " + scenarioName);
     
                 if (scenarioName.equals("1_ScenarioTest.xml")) return;
-                if (scenarioName.equals("0_test.xml")) return;
+                if ( scenarioName.equals("0_test.xml")) return;
                 if (scenarioName.equals("1_SSK_sc_loremIpsum.xml")) return;
                 if (scenarioName.equals("README.md")) return;
                 if (scenarioName.contains("unst")) return;
-    
+                
                 String scenarioContent = githubApiService.getGithubFileContent(scenarioType, scenarioName);
                 
                 if (scenarioContent == null) return;
@@ -214,9 +218,7 @@ public class SSKServices {
                             }
                             JsonObject stepJson = stepProcessing(stepReference, j + 1);
                             if (stepJson == null) { // Référence de l'étape malformée (avec des caractères spéciaux) ou bien étapes non existantes
-                                
-                                //break;
-                                continue;
+                                continue; //break;
                             } else {
                                 scenarioAndStep.add(stepJson);
                             }
@@ -234,6 +236,7 @@ public class SSKServices {
                 logger.error(e.getStackTrace().toString());
             }
         });
+        this.handleData = false;
     }
     
     private JsonObject stepProcessing(String stepReference, int position) throws SAXException, ParserConfigurationException, XPathExpressionException, IOException {
@@ -486,8 +489,8 @@ public class SSKServices {
                 result.add(standardsTab.get(clef));
             } else {
                 try {
-                    ResponseEntity<String> response = this.restTemplate.getForEntity(dariahApiUrl + URLEncoder.encode(clef, "UTF-8") + "&wt=json", String.class);
-                    JsonArray standardArray = this.parser.parse(response.getBody()).getAsJsonObject().get("response").getAsJsonObject().getAsJsonArray("docs");
+                    //ResponseEntity<String> response = this.restTemplate.getForEntity(dariahApiUrl + URLEncoder.encode(clef, "UTF-8") + "&wt=json", String.class);
+                    JsonArray standardArray = this.elasticGetDataServices.getStandard(URLEncoder.encode(clef, "UTF-8")).getAsJsonArray();
                     if (standardArray.size() > 0) {
                         JsonObject standardElt = standardArray.get(0).getAsJsonObject();
                         JsonObject elt = new JsonObject();
@@ -558,23 +561,8 @@ public class SSKServices {
             result.addProperty("url", removeDoubleQuote(data.get("url").toString()));
         if (data.has("date") && !removeDoubleQuote(data.get("date").toString()).isEmpty()){
             result.addProperty("date", data.get("date").toString());
-           /* for (String elt : dateFormats)  {
-                Date date;
-                SimpleDateFormat dateFormat = new SimpleDateFormat(elt);
-                try{
-                    date = dateFormat.parse(removeDoubleQuote(data.get("date").toString()));
-                    dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-                    logger.warn(dateFormat.format(date));
-                    result.addProperty("date", dateFormat.format(date));
-                    break;
-                }
-                catch (ParseException e){
-                    logger.warn("1- " + e.getMessage());
-                    
-                }
-            }*/
         }
-        if (data.has("abstract") && removeDoubleQuote(data.get("abstract").toString()) != "")
+        if (data.has("abstractNote") && removeDoubleQuote(data.get("abstractNote").toString()) != "")
             result.addProperty("abstract", removeDoubleQuote(data.get("abstractNote").toString()));
         if (data.has("creators")) {
             JsonArray dataCreators = data.getAsJsonArray("creators");

@@ -25,6 +25,9 @@ import { RightMenuComponent } from './glossary/right-menu/right-menu.component';
 import { ContentComponent } from './glossary/content/content.component';
 import {GlossaryResolver} from './glossary/glossary.resolver';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { ErrorpageComponent } from './errorpage/errorpage.component';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {RequestInterceptor} from './request.interceptor';
 
 export function dataProviderFactory(provider: ElastichsearchServicesService) {
   return () => provider.loadData();
@@ -46,25 +49,30 @@ export function dataProviderFactory(provider: ElastichsearchServicesService) {
     SearchTabComponent,
     GlossaryComponent,
     RightMenuComponent,
-    ContentComponent
+    ContentComponent,
+    ErrorpageComponent
   ],
   imports:
     [
       TooltipModule.forRoot(),
       routing,
       BrowserModule,
+      HttpClientModule,
       CommonModule,
       HttpModule,
       NgxPaginationModule,
       FormsModule,
       McBreadcrumbsModule.forRoot(),
       PdfViewerModule
+
     ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],
   providers: [appRoutingProviders, SafeHtmlPipe, ElastichsearchServicesService, SskServicesService, GlossaryResolver,
-    { provide: APP_INITIALIZER, useFactory: dataProviderFactory, deps: [ElastichsearchServicesService], multi: true }],
+    { provide: APP_INITIALIZER, useFactory: dataProviderFactory, deps: [ElastichsearchServicesService], multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true}
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

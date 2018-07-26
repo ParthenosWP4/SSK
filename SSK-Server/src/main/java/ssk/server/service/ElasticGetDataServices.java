@@ -38,6 +38,9 @@ public class ElasticGetDataServices {
 	@Value("${scenario_metadata_query}")
 	private String scenarioMetadataQuery;
 	
+	@Value("${standard_query}")
+	private String standardQuery;
+	
 	@Value("${elasticsearch.index}")
 	private String sskIndex;
 	
@@ -75,6 +78,7 @@ public class ElasticGetDataServices {
 			String reverse = new StringBuffer(input).reverse().toString();
 			reverse = reverse.replaceFirst("]}", "]");
 			input = new StringBuffer(reverse).reverse().toString();
+			input = input.replaceAll("](\\s)*},(\\s)*\"", "]}},\"");
 			result.add ("steps", sskServices.getParser().parse(input).getAsJsonArray());
 			return result;
 		}
@@ -109,6 +113,18 @@ public class ElasticGetDataServices {
 			jsonResult = temp;
 		}
 		return  jsonResult.toString();
+	}
+	
+	public JsonElement getStandard(String standardAbbrName) {
+		sskIndex = "ssk/standard/_search?size=1";
+		requestHeadersParams.setHeaders();
+		JsonElement jsonResult = new JsonObject();
+		entity = new HttpEntity<>(scenarioMetadataQuery.replace("value", standardAbbrName), requestHeadersParams.getHeaders());
+		ResponseEntity<String> response = this.restTemplate.exchange( this.elasticServices.getElasticSearchPort() + "/" + sskIndex, HttpMethod.POST, entity, String.class);
+		if (response.getStatusCode().is2xxSuccessful()) {
+			 jsonResult = this.sskServices.getParser().parse(response.getBody()).getAsJsonObject().getAsJsonObject("hits").getAsJsonArray("hits");
+		}
+		return jsonResult;
 	}
 	
 	private JsonElement loadContentByKey(JSONObject json, String keyToCheck){
@@ -218,7 +234,7 @@ public class ElasticGetDataServices {
 	public JsonElement getAllResources(String type) {
 		JsonElement jsonResult = new JsonObject();
 		requestHeadersParams.setHeaders();
-		sskIndex = "ssk/" + type +"/_search?size=10000";
+		sskIndex = "ssk/" + type +"/_search?size=1000";
 		requestHeadersParams.setHeaders();
 		ResponseEntity<String> response = this.restTemplate.getForEntity( this.elasticServices.getElasticSearchPort() + "/" + sskIndex, String.class) ;
 		if (response.getStatusCode().is2xxSuccessful()) {

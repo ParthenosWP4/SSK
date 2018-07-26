@@ -34,4 +34,5 @@ public class SSKLaunchController {
 		HttpStatus status = HttpStatus.OK;
 		return new ResponseEntity<>(gson.toJson("content: OK"), this.headers, status);
 	}
+	
 }

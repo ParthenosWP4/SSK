@@ -47,6 +47,9 @@ export class StepCardComponent implements OnInit {
       this.scenarioTitle = this.scenario.title;
     }
 
+
+
+
     //this.step['metadata'] = this.sskServices.addStepMetadata(this.step._id);
 
     const urlTag: Array<any>  = _.remove(this.step.metadata, (tag) => {

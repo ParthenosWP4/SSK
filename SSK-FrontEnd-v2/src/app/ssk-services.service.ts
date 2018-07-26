@@ -5,11 +5,16 @@ import {isUndefined} from 'util';
 import {Http} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import {Title} from "@angular/platform-browser";
+import {HttpClient, HttpResponse} from '@angular/common/http';
+import {Router} from "@angular/router";
 
 @Injectable()
 export class SskServicesService {
 
   private filters = [];
+
+  private statusError: number;
+  private errorMsg: string;
 
 
 
@@ -35,12 +40,12 @@ export class SskServicesService {
 
   glossaryLink: string ;
 
-  constructor(private elasticService: ElastichsearchServicesService, private http: Http, private titleService: Title) {
+  constructor(private router: Router, private elasticService: ElastichsearchServicesService, private http: HttpClient, private titleService: Title) {
   }
 
 
   shorten(content: any, length: number) {
-    let result: any  = {};
+    const result: any  = {};
     const contentArray = new Array(content.content);
     if (contentArray[0] instanceof Array) {
       let newContent = '';
@@ -67,8 +72,7 @@ export class SskServicesService {
     }
     if (content.content.length > length) {
       result.content = content.content.substring(0, length) + '...';
-    }
-    else {
+    } else {
       result.content = content.content;
     }
     return result;
@@ -93,15 +97,14 @@ export class SskServicesService {
 
   loadSteps() {
     if ( this.elasticService.getSteps().length <= 0) {
-      this.elasticService.getAllSteps().subscribe(result => {
-      });
+      this.elasticService.getAllSteps();
     }
   }
 
   loadPageContent(url: any) {
     return this.http.get(url.changingThisBreaksApplicationSecurity)
-      .map((response) => {
-        return response.text();
+      .map((response: HttpResponse<any>) => {
+
       }).catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
 
@@ -137,6 +140,49 @@ export class SskServicesService {
   public getTitle() {
     return this.titleService.getTitle();
   }
+
+  public setStatusError( value: number) {
+    this.statusError = value;
+  }
+
+  public getStatusError() {
+    return this.statusError;
+  }
+
+  public setErrorMsg( value: string) {
+    this.errorMsg = value;
+  }
+
+  public getErrorMsg() {
+    return this.errorMsg;
+  }
+
+ checkBackEndAvailability () {
+   if (this.getStatusError() ) {
+     this.setErrorMsg('Oops… The server is temporarily unable to serve your request due to maintenance downtime or capacity problems.. Bloody Malork <br/> Please contact ssk@inria.fr !');
+     switch (this.getStatusError()) {
+       case 0:
+         this.setTitle('SERVER NOT AVAILABLE')
+         break;
+       case 500:
+         this.setTitle('SSK SERVER ERROR ')
+         break;
+       case 503:
+         this.setTitle('SSK SERVICES NOT AVAILABLE ')
+         break;
+       case 404:
+         this.setTitle('PAGE NOT FOUND');
+         this.setErrorMsg('Oops… the page you were looking for doesn’t  exist... Bloody Malork !');
+         break;
+     }
+     this.router.navigate(['errorpage']);
+   }
+ }
+
+ updateScenarioMetadata(metadata: any) {
+
+
+ }
 
 
 }

@@ -1,7 +1,6 @@
 package ssk.server;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -20,10 +19,10 @@ import ssk.server.service.SSKServices;
 @EnableAutoConfiguration
 @ComponentScan
 public class SSKApplication
-        //extends SpringBootServletInitializer
+       // extends SpringBootServletInitializer
 {
     
-    /*@Override
+  /* @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
         return application.sources(SSKApplication.class);
     }*/
