@@ -267,7 +267,7 @@
             <xsl:choose>
               <xsl:when test="self::text()">
                 <json:object>
-                  <xsl:copy-of select="json:create-text-value($node)"/>
+                  <xsl:copy-of select="json:create-string($node)"/>
                 </json:object>
               </xsl:when>
               <xsl:otherwise>
