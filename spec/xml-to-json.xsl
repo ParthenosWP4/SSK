@@ -202,7 +202,7 @@
               <xsl:copy-of select="json:create-attributes($node)"/>
               <json:member>
                 <json:name>content</json:name>
-                <json:value><xsl:value-of select="$node"/></json:value>
+                <json:value><xsl:copy-of select="json:create-mixed-array($node)"/></json:value>
               </json:member>
             </json:object>
           </xsl:when>
