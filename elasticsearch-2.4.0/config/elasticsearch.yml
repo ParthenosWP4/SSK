@@ -96,5 +96,5 @@ cluster.name: SSK-Cluster
 # cluster.name: mkyong-cluster
 
 cluster.routing.allocation.disk.threshold_enabled: true 
-cluster.routing.allocation.disk.watermark.low: 1gb
-cluster.routing.allocation.disk.watermark.high: 0.5gb
+cluster.routing.allocation.disk.watermark.low: 0.5gb
+cluster.routing.allocation.disk.watermark.high: 0.25gb
