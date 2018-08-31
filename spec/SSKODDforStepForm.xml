@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="tei_odds.rnc" type="application/relax-ng-compact-syntax"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title>SSK spec for form creation with the TEIMETA tool</title>
+				<author>
+					<name>Charles Riondet</name>
+				</author>
+			</titleStmt>
+			<publicationStmt>
+				<p/>
+			</publicationStmt>
+			<notesStmt>
+				<note type="ns">http://www.example.org/ns/nonTEI</note>
+			</notesStmt>
+			<sourceDesc>
+				<p>adapted from
+					https://github.com/christopheparisse/teimeta/blob/master/models/ODD_Meta_niveau0_V17.odd</p>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+	<text>
+		<body>
+			<schemaSpec ident="TEI_SSK" start="TEI" ns="http://www.tei-c.org/ns/1.0">
+				<!-- ajouter teiCorpus par la suite si collections -->
+
+
+				<moduleRef key="core"
+					include="abbr addrLine address analytic author bibl biblScope biblStruct date desc editor email expan graphic head imprint item label lb list media meeting monogr name p postBox postCode pubPlace publisher ref resp respStmt series street term"/>
+				<moduleRef key="tei"/>
+				<moduleRef key="header"/>
+				<moduleRef key="textstructure"/>
+				<moduleRef key="namesdates"/>
+				<moduleRef key="linking"/>
+				<moduleRef key="tagdocs"/>
+				<moduleRef key="figures"/>
+
+				<!-- structure generale TEI -->
+				<elementSpec ident="TEI" module="textstructure">
+					<content>
+						<sequence minOccurs="1" maxOccurs="1">
+							<elementRef key="teiHeader"/>
+							<elementRef key="text"/>
+						</sequence>
+					</content>
+					<attList>
+						<attDef ident="type" usage="req" mode="change">
+							<datatype>
+								<dataRef key="teidata.enumerated"/>
+							</datatype>
+							<valList type="closed" mode="replace">
+								<valItem ident="researchStep"/>
+								<valItem ident="researchScenario"/>
+							</valList>
+						</attDef>
+						<attDef ident="xml:id" usage="req">
+							<datatype>
+								<dataRef key="anyURI"/>
+							</datatype>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<!-- structure generale teiHeader -->
+				<elementSpec ident="teiHeader" module="header" mode="change">
+					<content>
+						<sequence minOccurs="1" maxOccurs="1">
+							<elementRef key="fileDesc"/>
+							<elementRef key="encodingDesc"/>
+							<elementRef key="revisionDesc"/>
+						</sequence>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="revisionDesc">
+					<desc>Revision history</desc>
+					<content>
+						<elementRef key="change"/>
+					</content>
+				</elementSpec>
+				
+				<elementSpec ident="change"/>
+
+				<elementSpec ident="encodingDesc">
+					<desc>Information about the zotero libraries used (internal information)</desc>
+				</elementSpec>
+
+				<elementSpec ident="text" module="textstructure">
+					<content>
+						<sequence>
+							<elementRef key="body"/>
+						</sequence>
+					</content>
+				</elementSpec>
+
+
+				<elementSpec ident="body" module="textstructure">
+					<content>
+						<elementRef key="listEvent"/>
+					</content>
+				</elementSpec>
+
+				<!--This is for scenarios-->
+
+				<!--		<elementSpec ident="body" module="textstructure">
+					<content>
+						<elementRef key="div"/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="div" module="textstructure">
+					<content>
+						<alternate minOccurs="0" maxOccurs="unbounded">
+							<elementRef key="head"/>
+							<elementRef key="desc" corresp="definition"/>
+							<elementRef key="desc" corresp="terms"/>
+						</alternate>
+						<sequence minOccurs="1" maxOccurs="1">
+							<elementRef key="figure"/>
+							<elementRef key="listEvent"/>
+						</sequence>
+					</content>
+				</elementSpec>-->
+
+				<elementSpec ident="head">
+					<content>
+						<textNode/>
+					</content>
+					<attList>
+						<attDef ident="xml:lang" usage="req" mode="change">
+							<datatype>
+								<dataRef key="teidata.language"/>
+							</datatype>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="desc" corresp="definition">
+					<desc>Description of the scenario</desc>
+					<content>
+						<alternate minOccurs="0" maxOccurs="unbounded">
+							<textNode/>
+							<elementRef key="list" minOccurs="0"/>
+							<elementRef key="ref" minOccurs="0"/>
+							<elementRef key="abbr" minOccurs="0"/>
+							<elementRef key="expan" minOccurs="0"/>
+						</alternate>
+					</content>
+					<attList>
+						<attDef ident="type" usage="req" mode="change">
+							<defaultVal>definition</defaultVal>
+						</attDef>
+						<!-- @xml:lang is required -->
+						<attDef ident="xml:lang" usage="req" mode="change">
+							<datatype>
+								<dataRef key="teidata.language"/>
+							</datatype>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="desc" corresp="terms">
+					<content>
+						<elementRef key="term" minOccurs="0" maxOccurs="unbounded"/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="figure">
+					<content>
+						<sequence minOccurs="1" maxOccurs="1">
+							<elementRef key="head"/>
+							<elementRef key="graphic"/>
+							<elementRef key="figDesc"/>
+						</sequence>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="graphic">
+					<content>
+						<dataRef key="anyURI"/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="figDesc">
+					<desc>Image caption</desc>
+					<content>
+						<textNode/>
+					</content>
+				</elementSpec>
+
+				<!-- Only for step files -->
+				<elementSpec ident="listEvent">
+					<content>
+						<elementRef key="event" minOccurs="1" maxOccurs="1"/>
+					</content>
+				</elementSpec>
+				<!--
+					for scenarios
+					<elementSpec ident="listEvent">
+					<content>
+						<elementRef key="event" minOccurs="0" maxOccurs="unbounded"/>
+					</content>
+				</elementSpec>-->
+
+				<elementSpec ident="event">
+					<content>
+						<sequence>
+							<elementRef key="head" minOccurs="1" maxOccurs="unbounded"/>
+							<elementRef key="desc" corresp="definition" minOccurs="1"
+								maxOccurs="unbounded"/>
+							<elementRef key="desc" corresp="terms" minOccurs="1"
+								maxOccurs="unbounded"/>
+							<elementRef key="linkGrp" corresp="generalResources" minOccurs="0"
+								maxOccurs="1"/>
+							<elementRef key="linkGrp" corresp="projectResources" minOccurs="0"
+								maxOccurs="1"/>
+							<elementRef key="param" minOccurs="0" maxOccurs="unbounded"/>
+						</sequence>
+					</content>
+					<attList>
+						<!-- Only in scenario files
+							<attDef ident="ref"/>
+						<attDef ident="xml:id">
+							<desc>Id of the step (the name of the file) without extension</desc>
+						</attDef>
+						-->
+						<attDef ident="type">
+							<defaultVal>researchStep</defaultVal>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="term">
+					<attList>
+						<attDef ident="key">
+							<desc>The term itself</desc>
+						</attDef>
+						<attDef ident="source">
+							<desc>The thesaurus used</desc>
+						</attDef>
+						<attDef ident="type">
+							<desc>The type of the term</desc>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="linkGrp" corresp="generalResources">
+					<content>
+						<elementRef key="ref" minOccurs="0" maxOccurs="unbounded"/>
+					</content>
+					<attList>
+						<attDef ident="type">
+							<defaultVal>generalResources</defaultVal>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="linkGrp" corresp="projectResources">
+					<content>
+						<elementRef key="ref" minOccurs="0" maxOccurs="unbounded"/>
+					</content>
+					<attList>
+						<attDef ident="type">
+							<defaultVal>projectResources</defaultVal>
+						</attDef>
+						<attDef ident="source"/>
+						<attDef ident="target"/>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="param"/>
+
+				<elementSpec ident="fileDesc" module="header">
+					<desc xml:lang="fr">Titre, citation, diffusion et données primaires ~ signal
+						audio/vidéo</desc>
+					<desc xml:lang="en">Title, citation, diffusion and primary data ~ signal
+						audio/vidéo</desc>
+					<content>
+						<sequence minOccurs="1" maxOccurs="1">
+							<elementRef key="titleStmt"/>
+							<elementRef key="publicationStmt"/>
+							<elementRef key="sourceDesc"/>
+						</sequence>
+					</content>
+				</elementSpec>
+
+				<!-- titleStmt : un principal, de 0 à n respStmt (collecteur, transcripteur, collecteur, ...) -->
+				<elementSpec ident="titleStmt" module="header" mode="change" n="1">
+					<desc xml:lang="fr">La ressource: titre, description, citation, responsable,
+						contributeurs</desc>
+					<desc xml:lang="en">Resource : Title, description, citation, responsible,
+						contributors</desc>
+					<content>
+						<elementRef key="title" minOccurs="1" maxOccurs="1"/>
+						<elementRef key="author" minOccurs="1" maxOccurs="unbounded"/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="author" module="core">
+					<content>
+						<elementRef key="persName"/>
+						<elementRef key="affiliation"/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="affiliation">
+					<desc>Author's affiliation </desc>
+					<content>
+						<textNode/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="title" module="core" mode="change">
+					<desc xml:lang="fr"> Titre, description, citation</desc>
+					<desc xml:lang="en"> Title, description, citation</desc>
+					<content>
+						<textNode/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="publicationStmt" module="header" mode="change" n="1">
+					<desc xml:lang="fr">Diffusion : identifiant unique, diffusion, sites web,
+						licence</desc>
+					<desc xml:lang="en">Diffusion : handle, publisher, pubPlace, license</desc>
+					<content>
+						<elementRef key="authority"/>
+						<!-- carole à vérifier avec Loïc : zero car je ne suis pas sure que chaque ressource aura un handle si elle n'est pas ds ortolang ou cocoon,
+	  					more:la même ressource peut avoir plusieurs handles si déposée sur plusieurs plateformes
+		  				pas de type car handle alphanum + certains caractères spéciaux ? -->
+						<elementRef key="availability" minOccurs="1" maxOccurs="unbounded"/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="availability" module="header">
+					<desc xml:lang="fr">Conditions de diffusion</desc>
+					<desc xml:lang="fr">Conditions de diffusion</desc>
+					<content>
+						<elementRef key="licence" minOccurs="1" maxOccurs="unbounded"/>
+					</content>
+					<attList>
+						<!-- value=restricted car une creative common telle qu'elle soit-->
+						<attDef ident="status" usage="req" mode="change" rend="restricted">
+							<valList>
+								<valItem ident="restricted"/>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="licence" module="header">
+					<desc xml:lang="fr">License de diffusion</desc>
+					<desc xml:lang="fr">Diffusion Licence</desc>
+					<content>
+						<elementRef key="p" minOccurs="1" maxOccurs="1"/>
+					</content>
+					<attList>
+						<attDef ident="type" usage="req" mode="change" rend="licence.type.BY_NC_SA">
+							<valList mode="replace">
+								<valItem ident="licence.type.BY_NC_SA">
+									<desc xml:lang="fr">Creative Common CC_BY_NC_SA : Attribution
+										sans usage commercial et partage suivant les mêmes modalités </desc>
+									<desc xml:lang="en">Creative Common CC_BY_NC_SA : Attribution
+										and no Commercial use and share in the same way</desc>
+								</valItem>
+								<valItem ident="licence.type.BY">
+									<desc xml:lang="fr">Creative Common CC_BY : Attribution</desc>
+									<desc xml:lang="en">Creative Common CC_BY : Attribution</desc>
+								</valItem>
+								<valItem ident="licence.type.BY_ND">
+									<desc xml:lang="fr">Creative Common CC_BY_ND : Attribution sans
+										modification</desc>
+									<desc xml:lang="en">Creative Common CC_BY_ND : Attribution and
+										no modification</desc>
+								</valItem>
+								<valItem ident="licence.type.BY_NC_ND">
+									<desc xml:lang="fr">Creative Common CC_BY_NC_NDY : Attribution
+										sans usage commercial et sans modification</desc>
+									<desc xml:lang="en">Creative Common CC_BY_NC_ND : Attribution
+										and no commercial use and no modification</desc>
+								</valItem>
+								<valItem ident="licence.type.BY_NC">
+									<desc xml:lang="fr">Creative Common CC_BY_NC : Attribution sans
+										usage commercial</desc>
+									<desc xml:lang="en">Creative Common CC_BY_NC : Attribution and
+										no commercial use</desc>
+								</valItem>
+
+								<valItem ident="licence.type.BY_SA">
+									<desc xml:lang="fr">Creative Common CC_BY_SA : Attribution et
+										partage suivant les mêmes modalités </desc>
+									<desc xml:lang="en">Creative Common CC_BY_SA : Attribution and
+										share in the same way</desc>
+								</valItem>
+								<valItem ident="licence.type.OTHER">
+									<desc xml:lang="fr">autre license</desc>
+									<desc xml:lang="en">other licence</desc>
+								</valItem>
+							</valList>
+						</attDef>
+						<attDef ident="target">
+							<datatype>
+								<dataRef key="anyURI"/>
+							</datatype>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="authority">
+					<content>
+						<textNode/>
+					</content>
+				</elementSpec>
+
+
+
+
+
+
+
+				<elementSpec ident="ref">
+					<desc xml:lang="fr">URL</desc>
+					<desc xml:lang="fr">URL</desc>
+					<content>
+						<textNode/>
+					</content>
+					<attList>
+						<attDef ident="target" usage="req" mode="change">
+							<desc xml:lang="fr">Lien vers la ressource (URL)</desc>
+							<desc xml:lang="en">URL</desc>
+							<datatype>
+								<dataRef name="anyURI"/>
+							</datatype>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<!-- recordingStmt : recording et medias-->
+				<elementSpec ident="sourceDesc" module="header" mode="change" n="1">
+					<desc xml:lang="fr">Données primaires (signal)</desc>
+					<desc xml:lang="en">Primary data (recording)</desc>
+					<content>
+						<elementRef key="p" minOccurs="1" maxOccurs="1"/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="persName" module="namesdates">
+					<desc xml:lang="fr">Nom du locuteur</desc>
+					<desc xml:lang="en">Speaker's name</desc>
+					<content>
+						<textNode/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="placeName" module="namesdates">
+					<desc xml:lang="fr">Lieu</desc>
+					<desc xml:lang="en">Place</desc>
+					<content>
+						<textNode/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="country" module="namesdates">
+					<desc xml:lang="fr">Pays</desc>
+					<desc xml:lang="en">Country</desc>
+					<attList>
+						<!-- attribut ref= norme iso ISO 3366-1 => Indiquer le pays de recueil , donnée minimale en général connue, fr par défaut -->
+						<attDef ident="name" usage="req" mode="change" rend="fr"/>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="district" module="namesdates">
+					<desc xml:lang="fr">Région</desc>
+					<desc xml:lang="en">District</desc>
+					<attList>
+						<attDef ident="name" usage="rec" mode="change"/>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="settlement" module="namesdates">
+					<desc xml:lang="fr">Ville</desc>
+					<desc xml:lang="en">Town</desc>
+					<attList>
+						<!-- ref= norme TGN ? Indiquer la ville, village de recueil : référentiel Getty Thesaurus of Geographic Name / code UNECE des Nations Unies plus fin que le code postal-->
+						<attDef ident="ref" usage="req" mode="change"/>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="p" module="core">
+					<content>
+						<textNode/>
+					</content>
+				</elementSpec>
+
+			</schemaSpec>
+		</body>
+	</text>
+</TEI>
