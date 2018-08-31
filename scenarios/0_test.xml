@@ -1,43 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0"
-     xml:id="test"
-     type="researchScenario">
+     type="researchScenario"
+     xml:id="SSK_sc_DisseminationFieldSurveys">
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Production and processing of 3D objects</title>
+            <title>Encode and modelize field surveys for their online dissemination</title>
             <author>
-               <persName>Hélène Gautier</persName>
+               <persName>Hélène
+                    Gautier</persName>
                <affiliation>Huma-Num/CNRS</affiliation>
             </author>
             <author>
-               <persName>Adeline Joffres</persName>
-               <affiliation>Huma-Num/CNRS</affiliation>
-            </author>
-            <author>
-               <persName>Paulin Ribbe</persName>
-               <affiliation>Huma-Num/CNRS</affiliation>
-            </author>
-            <author>
-               <persName>Mehdi Chayani</persName>
-               <affiliation>3D-SHS Huma-Num's consortium</affiliation>
-            </author>
-            <author>
-               <persName>Xavier Granier</persName>
-               <affiliation>3D-SHS Huma-Num's consortium</affiliation>
-            </author>
-            <author>
-               <persName>Sarah Tournon-Valiente</persName>
-               <affiliation>3D-SHS Huma-Num's consortium</affiliation>
+               <persName>Marie Puren</persName>
+               <affiliation>INRIA</affiliation>
             </author>
          </titleStmt>
          <publicationStmt>
             <authority>PARTHENOS</authority>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
-                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
-              document.</p>
+                  <p>The Creative
+                            Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+                            document.</p>
                </licence>
             </availability>
          </publicationStmt>
@@ -48,22 +34,19 @@
       <encodingDesc>
          <listPrefixDef>
             <prefixDef ident="wp2" matchPattern="(.*?)" replacementPattern="groups/368112">
-               <p>The prefix wp2 needs to be used before resources taken from the <ref type="url" target="https://www.zotero.org/groups/368112/parthenos_wp2">Parthenos WP2 Zotero
-              Library</ref>.</p>
-               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a colon
-            ":". Ex: target="wp2:JHSD76DS"</p>
+               <p>The prefix wp2 needs to be used before resources taken from the <ref target="https://www.zotero.org/groups/368112/parthenos_wp2" type="url">Parthenos WP2 Zotero Library</ref>.</p>
+               <p>In the <att>target</att>attribute, the prefix in separated by the Zotero ID
+                        by a colon ":". Ex: target="wp2:JHSD76DS"</p>
             </prefixDef>
             <prefixDef ident="wp3" matchPattern="(.*?)" replacementPattern="groups/520841">
-               <p>The prefix wp3 needs to be used before resources taken from the <ref type="url" target="https://www.zotero.org/groups/520841/parthenos_wp3">Parthenos WP3 Zotero
-              Library</ref>.</p>
-               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a colon
-            ":". Ex: target="wp2:JHSD76DS"</p>
+               <p>The prefix wp3 needs to be used before resources taken from the <ref target="https://www.zotero.org/groups/520841/parthenos_wp3" type="url">Parthenos WP3 Zotero Library</ref>.</p>
+               <p>In the <att>target</att>attribute, the prefix in separated by the Zotero ID
+                        by a colon ":". Ex: target="wp2:JHSD76DS"</p>
             </prefixDef>
             <prefixDef ident="wp4" matchPattern="(.*?)" replacementPattern="groups/427927">
-               <p>The prefix wp4 needs to be used before resources taken from the <ref type="url" target="https://www.zotero.org/groups/427927/parthenos_wp4">Parthenos WP4 Zotero
-              Library</ref>.</p>
-               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a colon
-            ":". Ex: target="wp2:JHSD76DS"</p>
+               <p>The prefix wp4 needs to be used before resources taken from the <ref target="https://www.zotero.org/groups/427927/parthenos_wp4" type="url">Parthenos WP4 Zotero Library</ref>.</p>
+               <p>In the <att>target</att>attribute, the prefix in separated by the Zotero ID
+                        by a colon ":". Ex: target="wp2:JHSD76DS"</p>
             </prefixDef>
          </listPrefixDef>
       </encodingDesc>
@@ -73,48 +56,43 @@
    </teiHeader>
    <text>
       <body>
-         <div type="scenario" xml:id="sc_Production_3D_Objects">
-            <head xml:lang="en" type="scenarioTitle">Production and processing of 3D objects</head>
-            <desc type="definition" xml:lang="en">The project aim is to digitize objects at different
-          scale from an artefact to cultural heritage site to help scientific community to
-          visualize, analyze, simulate and synthesize the result of their research. It allows for
-          better comprehension of the case studies. The 3D object is also a powerfull mean to bring
-          out new hypotheses of research. In some cases, producing an "accurate" virtual
-          version of cultural heritage site is a mean of preserving it. Those best practices and
-          methods are detailed in the <ref type="report" target="https://hal.archives-ouvertes.fr/hal-01683842">3D-SHS consortium white paper</ref>published in 2017, and in the
-          <ref target="https://hal.inria.fr/PARTHENOS/hal-01526713" type="report">Parthenos White Paper</ref> "Digital 3D Objects in Art and Humanities: challenges of creation,
-          interoperability and preservation"
-                 <list>
-                     <item>Documentation: Guidelines for text annotation</item>
-                     <item>Documentation: Guidelines for text recognition</item>
-                     <item>Schema: Formal specification in ODD and RNG schemas (for print and manuscript
-        annotation)</item>
-                     <item>Schema: Schematron constraints for quality checks beyond the schema</item>
-</list>
-              nalyze, simulate and synthesize the result of their research. It allows for
-          better comprehension of the case studies. The 3D object is also a powerfull mean to bring
-          out new hypotheses of research.
-              </desc>
-            <desc xml:lang="en" type="terms">
-               <term source="aurehal" type="discipline">Archaeology and Prehistory</term>
-               <term source="aurehal" type="discipline">Cultural heritage and museology</term>
-               <term type="techniques" key="Georeferencing" source="tadirah"/>
-               <term type="techniques" key="Photography" source="tadirah"/>
-               <term type="techniques" key="Preservation Metadata" source="tadirah"/>
-               <term type="techniques" key="Scanning" source="tadirah"/>
-               <term type="techniques" key="Technology Preservation" source="tadirah"/>
-               <term type="object" key="Images (3D)" source="nemo"/>
+         <div type="scenario" xml:id="sc_DisseminationFieldSurveys">
+            <head type="scenarioTitle" xml:lang="en">Encode and modelize field surveys for their
+                    online dissemination</head>
+            <desc type="definition" xml:lang="en">A researcher wants to preserve and to give
+                    access to field surveys and their related materials. Indeed, to provide a
+                    consistent context and make the reuse of raw data easier, the documentation has
+                    to include not only field materials but also documents about the research
+                    process steps, that’s to say the preparation of the survey (research project,
+                    funding file, etc.), the field collection (interviews, field notebooks, etc.)
+                    and the data analysis (summary sheets, drafts, etc.). This corpus can thus cover
+                    a great variety of media (paper, digital, picture, audio or video records…) and
+                    is organised according to a classification plan. It is supposed that people
+                    interested have agreed that data will be made public available (potentially with
+                    some restrictions).</desc>
+            <desc type="terms" xml:lang="en">
+               <term source="aurehal" type="discipline">Sociology</term>
+               <term key="Encoding" source="tadirah" type="techniques"/>
+               <term key="Document" source="nemo" type="objects"/>
+               <term key="Sound" source="nemo" type="objects"/>
+               <term key="Video recording" source="nemo" type="objects"/>
+               <term key="Technical reports" source="nemo" type="objects"/>
             </desc>
             <figure type="image">
                <head/>
-               <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/scenario3D.jpg"/>
+               <graphic url="https://upload.wikimedia.org/wikipedia/commons/c/cb/Bronis%C5%82aw_Malinowski_among_Trobriand_tribe_3.jpg"/>
                <figDesc/>
             </figure>
             <listEvent>
-               <event xml:id="s1" type="researchStep" ref="step_A3DOBS"/>
-               <event xml:id="s2" type="researchStep" ref="step_A3DOBP"/>
-               <event xml:id="s3" type="researchStep" ref="step_3DMtTF"/>
-               <event xml:id="s4" type="researchStep" ref="step_3DV"/>
+               <event ref="step_OtICoP_171117" type="researchStep" xml:id="s1"/>
+               <event ref="step_CaC_171117" type="researchStep" xml:id="s2"/>
+               <event ref="step_SaD_171117" type="researchStep" xml:id="s3"/>
+               <event ref="step_A_171117" type="researchStep" xml:id="s4"/>
+               <event ref="step_CiSF_171117" type="researchStep" xml:id="s5"/>
+               <event ref="step_TtI_171117" type="researchStep" xml:id="s6"/>
+               <event ref="step_AM_171117" type="researchStep" xml:id="s7"/>
+               <event ref="step_CtR_171117" type="researchStep" xml:id="s8"/>
+               <event ref="step_DaA_171117" type="researchStep" xml:id="s9"/>
             </listEvent>
          </div>
       </body>
