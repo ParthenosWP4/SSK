@@ -45,12 +45,12 @@ dependencies {
 
     /*These two cannot be used either for deployment with an integrated tomcat nor for an external web server.*/
     //providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat:1.5.7.RELEASE'
-     //providedRuntime 'org.slf4j:slf4j-api:1.7.25'
+    //providedRuntime 'org.slf4j:slf4j-api:1.7.25'
 
     compile group: 'org.springframework.boot', name: "spring-boot-starter-web", version: '1.5.7.RELEASE'
 
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-elasticsearch
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-elasticsearch', version: '1.5.2.RELEASE'
+    // compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-elasticsearch', version: '1.5.2.RELEASE'
 
 
     // https://mvnrepository.com/artifact/net.java.dev.jna/jna

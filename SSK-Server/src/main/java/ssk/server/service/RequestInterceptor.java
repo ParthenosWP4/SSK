@@ -68,7 +68,7 @@ public class RequestInterceptor extends HandlerInterceptorAdapter {
 	}
 }
 
- class SSKUnavailableException extends RuntimeException {
+class SSKUnavailableException extends RuntimeException {
 	public SSKUnavailableException(String message) {
 		super(message);
 	}

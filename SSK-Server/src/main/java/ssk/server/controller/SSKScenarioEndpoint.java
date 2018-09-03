@@ -22,14 +22,14 @@ import java.util.List;
 @Controller
 @RequestMapping(value = "/")
 public class SSKScenarioEndpoint {
-
-
+    
+    
     @Autowired
     ElasticGetDataServices elasticGetDataServices;
-
+    
     @Autowired
     ElasticServices esServices;
-
+    
     @Autowired
     SSKServices sskServices;
     
@@ -73,7 +73,7 @@ public class SSKScenarioEndpoint {
     @ResponseBody
     @RequestMapping(value = "scenario/{scenarioId}",  method = { RequestMethod.GET  }, produces="application/json")
     public  ResponseEntity  getScenario(@PathVariable String scenarioId, @RequestParam(value = "fields", required = false) String fields){
-    
+        
         JsonObject jsonResult = new JsonObject();
         ResponseEntity<String> result;
         
@@ -84,7 +84,7 @@ public class SSKScenarioEndpoint {
                     
                     try{
                         if(field.equals("image")){
-        
+                            
                             jsonResult.addProperty(field, sskServices.removeDoubleQuote (elasticGetDataServices.getScenarioDetails(scenarioId, field).getAsJsonObject().get("url").toString()));
                         }
                         else{
@@ -101,7 +101,7 @@ public class SSKScenarioEndpoint {
         catch (NullPointerException e) {
             e.printStackTrace();
             logger.info("empty, Here get All fields");
-        
+            
         }
         return  new ResponseEntity<>(jsonResult.toString(), this.headers, HttpStatus.OK);
     }

@@ -9,6 +9,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import ssk.server.service.SSKServices;
 
 
@@ -19,9 +20,9 @@ import ssk.server.service.SSKServices;
 @EnableAutoConfiguration
 @ComponentScan
 public class SSKApplication
-       // extends SpringBootServletInitializer
+        // extends SpringBootServletInitializer
 {
-    
+  
   /* @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
         return application.sources(SSKApplication.class);
