@@ -52,10 +52,9 @@
       to analyze and gather information on the corpus from different points of view</desc>
                <desc type="terms" xml:lang="en">
                   <term key="XML" source="standard_list" type="standard"/>
-                  <term key="CIDOC_CRM" source="standard_list" type="standard"/>
+                  <term key="CIDOC-CRM" source="standard_list" type="standard"/>
                   <term key="OAI-PMH" source="standard_list" type="standard"/>
                   <term key="publishing" source="http://tadirah.dariah.eu/" type="activity"/>
-                  <term key="CD" source="WP3Wizard" type="policies"/>
                </desc>
                <linkGrp type="generalResources">
                   <ref source="NERD" target="http://nerd.eurecom.fr/" type="code">

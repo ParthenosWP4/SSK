@@ -58,9 +58,8 @@
                   <ref source="zotero" target="5UIZH29M" type="service">
                      <term key="PDF" source="standard_list" type="standard"/>
                   </ref>
-                  <ref source="zotero" target="5UIZH29M" type="service">
-                     <term key="TXT" source="standard_list" type="standard"/>
-                  </ref>
+                  <ref source="zotero" target="5UIZH29M" type="service"/>
+                  
                   <ref source="zotero" target="5UIZH29M" type="service">
                      <term key="XML" source="standard_list" type="standard"/>
                   </ref>

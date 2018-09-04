@@ -53,13 +53,11 @@
                <desc type="terms" xml:lang="en">
                   <term key="publishing" source="http://tadirah.dariah.eu/" type="activity"/>
                   <term key="XML" source="standard_list" type="standard"/>
-                  <term key="CIDOC_CRM" source="standard_list" type="standard"/>
+                  <term key="CIDOC-CRM" source="standard_list" type="standard"/>
                   <term key="OAI-PMH" source="standard_list" type="standard"/>
-                  <term key="CD" source="WP3Wizard" type="policies"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref source="Common policies Guideline"
-                       target="http://www.parthenos-project.eu/Download/Deliverables/D3.1_Guidelines_for_Common_Policies_Implementation.pdf"
+                  <ref target="http://www.parthenos-project.eu/Download/Deliverables/D3.1_Guidelines_for_Common_Policies_Implementation.pdf"
                        type="code"/>
                </linkGrp>
             </event>
