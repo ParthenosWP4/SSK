@@ -310,6 +310,9 @@ public class ElasticServices {
 									idResource[0] = elt.remove("id").toString();
 									break;
 								case "hal":
+									elt = this.sskServices.getHalResource(resource.get("target").getAsString());
+									idResource[0] = elt.remove("id").toString();
+									break;
 								case "BeQuali":
 								default:
 									idResource[0] = this.toHex(source+resource.get("target").getAsString());
@@ -414,9 +417,9 @@ public class ElasticServices {
 		JsonObject result = new JsonObject();
 		JsonObject param = new JsonObject();
 		param.addProperty("_source", false);
-		sskIndex = "ssk/" + type;
+		sskIndex = "ssk/_doc/_search?q=type:scenario&size=10000";
 		entity = new HttpEntity<>(param.toString(), requestHeadersParams.getHeaders());
-		ResponseEntity<String> response = this.restTemplate.exchange(elasticSearchPort + "/" + sskIndex + "/_search?size=10000" , HttpMethod.POST, entity, String.class);
+		ResponseEntity<String> response = this.restTemplate.exchange(elasticSearchPort + "/" + sskIndex , HttpMethod.POST, entity, String.class);
 		if(response.getStatusCode().is2xxSuccessful()){
 			param = this.parser.parse(response.getBody()).getAsJsonObject().get("hits").getAsJsonObject();
 			result.addProperty("total", Integer.valueOf(param.get("total").getAsString()));

@@ -106,7 +106,7 @@ public class SSKServices {
         return doc;
     }
     
-    public static void setDoc(Document doc) {
+    public static void setDoc(Document doc) throws SAXException{
         SSKServices.doc = doc;
     }
     
@@ -200,7 +200,7 @@ public class SSKServices {
                 
                 if (scenarioName.equals("1_ScenarioTest.xml")) return;
                 //if ( scenarioName.equals("0_test.xml")) return;
-                if (scenarioName.equals("1_SSK_sc_loremIpsum.xml")) return;
+                //if (scenarioName.equals("1_SSK_sc_loremIpsum.xml")) return;
                 if (scenarioName.equals("README.md")) return;
                 if (scenarioName.contains("unst")) return;
                 
@@ -598,38 +598,75 @@ public class SSKServices {
         return result;
     }
     
-    private JsonObject scrapGithub(String target) throws IOException, XPathExpressionException, ParserConfigurationException, SAXException {
+    
+    public JsonObject getHalResource(String target) throws IOException {
         org.jsoup.nodes.Document document = Jsoup.connect(target).get();
-        
-        Elements newsHeadlines = document.getElementsByTag("article");
-        setXmlStringBuilder(new StringBuilder().append(newsHeadlines));
-        setDoc(DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new ByteArrayInputStream((xmlStringBuilder.toString().replaceAll("<br>", "").replaceAll("<hr>", "")).getBytes("UTF-8"))));
-        setxPath(XPathFactory.newInstance().newXPath());
-        setNode((NodeList) xPath.compile("/article/p").evaluate(doc, XPathConstants.NODESET));
         JsonObject result = new JsonObject();
-        if (node.getLength() > 0) {
-            result.addProperty("abstract", node.item(0).getTextContent());
+        result.addProperty("title", document.select("title").text());
+        result.addProperty("abstract", document.getElementsByAttributeValue("name", "description").attr("content"));
+        JsonArray elts = new JsonArray();
+        Arrays.asList(document.getElementsByAttributeValue("name", "keywords").attr("content").split(";")).forEach(elts::add);
+        result.add("keywords", elts);
+        elts = new JsonArray();
+        for (org.jsoup.nodes.Element elt : document.select("meta[name=citation_author]")) {
+            elts.add(elt.getElementsByAttributeValue("name", "citation_author").attr("content"));
         }
-        
-        newsHeadlines = document.select("h1.public");
+        result.add("creators", elts);
+        result.addProperty("date", document.getElementsByAttributeValue("name", "citation_publication_date").attr("content"));
+        result.addProperty("id", document.getElementsByAttributeValue("name", "DC.identifier").eq(1).attr("content"));
+        return result;
+    }
+    
+    private JsonObject scrapGithub(String target) throws IOException, XPathExpressionException, ParserConfigurationException {
+        org.jsoup.nodes.Document document = Jsoup.connect(target).get();
+        JsonObject result = new JsonObject();
+        Elements newsHeadlines = document.getElementsByTag("article");
+        newsHeadlines.select("img").remove();
         setXmlStringBuilder(new StringBuilder().append(newsHeadlines));
-        setDoc(DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new ByteArrayInputStream(xmlStringBuilder.toString().getBytes("UTF-8"))));
-        setNode((NodeList) xPath.compile("//span[@class='author' and @itemprop='author']").evaluate(doc, XPathConstants.NODESET));
-        List<String> creators = new ArrayList<>();
-        if (node.getLength() > 0) {
-            creators.add(node.item(0).getTextContent());
-            result.addProperty("creators", creators.toString());
+        try {
+            setDoc(DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new ByteArrayInputStream((xmlStringBuilder.toString().replaceAll("<br>", "").replaceAll("<hr>", "")).getBytes("UTF-8"))));
+            setxPath(XPathFactory.newInstance().newXPath());
+            setNode((NodeList) xPath.compile("/article/p").evaluate(doc, XPathConstants.NODESET));
+           
+            if (node.getLength() > 0) {
+                result.addProperty("abstract", node.item(0).getTextContent());
+            }
+            newsHeadlines = document.select("h1.public");
+            setXmlStringBuilder(new StringBuilder().append(newsHeadlines));
+            setDoc(DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new ByteArrayInputStream(xmlStringBuilder.toString().getBytes("UTF-8"))));
+            setNode((NodeList) xPath.compile("//span[@class='author' and @itemprop='author']").evaluate(doc, XPathConstants.NODESET));
+            List<String> creators = new ArrayList<>();
+            if (node.getLength() > 0) {
+                creators.add(node.item(0).getTextContent());
+                result.addProperty("creators", creators.toString());
+            }
+            setNode((NodeList) xPath.compile("//strong[ @itemprop='name']").evaluate(doc, XPathConstants.NODESET));
+            if (node.getLength() > 0) {
+                result.addProperty("title", node.item(0).getTextContent());
+            }
+            org.jsoup.nodes.Element date = document.getElementsByClass("age").last().getElementsByTag("span").first();
+    
+            if (date.children().hasText() && date.data() != "") {
+                result.addProperty("date", date.data());
+            }
+            result.addProperty("abstract", document.getElementsByAttributeValue("name", "description").attr("content").split("\\.")[0]);
         }
-        setNode((NodeList) xPath.compile("//strong[ @itemprop='name']").evaluate(doc, XPathConstants.NODESET));
-        if (node.getLength() > 0) {
-            result.addProperty("title", node.item(0).getTextContent());
-        }
-        org.jsoup.nodes.Element date = document.getElementsByClass("age").last().getElementsByTag("span").first();
-        
-        if (date.children().hasText() && date.data() != "") {
-            result.addProperty("date", date.data());
+        catch (Exception e){
+            logger.error(e.getMessage());
+            String title [] = document.select("title").text().split("-");
+            if(title.length > 1){
+                result.addProperty("title", title[1].replace("/",":"));
+            }
+            else{
+                result.addProperty("title", title[0]);
+            }
+            result.addProperty("abstract", document.getElementsByAttributeValue("name", "description").attr("content").split("\\.")[0]);
         }
         return result;
+    }
+    
+    private void setDoc(StringBuilder content) throws SAXException{
+    
     }
     
     public File getFile(String path) {
@@ -886,7 +923,7 @@ public class SSKServices {
         
         for(JsonElement termsBlock: terms){
             JsonObject block = termsBlock.getAsJsonObject();
-            String termId =block.get("id").getAsString();
+            String termId = block.get("id").getAsString();
             if(termId.toLowerCase().contains(type.toLowerCase())) {
                 if(type.equals("activities")){
                     result = block.getAsJsonArray("div");

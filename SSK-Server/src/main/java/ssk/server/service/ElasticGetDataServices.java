@@ -88,7 +88,7 @@ public class ElasticGetDataServices {
 	}
 	
 	public JsonArray getAllStepMetaData(){
-		sskIndex = "ssk/step_metadata/_search?size=10000";
+		sskIndex = "ssk/_doc/_search?q=type:step_metadata&size=10000";
 		//requestHeadersParams.setHeaders();
 		ResponseEntity<String> response = this.restTemplate.getForEntity( this.elasticServices.getElasticSearchPort() + "/" + sskIndex, String.class) ;
 		if (response.getStatusCode().is2xxSuccessful()) {
@@ -164,7 +164,7 @@ public class ElasticGetDataServices {
 	
 	private JsonElement queryTitle(String scenarioId){
 		
-		sskIndex = "ssk/scenario/" + scenarioId;
+		sskIndex = "ssk/_doc/SSK_sc_LIBS";
 		UriComponentsBuilder builder ;
 		builder = UriComponentsBuilder.fromUriString( this.elasticServices.getElasticSearchPort() + "/" + sskIndex)
 				          .queryParam("_source_include", "*.head.*")
@@ -180,7 +180,7 @@ public class ElasticGetDataServices {
 		JsonElement jsonResult ;
 		JsonElement source = new JsonObject();
 		//requestHeadersParams.setHeaders();
-		sskIndex = "ssk/scenario/_search?q=_id:" + scenarioId;
+		sskIndex = "ssk/_doc/SSK_sc_LIBS";
 		entity = new HttpEntity<>(scenarioDescQuery, requestHeadersParams.getHeaders());
 		ResponseEntity<String> response = this.restTemplate.exchange( this.elasticServices.getElasticSearchPort() + "/" + sskIndex, HttpMethod.POST, entity, String.class);
 		if (response.getStatusCode().is2xxSuccessful()) {
@@ -208,7 +208,7 @@ public class ElasticGetDataServices {
 	private JsonElement queryImage(String scenarioId){
 		JsonElement jsonResult = new JsonObject();
 		//requestHeadersParams.setHeaders();
-		sskIndex = "ssk/scenario/_search?q=_id:" + scenarioId;
+		sskIndex = "ssk/_doc/SSK_sc_LIBS";
 		entity = new HttpEntity<>(scenarioImageQuery, requestHeadersParams.getHeaders());
 		ResponseEntity<String> response = this.restTemplate.exchange( this.elasticServices.getElasticSearchPort() + "/" + sskIndex, HttpMethod.POST, entity, String.class);
 		if (response.getStatusCode().is2xxSuccessful()) {
@@ -242,7 +242,7 @@ public class ElasticGetDataServices {
 	public JsonElement getAllResources(String type) {
 		JsonElement jsonResult = new JsonObject();
 		//requestHeadersParams.setHeaders();
-		sskIndex = "ssk/" + type +"/_search?size=1000";
+		sskIndex = "ssk/_doc/_search?q=type:" + type +"&size=1000";
 		//requestHeadersParams.setHeaders();
 		ResponseEntity<String> response = this.restTemplate.getForEntity( this.elasticServices.getElasticSearchPort() + "/" + sskIndex, String.class) ;
 		if (response.getStatusCode().is2xxSuccessful()) {

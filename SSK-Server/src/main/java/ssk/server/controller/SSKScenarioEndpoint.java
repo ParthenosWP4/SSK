@@ -81,10 +81,8 @@ public class SSKScenarioEndpoint {
             List<String> fieldTab = Arrays.asList(fields.split(","));
             if(fieldTab.size() > 0){
                 fieldTab.forEach(field -> {
-                    
                     try{
                         if(field.equals("image")){
-                            
                             jsonResult.addProperty(field, sskServices.removeDoubleQuote (elasticGetDataServices.getScenarioDetails(scenarioId, field).getAsJsonObject().get("url").toString()));
                         }
                         else{
