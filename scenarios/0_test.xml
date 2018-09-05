@@ -1,33 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0"
-     type="researchScenario"
-     xml:id="SSK_sc_mei">
+     xml:id="SSK_sc_production3DObjectsScenario"
+     type="researchScenario">
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Collaborative Digital Edition of a Musical Corpus</title>
+            <title>Production and processing of 3D objects</title>
             <author>
-               <persName>Vincent Besson</persName>
-               <affiliation>CNRS</affiliation>
+               <persName>Hélène Gautier</persName>
+               <affiliation>Huma-Num/CNRS</affiliation>
             </author>
             <author>
                <persName>Adeline Joffres</persName>
-               <affiliation>CNRS</affiliation>
+               <affiliation>Huma-Num/CNRS</affiliation>
             </author>
             <author>
-               <persName>Hélène Gautier</persName>
-               <affiliation>CNRS</affiliation>
+               <persName>Paulin Ribbe</persName>
+               <affiliation>Huma-Num/CNRS</affiliation>
+            </author>
+            <author>
+               <persName>Mehdi Chayani</persName>
+               <affiliation>3D-SHS Huma-Num's consortium</affiliation>
+            </author>
+            <author>
+               <persName>Xavier Granier</persName>
+               <affiliation>3D-SHS Huma-Num's consortium</affiliation>
+            </author>
+            <author>
+               <persName>Sarah Tournon-Valiente</persName>
+               <affiliation>3D-SHS Huma-Num's consortium</affiliation>
             </author>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority>PARTHENOS</authority>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
-       document.</p>
+              document.</p>
                </licence>
             </availability>
          </publicationStmt>
@@ -38,22 +48,22 @@
       <encodingDesc>
          <listPrefixDef>
             <prefixDef ident="wp2" matchPattern="(.*?)" replacementPattern="groups/368112">
-               <p>The prefix wp2 needs to be used before resources taken from the <ref target="https://www.zotero.org/groups/368112/parthenos_wp2" type="url">Parthenos WP2 Zotero
-       Library</ref> .</p>
+               <p>The prefix wp2 needs to be used before resources taken from the <ref type="url" target="https://www.zotero.org/groups/368112/parthenos_wp2">Parthenos WP2 Zotero
+              Library</ref>.</p>
                <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a colon
-      ":". Ex: target="wp2:JHSD76DS"</p>
+            ":". Ex: target="wp2:JHSD76DS"</p>
             </prefixDef>
             <prefixDef ident="wp3" matchPattern="(.*?)" replacementPattern="groups/520841">
-               <p>The prefix wp3 needs to be used before resources taken from the <ref target="https://www.zotero.org/groups/520841/parthenos_wp3" type="url">Parthenos WP3 Zotero
-       Library</ref> .</p>
+               <p>The prefix wp3 needs to be used before resources taken from the <ref type="url" target="https://www.zotero.org/groups/520841/parthenos_wp3">Parthenos WP3 Zotero
+              Library</ref>.</p>
                <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a colon
-      ":". Ex: target="wp2:JHSD76DS"</p>
+            ":". Ex: target="wp2:JHSD76DS"</p>
             </prefixDef>
             <prefixDef ident="wp4" matchPattern="(.*?)" replacementPattern="groups/427927">
-               <p>The prefix wp4 needs to be used before resources taken from the <ref target="https://www.zotero.org/groups/427927/parthenos_wp4" type="url">Parthenos WP4 Zotero
-       Library</ref> .</p>
+               <p>The prefix wp4 needs to be used before resources taken from the <ref type="url" target="https://www.zotero.org/groups/427927/parthenos_wp4">Parthenos WP4 Zotero
+              Library</ref>.</p>
                <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a colon
-      ":". Ex: target="wp2:JHSD76DS"</p>
+            ":". Ex: target="wp2:JHSD76DS"</p>
             </prefixDef>
          </listPrefixDef>
       </encodingDesc>
@@ -63,53 +73,38 @@
    </teiHeader>
    <text>
       <body>
-         <div type="scenario" xml:id="sc_mei">
-            <head type="scenarioTitle" xml:lang="en">Collaborative Digital Edition of a Musical Corpus</head>
-            <head type="scenarioTitle" xml:lang="fr">Edition numérique collaborative d'un corpus musical</head>
-            <desc type="definition" xml:lang="en">A project aims to do a digital edition of a musical
-     corpus. The researchers need to be able to encode a broad range of musical documents in a
-     machine-readable structure. The data to be encoded may include the musical content as provided
-     by the composer (notes, pitches, durations, dynamics, etc.), information on the score (incipit,
-     lyrics writer, etc.), information added by a performer when interpreting the content (timing,
-     phrasing, various annotations, etc.), information on the visual appearance of the score (page
-     layout, musical font, etc.) and analyses of the content in any of the other domains. The
-     edition will be structured around a database in order to allow the users to explore it more
-     easily. Furthermore, the project intends to be collaborative, which means it will offer anyone
-     interested the possibility to contribute.</desc>
-            <desc type="definition" xml:lang="fr">Un projet cherche à faire l'édition numérique d'un corpus
-     musical. Les chercheurs doivent pouvoir encoder une large gamme de documents musicaux dans un
-     format lisible par des machines. Les données à encoder peuvent inclure du contenu musical
-     fourni par le compositeur (notes, tons, durées, dynamiques, etc.), des informations sur la
-     partition (incipit, parolier, etc.), des informations ajoutées par un interprète (rythme,
-     phrasé, annotations diverses, etc.), des informations sur l'apparence visuelle de la partition
-     (mise en page, police, etc.) ainsi que des analyses dans tous ces domaines. L'édition sera
-     structurée autour d'une base de données afin de permettre aux utilisateurs d'explorer plus
-     facilement le contenu. Par ailleurs, le projet se veut collaboratif et offrira à toute personne
-     intéressée la possibilité de contribuer.</desc>
-            <desc type="terms" xml:lang="en"><!--<term source="parthenos" type="discipline" key="SS">Social Sciences</term>
-                    <term source="parthenos" type="discipline" key="SOTP">Studies of the past</term>--><!-- <term type="objects" key="data" source="tadirah"/>
-                    <term type="objects" key="sound" source="tadirah"/>-->
-               <term key="Encoding" source="tadirah" type="techniques"/>
-               <term key="Sound" source="nemo" type="object"/>
-               <term key="Score" source="nemo" type="object"/>
-               <term key="Multiple score formats" source="nemo" type="object"/>
-               <term source="aureHAL" type="discipline">Musicology and performing arts</term>
+         <div type="scenario" xml:id="sc_Production_3D_Objects">
+            <head xml:lang="en" type="scenarioTitle">Production and processing of 3D objects</head>
+            <desc type="definition" xml:lang="en">The project aim is to digitize objects at different
+          scale from an artefact to cultural heritage site to help scientific community to
+          visualize, analyze, simulate and synthesize the result of their research. It allows for
+          better comprehension of the case studies. The 3D object is also a powerfull mean to bring
+          out new hypotheses of research. In some cases, producing an "accurate" virtual
+          version of cultural heritage site is a mean of preserving it. Those best practices and
+          methods are detailed in the <ref type="report" target="https://hal.archives-ouvertes.fr/hal-01683842">3D-SHS consortium white
+            paper</ref>published in 2017, and in the <ref target="https://hal.inria.fr/PARTHENOS/hal-01526713" type="report">Parthenos White
+            Paper</ref> "Digital 3D Objects in Art and Humanities: challenges of creation,
+          interoperability and preservation"</desc>
+            <desc xml:lang="en" type="terms">
+               <term source="aurehal" type="discipline">Archaeology and Prehistory</term>
+               <term source="aurehal" type="discipline">Cultural heritage and museology</term>
+               <term type="techniques" key="Georeferencing" source="tadirah"/>
+               <term type="techniques" key="Photography" source="tadirah"/>
+               <term type="techniques" key="Preservation Metadata" source="tadirah"/>
+               <term type="techniques" key="Scanning" source="tadirah"/>
+               <term type="techniques" key="Technology Preservation" source="tadirah"/>
+               <term type="object" key="Images (3D)" source="nemo"/>
             </desc>
             <figure type="image">
-               <head>Music encoding</head>
-               <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/mei.jpg"/>
-               <figDesc>Music encoding, Schumann Op. 48</figDesc>
+               <head/>
+               <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/scenario3D.jpg"/>
+               <figDesc/>
             </figure>
             <listEvent>
-               <event ref="step_CaDCoMC_020218" type="researchStep" xml:id="s1"/>
-               <event ref="step_CFiMFin_020218" type="researchStep" xml:id="s2"/>
-               <event ref="step_CaOM_020218" type="researchStep" xml:id="s3"/>
-               <event ref="step_EtMoMF_020218" type="researchStep" xml:id="s4"/>
-               <event ref="step_EtMEwCAM_020218" type="researchStep" xml:id="s5"/>
-               <event ref="step_EoMF_020218" type="researchStep" xml:id="s6"/>
-               <event ref="step_PiaOSDCtRotME_020218" type="researchStep" xml:id="s7"/>
-               <event ref="step_OAItPtC_020218" type="researchStep" xml:id="s8"/>
-               <event ref="step_HaRotQotPD_020218" type="researchStep" xml:id="s9"/>
+               <event xml:id="s1" type="researchStep" ref="step_A3DOBS"/>
+               <event xml:id="s2" type="researchStep" ref="step_A3DOBP"/>
+               <event xml:id="s3" type="researchStep" ref="step_3DMtTF"/>
+               <event xml:id="s4" type="researchStep" ref="step_3DV"/>
             </listEvent>
          </div>
       </body>
