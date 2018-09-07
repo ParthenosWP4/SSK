@@ -72,7 +72,7 @@ public class SSKServices {
     private static final String stepMetaData = "/TEI/text/body/listEvent/event/desc/term";
     private static final String resourcesPath = "/TEI/text/body/listEvent/event/linkGrp";
     private static final String resourceStandardPath = "/TEI/text/body/listEvent/event/linkGrp/ref/term[contains(@type, \"standard\")]";
-    private static List<String> metaDataTab = Arrays.asList("techniques", "standard", "discipline", "objects", "activity");
+    private static List<String> metaDataTab = Arrays.asList("techniques", "standard", "discipline", "objects", "activity", "object", "technique");
     
     private static String zoteroApihUrl = "https://api.zotero.org/";
     private static List<String> dateFormats = Arrays.asList("yyyy-MM-dd", "dd MMMMM yyyy", "yyyy-MM",  "yyyy");
@@ -199,8 +199,8 @@ public class SSKServices {
                 logger.info("SCENARIO " + scenarioName);
                 
                 if (scenarioName.equals("1_ScenarioTest.xml")) return;
-                //if ( scenarioName.equals("0_test.xml")) return;
-                //if (scenarioName.equals("1_SSK_sc_loremIpsum.xml")) return;
+                if ( scenarioName.equals("0_test.xml")) return;
+                if (scenarioName.equals("1_SSK_sc_loremIpsum.xml")) return;
                 if (scenarioName.equals("README.md")) return;
                 if (scenarioName.contains("unst")) return;
                 
@@ -226,7 +226,7 @@ public class SSKServices {
                                 subtypeEventManagement(scenarioAndStep, step, j + 1);
                                 continue;
                             }
-                            JsonObject stepJson = stepProcessing(stepReference, j + 1);
+                            JsonObject stepJson = stepProcessing(stepReference, j + 1, scenarioName);
                             if (stepJson == null) { // Référence de l'étape malformée (avec des caractères spéciaux) ou bien étapes non existantes
                                 continue; //break;
                             } else {
@@ -249,7 +249,7 @@ public class SSKServices {
         this.handleData = false;
     }
     
-    private JsonObject stepProcessing(String stepReference, int position) throws SAXException, ParserConfigurationException, XPathExpressionException, IOException {
+    private JsonObject stepProcessing(String stepReference, int position, String parent) throws SAXException, ParserConfigurationException, XPathExpressionException, IOException {
         String stepContent = githubApiService.getGithubFileContent(stepType, stepReference + ".xml");
         if (!validateSSKFile(stepContent, false)) {
             return null;
@@ -260,6 +260,7 @@ public class SSKServices {
             stepJson.addProperty("position", position);
             stepJson.addProperty("GithubRef", stepReference);
             stepJson.addProperty("type", "step");
+            stepJson.addProperty("parent", parent.split("\\.")[0]);
             return stepJson;
         }
     }
@@ -857,7 +858,7 @@ public class SSKServices {
             if (exitFirstLoop) break;;
             
         }
-        return this.stepProcessing(stepReference, positionInTargetScenario);
+        return this.stepProcessing(stepReference, positionInTargetScenario, scenarioRef);
     }
     
     
@@ -936,5 +937,45 @@ public class SSKServices {
         }
         return result;
     }
+    
+    public JsonElement normalizeContent(JsonElement param){
+        JsonElement result = param;
+       
+        if(param.isJsonArray()){
+            int index = 0;
+            for (JsonElement eltParam : param.getAsJsonArray()) {
+                result = changeContentStructure(eltParam, result, (index++));
+            }
+        }
+        else {
+            result = changeContentStructure(param, result, null);
+        }
+        return result;
+    }
+    
+    private JsonElement  changeContentStructure(JsonElement eltParam, JsonElement result, Integer index){
+        String contentString = "";
+        if(eltParam.getAsJsonObject().get("url") == null && eltParam.getAsJsonObject().has("content") &&  eltParam.getAsJsonObject().get("content").isJsonArray()){
+            JsonArray  content = eltParam.getAsJsonObject().getAsJsonArray("content");
+            for (JsonElement elt : content) {
+                if (elt.getAsJsonObject().has("part")) {
+                    contentString += elt.getAsJsonObject().get("part").getAsString()+",";
+                }
+                else {
+                    contentString += elt.getAsJsonObject().toString() + ",";
+                }
+            }
+            
+            if(index == null) {
+                result.getAsJsonObject().add("content", this.elasticServices.getGson().toJsonTree(contentString.substring(0, contentString.length()-1)));
+            }
+            else {
+                result.getAsJsonArray().get((index++)).getAsJsonObject().add("content", this.elasticServices.getGson().toJsonTree(contentString));
+            }
+        }
+        return result;
+    }
+    
+   
 }
 

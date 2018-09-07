@@ -193,23 +193,23 @@ public class ElasticServices {
 			}
 			if(this.sskServices.removeDoubleQuote(jsonItem[0].get("type").toString()).equals("step")){
 				metadataType[0] = "step_metadata";
-				jsonItem[0].addProperty("parent", idParent[0]);
+				//jsonItem[0].addProperty("parent", idParent[0]);
 				resources[0] = jsonItem[0].remove("resources").getAsJsonObject();
 			}
-			
 			entity[0] = requestHeadersParams.addDetectNoop(jsonItem[0]);
 			ResponseEntity<String> response = this.restTemplate.exchange( elasticSearchPort + "/" + sskIndex + "/_doc/" + idElement[0] , HttpMethod.PUT, entity[0], String.class);
 			JSONObject responseBody = new JSONObject(response.getBody());
 			result[0] = result[0] && (responseBody.get("result").toString().equals("created") || responseBody.get("result").toString().equals("updated"));
 			if (result[0] ) {
 				if (this.sskServices.removeDoubleQuote(jsonItem[0].get("type").toString()).equals("step")) {
-					logger.info("----- > Successful push/update of step  " + iteration + " on ElasticSearch with result id: "+ idElement[0]);
-					this.executeThread(metadataType[0], idElement[0], metaData[0], requestHeadersParams.getHeaders());
-					this.executeThread("resources", idElement[0], resources[0], requestHeadersParams.getHeaders());
+					String stepPosition = jsonItem[0].get("position").getAsString();
+					logger.info("-----> Successful push/update of step  " + stepPosition + " on ElasticSearch with result id: "+ idElement[0]);
+					this.executeThread(metadataType[0], idElement[0], metaData[0], requestHeadersParams.getHeaders(),stepPosition );
+					this.executeThread("resources", idElement[0], resources[0], requestHeadersParams.getHeaders(),null);
 				}
 				else{
-					logger.info("----- > Successful push/update of scenario " + iteration + " on ElasticSearch with result id: "+ idElement[0]);
-					this.executeThread(metadataType[0], idElement[0], metaData[0], requestHeadersParams.getHeaders());
+					logger.info("-----> Successful push/update of scenario " + iteration + " on ElasticSearch with result id: "+ idElement[0]);
+					this.executeThread(metadataType[0], idElement[0], metaData[0], requestHeadersParams.getHeaders(), null);
 				}
 			}
 			
@@ -251,13 +251,13 @@ public class ElasticServices {
 		return result[0];
 	}
 	
-	private void executeThread(String type, String id, JsonObject data, HttpHeaders headers) {
+	private void executeThread(String type, String id, JsonObject data, HttpHeaders headers, String position) {
 		Thread t = new Thread(() -> {
 			try {
 				if (type.equals("resources")) {
 					pushResources(id, data, headers);
 				} else {
-					this.pushMetadata(type, id, data, headers);
+					this.pushMetadata(type, id, data, headers, position);
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -345,18 +345,21 @@ public class ElasticServices {
 	}
 	
 	
-	private void pushMetadata(String type, String idParent, JsonObject data, HttpHeaders headers) throws Exception {
+	private void pushMetadata(String type, String idParent, JsonObject data, HttpHeaders headers, String position) throws Exception {
 		if (data.get("standard") != null) {
 			JsonArray standards = sskServices.getWholeStandard(data.remove("standard").getAsJsonArray());
 			data.add("standards", standards.getAsJsonArray());
-			data.addProperty("type", type);
-			data.addProperty("parent", idParent);
 		}
+		data.addProperty("type", type);
+		data.addProperty("parent", idParent);
+		
 		HttpEntity entity = new HttpEntity<>(data.toString(), headers);
-		ResponseEntity<String> response = this.restTemplate.exchange(elasticSearchPort + "/" + sskIndex + "/_doc", HttpMethod.POST, entity, String.class);
+		ResponseEntity<String> response = this.restTemplate.exchange(elasticSearchPort + "/" + sskIndex + "/_doc/" +
+				                                                             ((position == null) ? idParent+"Meta" : idParent+position+"Meta"),
+				HttpMethod.POST, entity, String.class);
 		JSONObject responseBody = new JSONObject(response.getBody());
 		if(responseBody.get("result").toString().equals("created") || responseBody.get("result").toString().equals("updated")){
-			logger.info(type + " for parent " + idParent + "successful created");
+			logger.info(type + " for parent " + idParent + " successful created");
 		}
 		else {
 			logger.error("Error creating Meta-data for " + idParent);
@@ -483,5 +486,13 @@ public class ElasticServices {
 	
 	public String toHex(String arg) {
 		return String.format("%x", new BigInteger(1, arg.getBytes(StandardCharsets.UTF_8)));
+	}
+	
+	public Gson getGson() {
+		return gson;
+	}
+	
+	public void setGson(Gson gson) {
+		this.gson = gson;
 	}
 }

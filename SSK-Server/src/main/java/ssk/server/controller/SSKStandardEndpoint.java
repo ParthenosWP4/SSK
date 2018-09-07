@@ -2,6 +2,7 @@ package ssk.server.controller;
 
 
 import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -54,4 +55,5 @@ public class SSKStandardEndpoint {
 		}
 		return result;
 	}
+	
 }
