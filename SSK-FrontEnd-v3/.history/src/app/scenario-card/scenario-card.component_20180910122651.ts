@@ -93,9 +93,9 @@ export class ScenarioCardComponent implements OnInit {
     });
 
     if (this.metadata.length > 5) {
-      this.metadataPart2 = this.metadata.slice(6, this.metadata.length );
+      this.metadataPart2 = this.metadata.slice(4, this.metadata.length );
     }
-    this.metadataPart1 = this.metadata.slice(0, 5);
+    this.metadataPart1 = this.metadata.slice(0, 4);
   }
 
 

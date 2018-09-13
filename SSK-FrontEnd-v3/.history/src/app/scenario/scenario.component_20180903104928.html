@@ -120,7 +120,7 @@
       </div>
       </div>
     </div>
-    <div *ngIf="selectedStep?.metadata?.standards && (selectedStep?.metadata?.standards.length > 0)" class=" ml-5 my-lg-5 desc"  [ngClass]="(!selectedStep?.generals ||  !selectedStep?.projects) ? 'col-lg-4 col-sm-12':'col-lg-12'">
+    <div *ngIf="selectedStep?.metadata?.standards" class=" ml-1 my-lg-5 desc"  [ngClass]="(!selectedStep?.generals ||  !selectedStep?.projects) ? 'col-lg-4 col-sm-12':'col-lg-12'">
       <div > <p><span>standards  <img  src="https://ssk-application.parthenos.d4science.org/ssk/assets/images/interrogationDot.png" class="pb-1" alt="Responsive image"></span></p>
         <div *ngFor=" let elt of selectedStep?.metadata?.standards" class="my-2">
           <button type="button" class="btn btn-secondary disabled m-1" >{{elt?.abbr}} {{elt?.key}}</button>

@@ -26,17 +26,6 @@
 }
 
 @font-face {
-  font-family: 'icomoon3';
-  src:  url('./assets/icomoon/fonts/icomoon3.eot?1y86zq');
-  src:  url('./assets/icomoon/fonts/icomoon3.eot?1y86zq#iefix') format('embedded-opentype'),
-  url('./assets/icomoon/fonts/icomoon3.ttf?1y86zq') format('truetype'),
-  url('./assets/icomoon/fonts/icomoon3.woff?1y86zq') format('woff'),
-  url('./assets/icomoon/fonts/icomoon3.svg?1y86zq#icomoon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
   font-family: 'Roboto-Medium';
   src:  url('./assets/fonts/Roboto-Medium.ttf') format('truetype');
   font-weight: normal;
@@ -211,42 +200,6 @@
 }
 .ssk-disciplines:before {
   content: "\e804";
-}
-
-/*contribute icons*/
-.ssk-contribute:before {
-  content: "\e9c1";
-}
-.ssk-quotes:before {
-  content: "\e9c2";
-}
-.ssk-trash:before {
-  content: "\e9c3";
-}
-.ssk-institution:before {
-  content: "\e9c4";
-}
-.ssk-userin:before {
-  content: "\e9c5";
-}
-.ssk-info:before {
-  content: "\e9c6";
-}
-.ssk-tossk:before {
-  content: "\e9c7";
-}
-.ssk-bookopen:before {
-  content: "\e9c8";
-}
-.ssk-quality:before {
-  content: "\e9c9";
-}
-.ssk-ccby:before {
-  content: "\e9c10";
-}
-
-.ssk-cc:before {
-  content: "\e9c11";
 }
 
 

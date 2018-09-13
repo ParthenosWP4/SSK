@@ -26,8 +26,9 @@
 
 p button{
   font-family: $proxima-nova-regular;
-  border: 1px solid $color-26 ;
+  border: 2px solid $color-26 ;
   cursor: pointer;
+
 }
 
 p  span{
@@ -65,11 +66,6 @@ p  span{
 
 .card-text{
   text-align: inherit !important;
-}
-
-.tag{
-  font-size: 11px;
-  padding: 0 !important;
 }
 
 

@@ -28,6 +28,10 @@ p button{
   font-family: $proxima-nova-regular;
   border: 1px solid $color-26 ;
   cursor: pointer;
+  .btn{
+    font-size: 11px !important;
+    padding: 0rem 0rem !important;
+  }
 }
 
 p  span{

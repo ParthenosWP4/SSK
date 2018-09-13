@@ -116,7 +116,6 @@ public class ElasticGetDataServices {
 		JsonObject jsonResult = new JsonObject();
 		sskIndex = "ssk/_doc/" + scenarioId+"Meta";
 		//requestHeadersParams.setHeaders();
-		entity = new HttpEntity<>(scenarioMetadataQuery, requestHeadersParams.getHeaders());
 		ResponseEntity<String> response = this.restTemplate.getForEntity(URI.create(this.elasticServices.getElasticSearchPort() + "/" + sskIndex), String.class);
 		if (response.getStatusCode().is2xxSuccessful()) {
 			jsonResult = this.sskServices.getParser().parse(response.getBody()).getAsJsonObject().get("_source").getAsJsonObject();

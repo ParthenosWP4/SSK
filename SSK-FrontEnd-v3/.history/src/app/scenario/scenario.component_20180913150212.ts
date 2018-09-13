@@ -174,13 +174,14 @@ export class ScenarioComponent implements OnInit  {
       this.selectedStep.ref = this.selectedStep._id;
       this.updateContent(this.selectedStep, this.selectedStep.position, null);
     }
+    console.log(this.selectedStep)
   }
 
 
   setStepMetadata() {
     setTimeout(() => {
     const temp  = _.groupBy(this.elasticServices.getStepsMetadata(),  (item) => {
-      return item._id ===  this.selectedStep._id + this.selectedStep.position + 'Meta';
+      return item._id ===  this.selectedStep._id + 'Meta';
     }).true;
     if ( temp != null && temp[0] != null && !isUndefined(temp[0]._source)) {
      this.selectedStep.metadata = _.groupBy(_.flatMap(_.map(temp[0]._source)), 'type');
@@ -192,6 +193,7 @@ export class ScenarioComponent implements OnInit  {
         this.selectedStep.metadata.standards = temp[0]._source.standards;
       }
       this.selectedStep.metadata.standards =  _.uniqWith(this.selectedStep.metadata.standards, _.isEqual);
+      console.log(this.selectedStep.metadata.standards);
     }
     }, 1000);
   }
@@ -210,6 +212,7 @@ export class ScenarioComponent implements OnInit  {
       this.selectedStep.generals = _.groupBy(resources, (item) => {
         return item.category === 'general';
       }).true;
+      console.log(this.selectedStep);
       if (this.selectedStep.generals || this.selectedStep.project) {
         this.spinner = false;
       }
@@ -255,6 +258,7 @@ export class ScenarioComponent implements OnInit  {
     this.selectedStep.id  =  index;
     this.selectedStep.ref = this.selectedStep._id;
     this.setStepTitleAndDescription();
+    console.log(this.selectedStep);
     this.setStepMetadata();
     this.setResources();
 
@@ -396,6 +400,7 @@ getStepTitle(step: any) {
     const tags: any  = {};
     let metadata: any = {};
     if (type === 'scenario') {
+      console.log( this.scenarioElt.scenario_metadata);
       metadata = this.scenarioElt.scenario_metadata;
     }
     if (type === 'step') {

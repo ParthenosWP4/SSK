@@ -970,7 +970,7 @@ public class SSKServices {
                 result.getAsJsonObject().add("content", this.elasticServices.getGson().toJsonTree(contentString.substring(0, contentString.length()-1)));
             }
             else {
-                result.getAsJsonArray().get((index++)).getAsJsonObject().add("content", this.elasticServices.getGson().toJsonTree(contentString));
+                result.getAsJsonArray().get((index++)).getAsJsonObject().add("content", this.elasticServices.getGson().toJsonTree(contentString.substring(0, contentString.length()-1)));
             }
         }
         return result;

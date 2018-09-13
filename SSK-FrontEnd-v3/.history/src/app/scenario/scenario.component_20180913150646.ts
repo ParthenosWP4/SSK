@@ -178,6 +178,7 @@ export class ScenarioComponent implements OnInit  {
 
 
   setStepMetadata() {
+    console.log(this.elasticServices.getStepsMetadata());
     setTimeout(() => {
     const temp  = _.groupBy(this.elasticServices.getStepsMetadata(),  (item) => {
       return item._id ===  this.selectedStep._id + this.selectedStep.position + 'Meta';
@@ -192,6 +193,7 @@ export class ScenarioComponent implements OnInit  {
         this.selectedStep.metadata.standards = temp[0]._source.standards;
       }
       this.selectedStep.metadata.standards =  _.uniqWith(this.selectedStep.metadata.standards, _.isEqual);
+      console.log(this.selectedStep.metadata.standards);
     }
     }, 1000);
   }
@@ -210,6 +212,7 @@ export class ScenarioComponent implements OnInit  {
       this.selectedStep.generals = _.groupBy(resources, (item) => {
         return item.category === 'general';
       }).true;
+      console.log(this.selectedStep);
       if (this.selectedStep.generals || this.selectedStep.project) {
         this.spinner = false;
       }
@@ -396,6 +399,7 @@ getStepTitle(step: any) {
     const tags: any  = {};
     let metadata: any = {};
     if (type === 'scenario') {
+      console.log( this.scenarioElt.scenario_metadata);
       metadata = this.scenarioElt.scenario_metadata;
     }
     if (type === 'step') {

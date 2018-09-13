@@ -9,7 +9,7 @@
 
   <p class="card-text m-2">{{shortDesc?.content}}</p>
   <p>
-      <button *ngFor=" let elt of this.metadataPart1; let k = index"  tooltip ="{{'Type: '  +elt?.type +  ' / Source : '+ elt?.source  }}"  type="button"  class="btn btn-secondary tag m-1"  [placement]="(k == 0) ? 'right' : 'top'">{{elt?.key}}  {{elt?.abbr}}</button>
+      <button *ngFor=" let elt of this.metadataPart1; let k = index"  tooltip ="{{'Type: '  +elt?.type +  ' / Source : '+ elt?.source  }}"  type="button"  class="btn btn-secondary  m-1"  [placement]="(k == 0) ? 'right' : 'top'">{{elt?.key}}  {{elt?.abbr}}</button>
   </p>
   </div>
   <div  *ngIf = "metadataPart2" >

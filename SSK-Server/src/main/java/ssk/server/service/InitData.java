@@ -77,7 +77,7 @@ public class InitData {
 		new Thread(() -> {
 			try {
 				this.createIndex();
-				 this.sskServices.initializeData();
+				  this.sskServices.initializeData();
 			} catch (Exception e) {
 				logger.error(e.getMessage());
 				if(e.getMessage().contains("I/O error on HEAD request for \"" + elasticSearchPort+"/"+sskIndex+"\"")){

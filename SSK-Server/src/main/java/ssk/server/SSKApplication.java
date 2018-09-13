@@ -20,13 +20,14 @@ import ssk.server.service.SSKServices;
 @EnableAutoConfiguration
 @ComponentScan
 public class SSKApplication
-        // extends SpringBootServletInitializer
+         extends SpringBootServletInitializer
 {
   
-  /* @Override
+   @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+       setRegisterErrorPageFilter(false);
         return application.sources(SSKApplication.class);
-    }*/
+    }
     
     public static void main(String[] args) throws Exception {
         SpringApplication.run(SSKApplication.class, args);
