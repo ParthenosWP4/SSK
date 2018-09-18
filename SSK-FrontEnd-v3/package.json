@@ -26,6 +26,7 @@
     "@angular/router": "^5.0.0",
     "@types/jquery": "^1.10.34",
     "angular-font-awesome": "^3.1.2",
+    "angular2-cookie-law": "^1.4.0",
     "bootstrap": "4.0.0-alpha.6",
     "bourbon": "^4.2.7",
     "core-js": "^2.4.1",

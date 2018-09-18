@@ -1,0 +1,151 @@
+
+@import '../partials/variables';
+
+
+
+.nav-item:hover{
+  border-bottom: 0.5rem $color-39 solid;
+}
+
+.bg-faded{
+  background-color: $color-3
+}
+
+
+.btn-black{
+  background-color:#000;
+  color: #FFF;
+}
+
+.flag{
+  border-left: solid white 1px;
+}
+
+
+
+//.dropdown-toggle:after { content: none } // this is to remove the carret inside a menu
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  background-color: $color-38;
+  padding: 0 !important;
+  margin: 0.5rem 0 auto !important;
+  border: none !important;
+  border-radius: 0 !important;
+}
+.dropdown-item{
+  padding: 0.75rem !important;
+  font-family: $avenir_next;
+  font-size: 14px !important;
+  color: $color-16;
+  font-weight: bolder !important;
+ }
+
+.dropdown-item:hover {
+  background-color: $color-36;
+}
+
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu a::after {
+  transform: rotate(-90deg);
+  position: absolute;
+  right: 6px;
+  padding-top: 1rem;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  //margin-left: .1rem;
+  //margin-right: .1rem;
+}
+.dropdown-item:focus{
+  background-color: $color-36;
+}
+
+
+/*
+  This css is to set the carret on top of the dropdown menu
+.caret {
+  content: "";
+}
+
+.dropup .caret:after {
+  content: "";
+  position: absolute;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 8px solid #e7e7e7;
+  top: -9px;
+  right: 80px;
+  z-index: -1;
+}*/
+
+
+.navbar-light .navbar-nav .nav-link {
+  text-transform: uppercase;
+  font-family: $roboto-medium !important;
+  color: $color-18 !important;
+}
+
+
+@media (min-width: 1280px){
+  .navbar li {
+    margin-left : 1.5em;
+    margin-right : 1em;
+
+  }
+}
+
+@media (min-width: 1440px){
+  .navbar li {
+    margin-left : 1.2em;
+    margin-right : 1.2em;
+
+  }
+}
+
+@media (min-width: 1650px) {
+  .container-fluid{
+    width: 55%;
+  }
+  .navbar li {
+    margin-left : .1em;
+    margin-right : .2em;
+    font-size: unset !important;
+  }
+}
+
+footer {
+  color: $color-3 !important;
+  background-color: $color-18;
+  font-size: 11px;
+  span{
+    color: $color-3;
+    font-family: $raleway-bold;
+
+  }
+  a {
+    color: $color-3 !important;
+    font-family: $raleway-semibold;
+  }
+  .band{
+    background-color: $color-23;
+  }
+  .end-of-page {
+    font-family: $raleway-semibold;
+  }
+
+  .navbar-nav{
+    flex-direction: row !important;
+    li{
+      margin-left : 1em;
+      margin-right : 1em;
+    }
+  }
+}
+
+

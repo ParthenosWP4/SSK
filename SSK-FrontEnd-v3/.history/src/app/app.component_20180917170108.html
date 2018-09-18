@@ -1,0 +1,115 @@
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded container-fluid">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">
+    <img src="./assets/images/parthenos.png" class="img-fluid" width="150" height="75" alt="">
+  </a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mx-auto row">
+      <li class="nav-item ">
+        <a class="nav-link" href="#"><i class="ic ssk-home" aria-hidden="true"></i>&nbsp;HOME </a>
+      </li>
+      <li class="nav-item dropdown ">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="ic ssk-explore" aria-hidden="true" ></i>&nbsp;EXPLORE
+        </a>
+        <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
+          <!--<span class="caret"></span>-->
+          <a *ngFor=" let elt of browseItems" class="dropdown-item" replaceUrl=true  (click)="redirect(elt.link)" >{{elt.item}}</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="contributeDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="ic ssk-create" aria-hidden="true"></i> &nbsp;CONTRIBUTE </a>
+        <div class="dropdown-menu " aria-labelledby="contributeDropdown">
+          <!--<span class="caret"></span>-->
+          <a  *ngFor=" let item of contributeItems" class="dropdown-item" href="#" >&nbsp;{{item}}</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="leranMoreDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="ic ssk-bookopen" aria-hidden="true"></i> &nbsp;LEARN MORE
+         </a>
+          <div class="dropdown-menu " aria-labelledby="leranMoreDropdown">
+              <a  *ngFor=" let item of learnMoreItems" class="dropdown-item" href="#" >&nbsp;{{item}}</a>
+
+              <div class="dropdown-submenu">
+                <a class="dropdown-item dropdown-toggle" href="#"  >Submenu</a>
+                <ul class="dropdown-menu aria-hidden">
+                  <li><a class="dropdown-item" href="#">Submenu action</a></li>
+                  <li><a class="dropdown-item" href="#">Another submenu action</a></li>
+    
+    
+                  <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Subsubmenu</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Subsubmenu action</a></li>
+                      <li><a class="dropdown-item" href="#">Another subsubmenu action</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Second subsubmenu</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Subsubmenu action</a></li>
+                      <li><a class="dropdown-item" href="#">Another subsubmenu action</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="http://www.parthenos-project.eu/" target = '_blank'><i class="ic ssk-toparthenos" aria-hidden="true"></i> &nbsp;parthenos</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <div class="btn-group " data-toggle="buttons" role="navigation">
+        <label class="btn btn-black active">
+          <i class="ic ssk-login" aria-hidden="true"></i>&nbsp;Log in
+        </label>
+        <span></span>
+        <label class="btn btn-black flag">
+          <span><img src="./assets/images/united-kingdom.svg"  alt="england-flag"></span>
+        </label>
+      </div>
+    </form>
+  </div>
+</nav>
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>
+<footer class="footer container-fluid ">
+    <div class="row py-lg-3">
+      <div class="col-sm-12 col-md-12  col-lg-5">
+        <span [innerHtml]="footerText | safeHtml"></span>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-1  text-center my-2">
+        <img src="https://ssk-application.parthenos.d4science.org/ssk/assets/images/euflag.png" class="" alt="EU"/>
+      </div>
+      <div class="col-sm-12  col-md-12 col-lg-5 " >
+        <nav class="navbar">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item active ">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Who we are</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="#">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="#">FAQs</a>
+              </li>
+            </ul>
+        </nav>
+      </div>
+    </div>
+  <div class="row py-lg-3 band"></div>
+  <div class=" text-lg-center text-xl-center  py-lg-2">
+        <span  class="end-of-page " [innerHtml]="endOfPageText | safeHtml"></span>
+  </div>
+</footer>
+
+
+
