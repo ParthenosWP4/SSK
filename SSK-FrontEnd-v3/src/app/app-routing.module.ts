@@ -16,14 +16,9 @@ import {ErrorpageComponent} from './errorpage/errorpage.component';
 const routes: Routes = [
   { path: '#', redirectTo: '/', pathMatch: 'full' },
   { path: '', component: HomeComponent},
-  { path: 'scenarios', component: ScenariosComponent , children:
-    [
-      { path: '', component: ScenarioTemplateComponent, outlet: 'scenario-template' },
-      { path: '', component: ScenarioCardComponent, outlet: 'scenario'}
-    ]
-  },
-  { path: 'steps', component: ScenariosComponent, outlet: 'target'},
-  { path: 'resources', component: ScenariosComponent, outlet: 'target'},
+  { path: 'scenarios', component: ScenariosComponent},
+  { path: 'steps', component: ScenariosComponent},
+  { path: 'resources', component: ScenariosComponent},
   { path: 'scenarios/:id', component: ScenarioComponent},
   { path: 'scenarios/:id/:stepId', component: ScenarioComponent},
   {

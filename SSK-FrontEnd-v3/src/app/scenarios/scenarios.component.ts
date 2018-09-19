@@ -51,16 +51,14 @@ export class ScenariosComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.router.events.subscribe((val) => { //Use Router class to subscribe to events
-      if (this.router.url.includes('steps')) {
-        this.active = 'steps';
-    } else if (this.router.url.includes('resources')) {
-      this.active = 'resources';
-    } else {
-      this.active = 'scenarios';
-    }
+    if (this.router.url.includes('steps')) {
+      this.active = 'steps';
+     } else if (this.router.url.includes('resources')) {
+       this.active = 'resources';
+      } else {
+        this.active = 'scenarios';
+      }
     this.loadContents(this.active);
-    });
     this.sskServices.checkBackEndAvailability();
     if (this.sskServices.getStatusError() === null ) {
       this.sskServices.setTitle('SSK - Scenarios');
@@ -147,17 +145,8 @@ export class ScenariosComponent implements OnInit {
   toggle(item: string) {
     this.selectTab = item;
     this.active = item;
-    if (item === 'scenarios') {
-      this.router.navigate([{ outlets: { target: null }}]);
-      if (this.elasticServices.getScenarioNumber() === 0) {
-        this.router.navigate([{ outlets: { target: null }}]);
-      }
-      this.resultCount = this.elasticServices.getScenarioNumber();
-      this.elasticServices.setResultCount(this.elasticServices.getScenarioNumber());
-    } else {
       this.loadContents(item);
-      this.router.navigate([{ outlets: { target : item}}]);
-    }
+      this.router.navigate([item]);
   }
 
   private resize() {

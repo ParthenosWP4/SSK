@@ -57,16 +57,7 @@ export class AppComponent implements  OnInit, AfterViewInit {
  }
 
   redirect(link: string) {
-    if (link === 'scenarios' ) {
-      this.router.navigate(['/'])
-           .then(() => this.router.navigate(['scenarios', { outlets: { target: null } }]));
-    } else {
-        if ( this.router.url.includes('scenarios')) {
-          this.router.navigate([{ outlets: { target : link }}]);
-        } else {
-           this.router.navigate(['scenarios', { outlets: { target : [link] }}]);
-     }
-  }
+    this.router.navigate([link]);
   }
 
   fireEvent(e) {

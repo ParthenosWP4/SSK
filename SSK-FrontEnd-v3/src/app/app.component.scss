@@ -3,6 +3,9 @@
 
 
 
+.nav-item{
+  border-bottom: 0.5rem $color-3 solid;
+}
 .nav-item:hover{
   border-bottom: 0.5rem $color-39 solid;
 }
@@ -144,15 +147,6 @@ footer {
   }
 }
 
-.cookie-law .cookie-law-wrapper{
-  font-family: $roboto-regular !important;
-}
-#sskCookieLaw{
-  a{
-    color: $color-39;
-  }
-  font-weight: 200 !important;
-  font-family: $roboto-regular !important;
-}
+
 
 
