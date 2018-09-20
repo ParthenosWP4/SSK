@@ -31,7 +31,7 @@ export class GlossaryComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.ssKService.checkBackEndAvailability()
+    this.ssKService.checkBackEndAvailability();
     this.ssKService.setTitle('SSK - Glossary');
 
     const urls: string[] = this.router.url.split('/');

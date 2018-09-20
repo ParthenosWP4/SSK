@@ -120,30 +120,30 @@
 
 footer {
   color: $color-3 !important;
-  background-color: $color-18;
-  font-size: 11px;
-  span{
-    color: $color-3;
-    font-family: $raleway-bold;
-
+  background-color: $color-40;
+  /*********/
+  .title{
+    font-size: 0.75em;
+    font-family: $avenir_next;
+    line-height: 1.75em;
   }
-  a {
-    color: $color-3 !important;
-    font-family: $raleway-semibold;
+  li{
+    list-style: none;
+    font-family: $roboto-regular;
+    text-transform: capitalize;
+    margin: 1em 0;
+    cursor: pointer;
+    font-size: 0.875em;
   }
-  .band{
-    background-color: $color-23;
+  li:first-child { 
+    color: $color-46;
+    text-transform: uppercase;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-weight: bolder;
   }
-  .end-of-page {
-    font-family: $raleway-semibold;
-  }
-
-  .navbar-nav{
-    flex-direction: row !important;
-    li{
-      margin-left : 1em;
-      margin-right : 1em;
-    }
+  .last{
+    background-color: $color-6;
   }
 }
 

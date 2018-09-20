@@ -6,11 +6,13 @@
 }
 .home{
     background-color: $color-20;
+
 }
 
 .home-text1{
   font-family: $roboto-light;
-  color: $color-21;
+  color: $color-40;
+  font-size: 2em;
 }
 
 .btn-secondary{
@@ -22,19 +24,88 @@
 
 
 .home-second{
-  margin-right: -15px;
-  margin-left: -15px;
-  background :url("../../assets/images/background.svg") no-repeat ;
-  background-size:cover;
-
-  h1{
-    font-family: $adventure;
-    color: $color-22;
+  background-color :$color-41;
+  color: $color-42;
+  .title{
+    font-size: 2em;
+    font-family: $avenir_next;
+    letter-spacing: -1.18px;
   }
-  h5{
-    font-family: $raleway-medium;
-    color: $color-21;
+  .hands{
+    width: 100%;
+  }
+  .desc{
+    font-family: $roboto-regular;
+    font-size: 1em;
+    letter-spacing: -0.03em;
+  }
+  .in_img{
+    background-color: $color-43;
+    border-radius: 50%;
+    width: 10rem;
+    height:10rem;
+  }
+  .in_text{
+    width: 10rem;
+    color: $color-40;
+    font-size: 1.5em;
+    font-family: $avenir_next;
+    font-weight: 900;
+  }
+  .rounded-circle{
+    background-color: $color-43;
+    width: 10rem;
+    
+  }
+  img{
+    width: 70%;
+  }
+  .last{
+    font-size: 1em;
+    color: $color-42;
+    font-family: $avenir_next;
+    a{
+      color:$color-44;
+    }
+  }
+}
+.home-third{
+  
+  background-color: $color-45;
+  img{
+    //box-shadow: 0 5px 50px 0 rgba(142,142,142,0.50);
+    width: inherit;
+  }
+  .title{
+    font-size: 2em ;
+    font-family: $avenir_next ;
+  }
+  .desc{
+    font-size: 1em ;
+    line-height: 1.75em;
+    font-family: $roboto-regular;
+  }
+}
 
+.home-fourth{
+  background-color: $color-41;
+  color: $color-42;
+  font-family: $roboto-regular;
+  img{
+    //box-shadow: 0 5px 50px 0 rgba(142,142,142,0.50);
+    width: inherit;
+  }
+  .title{
+    font-size: 2em ;
+    font-family: $avenir_next ;
+  }
+  .desc{
+    font-size: 1em ;
+    line-height: 1.75em;
+  }
+  li{
+    list-style: none;
+    font-size: 1.125em;
   }
 }
 
@@ -48,7 +119,6 @@
   .home-second {
     margin-right: -15px;
     margin-left: -15px;
-    background: url("../../assets/images/background.svg") no-repeat;
     background-size: cover;
   }
   .down{
@@ -56,6 +126,62 @@
   }
 }
 
+.home-title{
+  font-size: 3.375em;
+  font-family: $avenir_next;
+  color: $color-12;
+  letter-spacing: -0.64px;
+  
+}
+hr{
+  border-top: 2px solid $color-12;
+  width: 5rem;
+}
 
+.right{
+  /* Bg_right: */
+  background: linear-gradient(225deg, #3E6477 0%,  #64B9D8 100%);
+  
+  
+}
 
+.home-btn{
+  vertical-align: middle;
+  box-shadow: 0 5px 29px 0 rgba(0,0,0,0.50);
+  border-radius: 0.65em;
+  line-height: 2rem;
+  border-left: 1em solid;
+  background-clip:padding-box;
+  font-family: $avenir_next;
+  text-align: left;
+  font-size: 1.5em;
+  cursor: pointer;
+  i.ic{
+    font-size: 1.2em;
+  }
+  span{
+    margin-left: 1rem;
+  }
+}
+.home-btn.scenarios{
+   border-color: $color-22;
+   color:  $color-22;
+   i{
+    color:  $color-22;
+   }
+}
+.home-btn.steps{
+  border-color: $color-12;
+  color:  $color-12;
+  i{
+    color:  $color-12;
+   }
+}
+.home-btn.resources{
+  border-color: $color-39;
+  color:  $color-39;
+  i{
+    color:  $color-39;
+   }
+}
 

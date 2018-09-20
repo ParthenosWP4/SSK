@@ -162,13 +162,13 @@ export class SskServicesService {
      this.setErrorMsg('Oops… The server is temporarily unable to serve your request due to maintenance downtime or capacity problems.. Bloody Malork <br/> Please contact ssk@inria.fr !');
      switch (this.getStatusError()) {
        case 0:
-         this.setTitle('SERVER NOT AVAILABLE')
+         this.setTitle('SERVER NOT AVAILABLE');
          break;
        case 500:
-         this.setTitle('SSK SERVER ERROR ')
+         this.setTitle('SSK SERVER ERROR ');
          break;
        case 503:
-         this.setTitle('SSK SERVICES NOT AVAILABLE ')
+         this.setTitle('SSK SERVICES NOT AVAILABLE ');
          break;
        case 404:
          this.setTitle('PAGE NOT FOUND');

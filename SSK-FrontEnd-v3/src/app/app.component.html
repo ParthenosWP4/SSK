@@ -4,11 +4,11 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <a class="navbar-brand" href="#">
-    <img src="./assets/images/parthenos.png" class="img-fluid" width="150" height="75" alt="">
+    <img src="/assets/images/ssk_logo.svg" class="img-fluid" width="150" height="75" alt="">
   </a>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mx-auto row">
+    <ul class="navbar-nav mx-auto row main">
       <li class="nav-item ">
         <a class="nav-link" href="#"><i class="ic ssk-home" aria-hidden="true"></i>&nbsp;HOME </a>
       </li>
@@ -64,36 +64,61 @@
   <router-outlet></router-outlet>
 </div>
 <footer class="footer container-fluid ">
-    <div class="row py-lg-3">
-      <div class="col-sm-12 col-md-12  col-lg-5">
-        <span [innerHtml]="footerText | safeHtml"></span>
-      </div>
-      <div class="col-sm-12 col-md-12 col-lg-1  text-center my-2">
-        <img src="https://ssk-application.parthenos.d4science.org/ssk/assets/images/euflag.png" class="" alt="EU"/>
-      </div>
-      <div class="col-sm-12  col-md-12 col-lg-5 " >
-        <nav class="navbar">
-            <ul class="navbar-nav mx-auto">
-              <li class="nav-item active ">
-                <a class="nav-link" href="#">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Who we are</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="#">Contact Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="#">FAQs</a>
-              </li>
-            </ul>
-        </nav>
-      </div>
+    <div class="row py-lg-3 ml-lg-5">
+        <div class="col-lg-5 ">
+          <div class="title col-lg-6  ml-lg-1">
+              The SSK has been developped as part of the PARTHENOS project, within the WP4 on standardization. 
+          </div>
+          <div class="row  ml-lg-1 mt-lg-2">
+              <div class="col-lg-3">
+                  <img src="/assets/images/euflag.svg" class="" alt="EU"/>
+                 
+              </div>
+              <div class="col-lg-3">
+                  <img src="/assets/images/cc.svg" class="" alt="CC"/>
+                  <img src="/assets/images/by.svg" class="" alt="BY"/>
+              </div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+            <div class="row">
+                <div class="col">
+                    <ul>
+                      <li>about us</li>
+                      <li>team</li>
+                      <li><a href="http://www.parthenos-project.eu/" target="_blank">Parthenos</a></li>
+                      <li>Contact</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <ul>
+                      <li>explore</li>
+                      <li><a (click)="redirect('scenarios')">scenarios</a></li>
+                      <li><a  (click)="redirect('steps')">steps</a></li>
+                      <li><a  (click)="redirect('resources')">resources</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <ul>
+                        <li>contribute</li>
+                        <li><a >sign in</a></li>
+                        <li><a >SSK on Github</a></li>
+                      </ul>
+                </div>
+                <div class="col">
+                    <ul>
+                        <li>legal</li>
+                        <li><a >Privacy policy</a></li>
+                        <li><a >Licensing & citing</a></li>
+                      </ul>
+                </div>
+            </div>
+        </div>
     </div>
-  <div class="row py-lg-3 band"></div>
-  <div class=" text-lg-center text-xl-center  py-lg-2">
-        <span  class="end-of-page " [innerHtml]="endOfPageText | safeHtml"></span>
-  </div>
+    <div class="row last">
+       <div class="col text-center" [innerHtml]="endOfPageText | safeHtml">
+       </div>
+    </div>
 </footer>
 <cookie-law name="sskCookieLaw" id=sskCookieLaw >
     Dear SSK users, we use cookies on this website to help operate our site and for analytics purposes. 

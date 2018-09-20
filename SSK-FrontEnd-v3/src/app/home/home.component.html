@@ -1,121 +1,131 @@
 
 <div class="row home ">
-  <div class="col-lg-6 my-lg-5 ">
-        <div class=" ml-lg-5 col-md-12 col-sm-12 text-lg-left text-center">
-            <img src="/assets/images/ssk_logo.svg" class="img-fluid " alt="Responsive image">
+  <div class="col-lg-6 my-lg-5 col-md-12 col-sm-12 ">
+        <div class="ml-lg-5 col-lg-6 text-lg-left text-center home-title ">
+           Standardization Survival Kit
         </div>
-        <div class="w-100 "></div>
-        <div class="ml-lg-5 col-lg-6 col-md-12 col-sm-12 text-center  text-lg-left my-lg-5 home-text1 " [innerHtml]="homeText | safeHtml"></div>
-        <div class="w-100"></div>
-          <div class="dropdown col-lg-6 col-md-12 col-sm-12 text-center  text-lg-left  ml-lg-5">
-            <button class="btn btn-secondary dropdown-toggle my-1" type="button" id="dropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              {{browseBtn}}
-            </button>
-            <div class="dropdown-menu col-lg-6 col-md-12 col-sm-12 text-center  text-lg-left" aria-labelledby="dropdownButton">
-              <a *ngFor=" let item of browseItems" class="dropdown-item" [ngClass]="(item != 'scenarios') ? 'disabled':''"[routerLink]="'/'+item" >{{item}}</a>
-            </div>
-      </div>
+        <div class="ml-lg-5 col-lg-1 offset-col-2 text-lg-left text-center">
+            <hr >  
+         </div>
+        <div class="ml-lg-5 col-lg-10 col-md-12 col-sm-12 text-center  text-lg-left my-lg-4 home-text1 mr-lg-3" [innerHtml]="homeText | safeHtml"></div>
   </div>
-
-  <div class="col-md-12 col-sm-12 col-lg-6  mt-lg-2 text-center">
-    <img src="/assets/images/mork_on_logo.png" class="img-fluid" alt="Responsive image">
+  <div class="col-md-12 col-sm-12 col-lg-6  d-flex h-10 right ">
+    <div class="row align-self-center w-100">
+        <div class="mx-auto col-lg-8  text-lg-left ">
+          <button type="button" class="btn  my-5  btn-lg btn-block home-btn scenarios " (click)="redirect('scenarios') ">
+              <i class="ic ssk-explore pull-left" aria-hidden="true" ></i>
+            <span>Browse scenarios</span>
+          </button>
+          <button type="button" class="btn  my-5 btn-lg btn-block home-btn steps" (click)="redirect('steps')">
+              <i class="ic ssk-create 2x pull-left" aria-hidden="true" ></i>
+              <span>Add new scenario</span>
+          </button>
+          <button type="button" class="btn  my-5  btn-lg btn-block home-btn resources"  (click)="redirect('resources')"> 
+              <i class="ic ssk-bookopen pull-left" aria-hidden="true"></i>
+              <span>About SSK</span>
+          </button>
+            
+        </div>
+    </div>
   </div>
 </div>
 <div class="home-second">
-   <div class="row pt-lg-5">
-    <div class="col-sm-12 col-md-12 col-lg-6 text-center">
-      <h1>{{firstTitle}}</h1>
+  <div class="row">
+  <div class="p-lg-5 text-center">
+    <div class="title">
+        {{secondTitle}}
     </div>
-    <div class="col-sm-6 col-md-12 col-lg-6"></div>
+    <div class="desc my-lg-2 col-lg-8 offset-lg-2 text-lg-left text-center" >
+          {{secondDesc}}
+    </div>
   </div>
-  <div class="row py-lg-5">
-    <div class="col-sm-12 col-md-12 col-lg-6 text-center mt-lg-5">
-      <img src="/assets/images/tork.png" class="img-fluid mt-xl-1" alt="Responsive image">
-    </div>
-    <div class="col-sm-12 col-md-12 col-lg-6 ">
-      <div class="row">
-        <div class="col-sm-12 col-md-12  col-lg-12 my-lg-3 text-center text-lg-left ">
-          <h5 class="" [innerHtml]="rightContent | safeHtml"> </h5>
+</div>
+<div class="row">
+      <div class="col-2 offset-lg-2  ">
+          <div class="in_img d-flex mb-lg-4">
+              <img src="/assets/images/hands.svg" class="mx-auto hands" />
+          </div>
+          <div class="in_text text-center">
+              Consensus
+          </div>
         </div>
-        <div class="w-100"></div>
-        <div class="col-sm-12 col-md-12 col-lg-1 text-center text-lg-left ">
-          <img src="/assets/images/handshake.svg" class="" alt="Responsive image"/>
+        <div class="col-2 offset-lg-1">
+            <div class=" in_img d-flex mb-lg-4">
+                <img src="/assets/images/learning.svg" class="mx-auto" />
+          </div>
+          <div class="in_text text-center">
+              Openness
+          </div>
         </div>
-        <div class="col-sm-12 col-md-12 col-lg-11 text-center text-lg-left  mt-1">
-          <h5 [innerHtml]="itemOne | safeHtml"></h5>
+        <div class="col-2 offset-lg-1">
+          <div class=" in_img d-flex mb-lg-4">
+            <img src="/assets/images/maintenance.svg" class="mx-auto" />
         </div>
-        <div class="col-sm-6 ">
-        </div>
-        <div class="w-100"></div>
-        <div class="col-sm-12 col-md-12 col-lg-1 text-center text-lg-left my-2">
-          <img src="/assets/images/padlock.svg" class="" alt="Responsive image"/>
-        </div>
-        <div class="col-sm-12 col-md-12  col-lg-11 text-center text-lg-left my-3">
-          <h5 [innerHtml]="itemTwo | safeHtml"></h5>
-        </div>
-        <div class="col-sm-6 ">
-        </div>
-        <div class="w-100"></div>
-        <div class="col-sm-12 col-md-12 col-lg-1  text-lg-left">
-          <img src="/assets/images/settings.svg" class="" alt="Responsive image"/>
-        </div>
-        <div class="col-sm-12 col-md-12 col-lg-11 text-lg-left text-md-left  mt-1">
-          <h5 [innerHtml]="itemThree | safeHtml"></h5>
-        </div>
-        <div class="col-sm-6 ">
+        <div class="in_text text-center">
+            Maintenance
         </div>
       </div>
-    </div>
+      <div class="w-100"></div>
   </div>
-  <div class=" down row ">
-    <div class="col-lg-6"></div>
-      <div class="col-sm-12 col-md-12 col-lg-6  pt-xl-4 text-center">
-        <h1 class="">{{secondTitle}}</h1>
+  <div class="row">
+      <div class="col-lg-8 text-lg-right offset-lg-2 last  my-lg-5">
+          Are standards new to you ? Check this first : <a href="http://training.parthenos-project.eu/sample-page/intro-to-ri/interoperability/what-are-standards/" target="_blank">"What are standards ? Training suite" </a>. 
       </div>
-    </div>
-  <div class="row py-lg-5">
-    <div class="col-sm-12 col-md-12 col-lg-6 mt-lg-1">
-      <div class="row my-lg-3 ">
-        <div class="col-sm-12 col-lg-12   col-md-12 my-lg-3 text-lg-left text-center">
-          <h5 class=" ml-lg-5 " [innerHtml]="leftTextTile | safeHtml"> </h5>
-        </div>
-        <div class="w-100"></div>
-        <div class="col-sm-12 ml-lg-5 col-md-12 col-lg-1 text-center text-lg-left">
-          <img src="/assets/images/file.svg" class="" alt="Responsive image"/>
-        </div>
-        <div class="col-sm-12 col-md-12 col-lg-9 text-lg-left text-md-left text-center  mt-1">
-          <h5 [innerHtml]="sItemOne | safeHtml"></h5>
-        </div>
-        <div class="w-100"></div>
-        <div class="col-sm-12 ml-lg-5 col-md-12 col-lg-1 text-center text-lg-left">
-          <img src="/assets/images/thumb-up.svg" class="" alt="Responsive image"/>
-        </div>
-        <div class="col-sm-12  col-md-12 col-lg-9 text-lg-left text-md-left text-center my-3">
-          <h5 [innerHtml]="sItemTwo | safeHtml"></h5>
-        </div>
-        <div class="w-100 "></div>
-        <div class="col-sm-12 col-md-12 col-lg-1 ml-lg-5 text-center text-lg-left">
-          <img src="/assets/images/chat.svg" class=" " alt="Responsive image"/>
-        </div>
-        <div class="col-sm-12 col-md-12 col-lg-9 text-lg-left text-md-left text-center mt-1">
-          <h5 [innerHtml]="sItemThree | safeHtml"></h5>
-        </div>
-    </div>
-    </div>
-    <div class="col-sm-12 col-md-12 col-lg-6 text-center">
-      <img src="../assets/images/mork.png" class="img-fluid mt-3" alt="Responsive image">
-    </div>
   </div>
-  <div class="row pt-xl-5">
-    <div class="col-sm-12 col-md-12 col-lg-6 text-center">
-      <h1 class="down">{{thirdTitle}}</h1>
-    </div>
-    <div class="col-sm-12 col-md-12 col-lg-6"></div>
+</div>
+<div class="  row home-third ">
+  <div class="col-lg-8 ">
+      <img src="/assets/images/screen.svg" />
   </div>
-  <div class="row ">
-    <div class="col-sm-12 col-md-12 col-lg-6  pt-lg-5 text-center">
-      <img src="../assets/images/tork&mork.png" class="img-fluid mt-xl-1" alt="Responsive image">
+  <div class="col-lg-3  mt-lg-5">
+    <div class="title mb-lg-5 ">
+      {{thirdTitle}}
     </div>
-    <div class="col-sm-12 col-md-12 col-lg-5  pt-lg-3 text-lg-left text-center"> <h5 class="last-content" [innerHtml]="lastContent | safeHtml"></h5></div>
+    <div class="desc mt-lg-5" [innerHtml]="thirdDesc | safeHtml">  </div>
   </div>
+</div>
+<div class=" row home-fourth ">
+    <div class="col-12  text-center title mt-lg-5">
+        {{fourthTitle}}
+    </div>
+    <div class="desc my-lg-3 col-lg-8  text-lg-left offset-lg-2">
+        {{fourthDesc}}
+    </div>
+    <div class="col-12 mb-lg-2">
+        <div class="row my-lg-4">
+            <div class="col-lg-5">
+            </div>
+            <div class="col-lg-7 align-self-center ">
+                <ul>
+                    <li >
+                        <img src="/assets/images/tick-inside-circle.svg" class="col-1" />
+                        Create new scenarios from scratch or by combining existing steps
+                    </li>
+                    <li class="my-lg-4">
+                            <img src="/assets/images/tick-inside-circle.svg" class="col-1" />
+                            Publish and share your scenarios with your peers 
+                    </li>
+                    <li>
+                            <img src="/assets/images/tick-inside-circle.svg" class="col-1" />
+                            Ensure a better visibility and reliability of your research methodologies 
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 text-center mb-lg-5">
+        <a href="https://github.com/ParthenosWP4/SSK"  target="_blank"><img src="/assets/images/github.svg" class="" /></a>
+    </div>
+
+  </div>
+<div class="row text-center my-lg-5">
+    <div class="col ">
+        <a href="http://www.parthenos-project.eu/" target="_blank"><img src="/assets/images/PARTHENOS_logo.svg"  /></a>
+    </div>
+    <div class="col">
+            <a href="https://www.huma-num.fr/" target="_blank"><img src="/assets/images/huma-Num.svg" /></a>
+    </div>
+    <div class="col">
+            <a href="https://www.dariah.eu/" target="_blank"><img src="/assets/images/Dariah_EU.svg"  /></a>
+    </div>
 </div>
