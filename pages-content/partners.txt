@@ -39,4 +39,4 @@ Karolien Verbrugge (NIOD)
 Design : Dorian Seillier (Dorian dot Seillier at inria dot fr)
 Implementation : Lionel Tadjoi (lionel dot tadonfouet at inria dot fr)
 
-Curation: Marie Puren (marie dot puren at inria dot fr) & Charles Riondet (charles dot riondet at inria dot fr)
+Curation: Charles Riondet (charles dot riondet at inria dot fr)
