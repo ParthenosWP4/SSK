@@ -134,6 +134,9 @@ footer {
     margin: 1em 0;
     cursor: pointer;
     font-size: 0.875em;
+    a{
+      color: $color-3;
+    }
   }
   li:first-child { 
     color: $color-46;
@@ -145,8 +148,12 @@ footer {
   .last{
     background-color: $color-6;
   }
+  
 }
-
+.log-in{
+  color: $color-3 !important;
+  text-decoration: none !important;
+}
 
 
 

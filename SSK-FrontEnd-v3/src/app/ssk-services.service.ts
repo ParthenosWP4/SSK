@@ -4,9 +4,9 @@ import * as _ from 'lodash';
 import {isUndefined} from 'util';
 import {Http} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
-import {Title} from "@angular/platform-browser";
+import {Title} from '@angular/platform-browser';
 import {HttpClient, HttpResponse} from '@angular/common/http';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 
 @Injectable()
 export class SskServicesService {
@@ -14,7 +14,7 @@ export class SskServicesService {
   private filters = [];
 
   private statusError: number;
-  private errorMsg: string;
+  private errorMsg  = '';
 
 
 
@@ -158,8 +158,9 @@ export class SskServicesService {
   }
 
  checkBackEndAvailability () {
-   if (this.getStatusError() ) {
-     this.setErrorMsg('Oops… The server is temporarily unable to serve your request due to maintenance downtime or capacity problems.. Bloody Malork <br/> Please contact ssk@inria.fr !');
+   if (this.getStatusError() === 0 ) {
+     this.setErrorMsg('Oops… The server is temporarily unable to serve your request due to maintenance' +
+                      ' downtime or capacity problems.. Bloody Malork <br/> Please contact ssk@inria.fr !');
      switch (this.getStatusError()) {
        case 0:
          this.setTitle('SERVER NOT AVAILABLE');

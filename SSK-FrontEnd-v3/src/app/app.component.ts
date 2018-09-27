@@ -8,6 +8,7 @@ import { ScenariosComponent } from './scenarios/scenarios.component';
 import {Location} from '@angular/common';
 import { ElastichsearchServicesService } from './elastichsearch-services.service';
 import { ContentComponent } from './glossary/content/content.component';
+import {environment} from '../environments/environment';
 
 @Component({
   providers:[ ContentComponent ],
@@ -29,20 +30,19 @@ export class AppComponent implements  OnInit, AfterViewInit {
                                     {'item': 'Research Techniques', 'link': 'techniques'},
                                     {'item': 'Research objects', 'link': 'objects'}
   ];
-  contributeItems: Array<string> = ['Create a new scenario', 'Add a standard', 'Check our Github'];
-  learnMoreItems: Array<string> = ['Documentation', 'Project team'];
+  contributeItems: Array<any> = [ { 'item' : 'Create a new scenario', 'link': 'new-scenario'},
+                                  { 'item' : 'Add a standard', 'link': 'add-standard'},
+                                  { 'item' : 'Check our Github', 'link': 'https://github.com/ParthenosWP4/SSK'} ];
+  learnMoreItems: Array<any> = [{ 'item' : 'Documentation', 'link': 'documentation'}, {'item' : 'Project team', 'link': 'team'} ];
   footerText = 'PARTHENOS is a Horizon 2020 project funded by the European Commission. The views and opinions '
                 + 'expressed in this publication are the sole responsibility of the author and do not necessarily '
                 + 'reflect the views of the European Commission.';
   endOfPageText = 'Except where otherwise noted, content on this site is licensed under a Creative ' +
                   'Commons Attribution 4.0 International license CC BY';
+  forImage = environment.forImage;
 
   constructor(private sskService: SskServicesService, private router: Router, private location: Location,
-              private elastiServ: ElastichsearchServicesService, route: ActivatedRoute, private contentComp: ContentComponent ) {
-                route.params.subscribe(val => {
-                  // put the code from `ngOnInit` here
-                });
-              }
+              private elastiServ: ElastichsearchServicesService, route: ActivatedRoute, private contentComp: ContentComponent, ) { }
 
   ngOnInit() {
       this.sskService.checkBackEndAvailability();
@@ -57,11 +57,19 @@ export class AppComponent implements  OnInit, AfterViewInit {
  }
 
   redirect(link: string) {
+    if (link.includes('github')) {
+      window.open(link, '_blank');
+    }
     this.router.navigate([link]);
   }
 
   fireEvent(e) {
     $('div.dropdown-menu.vocab').hide();
+  }
+
+  fireEvent2(e) {
+
+    $('div.dropdown-menu.in').hide();
   }
 
   toGlossary(item: string) {

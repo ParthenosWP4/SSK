@@ -6,5 +6,6 @@
 export const environment = {
   production: false,
   sskBackendEndpoint : 'http://localhost:9080/',
-  standardEndpoint : 'it.dariah.eu:8983/solr/WP4/select?indent=on&q=*:*&rows=100&wt=json'
+  standardEndpoint : 'it.dariah.eu:8983/solr/WP4/select?indent=on&q=*:*&rows=100&wt=json',
+  forImage: ''
 };

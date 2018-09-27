@@ -38,6 +38,7 @@
     font-family: $roboto-regular;
     font-size: 1em;
     letter-spacing: -0.03em;
+    line-height: 1.75em;
   }
   .in_img{
     background-color: $color-43;
@@ -183,5 +184,16 @@ hr{
   i{
     color:  $color-39;
    }
+}
+.github{
+  background-color: $color-40;
+  border-radius: 2em;
+  color: $color-3;
+  font-family: $avenir_next;
+  font-size: 0.875em;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 2.3em;
+  cursor: pointer;
 }
 

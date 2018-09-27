@@ -41,7 +41,7 @@ export class ScenariosComponent implements OnInit {
   private scenarioResults = [];
   private stepsResults = [];
   private resourcesResults = [];
-  resultCount = 0
+  resultCount = 0;
   constructor(
     private elasticServices: ElastichsearchServicesService,
     private sskServices: SskServicesService,
@@ -59,10 +59,10 @@ export class ScenariosComponent implements OnInit {
         this.active = 'scenarios';
       }
     this.loadContents(this.active);
-    this.sskServices.checkBackEndAvailability();
     if (this.sskServices.getStatusError() === null ) {
       this.sskServices.setTitle('SSK - Scenarios');
     }
+    this.sskServices.checkBackEndAvailability();
     this.filters = this.sskServices.getFilters();
     this.options = this.sskServices.options;
     this.tabList = this.sskServices.browseItems;
@@ -114,7 +114,7 @@ export class ScenariosComponent implements OnInit {
       this.options['keys'] =  this.sskServices.scenarioKeys;
       fuse = new Fuse(this.elasticServices.getScenarios(), this.options);
       this.results[tag] =  fuse.search(tag.trim());
-      this.scenarioResults = _.concat(this.scenarioResults, this.results[tag])
+      this.scenarioResults = _.concat(this.scenarioResults, this.results[tag]);
       this.scenarios = _.uniqBy(this.scenarioResults, 'id');
       this.resultCount = this.scenarios.length;
     }
@@ -189,6 +189,7 @@ export class ScenariosComponent implements OnInit {
             }
             break;
           case'scenarios':
+            this.sskServices.setTitle('SSK - Scenarios');
             this.elasticServices.setResultCount(this.elasticServices.getScenarios().length);
           break;
         }

@@ -29,6 +29,7 @@ export class RequestInterceptor implements HttpInterceptor {
 
       }
     }, (err: any) => {
+      console.log(err);
       this.sskServ.setStatusError(err.status);
       this.sskServ.checkBackEndAvailability();
     });

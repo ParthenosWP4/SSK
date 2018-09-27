@@ -30,7 +30,6 @@ repositories {
 }
 
 sourceSets {
-
     build {
         resources {
             srcDirs "src/main/resources"
@@ -38,14 +37,18 @@ sourceSets {
     }
 }
 
+dependencies{
 
-dependencies {
-    //Fonctionnne lorsque commenté sur le serveur
-    compile group: 'org.springframework.boot', name: "spring-boot-starter", version: '1.5.7.RELEASE'
+
 
     /*These two cannot be used either for deployment with an integrated tomcat nor for an external web server.*/
-    //providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat:1.5.7.RELEASE'
-    //providedRuntime 'org.slf4j:slf4j-api:1.7.25'
+    if(onD4Science == true) {
+        providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat:1.5.7.RELEASE'
+        providedRuntime 'org.slf4j:slf4j-api:1.7.25'
+    }
+    else{
+        compile group: 'org.springframework.boot', name: "spring-boot-starter", version: '1.5.7.RELEASE'
+    }
 
     compile group: 'org.springframework.boot', name: "spring-boot-starter-web", version: '1.5.7.RELEASE'
 
@@ -93,9 +96,19 @@ dependencies {
 
 }
 
+if(onD4Science == true) {
+    configurations.all {
+        exclude module: 'logback-classic'
+        exclude module: 'jul-to-slf4j'
+        exclude module: 'jcl-over-slf4j'
+    }
+}
+
+
 task myJavadocs(type: Javadoc) {
     source = sourceSets.main.allJava
     classpath = configurations.compile
 }
 
 
+//gradle build -PonD4Science=false

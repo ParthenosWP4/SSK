@@ -16,11 +16,11 @@
               <i class="ic ssk-explore pull-left" aria-hidden="true" ></i>
             <span>Browse scenarios</span>
           </button>
-          <button type="button" class="btn  my-5 btn-lg btn-block home-btn steps" (click)="redirect('steps')">
+          <button type="button" class="btn  my-5 btn-lg btn-block home-btn steps" (click)="redirect('new-scenario')">
               <i class="ic ssk-create 2x pull-left" aria-hidden="true" ></i>
               <span>Add new scenario</span>
           </button>
-          <button type="button" class="btn  my-5  btn-lg btn-block home-btn resources"  (click)="redirect('resources')"> 
+          <button type="button" class="btn  my-5  btn-lg btn-block home-btn resources"  (click)="redirect('documentation')"> 
               <i class="ic ssk-bookopen pull-left" aria-hidden="true"></i>
               <span>About SSK</span>
           </button>
@@ -43,7 +43,7 @@
 <div class="row">
       <div class="col-2 offset-lg-2  ">
           <div class="in_img d-flex mb-lg-4">
-              <img src="/assets/images/hands.svg" class="mx-auto hands" />
+              <img [src]= "forImage + '/assets/images/hands.svg'" class="mx-auto hands" />
           </div>
           <div class="in_text text-center">
               Consensus
@@ -51,7 +51,7 @@
         </div>
         <div class="col-2 offset-lg-1">
             <div class=" in_img d-flex mb-lg-4">
-                <img src="/assets/images/learning.svg" class="mx-auto" />
+                <img [src]= "forImage + '/assets/images/learning.svg'" class="mx-auto" />
           </div>
           <div class="in_text text-center">
               Openness
@@ -59,7 +59,7 @@
         </div>
         <div class="col-2 offset-lg-1">
           <div class=" in_img d-flex mb-lg-4">
-            <img src="/assets/images/maintenance.svg" class="mx-auto" />
+            <img [src]= "forImage + '/assets/images/maintenance.svg'" class="mx-auto" />
         </div>
         <div class="in_text text-center">
             Maintenance
@@ -75,7 +75,7 @@
 </div>
 <div class="  row home-third ">
   <div class="col-lg-8 ">
-      <img src="/assets/images/screen.svg" />
+      <img [src]= "forImage + '/assets/images/screen.svg'" />
   </div>
   <div class="col-lg-3  mt-lg-5">
     <div class="title mb-lg-5 ">
@@ -98,15 +98,15 @@
             <div class="col-lg-7 align-self-center ">
                 <ul>
                     <li >
-                        <img src="/assets/images/tick-inside-circle.svg" class="col-1" />
+                        <img [src]= "forImage + '/assets/images/tick-inside-circle.svg'" class="col-1" />
                         Create new scenarios from scratch or by combining existing steps
                     </li>
                     <li class="my-lg-4">
-                            <img src="/assets/images/tick-inside-circle.svg" class="col-1" />
+                            <img [src]= "forImage + '/assets/images/tick-inside-circle.svg'" class="col-1" />
                             Publish and share your scenarios with your peers 
                     </li>
                     <li>
-                            <img src="/assets/images/tick-inside-circle.svg" class="col-1" />
+                            <img [src]= "forImage + '/assets/images/tick-inside-circle.svg'" class="col-1" />
                             Ensure a better visibility and reliability of your research methodologies 
                     </li>
                 </ul>
@@ -114,18 +114,25 @@
         </div>
     </div>
     <div class="col-12 text-center mb-lg-5">
-        <a href="https://github.com/ParthenosWP4/SSK"  target="_blank"><img src="/assets/images/github.svg" class="" /></a>
+        <a href="https://github.com/ParthenosWP4/SSK"  target="_blank">
+            <button type="button" class="btn  my-5  btn-sm github">
+                    <i class="fa fa-github pull-right fa-inverse fa-2x ml-3" aria-hidden="true"></i>
+                  <span class="py-lg-4">Check our github!
+                 
+                </span>
+                </button>
+        </a>
     </div>
 
   </div>
 <div class="row text-center my-lg-5">
     <div class="col ">
-        <a href="http://www.parthenos-project.eu/" target="_blank"><img src="/assets/images/PARTHENOS_logo.svg"  /></a>
+        <a href="http://www.parthenos-project.eu/" target="_blank"><img [src]= "forImage + '/assets/images/parthenos2.png'"  /></a>
     </div>
     <div class="col">
-            <a href="https://www.huma-num.fr/" target="_blank"><img src="/assets/images/huma-Num.svg" /></a>
+            <a href="https://www.huma-num.fr/" target="_blank"><img [src]= "forImage + '/assets/images/huma-Num.svg'" /></a>
     </div>
     <div class="col">
-            <a href="https://www.dariah.eu/" target="_blank"><img src="/assets/images/Dariah_EU.svg"  /></a>
+            <a href="https://www.dariah.eu/" target="_blank"><img [src]= "forImage + '/assets/images/Dariah_EU.svg'"  /></a>
     </div>
 </div>

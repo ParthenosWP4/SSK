@@ -34,7 +34,8 @@
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
-        "prod": "environments/environment.prod.ts"
+        "prod-huma-num": "environments/environment.huma-num.prod.ts",
+        "prod-d4science": "environments/environment.d4science.prod.ts"
       }
     }
   ],

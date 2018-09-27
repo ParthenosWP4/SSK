@@ -30,6 +30,7 @@ export class ContentComponent implements OnInit {
   itemChangedHandler(item: string) {
     this.item = item;
     this.data = this.elastiServ.glossaryChange(item);
+    this.sskServ.setTitle('SSK - ' + item);
   }
 
   trim(text: string) {

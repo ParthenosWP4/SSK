@@ -4,7 +4,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <a class="navbar-brand" href="#">
-    <img src="/assets/images/ssk_logo.svg" class="img-fluid" width="150" height="75" alt="">
+    <img [src]= "forImage + '/assets/images/ssk_logo.svg'" class="img-fluid" width="150" height="75" alt="">
   </a>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -26,7 +26,7 @@
           <i class="ic ssk-create" aria-hidden="true"></i> &nbsp;CONTRIBUTE </a>
         <div class="dropdown-menu " aria-labelledby="contributeDropdown">
           <!--<span class="caret"></span>-->
-          <a  *ngFor=" let item of contributeItems" class="dropdown-item" href="#" >&nbsp;{{item}}</a>
+          <a  *ngFor=" let item of contributeItems; let i = index" class="dropdown-item"  (click) = "redirect(item.link)"  [target]= "(i==2) ? '_blank' : ''" >&nbsp;{{item.item}}</a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -37,10 +37,10 @@
               <div class="dropdown-submenu">
                   <a class="dropdown-item dropdown-toggle vocab"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" > &nbsp;Vocabularies</a>
                   <div class="dropdown-menu in">
-                    <a class="dropdown-item"  *ngFor="let vocab of vocabulariesItems"  (click)="toGlossary(vocab.link)" >{{vocab?.item}}</a>
+                    <a class="dropdown-item "  *ngFor="let vocab of vocabulariesItems"  (click)="toGlossary(vocab.link)" >{{vocab?.item}}</a>
                   </div>
                 </div>
-              <a  *ngFor=" let item of learnMoreItems" class="dropdown-item" href="#" >&nbsp;{{item}}</a>
+              <a  *ngFor=" let item of learnMoreItems" class="dropdown-item " [routerLink] = "item.link" (mouseover) = fireEvent2($event)  >&nbsp;{{item.item}}</a>
             </div>
       </li>
       <li class="nav-item ">
@@ -50,11 +50,11 @@
     <form class="form-inline my-2 my-lg-0">
       <div class="btn-group " data-toggle="buttons" role="navigation">
         <label class="btn btn-black active">
-          <i class="ic ssk-login" aria-hidden="true"></i>&nbsp;Log in
+          <i class="ic ssk-login" aria-hidden="true"></i>&nbsp;<a routerLink = "/user" class="log-in">Log in</a>
         </label>
         <span></span>
         <label class="btn btn-black flag">
-          <span><img src="./assets/images/united-kingdom.svg"  alt="england-flag"></span>
+          <span><img [src]= "forImage + '/assets/images/united-kingdom.svg'"  alt="england-flag"></span>
         </label>
       </div>
     </form>
@@ -71,12 +71,12 @@
           </div>
           <div class="row  ml-lg-1 mt-lg-2">
               <div class="col-lg-3">
-                  <img src="/assets/images/euflag.svg" class="" alt="EU"/>
+                  <img [src]= "forImage + '/assets/images/euflag.svg'" class="" alt="EU"/>
                  
               </div>
               <div class="col-lg-3">
-                  <img src="/assets/images/cc.svg" class="" alt="CC"/>
-                  <img src="/assets/images/by.svg" class="" alt="BY"/>
+                  <img [src]= "forImage + '/assets/images/cc.svg'" class="" alt="CC"/>
+                  <img [src]= "forImage + '/assets/images/by.svg'" class="" alt="BY"/>
               </div>
           </div>
         </div>
@@ -85,9 +85,9 @@
                 <div class="col">
                     <ul>
                       <li>about us</li>
-                      <li>team</li>
+                      <li><a routerLink = '/team'>team</a></li>
                       <li><a href="http://www.parthenos-project.eu/" target="_blank">Parthenos</a></li>
-                      <li>Contact</li>
+                      <li><a routerLink = '/contact'>Contact</a></li>
                     </ul>
                 </div>
                 <div class="col">
@@ -101,15 +101,15 @@
                 <div class="col">
                     <ul>
                         <li>contribute</li>
-                        <li><a >sign in</a></li>
-                        <li><a >SSK on Github</a></li>
+                        <li><a routerLink = '/user'>sign in</a></li>
+                        <li><a  href = 'https://github.com/ParthenosWP4/SSK' target="_blank">SSK on Github</a></li>
                       </ul>
                 </div>
                 <div class="col">
                     <ul>
                         <li>legal</li>
-                        <li><a >Privacy policy</a></li>
-                        <li><a >Licensing & citing</a></li>
+                        <li><a  routerLink = '/policy'>Privacy policy</a></li>
+                        <li><a routerLink = '/license'>Licensing & citing</a></li>
                       </ul>
                 </div>
             </div>

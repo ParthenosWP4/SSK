@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {SskServicesService} from '../ssk-services.service';
+import {environment} from '../../environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -27,11 +29,13 @@ export class HomeComponent implements OnInit {
               'identify  the most useful material to carry out your research project, step by step.';
   fourthTitle = 'Contribute to the SSK and help build a community';
   fourthDesc = 'Bringing together researchers from different backgrounds, the SSK is a place to discuss and devise best practice ' +
-                'processes in various fields of interest within the Arts & Humanities.'; 
-  constructor(private router: Router) { }
+                'processes in various fields of interest within the Arts & Humanities.';
+                
+  forImage = environment.forImage;
+  constructor(private router: Router, private sskService: SskServicesService) { }
 
   ngOnInit() {
-
+    this.sskService.setTitle('Standardization Survival Kit');
   }
 
 

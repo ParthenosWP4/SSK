@@ -30,6 +30,15 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {RequestInterceptor} from './request.interceptor';
 import { CookieLawModule } from 'angular2-cookie-law';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AddStandardComponent } from './contribute/add-standard/add-standard.component';
+import { TeamComponent } from './infos/team/team.component';
+import { ContactComponent } from './infos/contact/contact.component';
+import { PolicyComponent } from './infos/policy/policy.component';
+import { LicenseCitationComponent } from './infos/license-citation/license-citation.component';
+import { DocumentationComponent } from './infos/documentation/documentation.component';
+import { PageInContructionComponent } from './page-in-contruction/page-in-contruction.component';
+import { NewScenarioComponent } from './contribute/new-scenario/new-scenario.component';
+import { UserComponent } from './contribute/user/user.component';
 export function dataProviderFactory(provider: ElastichsearchServicesService) {
   return () => provider.loadData();
 }
@@ -51,7 +60,16 @@ export function dataProviderFactory(provider: ElastichsearchServicesService) {
     GlossaryComponent,
     RightMenuComponent,
     ContentComponent,
-    ErrorpageComponent
+    ErrorpageComponent,
+    AddStandardComponent,
+    TeamComponent,
+    ContactComponent,
+    PolicyComponent,
+    LicenseCitationComponent,
+    DocumentationComponent,
+    PageInContructionComponent,
+    NewScenarioComponent,
+    UserComponent
   ],
   imports:
     [
