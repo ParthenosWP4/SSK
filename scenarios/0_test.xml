@@ -11,6 +11,10 @@
                <persName>Charles Riondet</persName>
                <affiliation>Inria</affiliation>
             </author>
+              <author>
+               <persName>Lionel</persName>
+               <affiliation>Inria</affiliation>
+            </author>
          </titleStmt>
          <publicationStmt>
             <authority>Parthenos</authority>
