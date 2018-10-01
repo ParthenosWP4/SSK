@@ -1,6 +1,6 @@
 # SSK Development of the Standarization Survival Kit
 * The branch `master`contains the data,
-* The branch `dev` contains the back-end and the front-end.
+* The branch `dev` contains the back-end and the front-end. 
 
 This project has been developed within the H2020 PARTHENOS project.
 
