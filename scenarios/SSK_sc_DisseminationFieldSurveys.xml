@@ -16,9 +16,10 @@
                <persName>Marie Puren</persName>
                <affiliation>INRIA</affiliation>
             </author>
+            <sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>PARTHENOS</authority>
+            <authority/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative

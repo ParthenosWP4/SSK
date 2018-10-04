@@ -4,7 +4,7 @@
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0"
      type="researchScenario"
-     xml:id="SSK_sc_mei">
+     xml:id="id_1_SSK_sc_loremIpsum">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -21,9 +21,10 @@
                <persName>Hélène Gautier</persName>
                <affiliation>CNRS</affiliation>
             </author>
+            <sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this

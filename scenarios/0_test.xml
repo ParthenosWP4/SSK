@@ -2,7 +2,7 @@
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0"
      type="researchScenario"
-     xml:id="SSK_sc_schemaCustomization">
+     xml:id="id_0_test">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -15,6 +15,7 @@
                <persName>Lionel</persName>
                <affiliation>Inria</affiliation>
             </author>
+            <sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
             <authority>Parthenos</authority>
