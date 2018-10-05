@@ -214,6 +214,7 @@ public class SSKServices {
                         JsonObject scenarioJson = teiToJson(scenarioContent, true, scenarioType);
                         scenarioJson.addProperty("GithubRef", scenarioName);
                         scenarioJson.addProperty("type", "scenario");
+                        scenarioJson.addProperty("lastUpdate", this.githubApiService.getLastCommitDate("scenarios",scenarioName ));
                         
                         scenarioAndStep.add(scenarioJson);
                         JsonArray steps = scenarioJson.getAsJsonObject("TEI").getAsJsonObject("text").getAsJsonObject("body").getAsJsonObject("div").getAsJsonObject("listEvent").getAsJsonArray("event");
@@ -261,6 +262,7 @@ public class SSKServices {
             stepJson.addProperty("GithubRef", stepReference);
             stepJson.addProperty("type", "step");
             stepJson.addProperty("parent", parent.split("\\.")[0]);
+            stepJson.addProperty("lastUpdate", this.githubApiService.getLastCommitDate("steps",stepReference + ".xml" ));
             return stepJson;
         }
     }
@@ -578,7 +580,7 @@ public class SSKServices {
         if (data.has("url") && removeDoubleQuote(data.get("url").toString()) != "")
             result.addProperty("url", removeDoubleQuote(data.get("url").toString()));
         if (data.has("date") && !removeDoubleQuote(data.get("date").toString()).isEmpty()){
-            result.addProperty("date", data.get("date").toString());
+            result.addProperty("period", data.get("date").toString());
         }
         if (data.has("abstractNote") && removeDoubleQuote(data.get("abstractNote").toString()) != "")
             result.addProperty("abstract", removeDoubleQuote(data.get("abstractNote").toString()));
@@ -613,7 +615,7 @@ public class SSKServices {
             elts.add(elt.getElementsByAttributeValue("name", "citation_author").attr("content"));
         }
         result.add("creators", elts);
-        result.addProperty("date", document.getElementsByAttributeValue("name", "citation_publication_date").attr("content"));
+        result.addProperty("period", document.getElementsByAttributeValue("name", "citation_publication_date").attr("content"));
         result.addProperty("id", document.getElementsByAttributeValue("name", "DC.identifier").eq(1).attr("content"));
         return result;
     }
@@ -648,7 +650,7 @@ public class SSKServices {
             org.jsoup.nodes.Element date = document.getElementsByClass("age").last().getElementsByTag("span").first();
     
             if (date.children().hasText() && date.data() != "") {
-                result.addProperty("date", date.data());
+                result.addProperty("period", date.data());
             }
             result.addProperty("abstract", document.getElementsByAttributeValue("name", "description").attr("content").split("\\.")[0]);
         }
@@ -867,7 +869,6 @@ public class SSKServices {
         JsonObject termsContentJSON = teiToJson(termsContentTEI, true, null);
         termsContentJSON.addProperty("type", "glossary");
         HttpEntity entity = requestHeadersParams.addDetectNoop(termsContentJSON);
-        logger.info(this.elasticServices.toHex(glossary));
         ResponseEntity<String> response = this.restTemplate.exchange( elasticSearchPort + "/" + sskIndex + "/_doc/"+this.elasticServices.toHex(glossary) , HttpMethod.PUT, entity, String.class);
         JSONObject responseBody = new JSONObject(response.getBody());
         if (responseBody.get("result").toString().equals("created")) {

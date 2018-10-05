@@ -3,8 +3,8 @@ import {
   Output
 } from '@angular/core';
 import {ActivatedRoute, Params, Router} from '@angular/router';
-import {SskServicesService} from '../../ssk-services.service';
-import {ElastichsearchServicesService} from '../../elastichsearch-services.service';
+import {SskService} from '../../ssk.service';
+import {ElastichsearchService} from '../../elastichsearch.service';
 
 @Component({
   selector: 'app-content',
@@ -16,7 +16,7 @@ export class ContentComponent implements OnInit {
   item: any;
   data: any;
   spinner = true;
-  constructor(private  sskServ: SskServicesService, private elastiServ: ElastichsearchServicesService) { }
+  constructor(private  sskServ: SskService, private elastiServ: ElastichsearchService) { }
 
   ngOnInit() {
     this.item = this.sskServ.getGlossarylink();

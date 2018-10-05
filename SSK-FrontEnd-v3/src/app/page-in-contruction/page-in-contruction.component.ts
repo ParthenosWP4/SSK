@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {SskServicesService} from '../ssk-services.service';
+import {SskService} from '../ssk.service';
 import {environment} from '../../environments/environment';
 
 @Component({
@@ -12,7 +12,7 @@ export class PageInContructionComponent implements OnInit {
   @Input() title: any;
   message = 'The page is currently in progress';
   forImage = environment.forImage;
- constructor(private sskServ: SskServicesService) { }
+ constructor(private sskServ: SskService) { }
 
  ngOnInit() {
    this.sskServ.setTitle(this.title);

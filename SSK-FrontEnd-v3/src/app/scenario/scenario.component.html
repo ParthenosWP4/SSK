@@ -2,7 +2,7 @@
   <div class="row  ">
     <div class="col-lg-7 mr-3 mt-5">
       <div class=" ml-lg-5 col-md-12 col-sm-12 text-left  stitle">
-       {{scenarioElt?.title?.content}}
+       {{scenarioElt?.title}}
       </div>
       <div class="w-100 "></div>
       <div class="ml-lg-5  col-md-12 col-sm-12  text-left my-lg-3 desc"  [innerHtml] = "scenarioDesc">
@@ -24,7 +24,7 @@
         <p *ngIf="scenarioTags[changeTag(item)] !== undefined">
           <span >
           {{item}}
-          <img  src="https://ssk-application.parthenos.d4science.org/ssk/assets/images/interrogationDot.png" class="pb-1" alt="Responsive image">
+          <img  [src]= "forImage + '/assets/images/interrogationDot.png'" class="pb-1" alt="Responsive image">
         </span>
           <button type="button" class="btn btn-secondary disabled m-1" *ngFor=" let elt of scenarioTags[changeTag(item)]?.slice(0,2)" tooltip ="{{'Type: '  +elt?.type +  ' | Source : '+ elt?.source  }}">{{tagShow(elt)?.key}} </button>
           <span  *ngIf = "scenarioTags[changeTag(item)]?.length > 2" class="collapsed text-center" data-toggle="collapse"  [attr.data-target]="'#tag' +m"  aria-expanded="false"> More ...</span>
@@ -62,7 +62,7 @@
   <div class=" row mb-lg-2">
     <div class=" col-10 step ml-lg-5">
       <span class="position  ml-lg-3">{{selectedStep?.position}}.</span>
-      <span>{{selectedStep?.title?.content}}</span>
+      <span>{{selectedStep?.title}}</span>
     </div>
   </div>
   <div class="row">
@@ -72,7 +72,7 @@
             <p *ngIf="stepTags[changeTag(item)] !== undefined">
               <span >
                 {{item}}
-                <img  src="https://ssk-application.parthenos.d4science.org/ssk/assets/images/interrogationDot.png" class="pb-1" alt="Responsive image">
+                <img  [src]= "forImage + '/assets/images/interrogationDot.png'" class="pb-1" alt="Responsive image">
               </span>
               <button type="button" class="btn btn-secondary disabled m-1" *ngFor=" let elt of stepTags[changeTag(item)]?.slice(0,2)" tooltip ="{{'Type: '  +elt?.type +  ' | Source : '+ elt?.source  }}">{{tagShow(elt)?.key}} </button>
               <span  *ngIf = "stepTags[changeTag(item)]?.length > 2" class="collapsed text-center" data-toggle="collapse"  [attr.data-target]="'#tag' +m"  aria-expanded="false"> More ...</span>
@@ -121,7 +121,7 @@
       </div>
     </div>
     <div *ngIf="selectedStep?.metadata?.standards && (selectedStep?.metadata?.standards.length > 0)" class=" ml-5 my-lg-5 desc"  [ngClass]="(!selectedStep?.generals ||  !selectedStep?.projects) ? 'col-lg-4 col-sm-12':'col-lg-12'">
-      <div > <p><span>standards  <img  src="https://ssk-application.parthenos.d4science.org/ssk/assets/images/interrogationDot.png" class="pb-1" alt="Responsive image"></span></p>
+      <div > <p><span>standards  <img  [src]= "forImage + '/assets/images/interrogationDot.png'" class="pb-1" alt="Responsive image"></span></p>
         <div *ngFor=" let elt of selectedStep?.metadata?.standards" class="my-2">
           <button type="button" class="btn btn-secondary disabled m-1" >{{elt?.abbr}} {{elt?.key}}</button>
           <span *ngIf="elt?.complete != null"  (click)="cleanAndOpen(elt?.link)"  class="complete" [innerHtml]="clean(elt?.complete)"></span>
@@ -132,7 +132,7 @@
     <div class="w-100"></div>
     <div class=" col-12 bottom my-lg-5 text-center">
         <button disabled   type="button" class="btn btn-primary  btn-sm m-1 mr-lg-4 mr-sm-0 " [disabled]="(idSelectedStep - 1 == scenarioElt?.steps?.length)"> <i class="fa fa-chevron-circle-left "></i> <span class="hide">PREVIOUS STEP</span> </button>
-        <button [routerLink]="['/', 'scenarios']"  type="button" class=" btn-sm btn btn-secondary  m-1 mr-lg-3" > <img  src="https://ssk-application.parthenos.d4science.org/ssk/assets/images/backToScenarios.png" class="pb-1 mr-2" alt="Responsive image">back to scenarios</button>
+        <button [routerLink]="['/', 'scenarios']"  type="button" class=" btn-sm btn btn-secondary  m-1 mr-lg-3" > <img  [src]= "forImage + '/assets/images/backToScenarios.png'" class="pb-1 mr-2" alt="Responsive image">back to scenarios</button>
         <button disabled  type="button" class="btn btn-primary  m-1 ml-lg-3  btn-sm" [disabled]="(idSelectedStep + 1 == scenarioElt?.steps?.length)"> <span class="hide"> NEXT STEP </span><i class="fa fa-chevron-circle-right "></i></button>
       </div>
   </div>

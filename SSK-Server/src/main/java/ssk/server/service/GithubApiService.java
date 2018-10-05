@@ -1,16 +1,14 @@
 package ssk.server.service;
 
 import com.fasterxml.jackson.databind.util.JSONPObject;
-import com.google.gson.Gson;
+import com.google.gson.*;
 
 
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
@@ -98,6 +96,12 @@ public class GithubApiService {
         return githubUrl;
     }
     
+    @Autowired
+    private SSKServices sskServices;
+    
+    @Autowired
+    private ElasticGetDataServices elasticGetDataServices;
+    
     public MultiValueMap<String, String> getRequestHeaders() {
         return requestHeaders;
     }
@@ -174,21 +178,19 @@ public class GithubApiService {
 
     /* Get Commits on specific Github path */
     
-    public JSONObject getCommitsOfPath(String path, String since ){
-        this.url  = "commits/";
-        JSONObject jSon = new JSONObject().put("path", path).put("since", since);
-        this.request = new HttpEntity<>(this.updateRequestHeaders("json", jSon ));
-        String content =  this.restTemplate.exchange(getGithubUrl() + this.url, HttpMethod.GET, this.request , String.class).getBody();
-        JSONArray jsonArray = new JSONArray(content);
-        
-        // Here we take the most up to date commit
-        jSon = getMostUpdated(jsonArray);
-
-        /* request to Update DataList index on Elastic Search */
-        if(converDate(getDate(jSon)).compareTo(converDate(since)) > 0){
-            // ********************************************************************
+    public String getLastCommitDate(String type, String fileName ){
+        this.url  = "commits?path=" + type + "/" + fileName;
+        JsonElement jsonResult;
+        this.request = new HttpEntity<>(this.updateRequestHeaders("json", null ));
+        ResponseEntity<String> response =  this.restTemplate.exchange(getGithubUrl() + this.url, HttpMethod.GET, this.request , String.class);
+        if (response.getStatusCode().is2xxSuccessful()) {
+            jsonResult = this.sskServices.getParser().parse(response.getBody()).getAsJsonArray().get(0).getAsJsonObject().get("commit").getAsJsonObject().get("author");
+            jsonResult = this.elasticGetDataServices.loadContentByKey(new JSONObject(jsonResult.toString()), "date");
+            return jsonResult.getAsJsonObject().get("date").getAsString();
         }
-        return jSon;
+        else{
+            return null;
+        }
     }
     
     

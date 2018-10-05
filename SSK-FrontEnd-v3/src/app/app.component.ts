@@ -1,12 +1,12 @@
 import {Component, OnInit, ViewChildren, AfterViewInit} from '@angular/core';
-import {SskServicesService} from './ssk-services.service';
+import {SskService} from './ssk.service';
 import { CookieLawModule } from 'angular2-cookie-law';
 import {Router, ActivatedRoute} from '@angular/router';
 import {isDefined} from '@angular/compiler/src/util';
 import { ScenarioComponent } from './scenario/scenario.component';
 import { ScenariosComponent } from './scenarios/scenarios.component';
 import {Location} from '@angular/common';
-import { ElastichsearchServicesService } from './elastichsearch-services.service';
+import { ElastichsearchService } from './elastichsearch.service';
 import { ContentComponent } from './glossary/content/content.component';
 import {environment} from '../environments/environment';
 
@@ -41,8 +41,8 @@ export class AppComponent implements  OnInit, AfterViewInit {
                   'Commons Attribution 4.0 International license CC BY';
   forImage = environment.forImage;
 
-  constructor(private sskService: SskServicesService, private router: Router, private location: Location,
-              private elastiServ: ElastichsearchServicesService, route: ActivatedRoute, private contentComp: ContentComponent, ) { }
+  constructor(private sskService: SskService, private router: Router, private location: Location,
+              private elastiServ: ElastichsearchService, route: ActivatedRoute, private contentComp: ContentComponent, ) { }
 
   ngOnInit() {
       this.sskService.checkBackEndAvailability();
@@ -59,8 +59,9 @@ export class AppComponent implements  OnInit, AfterViewInit {
   redirect(link: string) {
     if (link.includes('github')) {
       window.open(link, '_blank');
+    } else {
+      this.router.navigate([link]);
     }
-    this.router.navigate([link]);
   }
 
   fireEvent(e) {

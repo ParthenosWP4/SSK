@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {SskServicesService} from '../../ssk-services.service';
+import {SskService} from '../../ssk.service';
 
 
 
@@ -11,7 +11,7 @@ import {SskServicesService} from '../../ssk-services.service';
 export class NewScenarioComponent implements OnInit {
 
   title =  'Create a new scenario';
-  constructor(private sskServ: SskServicesService) { }
+  constructor(private sskServ: SskService) { }
 
   ngOnInit() {
     this.sskServ.setTitle(this.title);

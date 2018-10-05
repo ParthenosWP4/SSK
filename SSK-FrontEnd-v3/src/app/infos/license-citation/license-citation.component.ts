@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {SskServicesService} from '../../ssk-services.service';
+import {SskService} from '../../ssk.service';
 @Component({
   selector: 'app-license-citation',
   templateUrl: './license-citation.component.html',
@@ -8,7 +8,7 @@ import {SskServicesService} from '../../ssk-services.service';
 export class LicenseCitationComponent implements OnInit {
 
   title =  'License & Citations';
-  constructor(private sskServ: SskServicesService) { }
+  constructor(private sskServ: SskService) { }
 
   ngOnInit() {
     this.sskServ.setTitle(this.title);

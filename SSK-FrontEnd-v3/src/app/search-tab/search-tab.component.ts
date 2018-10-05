@@ -1,11 +1,12 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ElastichsearchServicesService} from '../elastichsearch-services.service';
-import {SskServicesService} from '../ssk-services.service';
+import {ElastichsearchService} from '../elastichsearch.service';
+import {SskService} from '../ssk.service';
 import * as _ from 'lodash';
 import * as $ from 'jquery';
 import * as Fuse from 'fuse-js-latest';
 import {ScenariosComponent} from '../scenarios/scenarios.component';
 import {isUndefined} from 'util';
+import {environment} from '../../environments/environment';
 
 
 @Component({
@@ -21,14 +22,15 @@ export class SearchTabComponent implements OnInit {
   public techniques = 'fa-caret-up';
   private options = {};
   public tags = ['disciplines', 'activities', 'techniques', 'objects' , 'standards'] ;
+  forImage = environment.forImage;
 
   private results = [];
   private scenarioResults = [];
   private stepsResults = [];
   private resourcesResults = [];
-
-  constructor(private elasticSearchServ: ElastichsearchServicesService,
-              private ssKServices: SskServicesService,
+  spinner = false;
+  constructor(private elasticSearchServ: ElastichsearchService,
+              private ssKServices: SskService,
               private scenarioComponent: ScenariosComponent) { }
 
   searchData = {};
@@ -38,6 +40,7 @@ export class SearchTabComponent implements OnInit {
 
   ngOnInit() {
     this.options = this.ssKServices.options;
+    console.log(this.scenarioComponent.scenarios)
   }
 
   change(e, content: any) {
@@ -47,8 +50,6 @@ export class SearchTabComponent implements OnInit {
     } else {
       tag = content.term;
     }
-
-    console.log(this.ssKServices.scenarioKeys)
 
     let  fuse ;
     if ($("input[name = '" + tag + "']").is(':checked')

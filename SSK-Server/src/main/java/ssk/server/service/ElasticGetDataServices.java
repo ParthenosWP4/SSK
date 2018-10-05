@@ -5,6 +5,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.stream.MalformedJsonException;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,6 +37,9 @@ public class ElasticGetDataServices {
 	
 	@Value("${scenario_image_query}")
 	private String scenarioImageQuery;
+	
+	@Value("${scenario_authors_query}")
+	private String scenarioAuthorsQuery;
 	
 	@Value("${scenario_metadata_query}")
 	private String scenarioMetadataQuery;
@@ -75,7 +79,9 @@ public class ElasticGetDataServices {
 			result.addProperty("total", Integer.valueOf(param.get("total").getAsString()));
 			String input = param.getAsJsonArray("hits").toString();
 			input = input.toString().replaceAll("\"_source\":\\{", "");
-			input = input.toString().replaceAll("\"TEI\":\\{\"text\":\\{\"body\":\\{\"listEvent\":\\{\"event\":\\{", "");
+			input = input.toString().replaceAll("\"TEI\":\\{\"teiHeader\":\\{\"fileDesc\":\\{\"titleStmt\":\\{\"author\"", "\"author\"");
+			input = input.toString().replaceAll("}{3},\"text\"", ",\"text\"");
+			input = input.toString().replaceAll("\"text\":\\{\"body\":\\{\"listEvent\":\\{\"event\":\\{", "");
 			input = input.replaceAll("((\\s)*\\}){5}", "");
 			input = input.replaceAll("}},\\{\"_index", "},{\"_index");
 			String reverse = new StringBuffer(input).reverse().toString();
@@ -123,7 +129,7 @@ public class ElasticGetDataServices {
 		return  jsonResult.toString();
 	}
 	
-	private JsonElement loadContentByKey(JSONObject json, String keyToCheck){
+	public JsonElement loadContentByKey(JSONObject json, String keyToCheck){
 		Iterator<?> json_keys = json.keys();
 		JsonElement content = null;
 		boolean enter = true;
@@ -138,17 +144,26 @@ public class ElasticGetDataServices {
 				content = loadContentByKey(new JSONObject(content.toString()), keyToCheck);
 				
 			}
+			
 			catch (NullPointerException e){
-				//e.printStackTrace();
 				if (json_key.equals(keyToCheck)){
-					content = sskServices.getParser().parse(json.getJSONArray(json_key).toString());
-					enter = false;
+					try{
+						content = sskServices.getParser().parse(json.getJSONArray(json_key).toString());
+						enter = false;
+					}
+					catch(JSONException ex){
+						content = new JsonObject();
+						content.getAsJsonObject().addProperty("date", json.get("date").toString() );
+						enter = false;
+					}
+					
 				}
 			}
 			
+			
 		}
 		if(!enter){
-			return this.sskServices.normalizeContent(content);
+			return content;
 		}
 		else{
 			
@@ -190,38 +205,39 @@ public class ElasticGetDataServices {
 		return loadContentByKey(new JSONObject(response.getBody()), "head");
 	}
 	
+	private JsonElement queryAuthors(String scenarioId){
+		JsonElement jsonResult ;
+		JsonElement source ;
+		sskIndex = "ssk/_doc/_search?q=_id:"+ scenarioId;
+		entity = new HttpEntity<>(scenarioAuthorsQuery, requestHeadersParams.getHeaders());
+		ResponseEntity<String> response = this.restTemplate.exchange( this.elasticServices.getElasticSearchPort() + "/" + sskIndex, HttpMethod.POST, entity, String.class);
+		if (response.getStatusCode().is2xxSuccessful()) {
+			final JsonArray result = new JsonArray();
+			source = loadContentByKey((JSONObject) new JSONObject(response.getBody()).getJSONObject("hits").getJSONArray("hits").get(0), "author") ;
+			jsonResult = this.sskServices.normalizeContent(source);
+		} else {
+			jsonResult =  null;
+		}
+		return jsonResult;
+	}
+	
+	
+	
+	
 	private JsonElement queryDescription(String scenarioId) {
 		JsonElement jsonResult ;
 		JsonElement source ;
-		//requestHeadersParams.setHeaders();
-		if(scenarioId.equals("SSK_sc_DTABf")){
-			logger.error("check");
-		}
 		sskIndex = "ssk/_doc/_search?q=_id:"+ scenarioId;
 		entity = new HttpEntity<>(scenarioDescQuery, requestHeadersParams.getHeaders());
 		ResponseEntity<String> response = this.restTemplate.exchange( this.elasticServices.getElasticSearchPort() + "/" + sskIndex, HttpMethod.POST, entity, String.class);
 		if (response.getStatusCode().is2xxSuccessful()) {
 			final JsonArray result = new JsonArray();
-			source = loadContentByKey((JSONObject) new JSONObject(response.getBody()).getJSONObject("hits").getJSONArray("hits").get(0), "desc") ;
-			/*f(source.toString().contains("desc")){
-				source = source.   getAsJsonObject().getAsJsonArray("desc");
-			}*/
-			jsonResult = this.sskServices.normalizeContent(source);
-			
-			/*if(source.isJsonArray()){
-				source.getAsJsonArray().forEach(desc->{
-					if(desc.toString().contains("content")){
-						result.getAsJsonArray().add(desc.getAsJsonObject());
-					}
-				});
-				jsonResult = result;
-			}
-			else{
-				jsonResult = this.sskServices.normalizeContent(source);
-			}*/
+			jsonResult = loadContentByKey((JSONObject) new JSONObject(response.getBody()).getJSONObject("hits").getJSONArray("hits").get(0), "desc") ;
+			//jsonResult = this.sskServices.normalizeContent(source);
 		} else {
 			jsonResult =  null;
 		}
+		
 		return jsonResult;
 	}
 	
@@ -252,6 +268,12 @@ public class ElasticGetDataServices {
 				break;
 			case "image":
 				res = queryImage(scenarioId)	;
+				break;
+			case "author":
+				res = queryAuthors(scenarioId)	;
+				break;
+			case "lastUpdate":
+				res = queryAuthors(scenarioId)	;
 				break;
 			case "scenario_metadata":
 				res = sskServices.getParser().parse( queryScenarioMetadata(scenarioId));

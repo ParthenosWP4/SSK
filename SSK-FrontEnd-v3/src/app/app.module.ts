@@ -8,15 +8,15 @@ import { HomeComponent } from './home/home.component';
 import { ScenariosComponent } from './scenarios/scenarios.component';
 import { ScenarioCardComponent } from './scenario-card/scenario-card.component';
 import { ScenarioTemplateComponent } from './scenario-template/scenario-template.component';
-import {ElastichsearchServicesService} from './elastichsearch-services.service';
+import {ElastichsearchService} from './elastichsearch.service';
 import {HttpModule} from '@angular/http';
 import { StepCardComponent } from './step-card/step-card.component';
 import {NgxPaginationModule} from 'ngx-pagination';
-import {SskServicesService} from './ssk-services.service';
+import {SskService} from './ssk.service';
 import { ResourceCardComponent } from './resource-card/resource-card.component';
 import { ScenarioComponent } from './scenario/scenario.component';
-import * as $ from 'jquery';
 import { TooltipModule } from 'ngx-bootstrap';
+import { PopoverModule } from 'ngx-bootstrap/popover';
 import { SearchTabComponent } from './search-tab/search-tab.component';
 import {FormsModule} from '@angular/forms';
 import { GlossaryComponent } from './glossary/glossary.component';
@@ -39,7 +39,9 @@ import { DocumentationComponent } from './infos/documentation/documentation.comp
 import { PageInContructionComponent } from './page-in-contruction/page-in-contruction.component';
 import { NewScenarioComponent } from './contribute/new-scenario/new-scenario.component';
 import { UserComponent } from './contribute/user/user.component';
-export function dataProviderFactory(provider: ElastichsearchServicesService) {
+import { MomentModule } from 'ngx-moment';
+import * as $ from 'jquery';
+export function dataProviderFactory(provider: ElastichsearchService) {
   return () => provider.loadData();
 }
 
@@ -74,6 +76,7 @@ export function dataProviderFactory(provider: ElastichsearchServicesService) {
   imports:
     [
       TooltipModule.forRoot(),
+      PopoverModule.forRoot(),
       routing,
       BrowserModule,
       HttpClientModule,
@@ -84,19 +87,20 @@ export function dataProviderFactory(provider: ElastichsearchServicesService) {
       McBreadcrumbsModule.forRoot(),
       PdfViewerModule,
       CookieLawModule, // import Angular's CookieLaw modules
-      BrowserAnimationsModule
+      BrowserAnimationsModule,
+      MomentModule
     ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],
-  providers: [appRoutingProviders, SafeHtmlPipe, ElastichsearchServicesService, SskServicesService, GlossaryResolver,
-    { provide: APP_INITIALIZER, useFactory: dataProviderFactory, deps: [ElastichsearchServicesService], multi: true },
+  providers: [appRoutingProviders, SafeHtmlPipe, ElastichsearchService, SskService, GlossaryResolver,
+    { provide: APP_INITIALIZER, useFactory: dataProviderFactory, deps: [ElastichsearchService], multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true}
     ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(breadcrumbsConfig: McBreadcrumbsConfig, private sskServ: SskServicesService,
+  constructor(breadcrumbsConfig: McBreadcrumbsConfig, private sskServ: SskService,
               ) {
     breadcrumbsConfig.postProcess = (x) => {
       // Ensure the first breadcrumb points to home

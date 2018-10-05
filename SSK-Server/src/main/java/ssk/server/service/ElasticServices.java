@@ -49,6 +49,9 @@ public class ElasticServices {
 	@Value("#{'${mapping.standard}'.split(',')}")
 	private List<String> nestedStandardMappings;
 	
+	@Value("${all_scenario_query}")
+	private String allScenarioQuery;
+	
 	
 	
 	private SSKServices sskServices;
@@ -419,9 +422,9 @@ public class ElasticServices {
 		
 		JsonObject result = new JsonObject();
 		JsonObject param = new JsonObject();
-		param.addProperty("_source", false);
+		//param.addProperty("_source", false);
 		sskIndex = "ssk/_doc/_search?q=type:scenario&size=10000";
-		entity = new HttpEntity<>(param.toString(), requestHeadersParams.getHeaders());
+		entity = new HttpEntity<>(allScenarioQuery, requestHeadersParams.getHeaders());
 		ResponseEntity<String> response = this.restTemplate.exchange(elasticSearchPort + "/" + sskIndex , HttpMethod.POST, entity, String.class);
 		if(response.getStatusCode().is2xxSuccessful()){
 			param = this.parser.parse(response.getBody()).getAsJsonObject().get("hits").getAsJsonObject();

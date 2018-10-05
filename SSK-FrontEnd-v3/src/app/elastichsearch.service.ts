@@ -9,7 +9,7 @@ import {HttpClient} from '@angular/common/http';
 
 
 @Injectable()
-export class ElastichsearchServicesService {
+export class ElastichsearchService {
 
   private sskBackendEndpoint = environment.sskBackendEndpoint;
 
@@ -56,7 +56,7 @@ export class ElastichsearchServicesService {
   }
 
   getScenarioDetails(scenarioId: string): Observable<any> {
-    this.setParams(['title', 'desc', 'image', 'scenario_metadata']);
+    this.setParams(['title', 'desc', 'image', 'scenario_metadata', 'author' ]);
     this.setOptions(this.params);
     return this.http.get(this.sskBackendEndpoint + 'scenario/' + scenarioId, this.options);
       /*.map((response: HttpResponse<any>) => {
@@ -224,6 +224,7 @@ export class ElastichsearchServicesService {
       this.getScenarioDetails(scenario._id).subscribe(
         result => {
           result.id = scenario._id;
+          result.lastUpdate = scenario._source.lastUpdate;
           this.detailsResult = result;
         },
         error => {  },
@@ -264,6 +265,7 @@ export class ElastichsearchServicesService {
       () => {
           this.getAllResources();
       });
+      return this.getSteps();
   }
 
 getGlossaryTerms() {

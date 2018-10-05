@@ -1,38 +1,57 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {SskServicesService} from '../ssk-services.service';
+import {Component, Input, OnInit, AfterViewInit, ViewChild, ElementRef, } from '@angular/core';
+import {SskService} from '../ssk.service';
 import {Router} from '@angular/router';
 import {DomSanitizer} from '@angular/platform-browser';
 import * as _ from 'lodash';
+import {environment} from '../../environments/environment';
+
 
 @Component({
   selector: 'app-scenario-card',
   templateUrl: './scenario-card.component.html',
   styleUrls: ['./scenario-card.component.scss']
 })
-export class ScenarioCardComponent implements OnInit {
+export class ScenarioCardComponent implements OnInit,  AfterViewInit {
 
   @Input() scenario: any;
-  public title: any
-  public desc: any
+  public title: any;
+  public desc: any;
   public metadata: Array<any> = new Array();
   public metadataPart1: Array<any> = new Array();
-  public metadataPart2: Array<any>
+  public metadataPart2: Array<any>;
   public defaultImage: string;
-  public shortTitle: any = {}
-  public shortDesc: any = {}
+  public shortTitle: any = {};
+  public shortDesc: any = {};
+  forImage = environment.forImage;
+  
+  constructor(private sskServices: SskService,  private router: Router, private domSanitizer: DomSanitizer) { }
 
-  constructor(private sskServices: SskServicesService,  private router: Router, private domSanitizer: DomSanitizer) { }
 
+  ngAfterViewInit() {
+    (<any>$('.pop')).popover({ trigger: 'manual' , html: true, animation: false})
+      .on('mouseenter', function () {
+          const _this = this;
+          (<any>$(this)).popover('show');
+          $('.popover').on('mouseleave', function () {
+            (<any>$(_this)).popover('hide');
+          });
+      }).on('mouseleave', function () {
+          const _this = this;
+          setTimeout(function () {
+              if (!$('.popover:hover').length) {
+                (<any>$(_this)).popover('hide');
+              }
+          }, 40);
+    });
+}
   ngOnInit() {
-
-
-
     if (this.scenario.title instanceof Array) {
       this.title = this.scenario.title[0];
     } else {
       this.title = this.scenario.title;
     }
-    this.shortTitle = this.sskServices.shorten(this.title, 99);
+    this.title = this.sskServices.updateText( this.title, null);
+   // this.shortTitle = this.sskServices.shorten(this.title, 99);
 
     if (this.scenario.image === null || this.scenario.image === 'null' ||  this.scenario.image === undefined) {
       this.defaultImage = '../../assets/images/ssk_logo.svg';
@@ -43,8 +62,8 @@ export class ScenarioCardComponent implements OnInit {
     } else {
       this.desc = this.scenario.desc;
     }
-    this.shortDesc = this.sskServices.shorten(this.desc, 250);
-
+   // this.shortDesc = this.sskServices.shorten(this.desc, 250);
+   this.desc = this.sskServices.updateText( this.desc, null);
 
     if (this.scenario.scenario_metadata.objects instanceof Array ) {
       this.metadata  =  this.metadata.concat(this.scenario.scenario_metadata.objects);
@@ -66,36 +85,43 @@ export class ScenarioCardComponent implements OnInit {
       this.metadata  =  this.metadata.concat(this.scenario.scenario_metadata.standards);
     }
 
+    if ( ! (this.scenario.author instanceof Array)) {
+      this.scenario.author = [this.scenario.author];
+    }
+
+
 
 
     this.metadata = _.forEach(this.metadata, function(value) {
       switch (value.type) {
         case 'objects':
-          value.type = 'object'
+          value.type = 'object';
         break;
         case 'disciplines':
-          value.type = 'discipline'
+          value.type = 'discipline';
         break;
         case 'techniques':
         case 'technique':
-          value.type = 'technique'
+          value.type = 'technique';
         break;
         case 'datatype':
-          value.type = 'object'
+          value.type = 'object';
         break;
         case 'activities':
-          value.type = 'activity'
+          value.type = 'activity';
         break;
         case 'standards':
-          value.type = 'standard'
+          value.type = 'standard';
         break;
       }
     });
 
-    if (this.metadata.length > 5) {
-      this.metadataPart2 = this.metadata.slice(6, this.metadata.length );
-    }
-    this.metadataPart1 = this.metadata.slice(0, 5);
+    this.metadata = _.map(this.metadata,  (x)  => {
+      if (this.sskServices.isUrl(x.source) && x.source.includes('tadirah')) {
+        x.source = 'Tadirah';
+      }
+      return x;
+    });
   }
 
 
@@ -107,7 +133,11 @@ export class ScenarioCardComponent implements OnInit {
   getInnerHTMLValue(text: string ) {
     return this.domSanitizer.bypassSecurityTrustHtml(text);
   }
+  content(){
+    return '<div class="row>'
+  }
 
-
-
+  uniformText(text: string){
+    return this.sskServices.updateText(text, 'scenario');
+  }
 }

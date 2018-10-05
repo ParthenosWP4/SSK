@@ -74,7 +74,6 @@ public class SSKScenarioEndpoint {
     @RequestMapping(value = "scenario/{scenarioId}",  method = { RequestMethod.GET  }, produces="application/json")
     public  ResponseEntity  getScenario(@PathVariable String scenarioId, @RequestParam(value = "fields", required = false) String fields,
                                         @RequestParam(value = "fromSSK", required = false) boolean fromSSK){
-        logger.info("1" + scenarioId);
         
         JsonObject jsonResult = new JsonObject();
         ResponseEntity<String> result;
@@ -87,11 +86,9 @@ public class SSKScenarioEndpoint {
                     try{
                         if(field.equals("image")){
                             jsonResult.addProperty(field, sskServices.removeDoubleQuote (elasticGetDataServices.getScenarioDetails(scenarioId, field).getAsJsonObject().get("url").toString()));
-                            logger.info("3" +scenarioId);
                         }
                         else{
                             jsonResult.add(field, elasticGetDataServices.getScenarioDetails(scenarioId, field));
-                            logger.info("4" +scenarioId);
                         }
                     }
                     catch (Exception e){
@@ -100,14 +97,12 @@ public class SSKScenarioEndpoint {
                     }
 	                
                 });
-	            logger.info("5" +scenarioId);
             }
         }
         catch (NullPointerException e) {
             e.printStackTrace();
             logger.info("empty, Here get All fields");
         }
-        logger.info("2" +scenarioId);
         return  new ResponseEntity<>(jsonResult.toString(), this.headers, HttpStatus.OK);
     }
     

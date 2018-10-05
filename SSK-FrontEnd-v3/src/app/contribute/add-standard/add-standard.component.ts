@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {SskServicesService} from '../../ssk-services.service';
+import {SskService} from '../../ssk.service';
 @Component({
   selector: 'app-add-standard',
   templateUrl: './add-standard.component.html',
@@ -9,7 +9,7 @@ export class AddStandardComponent implements OnInit {
 
 
   title =  'Add Standard';
-  constructor(private sskServ: SskServicesService) { }
+  constructor(private sskServ: SskService) { }
 
   ngOnInit() {
     this.sskServ.setTitle('Add new Standard');

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {ElastichsearchServicesService} from './elastichsearch-services.service';
+import {ElastichsearchService} from './elastichsearch.service';
 import * as _ from 'lodash';
 import {isUndefined} from 'util';
 import {Http} from '@angular/http';
@@ -9,7 +9,7 @@ import {HttpClient, HttpResponse} from '@angular/common/http';
 import {Router} from '@angular/router';
 
 @Injectable()
-export class SskServicesService {
+export class SskService {
 
   private filters = [];
 
@@ -30,8 +30,8 @@ export class SskServicesService {
 
   public browseItems: Array<string> = ['scenarios', 'steps', 'resources'];
 
-  public  scenarioKeys = ['id', 'desc.content', 'desc[0].content', 'title.content', 'title[0].content',
-    'scenario_metadata.discipline.key', 'scenario_metadata.objects.key' , 'scenario_metadata.standards.key', 'scenario_metadata.techniques.key'];
+  public  scenarioKeys = ['id', 'desc.content', 'desc[0].content', 'title.content', 'title[0].content', 'scenario_metadata.discipline.key'
+                        , 'scenario_metadata.objects.key' , 'scenario_metadata.standards.key', 'scenario_metadata.techniques.key'];
 
   public resourcesKeys = ['_id', 'category', 'title', 'redirect', 'date', 'creators', 'type'];
 
@@ -40,12 +40,13 @@ export class SskServicesService {
 
   glossaryLink: string ;
 
-  constructor(private router: Router, private elasticService: ElastichsearchServicesService, private http: HttpClient, private titleService: Title) {
+  constructor(private router: Router, private elasticService: ElastichsearchService,
+              private http: HttpClient, private titleService: Title) {
   }
 
 
   shorten(content: any, length: number) {
-    const result: any  = {};
+    /*const result: any  = {};
     const contentArray = new Array(content.content);
     if (contentArray[0] instanceof Array) {
       let newContent = '';
@@ -74,8 +75,8 @@ export class SskServicesService {
       result.content = content.content.substring(0, length) + '...';
     } else {
       result.content = content.content;
-    }
-    return result;
+    }*/
+    return content;
   }
 
 
@@ -184,6 +185,39 @@ export class SskServicesService {
 
 
  }
+
+ updateText(desc: any, type: string) {
+  let text = '';
+  if ( desc['content'] && (desc.content) instanceof Array) {
+      _.forEach(Array.from(desc.content), (part) => {
+          if (part['ref']) {
+            text += this.setLink(part['ref']);
+          }
+          if (part['list']) {
+            const list = part['list'];
+            text += this.setList(list['item']);
+          } else {
+          text += part['part'] + ' ';
+        }
+      });
+  } else {
+    return desc['content'];
+  }
+  return text;
+}
+
+setLink(part: object) {
+  return '<a href=\"' + part['target'] + '\" target = \"_blank\" >' + Array.from(part['content'])[0]['.part'] + '</a>';
+}
+
+setList(part: object) {
+  let list = '<ul>';
+  _.forEach(part, (item) => {
+      list += '<li>' + item + '</li>';
+  });
+  list += '</ul>';
+  return list;
+}
 
 
 }

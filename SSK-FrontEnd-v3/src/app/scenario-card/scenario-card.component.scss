@@ -3,14 +3,37 @@
 
 .card{
   /* Box: */
-  box-shadow: 0 0 2px 0 $color-25 !important;
-  border-radius: 10px;
+  box-shadow: 5px 5px 25px 0 rgba(46,61,73,0.50);
+  border-radius: 5px;
   background-color: $color-3 !important;
   margin-top: 5px;
-  cursor: pointer;
-
+  //cursor: pointer;
+  .author{
+    color: $color-48;
+    font-family: $avenir-next;
+    font-size: 1rem;
+  }
+  .title{
+    color: $color-40;
+    font-size: 1.05rem;
+    cursor: pointer;
+  }
+  .card-body{
+    color: $color-40;
+    font-family: $roboto-light;
+    font-size: 0.9rem;
+  }
+  img.img-fluid{
+    box-shadow: 1px 1px 7px 0 rgba(188,201,212,0.50);
+    border-radius: 6px;
+    cursor: pointer;
+  }
 }
-
+.fit-image{
+  width: 150px;
+  object-fit: cover;
+  height: 92px; /* only if you want fixed height */
+  }
 .card-header{
   font-family: $raleway-medium !important;
   font-size: $eighteen !important;
@@ -41,8 +64,7 @@ p  span{
   opacity: 1 !important;
 }
 
-:host /deep/ div.tooltip-inner {
-  background-color: $color-3 !important;
+/*:host /deep/ div.tooltip-inner {
   font-family: $roboto-light !important;
   border: 1px solid  $color-32;
   color: $color-32;
@@ -51,9 +73,7 @@ p  span{
 
 }
 
-:host /deep/ div.tooltip-inner::before{
-
-
+:host /deep/ div.tooltip-inner::before {
 }
 :host /deep/ .tooltip.top .tooltip-arrow .arrow:before,
 :host /deep/ .tooltip.right .tooltip-arrow .arrow:before,
@@ -61,19 +81,49 @@ p  span{
 :host /deep/ .tooltip.right .tooltip-arrow .arrow
 {
   border: #009688;
-}
+}*/
+
+
 
 .card-text{
   text-align: inherit !important;
 }
 
 .tag{
-  font-size: 11px;
-  padding: 0 !important;
+  font-size: 12px;
+}
+.text-right{
+  color: $color-48;
+  font-family: $avenir-next;
+  font-size: .90rem;
 }
 
+.text-left{
+  
+  text-transform: uppercase;
+  a{
+    text-decoration: none;
+   
+    color: $color-47 !important;
+    font-weight: bolder;
+  }
+}
+.desc-collapse:after {
+    font-family: 'FontAwesome';  
+    content: "\f068";
+    float: left; 
+}
+.desc-collapse.collapsed:after {
+    /* symbol for "collapsed" panels */
+    font-family: 'FontAwesome';  
+    content: "\f067"; 
+    float: left; 
+}
+.line{ border-top: 1px solid $color-46;}
 
 
-
-
-
+.popover{
+  width:200%;
+  height:250px;    
+  transform: none !important;
+}

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {SskServicesService} from '../../ssk-services.service';
+import {SskService} from '../../ssk.service';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -8,7 +8,7 @@ import {SskServicesService} from '../../ssk-services.service';
 export class UserComponent implements OnInit {
 
   title =  'Reseacher page';
-  constructor(private sskServ: SskServicesService) { }
+  constructor(private sskServ: SskService) { }
 
   ngOnInit() {
     this.sskServ.setTitle(this.title);

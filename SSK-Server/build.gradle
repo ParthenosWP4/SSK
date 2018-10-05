@@ -10,21 +10,22 @@ buildscript {
     }
 }
 
+apply plugin: 'java'
 apply plugin: 'war'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
 war {
     baseName = 'ssk_services'
     version = '0.0.1'
 }
 
-apply plugin: 'java'
 
 
 configurations {
     jaxDoclet
 }
 
-apply plugin: 'eclipse'
-apply plugin: 'org.springframework.boot'
 repositories {
     mavenCentral()
 }
@@ -39,21 +40,23 @@ sourceSets {
 
 dependencies{
 
-
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat:1.5.7.RELEASE'
 
     /*These two cannot be used either for deployment with an integrated tomcat nor for an external web server.*/
     if(onD4Science == true) {
-        providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat:1.5.7.RELEASE'
+
         providedRuntime 'org.slf4j:slf4j-api:1.7.25'
+        compile group: 'org.apache.tomcat', name: 'tomcat-util', version: '7.0.52'
     }
     else{
         compile group: 'org.springframework.boot', name: "spring-boot-starter", version: '1.5.7.RELEASE'
+        compile 'commons-logging:commons-logging:1.2'
     }
 
     compile group: 'org.springframework.boot', name: "spring-boot-starter-web", version: '1.5.7.RELEASE'
 
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-elasticsearch
-    // compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-elasticsearch', version: '1.5.2.RELEASE'
+    // compile group: 'org.springframework.boot', name: 'spring-boot-st arter-data-elasticsearch', version: '1.5.2.RELEASE'
 
 
     // https://mvnrepository.com/artifact/net.java.dev.jna/jna
@@ -91,7 +94,7 @@ dependencies{
     // https://mvnrepository.com/artifact/org.slf4j/jul-to-slf4j
     //compile group: 'org.slf4j', name: 'jul-to-slf4j', version: '1.7.25'
 
-    compile 'commons-logging:commons-logging:1.2'
+
     //compile group: 'ch.qos.logback', name: 'logback-classic'
 
 }
@@ -99,8 +102,7 @@ dependencies{
 if(onD4Science == true) {
     configurations.all {
         exclude module: 'logback-classic'
-        exclude module: 'jul-to-slf4j'
-        exclude module: 'jcl-over-slf4j'
+        exclude module: 'log4j-over-slf4j'
     }
 }
 

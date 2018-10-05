@@ -1,9 +1,8 @@
 import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, NavigationEnd, Params, Router} from '@angular/router';
-import {SskServicesService} from '../ssk-services.service';
+import {SskService} from '../ssk.service';
 import {isUndefined} from 'util';
-import {BehaviorSubject} from "rxjs/BehaviorSubject";
-import {GlossaryResolver} from "./glossary.resolver";
+
 
 @Component({
   selector: 'app-glossary',
@@ -14,7 +13,7 @@ export class GlossaryComponent implements OnInit {
 
   public  glossaryItems = ['disciplines', 'objects', 'techniques', 'activities', 'standards'];
   constructor(private router: Router,
-              private ssKService: SskServicesService, private cdRef: ChangeDetectorRef) {
+              private ssKService: SskService, private cdRef: ChangeDetectorRef) {
      // override the route reuse strategy
       this.router.routeReuseStrategy.shouldReuseRoute = function(){
         return false;

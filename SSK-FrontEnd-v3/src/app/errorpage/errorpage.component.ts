@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {SskServicesService} from '../ssk-services.service';
+import {SskService} from '../ssk.service';
 
 @Component({
   selector: 'app-errorpage',
@@ -11,7 +11,7 @@ export class ErrorpageComponent implements OnInit {
    title: string
    message: string
   error = true;
-  constructor(private sskServ: SskServicesService) { }
+  constructor(private sskServ: SskService) { }
 
   ngOnInit() {
     if (this.sskServ.getStatusError() === 404) {

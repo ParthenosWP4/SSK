@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {SskServicesService} from '../../ssk-services.service';
+import {SskService} from '../../ssk.service';
 @Component({
   selector: 'app-policy',
   templateUrl: './policy.component.html',
@@ -8,7 +8,7 @@ import {SskServicesService} from '../../ssk-services.service';
 export class PolicyComponent implements OnInit {
 
   title =  'Privacy policy';
-  constructor(private sskServ: SskServicesService) { }
+  constructor(private sskServ: SskService) { }
 
   ngOnInit() {
     this.sskServ.setTitle(this.title);

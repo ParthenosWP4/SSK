@@ -14,6 +14,16 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'FontAwesome';
+  src:  url('../node_modules/font-awesome/fonts/fontawesome-webfont.eot?1y86zq');
+  src:  url('../node_modules/font-awesome/fonts/fontawesome-webfont.eot?1y86zq#iefix') format('embedded-opentype'),
+  url('../node_modules/font-awesome/fonts/fontawesome-webfont.ttf?1y86zq') format('truetype'),
+  url('../node_modules/font-awesome/fonts/fontawesome-webfont.woff?1y86zq') format('woff'),
+  url('../node_modules/font-awesome/fonts/fontawesome-webfont.svg?1y86zq#FontAwesome') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
 @font-face {
   font-family: 'Roboto-Medium';
@@ -106,6 +116,13 @@
 @font-face {
   font-family: 'Avenir_Next';
   src:  url('assets/fonts/AvenirNextLTPro-Regular.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Avenir_Next_UL';
+  src:  url('assets/fonts/AvenirNext-UltraLight.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -292,3 +309,74 @@
   font-family: $roboto-regular !important;
 }
 
+.tag{
+  font-family: $avenir-next;
+  font-size: 0.8rem;
+  border-radius: 18px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.discipline{
+  color: $color-49;
+  border: 1px solid $color-49;
+  
+}
+.technique{
+  color: $color-50;
+  border: 1px solid $color-50;
+}
+
+.object{
+  color: $color-51;
+  border: 1px solid $color-51;
+}
+ .standard{
+  color: $color-52;
+  border: 1px solid $color-52;
+}
+.activity{
+  color: $color-53;
+  border: 1px solid $color-53;
+}
+
+.tagClass{
+  text-decoration-line: underline;
+  text-decoration-color: $color-3;
+  font-family: $roboto-medium;
+  text-transform: capitalize;
+}
+
+div.popover{
+  max-width: 800px !important;
+  width: 325px !important;
+  font-family: $avenir-next;
+  color: $color-40;
+  img.main{
+    width: 53px;
+    height: 53px;
+  }
+  .author{
+    
+    
+    font-size: 1.2rem;
+  }
+  span.affiliation{
+    color: $color-48;
+    font-size: 1rem;
+  }
+  .contribution{
+    font-size: 0.8rem;
+  }
+  a{
+    color:$color-47 !important;
+    font-style: italic;
+  }
+
+}
+
+.tooltip-inner {
+  background-color: black;
+}

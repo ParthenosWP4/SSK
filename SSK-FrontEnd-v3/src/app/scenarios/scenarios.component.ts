@@ -1,10 +1,11 @@
 import {Component, ElementRef, HostListener, OnInit} from '@angular/core';
-import {ElastichsearchServicesService} from '../elastichsearch-services.service';
+import {ElastichsearchService} from '../elastichsearch.service';
 import { Router} from '@angular/router';
 import {isUndefined} from 'util';
 import * as _ from 'lodash';
 import * as Fuse from 'fuse-js-latest';
-import {SskServicesService} from '../ssk-services.service';
+import {SskService} from '../ssk.service';
+import {environment} from '../../environments/environment';
 
 @Component({
   selector: 'app-scenario',
@@ -19,9 +20,8 @@ export class ScenariosComponent implements OnInit {
   active = 'scenarios';
   tabList: any = {};
   contentCol = 'col-lg-12';
-  collapse = '';
   scenarios: any[];
-   steps: any[];
+  steps: any[];
   resources: any[];
   selectTab: string;
   error: string;
@@ -42,9 +42,10 @@ export class ScenariosComponent implements OnInit {
   private stepsResults = [];
   private resourcesResults = [];
   resultCount = 0;
+  forImage = environment.forImage;
   constructor(
-    private elasticServices: ElastichsearchServicesService,
-    private sskServices: SskServicesService,
+    private elasticServices: ElastichsearchService,
+    private sskServices: SskService,
     public el: ElementRef,
     private router: Router) {
 
@@ -103,7 +104,7 @@ export class ScenariosComponent implements OnInit {
   }
 
   searchTab() {
-    this.resize();
+    //this.resize();
   }
 
   search(tag: string) {
@@ -149,13 +150,13 @@ export class ScenariosComponent implements OnInit {
       this.router.navigate([item]);
   }
 
-  private resize() {
+  /*private resize() {
     if (this.contentCol === 'col-lg-9') {
       this.contentCol = 'col-lg-12';
     }  else {
       this.contentCol = 'col-lg-9';
     }
-  }
+  }*/
 
    public loadContents(type: string) {
         switch (type) {
@@ -193,6 +194,13 @@ export class ScenariosComponent implements OnInit {
             this.elasticServices.setResultCount(this.elasticServices.getScenarios().length);
           break;
         }
+        setTimeout(() => {
+          this.searchData['disciplines'] = this.elasticServices.getDisciplines();
+          this.searchData['activities'] = _.flattenDeep(_.map(_.map(this.elasticServices.getActivities(), 'list'), 'item'));
+          this.searchData['techniques'] = this.elasticServices.getTechniques();
+          this.searchData['objects'] = this.elasticServices.getObjects();
+          this.searchData['standards'] = this.elasticServices.getStandards();
+    }, 2000);
   }
 
   @HostListener('window:scroll', ['$event']) checkScroll() {

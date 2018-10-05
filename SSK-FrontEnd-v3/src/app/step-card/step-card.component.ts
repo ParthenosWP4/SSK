@@ -1,10 +1,9 @@
 import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
 import * as _ from 'lodash';
-import {ElastichsearchServicesService} from '../elastichsearch-services.service';
-import {SskServicesService} from '../ssk-services.service';
+import {ElastichsearchService} from '../elastichsearch.service';
+import {SskService} from '../ssk.service';
 import {isUndefined} from 'util';
 import {Router} from '@angular/router';
-
 @Component({
   selector: 'app-step-card',
   templateUrl: './step-card.component.html',
@@ -14,43 +13,27 @@ export class StepCardComponent implements OnInit {
 
   @Input() step: any;
   @Input() scenario: any;
-  public  shortTitle: any
-  public shortDesc: any
-  public scenarioTitle: any
-  //public scenario: any
-
-  constructor(private elastichServices: ElastichsearchServicesService, private sskServices: SskServicesService,  private router: Router) { }
+  public  shortTitle: any;
+  public shortDesc: any;
+  public scenarioTitle: any;
+  constructor(private elastichServices: ElastichsearchService, private sskServices: SskService,  private router: Router) {}
 
   ngOnInit() {
-
     if (this.step.head instanceof Array) {
-      this.step.title = this.step.head[0];
+      this.step.title = this.sskServices.updateText(this.step.head[0], null);
     } else {
-      this.step.title = this.step.head;
+      this.step.title = this.sskServices.updateText(this.step.head, null);
     }
-    this.shortTitle = this.sskServices.shorten(this.step.title, 57);
-
     if ( this.step.desc instanceof Array) {
-          // 'description' is new field
-          this.step.description = this.step.desc[0];
+          this.step.description = this.sskServices.updateText(this.step.desc[0], null);
     } else {
-        this.step.description = this.step.desc;
+        this.step.description = this.sskServices.updateText(this.step.desc, null);
     }
-    const content: any  = this.step.description.content;
-    if (!isUndefined(content)) {
-      this.shortDesc = this.sskServices.shorten(this.step.description, 470);
-    }
-
     if (this.scenario.title instanceof Array) {
-      this.scenarioTitle = this.scenario.title[0];
+      this.scenarioTitle = this.sskServices.updateText(this.scenario.title[0], null);
     } else {
-      this.scenarioTitle = this.scenario.title;
+      this.scenarioTitle = this.sskServices.updateText(this.scenario.title, null);
     }
-
-
-
-
-    //this.step['metadata'] = this.sskServices.addStepMetadata(this.step._id);
 
     const urlTag: Array<any>  = _.remove(this.step.metadata, (tag) => {
         return this.sskServices.isUrl(tag.key);
@@ -64,8 +47,20 @@ export class StepCardComponent implements OnInit {
       }
       this.step.metadata.push(value);
     });
-  }
+    this.step.metadata = _.map(this.step.metadata,  (x)  => {
+      if (this.sskServices.isUrl(x.source) && x.source.includes('tadirah')){
+        x.source = 'Tadirah';
+      }
+      if (isUndefined(x.type) || (x.type).includes('[')) {
+        x.type = 'standard';
+      }
 
+
+      return x;
+    });
+    console.log(this.step.metadata);
+  }
+  
   toStep() {
     this.router.navigate(['/', 'scenarios', this.scenario.id,  this.step.position]);
   }

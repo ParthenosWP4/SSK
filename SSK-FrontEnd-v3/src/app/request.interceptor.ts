@@ -7,12 +7,12 @@ import {Observable} from 'rxjs/Observable';
 
 import {Router} from '@angular/router';
 import {Injectable} from '@angular/core';
-import {SskServicesService} from './ssk-services.service';
+import {SskService} from './ssk.service';
 
 @Injectable()
 export class RequestInterceptor implements HttpInterceptor {
 
-  constructor(private sskServ: SskServicesService,
+  constructor(private sskServ: SskService,
               private router: Router) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {

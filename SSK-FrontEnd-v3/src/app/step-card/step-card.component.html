@@ -1,11 +1,12 @@
 
 <div class="card  mr-3 my-5 ">
   <div class="title">
-    {{shortTitle?.content}}
+    {{step?.title}}
+    <!-- Last updated: {{step?.lastUpdate | amTimeAgo}}-->
   </div>
   <div class="row vdivide">
     <div class="col ">
-      <a [href]="'#/scenarios/' + scenario?.id + '/1'">{{scenarioTitle?.content}}</a>
+      <a [href]="'#/scenarios/' + scenario?.id + '/1'">{{scenarioTitle}}</a>
     </div>
     <div class="col mx-auto">
       <a  class="btn btn-step" [href]="'#/scenarios/' + scenario?.id + '/' + step.position">
@@ -13,10 +14,9 @@
       </a>
     </div>
   </div>
-  <div class="descmt-2 mb-5">
-    {{shortDesc?.content}}
+  <div class="descmt-2 mb-3" [innerHTML]="step?.description">
   </div>
   <p>
-    <button  tooltip ="{{'Type: '  +elt?.type +  ' / Source : '+ elt?.source  }}" type="button" class="btn btn-secondary disabled m-1" *ngFor=" let elt of step?.metadata">{{elt?.key}} {{elt?.abbr}} </button >
-  </p>
+      <span class="tag my-1  mr-2 py-1" [ngClass] ="elt?.type"  *ngFor=" let elt of step?.metadata; let k = index"  tooltip="{{ elt?.type }} {{(elt?.source === undefined )? '': '-' + elt?.source}}" containerClass="tagClass" >{{elt?.key}}{{elt?.abbr}}</span>
+    </p>
 </div>

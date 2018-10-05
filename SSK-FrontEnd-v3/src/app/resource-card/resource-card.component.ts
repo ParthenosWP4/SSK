@@ -1,8 +1,8 @@
 import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
-import {ElastichsearchServicesService} from '../elastichsearch-services.service';
+import {ElastichsearchService} from '../elastichsearch.service';
 import {isObject, isUndefined} from 'util';
-import {SskServicesService} from '../ssk-services.service';
+import {SskService} from '../ssk.service';
 
 
 
@@ -19,7 +19,7 @@ export class ResourceCardComponent implements OnInit {
   icon: string
   imgSrc = '';
 
-  constructor(public sanitizer: DomSanitizer, private elasticServ: ElastichsearchServicesService) { }
+  constructor(public sanitizer: DomSanitizer, private elasticServ: ElastichsearchService) { }
   ngOnInit() {
     this.url =  String(this.res.url);
     if (this.url === '') {

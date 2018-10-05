@@ -1,13 +1,13 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {Params, Router, ActivatedRoute } from '@angular/router';
-import {SskServicesService} from '../ssk-services.service';
+import {SskService} from '../ssk.service';
 import {Observable} from 'rxjs/Observable';
-import {ElastichsearchServicesService} from '../elastichsearch-services.service';
+import {ElastichsearchService} from '../elastichsearch.service';
 import * as _ from 'lodash';
 import {isArray, isUndefined} from 'util';
 import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
 import {isDefined} from '@angular/compiler/src/util';
-
+import {environment} from '../../environments/environment';
 @Component({
   selector: 'app-scenario',
   templateUrl: './scenario.component.html',
@@ -23,6 +23,7 @@ export class ScenarioComponent implements OnInit  {
   idSelectedStep: number;
   timelineTotWidth: number;
   scenarioId: string;
+  title: string;
   timelineTranslate: any;
   tagsLabel: any ;
   border: any = {};
@@ -40,12 +41,12 @@ export class ScenarioComponent implements OnInit  {
   activities = {};
   objects = {};
   spinner = true;
-
+  forImage = environment.forImage;
   constructor(
-    private sskService: SskServicesService,
+    private sskService: SskService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private elasticServices: ElastichsearchServicesService,
+    private elasticServices: ElastichsearchService,
     private sanitizer: DomSanitizer) {
     this.tagsLabel = this.elasticServices.getTags();
     this.left = 0;
@@ -97,11 +98,11 @@ export class ScenarioComponent implements OnInit  {
                       this.scenarioElt = _.find(this.elasticServices.getScenarios(), (item) => {
                         return item.id === this.scenarioId;
                       });
-                      this.scenarioElt.title = (this.scenarioElt.title instanceof Array) ? this.scenarioElt.title[0]
-                        : this.scenarioElt.title;
+                      this.scenarioElt.title = this.sskService.updateText(((this.scenarioElt.title instanceof Array) ? 
+                        this.scenarioElt.title[0] : this.scenarioElt.title), null);
                       this.scenarioElt.descrip = (this.scenarioElt.desc instanceof Array) ? this.scenarioElt.desc[0]
                         : this.scenarioElt.desc;
-                      this.updateText(this.scenarioElt.descrip, 'scenario');
+                      this.scenarioDesc = this.sskService.updateText(this.scenarioElt.descrip, null);
                       this.setScenarioSteps(this.scenarioId);
                       this.setMetadata('scenario');
                       this.sskService.setTitle('SSK - ' + this.scenarioElt.title.content);
@@ -114,9 +115,10 @@ export class ScenarioComponent implements OnInit  {
       this.scenarioElt = _.find(this.elasticServices.getScenarios(), (item) => {
         return item.id === this.scenarioId;
       });
-      this.scenarioElt.title = (this.scenarioElt.title instanceof Array) ? this.scenarioElt.title[0] : this.scenarioElt.title;
+      this.scenarioElt.title = this.sskService.updateText(((this.scenarioElt.title instanceof Array) ? 
+      this.scenarioElt.title[0] : this.scenarioElt.title), null);
       this.scenarioElt.descrip = (this.scenarioElt.desc instanceof Array) ? this.scenarioElt.desc[0] : this.scenarioElt.desc;
-      this.updateText(this.scenarioElt.descrip, 'scenario');
+      this.scenarioDesc = this.sskService.updateText(this.scenarioElt.descrip, null);
       this.setMetadata('scenario');
       this.setScenarioSteps(this.scenarioId);
       this.sskService.setTitle('SSK - ' + this.scenarioElt.title.content);
@@ -124,22 +126,23 @@ export class ScenarioComponent implements OnInit  {
   }
 
   setScenarioSteps(scenarioId: string) {
-    if ( isUndefined(this.elasticServices.getSteps())) {
-      this.elasticServices.getAllSteps();
-      this.scenarioElt.steps = _.sortBy(_.groupBy(this.elasticServices.getSteps(), (item) => {
-        return item.parent === this.scenarioId;
-      }).true, [ 'position']);
-      _.forEach(this.elasticServices.getSteps(), (step) => {
-        step['metadata'] = this.elasticServices.addStepMetadata(step._id);
-      });
-      this.initializeCurrentStep(this.scenarioElt);
-    } else {
-      this.scenarioElt.steps = _.sortBy(_.groupBy(this.elasticServices.getSteps(), (item) => {
-        return item.parent === this.scenarioId;
-      }).true, [ 'position']);
-      this.initializeCurrentStep(this.scenarioElt);
-    }
-
+    setTimeout(() => {
+      if ( isUndefined(this.elasticServices.getSteps())) {
+        this.elasticServices.getAllSteps();
+        this.scenarioElt.steps = _.sortBy(_.groupBy(this.elasticServices.getSteps(), (item) => {
+          return item.parent === this.scenarioId;
+        }).true, [ 'position']);
+        _.forEach(this.elasticServices.getSteps(), (step) => {
+          step['metadata'] = this.elasticServices.addStepMetadata(step._id);
+        });
+        this.initializeCurrentStep(this.scenarioElt);
+      } else {
+        this.scenarioElt.steps = _.sortBy(_.groupBy(this.elasticServices.getAllSteps(), (item) => {
+          return item.parent === this.scenarioId;
+        }).true, [ 'position']);
+        this.initializeCurrentStep(this.scenarioElt);
+      }
+    }, 2000);
 
   }
 
@@ -157,6 +160,7 @@ export class ScenarioComponent implements OnInit  {
   }
 
   initializeCurrentStep(scenario: any) {
+   
     this.timelines = $('.cd-horizontal-timeline');
     this.timelineTotWidth = this.timelines.width();
     this.left = this.timelineTotWidth / 7;
@@ -169,11 +173,12 @@ export class ScenarioComponent implements OnInit  {
     }
     this.timelineTranslate = 0;
     this.initTimeline(this.timelines);
-    if (scenario['steps']) {
+    if (scenario['steps'].length !==0) {
       this.selectedStep = scenario.steps[this.selectedStep.id - 1];
       this.selectedStep.ref = this.selectedStep._id;
       this.updateContent(this.selectedStep, this.selectedStep.position, null);
     }
+  
   }
 
 
@@ -234,9 +239,9 @@ export class ScenarioComponent implements OnInit  {
 
   setStepTitleAndDescription() {
     if (this.selectedStep.head instanceof Array) {
-      this.selectedStep.title = this.selectedStep.head[0];
+      this.selectedStep.title = this.sskService.updateText(this.selectedStep.head[0], null);
     } else {
-      this.selectedStep.title = this.selectedStep.head;
+      this.selectedStep.title = this.sskService.updateText(this.selectedStep.head,null);
     }
     if ( this.selectedStep.desc instanceof Array) {
       // 'description' is a new field
@@ -244,7 +249,7 @@ export class ScenarioComponent implements OnInit  {
     } else {
       this.selectedStep.description = this.selectedStep.desc;
     }
-    this.updateText(this.selectedStep['description'], 'step');
+    this.stepDesc = this.sskService.updateText(this.selectedStep['description'], 'step');
   }
 
   updateContent(step: any, index: number, event: any) {
@@ -317,14 +322,14 @@ export class ScenarioComponent implements OnInit  {
 
 getStepTitle(step: any) {
   if (step.head instanceof Array) {
-    return step.head[0].content;
+    return this.sskService.updateText(step.head[0], null);
   } else {
-    return step.head.content;
+    return this.sskService.updateText(step.head, null);
   }
 }
 
   updateText(desc: any, type: string) {
-    let text = ''
+    let text = '';
     if ( desc['content'] && isArray(desc['content'])) {
       _.forEach(desc['content'], (part) => {
         if (typeof part === 'object') {
@@ -342,12 +347,12 @@ getStepTitle(step: any) {
     } else {
       text = desc['content'];
     }
-
     if ( type === 'scenario') {
       this.scenarioDesc = text;
     } else {
       this.stepDesc = text;
     }
+    
   }
 
   setLink(part: object) {
