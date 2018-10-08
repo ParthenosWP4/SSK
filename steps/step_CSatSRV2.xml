@@ -55,7 +55,6 @@
                   <term key="FOAF" source="standard_list" type="standard"/>
                   <term key="GND" source="standard_list" type="standard"/>
                   <term key="VIAF" source="standard_list" type="standard"/>
-                  <term key="CD" source="WP3Wizard" type="policies"/>
                </desc>
             </event>
          </listEvent>

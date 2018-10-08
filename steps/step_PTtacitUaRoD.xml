@@ -44,7 +44,6 @@
                   <term key="Collaboration"
                         source="http://tadirah.dariah.eu/"
                         type="activity"/>
-                  <term key="CD" source="WP3Wizard" type="policies"/>
                </desc>
                <linkGrp type="generalResources">
                   <ref source="XML" target="https://www.w3.org/XML/" type="code"/>

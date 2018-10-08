@@ -55,7 +55,6 @@
                   <term key="discovering"
                         source="http://tadirah.dariah.eu/"
                         type="activity"/>
-                  <term key="CD" source="WP3Wizard" type="policies"/>
                </desc>
                <linkGrp type="generalResources">
                   <ref source="Mirabile" target="http://www.mirabileweb.it/" type="code">

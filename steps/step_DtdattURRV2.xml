@@ -43,7 +43,6 @@
                   <term key="Organizing" source="http://tadirah.dariah.eu/" type="activity"/>
                   <term key="XML" source="standard_list" type="standard"/>
                   <term key="CIDOC-CRM" source="standard_list" type="standard"/>
-                  <term key="CD" source="WP3Wizard" type="policies"/>
                </desc>
             </event>
          </listEvent>

@@ -55,7 +55,6 @@
                   <term key="XML" source="standard_list" type="standard"/>
                   <term key="TEI" source="standard_list" type="standard"/>
                   <term key="CIDOC-CRM" source="standard_list" type="standard"/>
-                  <term key="CD" source="WP3Wizard" type="policies"/>
                </desc>
                <linkGrp type="generalResources">
                   <ref source="HAL" target="hal.inria.fr" type="code"/>

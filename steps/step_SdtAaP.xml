@@ -55,7 +55,7 @@
                   <term key="TEI" source="standard_list" type="standard"/>
                   <term key="CIDOC-CRM" source="standard_list" type="standard"/>
                   <term key="sharing" source="http://tadirah.dariah.eu/" type="activity"/>
-                  <term key="CD" source="WP3Wizard" type="policies"/>
+                  <!--<term key="CD" source="WP3Wizard" type="policies"/>-->
                </desc>
                <linkGrp type="generalResources">
                   <ref source="zotero" target="ZABRV5VD" type="spec">

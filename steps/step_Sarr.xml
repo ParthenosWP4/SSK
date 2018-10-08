@@ -41,7 +41,6 @@
                <head type="stepTitle" xml:lang="en">Select appropriate reference resource</head>
                <desc type="terms" xml:lang="en">
                   <term key="Gathering" source="http://tadirah.dariah.eu/" type="activity"/>
-                  <term key="CD" source="WP3Wizard" type="policies"/>
                </desc>
                <linkGrp type="generalResources">
                   <ref source="EAC-CPF"

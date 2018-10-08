@@ -42,7 +42,7 @@
                   <term key="Preservation"
                         source="http://tadirah.dariah.eu/"
                         type="activity"/>
-                  <term key="CD" source="WP3Wizard" type="policies"/>
+                  <!--<term key="CD" source="WP3Wizard" type="policies"/>-->
                </desc>
                <linkGrp type="generalResources">
                   <ref source="D4SCIENCE" target="https://www.d4science.org/" type="code"/>
