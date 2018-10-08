@@ -5,3 +5,4 @@ spec/out
 TeiMeta.app
 diagnostics
 testDiag
+doc/_build
