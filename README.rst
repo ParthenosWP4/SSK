@@ -1,4 +1,4 @@
-Development of the Standarization Survival Kit (SSK)
+Development of the Standardization Survival Kit (SSK)
 ====================================================
 .. In included files, internal links
 .. have to give the path from the

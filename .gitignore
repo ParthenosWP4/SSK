@@ -7,3 +7,5 @@ diagnostics
 testDiag
 doc/_build
 sskEnv
+spec/SSKdoc.md
+spec/SSKdoc2.rst
