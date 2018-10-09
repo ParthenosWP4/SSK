@@ -1,5 +1,7 @@
-The SSK data model (TEI) in short
-=================================
+.. _reTEI:
+
+The SSK data model (TEI)
+========================
 
 The SSK offers researchers needing standardized methods and resources
 complete frameworks to carry out their project, in Arts and Humanities
@@ -7,6 +9,22 @@ and Heritage science. It takes the form of step by step research
 scenarios where the use of standards is clearly identified. Theses
 scenarios are divided into different steps, implying specific tasks.
 Each step contains a set of bibliographical resources.
+
+TEI: the underlying data model
+------------------------------
+
+The underlying data model of the SSK itself respects a standard, the
+Text Encoding Initiative, and is publicly available [2]_. Each scenario
+and each step is encoded in TEI documents that are linked together with
+referencing mechanisms. This choice was made in order to ensure that the
+scenarios and the steps can be easily extended, reused and customized.
+The data model allows scenario creators to modify the structure of their
+research scenarios on the fly, by creating, removing or reordering
+steps. As steps are considered as autonomous objects in the
+architecture, they can be used in several scenarios. Customisation
+mechanisms are added to make sure that the information displayed is
+linked to the context of the scenarios as much as possible, namely
+according to disciplines, research objects and techniques.
 
 Main elements
 -------------
