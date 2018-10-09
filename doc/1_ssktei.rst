@@ -1,5 +1,5 @@
-The SSK TEI in short
-====================
+The SSK data model (TEI) in short
+=================================
 
 The SSK offers researchers needing standardized methods and resources
 complete frameworks to carry out their project, in Arts and Humanities

@@ -4,10 +4,7 @@
    contain the root `toctree` directive.
 
 The Standardization Survival Kit
-==================================================
-
-User Documentation
-^^^^^^^^^^^^^^^^^^^
+================================
 
 .. toctree::
    :maxdepth: 2

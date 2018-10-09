@@ -1,5 +1,5 @@
-Development of the Standardization Survival Kit (SSK)
-====================================================
+The SSK on Github
+=================
 .. In included files, internal links
 .. have to give the path from the
 .. file where the inclusion command is
