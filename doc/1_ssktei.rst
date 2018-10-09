@@ -12,7 +12,7 @@ scenarios are divided into different steps, implying specific tasks.
 Each step contains a set of bibliographical resources.
 
 TEI: the underlying data model
-------------------------------
+==============================
 
 The underlying data model of the SSK itself respects a standard, the
 Text Encoding Initiative, and is publicly available [2]_. Each scenario
