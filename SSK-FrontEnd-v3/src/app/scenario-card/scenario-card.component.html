@@ -21,7 +21,7 @@
       </p>
   </div>
 </div>-->
-<div class="card  mr-3 my-5  px-5 pt-4">
+<div class="card  mr-3 my-5  ">
         <div class="row ">
             <div class=" col">
                     <!--<img  [src]= "forImage + '/assets/images/star.svg'" class="pull-right" alt="Responsive image" >-->
@@ -57,9 +57,8 @@
                             
                             <span  class="pop" data-container="body" data-toggle="popover" data-placement="top"  triggers="click"
                             [attr.data-content]='"<div class=\"row\"><div class=\"col-3\"><img  src= "+forImage + "/assets/images/usertooltip.svg class=\"pull-right img-fluid main\" ></div><div class=\"col author\">
-                                    "+author.persName+" <br> <span class=\"affiliation\">"+ author.affiliation+"</span></div><div class=\"col-1\"><img  src= "+forImage + "/assets/images/iDicon.svg class=\"pull-right \" ></div></div>
-                                    <div class=\"row\"><div class=\"col-3\"></div><div class=\"col contribution\">Number of contributions:<br>X scenarios, Y steps</div></div></div>
-                                    <div class=\"row\"><div class=\"col\"><span class=\"pull-right\"><a  disabled (click)=\"redirect(\"resources\")\">see profile</a></sapn></div></div>"'
+                                    "+author.persName+" <br> <span class=\"affiliation\">"+ author.affiliation+"</span></div></div>
+                                    </div>"'
                                 data-original-title="" title="">
                                 <span *ngIf = "j <= (scenario?.author?.length - 1) && j>0">,</span>
                                 {{author?.persName}}
@@ -95,5 +94,10 @@
     </div>     
 </div>
 
-
+<!--
+    <div class=\"row\"><div class=\"col-3\"><img  src= "+forImage + "/assets/images/usertooltip.svg class=\"pull-right img-fluid main\" ></div><div class=\"col author\">
+                                    "+author.persName+" <br> <span class=\"affiliation\">"+ author.affiliation+"</span></div><div class=\"col-1\"><img  src= "+forImage + "/assets/images/iDicon.svg class=\"pull-right \" ></div></div>
+                                    <div class=\"row\"><div class=\"col-3\"></div><div class=\"col contribution\">Number of contributions:<br>X scenarios, Y steps</div></div></div>
+                                    <div class=\"row\"><div class=\"col\"><span class=\"pull-right\"><a  disabled (click)=\"redirect(\"resources\")\">see profile</a></sapn></div></div>
+-->
 

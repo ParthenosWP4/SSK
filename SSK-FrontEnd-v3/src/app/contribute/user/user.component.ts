@@ -7,7 +7,7 @@ import {SskService} from '../../ssk.service';
 })
 export class UserComponent implements OnInit {
 
-  title =  'Reseacher page';
+  title =  'Researcher page';
   constructor(private sskServ: SskService) { }
 
   ngOnInit() {

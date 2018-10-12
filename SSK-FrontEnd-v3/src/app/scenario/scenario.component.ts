@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit, ChangeDetectorRef} from '@angular/core';
 import {Params, Router, ActivatedRoute } from '@angular/router';
 import {SskService} from '../ssk.service';
 import {Observable} from 'rxjs/Observable';
@@ -11,7 +11,7 @@ import {environment} from '../../environments/environment';
 @Component({
   selector: 'app-scenario',
   templateUrl: './scenario.component.html',
-  styleUrls: ['./scenario.component.scss']
+  styleUrls: ['./scenario.component.scss'],
 })
 export class ScenarioComponent implements OnInit  {
 
@@ -47,7 +47,8 @@ export class ScenarioComponent implements OnInit  {
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private elasticServices: ElastichsearchService,
-    private sanitizer: DomSanitizer) {
+    private sanitizer: DomSanitizer,
+    private cdr: ChangeDetectorRef) {
     this.tagsLabel = this.elasticServices.getTags();
     this.left = 0;
     this.timelineTotWidth = 0;
@@ -55,7 +56,6 @@ export class ScenarioComponent implements OnInit  {
     this.scenarioElt = {};
     this.border.class = 'col-2';
     this.border.border = '1px dashed #979797';
-
   }
 
 
@@ -126,7 +126,7 @@ export class ScenarioComponent implements OnInit  {
   }
 
   setScenarioSteps(scenarioId: string) {
-    setTimeout(() => {
+   setTimeout(() => {
       if ( isUndefined(this.elasticServices.getSteps())) {
         this.elasticServices.getAllSteps();
         this.scenarioElt.steps = _.sortBy(_.groupBy(this.elasticServices.getSteps(), (item) => {
@@ -136,11 +136,13 @@ export class ScenarioComponent implements OnInit  {
           step['metadata'] = this.elasticServices.addStepMetadata(step._id);
         });
         this.initializeCurrentStep(this.scenarioElt);
+        this.cdr.detectChanges();
       } else {
-        this.scenarioElt.steps = _.sortBy(_.groupBy(this.elasticServices.getAllSteps(), (item) => {
+        this.scenarioElt.steps = _.sortBy(_.groupBy(this.elasticServices.getSteps(), (item) => {
           return item.parent === this.scenarioId;
         }).true, [ 'position']);
         this.initializeCurrentStep(this.scenarioElt);
+        //this.cdr.detectChanges();
       }
     }, 2000);
 
@@ -160,7 +162,6 @@ export class ScenarioComponent implements OnInit  {
   }
 
   initializeCurrentStep(scenario: any) {
-   
     this.timelines = $('.cd-horizontal-timeline');
     this.timelineTotWidth = this.timelines.width();
     this.left = this.timelineTotWidth / 7;
@@ -173,12 +174,11 @@ export class ScenarioComponent implements OnInit  {
     }
     this.timelineTranslate = 0;
     this.initTimeline(this.timelines);
-    if (scenario['steps'].length !==0) {
+    if (scenario['steps'].length !== 0) {
       this.selectedStep = scenario.steps[this.selectedStep.id - 1];
       this.selectedStep.ref = this.selectedStep._id;
       this.updateContent(this.selectedStep, this.selectedStep.position, null);
     }
-  
   }
 
 

@@ -26,9 +26,13 @@ export class ElastichsearchService {
   private params: any;
   private disciplines: any;
   private activities: any;
+  private activitiesForCount: any;
+  private activitiesKeys: any;
+  private searchData: any;
   private techniques: any;
   private objects: any;
   private standards: any;
+  private standardsForCount: any;
   private tags = ['disciplines', 'object', 'techniques', 'activities'] ;
   private regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
   itemsCount: any;
@@ -36,6 +40,12 @@ export class ElastichsearchService {
   glossaryData: any;
   scenariosTemp: any[];
   scenarioDetails: any;
+  group: string;
+  public searchResult: any;
+  private researchStarted = false;
+  private resourceResults: any;
+  private scenarioResults: any;
+  private stepResults: any;
 
 
   constructor(private http: HttpClient) {
@@ -82,7 +92,8 @@ export class ElastichsearchService {
     return this.http.get(this.sskBackendEndpoint + 'steps/metadata', this.options);
   }
 
-  setSearchData() {
+  setSearchData(data: any) {
+    this.searchData = data;
 
     /*this.setActivities(_.uniq(_.map(Object.keys(_.groupBy(_.flattenDeep(_.map(_.map(this.getStepsMetadata(), '_source'), 'activity'))
       , 'key')), v => this.tagSanitize(v.toLowerCase()).replace(/[0-9]/g, '').replace('_', '').trim())));
@@ -97,6 +108,9 @@ export class ElastichsearchService {
       'standards'),  function(n) { return !isUndefined(n); })), 'abbr')), Object.keys(_.groupBy(_.flattenDeep(_.remove(_.map(
       _.map(this.getStepsMetadata(), '_source'), 'standards'), function(n) { return !isUndefined(n); })), 'key'))));
   */
+  }
+  getSearchData() {
+    return this.searchData;
   }
 
   tagSanitize(tag: string) {
@@ -172,6 +186,11 @@ export class ElastichsearchService {
    // return this.http.get ('https://cors-anywhere.herokuapp.com/' + environment.standardEndpoint, this.options);
    this.setOptions( null);
     return this.http.get(this.sskBackendEndpoint + 'standard/all', this.options);
+  }
+
+  searchFromServer(type, tag: string) {
+    this.setOptions( null);
+    return this.http.get(this.sskBackendEndpoint + '_search/' + type + '/' + tag , this.options);
   }
 
 
@@ -265,7 +284,6 @@ export class ElastichsearchService {
       () => {
           this.getAllResources();
       });
-      return this.getSteps();
   }
 
 getGlossaryTerms() {
@@ -275,6 +293,29 @@ getGlossaryTerms() {
         switch (obj.toLowerCase()) {
           case 'activities':
             this.setActivities(result);
+            this.setActivitiesKeys(_.map(this.getActivities(), 'head'));
+            let items = _.map(_.flattenDeep(_.zip(_.flattenDeep(_.map(this.getActivities(), 'head')),
+            _.map(_.map(this.getActivities(), 'list'), 'item' )) ),  (elt) => {
+              if (typeof elt === 'string') {
+                 this.group = elt;
+                }else {
+                 elt['group'] = this.group;
+              return elt;
+            }
+          });
+          items = _.filter(items, (o)  =>  {return typeof o !== 'undefined';} );
+          this.setActivitiesForCount(items);
+          this.setActivities(_.groupBy(items, 'group'));
+          this.setActivities(_.map(_.toPairs(this.getActivities()), d => _.fromPairs([d])));
+              /* this.setActivities(_.filter(this.getActivities(), (o)  =>  { return typeof o !== undefined;} ));
+         
+            this.setActivitiesForCount(this.getActivities());
+            _.map(this.getActivitiesForCount(), item => {
+              if (item.term.includes('_')) {
+                   item.term = _.join(item.term.split('_'), ' ');
+              }
+            });
+            ;*/
             break;
           case 'object':
             this.setObjects(result);
@@ -297,6 +338,7 @@ getAllStandards() {
    this.loadStandardsFromServer().subscribe(
     result => {
       this.setStandards(result['standards']);
+      this.setStandardForCount(this.getStandards());
     },
     error => {},
     () => {
@@ -315,6 +357,9 @@ getAllStandards() {
       }
     );
   }
+
+
+  
 
 
 
@@ -466,6 +511,61 @@ getAllStandards() {
 
   setResultCount(elt: number ) {
     this.resultCount = elt;
+  }
+
+  getActivitiesForCount() {
+    return this.activitiesForCount;
+  }
+
+  setActivitiesForCount(activites: any ) {
+    this.activitiesForCount = activites;
+  }
+
+  getActivitiesKeys() {
+    return this.activitiesKeys;
+  }
+
+  setActivitiesKeys(keys: any ) {
+    this.activitiesKeys = keys;
+  }
+
+  getStandardForCount() {
+    return this.standardsForCount;
+  }
+
+  setStandardForCount(standards: any ) {
+    this.standardsForCount = standards;
+  }
+
+  getResearchStarted() {
+    return this.researchStarted;
+  }
+
+  setResearchStarted(item: boolean ) {
+    this.researchStarted = item;
+  }
+
+  getResourceResults() {
+    return this.resourceResults;
+  }
+
+  setResourceResults(elts: any) {
+   this.resourceResults = elts;
+  }
+
+   getScenarioResults() {
+     return this.scenarioResults;
+   }
+
+   setScenarioResults(elts: any) {
+    this.scenarioResults = elts;
+  }
+  getStepResults () {
+    return this.stepResults;
+  }
+
+  setStepResults (elts: any) {
+     this.stepResults = elts;
   }
 
 

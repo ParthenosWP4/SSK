@@ -31,6 +31,8 @@
 .form-check-label{
     color: $color-40;
     font-family: $avenir-next;
+    text-transform: capitalize;
+    font-size: 0.875rem;
 }
 
 .elt-tab {
@@ -77,5 +79,16 @@
   border-radius: 5px;
   background-color: rgba(0,0,0,.5);
   -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+span.tagTitle{
+  background-image: url("../../assets/images/questions-circular-button.svg");
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+span.tagTitle:hover{
+  background-image: url("../../assets/images/QuestionDark.svg");
+  background-repeat: no-repeat;
 }
 

@@ -7,6 +7,10 @@
   border-radius: 5px;
   background-color: $color-3 !important;
   margin-top: 5px;
+  padding-top: 1.875rem;
+padding-left: 2.5rem;
+padding-right: 2.5rem;
+padding-bottom: 0.9375rem;
   //cursor: pointer;
   .author{
     color: $color-48;
@@ -23,16 +27,17 @@
     font-family: $roboto-light;
     font-size: 0.9rem;
   }
-  img.img-fluid{
-    box-shadow: 1px 1px 7px 0 rgba(188,201,212,0.50);
-    border-radius: 6px;
-    cursor: pointer;
+  img{
+   
   }
 }
 .fit-image{
   width: 150px;
   object-fit: cover;
   height: 92px; /* only if you want fixed height */
+  box-shadow: 1px 1px 7px 0 rgba(188,201,212,0.50);
+  border-radius: 6px;
+  cursor: pointer;
   }
 .card-header{
   font-family: $raleway-medium !important;
@@ -99,25 +104,26 @@ p  span{
 }
 
 .text-left{
-  
   text-transform: uppercase;
   a{
     text-decoration: none;
-   
     color: $color-47 !important;
-    font-weight: bolder;
   }
 }
 .desc-collapse:after {
-    font-family: 'FontAwesome';  
-    content: "\f068";
+    //font-family: 'FontAwesome';  
+    content: "-";
     float: left; 
+    font-size: 1.5rem;
+    line-height: 1.2rem;
 }
 .desc-collapse.collapsed:after {
     /* symbol for "collapsed" panels */
-    font-family: 'FontAwesome';  
-    content: "\f067"; 
+   // font-family: 'FontAwesome';  
+    content: "+"; 
     float: left; 
+    font-size: 1.5rem;
+    line-height: 1.2rem;
 }
 .line{ border-top: 1px solid $color-46;}
 

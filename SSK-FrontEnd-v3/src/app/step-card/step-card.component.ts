@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ChangeDetectorRef, ChangeDetectionStrategy} from '@angular/core';
 import * as _ from 'lodash';
 import {ElastichsearchService} from '../elastichsearch.service';
 import {SskService} from '../ssk.service';
@@ -7,7 +7,8 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'app-step-card',
   templateUrl: './step-card.component.html',
-  styleUrls: ['./step-card.component.scss']
+  styleUrls: ['./step-card.component.scss'],
+  //changeDetection: ChangeDetectionStrategy.Default
 })
 export class StepCardComponent implements OnInit {
 
@@ -16,7 +17,11 @@ export class StepCardComponent implements OnInit {
   public  shortTitle: any;
   public shortDesc: any;
   public scenarioTitle: any;
-  constructor(private elastichServices: ElastichsearchService, private sskServices: SskService,  private router: Router) {}
+  public activities: any;
+  public standards: any;
+ 
+  constructor(private elastichServices: ElastichsearchService, private sskServices: SskService,
+              private router: Router, private ref: ChangeDetectorRef) {}
 
   ngOnInit() {
     if (this.step.head instanceof Array) {
@@ -38,6 +43,7 @@ export class StepCardComponent implements OnInit {
     const urlTag: Array<any>  = _.remove(this.step.metadata, (tag) => {
         return this.sskServices.isUrl(tag.key);
     });
+
     _.forEach(urlTag, (value) => {
       value['url'] = value.key;
       value.key = value.url.substr(value.url.lastIndexOf('/') + 1, value.url.length);
@@ -47,25 +53,20 @@ export class StepCardComponent implements OnInit {
       }
       this.step.metadata.push(value);
     });
-    this.step.metadata = _.map(this.step.metadata,  (x)  => {
-      if (this.sskServices.isUrl(x.source) && x.source.includes('tadirah')){
+
+   /* this.step.metadata = _.map(this.step.metadata,  (x)  => {
+      if (this.sskServices.isUrl(x.source) && x.source.includes('tadirah')) {
         x.source = 'Tadirah';
       }
       if (isUndefined(x.type) || (x.type).includes('[')) {
         x.type = 'standard';
       }
-
-
       return x;
-    });
-    console.log(this.step.metadata);
-  }
+    });*/
+    //this.ref.detectChanges();
+   }
   
   toStep() {
     this.router.navigate(['/', 'scenarios', this.scenario.id,  this.step.position]);
   }
-
-
-
-
 }

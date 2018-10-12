@@ -40,7 +40,7 @@
                     <a class="dropdown-item "  *ngFor="let vocab of vocabulariesItems"  (click)="toGlossary(vocab.link)" >{{vocab?.item}}</a>
                   </div>
                 </div>
-              <a  *ngFor=" let item of learnMoreItems" class="dropdown-item " [routerLink] = "item.link" (mouseover) = fireEvent2($event)  >&nbsp;{{item.item}}</a>
+              <a  *ngFor=" let item of learnMoreItems" class="dropdown-item " [href] = "item.link" (mouseover) = fireEvent2($event)  [target]= "(item.item === 'Documentation')? '_blank': ''" >&nbsp;{{item.item}}</a>
             </div>
       </li>
       <li class="nav-item ">
@@ -64,21 +64,22 @@
   <router-outlet></router-outlet>
 </div>
 <footer class="footer container-fluid ">
-    <div class="row py-lg-3 ml-lg-5">
+    <div class="row py-lg-3 ml-lg-5  ml-sm-0">
         <div class="col-lg-5 ">
-          <div class="title col-lg-6  ml-lg-1">
+          <div class="title col-lg-6  ml-lg-3">
               The SSK has been developped as part of the PARTHENOS project, within the WP4 on standardization. 
           </div>
-          <div class="row  ml-lg-1 mt-lg-2">
-              <div class="col-lg-3">
+          <div class="w-100"></div>
+          <div class=" col-lg-6  ml-lg-3">
+              <div class="col-2 ml-lg-2 ml-sm-4">
                   <img [src]= "forImage + '/assets/images/euflag.svg'" class="" alt="EU"/>
                  
               </div>
-              <div class="col-lg-3">
+              <div class="col-3">
                   <img [src]= "forImage + '/assets/images/cc.svg'" class="" alt="CC"/>
                   <img [src]= "forImage + '/assets/images/by.svg'" class="" alt="BY"/>
               </div>
-          </div>
+        </div>
         </div>
         <div class="col-lg-7">
             <div class="row">
@@ -120,10 +121,13 @@
        </div>
     </div>
 </footer>
-<cookie-law name="sskCookieLaw" id=sskCookieLaw >
+<div class="col-sm-6">
+  <cookie-law name="sskCookieLaw" id=sskCookieLaw>
     Dear SSK users, we use cookies on this website to help operate our site and for analytics purposes. 
     For more on how we use cookies and your cookie choices, go <a href="#/cookie-policy">here</a> ! 
     By continuing to use our services, you are giving us consent to use cookies.
 </cookie-law>
+
+</div>
 
 

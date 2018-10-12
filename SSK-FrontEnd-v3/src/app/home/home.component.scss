@@ -5,14 +5,14 @@
   background: transparent url(#{$imgpath}) $repeat $position;
 }
 .home{
-    background-color: $color-20;
+    background-color: $color-41;
 
 }
 
 .home-text1{
   font-family: $roboto-light;
   color: $color-40;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .btn-secondary{
@@ -24,8 +24,8 @@
 
 
 .home-second{
-  background-color :$color-41;
-  color: $color-42;
+  background-color :$color-45;
+  color: $color-40;
   .title{
     font-size: 2em;
     font-family: $avenir_next;
@@ -41,14 +41,13 @@
     line-height: 1.75em;
   }
   .in_img{
-    background-color: $color-43;
+    background-color: $color-54;
     border-radius: 50%;
     width: 10rem;
     height:10rem;
   }
   .in_text{
     width: 10rem;
-    color: $color-40;
     font-size: 1.5em;
     font-family: $avenir_next;
     font-weight: 900;
@@ -63,7 +62,6 @@
   }
   .last{
     font-size: 1em;
-    color: $color-42;
     font-family: $avenir_next;
     a{
       color:$color-44;
@@ -71,15 +69,15 @@
   }
 }
 .home-third{
-  
-  background-color: $color-45;
+  color: $color-40 !important;
+  background-color: $color-41;
   img{
-    //box-shadow: 0 5px 50px 0 rgba(142,142,142,0.50);
     width: inherit;
   }
   .title{
     font-size: 2em ;
     font-family: $avenir_next ;
+   
   }
   .desc{
     font-size: 1em ;
@@ -89,16 +87,18 @@
 }
 
 .home-fourth{
-  background-color: $color-41;
-  color: $color-42;
+  background-color: $color-45;
+  color: $color-40 !important;
   font-family: $roboto-regular;
   img{
     //box-shadow: 0 5px 50px 0 rgba(142,142,142,0.50);
     width: inherit;
+    height: 135px;
   }
   .title{
     font-size: 2em ;
     font-family: $avenir_next ;
+    
   }
   .desc{
     font-size: 1em ;
@@ -107,6 +107,11 @@
   li{
     list-style: none;
     font-size: 1.125em;
+  }
+  .part-text{
+    font-family: $roboto-regular;
+    font-size: 0.75rem;
+    color: $color-48;
   }
 }
 
@@ -164,6 +169,11 @@ hr{
     margin-left: 1rem;
   }
 }
+
+.home-btn:hover{
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+}
 .home-btn.scenarios{
    border-color: $color-22;
    color:  $color-22;
@@ -189,11 +199,16 @@ hr{
   background-color: $color-40;
   border-radius: 2em;
   color: $color-3;
-  font-family: $avenir_next;
+  font-family: $avenir_next_ul;
   font-size: 0.875em;
-  font-weight: 600;
+  font-weight: bold;
   text-transform: uppercase;
   line-height: 2.3em;
   cursor: pointer;
+}
+
+.github:hover{
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
 }
 

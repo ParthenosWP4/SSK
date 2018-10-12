@@ -50,6 +50,9 @@ public class ElasticGetDataServices {
 	@Value("${elasticsearch.index}")
 	private String sskIndex;
 	
+	@Value("${tag_search_query}")
+	private String tagQuery;
+	
 	@Autowired
 	private SSKServices sskServices;
 	
@@ -156,11 +159,8 @@ public class ElasticGetDataServices {
 						content.getAsJsonObject().addProperty("date", json.get("date").toString() );
 						enter = false;
 					}
-					
 				}
 			}
-			
-			
 		}
 		if(!enter){
 			return content;
@@ -319,6 +319,26 @@ public class ElasticGetDataServices {
 	 */
 	public boolean metadataExists(String type, String idParent){
 		return false;
+	}
+	
+	
+	public JsonObject searchInSteps(String tag, String type){
+		String queryString = tagQuery.replace("tag", tag).replace("type_var", type);
+		sskIndex = "ssk/_doc/_search";
+		JsonObject result = new JsonObject();
+		entity = new HttpEntity<>(queryString, requestHeadersParams.getHeaders());
+		ResponseEntity<String> response = this.restTemplate.exchange( this.elasticServices.getElasticSearchPort() + "/" + sskIndex, HttpMethod.POST, entity, String.class);
+		if (response.getStatusCode().is2xxSuccessful()) {
+			JsonObject param = sskServices.getParser().parse(response.getBody()).getAsJsonObject().get("hits").getAsJsonObject();
+			result.addProperty("total", Integer.valueOf(param.get("total").getAsString()));
+			JsonArray steps = param.getAsJsonArray("hits");
+			result.add("data", steps);
+			result.addProperty("type", type);
+			return result;
+		}
+		else{
+			return null;
+		}
 	}
 	
 }

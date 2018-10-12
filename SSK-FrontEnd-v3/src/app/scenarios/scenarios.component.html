@@ -1,5 +1,5 @@
 <div class="">
-  <div class="row  home py-lg-3 ">
+  <div class="row  home py-lg-5">
    <!-- <div class="col text-center">
       <span class="scenarios-title">Explore scenarios, steps or resources</span>
       <div class="input-group ">
@@ -30,8 +30,12 @@
             </div>
           </div>
       </div>
+      
       <div class="home row">
-          <div class=" col-lg-3  mt-3">
+          <div class="col mx-auto text-center m-lg-5"  *ngIf="spinner">
+              <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+          </div>
+          <div class=" col-lg-3  mt-3" *ngIf="!spinner">
               <app-search-tab [data] = "searchData" ></app-search-tab>
             </div>
       
@@ -44,7 +48,7 @@
         <div class="col-lg-4 text-center">
            Your filters :-->
           <span *ngFor = "let elt of filters" class="badge badge-default mx-lg-1"><i class="fa fa-times" aria-hidden="true" (click)="remove(elt)"></i>
-{{elt}}</span>
+{{elt?.tag}}</span>
         <!-- </div>
         <div class="col ">
            <span id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

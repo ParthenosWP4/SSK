@@ -96,6 +96,12 @@
     margin-right : 1em;
 
   }
+  .cookie-law .cookie-law-wrapper{
+    padding: 0rem 17rem;
+  }
+  .error-page{
+    top: -20rem;
+  }
 }
 
 @media (min-width: 1440px){
@@ -103,6 +109,12 @@
     margin-left : 1.2em;
     margin-right : 1.2em;
 
+  }
+  .cookie-law .cookie-law-wrapper{
+    padding: 0rem 17rem;
+  }
+  .error-page{
+    top: -20rem;
   }
 }
 
@@ -115,6 +127,25 @@
     margin-right : .2em;
     font-size: unset !important;
   }
+  .cookie-law .cookie-law-wrapper{
+    padding: 0rem 17rem;
+  }
+
+}
+
+@media (min-width: 1814px) {
+  .container-fluid{
+    width: 75%;
+  }
+  .navbar li {
+    margin-left : .1em;
+    margin-right : .2em;
+    font-size: unset !important;
+  }
+  .cookie-law .cookie-law-wrapper{
+    padding: 0rem 17rem;
+  }
+
 }
 
 
@@ -148,7 +179,9 @@ footer {
   .last{
     background-color: $color-6;
   }
-  
+  a:not([href]):not([tabindex]):hover{
+    text-decoration: underline;
+  }
 }
 .log-in{
   color: $color-3 !important;

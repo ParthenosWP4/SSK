@@ -8,8 +8,8 @@ import {SskService} from '../ssk.service';
 })
 export class ErrorpageComponent implements OnInit {
 
-   title: string
-   message: string
+   title: string;
+   message: string;
   error = true;
   constructor(private sskServ: SskService) { }
 

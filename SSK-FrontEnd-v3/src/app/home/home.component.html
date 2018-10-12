@@ -18,11 +18,11 @@
           </button>
           <button type="button" class="btn  my-5 btn-lg btn-block home-btn steps" (click)="redirect('new-scenario')">
               <i class="ic ssk-create 2x pull-left" aria-hidden="true" ></i>
-              <span>Add new scenario</span>
+              <span>Add a new scenario</span>
           </button>
           <button type="button" class="btn  my-5  btn-lg btn-block home-btn resources"  (click)="redirect('documentation')"> 
               <i class="ic ssk-bookopen pull-left" aria-hidden="true"></i>
-              <span>About SSK</span>
+              <span>About the SSK</span>
           </button>
             
         </div>
@@ -41,27 +41,27 @@
   </div>
 </div>
 <div class="row">
-      <div class="col-2 offset-lg-2  ">
-          <div class="in_img d-flex mb-lg-4">
+      <div class="col-lg-2 offset-lg-2  col-sm-12 ">
+          <div class="in_img d-flex mb-lg-4 mx-auto">
               <img [src]= "forImage + '/assets/images/hands.svg'" class="mx-auto hands" />
           </div>
-          <div class="in_text text-center">
+          <div class="in_text text-center mx-auto">
               Consensus
           </div>
         </div>
-        <div class="col-2 offset-lg-1">
-            <div class=" in_img d-flex mb-lg-4">
+        <div class="col-lg-2 offset-lg-1 col-sm-12">
+            <div class=" in_img d-flex mb-lg-4 mx-auto">
                 <img [src]= "forImage + '/assets/images/learning.svg'" class="mx-auto" />
           </div>
-          <div class="in_text text-center">
+          <div class="in_text text-center mx-auto">
               Openness
           </div>
         </div>
-        <div class="col-2 offset-lg-1">
-          <div class=" in_img d-flex mb-lg-4">
+        <div class="col-lg-2 offset-lg-1 col-sm-12">
+          <div class=" in_img d-flex mb-lg-4 mx-auto">
             <img [src]= "forImage + '/assets/images/maintenance.svg'" class="mx-auto" />
         </div>
-        <div class="in_text text-center">
+        <div class="in_text text-center mx-auto">
             Maintenance
         </div>
       </div>
@@ -91,33 +91,40 @@
     <div class="desc my-lg-3 col-lg-8  text-lg-left offset-lg-2">
         {{fourthDesc}}
     </div>
-    <div class="col-12 mb-lg-2">
-        <div class="row my-lg-4">
-            <div class="col-lg-5">
+    <div class="col-lg-10 my-2 offset-lg-2  col-sm-12">
+        <div class="row my-lg-4 text-center">
+            <div class="col-lg-3 text-lg-left">
+                    <img [src]= "forImage + '/assets/images/AddScenario.svg'" class="col-lg-6 ml-lg-5" />
+                    <div class="ml-lg-5  pl-lg-3 mt-lg-4 part-text text-lg-left">Create new scenarios from scratch or by combining existing steps from different scenarios</div>
+
             </div>
-            <div class="col-lg-7 align-self-center ">
-                <ul>
-                    <li >
-                        <img [src]= "forImage + '/assets/images/tick-inside-circle.svg'" class="col-1" />
-                        Create new scenarios from scratch or by combining existing steps
-                    </li>
-                    <li class="my-lg-4">
-                            <img [src]= "forImage + '/assets/images/tick-inside-circle.svg'" class="col-1" />
-                            Publish and share your scenarios with your peers 
-                    </li>
-                    <li>
-                            <img [src]= "forImage + '/assets/images/tick-inside-circle.svg'" class="col-1" />
-                            Ensure a better visibility and reliability of your research methodologies 
-                    </li>
-                </ul>
+            <div class="col-lg-3  text-lg-left">
+                    <img [src]= "forImage + '/assets/images/Screen2.svg'" class="col-lg-6 ml-lg-5" />
+                    <div class="ml-lg-5  pl-lg-3 mt-lg-4 part-text text-lg-left">Publish and share your scenarios with your peers  </div>
             </div>
+            <div class="col-lg-3 text-lg-left">
+                    <img [src]= "forImage + '/assets/images/shield.svg'" class="col-lg-5 ml-lg-5" />
+                    <div class="ml-lg-5  pl-lg-3 mt-lg-4 part-text text-lg-left">Ensure a better visibility and reliability of your research methodologies </div>
+                </div>
         </div>
+       <!-- <div class="row my-lg-4">
+                <div class="col-lg-3">
+                        <div class="ml-1  mt-5 col-11 part-text">Create new scenarios from scratch or by combining existing steps from different scenarios</div>
+                </div>
+                <div class="col-lg-3  ">
+                       
+                    
+                </div>
+                <div class="col-lg-3">
+                       
+                    </div>
+            </div>-->
     </div>
     <div class="col-12 text-center mb-lg-5">
         <a href="https://github.com/ParthenosWP4/SSK"  target="_blank">
-            <button type="button" class="btn  my-5  btn-sm github">
+            <button type="button" class="btn  my-5  btn-sm github ">
                     <i class="fa fa-github pull-right fa-inverse fa-2x ml-3" aria-hidden="true"></i>
-                  <span class="py-lg-4">Check our github!
+                  <span class="py-lg-4 ml-2 ">  Check our github !
                  
                 </span>
                 </button>
@@ -125,7 +132,7 @@
     </div>
 
   </div>
-<div class="row text-center my-lg-5">
+<div class="row text-center my-5">
     <div class="col ">
         <a href="http://www.parthenos-project.eu/" target="_blank"><img [src]= "forImage + '/assets/images/parthenos2.png'"  /></a>
     </div>

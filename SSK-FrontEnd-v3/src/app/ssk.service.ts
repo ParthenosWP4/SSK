@@ -12,9 +12,10 @@ import {Router} from '@angular/router';
 export class SskService {
 
   private filters = [];
-
   private statusError: number;
   private errorMsg  = '';
+  public empty = false;
+  public alredyInStepCard = 0;
 
 
 
@@ -122,7 +123,7 @@ export class SskService {
      this.filters = elts;
   }
 
-  addToFilters(elt: string) {
+  addToFilters(elt: any) {
     this.filters.push(elt);
   }
 
@@ -181,33 +182,31 @@ export class SskService {
    }
  }
 
- updateScenarioMetadata(metadata: any) {
-
-
- }
 
  updateText(desc: any, type: string) {
   let text = '';
   if ( desc['content'] && (desc.content) instanceof Array) {
       _.forEach(Array.from(desc.content), (part) => {
           if (part['ref']) {
-            text += this.setLink(part['ref']);
-          }
-          if (part['list']) {
+            text += this.setLink(part['ref']) + ' ';
+          } else if (part['list']) {
             const list = part['list'];
             text += this.setList(list['item']);
           } else {
           text += part['part'] + ' ';
         }
       });
-  } else {
-    return desc['content'];
-  }
+  } else  if (desc.content !== undefined) {
+            return desc['content'];
+          }
+          else {
+            return desc;
+          }
   return text;
 }
 
-setLink(part: object) {
-  return '<a href=\"' + part['target'] + '\" target = \"_blank\" >' + Array.from(part['content'])[0]['.part'] + '</a>';
+setLink(content: object) {
+  return '<a href=\"' + content['target'] + '\" target = \"_blank\" >' + ((content['content'])[0])['part']+ '</a>';
 }
 
 setList(part: object) {
@@ -217,6 +216,111 @@ setList(part: object) {
   });
   list += '</ul>';
   return list;
+}
+
+addCount(array1, array2: Array<any>, type: string):  Promise<any[]> {
+  let key1, key2, term;
+  if (type === 'standard') {
+    key1 = 'standard_abbr_name'; key2 = 'abbr';
+  }else {
+    key1 = 'term'; key2 = 'key';
+  }
+  /*Promise.all(_.intersectionWith(array1, array2, (item1: any, item2: any)  => {
+    if ( typeof item2[key2] === 'undefined' ) {
+      if (type === 'standard' && item2[key1] !== null) {
+        term = item2[key1].toLowerCase();
+      }else {
+        term = item2['term'].toLowerCase();
+      }
+    } else  {
+      term = item2[key2].toLowerCase();
+    }
+    if (item1[key1].toLowerCase().trim() === term.trim()) {
+
+      if ( typeof item1['scenarioIn'] !== 'undefined' || !isNaN(item1['scenarioIn']) ) {
+      item1['scenarioIn'] += 1;
+      } else {
+      item1['scenarioIn'] = 1;
+      }
+      return item1;
+    }
+ })).then((completed) => return completed;});*/
+
+  return new Promise(resolve => {
+    resolve(_.intersectionWith(array1, array2, (item1: any, item2: any)  => {
+    if ( typeof item2[key2] === 'undefined' ) {
+      if (type === 'standard' && item2[key1] !== null) {
+        term = item2[key1].toLowerCase();
+      }else {
+        term = item2['term'].toLowerCase();
+      }
+    } else  {
+      term = item2[key2].toLowerCase();
+    }
+    if ((item1[key1] !== undefined) && (term !== undefined) && item1[key1].toLowerCase().trim() === term.trim()) {
+      if ( typeof item1['scenarioIn'] !== 'undefined' || !isNaN(item1['scenarioIn']) ) {
+      item1['scenarioIn'] += 1;
+      } else {
+      item1['scenarioIn'] = 1;
+      }
+      return item1;
+    }
+ }));
+});
+}
+
+updateSteps(): Observable<any[]> {
+  let stepsResults: any ;
+  if (this.elasticService.getStepResults().length > this.elasticService.searchResult['total']) {
+    stepsResults = _.differenceBy(this.elasticService.getStepResults(), this.elasticService.searchResult['data'], '_id');
+    return Observable.of(stepsResults);
+  }else {
+    stepsResults = _.differenceBy(this.elasticService.getSteps(), this.elasticService.searchResult['data'], '_id');
+    stepsResults = _.uniq(_.concat(this.elasticService.getStepResults(), stepsResults));
+    return Observable.of(stepsResults);
+  }
+}
+
+updateScenarios(): Observable<any[]> {
+  let scenarioResults: any;
+  if (this.elasticService.getScenarioResults().length > this.elasticService.searchResult['total']) {
+    scenarioResults = _.differenceWith(this.elasticService.getScenarioResults(),
+                                      this.elasticService.searchResult['data'],   (o1, o2) => {
+                                        return (o1['id'] === o2['_id']);
+                                      });
+    return Observable.of(scenarioResults);
+  }else {
+    scenarioResults = _.differenceWith(this.elasticService.getScenarios(), this.elasticService.searchResult['data'],
+                                            (o1, o2) => {
+                          return (o1.id === o2['_id']);
+                        });
+      scenarioResults = _.uniq(_.concat(this.elasticService.getScenarios(), scenarioResults));
+    return Observable.of(scenarioResults);
+  }
+}
+
+
+/*
+  According to research on step, this function updates list of scenarios
+  containing these steps and the resources included in these steps
+  */
+ updateScenariosAndResouces(temp: any) {
+  const scenariosToFilter = this.elasticService.getScenarios();
+  const resourcesToFilter = this.elasticService.getResources();
+ this.elasticService.setScenarioResults( _.intersectionWith(scenariosToFilter, temp,  (o1, o2) => {
+   return (o1.id === o2['parent']);
+ }));
+ this.elasticService.setResourceResults( _.intersectionWith(resourcesToFilter, temp,  (o1, o2) => {
+   return (o1.parent === o2['_id']);
+ }));
+}
+
+
+updateStepsAndResouces(temp: any) {
+  const stepsToFilter = this.elasticService.getSteps();
+  this.elasticService.setStepResults(_.intersectionWith(stepsToFilter, temp,  (o1, o2) => {
+   return (o1.parent === o2['id']);
+  }));
 }
 
 

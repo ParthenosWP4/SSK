@@ -8,18 +8,32 @@
       </div>
       <div *ngIf="!spinner">
     <div class=" mt-lg-3 elt-tab" *ngFor="let item of tags"  >
-      <span class="mx-lg-3 group mb-lg-2"    [attr.data-target]="'#' + item"   [ngClass]="item.substring(0, item.length - 1)">
-        {{item}}  
-        <img  [src]= "forImage + '/assets/images/questions-circular-button.svg'" class="pb-1" alt="int_dot"/>
+      <span class="mx-lg-3 group mb-lg-2"    [attr.data-target]="'#' + item"   [ngClass]="item?.name.substring(0, item?.name.length - 1)">
+        {{item?.name}}  
       </span>
+      <span class="tagTitle" data-placement="right" tooltip="{{item.tooltip}}" containerClass="tagSearchClass" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
-      <div [id]="item" class=" show mx-lg-3" role="tabpanel" >
-        <div class="form-check"  *ngFor="let elt of data[item]">
-          <label class="form-check-label">
+      <div [id]="item?.name" class=" show mx-lg-3" role="tabpanel">
+        <div class="form-check"  *ngFor="let elt of data[item?.name];">
+            <div  *ngIf="(item?.name === 'activities');"  class="my-2">
+                <span class="my-5">{{objectKeys(elt)[0]}}<img  [src]= "forImage + '/assets/images/Shape.svg'" class="ml-3" alt="int_dot"/></span><br>
+            <div *ngFor="let activity of  elt[objectKeys(elt)[0]]" class="">
+                <label class="form-check-label ml-3">
+                    <input type="checkbox" [attr.name]="normalize(activity?.term)"
+                           [id]="normalize(activity?.term)"
+                           class="form-check-input" (change)="change($event, activity)" > {{normalize(activity?.term)}} {{activity?.standard_abbr_name}}
+                          <!-- <span class= "scenarioCount"  [ngClass]="item.substring(0, item.length - 1)"  [innerHTML]="(activity?.scenarioIn === undefined) ? '(0)': '('+activity?.scenarioIn+')'"></span>-->
+                  </label>
+                </div>
+              </div>
+           
+          <label class="form-check-label" *ngIf="(item?.name !== 'activities'); ">
             <input type="checkbox" [attr.name]="(elt?.standard_abbr_name !== undefined) ? elt?.standard_abbr_name : normalize(elt?.term)"
                    [id]="(elt?.standard_abbr_name !== undefined) ? elt?.standard_abbr_name : normalize(elt?.term)"
-                   class="form-check-input"(change)="change($event, elt)" > {{normalize(elt?.term)}} {{elt?.standard_abbr_name}}
+                   class="form-check-input"(change)="change($event, elt)"> {{normalize(elt?.term)}} {{elt?.standard_abbr_name}}
+                  <!-- <span class= "scenarioCount"  [ngClass]="item.substring(0, item.length - 1)"  [innerHTML]="(elt?.scenarioIn === undefined) ? '(0)': '('+elt?.scenarioIn+')'"></span>-->
           </label>
+        
         </div>
        <!-- <span *ngIf=" data[item]?.length > 5" class="" data-toggle="collapse"  [attr.data-target]="'#' + item + '2'">See more</span>
           <div [id] =" item + '2'" class="collapse" role="tabpanel">

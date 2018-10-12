@@ -298,7 +298,7 @@
 
 .cookie-law .cookie-law-wrapper{
   font-family: $roboto-regular !important;
-  padding: 0rem 17rem;
+  //padding: 0rem 17rem;
   text-align: center;
 }
 #sskCookieLaw{
@@ -349,6 +349,13 @@
   text-transform: capitalize;
 }
 
+.tagSearchClass{
+  text-align: left !important;
+  font-family: $avenir_next_ul;
+  font-size: 0.7rem;
+}
+
+
 div.popover{
   max-width: 800px !important;
   width: 325px !important;
@@ -359,8 +366,6 @@ div.popover{
     height: 53px;
   }
   .author{
-    
-    
     font-size: 1.2rem;
   }
   span.affiliation{
@@ -379,4 +384,13 @@ div.popover{
 
 .tooltip-inner {
   background-color: black;
+  text-align: left !important;
+}
+
+@media (max-width: 576px) {
+  
+  .part-text{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
 }

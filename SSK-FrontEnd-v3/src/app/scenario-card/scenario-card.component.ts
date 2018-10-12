@@ -4,6 +4,8 @@ import {Router} from '@angular/router';
 import {DomSanitizer} from '@angular/platform-browser';
 import * as _ from 'lodash';
 import {environment} from '../../environments/environment';
+import {ElastichsearchService} from '../elastichsearch.service';
+import { isDefined } from '@angular/compiler/src/util';
 
 
 @Component({
@@ -17,14 +19,15 @@ export class ScenarioCardComponent implements OnInit,  AfterViewInit {
   public title: any;
   public desc: any;
   public metadata: Array<any> = new Array();
-  public metadataPart1: Array<any> = new Array();
-  public metadataPart2: Array<any>;
   public defaultImage: string;
   public shortTitle: any = {};
   public shortDesc: any = {};
   forImage = environment.forImage;
+  diff: any;
+  group: string;
   
-  constructor(private sskServices: SskService,  private router: Router, private domSanitizer: DomSanitizer) { }
+  constructor(private sskServices: SskService,  private router: Router, private domSanitizer: DomSanitizer,
+              private elasticServ: ElastichsearchService) { }
 
 
   ngAfterViewInit() {
@@ -50,7 +53,7 @@ export class ScenarioCardComponent implements OnInit,  AfterViewInit {
     } else {
       this.title = this.scenario.title;
     }
-    this.title = this.sskServices.updateText( this.title, null);
+     this.title = this.sskServices.updateText( this.title, null);
    // this.shortTitle = this.sskServices.shorten(this.title, 99);
 
     if (this.scenario.image === null || this.scenario.image === 'null' ||  this.scenario.image === undefined) {
@@ -67,22 +70,39 @@ export class ScenarioCardComponent implements OnInit,  AfterViewInit {
 
     if (this.scenario.scenario_metadata.objects instanceof Array ) {
       this.metadata  =  this.metadata.concat(this.scenario.scenario_metadata.objects);
+       /*this.elasticServ.setObjects(_.values(_.merge(_.keyBy(this.elasticServ.getObjects(), 'term'),
+                                   _.keyBy(this.sskServices.addCount(this.elasticServ.getObjects(),
+                                   this.scenario.scenario_metadata.objects, 'objects'), 'term') )));*/
     }
 
     if (this.scenario.scenario_metadata.discipline instanceof Array) {
       this.metadata  =  this.metadata.concat(this.scenario.scenario_metadata.discipline);
+   /* this.elasticServ.setDisciplines(_.values(_.merge(_.keyBy(this.elasticServ.getDisciplines(), 'term'),
+                                     _.keyBy(this.sskServices.addCount(this.elasticServ.getDisciplines(),
+                                     this.scenario.scenario_metadata.discipline, 'discipline'), 'term') )));*/
     }
 
     if (this.scenario.scenario_metadata.activity instanceof Array) {
       this.metadata  =  this.metadata.concat(this.scenario.scenario_metadata.activity);
+    /*this.elasticServ.setActivities(_.values(_.merge(_.keyBy(this.elasticServ.getActivitiesForCount(), 'term'),
+                                   _.keyBy(this.sskServices.addCount(this.elasticServ.getActivitiesForCount(),
+                                  this.scenario.scenario_metadata.activity, 'activity'), 'term') )));
+                                  this.elasticServ.setActivities(_.groupBy(this.elasticServ.getActivities(), 'group'));
+                                  this.elasticServ.setActivities(_.map(_.toPairs(this.elasticServ.getActivities()), d => _.fromPairs([d])));*/
     }
 
     if (this.scenario.scenario_metadata.techniques instanceof Array) {
       this.metadata  =  this.metadata.concat(this.scenario.scenario_metadata.techniques);
+    /*this.elasticServ.setTechniques(_.values(_.merge(_.keyBy(this.elasticServ.getTechniques(), 'term'),
+                                   _.keyBy(this.sskServices.addCount(this.elasticServ.getTechniques(),
+                                   this.scenario.scenario_metadata.techniques, 'technique'), 'term') )));*/
     }
 
     if (this.scenario.scenario_metadata.standards instanceof Array) {
       this.metadata  =  this.metadata.concat(this.scenario.scenario_metadata.standards);
+   /* this.elasticServ.setStandards(_.values(_.merge(_.keyBy(this.elasticServ.getStandards(), 'standard_abbr_name'),
+                                   _.keyBy(this.sskServices.addCount(this.elasticServ.getStandards(),
+                                   this.scenario.scenario_metadata.standards, 'standard'), 'standard_abbr_name'))));*/
     }
 
     if ( ! (this.scenario.author instanceof Array)) {
@@ -91,8 +111,7 @@ export class ScenarioCardComponent implements OnInit,  AfterViewInit {
 
 
 
-
-    this.metadata = _.forEach(this.metadata, function(value) {
+    this.metadata = _.forEach(this.metadata, (value) => {
       switch (value.type) {
         case 'objects':
           value.type = 'object';
@@ -133,11 +152,12 @@ export class ScenarioCardComponent implements OnInit,  AfterViewInit {
   getInnerHTMLValue(text: string ) {
     return this.domSanitizer.bypassSecurityTrustHtml(text);
   }
-  content(){
-    return '<div class="row>'
+  content() {
+    return '<div class="row>';
   }
 
-  uniformText(text: string){
+  uniformText(text: string) {
     return this.sskServices.updateText(text, 'scenario');
   }
+
 }

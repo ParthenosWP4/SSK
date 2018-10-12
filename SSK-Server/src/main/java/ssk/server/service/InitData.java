@@ -77,7 +77,8 @@ public class InitData {
 		new Thread(() -> {
 			try {
 				this.createIndex();
-				  this.sskServices.initializeData();
+				this.setElasticForResearch();
+				this.sskServices.initializeData();
 			} catch (Exception e) {
 				logger.error(e.getMessage());
 				if(e.getMessage().contains("I/O error on HEAD request for \"" + elasticSearchPort+"/"+sskIndex+"\"")){
@@ -109,6 +110,15 @@ public class InitData {
 			if(response.getStatusCode().is2xxSuccessful()) {
 				logger.info("Successful creation of \"SSK\" index");
 			}
+		}
+	}
+	
+	private void setElasticForResearch(){
+		ResponseEntity<String> response;
+		HttpEntity<String> entity  = new HttpEntity<>(" {\"index\": {\"blocks\": {\"read_only_allow_delete\": \"false\"}}}", requestHeadersParams.getHeaders());
+		response = this.restTemplate.exchange(elasticSearchPort + "/" + sskIndex , HttpMethod.PUT,entity,  String.class);
+		if(response.getStatusCode().is2xxSuccessful()) {
+			logger.info("Successful set Elasticsearch for research !!!");
 		}
 	}
 }
