@@ -34,11 +34,11 @@
                 <event type="researchStep">
                     <head type="stepTitle" xml:lang="en">Advanced SSK functions (2) : link
                         scenarios</head>
-                    <desc type="definition" xml:lang="en"> Link scenarios together, or in other
+                    <desc type="definition" xml:lang="en">Link scenarios together, or in other
                         words, include a scenario (entirely or partially) into another is an
                         interesting possibility when a scenario is a pre-condition or the
                         continuation of another one. For instance, a scenario related to the
-                        preservation od 3D models can be preceded by a scenario explaining how to
+                        preservation of 3D models can be preceded by a scenario explaining how to
                         create such models. The most common use cases are the following:<list>
                             <item>Add a prerequisite scenario (as a first step)</item>
                             <item>Associate a scenario that can be the follow-up of the current (as

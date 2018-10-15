@@ -34,13 +34,14 @@
                 <event type="researchStep">
                     <head type="stepTitle" xml:lang="en">Advanced SSK functions (1) : customize a
                         step or a scenario</head>
-                    <desc type="definition" xml:lang="en"> The SSK is adaptable by nature and
+                    <desc type="definition" xml:lang="en">The SSK is adaptable by nature and
                         contributors don't have to start from scratch their scenario. It is possible
                         to create a scenario with existing steps as basis. But if the content of the
                         step doesn't exactly fit, it is also possible to modify it, by updating the
                         initial step (but with care), or, more safely, directly in the new scenario.
                         In TEI, the update of element is made with the help of the attribute @mode.
-                        See more in the <ref type="documentation" target="https://parthenoswp4.github.io/SSK/SSKspec.html#index.xml-body.1_div.4_div.1">SSK TEI documentation</ref><list>
+                        See more in the <ref type="documentation" target="https://parthenoswp4.github.io/SSK/SSKspec.html#index.xml-body.1_div.4_div.1">SSK TEI documentation</ref>
+                        <list>
                             <item>Use and modify existing scenarios and steps</item>
                         </list></desc>
                     <desc xml:lang="en" type="terms">
