@@ -339,6 +339,8 @@ one or two ``linkGrp``.
 Content of scenarios and steps
 ------------------------------
 
+.. _head:
+
 head
 ~~~~
 
@@ -348,6 +350,8 @@ The attribute ``xml:lang`` is mandatory. The element ``head`` can be repeated to
 give as many translated versions as possible. Create associated
 documentation
 
+.. _desc:
+
 desc
 ~~~~
 
@@ -355,6 +359,8 @@ The element ``desc`` is used in two ways for the description of the scenarios an
 
 * When the value of type is `definition`, the content of desc is a short text describing the scenario or the step
 * When the value of type is `term`, the content of desc is a set of term elements
+
+.. _term:
 
 term
 ~~~~
@@ -771,6 +777,8 @@ See below the advanced features section
 Advanced features
 =================
 
+.. _custom:
+
 Customize a step or a scenario
 ------------------------------
 
@@ -789,6 +797,8 @@ specified with the mode attribute; with the possible following values:
    <desc type="definition" mode="change">...</desc>
    ...
   </event>
+
+.. _param:
 
 The parameters
 --------------
