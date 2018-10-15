@@ -113,7 +113,7 @@ First, contributors should be aware that:
 Choose explicit titles starting with a verb or a gerund
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-The choice of good titles for a scenario and its steps is crucial. It will be the entry point of the users, that need to understand at first reading the scope and the aim of a scenario. To do so, we advice to build titles : <list>
+The choice of good titles for a scenario and its steps is crucial. It will be the entry point of the users, that need to understand at first reading the scope and the aim of a scenario. To do so, we advice to build titles :
 
 * that starts with a verb or a gerund that describe the process (for a scenario) or the action (for a step) that the user will read about.
 * with a number of characters comprised between 10 and 100
