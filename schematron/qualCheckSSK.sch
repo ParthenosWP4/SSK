@@ -120,6 +120,8 @@
     <sch:title>desc term</sch:title>
     <sch:p>For each type, Max 4</sch:p>
     <sch:rule context="tei:desc[@type = 'terms']">
+      <sch:report test="ancestor::tei:TEI[@type = 'researchStep'] and count(tei:term[@type = 'activity']) = 0">A
+        step should be described by an activity term, taken from the TADirAH taxonomy.</sch:report>
       <sch:report
         test="ancestor::tei:TEI[@type = 'researchScenario'] and count(tei:term[@type = 'standard']) = 0"
         see="http://ssk.huma-num.fr/#/glossary/standards">A scenario could have several keywords
@@ -150,11 +152,9 @@
   <sch:pattern>
     <sch:p>source attribute</sch:p>
     <sch:p>step file: Tadirah activity is mandatory</sch:p>
-    <sch:rule context="tei:term">
+    <sch:rule context="tei:desc[@type='terms']/tei:term">
       <sch:assert test="@source">The attribute source is important to specifiy which vocabulary was
         used. The main ones are "tadirah", aurehal, "standard".</sch:assert>
-      <sch:report test="ancestor::tei:TEI[@type = 'researchStep'] and not(@type = 'activity')">A
-        step should be described by an activity term, taken from the TADirAH taxonomy.</sch:report>
       <sch:report test="ancestor::tei:TEI[@type = 'researchScenario'] and @type = 'activity'">The
         activity terms are more suitable for describing steps rather than scenarios. It is
         recommended to choose one activity term per scenario step.</sch:report>

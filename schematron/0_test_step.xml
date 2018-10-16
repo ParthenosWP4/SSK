@@ -40,7 +40,8 @@
                <head type="stepTitle" xml:lang="en">Apply access controls and authentication
                   procedures</head>
                <desc type="terms" xml:lang="en">
-                  <term key="Preservation" source="http://tadirah.dariah.eu/" type="activity"/>
+                  <term type="activity"></term>
+                  <term key="Preservation" source="http://tadirah.dariah.eu/" type="technique"/>
                   <!--<term key="CD" source="WP3Wizard" type="policies"/>-->
                </desc>
                <linkGrp type="generalResources">
@@ -62,7 +63,7 @@
                   <ref source="zotero" target="IE9EQ2QK" type="tutorial">
                      <term key="TEI" source="standard_list" type="standard"/>
                   </ref>
-                  <ref source="zotero" target="69CGH77A" type="tutorial">
+                  <ref source="zotero" target="69CklklGH77A" type="tutorial">
                      <term key="TEI" source="standard_list" type="standard"/>
                   </ref>
                   <ref source="github"
@@ -71,7 +72,9 @@
                      <term key="TEI" source="standard_list" type="standard"/>
                      <term key="EAD" source="standard_list" type="standard"/>
                   </ref>
+                  <ref type="blog"/>
                </linkGrp>
+               <linkGrp type="projectResources"></linkGrp>
             </event>
          </listEvent>
       </body>
