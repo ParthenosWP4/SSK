@@ -47,9 +47,10 @@
   <sch:pattern>
     <sch:title>Licences</sch:title>
     <sch:rule context="tei:availability">
-      <sch:assert test="tei:licence/@target and tei:licence/tei:p">A licence should be applied to all scenarios and steps.
-        The declaration of the licence chosen in made by a clear sentence in natural language (in a
-        p element) and a link towards the licence (with the attribute @target).</sch:assert>
+      <sch:assert test="tei:licence/@target and tei:licence/tei:p">A licence should be applied to
+        all scenarios and steps. The declaration of the licence chosen in made by a clear sentence
+        in natural language (in a p element) and a link towards the licence (with the attribute
+        @target).</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -69,35 +70,31 @@
     </sch:rule>
   </sch:pattern>
   <!-- BODY -->
+
   <sch:pattern>
     <sch:title>head</sch:title>
     <sch:p>title between 10 and 100 characters</sch:p>
     <sch:p>Start with a verb or a gerund</sch:p>
     <sch:rule context="tei:div/tei:head">
-      <sch:assert test="string-length(.) &gt; 9"> The title is too short: 10 characters minimum. Your title is <sch:value-of select="10 - string-length(.)"/> characters too short.</sch:assert>
-      <sch:assert test="string-length(.) &lt; 101">The title is too long: 100 characters
-        maximum. Your title is <sch:value-of select="string-length(.) - 100"/> characters too long.</sch:assert>
+      <sch:assert test="string-length(.) &gt; 9"> The title is too short: 10 characters minimum.
+        Your title is <sch:value-of select="10 - string-length(.)"/> characters too
+        short.</sch:assert>
+      <sch:assert test="string-length(.) &lt; 101">The title is too long: 100 characters maximum.
+        Your title is <sch:value-of select="string-length(.) - 100"/> characters too
+        long.</sch:assert>
+      <sch:report test="normalize-space(.)">The title of a scenario should describe the main goal of
+        the scenario.</sch:report>
     </sch:rule>
     <sch:rule context="tei:event/tei:head">
       <sch:assert test="string-length(.) &gt; 9"> The title is too short: 10 characters minimum </sch:assert>
       <sch:assert test="string-length(.) &lt; 100">The title is too long: 100 characters
         maximum</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:p>This is only for English</sch:p>
-    <sch:rule context="tei:head[@type = 'stepTitle']">
       <sch:assert test="matches(., '(^\w*(ing|ion|ment|ments) )|( \w*(ing|ion|ment|ments$))')">The
         title of a step should describe the action to perform, starting or ending with a gerund (or
         an infinitive), or a noun .</sch:assert>
     </sch:rule>
   </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="tei:head[@type = 'scenarioTitle']">
-      <sch:report test="matches(., '^. ')">The title of a scenario should describe the main goal of
-        the scenario.</sch:report>
-    </sch:rule>
-  </sch:pattern>
+
   <sch:pattern>
     <sch:title>desc definition</sch:title>
     <sch:p>Need a description</sch:p>
@@ -105,7 +102,8 @@
     <sch:p>Nothing but lists and refs</sch:p>
     <sch:rule context="tei:desc[@type = 'definition']">
       <sch:assert test="string-length(.) &lt; 1500">The description is too long: 1500 characters
-        maximum</sch:assert>
+        maximum. Your description is <sch:value-of select="string-length(.) - 1500"/> too
+        long</sch:assert>
       <sch:assert test="tei:list or tei:ref"> In the &lt;desc type="definition&gt;, there should be
         nothing more than text, &lt;list&gt; and &lt;ref&gt;.</sch:assert>
     </sch:rule>
@@ -122,6 +120,23 @@
     <sch:title>desc term</sch:title>
     <sch:p>For each type, Max 4</sch:p>
     <sch:rule context="tei:desc[@type = 'terms']">
+      <sch:report
+        test="ancestor::tei:TEI[@type = 'researchScenario'] and count(tei:term[@type = 'standard']) = 0"
+        see="http://ssk.huma-num.fr/#/glossary/standards">A scenario could have several keywords
+        related to standards. Check the documentation for more details</sch:report>
+      <sch:report
+        test="ancestor::tei:TEI[@type = 'researchScenario'] and count(tei:term[@type = 'discipline']) = 0"
+        see="http://ssk.huma-num.fr/#/glossary/disciplines">A scenario could have several keywords
+        related to disciplines. Check the documentation for more details.</sch:report>
+      <sch:report
+        test="ancestor::tei:TEI[@type = 'researchScenario'] and count(tei:term[@type = 'technique']) = 0"
+        see="http://ssk.huma-num.fr/#/glossary/techniques">A scenario could have several keywords
+        related to research techniques. Check the Tadirah taxonomy for more details.</sch:report>
+      <sch:report
+        test="ancestor::tei:TEI[@type = 'researchScenario'] and count(tei:term[@type = 'object']) = 0"
+        see="http://ssk.huma-num.fr/#/glossary/standards/objects">A scenario could have several
+        keywords related to research objects. Check the Tadirah taxonomy for more
+        details.</sch:report>
       <sch:assert test="count(tei:term[@type = 'standard']) lt 5">More than 4 terms of the same
         vocabulary type may be too much: STANDARD</sch:assert>
       <sch:assert test="count(tei:term[@type = 'discipline']) lt 5">More than 4 terms of the same
@@ -135,23 +150,30 @@
   <sch:pattern>
     <sch:p>source attribute</sch:p>
     <sch:p>step file: Tadirah activity is mandatory</sch:p>
-    <sch:rule context="tei:term/@source">
-      <sch:assert test=".">The attribute source is important to specifiy which vocabulary was used.
-        The main ones are "tadirah", "nedimah", aurehal, "standard".</sch:assert>
+    <sch:rule context="tei:term">
+      <sch:assert test="@source">The attribute source is important to specifiy which vocabulary was
+        used. The main ones are "tadirah", aurehal, "standard".</sch:assert>
+      <sch:report test="ancestor::tei:TEI[@type = 'researchStep'] and not(@type = 'activity')">A
+        step should be described by an activity term, taken from the TADirAH taxonomy.</sch:report>
+      <sch:report test="ancestor::tei:TEI[@type = 'researchScenario'] and @type = 'activity'">The
+        activity terms are more suitable for describing steps rather than scenarios. It is
+        recommended to choose one activity term per scenario step.</sch:report>
+      <!--<sch:report test="@key = matches(., '\w*/\w*')">No hierarchy in the term @key attribute.</sch:report>-->
     </sch:rule>
-    <sch:rule context="tei:term[ancestor::tei:TEI[@type = 'researchStep']]">
+  </sch:pattern>
+  <!--<sch:rule context="tei:term[ancestor::tei:TEI[@type = 'researchStep']]">
       <sch:assert test="@type = 'activity'">A step should be described by an activity term, taken
         from the TADirAH taxonomy.</sch:assert>
-    </sch:rule>
-    <sch:rule context="tei:term[ancestor::tei:TEI[@type = 'researchScenario']]">
+    </sch:rule>-->
+  <!--<sch:rule context="tei:term[ancestor::tei:TEI[@type = 'researchScenario']]">
       <sch:report test="@type = 'activity'">The activity terms are more suitable for describing
         steps rather than scenarios. It is recommended to choose one activity term per scenario
         step.</sch:report>
-    </sch:rule>
-    <sch:rule context="tei:term/@key">
+    </sch:rule>-->
+  <!--    <sch:rule context="tei:term/@key">
       <sch:report test="matches(., '\w*/\w*')">No hierarchy in the term @key attribute.</sch:report>
     </sch:rule>
-  </sch:pattern>
+  -->
   <sch:pattern>
     <sch:title>Resources</sch:title>
     <sch:p>General or project : if project, need a source and a corresp attributes</sch:p>
@@ -183,27 +205,33 @@
     <sch:p>desc x 2</sch:p>
     <sch:p>event</sch:p>
     <sch:rule context="tei:body[ancestor::tei:TEI[@type = 'researchScenario']]/tei:div/@type">
-      <sch:assert test=". = 'researchScenario'">@type attribute incoherence</sch:assert>
+      <sch:assert test=". = 'researchScenario'">@type attribute incoherence: document type is
+          '<sch:value-of select="ancestor::tei:TEI/@type"/>' and current element type value is
+          '<sch:value-of select="."/>'</sch:assert>
     </sch:rule>
     <sch:rule context="tei:body[ancestor::tei:TEI[@type = 'researchStep']]/tei:div/@type">
-      <sch:assert test=". = 'researchStep'">@type attribute incoherence</sch:assert>
+      <sch:assert test=". = 'researchStep'">@type attribute incoherence: document type is
+        '<sch:value-of select="ancestor::tei:TEI/@type"/>' and current element type value is
+        '<sch:value-of select="."/>'</sch:assert>
     </sch:rule>
     <sch:rule context="tei:head[ancestor::tei:TEI[@type = 'researchScenario']]/@type">
-      <sch:assert test=". = 'scenarioTitle'">@type attribute incoherence</sch:assert>
+      <sch:assert test=". = 'scenarioTitle'">@type attribute incoherence: document type is
+        '<sch:value-of select="ancestor::tei:TEI/@type"/>' and current element type value is
+        '<sch:value-of select="."/>'</sch:assert>
     </sch:rule>
     <sch:rule context="tei:head[ancestor::tei:TEI[@type = 'researchStep']]/@type">
-      <sch:assert test=". = 'stepTitle'">@type attribute incoherence</sch:assert>
-    </sch:rule>
-    <sch:rule context="tei:event/@type">
-      <sch:assert test=". = 'researchStep'">An event element should be typed with
-        'researchStep'</sch:assert>
+      <sch:assert test=". = 'stepTitle'">@type attribute incoherence: document type is
+        '<sch:value-of select="ancestor::tei:TEI/@type"/>' and current element type value is
+        '<sch:value-of select="."/>'</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:rule context="tei:event[ancestor::tei:TEI[@type = 'researchStep']]">
-      <sch:assert test="tei:desc[@type = 'definition'] and tei:desc[@type = 'terms']">we need a desc
+    <sch:rule context="tei:event">
+      <sch:report test="ancestor::tei:TEI[@type = 'researchStep'] and not(tei:desc[@type = 'definition']) and not(tei:desc[@type = 'terms'])">we need a desc
         element for the description of the step or the scenario and a desc element for the
-        associated terms.</sch:assert>
+        associated terms.</sch:report>
+      <sch:assert test="@type = 'researchStep'">An event element should be typed with
+        'researchStep'</sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>
