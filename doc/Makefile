@@ -1,5 +1,7 @@
 # Makefile for Sphinx documentation
-#
+
+# command
+#	make livehtml
 
 # You can set these variables from the command line.
 SPHINXOPTS    =
