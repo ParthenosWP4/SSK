@@ -69,7 +69,7 @@ This module has been built to retreive from SSK whole data,  specific scenarios 
 
 
 Elasticsearch (version 6.2.4)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 |elasticsearch| is a distributed, RESTful search and analytics engine capable of solving a growing number of use cases. As the heart of the Elastic Stack, it centrally stores your data so you can discover the expected and uncover the unexpected. 
 
 We used it to easily index our data, and it hepls a lot with his RESTful search features with multi-criteria queries. This helps to query data in different ways such as specifying  fields,  type (for us , scenario, step, resource and metadata) of results. Also it's possible to make full text research with it.
@@ -78,7 +78,7 @@ We used it to easily index our data, and it hepls a lot with his RESTful search 
 .. _sskFrontEnd:
 
 SSK Front-End
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 It's the client part of the SSK, where users can see  SSK's inputs (TEI files)  data in a different way. It  respects UX design principles in order to help researchers to easily access  contents of scenarios  and steps with their medatata.
 
 It's built with |angular_link| (version 5) a |typescript| framework that offers many features to easy design Progressive Web Apps. Angular combines declarative templates, dependency injection, end to end tooling, and integrated best practices to solve development challenges. The image below shows the architecture of an Angular application. 
@@ -89,11 +89,11 @@ To display SSK's data on this web interface, we created couple of components, se
 
 
 Local Deployment
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 Comming soon
 
 Next features
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 Comming soon
  
 
