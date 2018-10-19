@@ -17,7 +17,7 @@ the architecture of SSK.
 
 
 SSK’s input
-~~~~~~~~~~~~
+~~~~~~~~~~~
 
 The SSK processes TEI files stored on Github and divided into two folders,
 `scenarios <https://github.com/ParthenosWP4/SSK/tree/master/scenarios>`_ and `steps <https://github.com/ParthenosWP4/SSK/tree/master/steps>`_.
@@ -54,7 +54,7 @@ Note that each scenario and her steps are also pushed on |elasticsearch| and we 
 The SSK Back-End makes its data available via REST API easily built with Spring boot and it's annotations. These API  helps to retrieve scenarios , steps, resources and metadata. In such way third party applications could also access SSK's data. 
 
 3 - User management (for SSK contribution)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 As SSK is built for researchers by giving them access to standards and best practices in a meaningful way. They need to have user account to be able to manage their data,  bookmark their best scenarios or steps in order to facilitate future navigations into SSK or stay in touch on some specific research fields. 
 
@@ -78,10 +78,10 @@ We used it to easily index our data, and it hepls a lot with his RESTful search 
 .. _sskFrontEnd:
 
 SSK Front-End
-~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
 It's the client part of the SSK, where users can see  SSK's inputs (TEI files)  data in a different way. It  respects UX design principles in order to help researchers to easily access  contents of scenarios  and steps with their medatata.
 
-It's built with |angular_link| (version 5) a |typescript| framework that offers many features to easy design Progressive Web Apps. Angular combines declarative templates, dependency injection, end to end tooling, and integrated best practices to solve development challenges. The image below shows the architecture of an Angular application. 
+It's built with |angular_link| a |typescript| framework that offers many features to easy design Progressive Web Apps. Angular combines declarative templates, dependency injection, end to end tooling, and integrated best practices to solve development challenges. The image below (from https://angular.io/guide/architecture) shows the architecture of an Angular application. 
 
 |image1|
 
@@ -92,6 +92,8 @@ Local Deployment
 ~~~~~~~~~~~~~~~~
 
 Comming soon
+
+
 
 Next features
 ~~~~~~~~~~~~~
