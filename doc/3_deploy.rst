@@ -31,7 +31,7 @@ This part is the main component of the SSK, it has been built using
 It contains modules for :
 
 1 - Processing SSK data
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
 
 This means retrieving TEI content from SSK Github repository. Validate
 retrieved content according to the `RELAX NG schema <https://github.com/ParthenosWP4/SSK/blob/master/spec/TEI_SSK_ODD.rng>`__ defined for SSK
@@ -46,7 +46,6 @@ resources). **Website scraping** is also use to complete resources.
 When all data are completed for a TEI content (scenario or step), the
 JSON content obtained is then store on ElasticSearch for future easier searches.
 
-sankj
 
 2 - API serving
 ^^^^^^^^^^^^^^
@@ -65,12 +64,12 @@ As SSK is built for researchers by giving them access to standards and best prac
 Holding an user account on SSK is must oriented for SSK contributions, and this is one of  the main feature of out platform. So through this features we give the opportuniy to researchers to create their one scenarios based on existing one or by starting from scratch. There are two  ways to do that:
 
 - First by using TEI (XML)  
-- Or Use froms built in the :ref:`sskFrontEnd` part by just fill forms and select components such as metadata, existant steps...
+- Or Use froms designed in the :ref:`sskFrontEnd` part by just fill forms and select components such as metadata, existant steps...
 
 4 - Search Engine
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
+This module has been built to retreive from SSK whole data,  specific scenarios or steps by filtering using tags (standards, techniques, disciplines, activities  or objects ). As an example it could  allow user to  find all steps using TEI as standard, or scenarios with history as discipline.  Also it gives the possiblity to make full text search on SSK content. 
 
-TODO
 
 
 .. _sskFrontEnd:
@@ -78,7 +77,7 @@ TODO
 SSK Front-End
 ^^^^^^^^^^^^^
 
-TODO
+
 
 .. |image0| image:: img/techArch.png
    :width: 6.27083in
