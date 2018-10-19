@@ -36,25 +36,22 @@ It contains modules for :
 This means retrieving TEI content from SSK Github repository. Validate
 retrieved content according to the `RELAX NG schema <https://github.com/ParthenosWP4/SSK/blob/master/spec/TEI_SSK_ODD.rng>`__ defined for SSK
 files. After validation TEI content are convert into Json format using
-**XSLT**. After this, some resources are completed such as standards and
-resources. For standards, a knowledge base of standards is queried to
-retrieve more informations (standard complete name, multilingual
-standard description and links). In this same way step’s resources are
-also completed querying platform like `Zotero <https://www.zotero.org/>`_ (which is a free
+**XSLT**.  Resources are completed such as standards in differents ways. For standards, a knowledge base of standards is queried to retrieve more informations (standard complete name, multilingual
+standard description and links). And for resources 
+some queries are made on platforms like `Zotero <https://www.zotero.org/>`_ (which is a free
 software for managing bibliographic references) , Github (for project
-resources). **Website scraping** is also use to complete resources.
-When all data are completed for a TEI content (scenario or step), the
-JSON content obtained is then store on ElasticSearch for future easier searches.
+resources) or  **Website scraping** is also used to make resources more consistent.
+
+After adding more content for either standards or ressources, these are then push into 
+|elasticsearch| for indexing indexing and future searches. 
+
+Note that each scenario and her steps are also pushed on |elasticsearch| and we added parent attributes in steps to reference their  parent. In a such way resources, metadata have been also targeted with their parent identifier, respectively steps for ressources and  step/scenario for metadata.
 
 
 2 - API serving
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
-The SSK makes its data available via web API. There are API to retrieve
-scenarios , steps, resources and standards. In fact all SSK content can
-be retrieve. This API also give the possibilities to specify number of
-item, fields and type (scenarios , steps, resources or standards) you
-want to request.
+The SSK Back-End makes its data available via REST API easily built with Spring boot and it's annotations. These API  helps to retrieve scenarios , steps, resources and metadata. In such way third party applications could also access SSK's data. 
 
 3 - User management (for SSK contribution)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -71,14 +68,52 @@ Holding an user account on SSK is must oriented for SSK contributions, and this 
 This module has been built to retreive from SSK whole data,  specific scenarios or steps by filtering using tags (standards, techniques, disciplines, activities  or objects ). As an example it could  allow user to  find all steps using TEI as standard, or scenarios with history as discipline.  Also it gives the possiblity to make full text search on SSK content. 
 
 
+Elasticsearch (version 6.2.4)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+|elasticsearch| is a distributed, RESTful search and analytics engine capable of solving a growing number of use cases. As the heart of the Elastic Stack, it centrally stores your data so you can discover the expected and uncover the unexpected. 
+
+We used it to easily index our data, and it hepls a lot with his RESTful search features with multi-criteria queries. This helps to query data in different ways such as specifying  fields,  type (for us , scenario, step, resource and metadata) of results. Also it's possible to make full text research with it.
+
 
 .. _sskFrontEnd:
 
 SSK Front-End
 ^^^^^^^^^^^^^
+It's the client part of the SSK, where users can see  SSK's inputs (TEI files)  data in a different way. It  respects UX design principles in order to help researchers to easily access  contents of scenarios  and steps with their medatata.
 
+It's built with |angular_link| (version 5) a |typescript| framework that offers many features to easy design Progressive Web Apps. Angular combines declarative templates, dependency injection, end to end tooling, and integrated best practices to solve development challenges. The image below shows the architecture of an Angular application. 
+
+|image1|
+
+To display SSK's data on this web interface, we created couple of components, services  and templates folowing différents blocks of the previous image. Here components have been used to represent SSK's layers  which are Scenarios, steps, resources and metadata. Services helped to share data between those layers, but they also allowed us to design functions that queries  data from  main  module of SSK (Core SSK or Back-End) via  REST API.
+
+
+Local Deployment
+^^^^^^^^^^^^^^^^
+Comming soon
+
+Next features
+^^^^^^^^^^^^^^^^
+Comming soon
+ 
 
 
 .. |image0| image:: img/techArch.png
    :width: 6.27083in
    :height: 3.34722in
+
+.. |image1| image:: img/overview2.png
+   :width: 6.27083in
+   :height: 3.34722in
+
+.. |elasticsearch| raw:: html
+
+   <a href="https://www.elastic.co/products/elasticsearch" target="_blank">Elasticsearch</a>
+
+.. |angular_link| raw:: html
+
+   <a href="https://angular.io/" target="_blank">Angular 5.2.11</a>
+
+.. |typescript| raw:: html
+
+	<a href="https://www.typescriptlang.org/" target="_blank">Typescript 2.9.2</a>
