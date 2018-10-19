@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!-- You have to type the TEI file, with researchStep or researchScenario -->
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="SSK_step_tuto5">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Meta scenario step "Add resources"</title>
+                <author>
+                    <persName>
+                        <forename>Charles</forename>
+                        <surname>Riondet</surname>
+                        <idno source="ORCID">0000-0001-9872-774X</idno></persName>
+                    <affiliation>Inria</affiliation>
+                </author>
+                <funder>
+                    <orgName></orgName>
+                    <idno></idno>
+                </funder>
+            </titleStmt>
+            <publicationStmt>
+                <authority>Parthenos</authority>
+                <date></date>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/">
+                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.</p>
+                    </licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Created from scratch, <date when="2018-06-23">June 23d 2018</date></p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <persName/><affiliation/><date/><desc/>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div>
+            <listEvent>
+                <event type="researchStep">
+                    <head type="stepTitle" xml:lang="en">Identify relevant resources processing</head>
+                    <desc type="definition" xml:lang="en">This step is a prerequiste before
+                        actually add the resources to the steps. When we are talking about
+                        resources, we mean a standardized tool, -service or document helpful for the
+                        task completion. They take the form of a digital object : a webpage, a
+                        journal article referenced in an online catalog or an archive, a code
+                        repository, a blog, etc.</desc>
+                    <desc xml:lang="en" type="terms">
+                        <term type="activity" source="http://tadirah.dariah.eu/"
+                            key="contextualizing">contextualizing</term>
+                    </desc>
+                    <linkGrp type="generalResources">
+                        <ref type="documentation" source="zotero" target="8TP2F3SS"/>
+                    </linkGrp>
+                </event>
+            </listEvent>
+            </div>
+        </body>
+    </text>
+</TEI>

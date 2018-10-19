@@ -1,0 +1,42 @@
+#Renommer partners => Team
+
+The Standardization Survival Kit is developed within the PARTHENOS project, by the members of the work package "Standardization" chaired by Laurent Romary (Inria, Dariah) :
+
+Piotr Banski (Clarin, IDS)
+Jack Bowers (OeAW)
+Esther Carrasco (CSIC)
+Emiliano Degl’innocenti (CNR)
+Matej Ďurčo (OeAW)
+Hélène Gautier (Huma-Num)
+Roberta Giacomi (SISMEL)
+Susanne Haaf (CLARIN)
+Klaus Illmayer (OeAW)
+Adeline Joffres (Huma-Num)
+Fahad Khan (CNR)
+Mohamed Khemakhem (Inria)
+Nicolas Larrousse (Huma-Num)
+Antonis Litke (Academy of Athens)
+Antonio Davide Madonna (Cultura Italia)
+Monica Monachini (CNR)
+Annelies Van Nispen (NIOD)
+Maciej Ogrodniczuk (CLARIN)
+Nikolaos Papadakis (Academy of Athens)
+Graziella Pastore (Inria)
+Stefan Pernes (Inria)
+Marie Puren (Inria)
+Charles Riondet (Inria)
+Mikel Sanz (CSIC)
+Maurizio Sanesi (SISMEL)
+Dorian Seillier (Inria)
+Panayiotis Siozos (FORTH)
+Claus Spiecker (FHP)
+Lionel Tadjou (Inria)
+Frank Uiterwaal (NIOD)
+Reinier De Valk (DANS)
+Karolien Verbrugge (NIOD)
+
+
+Design : Dorian Seillier (Dorian dot Seillier at inria dot fr)
+Implementation : Lionel Tadjoi (lionel dot tadonfouet at inria dot fr)
+
+Curation: Charles Riondet (charles dot riondet at inria dot fr)

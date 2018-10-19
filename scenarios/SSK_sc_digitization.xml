@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchScenario"
+     xml:id="SSK_sc_digitization">
+   <teiHeader><!-- teiHeader TBC -->
+      <fileDesc>
+         <titleStmt><!-- Title of the tei document, not title of the scenario -->
+            <title>Digitization scenario</title>
+            <author>
+               <persName>Frank Uiterwaal</persName>
+               <affiliation>NIOD-KNAW</affiliation>
+            </author>
+            <author>
+               <persName>Reinier de Valk</persName>
+               <affiliation>DANS-KNAW</affiliation>
+            </author>
+            <sponsor>PARTHENOS</sponsor>
+         </titleStmt>
+         <publicationStmt>
+            <authority/>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+       document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>This Google doc:
+     https://docs.google.com/document/d/1K_JSaML4bjXPNs83JB00UVnO8OpniwJiX4UkYeifCAw/edit#.</p>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <listPrefixDef>
+            <prefixDef ident="wp2" matchPattern="(.*?)" replacementPattern="groups/368112">
+               <p>The prefix wp2 needs to be used before resources taken from the <ref target="https://www.zotero.org/groups/368112/parthenos_wp2" type="url">Parthenos WP2 Zotero
+       Library</ref>.</p>
+               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a colon ":".
+      Ex: target="wp2:JHSD76DS"</p>
+            </prefixDef>
+            <prefixDef ident="wp3" matchPattern="(.*?)" replacementPattern="groups/520841">
+               <p>The prefix wp3 needs to be used before resources taken from the <ref target="https://www.zotero.org/groups/520841/parthenos_wp3" type="url">Parthenos WP3 Zotero
+       Library</ref> .</p>
+               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a colon
+      ":". Ex: target="wp3:JHSD76DS"</p>
+            </prefixDef>
+            <prefixDef ident="wp4" matchPattern="(.*?)" replacementPattern="groups/427927">
+               <p>The prefix wp4 needs to be used before resources taken from the <ref target="https://www.zotero.org/groups/427927/parthenos_wp4" type="url">Parthenos WP4 Zotero
+       Library</ref>.</p>
+               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a colon
+      ":". Ex: target="wp4:JHSD76DS"</p>
+            </prefixDef>
+         </listPrefixDef>
+      </encodingDesc>
+      <revisionDesc>
+         <change><!-- Only for major changes: addition of an author, of a step, etc. --></change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div type="scenario" xml:id="sc_digitization">
+            <head type="scenarioTitle" xml:lang="en">Digitizing textual material</head>
+            <desc type="definition" xml:lang="en">The digitisation process of original objects lies at the
+     core of many activities in the digital humanities field. The way in which a source is
+     digitised, determines to a large extent what kind of information can be gathered from this
+     virtual replica. While there are many complimentary processes which can enrich the the object
+     (metadating, adding augmented layers etc.), these data will build upon the digital
+     fascimile.</desc>
+            <desc type="terms" xml:lang="en">
+               <term source="aureHAL" type="discipline">Social Anthropology and ethnology</term>
+               <term source="aureHAL" type="discipline">History</term>
+               <term source="aureHAL" type="discipline">Philosophy and Sociology of Sciences</term>
+               <term source="aureHAL" type="discipline">Library and information sciences</term>
+               <term key="Data" source="TaDiRAH" type="object"/>
+               <term key="Image" source="TaDiRAH" type="object"/>
+               <term key="Literature" source="TaDiRAH" type="object"/>
+               <term key="Manuscript" source="TaDiRAH" type="object"/>
+               <term key="Sheet Music" source="TaDiRAH" type="object"/>
+               <term key="Text" source="TaDiRAH" type="object"/>
+               <term key="Text Bearing Objects" source="TaDiRAH" type="object"/>
+               <term key="Scanning" source="TaDiRAH" type="technique"/>
+               <term key="Transcription" source="TaDiRAH" type="technique"/>
+            </desc>
+            <figure type="image">
+               <head>Digitisation station</head>
+               <graphic url="https://i.ytimg.com/vi/CmONh1F_atk/maxresdefault.jpg"/>
+               <figDesc/>
+            </figure>
+            <listEvent>
+               <event ref="step_ALI_06022018" type="researchStep" xml:id="s1"/>
+               <event ref="step_DSM_06022018" type="researchStep" xml:id="s2"/>
+               <event ref="step_DIS_06022018" type="researchStep" xml:id="s3"/>
+               <event ref="step_I_06022018" type="researchStep" xml:id="s4"/>
+               <event ref="step_EQC_06022018" type="researchStep" xml:id="s5"/>
+               <event ref="step_SMF_06022018" type="researchStep" xml:id="s6"/>
+               <event ref="step_PP_06022018" type="researchStep" xml:id="s7"/>
+               <event ref="step_SEF_06022018" type="researchStep" xml:id="s8"/>
+               <event ref="step_DTM_06022018" type="researchStep" xml:id="s9"/>
+            </listEvent>
+         </div>
+      </body>
+   </text>
+</TEI>

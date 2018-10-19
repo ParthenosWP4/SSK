@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!-- You have to type the TEI file, with researchStep or researchScenario -->
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="st_0000000001">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Meta scenario step "Select keywords"</title>
+                <author>
+                    <persName>Riondet Charles</persName>
+                    <affiliation>Inria</affiliation>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <authority>Parthenos</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/">
+                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.</p>
+                    </licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Created from scratch, <date when="2018-06-23">June 23d 2018</date></p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listEvent>
+                <event type="researchStep">
+                    <head type="stepTitle" xml:lang="en">Associate keywords to the scenario or the
+                        step</head>
+                    <desc type="definition" xml:lang="en">The SSK vocabularies are:<list>
+                            <item><ref type="specification"
+                                    target="https://ssk-application.parthenos.d4science.org/ssk/#/glossary/activities"
+                                    >Research activities</ref>, taken from <ref type="specification"
+                                    target="https://github.com/dhtaxonomy/TaDiRAH"
+                                >Tadirah</ref>.</item>
+                            <item><ref type="specification"
+                                    target="https://ssk-application.parthenos.d4science.org/ssk/#/glossary/techniques"
+                                    >Research techniques</ref>, taken from <ref type="specification"
+                                    target="https://github.com/dhtaxonomy/TaDiRAH"
+                                >Tadirah</ref>.</item>
+                            <item><ref type="specification"
+                                    target="https://ssk-application.parthenos.d4science.org/ssk/#/glossary/objects"
+                                    >Research objects</ref>, taken from <ref type="specification"
+                                    target="https://github.com/dhtaxonomy/TaDiRAH">Tadirah</ref> and
+                                    <ref type="specification"
+                                    target="http://nemo.dcu.gr/index.php?p=navigate#"
+                                >NeDiMAH</ref></item>
+                            <item><ref type="documentation"
+                                    target="https://ssk-application.parthenos.d4science.org/ssk/#/glossary/standards"
+                                    >Standards</ref>, taken from the SSK Standard Knowledge base
+                                (supported by DARIAH-IT)</item>
+                            <item><ref type="documentation"
+                                    target="https://ssk-application.parthenos.d4science.org/ssk/#/glossary/disciplines"
+                                    >Disciplines</ref>, taken from <ref type="specification"
+                                    target="https://aurehal.archives-ouvertes.fr/domain?locale=en"
+                                    >aureHAL</ref></item>
+                        </list>When editing the description of a scenario, the available keywords
+                        are: <list>
+                            <item>Disciplines</item>
+                            <item>Techniques</item>
+                            <item>Objects</item>
+                            <item>Standards</item>
+                        </list>For the steps, the most important keyword is the Activity, that
+                        should be unique for each step. It also possible to pick some techniques,
+                        objects and standards. In general, for each keyword type, we recommend to
+                        choosse between 1 and 4 keywords.</desc>
+                    <desc xml:lang="en" type="terms">
+                        <term type="activity" source="http://tadirah.dariah.eu/" key="annotating"
+                            >annotating</term>
+                    </desc>
+                    <linkGrp type="generalResources">
+                        <ref type="documentation" source="zotero" target="AVJ6UEJK"/>
+                        <ref type="documentation" source="zotero" target="IF7BQ4CG"/>
+                        <ref type="documentation" source="zotero" target="AWFZ6RUC"/>
+                        <ref type="documentation" source="zotero" target="N5EJT3GG"/>
+                        <ref type="documentation" source="zotero" target="53S52UNH"/>
+                        <ref type="documentation" source="zotero" target="V9Q4JPFT"/>
+
+                    </linkGrp>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>

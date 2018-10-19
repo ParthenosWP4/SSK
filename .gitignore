@@ -1,0 +1,15 @@
+misc
+.idea
+scenarios1
+spec/out
+TeiMeta.app
+diagnostics
+testDiag
+doc/_build
+sskEnv
+spec/SSKdoc.md
+spec/SSKdoc2.rst
+SSK_Client
+doc/Makefile
+doc/doc
+doc/docs

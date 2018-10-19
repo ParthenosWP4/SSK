@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     xml:id="step_Ct3Dltf_190618"
+     type="researchStep">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Step "Convert to 3D long-term format"</title>
+            <author>
+               <persName>Sarah Tournon-Valiente</persName>
+               <affiliation>3D-SHS Huma-Num's consortium</affiliation>
+            </author>
+            <author>
+               <persName>Mehdi Chayani</persName>
+               <affiliation>3D-SHS Huma-Num's consortium</affiliation>
+            </author>
+            <author>
+               <persName>Valentin Grimaud</persName>
+               <affiliation>3D-SHS Huma-Num's consortium</affiliation>
+            </author>
+            <author>
+               <persName>Xavier Granier</persName>
+               <affiliation>3D-SHS Huma-Num's consortium</affiliation>
+            </author>
+            <author>
+               <persName>Hélène Gautier</persName>
+               <affiliation>Huma-Num/CNRS</affiliation>
+            </author>
+            <author>
+               <persName>Adeline Joffres</persName>
+               <affiliation>Huma-Num/CNRS</affiliation>
+            </author>
+            <author>
+               <persName>Paulin Ribbe</persName>
+               <affiliation>Huma-Num/CNRS</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>PARTHENOS</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head xml:lang="en">Convert to 3D long-term format</head>
+               <desc xml:lang="en" type="definition">After a collective dialogue within
+                        different disciplines of 3D Huma-Num consortium, choose an open file format
+                        with acceptable losses for archiving 3D objects.</desc>
+               <desc xml:lang="en" type="term">
+                  <term type="activity"
+                        source="http://tadirah.dariah.eu/"
+                        key="http://tadirah.dariah.eu/vocab/index.php?tema=41#x26;/preservation"/>
+               </desc>
+               <linkGrp type="generalResources">
+                  <ref type="specification" source="zotero" target="DS2U4E9U">
+                     <term type="standards" source="standard_list" key="PLY"/>
+                  </ref>
+                  <ref type="specification" source="zotero" target="Q4X9D4BE">
+                     <term type="standards" source="standard_list" key="COLLADA"/>
+                  </ref>
+                  <ref type="schema" source="zotero" target="GHCATCKH"/>
+                  <ref type="documentation" source="zotero" target="69HQKNPC"/>
+                  <ref type="code" source="zotero" target="XRZPJFHZ"/>
+                  <ref type="code" source="zotero" target="6VV6SD4G"/>
+                  <ref type="software" source="zotero" target="3JVDM8IA"/>
+                  <ref type="tutorial" source="zotero" target="WJWAU6SK"/>
+                  <ref type="documentation" source="zotero" target="9CWUJAX4"/>
+                  <ref type="software" source="zotero" target="STRB2DF6"/>
+                  <ref type="tutorial" source="zotero" target="KFMG7ZCJ"/>
+                  <ref type="documentation" source="zotero" target="PVBAFNXD"/>
+                  <ref type="software" source="zotero" target="IDHDKE7P"/>
+                  <ref type="tutorial" source="zotero" target="JVFDSGD7"/>
+                  <ref type="tutorial" source="zotero" target="3NDEJCRT"/>
+                  <ref type="documentation" source="zotero" target="EEFMCRUG"/>
+                  <ref type="code" source="zotero" target="VK4PB9V4"/>
+                  <ref type="tool" source="zotero" target="PC9CB7XV"/>
+                  <ref type="documentation" source="zotero" target="ZAGUFDQJ"/>
+                  <ref type="code" source="zotero" target="24BZD9VJ"/>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
+</TEI>

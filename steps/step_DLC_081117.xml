@@ -2,7 +2,9 @@
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="../../TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_DLC_081117">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -20,8 +22,8 @@
             <authority>Parthenos</authority>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
-                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
-                     this document.</p>
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+       document.</p>
                </licence>
             </availability>
          </publicationStmt>
@@ -38,17 +40,20 @@
          <listEvent>
             <event type="researchStep">
                <head xml:lang="en">Determining laser characteristics</head>
-               <desc xml:lang="en" type="definition">Testing and characterization of lasers.</desc>
-               <desc xml:lang="fr" type="definition"/>
-               <desc xml:lang="en" type="term">
-                  <term type="standard" source="standard_list"
-                     key="ISO 11554:2017"/>
-                  <term type="activity" source="http://tadirah.dariah.eu/"
-                     key="http://tadirah.dariah.eu/vocab/index.php?tema=26&amp;/content-analysis"/>
+               <desc type="definition" xml:lang="en">Testing and characterization of lasers.</desc>
+               <desc type="definition" xml:lang="fr"/>
+               <desc type="term" xml:lang="en">
+                  <term key="ISO 11554:2017" source="standard_list" type="standard"/>
+                  <term key="http://tadirah.dariah.eu/vocab/index.php?tema=26&amp;/content-analysis"
+                        source="http://tadirah.dariah.eu/"
+                        type="activity"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref type="standard" subtype="ISO_standard" source="zotero" target="76H5WF4F">
-                     <term type="ISO_standard" key="ISO 11554:2017"/>
+                  <ref source="zotero"
+                       subtype="ISO_standard"
+                       target="76H5WF4F"
+                       type="standard">
+                     <term key="ISO 11554:2017" type="ISO_standard"/>
                   </ref>
                </linkGrp>
             </event>

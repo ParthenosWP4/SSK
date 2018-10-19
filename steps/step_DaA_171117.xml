@@ -1,67 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-	schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-model href="../../TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Step "Disseminate and archive"</title>
-                <author>
-                    <persName>Hélène Gautier</persName>
-                    <affiliation>Huma-Num/CNRS</affiliation>
-                </author>
-                <author>
-                    <persName>Marie Puren</persName>
-                    <affiliation>INRIA</affiliation>
-                </author>
-            </titleStmt>
-            <publicationStmt>
-                <authority>Parthenos</authority>
-                <availability>
-                    <licence target="http://creativecommons.org/licenses/by/4.0/">
-                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
-                            to this document.</p>
-                    </licence>
-                </availability>
-            </publicationStmt>
-            <sourceDesc>
-                <p>Created from scratch</p>
-            </sourceDesc>
-        </fileDesc>
-        <revisionDesc>
-            <change/>
-        </revisionDesc>
-    </teiHeader>
-    <text>
-        <body>
-            <listEvent>
-                <event type="researchStep">
-                    <head xml:lang="en">Disseminate and archive</head>
-                    <head xml:lang="fr">Diffusion et archivage</head>
-                    <desc xml:lang="en" type="definition">Regarding the paper documents, repackage
-                        them in permanent paper folders and retain them in archive boxes. Possibly
-                        orientate them to the relevant archive service. Use the digital version for
-                        dissemination and submit it to a long-term archiving repository/service.
-                        Give the possibility to download the data in formats compatible with
-                        analysis tools.</desc>
-                    <desc xml:lang="fr" type="definition">Reconditionner les documents papier dans
-                        des chemises en papier permanent et les conserver dans des boîtes dédiées à
-                        l'archivage. Ces documents papier pourront éventuellement être orientés vers
-                        le service d'archives compétent. Diffuser la version numérique et la
-                        soumettre à un service d'archivage pérenne. Donner la possibilité de
-                        télécharger les données dans des formats compatibles avec les outils
-                        d'analyse.</desc>
-                    <desc xml:lang="en" type="term">
-                        <term type="activity" source="http://tadirah.dariah.eu/"
-                            key="http://tadirah.dariah.eu/vocab/index.php?tema=42&amp;/7_dissemination"
-                        />
-                    </desc>
-                    <linkGrp type="projectResources" source="BeQuali" corresp="http://bequali.fr/fr/">
-                        <ref type="webpage" target="http://bequali.fr/fr/"></ref>
-                    </linkGrp>
-                </event>
-            </listEvent>
-        </body>
-    </text>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_DaA_171117">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Step "Disseminate and archive"</title>
+            <author>
+               <persName>Hélène Gautier</persName>
+               <affiliation>Huma-Num/CNRS</affiliation>
+            </author>
+            <author>
+               <persName>Marie Puren</persName>
+               <affiliation>INRIA</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+       document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head xml:lang="en">Disseminate and archive</head>
+               <head xml:lang="fr">Diffusion et archivage</head>
+               <desc type="definition" xml:lang="en">Regarding the paper documents, repackage them in
+      permanent paper folders and retain them in archive boxes. Possibly orientate them to the
+      relevant archive service. Use the digital version for dissemination and submit it to a
+      long-term archiving repository/service. Give the possibility to download the data in formats
+      compatible with analysis tools.</desc>
+               <desc type="definition" xml:lang="fr">Reconditionner les documents papier dans des chemises en
+      papier permanent et les conserver dans des boîtes dédiées à l'archivage. Ces documents papier
+      pourront éventuellement être orientés vers le service d'archives compétent. Diffuser la
+      version numérique et la soumettre à un service d'archivage pérenne. Donner la possibilité de
+      télécharger les données dans des formats compatibles avec les outils d'analyse.</desc>
+               <desc type="term" xml:lang="en">
+                  <term key="http://tadirah.dariah.eu/vocab/index.php?tema=42&amp;/7_dissemination"
+                        source="http://tadirah.dariah.eu/"
+                        type="activity"/>
+               </desc>
+               <linkGrp corresp="http://bequali.fr/fr/"
+                        source="BeQuali"
+                        type="projectResources">
+                  <ref source="BeQuali" target="http://bequali.fr/fr/" type="webpage"/>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     xml:id="step_A3DOBS"
+     type="researchStep">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Step "Acquisition of 3D object (by scanning)"</title>
+            <author>
+               <persName>Hélène Gautier</persName>
+               <affiliation>Huma-Num/CNRS</affiliation>
+            </author>
+            <author>
+               <persName>Adeline Joffres</persName>
+               <affiliation>Huma-Num/CNRS</affiliation>
+            </author>
+            <author>
+               <persName>Paulin Ribbe</persName>
+               <affiliation>Huma-Num/CNRS</affiliation>
+            </author>
+            <author>
+               <persName>Mehdi Chayani</persName>
+               <affiliation>3D-SHS Huma-Num's consortium</affiliation>
+            </author>
+            <author>
+               <persName>Xavier Granier</persName>
+               <affiliation>3D-SHS Huma-Num's consortium</affiliation>
+            </author>
+            <author>
+               <persName>Sarah Tournon-Valiente</persName>
+               <affiliation>3D-SHS Huma-Num's consortium</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head xml:lang="en">Acquisition of 3D object (by scanning)</head>
+               <desc xml:lang="en" type="definition">The choice of an appropriate scanning
+                        system depends on the object to digitize. The main parameter is of course
+                        the size. The method will be different for a small artefact or for an
+                        excavation site. The main methods are: <list>
+                     <item>Triangulation based artefact scanners</item>
+                     <item>Terrestrial time of flight laser scanners</item>
+                     <item>Airborne laser scanning</item>
+                     <item>Mobile Mapping systems</item>
+                  </list> For any system, the methodological framework should the following:<list>
+                     <item>Data acquisition</item>
+                     <item>Register scan</item>
+                     <item>Georeference scan</item>
+                     <item>Creation polygonal mesh</item>
+                     <item>Optimization/Decimation mesh</item>
+                  </list>
+               </desc>
+               <desc xml:lang="en" type="terms">
+                  <term type="activity" source="TaDiRAH" key="Imaging"/>
+                  <term type="standard" key="STL (file format)"/>
+                  <term type="standard" key="FLS"/>
+                  <term type="standard" key="FWS"/>
+               </desc>
+               <linkGrp type="generalResources">
+                  <ref type="report" source="zotero" target="JQA2HGXG"/>
+                  <ref type="report" source="zotero" target="VCC9IDXV"/>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
+</TEI>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!-- You have to type the TEI file, with researchStep or researchScenario -->
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="st_0000000001">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Meta scenario step "Advanced functions"</title>
+                <author>
+                    <persName>Riondet Charles</persName>
+                    <affiliation>Inria</affiliation>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <authority>Parthenos</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/">
+                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.</p>
+                    </licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Created from scratch, <date when="2018-06-23">June 23d 2018</date></p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listEvent>
+                <event type="researchStep">
+                    <head type="stepTitle" xml:lang="en">Advanced SSK functions (1) : customize a
+                        step or a scenario</head>
+                    <desc type="definition" xml:lang="en">The SSK is adaptable by nature and
+                        contributors don't have to start from scratch their scenario. It is possible
+                        to create a scenario with existing steps as basis. But if the content of the
+                        step doesn't exactly fit, it is also possible to modify it, by updating the
+                        initial step (but with care), or, more safely, directly in the new scenario.
+                        In TEI, the update of element is made with the help of the attribute @mode.
+                        See more in the <ref type="documentation" target="https://parthenoswp4.github.io/SSK/SSKspec.html#index.xml-body.1_div.4_div.1">SSK TEI documentation</ref>
+                        <list>
+                            <item>Use and modify existing scenarios and steps</item>
+                        </list></desc>
+                    <desc xml:lang="en" type="terms">
+                        <term type="activity" source="http://tadirah.dariah.eu/" key="editing"
+                            >editing</term>
+                    </desc>
+                    <linkGrp type="generalResources">
+                        <ref type="documentation" source="zotero" target="WR5Q5F5U"/>
+                    </linkGrp>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>

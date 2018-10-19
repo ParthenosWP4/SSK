@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-	schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-model href="../../TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_IPP_201017">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -20,8 +20,8 @@
             <authority>Parthenos</authority>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
-                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
-                     this document.</p>
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+       document.</p>
                </licence>
             </availability>
          </publicationStmt>
@@ -38,32 +38,23 @@
          <listEvent>
             <event type="researchStep">
                <head xml:lang="en">Image Post-Processing</head>
-               <desc xml:lang="en" type="definition">Applying post proccesing methods in order to
-                  extract the maximum available information from the images but also to produced
-                  standardise (device-intependent) images that can be compared directly
-                  compared.</desc>
-               <desc xml:lang="fr" type="definition"/>
-               <desc xml:lang="en" type="term">
-                  <term type="activity" source="http://tadirah.dariah.eu/"
-                     key="http://tadirah.dariah.eu/vocab/index.php?tema=32&amp;/visualization"/>
+               <desc type="definition" xml:lang="en">Applying post proccesing methods in order to extract the
+      maximum available information from the images but also to produced standardise
+      (device-intependent) images that can be compared directly compared.</desc>
+               <desc type="definition" xml:lang="fr"/>
+               <desc type="term" xml:lang="en">
+                  <term key="http://tadirah.dariah.eu/vocab/index.php?tema=32&amp;/visualization"
+                        source="http://tadirah.dariah.eu/"
+                        type="activity"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref type="code" subtype="library_(computing)" source="github"
-                     target="https://github.com/jcupitt/libvips">
-                     <term type="library_(computing)" key="libvips"/>
-                  </ref>
-                  <ref type="website" subtype="tool" source="zotero" target="H23RCNAH">
-                     <term type="tool" key="GIMP"/>
-                  </ref>
-                  <ref type="website" subtype="tool" source="zotero" target="AWRNIGUR">
-                     <term type="tool" key="Adobe Photoshop"/>
-                  </ref>
-                  <ref type="website" subtype="tool" source="zotero" target="2NZPNEAN">
-                     <term type="tool" key="ImageJ"/>
-                  </ref>
-                  <ref type="website" subtype="tool" source="zotero" target="2NZPNEAN">
-                     <term type="tool" key="GNU Octave"/>
-                  </ref>
+                  <ref source="github"
+                       target="https://github.com/jcupitt/libvips"
+                       type="library"/>
+                  <ref source="zotero" subtype="tool" target="H23RCNAH" type="website"/>
+                  <ref source="zotero" subtype="tool" target="AWRNIGUR" type="website"/>
+                  <ref source="zotero" subtype="tool" target="2NZPNEAN" type="website"/>
+                  <ref source="zotero" subtype="tool" target="2NZPNEAN" type="website"/>
                </linkGrp>
             </event>
          </listEvent>

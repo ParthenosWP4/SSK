@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title> </title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Maintenance and further development of NeMO is carried out by DCU within DARIAH-GR
+               and contributes to DARIAH-EU. This TEI instance was created for the PARTHENOS
+               project</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Manually converted in TEI from the NEMO website: 
+                  http://nemo.dcu.gr/index.php?p=navigate#"</p>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div xml:id="tadirahActivities"
+            source="https://github.com/dhtaxonomy/TaDiRAH/blob/master/reference/activities.md">
+            <head xml:lang="en">TaDirAH Activities</head>
+            <desc  xml:lang="en">Research activities are usually applied to one or several research objects. An
+               article about modeling of manuscript properties would therefore be tagged with the
+               tags “modeling” and “manuscript”. A plain text editor would be tagged with the tags
+               "writing" and "code" and "text".</desc>
+            <desc  xml:lang="fr">...</desc>
+            <div>
+               <head>Capture</head>
+               <desc>"capture" generally refers to the activity of creating digital surrogates of
+                  existing cultural artefacts, or expressing existing artifacts in a digital
+                  representation (digitization). This could be a manual process (as in
+                  "transcribing") or an automated procedure (as in "imaging" or "data_recognition").
+                  Such capture precedes "enrichment" and "analysis", at least from a systematic
+                  point of view, if not in practice.</desc>
+               <list>
+                  <item>
+                     <term>conversion</term>
+                     <gloss>Conversion</gloss>
+                     <desc>"conversion" refers to changing the file format of an object (e.g.
+                        converting a .wmv video to a .mov file as well as converting VHS into a
+                        digital format) without fundamentally changing the content or nature of the
+                        object. When conversion concerns metadata, it involves mapping one metadata
+                        schema to another. More fundamental conversions, such as converting a
+                        scanned page image to an editable text document, are better referred to
+                        using “data_recognition”.</desc></item>
+                  <item>
+                     <term>data_recognition</term>
+                     <gloss>Data Recognition</gloss>
+                     <desc>"data_recognition", for example OCR, refers to the process of treating
+                        the immediate products of digital data capture ("recording" or "imaging"),
+                        such as digital facsimiles of texts or of sheet music, in a way to extract
+                        discrete, machine-readable units from them, such as plain text words,
+                        musical notes, or still or moving image elements (including, for example,
+                        face recognition).</desc>
+                  </item>
+                  <item>
+                     <term>discovering</term>
+                     <gloss>Discovering</gloss>
+                     <desc>"discovering" is the activity of seeking out objects of research,
+                        research results, or other information which is useful in a given search
+                        perspective. Discovering includes very directed techniques such as advanced
+                        querying of databases, less directed techniques such as simple "searching",
+                        and more serendipitous ones as "browsing", which would include faceted
+                        browsing. (It is different from "information_retrieval", which is a
+                        structured way of extracting some piece of information or some specific
+                        subset of objects from a resource.)</desc>
+                  </item>
+                  <item>
+                     <term>gathering</term>
+                     <gloss>Gathering</gloss>
+                     <desc>"gathering" refers to aggregating discovered resources, usually in some
+                        structured way (e.g. bringing together all papers that address a certain
+                        topic, as part of a literature review, or pulling all works by a particular
+                        author out of a digital collection for further analysis). Related techniques
+                        include web crawling and scraping.</desc>
+                  </item>
+                  <item>
+                     <term>imaging</term>
+                     <gloss>Imaging</gloss>
+                     <desc>"imaging" refers to the capture of texts, images, artefacts or spatial
+                        formations using optical means of capture. Imaging can be made in 2D or 3D,
+                        using various means (light, laser, infrared, ultrasound). Imaging usually
+                        does not lead to the identification of discrete semantic or structural units
+                        in the data, such as words or musical notes, which is something
+                        "data_recognition" accomplishes. Imaging also includes scanning and digital
+                        photography.</desc>
+                  </item>
+                  <item>
+                     <term>recording</term>
+                     <gloss>Recording</gloss>
+                     <desc>Capturing audio and/or video; the result is a digital audio (e.g. WAV,
+                        MP3, etc.) or video (e.g. MP4, Quicktime, etc.) file that can be
+                        manipulated, analyzed, and/or stored.</desc></item>
+                  <item>
+                     <term>transcription</term>
+                     <gloss>Transcription</gloss>
+                     <desc>"transcription" is the activity of creating a representation of a
+                        manuscript (often in combination with "enrichment") or of audio or video
+                        recordings. The representation is (also) generally textual for the verbal
+                        aspects of recordings and structured for example by speech turns, but can
+                        also contain multimodal information like gestures or events and multimedia
+                        information like time synchronization and relation to media files.
+                        Transcription that is partial, selective, and/or inherently linked to the
+                        source document may be better categorized as "annotation".</desc>
+                  </item>
+               </list>
+            </div>
+
+
+            <div>
+               <head>Creation</head>
+               <desc>Creating things generally refers to the activity of producing born-digital
+                  digital objects, rather than creating digital objects by capturing and digitizing
+                  existing analog objects. Creating can involve writing natural language text (cf.
+                  "writing") or, understood more broadly as the creation of a string of discrete
+                  symbols, it could also concern other forms of expression, such as creating
+                  executable code (cf. "programming"), composing a musical score, or creating an
+                  image.</desc>
+               <list>
+                  <item>
+                     <term>designing</term>
+                     <desc>The development of a user interface, with which the user is able to
+                        interact to perform various tasks and conduct activities. Also included here
+                        is the development of the user experience, where a person’s perceptions of
+                        the practical aspects such as utility, ease of use, and efficiency of the
+                        system are taken into consideration. Does not include the implementation of
+                        the design (see “programming” or “web_development”). Database design is to
+                        be categorized using “modeling”.</desc></item>
+                  <item><term>programming</term>
+                     <desc>Creation of code executable by a computer, that is creation of scripts or
+                        software. (This includes “prototyping”, the creation of such code for
+                        testing or modeling purposes.) It is also closely related to the more
+                        broader activity of tool development. Programming is separate from
+                        "encoding" (enriching a document by making structural, layout-related,
+                        semantic, or other information about a specific part of a document explicit
+                        by adding markup to its transcription).</desc></item>
+                  <item><term>translation</term>
+                     <desc>"translation" involves creating a new linguistic object based on a source
+                        document but written in a different language than the source. This applies
+                        to both natural languages and machine-readable programming
+                     languages.</desc></item>
+                  <item><term>web_development</term>
+                     <desc>Creation of websites, by building on a platform (e.g. content management
+                        systems such as Drupal, WordPress and Omeka) or writing HTML/CSS. Writing a
+                        module/plugin for a platform, or programming web-based applications, should
+                        use the “programming” method.</desc></item>
+                  <item><term>writing</term>
+                     <desc>"writing" designates the activity of creating new texts (instead of
+                        capturing existing text). In our context, this would primarily concern
+                        research papers and reports, but may include other textually-oriented
+                        objects.</desc></item>
+               </list>
+            </div>
+            <div>
+               <head>Enrichment</head>
+               <desc>Enrichment refers to the activity of adding information to an object of
+                  enquiry, by making its origin, nature, structure, meaning, or elements explicit.
+                  This activity typically follows the capture of the object.</desc>
+               <list>
+                  <item><term>annotating</term>
+                     <desc>"annotating" refers to the activity of making information about a digital
+                        object explicit by adding, e.g., comments, metadata or keywords to a
+                        digitized representation or to an annotation file associated with it. This
+                        can be in the form of annotations that comment on or contextualize a passage
+                        (explanatory annotations) in order to make structural or linguistic
+                        information explicit (structural/linguistic annotation), as linked open data
+                        making the relationships between objects machine-readable, or, in the case
+                        of general metadata, adding information about the object as a whole.
+                        Encoding is a technique associated with annotating, as are POS-Tagging,
+                        Tree-Tagging, and Georeferencing.</desc></item>
+                  <item><term>cleanup</term>
+                     <desc>Data "cleanup" involves improving the quality of an existing digital
+                        object. This could include such things as correcting errors in a written
+                        text, errors in OCR results, debugging code, improving the quality of video,
+                        audio, or image file.</desc></item>
+                  <item><term>editing</term>
+                     <desc>"editing" refers to making structural, layout-related, semantic, or other
+                        information about a specific part of a document explicit by adding (inline
+                        or stand-off) markup to its transcription. This is typically part of the
+                        larger activity of scholarly editing of textual, musical, or other sources.
+                        It is based on a transcription of the document (the result of
+                        "data_recognition") and guided by a model of the document (the result of
+                        "modeling").</desc></item>
+               </list>
+            </div>
+            <div>
+               <head>Analysis</head>
+               <desc>This general research goal refers to the activity of extracting any kind of
+                  information from open or closed, structured or unstructured collections of data,
+                  of discovering recurring phenomena, units, elements, patterns, groupings, and the
+                  like. This can refer to structural, formal or semantic aspects of data. Analysis
+                  also includes methods used to visualize results. Methods and techniques related to
+                  this goal may be considered to follow "capture" and "enrichment"; however,
+                  "enrichment" depends upon assumptions, research questions and results related to
+                  "analysis".</desc>
+               <list>
+                  <item><term>content_analysis</term>
+                     <desc>"content_analysis" is a method which aims to analyze aspects of digital
+                        objects relating to their meaning, such as concepts or meaningful units.
+                        Relevant techniques include "topic_modeling", "sentiment_analysis",
+                        "information_retrieval", "discourse_analysis", but also
+                        "named_entity_recognition".</desc></item>
+                  <item><term>network_analysis</term>
+                     <desc>"network_analysis" is a method to study the relations of (real or
+                        fictional) actors or other entities in a mediated network, which can take
+                        the form of a social or academic online network, a set of correspondence, or
+                        a work of literature; the resulting network is usually made up of nodes
+                        (entities) and edges (relations). Relevant techniques include
+                        "named_entity_recognition". When the artefacts themselves (texts, images,
+                        etc.) and their relations are concerned, the corresponding research activity
+                        would be "relational_analysis".</desc></item>
+                  <item><term>relational_analysis</term>
+                     <desc>"relational_analysis" refers to computational techniques serving to
+                        discover specific relations between several objects of study. In textual
+                        studies, this could mean discovering overlap between several different texts
+                        (study of text reuse / plagiarism), or textual variations between several
+                        versions of one text (collation), or assessing the similarity of texts in
+                        terms of stylistic features (stylometry). By analogy, such methods can also
+                        be applied to other cultural artefacts, such as music, film or painting.
+                        Relevant techniques include "sequence_alignment", "collation", and
+                        techniques associated with "stylistic_analysis".</desc></item>
+                  <item><term>spatial_analysis</term>
+                     <desc>"spatial_analysis" refers to the discovery of trends or patterns in data
+                        pertaining to spatial or geographical aspects of the data. Spatial analysis
+                        is often based on techniques of "annotating" of data, such as
+                        "georeferencing" or "named_entity_recognition", and may lead to
+                        "visualization" or "modeling" in the form of maps (see
+                     "modeling").</desc></item>
+                  <item><term>structural_analysis</term>
+                     <desc>"structural_analysis" involves analysis of objects on the level of the
+                        relations between structural elements of a cultural artefact (level of
+                        morphology or syntax in linguistics). Relevant techniques include:
+                        "pos_tagging", "tree_tagging", "collocation_analysis",
+                        "concordancing".</desc></item>
+                  <item><term>stylistic_analysis</term>
+                     <desc>"stylistic_analysis" consists of identifying stylistic or formal features
+                        of digital objects. Although computational stylistics is in many cases
+                        applied to texts and based on linguistic features, it can also be applied to
+                        other media such as physical artifacts, painting, music or movies. Relevant
+                        techniques include: Stylometry, Principal Component Analysis, Cluster
+                        Analysis, Paleographic Analysis.</desc></item>
+                  <item><term>visualization</term>
+                     <desc>"visualization" refers to activities which serve to summarize and present
+                        in a graphical form, and to use such graphical forms analytically, that is
+                        to detect patterns, structures, or points of interest in the underlying
+                        data. Virtually any kind of data can be visualized, and the forms of
+                        visualizations can be images, maps, timelines, graphs, or tables, and the
+                        like. Relevant techniques include "plotting" and "mapping".</desc></item>
+               </list>
+            </div>
+            <div>
+               <head>Interpretation</head>
+               <desc>"interpretation" is the activity of ascribing meaning to phenomena observed in
+                  "analysis". Therefore, interpretation usually follows analysis, although it could
+                  also be considered that interpretation defines the hermeneutic perspective of any
+                  method of analysis.</desc>
+               <list>
+                  <item><term>contextualizing</term>
+                     <desc>"contextualizing" is the activity of creating associations between an
+                        object of investigation and other, more established or better-understood
+                        objects in a relation of geographical, temporal, or thematic proximity to
+                        the object of investigation, with the aim of ascribing meaning to that
+                        object. Such contextualizing may build on existing annotations and/or
+                        metadata.</desc></item>
+                  <item><term>modeling</term>
+                     <desc>"modeling" is the activity of creating an abstract representation of a
+                        complex phenomenon, usually in a machine-readable way, possibly in an
+                        interactive way (i.e. it includes “simulation”). Models become
+                        machine-readable when modeling produces a schema that describes the elements
+                        and the structure of an object of inquiry in an explicit way. Modeling can
+                        also refer to the activity of transforming or manipulating a digital object
+                        in such a way as to make it compatible with a previously constructed model
+                        or schema. "mapping", for instance, is an example of a spatial model.
+                        Workflow design is included as part of "modeling", using an object such as
+                        "process".</desc></item>
+                  <item><term>theorizing</term>
+                     <desc>"theorizing" is a method which aims to relate a number of elements or
+                        ideas into a coherent system based on some general principles and capable of
+                        explaining relevant phenomena or observations. Theorizing relies on
+                        techniques such as "reasoning", "abstract_thinking", "conceptualizing" and
+                        "defining". A theory may be implemented in the form of a model, or a model
+                        may give rise to formulating a theory.</desc></item>
+               </list>
+            </div>
+            <div>
+               <head>Storage</head>
+               <desc>Storing refers to the activity of making digital copies of objects of inquiry,
+                  results of research, or software and services and of keeping them accessible,
+                  without necessarily making them available to the public.</desc>
+               <list>
+                  <item><term>archiving</term>
+                     <desc>"archiving" includes the process of moving data and other resources to a
+                        separate space for retention. If long-term archiving is involved, activities
+                        related to data "preservation" may also be involved.</desc></item>
+                  <item>
+                     <term>identifying</term>
+                     <desc>"identifying" refers to the activity of naming and/or assigning (possibly
+                        unique and/or persistent) identifiers to objects of enquiry or to any kind
+                        of digital object. Adding a metadata description of the object is part of
+                        "annotation".</desc></item>
+                  <item><term>organizing</term>
+                     <desc>"organizing" refers to the arrangement of objects (research materials,
+                        data sets, images, etc.) in a way that facilitates other research
+                        activities. May also include activities that support discovery such as
+                        metadata creation ("annotation") and other forms of
+                     "enrichement".</desc></item>
+                  <item>
+                     <term>preservation</term>
+                     <desc>The application of specific strategies, activities and technologies for
+                        the purpose of ensuring an accurate rendering of digital content over time.
+                        It facilitates the reuse of research data, objects, and related resources
+                        and may include activities related to sustainability and interoperability.
+                        Related techniques include but are not limited to:
+                        "bit_stream_preservation", "durable_persistent_media", "emulation",
+                        "metadata_attachment", "migration", "replication",
+                        "technology_preservation", "versioning", the use of Open Archival
+                        Information Systems and standards that support
+                     interoperability.</desc></item>
+               </list>
+            </div>
+            <div>
+               <head>Dissemination</head>
+               <desc>Dissemination refers to the activity of making objects of inquiry, results of
+                  research, or software and services available to fellow researchers or the wider
+                  public in a variety of more or less formal ways. It builds on or requires storing
+                  and can include releasing and sharing of data using a variety of methods and
+                  techniques including the application of linked open data.</desc>
+
+               <list>
+                  <item><term>collaboration</term>
+                     <desc>"collaboration" is involved in any research activity being done jointly
+                        by several researchers, possibly in different places and at different times.
+                        Research-oriented collaboration is enabled, particularly, through
+                        comprehensive Digital Research Environments, but can also happen around more
+                        specific activities, such as communication or sharing of
+                     resources.</desc></item>
+                  <item><term>commenting</term>
+                     <desc>"commenting" is the activity of adding information to a piece of data,
+                        usually in a way that separates the data to which the comment is attached
+                        and the comment. It usually serves to express some opinion, to add
+                        contextual information, or to engage in communication or collaboration with
+                        others about the object commented on. This is different from "annotating"
+                        (as defined here) which refers to adding descriptive or explanatory
+                        information to sections of an object with the aim of making inherent
+                        qualities, structures, or meanings of that section explicit.</desc></item>
+                  <item><term>communicating</term>
+                     <desc>"communicating" refers to the activity of exchanging ideas with other
+                        people, primarily, but not exclusively, using linguistic means. Relevant
+                        techniques include "email", "chat", "audio_conferencing".</desc></item>
+                  <item><term>crowdsourcing</term>
+                     <desc>"crowdsourcing" refers to the paradigm of user-generated content in a web
+                        2.0 context, applied here to the domain of digital humanities research.
+                        "crowdsourcing" may include "gamification", which may be understood as one
+                        form of creating motivation in crowdsourcing endeavors.</desc></item>
+                  <item><term>publishing</term>
+                     <desc>"publishing" refers to the activity of making any kind of object formally
+                        available to the wider public. This can involve objects of research,
+                        research data, research results, or tools and services. Publishing can be
+                        closed or open access / open source, and research results can be published
+                        in print or digital formats.</desc></item>
+                  <item><term>sharing</term>
+                     <desc>"sharing" refers to the activity of making objects publically available
+                        through informal channels such as blogs, code sharing sites such as GitHub,
+                        or other social media sites.</desc></item>
+               </list>
+            </div>
+            <div>
+               <head>Meta activities</head>
+               <desc>"meta_activities" are activities which, unlike regular research activities, do
+                  not apply directly to a research object, but rather to a combination of a research
+                  activity with a research object. A case in point would be a tutorial "teaching"
+                  the digital "encoding" of "music", or a report "introducing" readers to
+                  "pattern_recognition" in "images". Meta-Activity tags can be added to provide
+                  additional context to a typical activity+object pair of tags. In some cases,
+                  however, meta-activities may also apply to objects, for example in the case of
+                  objects like “infrastructure” or “digital_humanities”.</desc>
+               <list>
+                  <item><term>assessing</term>
+                     <desc>"assessing" refers to the activity of verifying the existence of certain
+                        properties, usually indicative of some desirable quality in some outcome of
+                        an activity. This may refer to reviewing research papers or conference
+                        proposals, to evaluating the coherence of the annotation of audio-visual
+                        materials, or to an assessment of the usefulness of the Digital
+                        Humanities.</desc></item>
+                  <item><term>community_building</term>
+                     <desc>"community_building" is the activity of creating or enhancing a community
+                        with a common interest. It may include "dissemination", "teaching" as well
+                        as advocating for specific activities, practices, or values.</desc></item>
+                  <item><term>give_overview</term>
+                     <desc>"give_overview" refers to the activity of providing information which is
+                        relatively general or provides a historical or systematic overview of a
+                        given topic. Nevertheless, it can be aimed at experts or beginners in a
+                        field, subfield or specialty.</desc></item>
+                  <item><term>project_management</term>
+                     <desc>"project_management" involves activities such as developing a strategy
+                        and assessing risk for conducting a project, as well as task management
+                        activities, such as keeping a record of tasks, due dates, and other relevant
+                        information. It may include activities such as planning, documenting,
+                        getting funding, but also sending reminders and status reports.
+                        "project_management" is related to "collaboration".</desc>
+                  </item>
+                  <item><term>teaching_and_learning</term>
+                     <desc>"teaching_and_learning" involves one group of people interactively
+                        helping another group of people acquire and/or develop skills, competencies,
+                        and knowledge that let them solve problems in a specific area of
+                        research.</desc></item>
+               </list>
+            </div>
+         </div>
+         <div xml:id="tadirahObject">
+            <head xml:lang="en">Digital Humanities Research Objects</head>
+            <desc></desc>
+            <list>
+               <item><term>Artifacts</term></item>
+               <item><term>Bibliographic Listings</term></item>
+               <item><term>Code</term></item>
+               <item><term>Computers</term></item>
+               <item><term>Curricula</term></item>
+               <item><term>Digital Humanities</term></item>
+               <item><term>Data</term></item>
+               <item><term>File</term></item>
+               <item><term>Images</term></item>
+               <item><term>Images (3D)</term></item>
+               <item><term>Infrastructure</term></item>
+               <item><term>Interaction</term></item>
+               <item><term>Language</term></item>
+               <item><term>Link</term></item>
+               <item><term>Literature</term></item>
+               <item><term>Manuscript</term></item>
+               <item><term>Map</term></item>
+               <item><term>Metadata</term></item>
+               <item><term>Methods</term></item>
+               <item><term>Multimedia</term></item>
+               <item><term>Multimodal</term></item>
+               <item><term>Named Entities</term></item>
+               <item><term>Persons</term></item>
+               <item><term>Projects</term></item>
+               <item><term>Research</term></item>
+               <item><term>Research Process</term></item>
+               <item><term>Research Results</term></item>
+               <item><term>Sheet Music</term></item>
+               <item><term>Software</term></item>
+               <item><term>Sound</term></item>
+               <item><term>Standards</term></item>
+               <item><term>Text</term></item>
+               <item><term>Text Bearing Objects</term></item>
+               <item><term>Tools</term></item>
+               <item><term>Video</term></item>
+               <item><term>VREs</term></item>
+            </list>
+         </div>
+         <div xml:id="tadirahTechniques">
+            <head xml:lang="en" >Research Techniques</head>
+            <desc></desc>
+            <list>
+               <item><term>Bit Stream Preservation</term></item>
+               <item><term>Brainstorming</term></item>
+               <item><term>Browsing</term></item>
+               <item><term>Cluster Analysis</term></item>
+               <item><term>Collocation Analysis</term></item>
+               <item><term>Commenting</term></item>
+               <item><term>Concordancing</term></item>
+               <item><term>Debugging</term></item>
+               <item><term>Distance Measures</term></item>
+               <item><term>Durable Persistent Media</term></item>
+               <item><term>Emulation</term></item>
+               <item><term>Encoding</term></item>
+               <item><term>Gamification</term></item>
+               <item><term>Georeferencing</term></item>
+               <item><term>Information Retrieval</term></item>
+               <item><term>Linked Open Data</term></item>
+               <item><term>Machine Learning</term></item>
+               <item><term>Mapping</term></item>
+               <item><term>Migration</term></item>
+               <item><term>Named Entity Recognition</term></item>
+               <item><term>Open Archival Information Systems</term></item>
+               <item><term>Pattern Recognition</term></item>
+               <item><term>Photography</term></item>
+               <item><term>POS-Tagging</term></item>
+               <item><term>Preservation Metadata</term></item>
+               <item><term>Principal Component Analysis</term></item>
+               <item><term>Replication</term></item>
+               <item><term>Scanning</term></item>
+               <item><term>Searching</term></item>
+               <item><term>Sentiment Analysis</term></item>
+               <item><term>Sequence Alignment</term></item>
+               <item><term>Technology Preservation</term></item>
+               <item><term>Topic Modeling</term></item>
+               <item><term>Versioning</term></item>
+               <item><term>Web Crawling</term></item>
+               <item><term>Text Mining</term></item>
+            </list>
+         </div>
+         <div xml:id="Disciplines">
+            <head xml:lang="en">aureHAL disciplines</head>
+            <desc></desc>
+            <list>
+               <item><term>Biological anthropology</term></item>
+               <item><term>Social Anthropology and ethnology</term></item>
+               <item><term>Archaeology and Prehistory</term></item>
+               <item><term>Architecture, space management</term></item>
+               <item><term>Art and art history</term></item>
+               <item><term>Classical studies</term></item>
+               <item><term>Demography</term></item>
+               <item><term>Law</term></item>
+               <item><term>Economies and finances</term></item>
+               <item><term>Education</term></item>
+               <item><term>Environmental studies</term></item>
+               <item><term>Gender studies</term></item>
+               <item><term>Geography</term></item>
+               <item><term>Management</term></item>
+               <item><term>History, Philosophy and Sociology of Sciences</term></item>
+               <item><term>History</term></item>
+               <item><term>Communication sciences</term></item>
+               <item><term>Linguistics</term></item>
+               <item><term>Literature</term></item>
+               <item><term>Cultural heritage and museology</term></item>
+               <item><term>Musicology and performing arts</term></item>
+               <item><term>Philosophy</term></item>
+               <item><term>Psychology</term></item>
+               <item><term>Religions</term></item>
+               <item><term>Political science</term></item>
+               <item><term>Sociology</term></item>
+               <item><term>Methods and statistics</term></item>
+            </list>
+         </div>
+         <div xml:id="nemo">
+            <head xml:lang="en">NEMO taxonomy on Information Resource Types</head>
+            <desc/>
+            <div>
+               <head>Books</head>
+               <desc/>
+               <list>
+                  <item><term>Abstracts/summaries</term></item>
+                  <item><term>Bibliographies</term></item>
+                  <item><term>Calendars</term></item>
+                  <item><term>Catalogs</term></item>
+                  <item><term>Comics/graphic novels</term></item>
+                  <item><term>Dictionaries</term></item>
+                  <item><term>Directories</term></item>
+                  <item><term>Discographies</term></item>
+                  <item><term>Encyclopedias</term></item>
+                  <item><term>Filmographies</term></item>
+                  <item><term>Handbooks</term></item>
+                  <item><term>Indexes</term></item>
+                  <item><term>Law reports and digests</term></item>
+                  <item><term>Legal articles</term></item>
+                  <item><term>Legal cases and case notes</term></item>
+                  <item><term>Legislation</term></item>
+                  <item><term>Offprints</term></item>
+                  <item><term>Patent document</term></item>
+                  <item><term>Programmed texts</term></item>
+                  <item><term>Reviews</term></item>
+                  <item><term>Standards/specifications</term></item>
+                  <item><term>Statistics</term></item>
+                  <item><term>Surveys of literature in a subject area</term></item>
+                  <item><term>Technical reports</term></item>
+                  <item><term>Theses</term></item>
+                  <item><term>Treaties</term></item>
+                  <item><term>Yearbooks</term></item>
+               </list>
+            </div>
+            <div>
+               <head>Computer Files</head>
+               <desc/>
+               <list>
+                  <item><term>Bibliographic data</term></item>
+                  <item><term>Combination</term></item>
+                  <item><term>Computer program</term></item>
+                  <item><term>Document</term></item>
+                  <item><term>Font</term></item>
+                  <item><term>Game</term></item>
+                  <item><term>Interactive multimedia</term></item>
+                  <item><term>Numeric data</term></item>
+                  <item><term>Online system or service</term></item>
+                  <item><term>Representational</term></item>
+                  <item><term>Sound</term></item>
+               </list>
+            </div>
+            <div>
+               <head>Continuing Resources </head>
+               <list>
+                  <item><term>Abstracts/summaries</term></item>
+                  <item><term>Bibliographies</term></item>
+                  <item><term>Biography</term></item>
+                  <item><term>Calendars</term></item>
+                  <item><term>Catalogs</term></item>
+                  <item><term>Comics/graphic novels</term></item>
+                  <item><term>Dictionaries</term></item>
+                  <item><term>Directories</term></item>
+                  <item><term>Discographies</term></item>
+                  <item><term>Encyclopedias</term></item>
+                  <item><term>Filmographies</term></item>
+                  <item><term>Handbooks</term></item>
+                  <item><term>Indexes</term></item>
+                  <item><term>Law reports and digests</term></item>
+                  <item><term>Legal articles</term></item>
+                  <item><term>Legal cases and case notes</term></item>
+                  <item><term>Legislation</term></item>
+                  <item><term>Programmed texts</term></item>
+                  <item><term>Reviews</term></item>
+                  <item><term>Standards/specifications</term></item>
+                  <item><term>Statistics</term></item>
+                  <item><term>Surveys of literature in a subject area </term></item>
+                  <item><term>Technical reports</term></item>
+                  <item><term>Theses</term></item>
+                  <item><term>Treaties</term></item>
+                  <item><term>Yearbooks</term></item>
+               </list>
+            </div>
+            <div>
+               <head>Maps </head>
+               <list>
+                  <item><term>Atlas</term></item>
+                  <item><term>Bound as part of another work</term></item>
+                  <item><term>Globe</term></item>
+                  <item><term>Map serial</term></item>
+                  <item><term>Map series</term></item>
+                  <item><term>Separate supplement to another work</term></item>
+                  <item><term>Single map</term></item>
+               </list>
+            </div>
+            <div>
+               <head>Mixed Materials</head>
+            </div>
+            <div>
+               <head>Music </head>
+               <list>
+                  <item><term>Accompaniment reduced for keyboard</term></item>
+                  <item><term>Chorus score</term></item>
+                  <item><term>Close score</term></item>
+                  <item><term>Condensed score</term></item>
+                  <item><term>Condensed score or piano-conductor score</term></item>
+                  <item><term>Full score</term></item>
+                  <item><term>Full score, miniature or study size</term></item>
+                  <item><term>Multiple score formats</term></item>
+                  <item><term>Performer-conductor part</term></item>
+                  <item><term>Score</term></item>
+                  <item><term>Vocal score</term></item>
+                  <item><term>Voice score with accompaniment omitted</term></item>
+               </list>
+            </div>
+            <div>
+               <head>Visual Materials </head>
+               <list>
+                  <item><term>Art original</term></item>
+                  <item><term>Art reproduction</term></item>
+                  <item><term>Chart</term></item>
+                  <item><term>Diorama</term></item>
+                  <item><term>Filmstrip</term></item>
+                  <item><term>Flash card</term></item>
+                  <item><term>Game</term></item>
+                  <item><term>Graphic</term></item>
+                  <item><term>Kit</term></item>
+                  <item><term>Microscope slide</term></item>
+                  <item><term>Model</term></item>
+                  <item><term>Motion picture</term></item>
+                  <item><term>Picture</term></item>
+                  <item><term>Realia</term></item>
+                  <item><term>Slide</term></item>
+                  <item><term>Technical drawing</term></item>
+                  <item><term>Toy</term></item>
+                  <item><term>Transparency</term></item>
+                  <item><term>Videorecording</term></item>
+               </list>
+            </div>
+         </div>
+      </body>
+   </text>
+</TEI>

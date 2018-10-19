@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<svrl:schematron-output xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        xmlns:saxon="http://saxon.sf.net/"
+                        xmlns:schold="http://www.ascc.net/xml/schematron"
+                        xmlns:iso="http://purl.oclc.org/dsdl/schematron"
+                        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+                        xmlns:tei="http://www.tei-c.org/ns/1.0"
+                        title=""
+                        schemaVersion=""><!--   
+		   
+		   
+		 -->
+   <svrl:text>Pure TEI content rules</svrl:text>
+   <svrl:ns-prefix-in-attribute-values uri="http://www.tei-c.org/ns/1.0" prefix="tei"/>
+   <svrl:ns-prefix-in-attribute-values uri="http://www.w3.org/2001/XMLSchema" prefix="xs"/>
+   <svrl:active-pattern document="file:/Users/criondet/Git/parthenos/SSK/schematron/../scenarios/SSK_sc_DTABf.xml"/>
+   <svrl:fired-rule context="tei:TEI"/>
+   <svrl:active-pattern document="file:/Users/criondet/Git/parthenos/SSK/schematron/../scenarios/SSK_sc_DTABf.xml"
+                        name="Authors ans sponsor"/>
+   <svrl:fired-rule context="tei:titleStmt"/>
+   <svrl:fired-rule context="tei:author"/>
+   <svrl:active-pattern document="file:/Users/criondet/Git/parthenos/SSK/schematron/../scenarios/SSK_sc_DTABf.xml"
+                        name="Authority"/>
+   <svrl:fired-rule context="tei:publicationStmt"/>
+   <svrl:active-pattern document="file:/Users/criondet/Git/parthenos/SSK/schematron/../scenarios/SSK_sc_DTABf.xml"/>
+   <svrl:fired-rule context="tei:licence"/>
+   <svrl:active-pattern document="file:/Users/criondet/Git/parthenos/SSK/schematron/../scenarios/SSK_sc_DTABf.xml"
+                        name="Licences"/>
+   <svrl:fired-rule context="tei:availability"/>
+   <svrl:active-pattern document="file:/Users/criondet/Git/parthenos/SSK/schematron/../scenarios/SSK_sc_DTABf.xml"
+                        name="Source Description"/>
+   <svrl:fired-rule context="tei:sourceDesc"/>
+   <svrl:successful-report test="child::*"
+                           location="/*:TEI[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:teiHeader[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:fileDesc[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:sourceDesc[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]">
+      <svrl:text>sourceDesc in mandatory in TEI, so if you want to give details on
+        the way the scenario was conceived, it is the appropriate location.</svrl:text>
+   </svrl:successful-report>
+   <svrl:active-pattern document="file:/Users/criondet/Git/parthenos/SSK/schematron/../scenarios/SSK_sc_DTABf.xml"
+                        name="revisionStmt">
+      <svrl:text>Name, affiliation, date, desc</svrl:text>
+   </svrl:active-pattern>
+   <svrl:fired-rule context="tei:change"/>
+   <svrl:failed-assert test="tei:date and tei:persName and tei:affiliation and tei:desc"
+                       location="/*:TEI[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:teiHeader[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:revisionDesc[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:change[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]">
+      <svrl:text> When recording
+        a revision, some precise metadata must be given : the date of the revision, the name of the
+        responsibe and his/her affiliation and a description. </svrl:text>
+   </svrl:failed-assert>
+   <svrl:active-pattern document="file:/Users/criondet/Git/parthenos/SSK/schematron/../scenarios/SSK_sc_DTABf.xml"
+                        name="head">
+      <svrl:text>title between 10 and 100 characters</svrl:text>
+      <svrl:text>Start with a verb or a gerund</svrl:text>
+   </svrl:active-pattern>
+   <svrl:fired-rule context="tei:div/tei:head"/>
+   <svrl:successful-report test="normalize-space(.)"
+                           location="/*:TEI[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:text[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:body[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:div[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:head[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]">
+      <svrl:text>The title of a scenario should describe the main goal of
+        the scenario.</svrl:text>
+   </svrl:successful-report>
+   <svrl:active-pattern document="file:/Users/criondet/Git/parthenos/SSK/schematron/../scenarios/SSK_sc_DTABf.xml"
+                        name="desc definition">
+      <svrl:text>Need a description</svrl:text>
+      <svrl:text>max 1500 characters</svrl:text>
+      <svrl:text>Nothing but lists and refs</svrl:text>
+   </svrl:active-pattern>
+   <svrl:fired-rule context="tei:desc[@type = 'definition']"/>
+   <svrl:failed-assert test="tei:list or tei:ref"
+                       location="/*:TEI[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:text[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:body[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:div[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:desc[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]">
+      <svrl:text> In the &lt;desc type="definition&gt;, there should be
+        nothing more than text, &lt;list&gt; and &lt;ref&gt;.</svrl:text>
+   </svrl:failed-assert>
+   <svrl:active-pattern document="file:/Users/criondet/Git/parthenos/SSK/schematron/../scenarios/SSK_sc_DTABf.xml"
+                        name="Image">
+      <svrl:text>png or jpg</svrl:text>
+   </svrl:active-pattern>
+   <svrl:active-pattern document="file:/Users/criondet/Git/parthenos/SSK/schematron/../scenarios/SSK_sc_DTABf.xml"
+                        name="desc term">
+      <svrl:text>For each type, Max 4</svrl:text>
+   </svrl:active-pattern>
+   <svrl:fired-rule context="tei:desc[@type = 'terms']"/>
+   <svrl:failed-assert test="count(tei:term[@type = 'object']) lt 5"
+                       location="/*:TEI[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:text[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:body[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:div[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:desc[namespace-uri()='http://www.tei-c.org/ns/1.0'][2]">
+      <svrl:text>More than 4 terms of the same
+        vocabulary type may be too much: OBJECT</svrl:text>
+   </svrl:failed-assert>
+   <svrl:active-pattern document="file:/Users/criondet/Git/parthenos/SSK/schematron/../scenarios/SSK_sc_DTABf.xml">
+      <svrl:text>source attribute</svrl:text>
+      <svrl:text>step file: Tadirah activity is mandatory</svrl:text>
+   </svrl:active-pattern>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:successful-report test="ancestor::tei:TEI[@type = 'researchScenario'] and @type = 'activity'"
+                           location="/*:TEI[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:text[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:body[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:div[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:desc[namespace-uri()='http://www.tei-c.org/ns/1.0'][2]/*:term[namespace-uri()='http://www.tei-c.org/ns/1.0'][3]">
+      <svrl:text>The
+        activity terms are more suitable for describing steps rather than scenarios. It is
+        recommended to choose one activity term per scenario step.</svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:successful-report test="ancestor::tei:TEI[@type = 'researchScenario'] and @type = 'activity'"
+                           location="/*:TEI[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:text[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:body[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:div[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:desc[namespace-uri()='http://www.tei-c.org/ns/1.0'][2]/*:term[namespace-uri()='http://www.tei-c.org/ns/1.0'][4]">
+      <svrl:text>The
+        activity terms are more suitable for describing steps rather than scenarios. It is
+        recommended to choose one activity term per scenario step.</svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:successful-report test="ancestor::tei:TEI[@type = 'researchScenario'] and @type = 'activity'"
+                           location="/*:TEI[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:text[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:body[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:div[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:desc[namespace-uri()='http://www.tei-c.org/ns/1.0'][2]/*:term[namespace-uri()='http://www.tei-c.org/ns/1.0'][5]">
+      <svrl:text>The
+        activity terms are more suitable for describing steps rather than scenarios. It is
+        recommended to choose one activity term per scenario step.</svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:successful-report test="ancestor::tei:TEI[@type = 'researchScenario'] and @type = 'activity'"
+                           location="/*:TEI[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:text[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:body[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:div[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:desc[namespace-uri()='http://www.tei-c.org/ns/1.0'][2]/*:term[namespace-uri()='http://www.tei-c.org/ns/1.0'][6]">
+      <svrl:text>The
+        activity terms are more suitable for describing steps rather than scenarios. It is
+        recommended to choose one activity term per scenario step.</svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:successful-report test="ancestor::tei:TEI[@type = 'researchScenario'] and @type = 'activity'"
+                           location="/*:TEI[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:text[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:body[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:div[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:desc[namespace-uri()='http://www.tei-c.org/ns/1.0'][2]/*:term[namespace-uri()='http://www.tei-c.org/ns/1.0'][7]">
+      <svrl:text>The
+        activity terms are more suitable for describing steps rather than scenarios. It is
+        recommended to choose one activity term per scenario step.</svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:successful-report test="ancestor::tei:TEI[@type = 'researchScenario'] and @type = 'activity'"
+                           location="/*:TEI[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:text[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:body[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:div[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:desc[namespace-uri()='http://www.tei-c.org/ns/1.0'][2]/*:term[namespace-uri()='http://www.tei-c.org/ns/1.0'][8]">
+      <svrl:text>The
+        activity terms are more suitable for describing steps rather than scenarios. It is
+        recommended to choose one activity term per scenario step.</svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:successful-report test="ancestor::tei:TEI[@type = 'researchScenario'] and @type = 'activity'"
+                           location="/*:TEI[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:text[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:body[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:div[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:desc[namespace-uri()='http://www.tei-c.org/ns/1.0'][2]/*:term[namespace-uri()='http://www.tei-c.org/ns/1.0'][9]">
+      <svrl:text>The
+        activity terms are more suitable for describing steps rather than scenarios. It is
+        recommended to choose one activity term per scenario step.</svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:successful-report test="ancestor::tei:TEI[@type = 'researchScenario'] and @type = 'activity'"
+                           location="/*:TEI[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:text[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:body[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:div[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:desc[namespace-uri()='http://www.tei-c.org/ns/1.0'][2]/*:term[namespace-uri()='http://www.tei-c.org/ns/1.0'][10]">
+      <svrl:text>The
+        activity terms are more suitable for describing steps rather than scenarios. It is
+        recommended to choose one activity term per scenario step.</svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:successful-report test="ancestor::tei:TEI[@type = 'researchScenario'] and @type = 'activity'"
+                           location="/*:TEI[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:text[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:body[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:div[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:desc[namespace-uri()='http://www.tei-c.org/ns/1.0'][2]/*:term[namespace-uri()='http://www.tei-c.org/ns/1.0'][11]">
+      <svrl:text>The
+        activity terms are more suitable for describing steps rather than scenarios. It is
+        recommended to choose one activity term per scenario step.</svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:successful-report test="ancestor::tei:TEI[@type = 'researchScenario'] and @type = 'activity'"
+                           location="/*:TEI[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:text[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:body[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:div[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:desc[namespace-uri()='http://www.tei-c.org/ns/1.0'][2]/*:term[namespace-uri()='http://www.tei-c.org/ns/1.0'][12]">
+      <svrl:text>The
+        activity terms are more suitable for describing steps rather than scenarios. It is
+        recommended to choose one activity term per scenario step.</svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:successful-report test="ancestor::tei:TEI[@type = 'researchScenario'] and @type = 'activity'"
+                           location="/*:TEI[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:text[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:body[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:div[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:desc[namespace-uri()='http://www.tei-c.org/ns/1.0'][2]/*:term[namespace-uri()='http://www.tei-c.org/ns/1.0'][13]">
+      <svrl:text>The
+        activity terms are more suitable for describing steps rather than scenarios. It is
+        recommended to choose one activity term per scenario step.</svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:successful-report test="ancestor::tei:TEI[@type = 'researchScenario'] and @type = 'activity'"
+                           location="/*:TEI[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:text[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:body[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:div[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:desc[namespace-uri()='http://www.tei-c.org/ns/1.0'][2]/*:term[namespace-uri()='http://www.tei-c.org/ns/1.0'][14]">
+      <svrl:text>The
+        activity terms are more suitable for describing steps rather than scenarios. It is
+        recommended to choose one activity term per scenario step.</svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:successful-report test="ancestor::tei:TEI[@type = 'researchScenario'] and @type = 'activity'"
+                           location="/*:TEI[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:text[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:body[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:div[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:desc[namespace-uri()='http://www.tei-c.org/ns/1.0'][2]/*:term[namespace-uri()='http://www.tei-c.org/ns/1.0'][15]">
+      <svrl:text>The
+        activity terms are more suitable for describing steps rather than scenarios. It is
+        recommended to choose one activity term per scenario step.</svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:failed-assert test="@source"
+                       location="/*:TEI[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:text[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:body[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:div[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:desc[namespace-uri()='http://www.tei-c.org/ns/1.0'][2]/*:term[namespace-uri()='http://www.tei-c.org/ns/1.0'][34]">
+      <svrl:text>The attribute source is important to specifiy which vocabulary was
+        used. The main ones are "tadirah", aurehal, "standard".</svrl:text>
+   </svrl:failed-assert>
+   <svrl:active-pattern document="file:/Users/criondet/Git/parthenos/SSK/schematron/../scenarios/SSK_sc_DTABf.xml"
+                        name="Resources">
+      <svrl:text>General or project : if project, need a source and a corresp attributes</svrl:text>
+      <svrl:text>Zotero = prefix + ^[A-Z0-9]{8}$</svrl:text>
+   </svrl:active-pattern>
+   <svrl:active-pattern document="file:/Users/criondet/Git/parthenos/SSK/schematron/../scenarios/SSK_sc_DTABf.xml"/>
+   <svrl:active-pattern document="file:/Users/criondet/Git/parthenos/SSK/schematron/../scenarios/SSK_sc_DTABf.xml"
+                        name="@type">
+      <svrl:text>body/div</svrl:text>
+      <svrl:text>head</svrl:text>
+      <svrl:text>desc x 2</svrl:text>
+      <svrl:text>event</svrl:text>
+   </svrl:active-pattern>
+   <svrl:active-pattern document="file:/Users/criondet/Git/parthenos/SSK/schematron/../scenarios/SSK_sc_DTABf.xml"/>
+   <svrl:fired-rule context="tei:event"/>
+   <svrl:fired-rule context="tei:event"/>
+   <svrl:fired-rule context="tei:event"/>
+   <svrl:fired-rule context="tei:event"/>
+   <svrl:fired-rule context="tei:event"/>
+   <svrl:fired-rule context="tei:event"/>
+   <svrl:fired-rule context="tei:event"/>
+</svrl:schematron-output>

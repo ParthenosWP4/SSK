@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-	schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-model href="../../../../../../SSK/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_SAn_081117">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -20,8 +20,8 @@
             <authority>Parthenos</authority>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
-                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
-                     this document.</p>
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+       document.</p>
                </licence>
             </availability>
          </publicationStmt>
@@ -38,19 +38,21 @@
          <listEvent>
             <event type="researchStep">
                <head xml:lang="en">Structural analysis</head>
-               <desc xml:lang="en" type="definition">Obtaining the relevant parameters related to
-                  the laser-material interaction for the CH conservation/restoration area.</desc>
-               <desc xml:lang="fr" type="definition"/>
-               <desc xml:lang="en" type="term">
-                  <term type="standard" source="standard_list"
-                     key="ISO/TR 21254-4:2011"/>
-                  <term type="activity" source="http://tadirah.dariah.eu/"
-                     key="http://tadirah.dariah.eu/vocab/index.php?tema=26&amp;/content-analysis"
-                  />
+               <desc type="definition" xml:lang="en">Obtaining the relevant parameters related to the
+      laser-material interaction for the CH conservation/restoration area.</desc>
+               <desc type="definition" xml:lang="fr"/>
+               <desc type="term" xml:lang="en">
+                  <term key="ISO/TR 21254-4:2011" source="standard_list" type="standard"/>
+                  <term key="http://tadirah.dariah.eu/vocab/index.php?tema=26&amp;/content-analysis"
+                        source="http://tadirah.dariah.eu/"
+                        type="activity"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref type="standard" subtype="ISO_standard" source="zotero" target="3Z6IEPXR">
-                     <term type="standard" key="ISO/TR 21254-4:2011"/>
+                  <ref source="zotero"
+                       subtype="ISO_standard"
+                       target="3Z6IEPXR"
+                       type="standard">
+                     <term key="ISO/TR 21254-4:2011" type="standard"/>
                   </ref>
                </linkGrp>
             </event>

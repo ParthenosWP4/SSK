@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchScenario"
+     xml:id="SSK_sc_DTABf">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>sc_DTABf.xml</title>
+            <author><!--<persName><surname>Haaf</surname><forename>Susanne</forename></persName>-->
+               <persName>Haaf Susanne</persName>
+               <affiliation>Berlin-Brandenburg Academy of Sciences and Humanities</affiliation>
+            </author>
+            <sponsor>PARTHENOS</sponsor>
+         </titleStmt>
+         <publicationStmt>
+            <authority/>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
+                     this document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <listPrefixDef>
+            <prefixDef ident="wp2" matchPattern="(.*?)" replacementPattern="groups/368112">
+               <p>The prefix wp2 needs to be used before resources taken from the <ref target="https://www.zotero.org/groups/368112/parthenos_wp2" type="url">Parthenos WP2 Zotero Library</ref> .</p>
+               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a
+                  colon ":". Ex: target="wp2:JHSD76DS"</p>
+            </prefixDef>
+            <prefixDef ident="wp3" matchPattern="(.*?)" replacementPattern="groups/520841">
+               <p>The prefix wp3 needs to be used before resources taken from the <ref target="https://www.zotero.org/groups/520841/parthenos_wp3" type="url">Parthenos WP3 Zotero Library</ref> .</p>
+               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a
+                  colon ":". Ex: target="wp2:JHSD76DS"</p>
+            </prefixDef>
+            <prefixDef ident="wp4" matchPattern="(.*?)" replacementPattern="groups/427927">
+               <p>The prefix wp4 needs to be used before resources taken from the <ref target="https://www.zotero.org/groups/427927/parthenos_wp4" type="url">Parthenos WP4 Zotero Library</ref> .</p>
+               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a
+                  colon ":". Ex: target="wp2:JHSD76DS"</p>
+            </prefixDef>
+         </listPrefixDef>
+      </encodingDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div type="scenario" xml:id="sc_schemaCustomization">
+            <head type="scenarioTitle" xml:lang="en">Harmonization of digitized textual resources
+               with the DTABf</head>
+            <desc type="definition" xml:lang="en">Currently, initiatives for the digitization of
+               textual resources and their provision to the interested community are manifold and
+               various. Hence, scholars who want to base their research on digitized texts,
+               especially if working with popular works, may find a considerable amount of resources
+               already digitized and ready to use. However, with these resources originating from
+               various data providers (individual scholars, singular research projects, large
+               infrastructures, ...) scholars usually face a great variety of digitization
+               guidelines and formats. Gathering resources from different sources will hence almost
+               always require their harmonization on different levels of processing. The CLARIN-D
+               center at the Berlin-Brandenburg Academy of Sciences and Humanities provides an
+               infrastructure for this task based on the DTA 'Base Format' (DTABf). The DTABf is a
+               TEI-P5 format for homogeneous text annotation including set of extensive guidelines
+               for text transcription. This scenario describes the steps to take in order to create
+               a homogeneous, DTABf-based text corpus.</desc>
+            <desc type="terms" xml:lang="en"><!-- Can I reference the D2.1 use case corresponding with this scenario somewhere here? -->
+               <term key="XML" source="standard_list" type="standard"/>
+               <term key="TEI" source="standard_list" type="standard"/>
+               <term key="Discovering"
+                     source="http://tadirah.dariah.eu/"
+                     type="activity"/>
+               <term key="Gathering" source="http://tadirah.dariah.eu/" type="activity"/>
+               <term key="Teaching learning"
+                     source="http://tadirah.dariah.eu/"
+                     type="activity"/>
+               <term key="Assessing" source="http://tadirah.dariah.eu/" type="activity"/>
+               <term key="Data recognition"
+                     source="http://tadirah.dariah.eu/"
+                     type="activity"/>
+               <term key="Annotating" source="http://tadirah.dariah.eu/" type="activity"/>
+               <term key="Cleanup" source="http://tadirah.dariah.eu/" type="activity"/>
+               <term key="Content analysis"
+                     source="http://tadirah.dariah.eu/"
+                     type="activity"/>
+               <term key="Structural analysis"
+                     source="http://tadirah.dariah.eu/"
+                     type="activity"/>
+               <term key="Network analysis"
+                     source="http://tadirah.dariah.eu/"
+                     type="activity"/>
+               <term key="Contextualizing"
+                     source="http://tadirah.dariah.eu/"
+                     type="activity"/>
+               <term key="Publishing" source="http://tadirah.dariah.eu/" type="activity"/>
+               <term key="Sharing" source="http://tadirah.dariah.eu/" type="activity"/>
+               <term key="Encoding" source="http://tadirah.dariah.eu/" type="technique"/>
+               <term key="Mapping" source="http://tadirah.dariah.eu/" type="technique"/>
+               <term key="Searching" source="http://tadirah.dariah.eu/" type="technique"/>
+               <term key="Browsing" source="http://tadirah.dariah.eu/" type="technique"/>
+               <!-- For this scenario some techniques are missing in TADIRAH, I think: Converting; Homogenizing/Harmonizing; Collecting -->
+               <term key="Data" source="http://tadirah.dariah.eu/" type="object"/>
+               <term key="Language" source="http://tadirah.dariah.eu/" type="object"/>
+               <term key="Literature" source="http://tadirah.dariah.eu/" type="object"/>
+               <term key="Metadata" source="http://tadirah.dariah.eu/" type="object"/>
+               <term key="Projects" source="http://tadirah.dariah.eu/" type="object"/>
+               <term key="Standards" source="http://tadirah.dariah.eu/" type="object"/>
+               <term key="Text" source="http://tadirah.dariah.eu/" type="object"/>
+               <term key="Digital Humanities"
+                     source="http://tadirah.dariah.eu/"
+                     type="object"/>
+               <term key="Computer program" source="NEMO" type="object"/>
+               <term key="Document" source="NEMO" type="object"/>
+               <term key="Standards specifications" source="NEMO" type="object"/>
+               <term key="History" source="autreHAL" type="discipline"/>
+               <term key="Linguistics" source="autreHAL" type="discipline"/>
+               <term key="Literature" source="autreHAL" type="discipline"/>
+               <term key="Digital Humanities" type="discipline"/>
+               <!-- Is there a good source for that? -->
+            </desc>
+            <figure type="image">
+               <head>Text digitization with DTABf</head>
+               <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/sc_DTABf_figure.jpg"/>
+               <figDesc>Example for DTABf encoding from: Arnim/Brentano: Des Knaben Wunderhorn. Bd.
+                  1. Heidelberg, 1806, S. 86,
+                  http://www.deutschestextarchiv.de/arnim_wunderhorn01_1806/95. </figDesc>
+            </figure>
+            <listEvent>
+               <event ref="step_SoTWRftRQ" type="researchStep" xml:id="st_dtabf_001"/>
+               <event ref="step_SoTtGiaRC" type="researchStep" xml:id="st_dtabf_002"/>
+               <event ref="step_DoDaAGftRC" type="researchStep" xml:id="st_dtabf_003"/>
+               <event ref="step_DoRftRC" type="researchStep" xml:id="st_dtabf_004"/>
+               <event ref="step_HoEDTftC" type="researchStep" xml:id="st_dtabf_005"/>
+               <event ref="step_RoM" type="researchStep" xml:id="st_dtabf_006"/>
+               <event ref="step_PotC" type="researchStep" xml:id="st_dtabf_007"/>
+            </listEvent>
+         </div>
+      </body>
+   </text>
+</TEI>

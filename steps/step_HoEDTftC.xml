@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_HoEDTftC">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>step_HoEDTftC.xml</title>
+            <author><!--<persName><surname>Haaf</surname><forename>Susanne</forename></persName>-->
+               <persName>Haaf Susanne</persName>
+               <affiliation>Berlin-Brandenburg Academy of Sciences and Humanities</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+       document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head type="stepTitle" xml:lang="en">Harmonization of existing digitized text for the corpus</head>
+               <desc type="definition" xml:lang="en">In case digitized full-texts were already available,
+      most frequently it will be necessary to convert texts into the designated corpus format. In
+      addition, it is necessary to evaluate the guidelines text recognition was based on and the
+      resulting recognition quality. High error rates or severe interferences with the texts due to
+      normalization might necessitate a text correction step. For format harmonization, the tool
+      OxGarage, which allows for the conversion between various formats, can be used as a first
+      step. Furthermore, there are several tools and resources to support this text harmonization
+      step based on the DTABf: <list>
+                     <item>DTAoX: a framework for DTABf conformant text annotation in oXygen XML Author</item>
+                     <item>DTABf transcription and annotation guidelines</item>
+                     <!--<item>a schema for the evaluation of how close a TEI text is to the DTABf</item>-->
+                  </list>
+               </desc>
+               <desc type="terms" xml:lang="en">
+                  <term key="Meta:Assessing"
+                        source="http://tadirah.dariah.eu/"
+                        type="activity"/>
+                  <term key="Annotating" source="http://tadirah.dariah.eu/" type="activity"/>
+                  <term key="Cleanup" source="http://tadirah..eu/" type="activity"/>
+                  <term key="Encoding" source="http://tadirah.dariah.eu/" type="technique"/>
+                  <term key="Data" source="http://tadirah.dariah.eu/" type="object"/>
+                  <term key="Text" source="http://tadirah.dariah.eu/" type="object"/>
+                  <term key="XML" source="standard_list" type="standard"/>
+                  <term key="TEI" source="standard_list" type="standard"/>
+               </desc>
+               <linkGrp type="generalResources"><!-- Ressources: schema for the evaluation of how close a TEI text is to the DTABf -->
+                  <ref source="zotero"
+                       target="https://www.zotero.org/groups/427927/items/4BWPP9WT"
+                       type="specification">OxGarage</ref>
+                  <ref source="zotero"
+                       target="https://www.zotero.org/groups/427927/items/T7672NJ8"
+                       type="specification">DTABf transcription and annotation guidelines</ref>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
+</TEI>

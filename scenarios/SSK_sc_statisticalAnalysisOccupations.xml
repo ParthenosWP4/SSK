@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-model href="file:/d:/Users/hgautier/Desktop/TEI%20WP4/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario"  xml:id="sc_statisticalAnalysisOccupations">
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchScenario"
+     xml:id="SSK_sc_statisticalAnalysisOccupations">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -11,13 +13,14 @@
                <persName>Emilie Kraikamp</persName>
                <affiliation>DANS</affiliation>
             </author>
+            <sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos ...</authority>
+            <authority/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
-                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
-                     this document.</p>
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+       document.</p>
                </licence>
             </availability>
          </publicationStmt>
@@ -25,6 +28,28 @@
             <p>Created from scratch</p>
          </sourceDesc>
       </fileDesc>
+      <encodingDesc>
+         <listPrefixDef>
+            <prefixDef ident="wp2" matchPattern="(.*?)" replacementPattern="groups/368112">
+               <p>The prefix wp2 needs to be used before resources taken from the <ref target="https://www.zotero.org/groups/368112/parthenos_wp2" type="url">Parthenos WP2 Zotero
+       Library</ref> .</p>
+               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a colon
+      ":". Ex: target="wp2:JHSD76DS"</p>
+            </prefixDef>
+            <prefixDef ident="wp3" matchPattern="(.*?)" replacementPattern="groups/520841">
+               <p>The prefix wp3 needs to be used before resources taken from the <ref target="https://www.zotero.org/groups/520841/parthenos_wp3" type="url">Parthenos WP3 Zotero
+       Library</ref> .</p>
+               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a colon
+      ":". Ex: target="wp2:JHSD76DS"</p>
+            </prefixDef>
+            <prefixDef ident="wp4" matchPattern="(.*?)" replacementPattern="groups/427927">
+               <p>The prefix wp4 needs to be used before resources taken from the <ref target="https://www.zotero.org/groups/427927/parthenos_wp4" type="url">Parthenos WP4 Zotero
+       Library</ref> .</p>
+               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a colon
+      ":". Ex: target="wp2:JHSD76DS"</p>
+            </prefixDef>
+         </listPrefixDef>
+      </encodingDesc>
       <revisionDesc>
          <change/>
       </revisionDesc>
@@ -32,37 +57,35 @@
    <text>
       <body>
          <div type="scenario" xml:id="sc_statisticalAnalysisOccupations">
-            <head xml:lang="en" type="scenarioTitle">Perform Statistical Analysis on
-               Historical and Contemporary Occupations</head>
-            <desc type="definition" xml:lang="en">Given a large dataset with several raw variables,
-               a social science researcher needs to (re)code some of the data in order to properly
-               conduct statistical analysis and modelling techniques. To allow comparison across
-               studies, researchers often develop and use certain standards for recoding some
-               aspects of individuals, such as recoding contemporary occupations into the ISCO.
-               After (re)coding variables, scales are often constructed by using standard methods
-               such as factor and reliability analysis. Several software packages, such as SPSS
-               Statistics, exist that are widely used for these purposes across social science
-               researchers. Statistical analyses and modelling also have certain software standards.
-               Finally, reporting the results is done within a consistent style, such as APA Style.
-               Some of these coding, software and reporting standards are covered in this use
-               case.</desc>
-            <desc xml:lang="en" type="terms">
-               <term source="parthenos" type="discipline" key="SOTP">Studies of the past</term>
-               <term source="parthenos" type="discipline" key="SS">Social Sciences</term>
-               <term type="objects" key="data" source="tadirah"/>
-               <term type="techniques" key="encoding" source="tadirah"/>
+            <head type="scenarioTitle" xml:lang="en">Perform Statistical Analysis on Historical and
+     Contemporary Occupations</head>
+            <desc type="definition" xml:lang="en">Given a large dataset with several raw variables, a
+     social science researcher needs to (re)code some of the data in order to properly conduct
+     statistical analysis and modelling techniques. To allow comparison across studies, researchers
+     often develop and use certain standards for recoding some aspects of individuals, such as
+     recoding contemporary occupations into the ISCO. After (re)coding variables, scales are often
+     constructed by using standard methods such as factor and reliability analysis. Several software
+     packages, such as SPSS Statistics, exist that are widely used for these purposes across social
+     science researchers. Statistical analyses and modelling also have certain software standards.
+     Finally, reporting the results is done within a consistent style, such as APA Style. Some of
+     these coding, software and reporting standards are covered in this use case.</desc>
+            <desc type="terms" xml:lang="en">
+               <term source="aurehal" type="discipline">History</term>
+               <term source="aurehal" type="discipline">Sociology</term>
+               <term source="aurehal" type="discipline">Methods and statistics</term>
+               <term key="Data" source="tadirah" type="objects"/>
+               <term key="Encoding" source="tadirah" type="techniques"/>
             </desc>
             <figure type="image">
-               <head>Acorns vendor</head>
-               <graphic url="http://historyofwork.iisg.nl/docs/images/bramer_iisg2-0020.jpg"/>
-               <figDesc>Acorns vendor, drawing by Lenaert Bramer (c. 1659)</figDesc>
+               <head/>
+               <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/statisticalAnalysis.png"/>
             </figure>
             <listEvent>
-               <event xml:id="s1" type="researchStep" ref="step_Rv_121017"/>
-               <event xml:id="s2" type="researchStep" ref="step_CViS_121017"/>
-               <event xml:id="s3" type="researchStep" ref="step_TfRotS_121017"/>
-               <event xml:id="s4" type="researchStep" ref="step_MtRbV_121017"/>
-               <event xml:id="s5" type="researchStep" ref="step_A_121017"/>
+               <event ref="step_Rv_121017" type="researchStep" xml:id="s1"/>
+               <event ref="step_CViS_121017" type="researchStep" xml:id="s2"/>
+               <event ref="step_TfRotS_121017" type="researchStep" xml:id="s3"/>
+               <event ref="step_MtRbV_121017" type="researchStep" xml:id="s4"/>
+               <event ref="step_A_121017" type="researchStep" xml:id="s5"/>
             </listEvent>
          </div>
       </body>

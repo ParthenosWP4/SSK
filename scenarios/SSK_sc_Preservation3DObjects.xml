@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     xml:id="SSK_sc_Preservation3DObjects"
+     type="researchScenario">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Preserving 3D digital objects</title>
+            <author>
+               <persName>Sarah Tournon-Valiente</persName>
+               <affiliation>3D-SHS Huma-Num's consortium</affiliation>
+            </author>
+            <author>
+               <persName>Mehdi Chayani</persName>
+               <affiliation>3D-SHS Huma-Num's consortium</affiliation>
+            </author>
+            <author>
+               <persName>Valentin Grimaud</persName>
+               <affiliation>3D-SHS Huma-Num's consortium</affiliation>
+            </author>
+            <author>
+               <persName>Xavier Granier</persName>
+               <affiliation>3D-SHS Huma-Num's consortium</affiliation>
+            </author>
+            <author>
+               <persName>Hélène Gautier</persName>
+               <affiliation>Huma-Num/CNRS</affiliation>
+            </author>
+            <author>
+               <persName>Adeline Joffres</persName>
+               <affiliation>Huma-Num/CNRS</affiliation>
+            </author>
+            <author>
+               <persName>Paulin Ribbe</persName>
+               <affiliation>Huma-Num/CNRS</affiliation>
+            </author>
+            <sponsor>PARTHENOS</sponsor>
+         </titleStmt>
+         <publicationStmt>
+            <authority/>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <listPrefixDef>
+            <prefixDef ident="wp2" matchPattern="(.*?)" replacementPattern="groups/368112">
+               <p>The prefix wp2 needs to be used before resources taken from the <ref type="url" target="https://www.zotero.org/groups/368112/parthenos_wp2">Parthenos WP2 Zotero Library</ref>.</p>
+               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID
+                        by a colon ":". Ex: target="wp2:JHSD76DS"</p>
+            </prefixDef>
+            <prefixDef ident="wp3" matchPattern="(.*?)" replacementPattern="groups/520841">
+               <p>The prefix wp3 needs to be used before resources taken from the <ref type="url" target="https://www.zotero.org/groups/520841/parthenos_wp3">Parthenos WP3 Zotero Library</ref>.</p>
+               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID
+                        by a colon ":". Ex: target="wp2:JHSD76DS"</p>
+            </prefixDef>
+            <prefixDef ident="wp4" matchPattern="(.*?)" replacementPattern="groups/427927">
+               <p>The prefix wp4 needs to be used before resources taken from the <ref type="url" target="https://www.zotero.org/groups/427927/parthenos_wp4">Parthenos WP4 Zotero Library</ref>.</p>
+               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID
+                        by a colon ":". Ex: target="wp2:JHSD76DS"</p>
+            </prefixDef>
+         </listPrefixDef>
+      </encodingDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div type="scenario" xml:id="sc_Preservation3DObjects">
+            <head xml:lang="en" type="scenarioTitle">Preserving 3D digital objects</head>
+            <head xml:lang="fr" type="scenarioTitle">Préserver des objets numériques 3D</head>
+            <desc type="definition" xml:lang="en">The long-term preservation of 3D digital
+                    objects raises some critical issues. Indeed, firstly, different kind of data can
+                    be archived: the original files depending on the method used to digitize; the
+                    final version, depending on the goal (simple acquisition or modelisation) and
+                    any relevant information (text, images, pdf , scenarios ...) added for a better
+                    comprehension of the 3D object. Secondly it is important that metadata accompany
+                    the archive to ensure that the 3D object will be human-readable in the
+                    long-term. These metadata have to be completed in distinct files. The 3D
+                    consortium of Huma-Num developed a tool, aLTAG3D to easily produce metadata file
+                    for the full 3D archive. Lastly, a place to preserve 3D data in the long term
+                    has to be found. Many solutions exist, depending on the countries. In France,
+                    there are solutions such as the 3D conservatory for 3D data research for
+                    mid-term preservation, and the CINES in the continuity for long-term
+                    preservation.</desc>
+            <desc xml:lang="en" type="terms">
+               <term type="techniques" key="Georeferencing" source="tadirah"/>
+               <term type="techniques" key="Photography" source="tadirah"/>
+               <term type="techniques" key="Preservation Metadata" source="tadirah"/>
+               <term type="techniques" key="Scanning" source="tadirah"/>
+               <term type="techniques" key="Technology Preservation" source="tadirah"/>
+               <term type="object" key="Images (3D)" source="nemo"/>
+               <term type="discipline" source="aureHAL">Archaeology and Prehistory</term>
+               <term type="discipline" source="aureHAL">Cultural heritage and museology</term>
+            </desc>
+            <figure type="image">
+               <head>Graph system of aLTAG3D</head>
+               <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/scenariopreserv3D.jpg"/>
+               <!-- Picture to add -->
+               <figDesc>Graph system of aLTAG3D</figDesc>
+            </figure>
+            <listEvent>
+               <event xml:id="s1" type="researchStep" ref="step_Ct3Dltf_190618"/>
+               <event xml:id="s2" type="researchStep" ref="step_DaA_190618"/>
+               <event xml:id="s3" type="researchStep" ref="step_CaAPw3DDaM_190618"/>
+               <event xml:id="s4" type="researchStep" ref="step_A_190618"/>
+            </listEvent>
+         </div>
+      </body>
+   </text>
+</TEI>

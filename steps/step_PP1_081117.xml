@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-	schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-model href="../../../../../../SSK/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_PP1_081117">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -20,8 +20,8 @@
             <authority>Parthenos</authority>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
-                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
-                     this document.</p>
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+       document.</p>
                </licence>
             </availability>
          </publicationStmt>
@@ -37,27 +37,33 @@
       <body>
          <listEvent>
             <event type="researchStep">
-               <head xml:lang="en">Post processing 1: Remove fluorescence background from the
-                  spectra</head>
-               <desc xml:lang="en" type="definition">Fluorescence is the most commonly encountered
-                  issue when working with conventional Raman spectroscopy. For cultural heritage
-                  applications, it can be due to organic materials with chromophore groups or to
-                  inclusions and impurities in some mineral compounds.</desc>
-               <desc xml:lang="fr" type="definition"/>
-               <desc xml:lang="en" type="term">
-                  <term type="standard" source="stanard_list" key="SERDS"/>
-                  <term type="standard" source="stanard_list" key="SSRS"/>
-                  <term type="standard" source="stanard_list" key="Raman spectroscopy"/>
-                  <term type="activity" source="http://tadirah.dariah.eu/"
-                     key="http://tadirah.dariah.eu/vocab/index.php?tema=26&amp;/content-analysis"/>
+               <head xml:lang="en">Post processing 1: Remove fluorescence background from the spectra</head>
+               <desc type="definition" xml:lang="en">Fluorescence is the most commonly encountered issue when
+      working with conventional Raman spectroscopy. For cultural heritage applications, it can be
+      due to organic materials with chromophore groups or to inclusions and impurities in some
+      mineral compounds.</desc>
+               <desc type="definition" xml:lang="fr"/>
+               <desc type="term" xml:lang="en">
+                  <term key="SERDS" source="stanard_list" type="standard"/>
+                  <term key="SSRS" source="stanard_list" type="standard"/>
+                  <term key="Raman spectroscopy" source="stanard_list" type="standard"/>
+                  <term key="http://tadirah.dariah.eu/vocab/index.php?tema=26&amp;/content-analysis"
+                        source="http://tadirah.dariah.eu/"
+                        type="activity"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref type="tutorial" subtype="article" source="zotero" target="FCKKBJ8X">
-                     <term type="technique" key="SERDS"/>
-                     <term type="technique" key="SSRS"/>
+                  <ref source="zotero"
+                       subtype="article"
+                       target="FCKKBJ8X"
+                       type="tutorial">
+                     <term key="SERDS" type="technique"/>
+                     <term key="SSRS" type="technique"/>
                   </ref>
-                  <ref type="tutorial" subtype="article" source="zotero" target="2PAJ6NGT">
-                     <term type="methodology" key="Raman spectroscopy"/>
+                  <ref source="zotero"
+                       subtype="article"
+                       target="2PAJ6NGT"
+                       type="tutorial">
+                     <term key="Raman spectroscopy" type="methodology"/>
                   </ref>
                </linkGrp>
             </event>

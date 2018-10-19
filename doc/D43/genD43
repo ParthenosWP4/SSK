@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#Compile all the files
+#Convert to Docx with pandoc
+
+cat ../0_userDoc.rst ../1_ssktei.rst ../3_deploy.rst > mergedDoc_temp.rst
+pandoc mergedDoc_temp.rst -f rst -t docx -o mergedDoc.docx
+rm mergedDoc_temp.rst

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_DoDaAGftRC">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>step_DoDaAGftRC.xml</title>
+            <author><!--<persName><surname>Haaf</surname><forename>Susanne</forename></persName>-->
+               <persName>Haaf Susanne</persName>
+               <affiliation>Berlin-Brandenburg Academy of Sciences and Humanities</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+       document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head type="stepTitle" xml:lang="en">Determination of digitization and annotation guidelines
+      for the research corpus</head>
+               <desc type="definition" xml:lang="en">Corpus research should be based on interoperable data,
+      i.e. data that was harmonized with regard to transcription and encoding guidelines. Beforehand
+      the harmonization it is necessary to pick or define proper guidelines. For the encoding of
+      structural phenomena of text, it has become best practice in text processing contexts to apply
+      the tagset provided by the Text Encoding Initiative (TEI-P5). However, the TEI tagset as a
+      whole is broad offering tagging solutions for the most various domains. Hence, in order to
+      achieve unambiguous encoding, it has to be reduced and contoured for its intended application.
+      There are TEI formats published for re-use, e.g. those maintained by the TEI consortium, which
+      can be evaluated for possible re-use rather than creating a new format from scratch. With the
+      DTABf, a TEI format has been proposed, that was customized for the encoding of originally
+      written texts of various text types for the purpose of corpus-based work. Its components are: <list>
+                     <item>Documentation: Guidelines for text annotation</item>
+                     <item>Documentation: Guidelines for text recognition</item>
+                     <item>Schema: Formal specification in ODD and RNG schemas (for print and manuscript
+        annotation)</item>
+                     <item>Schema: Schematron constraints for quality checks beyond the schema</item>
+                  </list>
+               </desc>
+               <desc type="terms" xml:lang="en">
+                  <term key="Discovering"
+                        source="http://tadirah.dariah.eu/"
+                        type="activity"/>
+                  <term key="Designing" source="http://tadirah.dariah.eu/" type="activity"/>
+                  <term key="Meta: Assessing"
+                        source="http://tadirah.dariah.eu/"
+                        type="activity"/>
+                  <term key="StandardsSpecifications"
+                        source="http://tadirah.dariah.eu/"
+                        type="object"/>
+                  <term key="Standards" source="NEMO" type="object"/>
+                  <term key="XML" source="standard_list" type="standard"/>
+                  <term key="TEI" source="standard_list" type="standard"/>
+               </desc>
+               <linkGrp type="generalResources">
+                  <ref source="zotero"
+                       target="https://www.zotero.org/groups/427927/items/T7672NJ8"
+                       type="specification">DTABf website</ref>
+                  <ref source="github"
+                       target="https://github.com/deutschestextarchiv/dtabf/"
+                       type="specification">DTABf source documents</ref>
+                  <ref source="github"
+                       target="https://github.com/deutschestextarchiv/dtabf/tree/master/schema"
+                       type="specification">DTABf ODDs and Schemas</ref>
+                  <ref source="zotero"
+                       target="https://www.zotero.org/groups/427927/items/DVKJRRVU"
+                       type="paper">Haaf/Geyken/Wiegand (2015)</ref>
+                  <ref source="zotero"
+                       target="https://www.zotero.org/groups/427927/items/ZEZE3HV8"
+                       type="paper">Haaf/Thomas (2017)</ref>
+                  <ref source="zotero"
+                       target="https://www.zotero.org/groups/427927/items/8XCAEJXX"
+                       type="blog">
+       Haaf (2017) </ref>
+                  <ref source="zotero"
+                       target="https://www.zotero.org/groups/427927/items/V6NJ5IBX"
+                       type="website">TEI Customizations</ref>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
+</TEI>

@@ -1,0 +1,9 @@
+#contribute
+
+Coming soon #with a TMork image
+
+Create and curate your own research scenarios
+
+Customize existing ones to better fit your needs
+
+You can also directly create or update scenarios and steps in XML-TEI, if you are familiar with it : More on our GitHub (+ link to the GitHub)

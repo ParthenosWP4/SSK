@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<svrl:schematron-output xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        xmlns:saxon="http://saxon.sf.net/"
+                        xmlns:schold="http://www.ascc.net/xml/schematron"
+                        xmlns:iso="http://purl.oclc.org/dsdl/schematron"
+                        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+                        xmlns:tei="http://www.tei-c.org/ns/1.0"
+                        title=""
+                        schemaVersion=""><!--   
+		   
+		   
+		 -->
+   <svrl:text>Pure TEI content rules</svrl:text>
+   <svrl:ns-prefix-in-attribute-values uri="http://www.tei-c.org/ns/1.0" prefix="tei"/>
+   <svrl:ns-prefix-in-attribute-values uri="http://www.w3.org/2001/XMLSchema" prefix="xs"/>
+   <svrl:active-pattern document="file:/Users/criondet/Git/parthenos/SSK/schematron/tests/0_test_step.xml"/>
+   <svrl:fired-rule context="tei:TEI"/>
+   <svrl:failed-assert test="@xml:id = substring-before($fileName, '.xml')"
+                       location="/*:TEI[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]">
+      <svrl:text>The xml:id of the TEI element
+        should be equal to the name of the file, without the file extension </svrl:text>
+   </svrl:failed-assert>
+   <svrl:active-pattern document="file:/Users/criondet/Git/parthenos/SSK/schematron/tests/0_test_step.xml"
+                        name="Authors ans sponsor"/>
+   <svrl:fired-rule context="tei:titleStmt"/>
+   <svrl:successful-report test="not(tei:sponsor)"
+                           location="/*:TEI[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:teiHeader[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:fileDesc[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:titleStmt[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]">
+      <svrl:text>The main sponsor of the SSK is the PARTHENOS project. All
+        scenarios and steps should record this information.</svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="tei:author"/>
+   <svrl:fired-rule context="tei:author"/>
+   <svrl:active-pattern document="file:/Users/criondet/Git/parthenos/SSK/schematron/tests/0_test_step.xml"
+                        name="Authority"/>
+   <svrl:fired-rule context="tei:publicationStmt"/>
+   <svrl:active-pattern document="file:/Users/criondet/Git/parthenos/SSK/schematron/tests/0_test_step.xml"/>
+   <svrl:fired-rule context="tei:licence"/>
+   <svrl:active-pattern document="file:/Users/criondet/Git/parthenos/SSK/schematron/tests/0_test_step.xml"
+                        name="Licences"/>
+   <svrl:fired-rule context="tei:availability"/>
+   <svrl:active-pattern document="file:/Users/criondet/Git/parthenos/SSK/schematron/tests/0_test_step.xml"
+                        name="Source Description"/>
+   <svrl:fired-rule context="tei:sourceDesc"/>
+   <svrl:successful-report test="child::*"
+                           location="/*:TEI[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:teiHeader[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:fileDesc[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:sourceDesc[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]">
+      <svrl:text>sourceDesc in mandatory in TEI, so if you want to give details on
+        the way the scenario was conceived, it is the appropriate location.</svrl:text>
+   </svrl:successful-report>
+   <svrl:active-pattern document="file:/Users/criondet/Git/parthenos/SSK/schematron/tests/0_test_step.xml"
+                        name="revisionStmt">
+      <svrl:text>Name, affiliation, date, desc</svrl:text>
+   </svrl:active-pattern>
+   <svrl:fired-rule context="tei:change"/>
+   <svrl:failed-assert test="tei:date and tei:persName and tei:affiliation and tei:desc"
+                       location="/*:TEI[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:teiHeader[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:revisionDesc[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:change[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]">
+      <svrl:text> When recording
+        a revision, some precise metadata must be given : the date of the revision, the name of the
+        responsibe and his/her affiliation and a description. </svrl:text>
+   </svrl:failed-assert>
+   <svrl:active-pattern document="file:/Users/criondet/Git/parthenos/SSK/schematron/tests/0_test_step.xml"
+                        name="head">
+      <svrl:text>title between 10 and 100 characters</svrl:text>
+      <svrl:text>Start with a verb or a gerund</svrl:text>
+   </svrl:active-pattern>
+   <svrl:fired-rule context="tei:event/tei:head"/>
+   <svrl:active-pattern document="file:/Users/criondet/Git/parthenos/SSK/schematron/tests/0_test_step.xml"
+                        name="desc definition">
+      <svrl:text>Need a description</svrl:text>
+      <svrl:text>max 1500 characters</svrl:text>
+      <svrl:text>Nothing but lists and refs</svrl:text>
+   </svrl:active-pattern>
+   <svrl:active-pattern document="file:/Users/criondet/Git/parthenos/SSK/schematron/tests/0_test_step.xml"
+                        name="Image">
+      <svrl:text>png or jpg</svrl:text>
+   </svrl:active-pattern>
+   <svrl:active-pattern document="file:/Users/criondet/Git/parthenos/SSK/schematron/tests/0_test_step.xml"
+                        name="desc term">
+      <svrl:text>For each type, Max 4</svrl:text>
+   </svrl:active-pattern>
+   <svrl:fired-rule context="tei:desc[@type = 'terms']"/>
+   <svrl:active-pattern document="file:/Users/criondet/Git/parthenos/SSK/schematron/tests/0_test_step.xml">
+      <svrl:text>source attribute</svrl:text>
+      <svrl:text>step file: Tadirah activity is mandatory</svrl:text>
+   </svrl:active-pattern>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:failed-assert test="@source"
+                       location="/*:TEI[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:text[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:body[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:listEvent[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:event[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:desc[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:term[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]">
+      <svrl:text>The attribute source is important to specifiy which vocabulary was
+        used. The main ones are "tadirah", aurehal, "standard".</svrl:text>
+   </svrl:failed-assert>
+   <svrl:fired-rule context="tei:desc[@type='terms']/tei:term"/>
+   <svrl:active-pattern document="file:/Users/criondet/Git/parthenos/SSK/schematron/tests/0_test_step.xml"
+                        name="Resources">
+      <svrl:text>General or project : if project, need a source and a corresp attributes</svrl:text>
+      <svrl:text>Zotero = prefix + ^[A-Z0-9]{8}$</svrl:text>
+   </svrl:active-pattern>
+   <svrl:fired-rule context="tei:linkGrp/tei:ref[@source = 'zotero']"/>
+   <svrl:fired-rule context="tei:linkGrp/tei:ref[@source = 'zotero']"/>
+   <svrl:fired-rule context="tei:linkGrp/tei:ref[@source = 'zotero']"/>
+   <svrl:fired-rule context="tei:linkGrp/tei:ref[@source = 'zotero']"/>
+   <svrl:fired-rule context="tei:linkGrp/tei:ref[@source = 'zotero']"/>
+   <svrl:fired-rule context="tei:linkGrp/tei:ref[@source = 'zotero']"/>
+   <svrl:fired-rule context="tei:linkGrp/tei:ref[@source = 'zotero']"/>
+   <svrl:failed-assert test="matches(@target, '(wp2|wp3|wp4):[A-Z0-9]8') or matches(@target, '[A-Z0-9]8')"
+                       location="/*:TEI[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:text[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:body[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:listEvent[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:event[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:linkGrp[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:ref[namespace-uri()='http://www.tei-c.org/ns/1.0'][7]">
+      <svrl:text>The
+        reference of a Zotero record is made with the Zotero item key (8 capitals or
+        digits)</svrl:text>
+   </svrl:failed-assert>
+   <svrl:fired-rule context="tei:linkGrp[@type = 'projectResources']"/>
+   <svrl:failed-assert test="normalize-space(@corresp)"
+                       location="/*:TEI[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:text[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:body[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:listEvent[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:event[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:linkGrp[namespace-uri()='http://www.tei-c.org/ns/1.0'][2]">
+      <svrl:text>Need a value for @corresp</svrl:text>
+   </svrl:failed-assert>
+   <svrl:failed-assert test="matches(@corresp, '^https?:')"
+                       location="/*:TEI[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:text[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:body[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:listEvent[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:event[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:linkGrp[namespace-uri()='http://www.tei-c.org/ns/1.0'][2]">
+      <svrl:text>Value of @corresp should be a valid
+        URI</svrl:text>
+   </svrl:failed-assert>
+   <svrl:failed-assert test="normalize-space(@source)"
+                       location="/*:TEI[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:text[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:body[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:listEvent[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:event[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:linkGrp[namespace-uri()='http://www.tei-c.org/ns/1.0'][2]">
+      <svrl:text>The attribute @source should contain the name of
+        the project whose references are listed inside the &lt;linkGrp&gt;</svrl:text>
+   </svrl:failed-assert>
+   <svrl:active-pattern document="file:/Users/criondet/Git/parthenos/SSK/schematron/tests/0_test_step.xml"/>
+   <svrl:fired-rule context="tei:linkGrp/tei:ref"/>
+   <svrl:fired-rule context="tei:linkGrp/tei:ref"/>
+   <svrl:fired-rule context="tei:linkGrp/tei:ref"/>
+   <svrl:fired-rule context="tei:linkGrp/tei:ref"/>
+   <svrl:fired-rule context="tei:linkGrp/tei:ref"/>
+   <svrl:fired-rule context="tei:linkGrp/tei:ref"/>
+   <svrl:fired-rule context="tei:linkGrp/tei:ref"/>
+   <svrl:fired-rule context="tei:linkGrp/tei:ref"/>
+   <svrl:fired-rule context="tei:linkGrp/tei:ref"/>
+   <svrl:failed-assert test="tei:term"
+                       location="/*:TEI[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:text[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:body[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:listEvent[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:event[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:linkGrp[namespace-uri()='http://www.tei-c.org/ns/1.0'][1]/*:ref[namespace-uri()='http://www.tei-c.org/ns/1.0'][9]">
+      <svrl:text>It is possible to add terms to resources, for instance a standard
+        or a technique.</svrl:text>
+   </svrl:failed-assert>
+   <svrl:active-pattern document="file:/Users/criondet/Git/parthenos/SSK/schematron/tests/0_test_step.xml"
+                        name="@type">
+      <svrl:text>body/div</svrl:text>
+      <svrl:text>head</svrl:text>
+      <svrl:text>desc x 2</svrl:text>
+      <svrl:text>event</svrl:text>
+   </svrl:active-pattern>
+   <svrl:active-pattern document="file:/Users/criondet/Git/parthenos/SSK/schematron/tests/0_test_step.xml"/>
+   <svrl:fired-rule context="tei:event"/>
+</svrl:schematron-output>

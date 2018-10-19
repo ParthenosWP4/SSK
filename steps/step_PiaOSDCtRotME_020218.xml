@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_PiaOSDCtRotME_020218">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Step "Present in an open source digital CMS the result of the musical edition"</title>
+            <author>
+               <persName>Vincent Besson</persName>
+               <affiliation>CNRS</affiliation>
+            </author>
+            <author>
+               <persName>Adeline Joffres</persName>
+               <affiliation>CNRS</affiliation>
+            </author>
+            <author>
+               <persName>Hélène Gautier</persName>
+               <affiliation>CNRS</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+       document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head xml:lang="en">Present in an open source digital CMS the result of the musical edition.</head>
+               <head xml:lang="fr">Présenter le résultat de l'édition musicale dans un CMS open source.</head>
+               <desc type="definition" xml:lang="en">If the published musical corpus is a critical edition
+      which is expected to be dynamic, publish on Omeka and VexFlow. Otherwise, for instance in case
+      of a library of music scores, publish on Omeka and Verovio (Verovio doesn't support dynamic
+      critical notes for now). It is also possible to use Tikit, a customised distribution of Omeka
+      with Verovio as a preconfigured plugin.</desc>
+               <desc type="definition" xml:lang="fr">Si le corpus musical à publier est une édition critique
+      que l'on veut dynamique, publier avec Omeka et VexFlow. Autrement, dans le cas d'une
+      bibliothèque de partitions par exemple, publier avec Omeka et Verovio (actuellement Verovio ne
+      supporte pas les notes critiques dynamiques). Il est également possible d'utiliser TiKit, une
+      distribution personnalisée d'Omeka avec le plugin Verovio préconfiguré.</desc>
+               <desc type="term" xml:lang="en">
+                  <term key="http://tadirah.dariah.eu/vocab/index.php?_search_expresion=Publishing"
+                        source="http://tadirah.dariah.eu/"
+                        type="activity"/>
+               </desc>
+               <linkGrp type="generalResources">
+                  <ref source="zotero" target="42NXBJNP" type="software">
+                     <term key="Omeka" type="software"/>
+                  </ref>
+                  <ref source="zotero" target="VWVP5NB3" type="tutorial"/>
+                  <ref source="zotero" target="TVVX4HDP" type="tutorial"/>
+                  <ref source="zotero" subtype="tool" target="P7KERH4G" type="webpage">
+                     <term key="Verovio" type="tool"/>
+                  </ref>
+                  <ref source="github"
+                       subtype="tool"
+                       target="https://github.com/rism-ch/verovio"
+                       type="code">
+                     <term key="Verovio" type="tool"/>
+                  </ref>
+                  <ref source="zotero" target="DVTQ5HQD" type="tutorial"/>
+                  <ref source="zotero" subtype="tool" target="QPVXUQQR" type="webpage">
+                     <term key="VexFlow" type="tool"/>
+                  </ref>
+                  <ref source="github"
+                       subtype="tool"
+                       target="https://github.com/0xfe/vexflow"
+                       type="code">
+                     <term key="VexFlow" type="tool"/>
+                  </ref>
+                  <ref source="github"
+                       subtype="tool"
+                       target="https://github.com/Acatus-dev/tikit-musica"
+                       type="code">
+                     <term key="TiKit" type="tool"/>
+                  </ref>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
+</TEI>

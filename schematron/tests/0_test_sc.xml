@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario" xml:id="id_0_test">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Project-centered EAD customization scenario</title>
+            <author>
+               <persName/>
+            </author>
+            <author>
+               <affiliation>Inria</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <availability>
+               <licence target="copyright.com"/>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p/>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div type="cxcx">
+            <head type="scenarioTitle" xml:lang="en">short</head>
+            <head type="scenarioTitle" xml:lang="fr">très très très très très très très très très
+               très très très très très très très très très très très long</head>
+            <desc type="definition" xml:lang="en">TEI ODD can be used to document data models
+               external to the TEI environment. Several projects working with archival standards (in
+               particular EAD) use it as well. PARTHENOS created and maintain an instance of the EAD
+               specification in ODD, that can be used to create project oriented customizations.TEI
+               ODD can be used to document data models external to the TEI environment. Several
+               projects working with archival standards (in particular EAD) use it as well.
+               PARTHENOS created and maintain an instance of the EAD specification in ODD, that can
+               be used to create project oriented customizations.TEI ODD can be used to document
+               data models external to the TEI environment. Several projects working with archival
+               standards (in particular EAD) use it as well. PARTHENOS created and maintain an
+               instance of the EAD specification in ODD, that can be used to create project oriented
+               customizations.TEI ODD can be used to document data models external to the TEI ODD
+               can be used to document data models external to the TEI environment. Several projects
+               working with archival standards (in particular EAD) use it as well. PARTHENOS created
+               and maintain an instance of the EAD specification in ODD, that can be used to create
+               project oriented customizations.</desc>
+            <desc type="terms" xml:lang="en">
+               <term source="aureHAL" type="discipline">Library and information sciences</term>
+               <term source="aureHAL" type="discipline">Cultural heritage and museology</term>
+               <term source="aureHAL" type="discipline">Cultural heritage and museology</term>
+               <term source="aureHAL" type="discipline">Cultural heritage and museology</term>
+               <term source="aureHAL" type="discipline">Cultural heritage and museology</term>
+               <term key="Catalogs" source="tadirah" type="object"/>
+               <term key="Catalogs" source="tadirah" type="object"/>
+               <term key="Catalogs" source="tadirah" type="object"/>
+               <term key="Catalogs" source="tadirah" type="object"/>
+               <term key="Catalogs" source="tadirah" type="object"/>
+               <term key="Encoding" source="tadirah" type="technique"/>
+               <term key="Encoding" source="tadirah" type="technique"/>
+               <term key="Encoding" source="tadirah" type="technique"/>
+               <term key="Encoding" source="tadirah" type="technique"/>
+               <term key="Mapping" source="tadirah" type="technique"/>
+               <term key="XML" type="standard"/>
+               <term key="XML" type="standard"/>
+               <term key="XML" type="standard"/>
+               <term key="XML" type="standard"/>
+               <term key="XML" type="standard"/>
+               <term key="Mapping" source="tadirah" type="activity"/>
+               <term key="Mapping" source="tadirah" type="activity"/>
+               <term key="Mapping" source="tadirah" type="activity"/>
+               <term key="Mapping" source="tadirah" type="activity"/>
+               <term key="Mapping" source="tadirah" type="activity"/>
+               <term type="activity"/>
+            </desc>
+            <figure type="image">
+               <head/>
+               <graphic
+                  url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/SSK-schemCust.tiff"
+               />
+            </figure>
+            <listEvent>
+               <event ref="step_EaXswO_150917" type="researchStep" xml:id="s1">
+                  <head type="stepTitle" xml:lang="en">step title</head>
+                  <desc xml:lang="de" type=""/>
+                  <linkGrp type="generalResources"/>
+                  <linkGrp type="projectResources" corresp="lol"/>
+                  <linkGrp type="projectResources">
+                     <ref type="" source="zotero" target="lala"/>
+                  </linkGrp>
+               </event>
+               <event ref="step_Eprimrf_300517" xml:id="s2"/>
+               <event ref="step_Cad_300517" type="researchStep" xml:id="s3"/>
+               <event ref="step_Tdats_300517" type="researchStep" xml:id="s4"/>
+               <event ref="step_Sapditnf_300517" type="researchStep" xml:id="s5"/>
+            </listEvent>
+         </div>
+      </body>
+   </text>
+</TEI>

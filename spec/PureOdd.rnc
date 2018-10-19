@@ -5109,6 +5109,7 @@ tei_elementSpec =
      tei_remarks*,
      tei_listRef*),
     tei_att.global.attributes,
+    att.global.linking.attributes,
     tei_att.identified.attributes,
     tei_att.namespaceable.attributes,
     

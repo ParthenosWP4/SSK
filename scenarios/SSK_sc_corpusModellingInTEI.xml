@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario" xml:id="sc_corpusModelling">
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchScenario"
+     xml:id="SSK_sc_corpusModellingInTEI">
    <teiHeader>
-      <!-- teiHeader TBC -->
       <fileDesc>
          <titleStmt>
-            <!-- Title of the tei document, not title of the scenario -->
-            <title>Description of the scenario "Corpus modelling in TEI"</title>
+            <title>Scenario \"Creation of a TEI-based corpus\"</title>
             <author>
                <persName>Klaus Illmayer</persName>
                <affiliation>OEAW-ACDH</affiliation>
@@ -19,13 +19,14 @@
                <persName>Piotr Bański</persName>
                <affiliation>IDS Mannheim, CLARIN</affiliation>
             </author>
+            <sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos ...</authority>
+            <authority/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
-                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
-                     this document.</p>
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+       document.</p>
                </licence>
             </availability>
          </publicationStmt>
@@ -33,43 +34,68 @@
             <p>Created from scratch</p>
          </sourceDesc>
       </fileDesc>
+      <encodingDesc>
+         <listPrefixDef>
+            <prefixDef ident="wp2" matchPattern="(.*?)" replacementPattern="groups/368112">
+               <p>The prefix wp2 needs to be used before resources taken from the <ref target="https://www.zotero.org/groups/368112/parthenos_wp2" type="url">Parthenos WP2 Zotero
+       Library</ref>.</p>
+               <p>In the <att>target</att>attribute, the prefix in separated by the Zotero ID by a colon
+      ":". Ex: target="wp2:JHSD76DS"</p>
+            </prefixDef>
+            <prefixDef ident="wp3" matchPattern="(.*?)" replacementPattern="groups/520841">
+               <p>The prefix wp3 needs to be used before resources taken from the <ref target="https://www.zotero.org/groups/520841/parthenos_wp3" type="url">Parthenos WP3 Zotero
+       Library</ref>.</p>
+               <p>In the <att>target</att>attribute, the prefix in separated by the Zotero ID by a colon
+      ":". Ex: target="wp2:JHSD76DS"</p>
+            </prefixDef>
+            <prefixDef ident="wp4" matchPattern="(.*?)" replacementPattern="groups/427927">
+               <p>The prefix wp4 needs to be used before resources taken from the <ref target="https://www.zotero.org/groups/427927/parthenos_wp4" type="url">Parthenos WP4 Zotero
+       Library</ref>.</p>
+               <p>In the <att>target</att>attribute, the prefix in separated by the Zotero ID by a colon
+      ":". Ex: target="wp2:JHSD76DS"</p>
+            </prefixDef>
+         </listPrefixDef>
+      </encodingDesc>
       <revisionDesc>
-         <change>
-            <!-- Only for major changes: addition of an author, of a step, etc. -->
-         </change>
+         <change><!-- Only for major changes: addition of an author, of a step, etc. --></change>
       </revisionDesc>
    </teiHeader>
    <text>
       <body>
-         <div type="scenario">
-            <!-- All the textual information about scenarios and steps is now contained in the <head> element-->
-            <head xml:lang="en" type="scenarioTitle">Corpus modelling in TEI</head>
-            <desc type="definition" xml:lang="en">This scenario enumerates steps that make it possible to create a corpus in the TEI.</desc>
-            <!--<desc type=""></desc>-->
-            <desc xml:lang="en" type="terms">
-               <!-- Need a reference resource for all the terms, including Parthenos disciplines, datatypes, etc...  -->
-               <term source="parthenos" type="discipline" key="SOTP">Linguistics</term>
-               <term type="datatype" key="catalogs" source="nedimah"/>
+         <div type="researchScenario">
+            <head type="scenarioTitle" xml:lang="en">Creation of a TEI-based corpus</head>
+            <desc type="definition" xml:lang="en">This scenario explains the steps to take, in order to
+     create a corpus based on the TEI tagset. As of today, the TEI guidelines have become a de facto
+     standard for text annotation, providing solutions for a great variety of text and phrase
+     structures, information on content types, linguistic information on words or phrases, etc. In
+     many digital text collections and digital edition projects annotation has been based on the
+     TEI. Linguistic corpora based on TEI may thus be re-used in projects of other disciplines as
+     well or may themselves benefit from the wide range of already existing resources.</desc>
+            <desc type="terms" xml:lang="en">
+               <term source="parthenos" type="discipline">Linguistics</term>
+               <term key="Catalogs" source="nedimah" type="datatype"/>
             </desc>
             <figure type="image">
-               <!-- Illustration of the scenario. Can also be used in the steps -->
-               <head>Title of the image</head>
-               <graphic url="http://www.tei-c.org/About/Logos/TEI-600.jpg"/>
-               <figDesc>Description of the image</figDesc>
+               <head>Illustrative image of the scenario</head>
+               <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/corpusAnalysis_compact.png"/>
+               <figDesc>Combination of screenshots of different steps in the scenario (image created by
+      Susanne Haaf)</figDesc>
             </figure>
             <listEvent>
-               <!-- <event type="scenario" ref="SSK_digitization.xml"/> -->
-               <event xml:id="CMiT01" type="researchStep" ref="step_corpusComposition"/>
-               <event xml:id="CMiT02" type="researchStep" ref="step_verificationAndCleanup"/>
-               <event xml:id="CMiT05" type="researchStep" ref="step_conversionToTEI"/>
-               <event xml:id="CMiT15" type="researchStep" ref="step_verificationAndCleanup"/>
-               <event xml:id="CMiT20" type="researchStep" ref="step_createWorkbench"/>
-               <event xml:id="CMiT25" type="researchStep" ref="step_verificationAndCleanup"/>
-               <event xml:id="CMiT40" type="researchStep" ref="step_annotation"/>
-               <event xml:id="CMiT45" type="researchStep" ref="step_verificationAndCleanup"/>
-               <event xml:id="CMiT55" type="researchStep" ref="step_finalize"/>
+               <event ref="SSK_sc_digitization"
+                      subtype="prerequisite"
+                      type="researchScenario"
+                      xml:id="s1"/>
+               <event ref="step_corpusComposition" type="researchStep" xml:id="s2"/>
+               <event ref="step_verificationAndCleanup" type="researchStep" xml:id="s3"/>
+               <event ref="step_conversionToTEI" type="researchStep" xml:id="s4"/>
+               <event ref="step_verificationAndCleanup" type="researchStep" xml:id="s5"/>
+               <event ref="step_createWorkbench" type="researchStep" xml:id="s6"/>
+               <event ref="step_verificationAndCleanup" type="researchStep" xml:id="s7"/>
+               <event ref="step_annotation" type="researchStep" xml:id="s8"/>
+               <event ref="step_verificationAndCleanup" type="researchStep" xml:id="s9"/>
+               <event ref="step_finalize" type="researchStep" xml:id="s10"/>
             </listEvent>
-            <!-- we would like to be able to name preliminary and follow-up scenarios, too -->
          </div>
       </body>
    </text>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-	schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-model href="../../TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_RLCP_081117">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -20,8 +20,8 @@
             <authority>Parthenos</authority>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
-                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
-                     this document.</p>
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+       document.</p>
                </licence>
             </availability>
          </publicationStmt>
@@ -38,24 +38,32 @@
          <listEvent>
             <event type="researchStep">
                <head xml:lang="en">Research laser cleaning parameters</head>
-               <desc xml:lang="en" type="definition">Selecting info for specific analytical studies
-                  of the use of laser in conservation.</desc>
-               <desc xml:lang="fr" type="definition"/>
-               <desc xml:lang="en" type="term">
-                  <term type="activity" source="http://tadirah.dariah.eu/"
-                     key="http://tadirah.dariah.eu/vocab/index.php?tema=11&amp;/gathering"/>
+               <desc type="definition" xml:lang="en">Selecting info for specific analytical studies of the
+      use of laser in conservation.</desc>
+               <desc type="definition" xml:lang="fr"/>
+               <desc type="term" xml:lang="en">
+                  <term key="http://tadirah.dariah.eu/vocab/index.php?tema=11&amp;/gathering"
+                        source="http://tadirah.dariah.eu/"
+                        type="activity"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref type="tutorial" subtype="book" source="zotero" target="PM5P3JDB">
-                     <term type="tutorial" key="Laser cleaning"/>
+                  <ref source="zotero"
+                       subtype="book"
+                       target="PM5P3JDB"
+                       type="tutorial">
+                     <term key="Laser cleaning" type="tutorial"/>
                   </ref>
-                  <ref type="tutorial" subtype="article" source="zotero" target="9796G3AB">
-                     <term type="tutorial" key="Laser cleaning"/>
+                  <ref source="zotero"
+                       subtype="article"
+                       target="9796G3AB"
+                       type="tutorial">
+                     <term key="Laser cleaning" type="tutorial"/>
                   </ref>
                </linkGrp>
-               <linkGrp type="projectResources" source="Artwork conservation by Laser"
-                  corresp="http://www.cost.eu/COST_Actions/fps/G7">
-                  <ref type="webpage" target="http://www.cost.eu/COST_Actions/fps/G7"/>
+               <linkGrp corresp="http://www.cost.eu/COST_Actions/fps/G7"
+                        source="Artwork conservation by Laser"
+                        type="projectResources">
+                  <ref target="http://www.cost.eu/COST_Actions/fps/G7" type="webpage"/>
                </linkGrp>
             </event>
          </listEvent>

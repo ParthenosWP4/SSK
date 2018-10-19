@@ -1,98 +1,134 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-	schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-model href="../../TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Step "Add metadata"</title>
-                <author>
-                    <persName>Hélène Gautier</persName>
-                    <affiliation>Huma-Num/CNRS</affiliation>
-                </author>
-                <author>
-                    <persName>Marie Puren</persName>
-                    <affiliation>INRIA</affiliation>
-                </author>
-            </titleStmt>
-            <publicationStmt>
-                <authority>Parthenos</authority>
-                <availability>
-                    <licence target="http://creativecommons.org/licenses/by/4.0/">
-                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
-                            to this document.</p>
-                    </licence>
-                </availability>
-            </publicationStmt>
-            <sourceDesc>
-                <p>Created from scratch</p>
-            </sourceDesc>
-        </fileDesc>
-        <revisionDesc>
-            <change/>
-        </revisionDesc>
-    </teiHeader>
-    <text>
-        <body>
-            <listEvent>
-                <event type="researchStep">
-                    <head xml:lang="en">Add metadata</head>
-                    <head xml:lang="fr">Saisie des métadonnées</head>
-                    <desc xml:lang="en" type="definition">Add metadata according to the appropriate
-                        schema (for example keywords in DDI, classification plan in EAD). </desc>
-                    <desc xml:lang="fr" type="definition"/>
-                    <desc xml:lang="en" type="term">
-                        <term type="activity" source="http://tadirah.dariah.eu/"
-                            key="http://tadirah.dariah.eu/vocab/index.php?tema=22&amp;/annotating"/>
-                    </desc>
-                    <linkGrp type="generalResources">
-                        <ref type="specification" subtype="standard" source="zotero"
-                            target="KUWUITXU">
-                            <term type="standard" source="standard_list" key="DDI"/>
-                        </ref>
-                        <ref type="official_documentation" subtype="standard" source="zotero"
-                            target="XPDZH8WZ">
-                            <term type="standard" source="standard_list" key="EAD"/>
-                        </ref>
-                        <ref type="tutorial" subtype="standard" source="zotero" target="X6MUZND9">
-                            <term type="standard" source="standard_list" key="EAD"/>
-                        </ref>
-                        <ref type="tutorial" subtype="standard" source="zotero" target="2Z29AVQV">
-                            <term type="standard" source="standard_list" key="EAD"/>
-                        </ref>
-                        <ref type="tutorial" subtype="standard" source="zotero" target="JZETVVTF">
-                            <term type="standard" source="standard_list" key="METS"/>
-                        </ref>
-                        <ref type="schema" subtype="standard" source="zotero" target="IE7HE58F">
-                            <term type="standard" source="standard_list" key="METS"/>
-                        </ref>
-                        <ref type="documentation" subtype="standard" source="zotero"
-                            target="G23PVP4B">
-                            <term type="standard" source="standard_list" key="METS"/>
-                        </ref>
-                        <ref type="documentation" subtype="standard" source="zotero"
-                            target="CQ4VK4MZ">
-                            <term type="standard" source="standard_list" key="METS"/>
-                        </ref>
-                        <ref type="documentation" subtype="standard" source="zotero" target="9HWG6835">
-                            <term type="standard" source="standard_list" key="DC"/>
-                        </ref>
-                        <ref type="tutorial" subtype="standard" source="zotero" target="7RRWQ6MS">
-                            <term type="standard" source="standard_list" key="DC"/>
-                        </ref>
-                        <ref type="documentation" subtype="standard" source="zotero" target="PEAH9HAQ">
-                            <term type="standard" source="standard_list" key="DC"/>
-                        </ref>
-                        <ref type="schema" subtype="standard" source="zotero" target="CNPB6HA6">
-                            <term type="standard" source="standard_list" key="DC"/>
-                        </ref>
-                        <ref type="tutorial" subtype="standard" source="zotero" target="VKU5HQMF">
-                            <term type="standard" source="standard_list" key="DC"/>
-                        </ref>
-                    </linkGrp>
-                </event>
-            </listEvent>
-        </body>
-    </text>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_AM_171117">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Step "Add metadata"</title>
+            <author>
+               <persName>Hélène Gautier</persName>
+               <affiliation>Huma-Num/CNRS</affiliation>
+            </author>
+            <author>
+               <persName>Marie Puren</persName>
+               <affiliation>INRIA</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+       document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head xml:lang="en">Add metadata</head>
+               <head xml:lang="fr">Saisie des métadonnées</head>
+               <desc type="definition" xml:lang="en">Add metadata according to the appropriate schema (for
+      example keywords in DDI, classification plan in EAD).</desc>
+               <desc type="definition" xml:lang="fr"/>
+               <desc type="term" xml:lang="en">
+                  <term key="http://tadirah.dariah.eu/vocab/index.php?tema=22&amp;/annotating"
+                        source="http://tadirah.dariah.eu/"
+                        type="activity"/>
+               </desc>
+               <linkGrp type="generalResources">
+                  <ref source="zotero"
+                       subtype="standard"
+                       target="KUWUITXU"
+                       type="specification">
+                     <term key="DDI" source="standard_list" type="standard"/>
+                  </ref>
+                  <ref source="zotero"
+                       subtype="standard"
+                       target="XPDZH8WZ"
+                       type="official_documentation">
+                     <term key="EAD" source="standard_list" type="standard"/>
+                  </ref>
+                  <ref source="zotero"
+                       subtype="standard"
+                       target="X6MUZND9"
+                       type="tutorial">
+                     <term key="EAD" source="standard_list" type="standard"/>
+                  </ref>
+                  <ref source="zotero"
+                       subtype="standard"
+                       target="2Z29AVQV"
+                       type="tutorial">
+                     <term key="EAD" source="standard_list" type="standard"/>
+                  </ref>
+                  <ref source="zotero"
+                       subtype="standard"
+                       target="JZETVVTF"
+                       type="tutorial">
+                     <term key="METS" source="standard_list" type="standard"/>
+                  </ref>
+                  <ref source="zotero"
+                       subtype="standard"
+                       target="IE7HE58F"
+                       type="schema">
+                     <term key="METS" source="standard_list" type="standard"/>
+                  </ref>
+                  <ref source="zotero"
+                       subtype="standard"
+                       target="G23PVP4B"
+                       type="documentation">
+                     <term key="METS" source="standard_list" type="standard"/>
+                  </ref>
+                  <ref source="zotero"
+                       subtype="standard"
+                       target="CQ4VK4MZ"
+                       type="documentation">
+                     <term key="METS" source="standard_list" type="standard"/>
+                  </ref>
+                  <ref source="zotero"
+                       subtype="standard"
+                       target="9HWG6835"
+                       type="documentation">
+                     <term key="DC" source="standard_list" type="standard"/>
+                  </ref>
+                  <ref source="zotero"
+                       subtype="standard"
+                       target="7RRWQ6MS"
+                       type="tutorial">
+                     <term key="DC" source="standard_list" type="standard"/>
+                  </ref>
+                  <ref source="zotero"
+                       subtype="standard"
+                       target="PEAH9HAQ"
+                       type="documentation">
+                     <term key="DC" source="standard_list" type="standard"/>
+                  </ref>
+                  <ref source="zotero"
+                       subtype="standard"
+                       target="CNPB6HA6"
+                       type="schema">
+                     <term key="DC" source="standard_list" type="standard"/>
+                  </ref>
+                  <ref source="zotero"
+                       subtype="standard"
+                       target="VKU5HQMF"
+                       type="tutorial">
+                     <term key="DC" source="standard_list" type="standard"/>
+                  </ref>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

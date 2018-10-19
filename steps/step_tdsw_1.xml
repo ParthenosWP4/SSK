@@ -1,82 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <!-- You have to type the TEI file, with researchStep or researchScenario -->
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="st_0000000001">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>step_StWowtSiC.xml</title>
-                <author>
-                    <persName>Maurizio Sanesi</persName>
-                    <affiliation>SISMEL</affiliation>
-                </author>
-    <author>
-                    <persName>Karolien Verbrugge</persName>
-                    <affiliation>NIOD</affiliation>
-                </author>
-	<author>
-                    <persName>Claus Spiecker</persName>
-                    <affiliation>FHP</affiliation>
-                </author>
-	<author>
-                    <persName>Roberta Giacomi</persName>
-                    <affiliation>SISMEL</affiliation>
-                </author>
-            </titleStmt>
-            <publicationStmt>
-                <authority>Parthenos</authority>
-                <availability>
-                    <licence target="http://creativecommons.org/licenses/by/4.0/">
-                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
-                            to this document.</p>
-                    </licence>
-                </availability>
-            </publicationStmt>
-            <sourceDesc>
-                <p>Created from scratch</p>
-            </sourceDesc>
-        </fileDesc>
-        <revisionDesc>
-            <!-- Use only for major changes -->
-            <change/>
-        </revisionDesc>
-    </teiHeader>
-    <text>
-        <body>
-            <listEvent>
-                <event type="researchStep">
-                    <!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
-                    <head type="stepTitle" xml:lang="en">Select the work on which the survey is conducted</head> 
-                    <head type="stepTitle" xml:lang="fr">Titre de l'étape en Français</head>
-                    <desc type="definition" xml:lang="en">Select the work on which you want to conduct the survey</desc>
-                    <desc xml:lang="en" type="terms">
-                        <term type="standard" source="standard_list" key="XML"/>
-                        <term type="standard" source="standard_list" key="TEI"/>
-                        
-                        <term type="activity" source="http://tadirah.dariah.eu/"
-                            key="discovering" />
-                        <term type="policies" source="WP3Wizard" key="CD"/>
-						</desc>
-						<linkGrp type="generalResources">
-						
-						<ref type="code" source="Mirabile"
-                            target="http://www.mirabileweb.it/">
-                            <term type="activity" source="tadirah" key="discovering"/>
-                        </ref>
-						<ref type="code" source="TEXT-inc"
-                            target="http://textinc.bodleian.ox.ac.uk/">
-						<term type="activity" source="tadirah" key="discovering"/>
-                        </ref>
-						<ref type="code" source="BASE"
-                            target="https://www.base-search.net/about/en/">
-						<term type="activity" source="tadirah" key="discovering"/>                        
-						</ref>
-						
-                        
-                    </linkGrp>
-                </event>
-            </listEvent>
-        </body>
-    </text>
-
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_tdsw_1">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>step_StWowtSiC.xml</title>
+            <author>
+               <persName>Maurizio Sanesi</persName>
+               <affiliation>SISMEL</affiliation>
+            </author>
+            <author>
+               <persName>Karolien Verbrugge</persName>
+               <affiliation>NIOD</affiliation>
+            </author>
+            <author>
+               <persName>Claus Spiecker</persName>
+               <affiliation>FHP</affiliation>
+            </author>
+            <author>
+               <persName>Roberta Giacomi</persName>
+               <affiliation>SISMEL</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+       document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc><!-- Use only for major changes -->
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep"><!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
+               <head type="stepTitle" xml:lang="en">Select the work on which the survey is conducted</head>
+               <head type="stepTitle" xml:lang="fr">Titre de l'étape en Français</head>
+               <desc type="definition" xml:lang="en">Select the work on which you want to conduct the survey</desc>
+               <desc type="terms" xml:lang="en">
+                  <term key="XML" source="standard_list" type="standard"/>
+                  <term key="TEI" source="standard_list" type="standard"/>
+                  <term key="discovering"
+                        source="http://tadirah.dariah.eu/"
+                        type="activity"/>
+               </desc>
+               <linkGrp type="generalResources">
+                  <ref source="Mirabile" target="http://www.mirabileweb.it/" type="code">
+                     <term key="discovering" source="tadirah" type="activity"/>
+                  </ref>
+                  <ref source="TEXT-inc"
+                       target="http://textinc.bodleian.ox.ac.uk/"
+                       type="code">
+                     <term key="discovering" source="tadirah" type="activity"/>
+                  </ref>
+                  <ref source="BASE"
+                       target="https://www.base-search.net/about/en/"
+                       type="code">
+                     <term key="discovering" source="tadirah" type="activity"/>
+                  </ref>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

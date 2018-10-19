@@ -1,7 +1,109 @@
 {
     "scenarios": [
         {
-            "name": "Corpus modelling in TEI",
+            "name": "Production and processing of 3D objects",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/scenarios/0_test.xml",
+            "steps": [
+                {
+                    "name": "Acquisition of 3D object (by scanning)",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_A3DOBS.xml"
+                },
+                {
+                    "name": "Acquisition of a 3D object (by photogrammetry)",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_A3DOBP.xml"
+                },
+                {
+                    "name": "Migration to target format",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_3DMtTF.xml"
+                },
+                {
+                    "name": "Visualisation",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_3DV.xml"
+                }
+            ]
+        },
+        {
+            "name": "Test the SSK parameters",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/scenarios/1_SSK_sc_loremIpsum.xml",
+            "steps": [
+                {
+                    "name": "Corpus Composition",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_corpusComposition.xml"
+                },
+                {
+                    "name": "Verification and Cleanup",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_verificationAndCleanup.xml"
+                },
+                {
+                    "name": "Conversion to TEI",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_conversionToTEI.xml"
+                },
+                {
+                    "name": "Create Workbench",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_createWorkbench.xml"
+                },
+                {
+                    "name": "Verification and Cleanup",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_verificationAndCleanup.xml"
+                },
+                {
+                    "name": "Linguistic Annotation",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_annotation.xml"
+                },
+                {
+                    "name": "Verification and Cleanup",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_verificationAndCleanup.xml"
+                },
+                {
+                    "name": "Finalize",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_finalize.xml"
+                }
+            ]
+        },
+        {
+            "name": "Creation of a TEI-based corpus",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/scenarios/SSK_sc_corpusModellingInTEI-minusDigitization.xml",
+            "steps": [
+                {
+                    "name": "Corpus Composition",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_corpusComposition.xml"
+                },
+                {
+                    "name": "Verification and Cleanup",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_verificationAndCleanup.xml"
+                },
+                {
+                    "name": "Conversion to TEI",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_conversionToTEI.xml"
+                },
+                {
+                    "name": "Verification and Cleanup",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_verificationAndCleanup.xml"
+                },
+                {
+                    "name": "Create Workbench",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_createWorkbench.xml"
+                },
+                {
+                    "name": "Verification and Cleanup",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_verificationAndCleanup.xml"
+                },
+                {
+                    "name": "Linguistic Annotation",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_annotation.xml"
+                },
+                {
+                    "name": "Verification and Cleanup",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_verificationAndCleanup.xml"
+                },
+                {
+                    "name": "Finalize",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_finalize.xml"
+                }
+            ]
+        },
+        {
+            "name": "Creation of a TEI-based corpus",
             "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/scenarios/SSK_sc_corpusModellingInTEI.xml",
             "steps": [
                 {
@@ -29,7 +131,7 @@
                     "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_verificationAndCleanup.xml"
                 },
                 {
-                    "name": "Annotation",
+                    "name": "Linguistic Annotation",
                     "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_annotation.xml"
                 },
                 {
@@ -39,6 +141,540 @@
                 {
                     "name": "Finalize",
                     "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_finalize.xml"
+                }
+            ]
+        },
+        {
+            "name": "Creating Metadata",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/scenarios/SSK_sc_creatingMetadata.xml",
+            "steps": [
+                {
+                    "name": "Select Data (or existing Metadata) to be transformed in Metadata",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_1_creating_metadata_scenario.xml"
+                },
+                {
+                    "name": "Defining responsibilities and policies for metadata maintenance",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_2_defining_responsabilities_and_policies.xml"
+                },
+                {
+                    "name": "Adopting a standard for metadata",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_3_adopting_standard.xml"
+                },
+                {
+                    "name": "Referring to shared controlled vocabularies or ontologies for metadata",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_4_metadata_enrichment.xml"
+                },
+                {
+                    "name": "Mapping the data",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_5_mapping_data.xml"
+                },
+                {
+                    "name": "Creating or converting metadata into a standard format",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_6_creating_or_converting_metadata_in_a_standard_format.xml"
+                },
+                {
+                    "name": "Quality checking",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_7_quality_checking.xml"
+                },
+                {
+                    "name": "Applying a license",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_8_applying_license.xml"
+                }
+            ]
+        },
+        {
+            "name": "Digitizing textual material",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/scenarios/SSK_sc_digitization.xml",
+            "steps": [
+                {
+                    "name": "Assess legal issues",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_ALI_06022018.xml"
+                },
+                {
+                    "name": "Determine scanning method",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DSM_06022018.xml"
+                },
+                {
+                    "name": "Define imaging specifications",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DIS_06022018.xml"
+                },
+                {
+                    "name": "Image",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_I_06022018.xml"
+                },
+                {
+                    "name": "Ensure quality control",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_EQC_06022018.xml"
+                },
+                {
+                    "name": "Store master files",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SMF_06022018.xml"
+                },
+                {
+                    "name": "Post process files",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_PP_06022018.xml"
+                },
+                {
+                    "name": "Store edited files",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SEF_06022018.xml"
+                },
+                {
+                    "name": "Determine Transcription method",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DTM_06022018.xml"
+                }
+            ]
+        },
+        {
+            "name": "Encode and modelize field surveys for their online dissemination",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/scenarios/SSK_sc_DisseminationFieldSurveys.xml",
+            "steps": [
+                {
+                    "name": "Obtain the informed consent of participants",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_OtICoP_171117.xml"
+                },
+                {
+                    "name": "Collect and classify",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CaC_171117.xml"
+                },
+                {
+                    "name": "Select and digitize",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SaD_171117.xml"
+                },
+                {
+                    "name": "Anonymize",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_A_171117.xml"
+                },
+                {
+                    "name": "Convert into sustainable formats",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CiSF_171117.xml"
+                },
+                {
+                    "name": "Transcribe the interviews",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_TtI_171117.xml"
+                },
+                {
+                    "name": "Add metadata",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_AM_171117.xml"
+                },
+                {
+                    "name": "Contextualize the research",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CtR_171117.xml"
+                },
+                {
+                    "name": "Disseminate and archive",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DaA_171117.xml"
+                }
+            ]
+        },
+        {
+            "name": "Harmonization of digitized textual resourceswith the DTABf",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/scenarios/SSK_sc_DTABf.xml",
+            "steps": [
+                {
+                    "name": "Selection of textual works relevant for the research question",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SoTWRftRQ.xml"
+                },
+                {
+                    "name": "Selection of texts to gather in a research corpus",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SoTtGiaRC.xml"
+                },
+                {
+                    "name": "Determination of digitization and annotation guidelines for the research corpus",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DoDaAGftRC.xml"
+                },
+                {
+                    "name": "Digitization of resources for the research corpus",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DoRftRC.xml"
+                },
+                {
+                    "name": "Harmonization of existing digitized text for the corpus",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_HoEDTftC.xml"
+                },
+                {
+                    "name": "Recognition of metadata",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_RoM.xml"
+                },
+                {
+                    "name": "Provision of the corpus",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_PotC.xml"
+                }
+            ]
+        },
+        {
+            "name": "Documenting application of lasers inconservation/restoration",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/scenarios/SSK_sc_laserconservationrestoration.xml",
+            "steps": [
+                {
+                    "name": "Research laser cleaning parameters",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_RLCP_081117.xml"
+                },
+                {
+                    "name": "Determining laser characteristics",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DLC_081117.xml"
+                },
+                {
+                    "name": "Structural analysis",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SAn_081117.xml"
+                },
+                {
+                    "name": "Characterization of laser effects",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CLE_081117.xml"
+                },
+                {
+                    "name": "Modeling Laser-Material Interactions",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_MLMI_081117.xml"
+                },
+                {
+                    "name": "Documentation of laser effects",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DoLE_081117.xml"
+                },
+                {
+                    "name": "Publishing",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_Pb_081117.xml"
+                },
+                {
+                    "name": "Present",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_Pres_081117.xml"
+                }
+            ]
+        },
+        {
+            "name": "Standardizing \"Laser Induced Breakdown Spectrocopy\"analysis of glasses",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/scenarios/SSK_sc_LIBS.xml",
+            "steps": [
+                {
+                    "name": "Research on glasses",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_RoG_081117.xml"
+                },
+                {
+                    "name": "Spectra acquisition",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SA_081117.xml"
+                },
+                {
+                    "name": "Pre-processing of spectra",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_PPS_081117.xml"
+                },
+                {
+                    "name": "Identifying relevant elements",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_IRE_081117.xml"
+                },
+                {
+                    "name": "Analyzing the spectra",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_AS_081117.xml"
+                },
+                {
+                    "name": "Glass characterization",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_GC_081117.xml"
+                },
+                {
+                    "name": "Comparison with other techniques",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CwOT_081117.xml"
+                },
+                {
+                    "name": "Elaborate a systematic report",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_ESR_081117.xml"
+                },
+                {
+                    "name": "Publishing",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_Pub_081117.xml"
+                },
+                {
+                    "name": "Keep access to the report",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_KAR_081117.xml"
+                }
+            ]
+        },
+        {
+            "name": "Manual transcription of digitised textual material",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/scenarios/SSK_sc_manualTranscription_unst.xml",
+            "steps": [
+                {
+                    "name": "Assess legal issues",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_ALI_06022018.xml"
+                },
+                {
+                    "name": "Determine scanning method",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DSM_06022018.xml"
+                },
+                {
+                    "name": "Define imaging specifications",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DIS_06022018.xml"
+                },
+                {
+                    "name": "Image",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_I_06022018.xml"
+                },
+                {
+                    "name": "Ensure quality control",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_EQC_06022018.xml"
+                },
+                {
+                    "name": "Store master files",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SMF_06022018.xml"
+                },
+                {
+                    "name": "Post process files",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_PP_06022018.xml"
+                },
+                {
+                    "name": "Store edited files",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SEF_06022018.xml"
+                },
+                {
+                    "name": "Determine Transcription method",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DTM_06022018.xml"
+                }
+            ]
+        },
+        {
+            "name": "Collaborative Digital Edition of a Musical Corpus",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/scenarios/SSK_sc_mei.xml",
+            "steps": [
+                {
+                    "name": "Create a digital corpus of musical compositions.",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CaDCoMC_020218.xml"
+                },
+                {
+                    "name": "Change format into MEI files if necessary.",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CFiMFin_020218.xml"
+                },
+                {
+                    "name": "Collect and organize metadata",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CaOM_020218.xml"
+                },
+                {
+                    "name": "Enrich the metadata of MEI files",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_EtMoMF_020218.xml"
+                },
+                {
+                    "name": "Enrich the musical edition with critical apparatus metadata",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_EtMEwCAM_020218.xml"
+                },
+                {
+                    "name": "Enrichment of MEI files",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_EoMF_020218.xml"
+                },
+                {
+                    "name": "Present in an open source digital CMS the result of the musical edition.",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_PiaOSDCtRotME_020218.xml"
+                },
+                {
+                    "name": "Offer anyone interested the possibility to contribute",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_OAItPtC_020218.xml"
+                },
+                {
+                    "name": "Have a reflexion on the quality of the produced data.",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_HaRotQotPD_020218.xml"
+                }
+            ]
+        },
+        {
+            "name": "Multispectral imaging for the in-situ characterizationof painted works of art",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/scenarios/SSK_sc_mustispectralImaging.xml",
+            "steps": [
+                {
+                    "name": "Research on Artwork",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_RoA_201017.xml"
+                },
+                {
+                    "name": "Multispectral imaging setup",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_MIS_201017.xml"
+                },
+                {
+                    "name": "Preparation",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_P_201017.xml"
+                },
+                {
+                    "name": "Image Capture 1: Capturing VIS images",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_IC1_201017.xml"
+                },
+                {
+                    "name": "Image Capture 2: Capturing IRR images",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_IC2_201017.xml"
+                },
+                {
+                    "name": "Image Capture 3: Capturing UVR images",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_IC3_201017.xml"
+                },
+                {
+                    "name": "Image Capture 4: Capturing UVL images",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_IC4_201017.xml"
+                },
+                {
+                    "name": "Image Capture 5: Capturing VIL images",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_IC5_201017.xml"
+                },
+                {
+                    "name": "Image Capture 6: Capturing VIVL images",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_IC6_201017.xml"
+                },
+                {
+                    "name": "Image Post-Processing",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_IPP_201017.xml"
+                },
+                {
+                    "name": "Prepare report",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_PR_201017.xml"
+                },
+                {
+                    "name": "Publish",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_Pu_201017.xml"
+                }
+            ]
+        },
+        {
+            "name": "Preserving 3D digital objects",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/scenarios/SSK_sc_Preservation3DObjects.xml",
+            "steps": [
+                {
+                    "name": "Convert to 3D long-term format",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_Ct3Dltf_190618.xml"
+                },
+                {
+                    "name": "Describe and annotate",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DaA_190618.xml"
+                },
+                {
+                    "name": "Create an archiving packet with 3D data and metadata",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CaAPw3DDaM_190618.xml"
+                },
+                {
+                    "name": "Archive",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_A_190618.xml"
+                }
+            ]
+        },
+        {
+            "name": "Production and processing of 3D objects",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/scenarios/SSK_sc_production3DObjectsScenario.xml",
+            "steps": [
+                {
+                    "name": "Acquisition of 3D object (by scanning)",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_A3DOBS.xml"
+                },
+                {
+                    "name": "Acquisition of a 3D object (by photogrammetry)",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_A3DOBP.xml"
+                },
+                {
+                    "name": "Migration to target format",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_3DMtTF.xml"
+                },
+                {
+                    "name": "Visualisation",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_3DV.xml"
+                }
+            ]
+        },
+        {
+            "name": "Prosopography research",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/scenarios/SSK_sc_ProsopographyV2.xml",
+            "steps": [
+                {
+                    "name": "Formulate specific working hypotheses and specific historical questions concerning the target group. Defining strict criteria for limiting the target population and the geographic, chronological and thematic boundaries.",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_FswHasHQcttgV2.xml"
+                },
+                {
+                    "name": "Select data which are to be retained for curation",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SDtatRfCV2.xml"
+                },
+                {
+                    "name": "Choose a sustainable archive, repository, data centre or other custodian where data will be stored",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CaSARDCooCwDwbsV2.xml"
+                },
+                {
+                    "name": "Adhere to guidance, policies and legal requirements",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_atGPaLRV2.xml"
+                },
+                {
+                    "name": "Select appropriate reference resource",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SarrV2.xml"
+                },
+                {
+                    "name": "Select / Extrapolate only useful data according to the target question",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SEouDatttQV2.xml"
+                },
+                {
+                    "name": "Merge different databases in one Unique Reference Resource",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_MdDioURRV2.xml"
+                },
+                {
+                    "name": "Disambiguate these data according to the Unique Reference Resource",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DtdattURRV2.xml"
+                },
+                {
+                    "name": "Synthesize the results",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_StRV2.xml"
+                },
+                {
+                    "name": "Interpret these data",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_ItDV2.xml"
+                },
+                {
+                    "name": "Sharing data through articles and publications",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SdtAaPV2.xml"
+                },
+                {
+                    "name": "Share the Unique Reference Resource",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_StURRV2.xml"
+                },
+                {
+                    "name": "Ensure that the required legal permissions are available",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_EttrLPaAV2.xml"
+                },
+                {
+                    "name": "Provide tools that allow collaboration in the use and reuse of data",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_PTtacitUaRoDV2.xml"
+                },
+                {
+                    "name": "Apply access controls and authentication procedures",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_AACaAPV2.xml"
+                }
+            ]
+        },
+        {
+            "name": "Raman spectrometry for the analysis andidentification of pigments on cultural heritage objects",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/scenarios/SSK_sc_ramanspectrometry.xml",
+            "steps": [
+                {
+                    "name": "Research on Artwork",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_RoA_081117.xml"
+                },
+                {
+                    "name": "Preparation",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_P_081117.xml"
+                },
+                {
+                    "name": "Intensity protocol for damage protection",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_IPDP_081117.xml"
+                },
+                {
+                    "name": "Selection of points of analysis",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SPA_081117.xml"
+                },
+                {
+                    "name": "Record Raman spectra",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_RRS_081117.xml"
+                },
+                {
+                    "name": "Post processing 1: Remove fluorescence background from the spectra",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_PP1_081117.xml"
+                },
+                {
+                    "name": "Post processing 2: Raman Peak identification",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_PP2_081117.xml"
+                },
+                {
+                    "name": "Pigment identification",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_PI_081117.xml"
+                },
+                {
+                    "name": "Prepare report",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_PR_081117.xml"
+                },
+                {
+                    "name": "Publish",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_Pu_081117.xml"
                 }
             ]
         },
@@ -69,53 +705,53 @@
             ]
         },
         {
-            "name": "Scholars needing standards to represent information (reference tools) about persons, titles of works, documents identifiers (shelfmarks)",
-            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/scenarios/SSK_sc_scholarsStandards.xml",
+            "name": "Representing information about authors, works,documents",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/scenarios/SSK_sc_scholarsStandardsV2.xml",
             "steps": [
                 {
                     "name": "Define the research target (persons, works, shelfmarks), and thematic, geographic and chronological boundaries",
-                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DtrTaTGaCB.xml"
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DtrTaTGaCBV2.xml"
                 },
                 {
                     "name": "Select data which are to be retained for curation",
-                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SDtatRfC.xml"
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SDtatRfCV2.xml"
                 },
                 {
                     "name": "Choose a sustainable archive, repository, data centre or other custodian where data will be stored",
-                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CaSARDCooCwDwbs.xml"
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CaSARDCooCwDwbsV2.xml"
                 },
                 {
                     "name": "Adhere to guidance, policies and legal requirements",
-                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_atGPaLR.xml"
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_atGPaLRV2.xml"
                 },
                 {
                     "name": "Collect standards about the selected resources",
-                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CSatSR.xml"
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CSatSRV2.xml"
                 },
                 {
                     "name": "Assessment of Standards",
-                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_AoS.xml"
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_AoSV2.xml"
                 },
                 {
                     "name": "Synthesize the results",
-                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_StR.xml"
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_StRV2.xml"
                 },
                 {
                     "name": "Interpret these data",
-                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_ItD.xml"
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_ItDV2.xml"
                 },
                 {
                     "name": "Sharing data through articles and publications",
-                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SdtAaP.xml"
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SdtAaPV2.xml"
                 },
                 {
                     "name": "Ensure that the required legal permissions are available",
-                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_EttrLPaA.xml"
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_EttrLPaAV2.xml"
                 }
             ]
         },
         {
-            "name": "Perform Statistical Analysis on Data onHistorical and Contemporary Occupations",
+            "name": "Perform Statistical Analysis onHistorical and Contemporary Occupations",
             "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/scenarios/SSK_sc_statisticalAnalysisOccupations.xml",
             "steps": [
                 {
@@ -142,7 +778,7 @@
         },
         {
             "name": "Tracking the dissemination of a specific work",
-            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/scenarios/SSK_sc_trackingTheDissemination.xml",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/scenarios/SSK_sc_trackingTheDissemination_unst.xml",
             "steps": [
                 {
                     "name": "Select the work on which the survey is conducted",
@@ -153,20 +789,40 @@
                     "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DtGatCB.xml"
                 },
                 {
+                    "name": "Define the geographic and the chronological boundaries",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DtGatCBV2.xml"
+                },
+                {
                     "name": "Select data which are to be retained for curation",
                     "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SDtatRfC.xml"
+                },
+                {
+                    "name": "Select data which are to be retained for curation",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SDtatRfCV2.xml"
                 },
                 {
                     "name": "Choose a sustainable archive, repository, data centre or other custodian where data will be stored",
                     "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CaSARDCooCwDwbs.xml"
                 },
                 {
+                    "name": "Choose a sustainable archive, repository, data centre or other custodian where data will be stored",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CaSARDCooCwDwbsV2.xml"
+                },
+                {
                     "name": "Adhere to guidance, policies and legal requirements",
                     "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_atGPaLR.xml"
                 },
                 {
+                    "name": "Adhere to guidance, policies and legal requirements",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_atGPaLRV2.xml"
+                },
+                {
                     "name": "Collect all existent editions of the selected work",
                     "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CaeEotSW.xml"
+                },
+                {
+                    "name": "Collect all existent editions of the selected work",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CaeEotSWV2.xml"
                 },
                 {
                     "name": "Assess the use of the editions in the selected period. Assess how many manuscripts of this work survive today in our libraries",
@@ -181,8 +837,16 @@
                     "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_EIoD.xml"
                 },
                 {
+                    "name": "Ensure inclusiveness of data",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_EIoDV2.xml"
+                },
+                {
                     "name": "Bundle collected data",
                     "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_BCD.xml"
+                },
+                {
+                    "name": "Bundle collected data",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_BCDV2.xml"
                 },
                 {
                     "name": "Interpret these data and offer explanations on statistical information, metrics, or other methods are used to analyse the corpus",
@@ -193,19 +857,157 @@
                     "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SdtAaP.xml"
                 },
                 {
+                    "name": "Sharing data through articles and publications",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SdtAaPV2.xml"
+                },
+                {
                     "name": "Ensure that the required legal permissions are available",
                     "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_EttrLPaA.xml"
+                },
+                {
+                    "name": "Ensure that the required legal permissions are available",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_EttrLPaAV2.xml"
+                }
+            ]
+        },
+        {
+            "name": "Tracking the dissemination of a specific work",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/scenarios/SSK_sc_trackingTheDisseminationV2.xml",
+            "steps": [
+                {
+                    "name": "Select the work on which the survey is conducted",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_StWowtSiC.xml"
+                },
+                {
+                    "name": "Define the geographic and the chronological boundaries",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DtGatCBV2.xml"
+                },
+                {
+                    "name": "Select data which are to be retained for curation",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SDtatRfCV2.xml"
+                },
+                {
+                    "name": "Choose a sustainable archive, repository, data centre or other custodian where data will be stored",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CaSARDCooCwDwbsV2.xml"
+                },
+                {
+                    "name": "Adhere to guidance, policies and legal requirements",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_atGPaLRV2.xml"
+                },
+                {
+                    "name": "Collect all existent editions of the selected work",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CaeEotSWV2.xml"
+                },
+                {
+                    "name": "Assess the use of the editions in the selected period. Assess how many manuscripts of this work survive today in our libraries",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_AtuotEitSP.xml"
+                },
+                {
+                    "name": "Understand the popularity and circulation of this work",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_UtPaCotW.xml"
+                },
+                {
+                    "name": "Ensure inclusiveness of data",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_EIoDV2.xml"
+                },
+                {
+                    "name": "Bundle collected data",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_BCDV2.xml"
+                },
+                {
+                    "name": "Interpret these data and offer explanations on statistical information, metrics, or other methods are used to analyse the corpus",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_ItdaoeoSIMooMautAtC.xml"
+                },
+                {
+                    "name": "Sharing data through articles and publications",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SdtAaPV2.xml"
+                },
+                {
+                    "name": "Ensure that the required legal permissions are available",
+                    "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_EttrLPaAV2.xml"
                 }
             ]
         }
     ],
     "steps": [
         {
+            "name": "Select Data (or existing Metadata) to be transformed in Metadata",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_1_creating_metadata_scenario.xml"
+        },
+        {
+            "name": "Defining responsibilities and policies for metadata maintenance",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_2_defining_responsabilities_and_policies.xml"
+        },
+        {
+            "name": "Adopting a standard for metadata",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_3_adopting_standard.xml"
+        },
+        {
+            "name": "Migration to target format",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_3DMtTF.xml"
+        },
+        {
+            "name": "Visualisation",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_3DV.xml"
+        },
+        {
+            "name": "Referring to shared controlled vocabularies or ontologies for metadata",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_4_metadata_enrichment.xml"
+        },
+        {
+            "name": "Mapping the data",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_5_mapping_data.xml"
+        },
+        {
+            "name": "Creating or converting metadata into a standard format",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_6_creating_or_converting_metadata_in_a_standard_format.xml"
+        },
+        {
+            "name": "Quality checking",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_7_quality_checking.xml"
+        },
+        {
+            "name": "Applying a license",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_8_applying_license.xml"
+        },
+        {
+            "name": "Acquisition of a 3D object (by photogrammetry)",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_A3DOBP.xml"
+        },
+        {
+            "name": "Acquisition of 3D object (by scanning)",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_A3DOBS.xml"
+        },
+        {
             "name": "Analyse",
             "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_A_121017.xml"
         },
         {
-            "name": "Annotation",
+            "name": "Anonymize",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_A_171117.xml"
+        },
+        {
+            "name": "Archive",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_A_190618.xml"
+        },
+        {
+            "name": "Apply access controls and authentication procedures",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_AACaAP.xml"
+        },
+        {
+            "name": "Apply access controls and authentication procedures",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_AACaAPV2.xml"
+        },
+        {
+            "name": "Assess legal issues",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_ALI_06022018.xml"
+        },
+        {
+            "name": "Add metadata",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_AM_171117.xml"
+        },
+        {
+            "name": "Linguistic Annotation",
             "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_annotation.xml"
         },
         {
@@ -213,8 +1015,20 @@
             "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_AoS.xml"
         },
         {
+            "name": "Assessment of Standards",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_AoSV2.xml"
+        },
+        {
+            "name": "Analyzing the spectra",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_AS_081117.xml"
+        },
+        {
             "name": "Adhere to guidance, policies and legal requirements",
             "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_atGPaLR.xml"
+        },
+        {
+            "name": "Adhere to guidance, policies and legal requirements",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_atGPaLRV2.xml"
         },
         {
             "name": "Assess the use of the editions in the selected period. Assess how many manuscripts of this work survive today in our libraries",
@@ -225,16 +1039,60 @@
             "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_BCD.xml"
         },
         {
+            "name": "Bundle collected data",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_BCDV2.xml"
+        },
+        {
+            "name": "Create an archiving packet with 3D data and metadata",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CaAPw3DDaM_190618.xml"
+        },
+        {
+            "name": "Collect and classify",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CaC_171117.xml"
+        },
+        {
             "name": "Create associated documentation",
             "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_Cad_300517.xml"
+        },
+        {
+            "name": "Create a digital corpus of musical compositions.",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CaDCoMC_020218.xml"
         },
         {
             "name": "Collect all existent editions of the selected work",
             "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CaeEotSW.xml"
         },
         {
+            "name": "Collect all existent editions of the selected work",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CaeEotSWV2.xml"
+        },
+        {
+            "name": "Collect and organize metadata",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CaOM_020218.xml"
+        },
+        {
             "name": "Choose a sustainable archive, repository, data centre or other custodian where data will be stored",
             "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CaSARDCooCwDwbs.xml"
+        },
+        {
+            "name": "Choose a sustainable archive, repository, data centre or other custodian where data will be stored",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CaSARDCooCwDwbsV2.xml"
+        },
+        {
+            "name": "Choose format",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CF_06022018.xml"
+        },
+        {
+            "name": "Change format into MEI files if necessary.",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CFiMFin_020218.xml"
+        },
+        {
+            "name": "Convert into sustainable formats",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CiSF_171117.xml"
+        },
+        {
+            "name": "Characterization of laser effects",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CLE_081117.xml"
         },
         {
             "name": "Conversion to TEI",
@@ -253,16 +1111,84 @@
             "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CSatSR.xml"
         },
         {
+            "name": "Collect standards about the selected resources",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CSatSRV2.xml"
+        },
+        {
+            "name": "Convert to 3D long-term format",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_Ct3Dltf_190618.xml"
+        },
+        {
+            "name": "Contextualize the research",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CtR_171117.xml"
+        },
+        {
             "name": "Combine variables into scales",
             "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CViS_121017.xml"
+        },
+        {
+            "name": "Comparison with other techniques",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_CwOT_081117.xml"
+        },
+        {
+            "name": "Disseminate and archive",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DaA_171117.xml"
+        },
+        {
+            "name": "Describe and annotate",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DaA_190618.xml"
+        },
+        {
+            "name": "Define imaging specifications",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DIS_06022018.xml"
+        },
+        {
+            "name": "Determining laser characteristics",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DLC_081117.xml"
+        },
+        {
+            "name": "Determination of digitization and annotation guidelines for the research corpus",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DoDaAGftRC.xml"
+        },
+        {
+            "name": "Documentation of laser effects",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DoLE_081117.xml"
+        },
+        {
+            "name": "Digitization of resources for the research corpus",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DoRftRC.xml"
+        },
+        {
+            "name": "Determine scanning method",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DSM_06022018.xml"
+        },
+        {
+            "name": "Disambiguate these data according to the Unique Reference Resource",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DtdattURR.xml"
+        },
+        {
+            "name": "Disambiguate these data according to the Unique Reference Resource",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DtdattURRV2.xml"
         },
         {
             "name": "Define the geographic and the chronological boundaries",
             "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DtGatCB.xml"
         },
         {
+            "name": "Define the geographic and the chronological boundaries",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DtGatCBV2.xml"
+        },
+        {
+            "name": "Determine Transcription method",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DTM_06022018.xml"
+        },
+        {
             "name": "Define the research target (persons, works, shelfmarks), and thematic, geographic and chronological boundaries",
             "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DtrTaTGaCB.xml"
+        },
+        {
+            "name": "Define the research target (persons, works, shelfmarks), and thematic, geographic and chronological boundaries",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_DtrTaTGaCBV2.xml"
         },
         {
             "name": "Express an XML schema with ODD",
@@ -273,16 +1199,104 @@
             "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_EIoD.xml"
         },
         {
+            "name": "Ensure inclusiveness of data",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_EIoDV2.xml"
+        },
+        {
+            "name": "Enrichment of MEI files",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_EoMF_020218.xml"
+        },
+        {
             "name": "Express projects requirements in machine-readable format",
             "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_Eprimrf_300517.xml"
+        },
+        {
+            "name": "Ensure quality control",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_EQC_06022018.xml"
+        },
+        {
+            "name": "Elaborate a systematic report",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_ESR_081117.xml"
+        },
+        {
+            "name": "Enrich the musical edition with critical apparatus metadata",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_EtMEwCAM_020218.xml"
+        },
+        {
+            "name": "Enrich the metadata of MEI files",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_EtMoMF_020218.xml"
         },
         {
             "name": "Ensure that the required legal permissions are available",
             "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_EttrLPaA.xml"
         },
         {
+            "name": "Ensure that the required legal permissions are available",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_EttrLPaAV2.xml"
+        },
+        {
             "name": "Finalize",
             "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_finalize.xml"
+        },
+        {
+            "name": "Formulate specific working hypotheses and specific historical questions concerning the target group. Defining strict criteria for limiting the target population and the geographic, chronological and thematic boundaries.",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_FswHasHQcttg.xml"
+        },
+        {
+            "name": "Formulate specific working hypotheses and specific historical questions concerning the target group. Defining strict criteria for limiting the target population and the geographic, chronological and thematic boundaries.",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_FswHasHQcttgV2.xml"
+        },
+        {
+            "name": "Glass characterization",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_GC_081117.xml"
+        },
+        {
+            "name": "Have a reflexion on the quality of the produced data.",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_HaRotQotPD_020218.xml"
+        },
+        {
+            "name": "Harmonization of existing digitized text for the corpus",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_HoEDTftC.xml"
+        },
+        {
+            "name": "Image",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_I_06022018.xml"
+        },
+        {
+            "name": "Image Capture 1: Capturing VIS images",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_IC1_201017.xml"
+        },
+        {
+            "name": "Image Capture 2: Capturing IRR images",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_IC2_201017.xml"
+        },
+        {
+            "name": "Image Capture 3: Capturing UVR images",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_IC3_201017.xml"
+        },
+        {
+            "name": "Image Capture 4: Capturing UVL images",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_IC4_201017.xml"
+        },
+        {
+            "name": "Image Capture 5: Capturing VIL images",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_IC5_201017.xml"
+        },
+        {
+            "name": "Image Capture 6: Capturing VIVL images",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_IC6_201017.xml"
+        },
+        {
+            "name": "Intensity protocol for damage protection",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_IPDP_081117.xml"
+        },
+        {
+            "name": "Image Post-Processing",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_IPP_201017.xml"
+        },
+        {
+            "name": "Identifying relevant elements",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_IRE_081117.xml"
         },
         {
             "name": "Interpret these data",
@@ -293,28 +1307,224 @@
             "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_ItdaoeoSIMooMautAtC.xml"
         },
         {
+            "name": "Interpret these data",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_ItDV2.xml"
+        },
+        {
+            "name": "Keep access to the report",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_KAR_081117.xml"
+        },
+        {
+            "name": "Merge different databases in one Unique Reference Resource",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_MdDioURR.xml"
+        },
+        {
+            "name": "Merge different databases in one Unique Reference Resource",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_MdDioURRV2.xml"
+        },
+        {
+            "name": "Multispectral imaging setup",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_MIS_201017.xml"
+        },
+        {
+            "name": "Modeling Laser-Material Interactions",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_MLMI_081117.xml"
+        },
+        {
             "name": "Model the relationship between variables",
             "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_MtRbV_121017.xml"
+        },
+        {
+            "name": "Offer anyone interested the possibility to contribute",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_OAItPtC_020218.xml"
+        },
+        {
+            "name": "Obtain the informed consent of participants",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_OtICoP_171117.xml"
+        },
+        {
+            "name": "Preparation",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_P_081117.xml"
+        },
+        {
+            "name": "Preparation",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_P_201017.xml"
+        },
+        {
+            "name": "Publishing",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_Pb_081117.xml"
+        },
+        {
+            "name": "Pigment identification",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_PI_081117.xml"
+        },
+        {
+            "name": "Present in an open source digital CMS the result of the musical edition.",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_PiaOSDCtRotME_020218.xml"
+        },
+        {
+            "name": "Provision of the corpus",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_PotC.xml"
+        },
+        {
+            "name": "Post processing 1: Remove fluorescence background from the spectra",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_PP1_081117.xml"
+        },
+        {
+            "name": "Post processing 2: Raman Peak identification",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_PP2_081117.xml"
+        },
+        {
+            "name": "Post process files",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_PP_06022018.xml"
+        },
+        {
+            "name": "Pre-processing of spectra",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_PPS_081117.xml"
+        },
+        {
+            "name": "Prepare report",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_PR_081117.xml"
+        },
+        {
+            "name": "Prepare report",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_PR_201017.xml"
+        },
+        {
+            "name": "Present",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_Pres_081117.xml"
+        },
+        {
+            "name": "Provide tools that allow collaboration in the use and reuse of data",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_PTtacitUaRoD.xml"
+        },
+        {
+            "name": "Provide tools that allow collaboration in the use and reuse of data",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_PTtacitUaRoDV2.xml"
+        },
+        {
+            "name": "Publish",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_Pu_081117.xml"
+        },
+        {
+            "name": "Publish",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_Pu_201017.xml"
+        },
+        {
+            "name": "Publishing",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_Pub_081117.xml"
+        },
+        {
+            "name": "Research laser cleaning parameters",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_RLCP_081117.xml"
+        },
+        {
+            "name": "Research on Artwork",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_RoA_081117.xml"
+        },
+        {
+            "name": "Research on Artwork",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_RoA_201017.xml"
+        },
+        {
+            "name": "Research on glasses",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_RoG_081117.xml"
+        },
+        {
+            "name": "Recognition of metadata",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_RoM.xml"
+        },
+        {
+            "name": "Record Raman spectra",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_RRS_081117.xml"
         },
         {
             "name": "Recode variables",
             "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_Rv_121017.xml"
         },
         {
+            "name": "Spectra acquisition",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SA_081117.xml"
+        },
+        {
+            "name": "Select and digitize",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SaD_171117.xml"
+        },
+        {
+            "name": "Structural analysis",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SAn_081117.xml"
+        },
+        {
             "name": "Share and publish data in this new format",
             "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_Sapditnf_300517.xml"
+        },
+        {
+            "name": "Select appropriate reference resource",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_Sarr.xml"
+        },
+        {
+            "name": "Select appropriate reference resource",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SarrV2.xml"
         },
         {
             "name": "Sharing data through articles and publications",
             "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SdtAaP.xml"
         },
         {
+            "name": "Sharing data through articles and publications",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SdtAaPV2.xml"
+        },
+        {
             "name": "Select data which are to be retained for curation",
             "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SDtatRfC.xml"
         },
         {
+            "name": "Select data which are to be retained for curation",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SDtatRfCV2.xml"
+        },
+        {
+            "name": "Store edited files",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SEF_06022018.xml"
+        },
+        {
+            "name": "Select / Extrapolate only useful data according to the target question",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SEouDatttQ.xml"
+        },
+        {
+            "name": "Select / Extrapolate only useful data according to the target question",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SEouDatttQV2.xml"
+        },
+        {
+            "name": "Store master files",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SMF_06022018.xml"
+        },
+        {
+            "name": "Selection of texts to gather in a research corpus",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SoTtGiaRC.xml"
+        },
+        {
+            "name": "Selection of textual works relevant for the research question",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SoTWRftRQ.xml"
+        },
+        {
+            "name": "Selection of points of analysis",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_SPA_081117.xml"
+        },
+        {
             "name": "Synthesize the results",
             "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_StR.xml"
+        },
+        {
+            "name": "Synthesize the results",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_StRV2.xml"
+        },
+        {
+            "name": "Share the Unique Reference Resource",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_StURR.xml"
+        },
+        {
+            "name": "Share the Unique Reference Resource",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_StURRV2.xml"
         },
         {
             "name": "Select the work on which the survey is conducted",
@@ -359,6 +1569,10 @@
         {
             "name": "Test for reliability of the scales",
             "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_TfRotS_121017.xml"
+        },
+        {
+            "name": "Transcribe the interviews",
+            "url": "http://www.github.com/ParthenosWP4/SSK/tree/master/steps/step_TtI_171117.xml"
         },
         {
             "name": "Understand the popularity and circulation of this work",

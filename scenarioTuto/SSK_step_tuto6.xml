@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!-- You have to type the TEI file, with researchStep or researchScenario -->
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="st_0000000001">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Meta scenario step "Add resources to Zotero"</title>
+                <author>
+                    <persName>Riondet Charles</persName>
+                    <affiliation>Inria</affiliation>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <authority>Parthenos</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/">
+                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.</p>
+                    </licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Created from scratch, <date when="2018-06-23">June 23d 2018</date></p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listEvent>
+                <event type="researchStep">
+                    <head type="stepTitle" xml:lang="en">Link the resources to the step</head>
+                    <desc type="definition" xml:lang="en">There is different ways to link resources
+                        to a step (TEI : &lt;ref&gt; element). The one we favour is the recording of
+                        the resource metadata in the dedicated SSK Zotero Library (click <ref
+                            type="zotero" target="https://www.zotero.org/groups/427927/items?"
+                            >here</ref>). <list>
+                            <item>To populate it, a Zotero account is necessary (create it <ref
+                                    type="zotero" target="https://www.zotero.org/user/register"
+                                    >here</ref>) as well as a membership in the SSK group (apply
+                                    <ref type="zotero"
+                                    target="https://www.zotero.org/groups/427927/ssk-parthenos?"
+                                    >here</ref>). The SSK library is organized in collections and
+                                sub-collections, by domains or standards. To learn more about how to
+                                use Zotero, many tutorial and learning resources are available <ref
+                                    type="zotero"
+                                    target="https://www.zotero.org/support/screencast_tutorials"
+                                    >here</ref>.</item>
+                            <item>After adding a resource in the Zotero Library, it should be linked
+                                to the step, with the help of its Zotero key, i.e. the last part of
+                                the URL of the resource record on the Zotero website. For instance,
+                                in the following example, the key is 4B62GJ5I: <ref type="zotero"
+                                    target="https://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/4B62GJ5I"
+                                    >https://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/4B62GJ5I</ref>.
+                                In TEI, the Zotero key should be used like this: &lt;ref
+                                type="zotero" key="4B62GJ5I"/&gt;. </item>
+                            <item>It is possible to put directly the url of a Github repository or a
+                                document stored in HAL, and skip the Zotero part (the metadata would
+                                be fetched directly via the APIs)</item>
+                            <item>It is possible and recommended to add a description of the
+                                resource, in addition of the zotero metadata. This description
+                                should make the link between the resource and the SSK step that
+                                references it. In TEI, the element to use is &lt;desc&gt;, inside a
+                                &lt;ref&gt; element</item>
+                        </list></desc>
+                    <desc xml:lang="en" type="terms">
+                        <term type="activity" source="http://tadirah.dariah.eu/" key="gathering"
+                            >gathering</term>
+                    </desc>
+                    <linkGrp type="generalResources">
+                        <ref type="documentation" source="zotero" target="Z28CSGGN"/>
+                        <ref type="documentation" source="zotero" target="BN2ABRWT"/>
+                    </linkGrp>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>

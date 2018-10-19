@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_CaDCoMC_020218">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Step "Create a digital corpus of musical compositions"</title>
+            <author>
+               <persName>Vincent Besson</persName>
+               <affiliation>CNRS</affiliation>
+            </author>
+            <author>
+               <persName>Adeline Joffres</persName>
+               <affiliation>CNRS</affiliation>
+            </author>
+            <author>
+               <persName>Hélène Gautier</persName>
+               <affiliation>CNRS</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+       document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head xml:lang="en">Create a digital corpus of musical compositions.</head>
+               <head xml:lang="fr">Créer un corpus numérique de compositions musicales.</head>
+               <desc type="definition" xml:lang="en">Select resources to be included in the corpus. After
+      collecting original musical sources, transcribe them adding critical editorial signs and
+      normalizing, where applicable, ancient poetic texts to modern usage. To get directly MEI
+      files, use MEISE (MEI Score Editor).</desc>
+               <desc type="definition" xml:lang="fr">Sélectionner les ressources à inclure dans le corpus.
+      Après avoir rassemblé les sources musicales originales, les transcrire en ajoutant les signes
+      éditoriaux critiques et en adaptant, le cas échéant, les anciens textes poétiques à la norme
+      moderne. Pour obtenir directement des fichiers MEI, utiliser MEISE (MEI Score Editor).</desc>
+               <desc type="term" xml:lang="en">
+                  <term key="http://tadirah.dariah.eu/vocab/index.php?_search_expresion=Transcription"
+                        source="http://tadirah.dariah.eu/"
+                        type="activity"/>
+               </desc>
+               <desc type="term" xml:lang="en">
+                  <term key="http://tadirah.dariah.eu/vocab/index.php?_search_expresion=Editing"
+                        source="http://tadirah.dariah.eu/"
+                        type="activity"/>
+               </desc>
+               <linkGrp type="generalResources">
+                  <ref source="zotero" target="3FSG8F5I" type="software">
+                     <term key="Sibelius" type="software"/>
+                  </ref>
+                  <ref source="zotero"
+                       subtype="standard"
+                       target="983UF5N4"
+                       type="documentation">
+                     <term key="MEI" source="standard_list" type="standard"/>
+                  </ref>
+                  <ref source="zotero"
+                       subtype="standard"
+                       target="US7FCT9X"
+                       type="schema">
+                     <term key="MEI" source="standard_list" type="standard"/>
+                  </ref>
+                  <ref source="zotero" target="B9DPXFQJ" type="documentation"/>
+                  <ref source="zotero" target="8BI9QW2M" type="documentation"/>
+                  <ref source="zotero" target="TIFHEC4R" type="tutorial"/>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
+</TEI>
