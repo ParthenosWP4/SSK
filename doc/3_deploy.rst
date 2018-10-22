@@ -88,18 +88,39 @@ It's built with |angular_link| a |typescript| framework that offers many feature
 To display SSK's data on this web interface, we created couple of components, services  and templates folowing différents blocks of the previous image. Here components have been used to represent SSK's layers  which are Scenarios, steps, resources and metadata. Services helped to share data between those layers, but they also allowed us to design functions that queries  data from  main  module of SSK (Core SSK or Back-End) via  REST API.
 
 
-Local Deployment
-~~~~~~~~~~~~~~~~
+Deployment
+~~~~~~~~~~
 
-Comming soon
+As the SSK is based on three main parts, it follows an independent deployment for each of her modules(Elasticsearch, Front-End, Bac-End). The are for those parts endspoints. There are  Elasticsearch endpoints that  give  possibility  for  the SSK's Back-end to communicate with Elasticsearch and  in the same way the Back-End also offers endpoints to the Front-end so that it can get SSK's data for display. That is how the different parts of SSK communicate to each other.
+
+1 - Install Elasticsearch
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The binary packages of Elasticsearch have only one dependency: Java. The minimum supported version is Java 8. To download and install Elasticsearch, use the commands that work with your system (deb for Debian/Ubuntu, rpm for Redhat/Centos/Fedora, mac for OS X, and win for Windows). Follos |installelasticsearch| for  more details.
+
+2 - Deploy Back-End (Spring boot application)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Spring Boot is a convention over configuration framework that allows us to set up a production-ready setup of a Spring project, and Tomcat is one of the most popular Java Servlet Containers.
+
+By default, Spring Boot builds a standalone Java application that can run as a desktop application or be configured as a system service, but there are environments where we can’t install a new service or run the application manually.
+
+Opposite to standalone applications, Tomcat is installed as a service that can manage multiple applications within the same application process, avoiding the need for a specific setup for each application.
+
+To build our Tomcat-deployable WAR application, we execute the **"gradle build"** command since |gradle| is our build automation system configured in SSK spring boot application. After that, our WAR file is generated at target/ssk_services.war (assuming the Gradle artifactId is “ssk_services”).
+
+To have our WAR file deployed and running in Tomcat, we need to complete the following steps:
+
+    - downloadApacheTomcat and unpackage it into a tomcat folder
+    - Copy our WAR file from target/ssk_services.war to the tomcat/webapps/ folder
+    - From a terminal navigate to tomcat/bin folder and execute
+        	catalina.bat run (on Windows)
+        	
+        	catalina.sh run (on Unix-based systems)
+    - Go to http://localhost:8080/ssk_services/ssk
 
 
 
-Next features
-~~~~~~~~~~~~~
-
-Comming soon
- 
+Source: |backdepoyment|
 
 
 .. |image0| image:: img/techArch.png
@@ -110,9 +131,25 @@ Comming soon
    :width: 6.27083in
    :height: 3.34722in
 
+.. |downloadApacheTomcat| raw:: html
+
+   <a href="https://www.elastic.co/products/elasticsearch" target="_blank">Download Apache Tomcat</a>
+
 .. |elasticsearch| raw:: html
 
    <a href="https://www.elastic.co/products/elasticsearch" target="_blank">Elasticsearch</a>
+
+.. |backdepoyment| raw:: html
+
+   <a href="https://www.baeldung.com/spring-boot-war-tomcat-deploy" target="_blank">Deploy a Spring Boot WAR</a>
+
+.. |gradle| raw:: html
+
+   <a href="https://gradle.org/" target="_blank">Gradle</a>
+
+.. |installelasticsearch| raw:: html
+
+   <a href="https://www.elastic.co/guide/en/beats/libbeat/6.2/elasticsearch-installation.html" target="_blank">Install Elasticsearch</a>
 
 .. |angular_link| raw:: html
 
