@@ -96,7 +96,7 @@ As the SSK is based on three main parts, it follows an independent deployment fo
 1 - Install Elasticsearch
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The binary packages of Elasticsearch have only one dependency: Java. The minimum supported version is Java 8. To download and install Elasticsearch, use the commands that work with your system (deb for Debian/Ubuntu, rpm for Redhat/Centos/Fedora, mac for OS X, and win for Windows). Follos |installelasticsearch| for  more details.
+The binary packages of Elasticsearch have only one dependency: Java. The minimum supported version is Java 8. To download and install Elasticsearch, use the commands that work with your system (deb for Debian/Ubuntu, rpm for Redhat/Centos/Fedora, mac for OS X, and win for Windows). Follow |installelasticsearch| for  more details.
 
 2 - Deploy Back-End (Spring boot application)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -110,14 +110,19 @@ To build our Tomcat-deployable WAR application, we execute the **"gradle build"*
 
 To have our WAR file deployed and running in Tomcat, we need to complete the following steps:
 
-    - downloadApacheTomcat and unpackage it into a tomcat folder
+    - |downloadApacheTomcat| and unpackage it into a tomcat folder
     - Copy our WAR file from target/ssk_services.war to the tomcat/webapps/ folder
     - From a terminal navigate to tomcat/bin folder and execute
         	catalina.bat run (on Windows)
-        	
+
         	catalina.sh run (on Unix-based systems)
     - Go to http://localhost:8080/ssk_services/ssk
 
+This is how the SSK Back-End has been deployed on the d4science infrastructure. Although Elasticsearch and the Tomcat server have been configured by the platform engineers
+
+
+2 - Front-End Deployment (Angular application)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 Source: |backdepoyment|
