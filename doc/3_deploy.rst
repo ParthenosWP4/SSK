@@ -118,14 +118,25 @@ To have our WAR file deployed and running in Tomcat, we need to complete the fol
         	catalina.sh run (on Unix-based systems)
     - Go to http://localhost:8080/ssk_services/ssk
 
-This is how the SSK Back-End has been deployed on the d4science infrastructure. Although Elasticsearch and the Tomcat server have been configured by the platform engineers
-
-
-2 - Front-End Deployment (Angular application)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+This is how the SSK Back-End has been deployed on the |d4science| infrastructure. Although Elasticsearch and the Tomcat server have been configured by the platform engineers.
 
 Source: |backdepoyment|
+
+
+3 - Front-End Deployment (Angular application)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Build and deploy the Front-end part of SSK which is an Angular based application, requires |angularcli| to been installed on your computer. And below are steps to follow:
+
+ 1 - To build angular applications, we execute the **"ng build"**  command . This will generate files in the **"dist"** folder located at the root of the application folder. 
+
+ 2 - Copy everything within the output folder (dist/ by default) to a folder on the server.
+
+ 3 - Configure the server to redirect requests for missing files to index.html
+
+
+Source en more details |angulardeployment|.
+
+
 
 
 .. |image0| image:: img/techArch.png
@@ -135,6 +146,19 @@ Source: |backdepoyment|
 .. |image1| image:: img/overview2.png
    :width: 6.27083in
    :height: 3.34722in
+
+.. |angulardeployment| raw:: html
+
+   <a href="https://angular.io/guide/deployment" target="_blank">here</a>
+
+
+.. |angularcli| raw:: html
+
+   <a href="https://angular.io/cli" target="_blank">Angular CLI</a>
+
+.. |d4science| raw:: html
+
+   <a href="https://www.d4science.org/" target="_blank">D4Science</a>
 
 .. |downloadApacheTomcat| raw:: html
 
