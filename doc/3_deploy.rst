@@ -3,15 +3,21 @@ Technical architecture
 ======================
 
 The implementation of the SSK is based on a flexible, easy to deploy and
-maintained architecture, composed of independent entities that
-communicate together through services (REST / JSON). The most important
-entity is the core of the SSK, which makes queries to our data
-repositories (Github, Zotero, etc.) and processes retrieved data. This
-core also communicates with a search engine (part of the architecture)
-based on Apache Lucene. Data processed from the core part and from the
+maintain architecture. It is composed of independent entities that
+communicate together through services (REST / JSON).
+
+The main
+entity, the core of the SSK, is the back-end, which makes queries to our data
+repositories (Github, Zotero, etc.) and processes retrieved data.
+
+This
+core/back-end communicates with a search engine, part of the architecture,
+based on Apache Lucene:  ElasticSearch.
+
+The data processed from the core part and from the
 search engine are all delivered via an API to third-party applications
-like the SSK interface, which is an entity of our architecture. Below is
-the architecture of SSK.
+like the SSK interface (the front-end), which is an entity of our architecture.
+The architecture of the SSK is depicted in the following schema:
 
 |image0|
 
@@ -23,8 +29,8 @@ The SSK processes TEI files stored on Github and divided into two folders,
 `scenarios <https://github.com/ParthenosWP4/SSK/tree/master/scenarios>`_ and `steps <https://github.com/ParthenosWP4/SSK/tree/master/steps>`_.
 For more information about the data model, check the dedicated section: :ref:`reTEI`.
 
-Core of SSK
-~~~~~~~~~~~
+SSK Back-end
+~~~~~~~~~~~~
 
 This part is the main component of the SSK, it has been built using
 **Spring Boot version 1.5.4.RELEASE**, a Java based framework (more details `here <https://spring.io/blog/2017/06/08/spring-boot-1-5-4-available-now>`_).
@@ -33,110 +39,119 @@ It contains modules for :
 1 - Processing SSK data
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-This means retrieving TEI content from SSK Github repository. Validate
-retrieved content according to the `RELAX NG schema <https://github.com/ParthenosWP4/SSK/blob/master/spec/TEI_SSK_ODD.rng>`__ defined for SSK
-files. After validation TEI content are convert into Json format using
-**XSLT**.  Resources are completed such as standards in differents ways. For standards, a knowledge base of standards is queried to retrieve more informations (standard complete name, multilingual
-standard description and links). And for resources 
-some queries are made on platforms like `Zotero <https://www.zotero.org/>`_ (which is a free
-software for managing bibliographic references) , Github (for project
-resources) or  **Website scraping** is also used to make resources more consistent.
+This means retrieving TEI content from SSK Github repository. A very important step is to validate the
+retrieved content according to the `RELAX NG schema <https://github.com/ParthenosWP4/SSK/blob/master/spec/TEI_SSK_ODD.rng>`__ defined for SSK files.
 
-After adding more content for either standards or ressources, these are then push into 
-|elasticsearch| for indexing indexing and future searches. 
+If the file is validated, TEI content is converted in JSON format using the built-in scripts provided by the TEI consortium : https://github.com/ParthenosWP4/SSK/blob/dev/SSK-Server/src/main/resources/lib/bin/teitojson.
 
-Note that each scenario and her steps are also pushed on |elasticsearch| and we added parent attributes in steps to reference their  parent. In a such way resources, metadata have been also targeted with their parent identifier, respectively steps for ressources and  step/scenario for metadata.
+The references contained in TEI files are resolved to complete the data:
 
+* For keywords, in particular the ``standards``, the data retrieved in the TEI files is used to get extra information about the terms. For standards, a knowledge base of standards is queried to retrieve more informations (standard complete name, multilingual standard description and links).
+* For resources, queries are made on platforms such as `Zotero <https://www.zotero.org/>`_ and **GitHub** (for project resources). **Website scraping** is also used to make resources more consistent.
+
+Once the data is completed, it is then pushed into |elasticsearch| for indexing and search.
+
+Note that each scenario and its steps are also pushed on |elasticsearch|. Each step is linked to the scenarios it is part of, by a parent attribute, directly in |elasticsearch|. Resources and descriptive metadata have been also targeted with their parent identifier in the same way.
 
 2 - API serving
 ^^^^^^^^^^^^^^^
 
-The SSK Back-End makes its data available via REST API easily built with Spring boot and it's annotations. These API  helps to retrieve scenarios , steps, resources and metadata. In such way third party applications could also access SSK's data. 
+The SSK Back-End makes its data available via a REST API, built with Spring boot. This API allows third party applications to retrieve scenarios, steps, resources and their descriptive metadata.
 
-3 - User management (for SSK contribution)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The API V1 is accessible via the URL: http://ssk.huma-num.fr/ssk_services-0.0.1/ssk
 
-As SSK is built for researchers by giving them access to standards and best practices in a meaningful way. They need to have user account to be able to manage their data,  bookmark their best scenarios or steps in order to facilitate future navigations into SSK or stay in touch on some specific research fields. 
+Example queries:
 
-Holding an user account on SSK is must oriented for SSK contributions, and this is one of  the main feature of out platform. So through this features we give the opportuniy to researchers to create their one scenarios based on existing one or by starting from scratch. There are two  ways to do that:
+* Get all the standards mentioned in scenarios and steps: http://ssk.huma-num.fr/ssk_services-0.0.1/standard/all
+* To get the descriptive metadata of a scenario, the query is composed of the keyword ``scenario``, the Id of the scenario, and, as parameters, the metadata the user wants to get. For instance, the following query serves the title, description, image and descriptive terms for the scenario whose ID is ``SSK_sc_DisseminationFieldSurveys``:
 
-- First by using TEI (XML)  
-- Or Use froms designed in the :ref:`sskFrontEnd` part by just fill forms and select components such as metadata, existant steps...
+``http://ssk.huma-num.fr/ssk_services-0.0.1/scenario/SSK_sc_DisseminationFieldSurveys?fields=title,desc,image,scenario_metadata,author&fromSSK=true``
+
+A V2 is planned in order to serve more easy-to-handle content, for instance giving all the scenarios with a given author or related to a given institution, discipline or standard, etc.
+
+3 - User management
+^^^^^^^^^^^^^^^^^^^^
+
+This part is still work in progress. We plan to deliver it by the **first trimester 2019**.
+
+Creating an account will allow the user to:
+
+* bookmark scenarios and steps in order to facilitate future navigations or stay in touch with some specific research fields.
+* Create their own scenarios based on existing ones or by starting from scratch.
 
 4 - Search Engine
 ^^^^^^^^^^^^^^^^^
-This module has been built to retreive from SSK whole data,  specific scenarios or steps by filtering using tags (standards, techniques, disciplines, activities  or objects ). As an example it could  allow user to  find all steps using TEI as standard, or scenarios with history as discipline.  Also it gives the possiblity to make full text search on SSK content. 
+The search engine module has been built in order to allow refined information retrieval. It relies on |elasticsearch|, version 6.2.4, a full-text search and analytics engine, that allows us to easily propose multi-criteria and full-text queries to the users, but also autocomplete suggestions.
 
-
-Elasticsearch (version 6.2.4)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-|elasticsearch| is a distributed, RESTful search and analytics engine capable of solving a growing number of use cases. As the heart of the Elastic Stack, it centrally stores your data so you can discover the expected and uncover the unexpected. 
-
-We used it to easily index our data, and it hepls a lot with his RESTful search features with multi-criteria queries. This helps to query data in different ways such as specifying  fields,  type (for us , scenario, step, resource and metadata) of results. Also it's possible to make full text research with it.
-
+The indexed data is not only the information contained in the scenarios and steps descriptions stored in TEI files, but also the data hosted on the `Zotero database <https://www.zotero.org/groups/427927/ssk-parthenos>`_ and the `SSK Standards Knowledge Base <http://ssk.huma-num.fr/#/glossary/standards>`_.
 
 .. _sskFrontEnd:
 
 SSK Front-End
 ~~~~~~~~~~~~~~
-It's the client part of the SSK, where users can see  SSK's inputs (TEI files)  data in a different way. It  respects UX design principles in order to help researchers to easily access  contents of scenarios  and steps with their medatata.
+The SSK Front-End is the client part of the SSK, where users can see the SSK data (TEI files + Zotero references).
 
-It's built with |angular_link| a |typescript| framework that offers many features to easy design Progressive Web Apps. Angular combines declarative templates, dependency injection, end to end tooling, and integrated best practices to solve development challenges. The image below (from https://angular.io/guide/architecture) shows the architecture of an Angular application. 
+It is built with |angular_link|, a framework using |typescript| for building web applications. Angular proposes to set a hierarchy of components (or classes), associated with HTML templates. Components use services (or functions) to communicate with the server (to fetch the data for example) and to link components between them.
+
+The image below (taken from https://angular.io/guide/architecture) shows the architecture of an Angular application.
 
 |image1|
 
-To display SSK's data on this web interface, we created couple of components, services  and templates folowing différents blocks of the previous image. Here components have been used to represent SSK's layers  which are Scenarios, steps, resources and metadata. Services helped to share data between those layers, but they also allowed us to design functions that queries  data from  main  module of SSK (Core SSK or Back-End) via  REST API.
+To display SSK's data on the web interface, we created several components, services and templates.
 
+Components, combined with templates, are used to represent the different SSK layers : scenarios, steps, resources.
+
+Services are used to share data between these layers, but they also allowed us to design functions that queries data from  main modules of the SSK (Core SSK or Back-End) via a REST API.
 
 Deployment
 ~~~~~~~~~~
 
-As the SSK is based on three main parts, it follows an independent deployment for each of her modules(Elasticsearch, Front-End, Bac-End). The are for those parts endspoints. There are  Elasticsearch endpoints that  give  possibility  for  the SSK's Back-end to communicate with Elasticsearch and  in the same way the Back-End also offers endpoints to the Front-end so that it can get SSK's data for display. That is how the different parts of SSK communicate to each other.
+As the SSK is based on three main parts, each of its modules (Elasticsearch, Front-End, Back-End) need to be deployed independently. The communication between the modules is made with dedicated endpoints. The Elasticsearch endpoint serve the data to the Back-end, and in the same way, the Back-End also offers an endpoint to the Front-end so that it can get SSK's data for display.
 
 1 - Install Elasticsearch
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The binary packages of Elasticsearch have only one dependency: Java. The minimum supported version is Java 8. To download and install Elasticsearch, use the commands that work with your system (deb for Debian/Ubuntu, rpm for Redhat/Centos/Fedora, mac for OS X, and win for Windows). Follow |installelasticsearch| for  more details.
+The binary packages of Elasticsearch have only one dependency: Java. The oldest supported version is Java 8. To download and install Elasticsearch, use the commands that work with your system (deb for Debian/Ubuntu, rpm for Redhat/Centos/Fedora, mac for OS X, and win for Windows). Follow |installelasticsearch| for  more details.
 
 2 - Deploy Back-End (Spring boot application)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Spring Boot is a convention over configuration framework that allows us to set up a production-ready setup of a Spring project, and Tomcat is one of the most popular Java Servlet Containers.
+The Back-End is composed of two main elements : **Spring Boot** and **Tomcat** (Java Servlet Container).
 
-By default, Spring Boot builds a standalone Java application that can run as a desktop application or be configured as a system service, but there are environments where we can’t install a new service or run the application manually.
+Spring Boot is a *convention over configuration* framework that allows us to set up a production-ready setup of a Spring project. By default, Spring Boot builds a standalone Java application that can run as a desktop application or be configured as a system service. For the SSK, we use it as a service.
 
-Opposite to standalone applications, Tomcat is installed as a service that can manage multiple applications within the same application process, avoiding the need for a specific setup for each application.
+Opposite to standalone applications, Tomcat is also installed as a service that can manage multiple applications within the same application process, avoiding the need for a specific setup for each application.
 
-To build our Tomcat-deployable WAR application, we execute the **"gradle build"** command since |gradle| is our build automation system configured in SSK spring boot application. After that, our WAR file is generated at target/ssk_services.war (assuming the Gradle artifactId is “ssk_services”).
+The SSK spring boot application use |gradle| as build automation system.
+
+To build a Tomcat-deployable WAR application:
+
+1. execute the ``gradle build`` command.
+2. The WAR file is generated at ``target/ssk_services.war`` (assuming the Gradle artifactId is ``ssk_services``).
 
 To have our WAR file deployed and running in Tomcat, we need to complete the following steps:
 
-    - |downloadApacheTomcat| and unpackage it into a tomcat folder
-    - Copy our WAR file from target/ssk_services.war to the tomcat/webapps/ folder
-    - From a terminal navigate to tomcat/bin folder and execute
-        	catalina.bat run (on Windows)
+1. |downloadApacheTomcat| and unpackage it into a tomcat folder
+2. Copy our WAR file from target/ssk_services.war to the tomcat/webapps/ folder
+3. From a terminal navigate to tomcat/bin folder and execute ``catalina.bat run`` (on Windows) and ``catalina.sh run`` (on Unix-based systems)
+4. Go to http://localhost:8080/ssk_services/ssk
 
-        	catalina.sh run (on Unix-based systems)
-    - Go to http://localhost:8080/ssk_services/ssk
-
-This is how the SSK Back-End has been deployed on the |d4science| infrastructure. Although Elasticsearch and the Tomcat server have been configured by the platform engineers.
+This is how the SSK Back-End has been deployed on the |d4science| infrastructure, although Elasticsearch and the Tomcat server have been configured by the platform engineers.
 
 Source: |backdepoyment|
 
 
 3 - Front-End Deployment (Angular application)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Build and deploy the Front-end part of SSK which is an Angular based application, requires |angularcli| to been installed on your computer. And below are steps to follow:
+Build and deploy the Front-end of the SSK which is an Angular based application, requires |angularcli| to be installed on your computer.
 
- 1 - To build angular applications, we execute the **"ng build"**  command . This will generate files in the **"dist"** folder located at the root of the application folder. 
+The steps to follow are:
 
- 2 - Copy everything within the output folder (dist/ by default) to a folder on the server.
-
- 3 - Configure the server to redirect requests for missing files to index.html
+1. To build angular applications, execute the ``ng build``  command. This will generate files in the ``dist`` folder located at the root of the application folder.
+2. Copy everything within the output folder (dist/ by default) to a folder on the server.
+3. Configure the server to redirect requests for missing files to index.html
 
 
 Source en more details |angulardeployment|.
-
-
 
 
 .. |image0| image:: img/techArch.png

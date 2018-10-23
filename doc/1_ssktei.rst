@@ -15,7 +15,7 @@ TEI: the underlying data model
 ==============================
 
 The underlying data model of the SSK itself respects a standard, the
-Text Encoding Initiative, and is publicly available [2]_. Each scenario
+Text Encoding Initiative, and is publicly available. Each scenario
 and each step is encoded in TEI documents that are linked together with
 referencing mechanisms. This choice was made in order to ensure that the
 scenarios and the steps can be easily extended, reused and customized.
@@ -131,7 +131,7 @@ shown in the following example:
 
   <linkGrp type="generalResources">
    <ref source="zotero" subtype="book" target="PM5P3JDB" type="tutorial">
-    <desc xml:lang="en" type="resourceDesc"> This booklet is
+    <desc xml:lang="en" type="resourceDesc">This booklet is
      intended as an introductory textbook for students and
      end-users interested in knowing more about the exciting
      developments in this high-tech area of conservation and
@@ -153,7 +153,7 @@ case, the informations that the SSK shows (via the API) are:
 * For a GitHub User:
 
   * name
-  * html\_url
+  * html\_url (i.e. the URL of the profile page)
   * bio
   * updated\_at
   * type
@@ -179,18 +179,26 @@ without modifications.
 
 Files naming conventions are the following:
 
-* for scenarios:
+For scenarios:
 
-  * sc for scenario
-  * an underscore
-  * a condensed title of the scenario in camel case
+#. ``sc`` for scenario
+#. an underscore : ``_``
+#. a condensed title of the scenario in camel case: ``myScenarioTitle``
 
-* for steps:
+example:
 
-  * the string step
-  * an underscore
-  * the intials of the step name, with the liaison words in lower case, and the meaningful words in upper case
-  * an underscore and the date (optional)
+``sc_myScenarioTitle.xml``
+
+For steps:
+
+#. the string ``step``
+#. an underscore; ``_``
+#. the initials of the step name, with the liaison words in lower case, and the meaningful words in upper case. For example, if a step title is : ``Searching for a relevant step title``, it would give : ``SfaRST``.
+#. an underscore and the date (optional)
+
+example:
+
+``step_SfaRST_10092018.xml``
 
 Scenarios and steps structure
 -----------------------------
@@ -198,7 +206,7 @@ Scenarios and steps structure
 Scenarios
 ~~~~~~~~~
 
-The scenario is represented by the element listEvent, containing a set of event elements that reference external TEI files.
+The scenario is represented by the element ``<listEvent>``, containing a set of event elements that reference external TEI files.
 
 Header
 ^^^^^^
@@ -251,7 +259,7 @@ The scenario header includes the following data elements:
 Structure
 ^^^^^^^^^
 
-In a scenario file, event elements are used as pointers to link to full
+In a scenario file, ``<event>`` elements are used as pointers to link to full
 event elements stored in external files.
 
 .. code-block:: xml
@@ -266,7 +274,7 @@ event elements stored in external files.
 
 It is also possible to refer to another scenario, that will be entirely
 (or partially by using parameters - see below) include in the described
-scenario. ...
+scenario.
 
 .. code-block:: xml
 
@@ -282,7 +290,8 @@ scenario file. See the advanced features for more information.
 Steps
 ~~~~~
 
-A full description of the scenario step.
+Step files record the full description of the scenario step. Several elements have the same meaning and behaviour than those in scenario files.
+The main difference is the content of the ``<event>`` element.
 
 header
 ^^^^^^
@@ -331,10 +340,10 @@ The step header includes the following data elements:
 structure
 ^^^^^^^^^
 
-The main elements of a ``<event>`` are the description of the event, and the
+The main components of a ``<event>`` element are the description of the event, and the
 resources related to it. The description is recorded in the elements
 ``head`` (see below) and ``desc`` and the resources are contained by
-one or two ``linkGrp``.
+one or several ``linkGrp``.
 
 Content of scenarios and steps
 ------------------------------
@@ -368,7 +377,6 @@ term
 ``term`` elements are used to tag the scenarios, the steps and the resources, according to the SSK taxonomies, that are:
 
 * Tadirah activities, objects and techniques
-* The NEDIMAH type taxonomy for Information resource (or objects)
 * the Dariah-IT Standard Knowledge base
 * aureHAL disciplines
 
@@ -376,18 +384,20 @@ Functioning
 ^^^^^^^^^^^
 
 These taxonomies are declared with the attributes ``type`` and ``source``. The
-attributes of term are:
+attributes of ``<term>`` elements are:
 
-* The type attribute gives an information about the kind of term used. Its values are
+* The ``type`` attribute gives an information about the kind of term used. Its values are
 
-  * standard: the key gives the id of a standard referenced in the SSK standard Knowledge base
-  * activity: the value of key is taken from the tadirah ontology, research activities section
-  * object: the value of key is taken from the NEMO taxonomy Information Resource Types, research objects section
-  * technique: the value of key is taken from the tadirah ontology, research techniques section
-  * discipline, taken from the aureHAL taxonomy
+  * standard: the key gives the id of a standard referenced in the **SSK standard Knowledge base**
+  * activity: the value of key is taken from the **Tadirah** ontology, research activities section
+  * object: the value of key is taken from the **Tadirah** ontology, research objects section
+  * technique: the value of key is taken from the **Tadirah** ontology, research techniques section
+  * discipline, taken from the **aureHAL** taxonomy
 
-* The source attribute sets a reference link for the taxonomy.
-* The key attribute gives either an URI when the label of the term can be taken from or directly a label
+* The ``source`` attribute sets a reference link for the taxonomy.
+* The ``key`` attribute gives either an URI when the label of the term can be taken from or directly a label
+
+.. _vocabs:
 
 Taxonomies
 ^^^^^^^^^^
@@ -711,6 +721,8 @@ Note that the value to indicate in the key is the value of the field
       <field name="standard_resources">http://link_to_resource_about_the _standard.com</field>
   </doc>
 
+.. _resources:
+
 linkGrp
 ~~~~~~~
 
@@ -735,6 +747,8 @@ linkGrp
   <linkGrp type="projectResources" source="CODATA" corresp="http://www.codata.org/">
     <ref type="Report" source="zotero" target="G4UPDPG3"/>
   </linkGrp>
+
+.. _refs:
 
 ref
 ~~~
