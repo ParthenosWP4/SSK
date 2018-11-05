@@ -901,9 +901,6 @@
                                                 <ref target="http://rechercheisidore.org"
                                                 >Isidore</ref> dedicated to Humanities and Social
                                             Sciences.</item>
-                                        <item>pilastro: The Knowledge base describing Humanities and
-                                            Social Sciences standards.</item>
-                                        <!--<item>jrr</item>-->
                                     </list></item>
                                 <item>The <att>target</att> attribute specifies the destination of
                                     the reference with an URI.</item>

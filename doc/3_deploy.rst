@@ -6,17 +6,16 @@ The implementation of the SSK is based on a flexible, easy to deploy and
 maintain architecture. It is composed of independent entities that
 communicate together through services (REST / JSON).
 
-The main
-entity, the core of the SSK, is the back-end, which makes queries to our data
+* The main entity, the core of the SSK, is the back-end, which makes queries to our data
 repositories (Github, Zotero, etc.) and processes retrieved data.
 
-This
-core/back-end communicates with a search engine, part of the architecture,
+* This core/back-end communicates with a search engine, part of the architecture,
 based on Apache Lucene:  ElasticSearch.
 
-The data processed from the core part and from the
+* The data processed from the core part and from the
 search engine are all delivered via an API to third-party applications
 like the SSK interface (the front-end), which is an entity of our architecture.
+
 The architecture of the SSK is depicted in the following schema:
 
 |image0|
@@ -79,7 +78,21 @@ Creating an account will allow the user to:
 * bookmark scenarios and steps in order to facilitate future navigations or stay in touch with some specific research fields.
 * Create their own scenarios based on existing ones or by starting from scratch.
 
-4 - Search Engine
+
+4 - Creation and update of scenarios
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We mentioned that it will be soon possible to create or update scenarios
+from forms in the Front-End part of SSK. Meanwhile, it is also possible
+to do so on our GitHub repository, via directly updating the TEI files.
+
+To take into account these modifications or updates in our Elasticsearch
+search engine, we use `GitHub webhooks <https://developer.github.com/webhooks/>`_ which allows us to
+make POST requests to the Back-End. Thus an end-point in this module of
+SSK (Back-End) receives the GitHub request and its data, processes these
+data so that it can be pushed into Elasticsearch.
+
+5 - Search Engine
 ^^^^^^^^^^^^^^^^^
 The search engine module has been built in order to allow refined information retrieval. It relies on |elasticsearch|, version 6.2.4, a full-text search and analytics engine, that allows us to easily propose multi-criteria and full-text queries to the users, but also autocomplete suggestions.
 

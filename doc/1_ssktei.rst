@@ -15,7 +15,7 @@ TEI: the underlying data model
 ==============================
 
 The underlying data model of the SSK itself respects a standard, the
-Text Encoding Initiative, and is publicly available. Each scenario
+Text Encoding Initiative. Each scenario
 and each step is encoded in TEI documents that are linked together with
 referencing mechanisms. This choice was made in order to ensure that the
 scenarios and the steps can be easily extended, reused and customized.
@@ -26,6 +26,28 @@ architecture, they can be used in several scenarios. Customisation
 mechanisms are added to make sure that the information displayed is
 linked to the context of the scenarios as much as possible, namely
 according to disciplines, research objects and techniques.
+The SSK TEI specification can be accessed on GitHub: https://github.com/ParthenosWP4/SSK/tree/master/spec/TEI_SSK_ODD.xml.
+This ODD specification allows us to generate a RELAXNG Schema : https://github.com/ParthenosWP4/SSK/tree/master/spec/TEI_SSK_ODD.rng.
+
+Contribute to the SSK on GitHub with the TEI
+--------------------------------------------
+
+Users willing to create scenarios in TEI should follow the following
+instructions:
+
+-  Download or fork the SSK data repository in GitHub It is necessary to have an account on GitHub:
+  `https://github.com/ParthenosWP4/SSK/tree/master/ <https://github.com/ParthenosWP4/SSK/tree/master/spec/TEI_SSK_ODD.xml>`__
+  (NB: to fork a repository, a GitHub user account is necessary);
+
+-  Create your files with your favourite XML editor. Don't forget to
+  validate them against the SSK schema (see above);
+
+-  To publish scenarios on the SSK, the TEI files need to be in the
+  *scenarios* and *steps* folders;
+
+-  Users with a GitHub account can make a pull request to ask for the
+  update of the repository. Users without an account can contact the
+  SSK team at ssk [at] inria [dot] fr.
 
 Main elements
 -------------
