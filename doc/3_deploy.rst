@@ -163,8 +163,7 @@ The steps to follow are:
 2. Copy everything within the output folder (dist/ by default) to a folder on the server.
 3. Configure the server to redirect requests for missing files to index.html
 
-
-Source en more details |angulardeployment|.
+More details here: |angulardeployment|.
 
 
 .. |image0| image:: img/techArch.png
