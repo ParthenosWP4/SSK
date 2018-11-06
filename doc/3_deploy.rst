@@ -7,10 +7,10 @@ maintain architecture. It is composed of independent entities that
 communicate together through services (REST / JSON).
 
 * The main entity, the core of the SSK, is the back-end, which makes queries to our data
-repositories (Github, Zotero, etc.) and processes retrieved data.
+  repositories (Github, Zotero, etc.) and processes retrieved data.
 
 * This core/back-end communicates with a search engine, part of the architecture,
-based on Apache Lucene:  ElasticSearch.
+  based on Apache Lucene:  ElasticSearch.
 
 * The data processed from the core part and from the
 search engine are all delivered via an API to third-party applications
