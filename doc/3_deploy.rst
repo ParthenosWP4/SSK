@@ -13,8 +13,8 @@ communicate together through services (REST / JSON).
   based on Apache Lucene:  ElasticSearch.
 
 * The data processed from the core part and from the
-search engine are all delivered via an API to third-party applications
-like the SSK interface (the front-end), which is an entity of our architecture.
+  search engine are all delivered via an API to third-party applications
+  like the SSK interface (the front-end), which is an entity of our architecture.
 
 The architecture of the SSK is depicted in the following schema:
 
