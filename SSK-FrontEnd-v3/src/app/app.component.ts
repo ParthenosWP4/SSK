@@ -11,7 +11,7 @@ import { ContentComponent } from './glossary/content/content.component';
 import {environment} from '../environments/environment';
 
 @Component({
-  providers:[ ContentComponent ],
+  providers: [ ContentComponent ],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']

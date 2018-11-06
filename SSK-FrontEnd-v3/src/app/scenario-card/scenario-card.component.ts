@@ -25,7 +25,7 @@ export class ScenarioCardComponent implements OnInit,  AfterViewInit {
   forImage = environment.forImage;
   diff: any;
   group: string;
-  
+
   constructor(private sskServices: SskService,  private router: Router, private domSanitizer: DomSanitizer,
               private elasticServ: ElastichsearchService) { }
 

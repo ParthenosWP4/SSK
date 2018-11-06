@@ -1,93 +1,87 @@
 <div class="">
   <div class="row  home py-lg-5">
-   <!-- <div class="col text-center">
-      <span class="scenarios-title">Explore scenarios, steps or resources</span>
-      <div class="input-group ">
-        <i class="fa fa-search fa-3x fa-inverse fa-flip-horizontal mr-lg-3 " aria-hidden="true" data-toggle="collapse" href="#demo" role="button" aria-expanded="false" aria-controls="demo"></i>
-        <input type="text" class="form-control " placeholder='{{searchPlaceholder}}' aria-describedby="basic-addon1" (keyup)="onKey($event)" autofocus/>
-      </div>
-    </div>-->
     <div class="col text-center">
         <span class="scenarios-title">Explore scenarios, steps or resources</span>
       </div>  
       <div class="w-100"></div>
-      <div class="col-9 mx-auto mt-lg-5">
+      <div class="col-9 mx-auto mt-lg-5 pb-sm-4" *ngIf='!spinner'>
         <div class="input-group">
-            <input class="form-control border-right-0 font-weight-light" placeholder="Search">
-            <span class="input-group-addon bg-white border-left-0"><img  [src]= "forImage + '/assets/images/magnifier-tool.svg'" class="pb-1" alt="int_dot"/></span>
-        </div>
-      </div>
-  </div>
-
-      <div class="row home">
-          <div class="col-lg-9  offset-lg-3" >
-          <div class="mt-lg-5   mr-lg-4">
-              <ul class="nav nav-tabs  nav-fill mx-lg-5" role="tablist"  >
-                <li *ngFor=" let item   of tabList"  class="nav-item " >
-                    <a class="nav-link pull-left" [ngClass]="(item == active) ? 'active':''" data-toggle="tab"  [attr.data-target]="'#'+ item + '-tab'"  (click)="toggle(item)" >{{item}} </a>
-                </li>
-              </ul>
-            </div>
+            <ng-template #rt let-r="result" let-t="term">
+                <ngb-highlight [result]="r.term" [term]="t"></ngb-highlight>
+              </ng-template>
+            <input [ngStyle]="{'max-width': resize(), 'padding-left':'padding-left:1rem !important'}"  (keyup)="onKey($event)"  minlength="2"  #sskSearch="ngModel" name ="sskSearch"  id="sskSearch" (keyup.enter)="eventHandler($event)" (selectItem)="selectedItem($event)" type="text" [resultTemplate]="rt" [inputFormatter]="formatter"  class="form-control border-right-0 font-weight-light search "  placeholder="Search"  [(ngModel)]="model" [ngbTypeahead]="search" />
+            
+            <span  (click)= "cleanInput()" class="clear input-group-addon bg-white border-0 btn-danger" *ngIf='fullTextSearch'>
+                <i class="fa fa-times-circle "></i>
+              </span>
+            <button  [disabled] = "(sskSearch?.value === '' || sskSearch?.value?.length <= 2)" class="searchBtn bg-white border-0" (click)="eventHandler($event)"><img  [src]= "forImage + '/assets/images/magnifier-tool.svg'" class="pb-1" alt="int_dot"/></button>
           </div>
+        <div class="w-100"></div>
+        <div *ngIf="sskSearch.invalid && (sskSearch.dirty || sskSearch.touched)" class="alert alert-danger">
+          <div *ngIf="sskSearch.errors.required">
+            Required.
+          </div>
+          <div *ngIf="sskSearch.errors.minlength">
+            At least 2 characters long.
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="row home">
+    <div class="col-lg-9  offset-lg-3" >
+      <div class="mt-lg-5   mr-lg-4">
+        <ul class="nav nav-tabs  nav-fill mx-lg-5" role="tablist"  >
+          <li *ngFor=" let item   of tabList"  class="nav-item " >
+            <a class="nav-link pull-left" [ngClass]="(item == active) ? 'active':''" data-toggle="tab"  [attr.data-target]="'#'+ item + '-tab'"  (click)="toggle(item)" >
+              {{item}} ({{(item === 'scenarios') ? getScenarios()?.length :''}} {{(item === 'steps') ? getSteps()?.length :''}} {{(item === 'resources') ? getResources()?.length :''}})
+            </a>
+          </li>
+        </ul>
       </div>
-      
+    </div>
+ </div>
       <div class="home row">
-          <div class="col mx-auto text-center m-lg-5"  *ngIf="spinner">
+          <div class="col mx-auto text-center m-lg-5 searchTab"  *ngIf="spinner">
               <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
           </div>
-          <div class=" col-lg-3  mt-3" *ngIf="!spinner">
-              <app-search-tab [data] = "searchData" ></app-search-tab>
+          <div class=" col-lg-3  mt-3 searchTab" *ngIf="!spinner">
+              <app-search-tab [data] = "searchData"  [scenarios]="scenarios" [resources]="getResources()" [steps]="getSteps()"></app-search-tab>
             </div>
       
     <div class="col-lg-9" >
      <div class="tab-content  mx-5" >
       <div class=" row my-lg-4 vdivide  ">
-        <!--<div class="col-lg-2 ">
-          <span class="result-tab" [innerHTML]="getResultCount()"></span> results for  <span class="result-tab">{{active}}</span>
-        </div>
-        <div class="col-lg-4 text-center">
-           Your filters :-->
+       
           <span *ngFor = "let elt of filters" class="badge badge-default mx-lg-1"><i class="fa fa-times" aria-hidden="true" (click)="remove(elt)"></i>
 {{elt?.tag}}</span>
-        <!-- </div>
-        <div class="col ">
-           <span id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Sort by relevance
-            </span>
-            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-              <a class="dropdown-item" href="#">Dropdown link</a>
-              <a class="dropdown-item" href="#">Dropdown link</a>
-            </div>
-        </div>
-        <div class="col ">
-          <i class="fa fa-th-large fa-2x mx-1 fa-active" aria-hidden="true"></i>
-          <i class="fa fa-th-list fa-2x  mx-1 fa-default" aria-hidden="true"></i>
-        </div>-->
       </div>
-
       <div class="tab-pane" id="scenarios-tab"  [ngClass]="(active === 'scenarios') ? 'active':''" >
         
-          <app-scenario-card  *ngFor="let scen of scenarios " [scenario]="scen "></app-scenario-card>
+          <app-scenario-card  *ngFor="let scen of lodash.uniq(scenarios) " [scenario]="scen "></app-scenario-card>
           <app-scenario-template   *ngFor="let elt of getScenarioTemp()"  ></app-scenario-template>
       </div>
       <div class="tab-pane " id="steps-tab"  [ngClass]="(active === 'steps') ? 'active':''">
-        <app-step-card  *ngFor="let step of steps | paginate: { itemsPerPage: 10, currentPage: p,  totalItems: steps?.length }"  [step]="step " [scenario]="getStepScenario(step)"></app-step-card>
-        <pagination-controls
+        <app-step-card  *ngFor="let step of steps | paginate: { itemsPerPage: 10, currentPage: p,  totalItems: (active ==='steps') ? steps?.length : resources?.length }"  [step]="step"></app-step-card>
+        <div *ngIf="steps?.length > 10">
+            <pagination-controls 
           (pageChange)="p = $event"
           class="text-center ssk-pagination"
           previousLabel=""
           nextLabel="">
-
         </pagination-controls>
+        </div>
       </div>
+
       <div class="tab-pane  " id="resources-tab"  [ngClass]="(active === 'resources') ? 'active':''">
-        <app-resource-card   *ngFor="let res of resources | paginate: { itemsPerPage: 10, currentPage: p,  totalItems: resources?.length }"  [res]="res" [border]="border"></app-resource-card>
-        <pagination-controls
-          (pageChange)="p = $event"
-          class="text-center ssk-pagination"
-          previousLabel=""
-          nextLabel="">
-        </pagination-controls>
+        <app-resource-card   *ngFor="let res of resources | paginate: { itemsPerPage: 10, currentPage: p,  totalItems: (active ==='steps') ? steps?.length : resources?.length }"  [res]="res" [border]="border"></app-resource-card>
+        <div *ngIf="(resources?.length > 10)">
+            <pagination-controls 
+              (pageChange)="p = $event"
+              class="text-center ssk-pagination"
+              previousLabel=""
+              nextLabel="">
+            </pagination-controls>
+        </div>
       </div>
     </div>
   </div>

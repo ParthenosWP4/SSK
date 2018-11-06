@@ -44,14 +44,20 @@ public class ElasticGetDataServices {
 	@Value("${scenario_metadata_query}")
 	private String scenarioMetadataQuery;
 	
+	@Value("${full_text_search}")
+	private String fullTextSearchQueryBoby;
+	
 	@Value("${standard_query}")
 	private String standardQuery;
 	
 	@Value("${elasticsearch.index}")
 	private String sskIndex;
 	
-	@Value("${tag_search_query}")
-	private String tagQuery;
+	@Value("${scenario_tag_search_query}")
+	private String scenarioTagQuery;
+	
+	@Value("${step_tag_search_query}")
+	private String stepTagQuery;
 	
 	@Autowired
 	private SSKServices sskServices;
@@ -322,8 +328,15 @@ public class ElasticGetDataServices {
 	}
 	
 	
-	public JsonObject searchInSteps(String tag, String type){
-		String queryString = tagQuery.replace("tag", tag).replace("type_var", type);
+	public JsonObject searchInStepsAndScenarios(String tag, String type){
+		String queryString="";
+		if(type.equals("step")) {
+			queryString = stepTagQuery;
+		}else{
+			queryString = scenarioTagQuery;
+		}
+		queryString = queryString.replace("tag", tag);
+		
 		sskIndex = "ssk/_doc/_search";
 		JsonObject result = new JsonObject();
 		entity = new HttpEntity<>(queryString, requestHeadersParams.getHeaders());
@@ -334,6 +347,27 @@ public class ElasticGetDataServices {
 			JsonArray steps = param.getAsJsonArray("hits");
 			result.add("data", steps);
 			result.addProperty("type", type);
+			return result;
+		}
+		else{
+			return null;
+		}
+	}
+	
+	
+	public JsonObject  fullSearch(String word){
+		String queryString = fullTextSearchQueryBoby.replace("value", word);
+		sskIndex = "ssk/_doc/_search";
+		JsonObject result = new JsonObject();
+		entity = new HttpEntity<>(queryString, requestHeadersParams.getHeaders());
+		ResponseEntity<String> response = this.restTemplate.exchange( this.elasticServices.getElasticSearchPort() + "/" + sskIndex, HttpMethod.POST, entity, String.class);
+		if (response.getStatusCode().is2xxSuccessful()) {
+			JsonObject param = sskServices.getParser().parse(response.getBody()).getAsJsonObject().get("hits").getAsJsonObject();
+			result.addProperty("total", Integer.valueOf(param.get("total").getAsString()));
+			String input = param.getAsJsonArray("hits").toString();
+			input = input.toString().replaceAll("\"_source\":\\{", "");
+			input = input.replaceAll("}}", "}");
+			result.add("data", sskServices.getParser().parse(input).getAsJsonArray());
 			return result;
 		}
 		else{

@@ -7,6 +7,7 @@ import {Observable} from 'rxjs/Observable';
 import {Title} from '@angular/platform-browser';
 import {HttpClient, HttpResponse} from '@angular/common/http';
 import {Router} from '@angular/router';
+import { ScenarioComponent } from './scenario/scenario.component';
 
 @Injectable()
 export class SskService {
@@ -44,43 +45,6 @@ export class SskService {
   constructor(private router: Router, private elasticService: ElastichsearchService,
               private http: HttpClient, private titleService: Title) {
   }
-
-
-  shorten(content: any, length: number) {
-    /*const result: any  = {};
-    const contentArray = new Array(content.content);
-    if (contentArray[0] instanceof Array) {
-      let newContent = '';
-      _.forEach(contentArray[0], (value) => {
-        if (value.constructor === {}.constructor) {
-          if (!isUndefined(value.abbr)) {
-            newContent = newContent.concat(value.abbr.toString());
-            console.log(newContent);
-          }
-          if (!isUndefined(value.expan)) {
-            newContent = newContent + ' ' + value.expan.toString();
-          }
-          if (!isUndefined(value.list)) {
-            _.forEach(value.list.item, (val) => {
-              newContent = newContent + ' ' + val.toString() + '<br/>';
-            });
-          }
-        }
-        if (value.constructor === 'test'.constructor) {
-          newContent = newContent + ' ' + value.toString();
-        }
-      });
-      result.content = newContent;
-    }
-    if (content.content.length > length) {
-      result.content = content.content.substring(0, length) + '...';
-    } else {
-      result.content = content.content;
-    }*/
-    return content;
-  }
-
-
 
   initializeScenariosID() {
     let res: any;
@@ -222,36 +186,15 @@ addCount(array1, array2: Array<any>, type: string):  Promise<any[]> {
   let key1, key2, term;
   if (type === 'standard') {
     key1 = 'standard_abbr_name'; key2 = 'abbr';
-  }else {
+  } else {
     key1 = 'term'; key2 = 'key';
   }
-  /*Promise.all(_.intersectionWith(array1, array2, (item1: any, item2: any)  => {
-    if ( typeof item2[key2] === 'undefined' ) {
-      if (type === 'standard' && item2[key1] !== null) {
-        term = item2[key1].toLowerCase();
-      }else {
-        term = item2['term'].toLowerCase();
-      }
-    } else  {
-      term = item2[key2].toLowerCase();
-    }
-    if (item1[key1].toLowerCase().trim() === term.trim()) {
-
-      if ( typeof item1['scenarioIn'] !== 'undefined' || !isNaN(item1['scenarioIn']) ) {
-      item1['scenarioIn'] += 1;
-      } else {
-      item1['scenarioIn'] = 1;
-      }
-      return item1;
-    }
- })).then((completed) => return completed;});*/
-
   return new Promise(resolve => {
     resolve(_.intersectionWith(array1, array2, (item1: any, item2: any)  => {
     if ( typeof item2[key2] === 'undefined' ) {
       if (type === 'standard' && item2[key1] !== null) {
         term = item2[key1].toLowerCase();
-      }else {
+      } else {
         term = item2['term'].toLowerCase();
       }
     } else  {
@@ -269,34 +212,67 @@ addCount(array1, array2: Array<any>, type: string):  Promise<any[]> {
 });
 }
 
-updateSteps(): Observable<any[]> {
-  let stepsResults: any ;
-  if (this.elasticService.getStepResults().length > this.elasticService.searchResult['total']) {
-    stepsResults = _.differenceBy(this.elasticService.getStepResults(), this.elasticService.searchResult['data'], '_id');
-    return Observable.of(stepsResults);
-  }else {
-    stepsResults = _.differenceBy(this.elasticService.getSteps(), this.elasticService.searchResult['data'], '_id');
-    stepsResults = _.uniq(_.concat(this.elasticService.getStepResults(), stepsResults));
-    return Observable.of(stepsResults);
+updateStepsOrScenarios(removeTag?: any): Observable<any[]> {
+  removeTag = removeTag[0];
+  let retreivedElt: any;
+  if (removeTag.type === 'step') {
+    retreivedElt = _.remove(this.elasticService.getStepResults(), item => {
+      return _.includes(_.map(removeTag.results, '_id'), item['_id']);
+    });
+    _.remove(this.elasticService.getScenarioResults(), item => {
+      return _.includes(_.map(retreivedElt, 'parent'), item['id']);
+    });
+  } else {
+    retreivedElt = _.remove(this.elasticService.getScenarioResults(), item => {
+      return _.includes(_.map(removeTag.results, '_id'), item['id']);
+    });
+    _.remove(this.elasticService.getStepResults(), item => {
+      return _.includes(_.map(retreivedElt, 'id'), item['parent']);
+    });
   }
+_.forEach(this.getFilters(), filter => {
+    if (filter['type'] === 'step' ) {
+        retreivedElt = _.remove(_.clone(this.elasticService.getSteps()), item => {
+                          return _.includes(_.map(filter['results'], '_id'), item['_id']);
+                        });
+        this.elasticService.setStepResults(_.uniqBy(_.filter(_.concat(this.elasticService.getStepResults(),
+        retreivedElt), undefined), '_id'));
+        retreivedElt = _.remove(_.clone(this.elasticService.getScenarios()), item => {
+          return _.includes(_.map(this.elasticService.getStepResults(), 'parent'), item['id']);
+        });
+        this.elasticService.setScenarioResults(_.uniqBy(_.filter(_.concat(this.elasticService.getScenarios(),
+        retreivedElt), undefined), 'id'));
+    } else {
+      retreivedElt = _.remove(_.clone(this.elasticService.getScenarios()), item => {
+        return _.includes(_.map(filter['results'], '_id'), item['id']);
+      });
+      this.elasticService.setScenarioResults(_.uniqBy(_.filter(_.concat(this.elasticService.getScenarioResults(),
+        retreivedElt), undefined), 'id'));
+        retreivedElt = _.remove(_.clone(this.elasticService.getSteps()), item => {
+          return _.includes(_.map(this.elasticService.getScenarioResults(), 'id'), item['parent']);
+        });
+        this.elasticService.setStepResults(_.uniqBy(_.filter(_.concat(this.elasticService.getStepResults(),
+        retreivedElt), undefined), '_id'));
+
+    }
+});
+/*
+  const stepResultOnFilter = _.filter(this.getFilters(), ['type' , 'step']);
+  const scenarioResultOnFilter = _.filter(this.getFilters(), ['type' , 'scenario']);
+
+  const tempSteps = _.remove(_.clone(this.elasticService.getSteps()), item => {
+    return _.includes(_.map(_.flattenDeep(_.map(_.filter(this.getFilters(), ['type' , 'step']), 'results')), '_id'), item['id']);
+  });*/
+    return Observable.of(this.elasticService.getStepResults());
 }
 
 updateScenarios(): Observable<any[]> {
-  let scenarioResults: any;
-  if (this.elasticService.getScenarioResults().length > this.elasticService.searchResult['total']) {
-    scenarioResults = _.differenceWith(this.elasticService.getScenarioResults(),
-                                      this.elasticService.searchResult['data'],   (o1, o2) => {
-                                        return (o1['id'] === o2['_id']);
-                                      });
+   let scenarioResults: any;
+    scenarioResults = _.remove(_.clone(this.elasticService.getScenarios()), item => {
+      return _.includes(_.map(_.flattenDeep(_.map(_.filter(this.getFilters(), ['type' , 'scenario']), 'results')), '_id'), item['id']);
+    });
+    console.log(scenarioResults);
     return Observable.of(scenarioResults);
-  }else {
-    scenarioResults = _.differenceWith(this.elasticService.getScenarios(), this.elasticService.searchResult['data'],
-                                            (o1, o2) => {
-                          return (o1.id === o2['_id']);
-                        });
-      scenarioResults = _.uniq(_.concat(this.elasticService.getScenarios(), scenarioResults));
-    return Observable.of(scenarioResults);
-  }
 }
 
 
@@ -305,23 +281,33 @@ updateScenarios(): Observable<any[]> {
   containing these steps and the resources included in these steps
   */
  updateScenariosAndResouces(temp: any) {
-  const scenariosToFilter = this.elasticService.getScenarios();
-  const resourcesToFilter = this.elasticService.getResources();
- this.elasticService.setScenarioResults( _.intersectionWith(scenariosToFilter, temp,  (o1, o2) => {
-   return (o1.id === o2['parent']);
- }));
- this.elasticService.setResourceResults( _.intersectionWith(resourcesToFilter, temp,  (o1, o2) => {
-   return (o1.parent === o2['_id']);
- }));
+  const  scenariosToFilter = _.remove(_.clone(this.elasticService.getScenarios()), item => {
+    return _.includes(_.map(temp, 'parent'), item['id']);
+  });
+  const scenariosTemp = _.uniq(_.filter(_.concat(_.clone(this.elasticService.getScenarioResults()), scenariosToFilter)));
+  this.elasticService.setScenarioResults(scenariosTemp);
+   let  resourcesToFilter = _.remove(_.clone(this.elasticService.getResources()), item => {
+    return _.includes(_.map(temp, '_id'), item['parent']);
+  });
+  resourcesToFilter = _.uniq(_.filter(_.concat(_.clone(this.elasticService.getResourceResults()), resourcesToFilter)));
+  this.elasticService.setResourceResults(resourcesToFilter);
 }
 
 
-updateStepsAndResouces(temp: any) {
-  const stepsToFilter = this.elasticService.getSteps();
-  this.elasticService.setStepResults(_.intersectionWith(stepsToFilter, temp,  (o1, o2) => {
-   return (o1.parent === o2['id']);
-  }));
+updateStepsAndResouces(temp: any, removeFromFilter: boolean) {
+  let removedSteps = _.remove(_.clone(this.elasticService.getSteps()), item => {
+    return _.includes(_.map(temp, 'id'), item['parent']);
+  });
+  removedSteps = _.uniq(_.filter(_.concat(_.clone(this.elasticService.getStepResults()), removedSteps), undefined));
+  this.elasticService.setStepResults(removedSteps);
+  let removedResources = _.remove(_.clone(this.elasticService.getResources()), item => {
+    return _.includes(_.map(removedSteps, '_id'), item['parent']);
+  });
+  removedResources = _.uniq(_.filter(_.concat(_.clone(this.elasticService.getResourceResults()), removedResources)));
+  this.elasticService.setResourceResults(removedResources);
 }
+
+
 
 
 }

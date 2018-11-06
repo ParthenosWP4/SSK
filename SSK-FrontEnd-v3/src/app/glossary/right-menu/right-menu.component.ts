@@ -17,7 +17,7 @@ export class RightMenuComponent implements OnInit {
 
   menuItem: Array<string> = [];
 
-  constructor(private glossaryComponent: GlossaryComponent, private elasticServ: ElastichsearchService) { }
+  constructor(private location: Location, private glossaryComponent: GlossaryComponent, private elasticServ: ElastichsearchService) { }
 
   ngOnInit() {
     this.menuItem = _.clone(this.glossaryComponent.glossaryItems);
@@ -31,6 +31,7 @@ export class RightMenuComponent implements OnInit {
     this.menuItem = _.remove(this.menuItem, (elt) =>  {
       return elt !== item;
     });
+    this.location.replaceState('glossary/' + item);
     this.itemChanged.emit(item);
   }
 

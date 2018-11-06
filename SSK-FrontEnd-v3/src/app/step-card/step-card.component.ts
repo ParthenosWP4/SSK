@@ -4,16 +4,17 @@ import {ElastichsearchService} from '../elastichsearch.service';
 import {SskService} from '../ssk.service';
 import {isUndefined} from 'util';
 import {Router} from '@angular/router';
+import {Observable} from 'rxjs/Observable';
+
 @Component({
   selector: 'app-step-card',
   templateUrl: './step-card.component.html',
   styleUrls: ['./step-card.component.scss'],
-  //changeDetection: ChangeDetectionStrategy.Default
 })
 export class StepCardComponent implements OnInit {
 
   @Input() step: any;
-  @Input() scenario: any;
+  scenario: any;
   public  shortTitle: any;
   public shortDesc: any;
   public scenarioTitle: any;
@@ -24,6 +25,8 @@ export class StepCardComponent implements OnInit {
               private router: Router, private ref: ChangeDetectorRef) {}
 
   ngOnInit() {
+    this.scenario = _.find(this.elastichServices.getScenarios(), (o)  => {
+      return o.id === this.step.parent; });
     if (this.step.head instanceof Array) {
       this.step.title = this.sskServices.updateText(this.step.head[0], null);
     } else {
@@ -40,30 +43,29 @@ export class StepCardComponent implements OnInit {
       this.scenarioTitle = this.sskServices.updateText(this.scenario.title, null);
     }
 
+
+    if (this.step.metadata === undefined) {
+      this.step.metadata = this.elastichServices.addStepMetadata(this.step._id + this.step.position + 'Meta');
+    }
+
     const urlTag: Array<any>  = _.remove(this.step.metadata, (tag) => {
         return this.sskServices.isUrl(tag.key);
     });
-
-    _.forEach(urlTag, (value) => {
-      value['url'] = value.key;
-      value.key = value.url.substr(value.url.lastIndexOf('/') + 1, value.url.length);
-      const otherKey = value.key.split('=');
-      if (otherKey.length > 0 ) {
-        value.key = otherKey[otherKey.length - 1];
-      }
-      this.step.metadata.push(value);
-    });
-
-   /* this.step.metadata = _.map(this.step.metadata,  (x)  => {
-      if (this.sskServices.isUrl(x.source) && x.source.includes('tadirah')) {
-        x.source = 'Tadirah';
-      }
-      if (isUndefined(x.type) || (x.type).includes('[')) {
-        x.type = 'standard';
-      }
-      return x;
-    });*/
-    //this.ref.detectChanges();
+    Observable.of(urlTag).subscribe(
+      result => {
+        _.forEach(urlTag, (value) => {
+          value['url'] = value.key;
+          value.key = value.url.substr(value.url.lastIndexOf('/') + 1, value.url.length);
+          const otherKey = value.key.split('=');
+          if (otherKey.length > 0 ) {
+            value.key = otherKey[otherKey.length - 1];
+          }
+          this.step.metadata.push(value);
+        });
+      },
+      err => {},
+      () => {}
+    );
    }
   
   toStep() {

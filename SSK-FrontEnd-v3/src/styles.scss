@@ -228,7 +228,7 @@
   content: "\e930";
 }
 .ssk-activities:before {
-  content: "\e901";
+  content: "\e910";
 }
 
 .ssk-techniques:before {
@@ -388,9 +388,52 @@ div.popover{
 }
 
 @media (max-width: 576px) {
-  
   .part-text{
     padding-top: 1rem;
     padding-bottom: 1rem;
+  }
+  .searchTab{
+    display: none;
+  }
+  
+  ul li a{
+    font-size: .85rem !important;
+  }
+  .nav{
+    padding-top: 1.5rem;
+  }
+  div.input-group{
+    padding: 0 !important;
+  }
+  #sskSearch{
+    max-width: 100% !important;
+  }
+  .text-left{
+    font-size: .8rem !important; 
+    padding: 1rem;
+  }
+}
+
+ngb-typeahead-window.dropdown-menu{
+  box-shadow: 5px 5px 25px 0 rgba(46,61,73,0.50);
+  display: block !important;
+  padding: 0 !important;
+  width: inherit;
+  .dropdown-item {
+    width: inherit;
+    display: block;
+    width: 100%;
+    padding-bottom: .5rem;
+    padding-top: 0.5rem;
+    clear: both;
+    font-weight: normal;
+    color: #292b2c;
+    text-align: inherit;
+    white-space: nowrap;
+    background: none;
+    border: 0;
+  }
+  .dropdown-item:hover{
+    background-color: $color-36;
   }
 }

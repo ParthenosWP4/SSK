@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {Injectable, Injector} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -6,6 +6,8 @@ import * as _ from 'lodash';
 import {isUndefined} from 'util';
 import {environment} from '../environments/environment';
 import {HttpClient} from '@angular/common/http';
+import { CompileMetadataResolver } from '@angular/compiler';
+import { SskService } from './ssk.service';
 
 
 @Injectable()
@@ -43,12 +45,15 @@ export class ElastichsearchService {
   group: string;
   public searchResult: any;
   private researchStarted = false;
-  private resourceResults: any;
-  private scenarioResults: any;
-  private stepResults: any;
+  private resourceResults = [];
+  private scenarioResults= [];
+  private stepResults= [];
+  private http: any;
+  public autoCompleteList: any;
 
 
-  constructor(private http: HttpClient) {
+  constructor(inj: Injector) {
+    this.http = inj.get(HttpClient);
     this.scenarios = new Array();
     this.params = {'fromSSK': 'true'};
     this.setResultCount(0);
@@ -94,20 +99,6 @@ export class ElastichsearchService {
 
   setSearchData(data: any) {
     this.searchData = data;
-
-    /*this.setActivities(_.uniq(_.map(Object.keys(_.groupBy(_.flattenDeep(_.map(_.map(this.getStepsMetadata(), '_source'), 'activity'))
-      , 'key')), v => this.tagSanitize(v.toLowerCase()).replace(/[0-9]/g, '').replace('_', '').trim())));
-
-   this.setObjects(_.map(Object.keys(_.groupBy(_.groupBy(_.flattenDeep(_.remove(_.map(_.map(this.getStepsMetadata(), '_source'), 'objects'),
-      function(n) { return !isUndefined(n); })), 'type').object, 'key')), item => item.toLowerCase()));
-
-    this.setTechniques(_.map(Object.keys(_.groupBy(_.groupBy(_.flattenDeep(_.remove(_.map(_.map(this.getStepsMetadata(), '_source'),
-      'objects'), function(n) { return !isUndefined(n); })), 'type').technique, 'key')), item => item.toLowerCase()));
-
-    this.setStandards(_.concat(Object.keys(_.groupBy(_.flattenDeep(_.remove(_.map(_.map(this.getStepsMetadata(), '_source'),
-      'standards'),  function(n) { return !isUndefined(n); })), 'abbr')), Object.keys(_.groupBy(_.flattenDeep(_.remove(_.map(
-      _.map(this.getStepsMetadata(), '_source'), 'standards'), function(n) { return !isUndefined(n); })), 'key'))));
-  */
   }
   getSearchData() {
     return this.searchData;
@@ -190,7 +181,11 @@ export class ElastichsearchService {
 
   searchFromServer(type, tag: string) {
     this.setOptions( null);
-    return this.http.get(this.sskBackendEndpoint + '_search/' + type + '/' + tag , this.options);
+    if (type === null) {
+      return this.http.get(this.sskBackendEndpoint + '_search/' + tag , this.options);
+    } else {
+      return this.http.get(this.sskBackendEndpoint + '_search/' + type + '/' + tag , this.options);
+    }
   }
 
 
@@ -200,16 +195,19 @@ export class ElastichsearchService {
         this.setGlossaryData(this.getObjects());
         break;
       case 'standards':
-        this.setGlossaryData(this.getStandards());
+        this.setGlossaryData(_.sortBy(this.getStandards(), [function(o) { return o.standard_abbr_name; }]));
         break;
       case 'techniques':
         this.setGlossaryData(this.getTechniques());
         break;
       case 'activities':
-        this.setGlossaryData(this.getActivities());
+        const temp = _.groupBy(_.each(this.getActivitiesForCount(), elt => {
+              elt['term'] = this.normalize(elt['term']);
+        }), 'group');
+        this.setGlossaryData(Object.entries(temp).map(([key, obj]) => Object.assign({ head: key , items: obj})));
         break;
       case 'disciplines':
-        this.setGlossaryData(this.getDisciplines());
+        this.setGlossaryData(_.sortBy(this.getDisciplines(), [function(o) { return o.term; }]));
         break;
     }
     return this.getGlossaryData();
@@ -308,7 +306,6 @@ getGlossaryTerms() {
           this.setActivities(_.groupBy(items, 'group'));
           this.setActivities(_.map(_.toPairs(this.getActivities()), d => _.fromPairs([d])));
               /* this.setActivities(_.filter(this.getActivities(), (o)  =>  { return typeof o !== undefined;} ));
-         
             this.setActivitiesForCount(this.getActivities());
             _.map(this.getActivitiesForCount(), item => {
               if (item.term.includes('_')) {
@@ -358,10 +355,12 @@ getAllStandards() {
     );
   }
 
-
-  
-
-
+  normalize(text: string ) {
+    //if (!isUndefined(text)) {
+      //text = text.split('_').join(' ');
+    //}
+    return _.capitalize(text);
+  }
 
 
   getScenarioNumber(): number {
@@ -397,11 +396,14 @@ getAllStandards() {
 
 
   getScenarios() {
+    const rems = _.remove(this.scenarios, function(n) {
+      return n.id === 'SSK_sc_corpusModellingInTEI-minusDigitization';
+    });
     return this.scenarios;
   }
 
-  setScenarios(elt: any) {
-    this.scenarios =  elt;
+  setScenarios(elts: any) {
+    this.scenarios = elts;
   }
 
   addScenario(scenario: any) {

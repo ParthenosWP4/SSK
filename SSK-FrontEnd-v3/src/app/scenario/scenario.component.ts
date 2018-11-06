@@ -66,14 +66,17 @@ export class ScenarioComponent implements OnInit  {
       .subscribe((params: Params) => {
         this.scenarioId = params['id'];
         this.selectedStep.id = params['stepId'] ;
-        this.idSelectedStep = this.selectedStep.id - 1;
-      });
-    this.initializeScenarioElt();
+        this.idSelectedStep = this.selectedStep.id;
+        this.initializeScenarioElt();
+      }
+      );
   }
 
   initializeScenarioElt() {
     this.sskService.checkBackEndAvailability();
+
     if (this.elasticServices.getScenarios().length === 0) {
+      console.log(this.scenarioId)
       this.elasticServices.countItems('scenarios').subscribe(
           result => {
             this.itemResult = result;
@@ -94,34 +97,36 @@ export class ScenarioComponent implements OnInit  {
                 error => {},
                 () =>  {
                     this.elasticServices.addScenario(this.scenarioDetails);
-                    if (this.elasticServices.getScenarios().length === this.elasticServices.getScenarioNumber()) {
+                   // if (this.elasticServices.getScenarios().length === this.elasticServices.getScenarioNumber()) {
                       this.scenarioElt = _.find(this.elasticServices.getScenarios(), (item) => {
                         return item.id === this.scenarioId;
                       });
-                      this.scenarioElt.title = this.sskService.updateText(((this.scenarioElt.title instanceof Array) ? 
-                        this.scenarioElt.title[0] : this.scenarioElt.title), null);
+                      this.scenarioElt.title = this.sskService.updateText(((this.scenarioElt.title instanceof Array) ?
+                      this.scenarioElt.title[0] : this.scenarioElt.title), null);
                       this.scenarioElt.descrip = (this.scenarioElt.desc instanceof Array) ? this.scenarioElt.desc[0]
                         : this.scenarioElt.desc;
                       this.scenarioDesc = this.sskService.updateText(this.scenarioElt.descrip, null);
                       this.setScenarioSteps(this.scenarioId);
                       this.setMetadata('scenario');
-                      this.sskService.setTitle('SSK - ' + this.scenarioElt.title.content);
-                    }
+                      this.sskService.setTitle('SSK - ' + this.scenarioElt.title);
+                   // }
                   });
             });
           }
         );
     } else {
+      console.log(this.idSelectedStep)
       this.scenarioElt = _.find(this.elasticServices.getScenarios(), (item) => {
         return item.id === this.scenarioId;
       });
+      console.log(this.scenarioElt)
       this.scenarioElt.title = this.sskService.updateText(((this.scenarioElt.title instanceof Array) ? 
       this.scenarioElt.title[0] : this.scenarioElt.title), null);
       this.scenarioElt.descrip = (this.scenarioElt.desc instanceof Array) ? this.scenarioElt.desc[0] : this.scenarioElt.desc;
       this.scenarioDesc = this.sskService.updateText(this.scenarioElt.descrip, null);
       this.setMetadata('scenario');
       this.setScenarioSteps(this.scenarioId);
-      this.sskService.setTitle('SSK - ' + this.scenarioElt.title.content);
+      this.sskService.setTitle('SSK - ' + this.scenarioElt.title);
     }
   }
 

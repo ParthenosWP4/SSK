@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA, NgModule, OnInit} from '@angular/core';
+import { APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SafeHtmlPipe } from './safe-html.pipe';
 import { AppComponent } from './app.component';
@@ -8,26 +8,25 @@ import { HomeComponent } from './home/home.component';
 import { ScenariosComponent } from './scenarios/scenarios.component';
 import { ScenarioCardComponent } from './scenario-card/scenario-card.component';
 import { ScenarioTemplateComponent } from './scenario-template/scenario-template.component';
-import {ElastichsearchService} from './elastichsearch.service';
-import {HttpModule} from '@angular/http';
+import { ElastichsearchService} from './elastichsearch.service';
+import { HttpModule} from '@angular/http';
 import { StepCardComponent } from './step-card/step-card.component';
-import {NgxPaginationModule} from 'ngx-pagination';
-import {SskService} from './ssk.service';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { SskService } from './ssk.service';
 import { ResourceCardComponent } from './resource-card/resource-card.component';
 import { ScenarioComponent } from './scenario/scenario.component';
 import { TooltipModule } from 'ngx-bootstrap';
 import { PopoverModule } from 'ngx-bootstrap/popover';
 import { SearchTabComponent } from './search-tab/search-tab.component';
-import {FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GlossaryComponent } from './glossary/glossary.component';
-import {McBreadcrumbsConfig, McBreadcrumbsModule} from 'ngx-breadcrumbs';
+import { McBreadcrumbsConfig, McBreadcrumbsModule } from 'ngx-breadcrumbs';
 import { RightMenuComponent } from './glossary/right-menu/right-menu.component';
 import { ContentComponent } from './glossary/content/content.component';
-import {GlossaryResolver} from './glossary/glossary.resolver';
-import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { GlossaryResolver } from './glossary/glossary.resolver';
 import { ErrorpageComponent } from './errorpage/errorpage.component';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import {RequestInterceptor} from './request.interceptor';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { RequestInterceptor} from './request.interceptor';
 import { CookieLawModule } from 'angular2-cookie-law';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddStandardComponent } from './contribute/add-standard/add-standard.component';
@@ -40,7 +39,9 @@ import { PageInContructionComponent } from './page-in-contruction/page-in-contru
 import { NewScenarioComponent } from './contribute/new-scenario/new-scenario.component';
 import { UserComponent } from './contribute/user/user.component';
 import { MomentModule } from 'ngx-moment';
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import * as $ from 'jquery';
+import { HighlightPipe } from './highlight.pipe';
 export function dataProviderFactory(provider: ElastichsearchService) {
   return () => provider.loadData();
 }
@@ -71,7 +72,8 @@ export function dataProviderFactory(provider: ElastichsearchService) {
     DocumentationComponent,
     PageInContructionComponent,
     NewScenarioComponent,
-    UserComponent
+    UserComponent,
+    HighlightPipe
   ],
   imports:
     [
@@ -85,15 +87,16 @@ export function dataProviderFactory(provider: ElastichsearchService) {
       NgxPaginationModule,
       FormsModule,
       McBreadcrumbsModule.forRoot(),
-      PdfViewerModule,
       CookieLawModule, // import Angular's CookieLaw modules
       BrowserAnimationsModule,
-      MomentModule
+      MomentModule,
+      ReactiveFormsModule,
+      NgbModule.forRoot()
     ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],
-  providers: [appRoutingProviders, SafeHtmlPipe, ElastichsearchService, SskService, GlossaryResolver,
+  providers: [appRoutingProviders, SafeHtmlPipe, ElastichsearchService, SskService, GlossaryResolver, HighlightPipe,
     { provide: APP_INITIALIZER, useFactory: dataProviderFactory, deps: [ElastichsearchService], multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true}
     ],

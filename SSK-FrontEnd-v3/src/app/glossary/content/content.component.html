@@ -17,41 +17,43 @@
       </div>
       <ul>
         <li  *ngFor = "let elt of data; let k = index">
-          <i *ngIf="elt?.term " class="fa fa-play" aria-hidden="true"></i>
           <span *ngIf="elt?.standard_abbr_name" class="btn" data-toggle="collapse" [attr.data-target]="'#' + trim(elt?.standard_abbr_name)" aria-expanded="false" [attr.aria-controls]="elt?.standard_abbr_name">
-            <i class="fa fa-sub" aria-hidden="true"></i>
+           
+            {{elt?.standard_abbr_name}}
           </span>
-          <span *ngIf="elt?.head" class="btn" data-toggle="collapse" [attr.data-target]="'#' + trim(elt?.head)" aria-expanded="false" [attr.aria-controls]="elt?.head">
-            <i class="fa fa-open fa-2x" aria-hidden="true"></i>
+          <span *ngIf="elt?.head" class="btn head" data-toggle="collapse" [attr.data-target]="'#' + trim(elt?.head)" aria-expanded="false" [attr.aria-controls]="elt?.head">
+            <i class="fa fa-open fa-1x" aria-hidden="true"></i>
+            {{elt?.head}}
           </span>
-         <span [ngClass]="(elt.term !== undefined) ? '' : 'head'"> {{elt?.term}} {{elt?.head}}</span>
-         <span > {{elt?.standard_abbr_name}}</span>
+         
+          <span *ngIf="elt?.term" class="item">  <i class="fa fa-sub mr-1" aria-hidden="true"></i>{{elt?.term}}</span>
 
-        <ul *ngIf="elt?.list?.item">
+        <ul *ngIf="elt?.items">
          <div *ngIf="elt?.head" [attr.id]="trim(elt?.head)" class="collapse mb-2 show" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
               {{elt?.desc}}
           </div>
-         </div>
-          <li class="ml-3" *ngFor = "let item of elt?.list?.item; let i=index">
-            <span *ngIf="elt?.head" class="btn" data-toggle="collapse" [attr.data-target]="'#' + trim(item?.term)" aria-expanded="false" [attr.aria-controls]="elt?.head">
+         
+          <li class="ml-3" *ngFor = "let item of elt?.items; let i=index">
+            <span *ngIf="elt?.head" class="btn" data-toggle="collapse"  class="item" [attr.data-target]="'#' + trim(item?.term)" aria-expanded="false" [attr.aria-controls]="elt?.head">
             <i class="fa fa-sub" aria-hidden="true"></i></span>
             {{item?.term}}
-            <span class="fa-stack fa-lg">
+            <!-- <span class="fa-stack fa-lg">
               <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-code fa-stack-1x fa-inverse"></i>
-            </span>
+             <i class="fa fa-code fa-stack-1x fa-inverse"></i>
+            </span>-->
             <div *ngIf="item?.term" [attr.id]="trim(item?.term)" class="collapse mb-2 ml-5" [ngClass]="(i == 0) ? 'show' : ''"   aria-labelledby="headingOne" data-parent="#accordion">
               <div class="card-body">
                 {{item?.desc}}
               </div>
             </div>
           </li>
+        </div>
         </ul>
-          <span *ngIf=" elt?.term || elt?.standard_abbr_name" class="fa-stack fa-lg">
+         <!-- <span *ngIf=" elt?.term || elt?.standard_abbr_name" class="fa-stack fa-lg">
               <i class="fa fa-circle fa-stack-2x"></i>
               <i class="fa fa-code fa-stack-1x fa-inverse"></i>
-          </span>
+          </span>-->
           <div *ngIf="elt?.standard_abbr_name" [attr.id]="trim(elt?.standard_abbr_name)" class="collapse mb-2 ml-5"  [ngClass]="(k == 0) ? 'show' : ''"  aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
               {{elt?.standard_desc_eng}}

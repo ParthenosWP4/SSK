@@ -29,9 +29,9 @@
            
           <label class="form-check-label" *ngIf="(item?.name !== 'activities'); ">
             <input type="checkbox" [attr.name]="(elt?.standard_abbr_name !== undefined) ? elt?.standard_abbr_name : normalize(elt?.term)"
-                   [id]="(elt?.standard_abbr_name !== undefined) ? elt?.standard_abbr_name : normalize(elt?.term)"
+                   [id]="(elt?.standard_abbr_name !== undefined) ? normalize(elt?.standard_abbr_name) : normalize(elt?.term)"
                    class="form-check-input"(change)="change($event, elt)"> {{normalize(elt?.term)}} {{elt?.standard_abbr_name}}
-                  <!-- <span class= "scenarioCount"  [ngClass]="item.substring(0, item.length - 1)"  [innerHTML]="(elt?.scenarioIn === undefined) ? '(0)': '('+elt?.scenarioIn+')'"></span>-->
+                  <span class= "scenarioCount"  [ngClass]="item?.name.substring(0, item?.name.length - 1)"  [innerHTML]="'('+elt?.count+')'"></span>
           </label>
         
         </div>

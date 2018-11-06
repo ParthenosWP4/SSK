@@ -16,7 +16,7 @@ export class ResourceCardComponent implements OnInit {
   @Input() res: any;
   @Input() border: any;
   url: string;
-  icon: string
+  icon: string;
   imgSrc = '';
 
   constructor(public sanitizer: DomSanitizer, private elasticServ: ElastichsearchService) { }
@@ -28,7 +28,10 @@ export class ResourceCardComponent implements OnInit {
       this.res.redirect = this.res.url;
       this.res.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.res.url);
       if (!isUndefined(this.res.creators) ) {
-        this.res.creators = this.res.creators.replace('[', '').replace(']', '');
+        this.res.creators = this.res.creators.toString();
+        const creators  = this.res.creators;
+        creators.replace('[', '').replace(']', '').replace('"', '');
+        this.res.creator = creators;
       }
       if ( this.url.indexOf('.pdf') !== -1) {
         this.icon = 'pdf.svg';

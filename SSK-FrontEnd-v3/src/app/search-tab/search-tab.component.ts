@@ -17,10 +17,12 @@ import {environment} from '../../environments/environment';
 export class SearchTabComponent implements OnInit {
 
   @Input() data: any;
+  @Input() scenarios: any;
+  @Input() resources: any;
+  @Input() steps: any;
   public activityCaret = 'fa-caret-up';
   public disciplines = 'fa-caret-up';
   public techniques = 'fa-caret-up';
-  private options = {};
   public tags = [{'name':'disciplines','tooltip': 'Disciplines cover all the domains from the Humanities, Social Sciences and Heritage science. Scenarios may apply to one or more disciplines.'}, 
                  {'name': 'objects', 'tooltip':'Research objects are the different types of data produced, studied or manipulated in a scenario. Scenarios may apply to one or more research objects.'},
                  {'name': 'techniques', 'tooltip':'Research techniques are the general processes and methods used in a scenario. Scenarios may use one or more research techniques.'},
@@ -36,26 +38,40 @@ export class SearchTabComponent implements OnInit {
   spinner = false;
   constructor(private elasticSearchServ: ElastichsearchService,
               private ssKServices: SskService,
-              private scenariosComponent: ScenariosComponent,
-              private cd: ChangeDetectorRef) { }
+              private scenariosComponent: ScenariosComponent) { }
 
   searchData = {};
   objectKeys = Object.keys;
 
   ngOnInit() {
     this.filters = this.ssKServices.getFilters();
-    this.options = this.ssKServices.options;
+    _.map(this.data['disciplines'], item => {
+      item = this.getMetaDataNumber(item, 'scenario', false);
+      item.type = 'disciplines';
+    });
+    _.map(this.data['objects'], item => {
+      item = this.getMetaDataNumber(item, 'scenario', false);
+      item.type = 'objects';
+    });
+    _.map(this.data['techniques'], item => {
+      item = this.getMetaDataNumber(item, 'scenario', false);
+      item.type = 'techniques';
+    });
+    _.map(this.data['standards'], item => {
+      item = this.getMetaDataNumber(item, 'step', true);
+      item.type = 'standards';
+    });
   }
 
   change(e, content: any) {
     this.elasticSearchServ.setResearchStarted(true);
     let tag, type: string;
-    let temp: any;
+    let temp, filterTerm : any;
     if (content.group === undefined ) {
       if (content.standard_abbr_name !== undefined) {
         tag = content.standard_abbr_name;
         type = 'step';
-      }else {
+      } else {
         tag = content.term;
         type = 'scenario';
       }
@@ -64,12 +80,11 @@ export class SearchTabComponent implements OnInit {
       type = 'step';
     }
     if (tag !== undefined && type !== undefined) {
-    if ($('input[name = "' + tag + '"]').is(':checked')
-      &&  _.findIndex(this.ssKServices.getFilters(), function(o) { return o === tag; } ) === -1 ) {
-      this.ssKServices.addToFilters({'tag': tag, 'type': type} );
-      this.elasticSearchServ.searchFromServer(type, tag).subscribe(
+    if (_.findIndex(this.ssKServices.getFilters(), function(o) { return o.tag === tag; } ) === -1 ) {
+      filterTerm = _.filter(this.data[content.type], {'term': tag})[0];
+      this.updateSearchResult(filterTerm).subscribe(
       result => {
-        this.elasticSearchServ.searchResult = result;
+        this.ssKServices.addToFilters({'tag': tag, 'type': type, 'results': this.elasticSearchServ.searchResult['data']} );
       },
       error => {},
       () => {
@@ -77,11 +92,10 @@ export class SearchTabComponent implements OnInit {
           case 'step':
               this.searchInSteps().subscribe((value) => {
                 temp = value;
-                }, (error) => {
-                console.log(error);
-                }, () => {
-                  this.elasticSearchServ.setStepResults(temp);
-                  this.scenariosComponent.setSteps(temp);
+                }, (error) => { console.log(error); },
+                () => {
+                  this.elasticSearchServ.setStepResults(_.uniq(temp));
+                  this.scenariosComponent.setSteps(this.elasticSearchServ.getStepResults());
                   this.ssKServices.updateScenariosAndResouces(temp);
                   this.scenariosComponent.setScenarios(this.elasticSearchServ.getScenarioResults());
                   this.scenariosComponent.setResources(this.elasticSearchServ.getResourceResults());
@@ -90,105 +104,96 @@ export class SearchTabComponent implements OnInit {
           case 'scenario':
           this.searchInScenarios().subscribe((value) => {
             temp = value;
-            }, (error) => {
-            console.log(error);
-            }, () => {
+            },
+            (error) => { console.log(error) ; },
+            () => {
               this.elasticSearchServ.setScenarioResults(temp);
               this.scenariosComponent.setScenarios(temp);
-              this.ssKServices.updateStepsAndResouces(temp);
+              this.ssKServices.updateStepsAndResouces(temp, false);
               this.scenariosComponent.setSteps(this.elasticSearchServ.getStepResults());
-              this.elasticSearchServ.setResourceResults(_.intersectionWith(this.elasticSearchServ.getStepResults(),
-                this.elasticSearchServ.getResources(),  (o1, o2) => {
-                return (o2.parent === o1['_id']);
-              }));
               this.scenariosComponent.setResources(this.elasticSearchServ.getResourceResults());
           });
           break;
         }
       });
-    }else {
-      _.remove(this.ssKServices.getFilters(), function (v) {
+    } else {
+      const removedTag = _.remove(this.ssKServices.getFilters(), function (v) {
         return v.tag === tag;
       });
-      this.elasticSearchServ.searchFromServer(type, tag).subscribe(
+      filterTerm = _.filter(this.data[content.type], {'term': tag})[0];
+      this.updateSearchResult(filterTerm).subscribe(
         result => {
-          console.log(result);
-          this.elasticSearchServ.searchResult = result;
         },
         error => {},
         () => {
-          switch (type) {
-            case 'step':
-              this.ssKServices.updateSteps().subscribe((value) => {
-                temp = value;
-                }, (error) => {
-                console.log(error);
-                }, () => {
-                  this.elasticSearchServ.setStepResults(temp);
-                  this.scenariosComponent.setSteps(temp);
-                  this.ssKServices.updateScenariosAndResouces(temp);
-                  this.scenariosComponent.setScenarios(this.elasticSearchServ.getScenarioResults());
-                  this.scenariosComponent.setResources(this.elasticSearchServ.getResourceResults());
-              });
-            break;
-            case 'scenario':
-            this.ssKServices.updateScenarios().subscribe((value) => {
+          if (this.ssKServices.getFilters().length === 0) {
+            this.elasticSearchServ.setResearchStarted(false);
+            this.elasticSearchServ.setScenarioResults([]);
+            this.scenariosComponent.setScenarios(this.elasticSearchServ.getScenarios());
+            this.elasticSearchServ.setStepResults([]);
+            this.scenariosComponent.setSteps(this.elasticSearchServ.getSteps());
+            this.elasticSearchServ.setResourceResults([]);
+            this.scenariosComponent.setResources(this.elasticSearchServ.getResources());
+          } else {
+            this.ssKServices.updateStepsOrScenarios(removedTag).subscribe((value) => {
               temp = value;
               }, (error) => {
               console.log(error);
               }, () => {
-                this.elasticSearchServ.setScenarioResults(temp);
-                this.scenariosComponent.setScenarios(temp);
-                this.ssKServices. updateStepsAndResouces(temp);
                 this.scenariosComponent.setSteps(this.elasticSearchServ.getStepResults());
-                this.elasticSearchServ.setResourceResults(_.intersectionWith(this.elasticSearchServ.getStepResults(),
-                  this.elasticSearchServ.getResources(),  (o1, o2) => {
-                  return (o2.parent === o1['_id']);
-                }));
-                this.scenariosComponent.setResources(this.elasticSearchServ.getResourceResults());
+                this.scenariosComponent.setScenarios(this.elasticSearchServ.getScenarioResults());
+                const resRemoved = _.remove(_.clone(this.elasticSearchServ.getResources()), item => {
+                  return _.includes(_.map(this.elasticSearchServ.getStepResults(), '_id'), item['parent']);
+                });
+               this.scenariosComponent.setResources(resRemoved);
             });
-            break;
           }
         });
       }
     }
+  }
 
-    if ( this.ssKServices.getFilters().length === 0 ) {
-      if (this.scenariosComponent.tabScenarios) {
-        this.scenariosComponent.setScenarios(this.elasticSearchServ.getScenarios());
-        this.scenariosComponent.resultCount = this.elasticSearchServ.getScenarios().length;
-      }
 
-      if (this.scenariosComponent.tabStep) {
-        this.scenariosComponent.setSteps(this.elasticSearchServ.getSteps());
-        this.scenariosComponent.resultCount = this.scenariosComponent.getSteps().length;
-      }
-      if (this.scenariosComponent.tabRes) {
-        this.scenariosComponent.setResources (this.elasticSearchServ.getResources());
-        this.scenariosComponent.resultCount = this.scenariosComponent.getResources().length;
-      }
-    }
+  getMetaDataNumber(tag: any, type: string, ifStandard: boolean): Observable<any> {
+    this.elasticSearchServ.searchFromServer(type, (!ifStandard ) ? tag.term : tag.standard_abbr_name).subscribe(
+      result => {
+        this.elasticSearchServ.searchResult = result;
+      },
+      error => {},
+      () => {
+        tag['count'] = this.elasticSearchServ.searchResult['total'];
+        tag['data'] = this.elasticSearchServ.searchResult['data'];
+      });
+      return tag;
   }
 
   searchInSteps(): Observable<any[]> {
-    const temp = _.intersectionBy(this.elasticSearchServ.getSteps(), this.elasticSearchServ.searchResult['data'], '_id');
-    this.stepsResults = _.concat(this.stepsResults, temp);
-    return Observable.of(this.stepsResults);
+    let temp = _.intersectionBy(_.clone(this.elasticSearchServ.getSteps()), this.elasticSearchServ.searchResult['data'], '_id');
+    temp = _.uniqBy(_.filter(_.concat(this.elasticSearchServ.getStepResults(), temp), undefined), '_id');
+    this.stepsResults = temp;
+    return Observable.of(temp);
   }
 
   searchInScenarios(): Observable<any[]> {
-    const temp = _.intersectionWith(this.elasticSearchServ.getScenarios(), this.elasticSearchServ.searchResult['data'], (o1, o2) => {
-      return (o1.id === o2['_id']);
+    const temp = _.intersectionWith(_.clone(this.elasticSearchServ.getScenarios()), this.elasticSearchServ.searchResult['data'],
+                  (o1, o2) => {
+                        return (o1.id === o2['_id']);
     });
-    this.scenarioResults = _.concat(this.scenarioResults, temp);
+    this.scenarioResults = _.uniqBy(_.filter(_.concat(this.elasticSearchServ.getScenarioResults(), temp), undefined), 'id');
     return Observable.of(this.scenarioResults);
+  }
+
+  updateSearchResult(elt: any): Observable<any[]> {
+    this.elasticSearchServ.searchResult['total'] = elt['count'];
+    this.elasticSearchServ.searchResult['data'] = elt['data'];
+    return Observable.of(this.elasticSearchServ.searchResult);
   }
 
   normalize(text: string ) {
     if (!isUndefined(text)) {
-      text = text.replace('_', ' ');
+      text = text.split('_').join(' ');
     }
-    return text;
+    return _.capitalize(text);
   }
 
   getBlock(elt: any) {

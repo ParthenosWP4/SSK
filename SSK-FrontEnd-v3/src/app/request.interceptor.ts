@@ -5,15 +5,19 @@ import {
 } from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 
-import {Router} from '@angular/router';
-import {Injectable} from '@angular/core';
+import {Injectable, Injector} from '@angular/core';
 import {SskService} from './ssk.service';
+
+
 
 @Injectable()
 export class RequestInterceptor implements HttpInterceptor {
 
-  constructor(private sskServ: SskService,
-              private router: Router) {}
+  private sskServ;
+  constructor(inj: Injector ,
+             ) {
+              this.sskServ = new SskService(null, null, null, null);
+             }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     this.sskServ.setStatusError(undefined);
@@ -29,7 +33,6 @@ export class RequestInterceptor implements HttpInterceptor {
 
       }
     }, (err: any) => {
-      console.log(err);
       this.sskServ.setStatusError(err.status);
       this.sskServ.checkBackEndAvailability();
     });

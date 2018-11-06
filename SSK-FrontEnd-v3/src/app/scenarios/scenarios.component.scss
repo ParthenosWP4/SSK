@@ -2,19 +2,10 @@
 @import '../../partials/variables';
 
 
-
-
-
 input.search{
-  border: none;
-  border-bottom: 1px solid $color-3 !important;
-  background: transparent;
-  size: 30px;
-  border-radius: unset;
-  color: $color-3;
-  font-size: 30px;
-  //text-shadow: 0px 0px 0px #000;
-  
+  font-size: 1rem;
+  font-family: $roboto-regular;
+  color: $color-48;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -59,9 +50,10 @@ a.nav-link.pull-left.active{
 
 
 ul li a {
-  font-size: 26px !important;
+  font-size: 26px ;
   text-transform: capitalize;
 }
+
 ul li a:hover{
   border-bottom: 5px solid $color-47 !important;
   color: $color-47 !important;
@@ -171,13 +163,16 @@ ul li a:hover{
 
 .form-control{
   border-right: none;
+  border-left: none;
   border-radius: 0.5rem;
  // box-shadow: 5px 5px 25px 0 rgba(46,61,73,0.50);
 }
 
 div.input-group{
   border-radius: 0.5rem;
-  box-shadow: 5px 5px 25px 0 rgba(46,61,73,0.50);
+  box-shadow: 1px 5px 25px 2px rgba(46, 61, 73, 0.5);
+  background-color: $color-3;
+  padding: 0.5rem  0.7rem ;
   ::placeholder{
     color: $color-48;
     font-family: $roboto-light;
@@ -186,19 +181,60 @@ div.input-group{
   }
   
 }
+
+
+
+input.form-control{
+ // min-width: 30px !important;
+  border: 1px solid $color-3;
+  padding: 0px !important;
+  font-family: $roboto-light;
+    font-size: 1rem;
+}
+
 input.form-control:focus{
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  //border: 1px solid rgba(0, 0, 0, 0.15);
+  //outline: none;
 }
 .input-group-addon{
   background-color: $color-3;
   border-top-right-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  cursor: pointer;
 }
 
 .fa-spinner{
   font-size: 10rem;
   color: $color-47 !important;
 }
+.clear.input-group-addon{
+  padding: 0px !important;
+  border-top-right-radius: initial;
+  border-bottom-right-radius: initial;
+  font-size: x-large;
+  //border-top-left-radius: 0.5rem;
+  //border-bottom-left-radius: 0.5rem;
+  border-right: 0px;
+ // border-left: 1px solid rgba(0, 0, 0, 0.15) !important;
+ // border-top: 1px solid rgba(0, 0, 0, 0.15) !important;
+  //border-bottom: 1px solid rgba(0, 0, 0, 0.15) !important;
+
+}
+
+.searchBtn{
+  margin-left: auto;
+  cursor: pointer;
+  background: transparent !important;
+}
+button:focus {
+ outline: $color-3;
+}
+button:disabled,
+button[disabled]{
+  color: #666666;
+  cursor: not-allowed;
+}
+
 
 
 

@@ -5,6 +5,7 @@ import {
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {SskService} from '../../ssk.service';
 import {ElastichsearchService} from '../../elastichsearch.service';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-content',
@@ -16,6 +17,8 @@ export class ContentComponent implements OnInit {
   item: any;
   data: any;
   spinner = true;
+  objectKeys = Object.keys;
+
   constructor(private  sskServ: SskService, private elastiServ: ElastichsearchService) { }
 
   ngOnInit() {
@@ -30,7 +33,7 @@ export class ContentComponent implements OnInit {
   itemChangedHandler(item: string) {
     this.item = item;
     this.data = this.elastiServ.glossaryChange(item);
-    this.sskServ.setTitle('SSK - ' + item);
+    this.sskServ.setTitle('SSK - ' + _.capitalize(item));
   }
 
   trim(text: string) {
