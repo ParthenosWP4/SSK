@@ -48,18 +48,30 @@ export class SearchTabComponent implements OnInit {
     _.map(this.data['disciplines'], item => {
       item = this.getMetaDataNumber(item, 'scenario', false);
       item.type = 'disciplines';
+      item.filter = item.term;
     });
     _.map(this.data['objects'], item => {
       item = this.getMetaDataNumber(item, 'scenario', false);
       item.type = 'objects';
+      item.filter = item.term;
     });
     _.map(this.data['techniques'], item => {
       item = this.getMetaDataNumber(item, 'scenario', false);
       item.type = 'techniques';
+      item.filter = item.term;
     });
     _.map(this.data['standards'], item => {
       item = this.getMetaDataNumber(item, 'step', true);
       item.type = 'standards';
+      item.filter = item.standard_abbr_name;
+    });
+    _.forEach(this.data['activities'], (elt, key) => {
+      _.map(elt[this.objectKeys(elt)[0]], item => {
+        item = this.getMetaDataNumber(item, 'step', false);
+        item.type = 'activities';
+        item.index = key;
+        item.filter = item.term;
+      });
     });
   }
 
@@ -79,10 +91,14 @@ export class SearchTabComponent implements OnInit {
       tag = content.term;
       type = 'step';
     }
+    if (content.type === 'activities') {
+      filterTerm = _.filter((this.data[content.type][content.index])[content.group], {'filter': tag})[0];
+    } else {
+      filterTerm = _.filter(this.data[content.type], {'filter': tag})[0];
+    }
     if (tag !== undefined && type !== undefined) {
     if (_.findIndex(this.ssKServices.getFilters(), function(o) { return o.tag === tag; } ) === -1 ) {
-      filterTerm = _.filter(this.data[content.type], {'term': tag})[0];
-      this.updateSearchResult(filterTerm).subscribe(
+      this.elasticSearchServ.updateSearchResult(filterTerm).subscribe(
       result => {
         this.ssKServices.addToFilters({'tag': tag, 'type': type, 'results': this.elasticSearchServ.searchResult['data']} );
       },
@@ -120,8 +136,7 @@ export class SearchTabComponent implements OnInit {
       const removedTag = _.remove(this.ssKServices.getFilters(), function (v) {
         return v.tag === tag;
       });
-      filterTerm = _.filter(this.data[content.type], {'term': tag})[0];
-      this.updateSearchResult(filterTerm).subscribe(
+      this.elasticSearchServ.updateSearchResult(filterTerm).subscribe(
         result => {
         },
         error => {},
@@ -182,13 +197,6 @@ export class SearchTabComponent implements OnInit {
     this.scenarioResults = _.uniqBy(_.filter(_.concat(this.elasticSearchServ.getScenarioResults(), temp), undefined), 'id');
     return Observable.of(this.scenarioResults);
   }
-
-  updateSearchResult(elt: any): Observable<any[]> {
-    this.elasticSearchServ.searchResult['total'] = elt['count'];
-    this.elasticSearchServ.searchResult['data'] = elt['data'];
-    return Observable.of(this.elasticSearchServ.searchResult);
-  }
-
   normalize(text: string ) {
     if (!isUndefined(text)) {
       text = text.split('_').join(' ');

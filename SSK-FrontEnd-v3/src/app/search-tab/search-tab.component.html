@@ -21,17 +21,17 @@
                 <label class="form-check-label ml-3">
                     <input type="checkbox" [attr.name]="normalize(activity?.term)"
                            [id]="normalize(activity?.term)"
-                           class="form-check-input" (change)="change($event, activity)" > {{normalize(activity?.term)}} {{activity?.standard_abbr_name}}
-                          <!-- <span class= "scenarioCount"  [ngClass]="item.substring(0, item.length - 1)"  [innerHTML]="(activity?.scenarioIn === undefined) ? '(0)': '('+activity?.scenarioIn+')'"></span>-->
+                           class="form-check-input" (change)="change($event, activity)" > {{normalize(activity?.term)}}
+                           <span *ngIf= "activity?.count" class= "scenarioCount"  [ngClass]="item?.name.substring(0, item?.name.length - 1)"  [innerHTML]="'('+activity?.count+')'"></span>
                   </label>
                 </div>
               </div>
            
-          <label class="form-check-label" *ngIf="(item?.name !== 'activities'); ">
+          <label class="form-check-label" *ngIf="(item?.name !== 'activities') ">
             <input type="checkbox" [attr.name]="(elt?.standard_abbr_name !== undefined) ? elt?.standard_abbr_name : normalize(elt?.term)"
                    [id]="(elt?.standard_abbr_name !== undefined) ? normalize(elt?.standard_abbr_name) : normalize(elt?.term)"
                    class="form-check-input"(change)="change($event, elt)"> {{normalize(elt?.term)}} {{elt?.standard_abbr_name}}
-                  <span class= "scenarioCount"  [ngClass]="item?.name.substring(0, item?.name.length - 1)"  [innerHTML]="'('+elt?.count+')'"></span>
+                  <span *ngIf="elt?.count" class= "scenarioCount"  [ngClass]="item?.name.substring(0, item?.name.length - 1)"  [innerHTML]="'('+elt?.count+')'"></span>
           </label>
         
         </div>

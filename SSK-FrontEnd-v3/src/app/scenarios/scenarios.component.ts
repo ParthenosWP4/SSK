@@ -188,15 +188,19 @@ export class ScenariosComponent implements OnInit {
   }
 
   remove(elt: any) {
-      let temp: any;
+      let temp, filterTerm: any;
       const removedTag = _.remove(this.sskServices.getFilters(), function (v) {
         return v.tag === elt.tag;
       });
       const htmlElt = document.getElementById(_.capitalize(elt.tag)) as HTMLInputElement;
       htmlElt.checked = false;
-      this.elasticServices.searchFromServer(elt.type, elt.tag).subscribe(
+      if (elt.type === 'activities') {
+        filterTerm = _.filter((this.searchData[elt.type][elt.index])[elt.group], {'filter': elt.tag})[0];
+      } else {
+        filterTerm = _.filter(this.searchData[elt.type], {'filter': elt.tag})[0];
+      }
+      this.elasticServices.updateSearchResult(filterTerm).subscribe(
         result => {
-          this.elasticServices.searchResult = result;
         },
         error => {},
         () => {
@@ -266,16 +270,21 @@ setResourcesTab() {
   Here we filters content exactly as tag filtering
 */
 selectedItem(item) {
+  console.log(item)
   this.elasticServices.setResearchStarted(true);
-  let temp: any;
+  let temp, filterTerm: any;
   const tag = item.item.term;
   const elt = document.getElementById(_.capitalize(tag)) as HTMLInputElement;
   elt.checked = true;
   const type = (item.item['type'] === undefined) ? 'scenario' : 'step';
+  if (item.type === 'activities') {
+    filterTerm = _.filter((this.searchData[item.type][item.index])[item.group], {'filter': tag})[0];
+  } else {
+    filterTerm = _.filter(this.searchData[item.type], {'filter': tag})[0];
+  }
   if (_.findIndex(this.sskServices.getFilters(), function(o) { return o.tag === tag; } ) === -1 ) {
-    this.elasticServices.searchFromServer(type, tag).subscribe(
+    this.elasticServices.updateSearchResult(filterTerm).subscribe(
     result => {
-      this.elasticServices.searchResult = result;
       this.sskServices.addToFilters({'tag': tag, 'type': type, 'results': this.elasticServices.searchResult['data']} );
     },
     error => {},

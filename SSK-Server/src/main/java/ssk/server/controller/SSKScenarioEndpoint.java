@@ -22,14 +22,14 @@ import java.util.List;
 @Controller
 @RequestMapping(value = "/")
 public class SSKScenarioEndpoint {
-
-
+    
+    
     @Autowired
     ElasticGetDataServices elasticGetDataServices;
-
+    
     @Autowired
     ElasticServices esServices;
-
+    
     @Autowired
     SSKServices sskServices;
     
@@ -72,8 +72,9 @@ public class SSKScenarioEndpoint {
     
     @ResponseBody
     @RequestMapping(value = "scenario/{scenarioId}",  method = { RequestMethod.GET  }, produces="application/json")
-    public  ResponseEntity  getScenario(@PathVariable String scenarioId, @RequestParam(value = "fields", required = false) String fields){
-    
+    public  ResponseEntity  getScenario(@PathVariable String scenarioId, @RequestParam(value = "fields", required = false) String fields,
+                                        @RequestParam(value = "fromSSK", required = false) boolean fromSSK){
+        
         JsonObject jsonResult = new JsonObject();
         ResponseEntity<String> result;
         
@@ -81,28 +82,29 @@ public class SSKScenarioEndpoint {
             List<String> fieldTab = Arrays.asList(fields.split(","));
             if(fieldTab.size() > 0){
                 fieldTab.forEach(field -> {
-                    
+                	logger.info(field);
                     try{
                         if(field.equals("image")){
-        
                             jsonResult.addProperty(field, sskServices.removeDoubleQuote (elasticGetDataServices.getScenarioDetails(scenarioId, field).getAsJsonObject().get("url").toString()));
                         }
                         else{
                             jsonResult.add(field, elasticGetDataServices.getScenarioDetails(scenarioId, field));
                         }
                     }
-                    catch (NullPointerException e){
+                    catch (Exception e){
+                    	e.printStackTrace();
                         jsonResult.add(field, null);
                     }
-                    
+	                
                 });
             }
         }
         catch (NullPointerException e) {
             e.printStackTrace();
             logger.info("empty, Here get All fields");
-        
         }
         return  new ResponseEntity<>(jsonResult.toString(), this.headers, HttpStatus.OK);
     }
+    
+    
 }

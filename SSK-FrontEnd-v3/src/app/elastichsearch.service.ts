@@ -6,8 +6,6 @@ import * as _ from 'lodash';
 import {isUndefined} from 'util';
 import {environment} from '../environments/environment';
 import {HttpClient} from '@angular/common/http';
-import { CompileMetadataResolver } from '@angular/compiler';
-import { SskService } from './ssk.service';
 
 
 @Injectable()
@@ -49,6 +47,7 @@ export class ElastichsearchService {
   private scenarioResults= [];
   private stepResults= [];
   private http: any;
+  private httpUrlEncodingCodec: any;
   public autoCompleteList: any;
 
 
@@ -180,12 +179,8 @@ export class ElastichsearchService {
   }
 
   searchFromServer(type, tag: string) {
-    this.setOptions( null);
-    if (type === null) {
-      return this.http.get(this.sskBackendEndpoint + '_search/' + tag , this.options);
-    } else {
-      return this.http.get(this.sskBackendEndpoint + '_search/' + type + '/' + tag , this.options);
-    }
+    this.setOptions( {'tag': tag, 'type': type });
+    return this.http.get(this.sskBackendEndpoint + '_search' , this.options);
   }
 
 
@@ -356,10 +351,13 @@ getAllStandards() {
   }
 
   normalize(text: string ) {
-    //if (!isUndefined(text)) {
-      //text = text.split('_').join(' ');
-    //}
     return _.capitalize(text);
+  }
+
+  updateSearchResult(elt: any): Observable<any[]> {
+    this.searchResult['total'] = elt['count'];
+    this.searchResult['data'] = elt['data'];
+    return Observable.of(this.searchResult);
   }
 
 

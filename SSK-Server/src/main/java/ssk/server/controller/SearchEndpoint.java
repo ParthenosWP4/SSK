@@ -9,13 +9,15 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriUtils;
 import ssk.server.service.ElasticGetDataServices;
 import ssk.server.service.ElasticServices;
 import ssk.server.service.SSKServices;
+
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 
 @Controller
 @RequestMapping(value = "/_search")
@@ -35,9 +37,9 @@ public class SearchEndpoint {
 	HttpHeaders headers = new HttpHeaders();
 	
 	@ResponseBody
-	@RequestMapping(value = "/{type}/{tag}", method = {RequestMethod.GET }, produces="application/json")
-	public ResponseEntity<String> getSteps(@PathVariable String tag, @PathVariable String type){
-		JsonObject jsonResult = elasticGetServices.searchInSteps(tag, type);
+	@RequestMapping(method = {RequestMethod.GET }, produces="application/json")
+	public ResponseEntity<String> getElement(@RequestParam(value = "tag", required = false) String tag, @RequestParam(value = "type", required = false) String type){
+		JsonObject jsonResult = elasticGetServices.searchInStepsAndScenarios(tag, type);
 		ResponseEntity<String> result;
 		if(jsonResult != null) {
 			result = new ResponseEntity<>(jsonResult.toString(), this.headers, HttpStatus.OK);
@@ -47,6 +49,20 @@ public class SearchEndpoint {
 		}
 		return result;
 	}
-
-
+	
+	
+	@ResponseBody
+	@RequestMapping(value = "/{word}", method = {RequestMethod.GET }, produces="application/json")
+	public ResponseEntity<String> fullTextSearch(@PathVariable String word){
+		JsonObject jsonResult = elasticGetServices.fullSearch(word);
+		ResponseEntity<String> result;
+		if(jsonResult != null) {
+			result = new ResponseEntity<>(jsonResult.toString(), this.headers, HttpStatus.OK);
+		}
+		else{
+			result =  sskServices.serverError();
+		}
+		return result;
+	}
+	
 }
