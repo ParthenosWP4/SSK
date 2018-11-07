@@ -1,14 +1,16 @@
 package ssk.server.service;
 
 import com.fasterxml.jackson.databind.util.JSONPObject;
-import com.google.gson.*;
+import com.google.gson.Gson;
 
 
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
@@ -40,32 +42,32 @@ import java.util.List;
 
 @Service
 public class GithubApiService {
-    
+
     @Value("${GITHUB_AUTH_TOKEN}")
     private String authorizationToken;
     
     private static final Logger logger = LoggerFactory.getLogger(GithubApiService.class.getName());
-    
+
     @Value("${GITHUB_SSK_API}")
     private String githubUrl;
     
     @Value("${GITHUB_API}")
     private String githubApiUrl;
-    
+
     private MultiValueMap<String, String> requestHeaders;
-    
+
     private List<MediaType> responseHeaders;
-    
+
     private HttpEntity<?> request;
-    
+
     private RestTemplate restTemplate;
-    
+
     private Gson gson ;
-    
+
     public String url;
-    
+
     //private String  = "token "+ token;
-    
+
     private ResponseEntity<?> response ;
     
     public String getAuthorizationToken() {
@@ -87,29 +89,23 @@ public class GithubApiService {
     public MultiValueMap<String, String> getHeaders() {
         return requestHeaders;
     }
-    
+
     public HttpEntity<?> getRequest() {
         return request;
     }
-    
+
     public String getGithubUrl() {
         return githubUrl;
     }
-    
-    @Autowired
-    private SSKServices sskServices;
-    
-    @Autowired
-    private ElasticGetDataServices elasticGetDataServices;
-    
+
     public MultiValueMap<String, String> getRequestHeaders() {
         return requestHeaders;
     }
-    
-    
-    
-    
-    
+
+
+
+
+
     public GithubApiService(){
         this.requestHeaders = new LinkedMultiValueMap<>();
         this.responseHeaders = new ArrayList<>();
@@ -117,32 +113,32 @@ public class GithubApiService {
         this.restTemplate = new RestTemplate();
         gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
     }
-    
+
     public JsonArray getSSKElementsList(String type){
         this.request = new HttpEntity<>(this.updateRequestHeaders("json", null));
         this.url = "contents/"+ type+"/";
         ResponseEntity<String> responseEntity =  this.restTemplate.exchange(getGithubUrl() + this.url, HttpMethod.GET, this.getRequest(), String.class);
         return gson.fromJson(responseEntity.getBody(), JsonArray.class);
     }
-    
-    
+
+
     /* Get SSK file content
     * File can be scenario, step or relaxNg
     * */
     public String getGithubFileContent (String  type, String fileName) {
-        this.request = new HttpEntity<>(this.updateRequestHeaders("xml", null));
+         this.request = new HttpEntity<>(this.updateRequestHeaders("xml", null));
         this.url  = "contents/";
         switch (type){
             case "scenario":
                 this.url += "scenarios/" + fileName;
                 break;
-            case "spec":
+                case "spec":
                 this.url += "spec/" + fileName;
                 break;
             case "step" :
                 this.url += "steps/" + fileName;
                 break;
-            
+
             default:
         }
         try{
@@ -161,7 +157,6 @@ public class GithubApiService {
         JsonObject data = new JsonObject();
         data.addProperty("type", type);
         if(result.has("name")) data.addProperty("title", result.get("title").getAsString());
-        if(result.has("id")) data.addProperty("id", result.get("id").getAsString());
         if(result.has("description"))  data.addProperty ("abstract", result.get("url").getAsString());
         if(result.has("homepage")) data.addProperty ("url", result.get("homepage").getAsString());
         if(result.has("created_at")) data.addProperty ("date", result.get("created_at").getAsString());
@@ -172,40 +167,42 @@ public class GithubApiService {
             if(owner.has("login")) elt.addProperty("name",owner.get("login").getAsString());
             data.add ("creators", elt);
         }
-        logger.warn(data.toString());
+       logger.warn(data.toString());
         return data;
     }
 
     /* Get Commits on specific Github path */
-    
-    public String getLastCommitDate(String type, String fileName ){
-        this.url  = "commits?path=" + type + "/" + fileName;
-        JsonElement jsonResult;
-        this.request = new HttpEntity<>(this.updateRequestHeaders("json", null ));
-        ResponseEntity<String> response =  this.restTemplate.exchange(getGithubUrl() + this.url, HttpMethod.GET, this.request , String.class);
-        if (response.getStatusCode().is2xxSuccessful()) {
-            jsonResult = this.sskServices.getParser().parse(response.getBody()).getAsJsonArray().get(0).getAsJsonObject().get("commit").getAsJsonObject().get("author");
-            jsonResult = this.elasticGetDataServices.loadContentByKey(new JSONObject(jsonResult.toString()), "date");
-            return jsonResult.getAsJsonObject().get("date").getAsString();
+
+    public JSONObject getCommitsOfPath(String path, String since ){
+        this.url  = "commits/";
+        JSONObject jSon = new JSONObject().put("path", path).put("since", since);
+        this.request = new HttpEntity<>(this.updateRequestHeaders("json", jSon ));
+        String content =  this.restTemplate.exchange(getGithubUrl() + this.url, HttpMethod.GET, this.request , String.class).getBody();
+        JSONArray jsonArray = new JSONArray(content);
+
+        // Here we take the most up to date commit
+        jSon = getMostUpdated(jsonArray);
+
+        /* request to Update DataList index on Elastic Search */
+        if(converDate(getDate(jSon)).compareTo(converDate(since)) > 0){
+           // ********************************************************************
         }
-        else{
-            return null;
-        }
+        return jSon;
     }
-    
-    
+
+
     private MultiValueMap<String, String>  updateRequestHeaders(String type, JSONObject jSon){
         switch (type){
             case "xml":
                 this.getRequestHeaders().set("Accept", "application/vnd.github.VERSION.raw");
-                this.getRequestHeaders().set("Content-Type", MediaType.APPLICATION_XML_VALUE);
+               this.getRequestHeaders().set("Content-Type", MediaType.APPLICATION_XML_VALUE);
                 break;
             case "json":
                 this.getRequestHeaders().set("Content-Type", MediaType.APPLICATION_JSON_VALUE);
                 break;
             default:
                 //this.getRequestHeaders().set("Content-Type", "application/json;UTF-8");
-                break;
+             break;
         }
         this.getRequestHeaders().set("Authorization", authorizationToken);
         if(jSon !=null) {
@@ -217,10 +214,10 @@ public class GithubApiService {
         }
         return this.getRequestHeaders();
     }
-    
+
     /* Here I've to validate the XML scenario content before any operations on it*/
     private Document string2XMl(String content){
-        
+
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder;
         try {
@@ -234,21 +231,21 @@ public class GithubApiService {
             e.printStackTrace();
             return  null;
         }
-        
-        
+
+
     }
 
 
     /* Transform XML scenario document in Json content for Search engine */
-    
+
     private JSONObject getScenarioFromXML(Document document){
         JSONObject scenario = new JSONObject();
-        
-        
+
+
         return scenario;
     }
-    
-    
+
+
     private String nodeToString(Node node) {
         StringWriter sw = new StringWriter();
         try {
@@ -260,7 +257,7 @@ public class GithubApiService {
         }
         return sw.toString();
     }
-    
+
     private JSONObject getMostUpdated(JSONArray jsonArray){
         JSONObject result = jsonArray.getJSONObject(0);
         if(jsonArray.length()> 1) {
@@ -273,7 +270,7 @@ public class GithubApiService {
         }
         return result;
     }
-    
+
     private Date converDate(String date ){
         SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-DDTHH:MM:SSZ");
         Date result = null;
@@ -284,7 +281,7 @@ public class GithubApiService {
         }
         return result;
     }
-    
+
     private String getDate(JSONObject json){
         String result = "";
         if ( json.get("commit") instanceof JSONObject ) {

@@ -8,7 +8,6 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
@@ -17,19 +16,15 @@ import java.util.Arrays;
 import java.util.List;
 
 @Configuration
-@EnableWebMvc
-public class CorsConfig  extends  WebMvcConfigurerAdapter{
+
+public class CorsConfig {
 	
 	@Bean
 	public CorsFilter corsFilter() {
 		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 		CorsConfiguration config = new CorsConfiguration();
-		//config.setAllowCredentials(true);
-		config.addAllowedOrigin("https://ssk.parthenos-project.eu");
-		config.addAllowedOrigin("https://ssk-application.parthenos.d4science.org");
-		config.addAllowedOrigin("http://ssk.huma-num.fr");
-		config.addAllowedOrigin("http://localhost:4300");
-		config.addAllowedOrigin("http://localhost:4200");
+		config.setAllowCredentials(true);
+		config.addAllowedOrigin("*");
 		config.addAllowedHeader("*");
 		config.addAllowedMethod("OPTIONS");
 		config.addAllowedMethod("HEAD");
@@ -48,14 +43,12 @@ public class CorsConfig  extends  WebMvcConfigurerAdapter{
 		return bean;
 	}
 	
-	/*@Bean
+	@Bean
 	public WebMvcConfigurer mvcConfigurer() {
 		return new WebMvcConfigurerAdapter() {
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**")
-						.allowedMethods("GET", "PUT", "POST", "GET", "OPTIONS")
-						.allowedOrigins("https://ssk.parthenos-project.eu", "https://ssk-application.parthenos.d4science.org", "http://ssk.huma-num.fr");
+				registry.addMapping("/**").allowedMethods("GET", "PUT", "POST", "GET", "OPTIONS");
 			}
 		};
-	}*/
+	}
 }

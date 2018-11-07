@@ -36,8 +36,8 @@ public class SearchEndpoint {
 	
 	@ResponseBody
 	@RequestMapping(value = "/{type}/{tag}", method = {RequestMethod.GET }, produces="application/json")
-	public ResponseEntity<String> getElement(@PathVariable String tag, @PathVariable String type){
-		JsonObject jsonResult = elasticGetServices.searchInStepsAndScenarios(tag, type);
+	public ResponseEntity<String> getSteps(@PathVariable String tag, @PathVariable String type){
+		JsonObject jsonResult = elasticGetServices.searchInSteps(tag, type);
 		ResponseEntity<String> result;
 		if(jsonResult != null) {
 			result = new ResponseEntity<>(jsonResult.toString(), this.headers, HttpStatus.OK);
@@ -47,20 +47,6 @@ public class SearchEndpoint {
 		}
 		return result;
 	}
-	
-	
-	@ResponseBody
-	@RequestMapping(value = "/{word}", method = {RequestMethod.GET }, produces="application/json")
-	public ResponseEntity<String> fullTextSearch(@PathVariable String word){
-		JsonObject jsonResult = elasticGetServices.fullSearch(word);
-		ResponseEntity<String> result;
-		if(jsonResult != null) {
-			result = new ResponseEntity<>(jsonResult.toString(), this.headers, HttpStatus.OK);
-		}
-		else{
-			result =  sskServices.serverError();
-		}
-		return result;
-	}
-	
+
+
 }

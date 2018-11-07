@@ -1,9 +1,9 @@
 package ssk.server.config;
 
-/*import org.elasticsearch.client.Client;
+import org.elasticsearch.client.Client;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.settings.Settings;
-import org.elasticsearch.common.transport.InetSocketTransportAddress;*/
+import org.elasticsearch.common.transport.InetSocketTransportAddress;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,31 +11,31 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-/*import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
-import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;*/
+import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
+import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 
 import java.net.InetAddress;
 
 
 /*@SuppressWarnings("ALL")
 @Configuration*/
-/*@SuppressWarnings("ALL")
-@Configuration*/
+@SuppressWarnings("ALL")
+@Configuration
 public class EsConfig {
-	
-	@Value("${elasticsearch.host}")
-	private String esHost;
-	
-	@Value("${elasticsearch.port}")
-	private int esPort;
-	
-	@Value("${elasticsearch.clustername}")
-	private String esClusterName;
-	
-	@Autowired
-	private ConfigurableApplicationContext context;
-	
-	private static final Logger logger = LoggerFactory.getLogger(EsConfig.class);
+
+    @Value("${elasticsearch.host}")
+    private String esHost;
+
+    @Value("${elasticsearch.port}")
+    private int esPort;
+
+    @Value("${elasticsearch.clustername}")
+    private String esClusterName;
+    
+    @Autowired
+    private ConfigurableApplicationContext context;
+    
+    private static final Logger logger = LoggerFactory.getLogger(EsConfig.class);
 
     /*@Bean
     public TransportClient transportClient() throws  UnknownHostException {
@@ -57,7 +57,7 @@ public class EsConfig {
 	    }
     }*/
 	
-	/*@Bean
+	@Bean
 	public Client client() throws Exception {
 		
 		Settings esSettings = Settings.settingsBuilder()
@@ -75,7 +75,7 @@ public class EsConfig {
 	@Bean
 	public ElasticsearchOperations elasticsearchTemplate() throws Exception {
 		return new ElasticsearchTemplate(client());
-	}*/
+	}
 }
 
 

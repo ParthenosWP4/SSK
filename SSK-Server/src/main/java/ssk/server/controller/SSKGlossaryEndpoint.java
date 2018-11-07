@@ -58,6 +58,7 @@ public class SSKGlossaryEndpoint {
 		jsonResult = this.elasticGetDataServices.getAllResources("glossary").getAsJsonArray();
 		jsonResult = this.sskServices.getTermsByType(jsonResult, type);
 		result = new ResponseEntity<>(jsonResult.toString(), this.headers, HttpStatus.OK);
+		
 		if(jsonResult.isJsonNull()){
 			return sskServices.serverError();
 		}

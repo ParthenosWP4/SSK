@@ -66,7 +66,7 @@ export class SearchTabComponent implements OnInit {
   change(e, content: any) {
     this.elasticSearchServ.setResearchStarted(true);
     let tag, type: string;
-    let temp, filterTerm : any;
+    let temp, filterTerm: any;
     if (content.group === undefined ) {
       if (content.standard_abbr_name !== undefined) {
         tag = content.standard_abbr_name;

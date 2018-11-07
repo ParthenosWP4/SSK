@@ -158,22 +158,22 @@ export class ScenariosComponent implements OnInit {
     }
   }
 
-  loadContents(type: string) {
+  loadContents(type: string) {console.log(type)
         switch (type) {
           case 'steps':
-            this.sskServices.setTitle('SSK - Steps');
+            this.sskServices.setTitle('SSK - Steps')
             this.steps = new Array();
            this.steps = this.elasticServices.getSteps();
             this.elasticServices.setResultCount(this.elasticServices.getSteps().length);
             this.tabStep = true;
-            this.tabRes = false;
-            this.tabScenarios = false;
+            this.tabRes = false
+            this.tabScenarios = false
             break;
           case 'resources':
-            this.sskServices.setTitle('SSK - Resources');
+            this.sskServices.setTitle('SSK - Resources')
             this.tabStep = false;
             this.tabRes = true;
-            this.tabScenarios = false;
+            this.tabScenarios = false
             this.resources = this.elasticServices.getResources();
             this.elasticServices.setResultCount(this.elasticServices.getResourceCount());
             this.resultCount = this.elasticServices.getResourceCount();
@@ -182,8 +182,8 @@ export class ScenariosComponent implements OnInit {
   }
 
   @HostListener('window:scroll', ['$event']) checkScroll() {
-    const componentPosition = this.el.nativeElement.offsetTop;
-    const scrollPosition = window.pageYOffset;
+    const componentPosition = this.el.nativeElement.offsetTop
+    const scrollPosition = window.pageYOffset
     if ( !isUndefined(this.scenarios) &&  this.scenarios.length  < this.elasticServices.getScenarioNumber() && scrollPosition >= componentPosition) {
       const  elt: any = {};
       if (!isUndefined(this.elasticServices.getscenariosTemp().length)  && this.elasticServices.getscenariosTemp().length === 1) {
@@ -195,6 +195,7 @@ export class ScenariosComponent implements OnInit {
   }
 
   remove(tag: string) {
+    console.log(tag)
     let fuse;
     _.remove(this.sskServices.getFilters(), function (v) {
       return v === tag;
@@ -202,7 +203,7 @@ export class ScenariosComponent implements OnInit {
     $('#' + tag).prop('checked', false);
 
     if (this.tabScenarios) {
-      this.options['keys'] =  this.sskServices.scenarioKeys;
+      this.options['keys'] =  this.sskServices.scenarioKeys
       fuse = new Fuse(this.elasticServices.getScenarios(), this.options);
       this.results[tag] =  fuse.search(tag);
       this.scenarioResults = _.differenceWith(this.scenarios, this.results[tag]    , _.isEqual);
@@ -276,7 +277,7 @@ export class ScenariosComponent implements OnInit {
 
   getStepScenario(step: any) {
     return _.find(this.elasticServices.getScenarios(), (o)  => {
-      return o.id === step.parent; });
+      return o.id === step._parent; });
   }
 
   setResultCount(elt: number ) {

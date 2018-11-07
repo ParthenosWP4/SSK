@@ -104,11 +104,12 @@ export class SskServicesService {
   loadPageContent(url: any) {
     return this.http.get(url.changingThisBreaksApplicationSecurity)
       .map((response: HttpResponse<any>) => {
+
       }).catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
 
   isUrl(s) {
-    const regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+    const regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/
     return regexp.test(s);
   }
 
@@ -179,6 +180,7 @@ export class SskServicesService {
  }
 
  updateScenarioMetadata(metadata: any) {
+
 
  }
 

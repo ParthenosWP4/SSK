@@ -12,14 +12,14 @@ import * as _ from 'lodash';
 export class ScenarioCardComponent implements OnInit {
 
   @Input() scenario: any;
-  public title: any;
-  public desc: any;
+  public title: any
+  public desc: any
   public metadata: Array<any> = new Array();
   public metadataPart1: Array<any> = new Array();
-  public metadataPart2: Array<any>;
+  public metadataPart2: Array<any>
   public defaultImage: string;
-  public shortTitle: any = {};
-  public shortDesc: any = {};
+  public shortTitle: any = {}
+  public shortDesc: any = {}
 
   constructor(private sskServices: SskServicesService,  private router: Router, private domSanitizer: DomSanitizer) { }
 

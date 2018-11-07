@@ -8,8 +8,10 @@ import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.*;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -38,21 +40,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Service
 public class SSKServices {
     
-    @Value("${elasticsearch.link}")
-    private String elasticSearchPort;
-    
-    @Value("${elasticsearch.index}")
-    private String sskIndex;
-    
     
     @Autowired
     private GithubApiService githubApiService;
     
     @Autowired
     private ElasticServices elasticServices;
-    
-    @Autowired
-    private RequestHeadersParams requestHeadersParams;
     
     @Autowired
     private ElasticGetDataServices elasticGetDataServices;
@@ -67,12 +60,12 @@ public class SSKServices {
     private static final String sskContentFileName = "SSK_Content.xml";
     private static final String teiToJsonFileName = "xml-to-json.xsl";
     private static final String teiSSKODDPath = "TEI_SSK_ODD.xml";
-    private static final String glossary = "SSKvocs.xml";
+    private static final String glossagy = "SSKvocs.xml";
     private static final String scenarioMetaData = "/TEI/text/body/div/desc/term";
     private static final String stepMetaData = "/TEI/text/body/listEvent/event/desc/term";
     private static final String resourcesPath = "/TEI/text/body/listEvent/event/linkGrp";
     private static final String resourceStandardPath = "/TEI/text/body/listEvent/event/linkGrp/ref/term[contains(@type, \"standard\")]";
-    private static List<String> metaDataTab = Arrays.asList("techniques", "standard", "discipline", "objects", "activity", "object", "technique");
+    private static List<String> metaDataTab = Arrays.asList("techniques", "standard", "discipline", "objects", "activity");
     
     private static String zoteroApihUrl = "https://api.zotero.org/";
     private static List<String> dateFormats = Arrays.asList("yyyy-MM-dd", "dd MMMMM yyyy", "yyyy-MM",  "yyyy");
@@ -106,7 +99,7 @@ public class SSKServices {
         return doc;
     }
     
-    public static void setDoc(Document doc) throws SAXException{
+    public static void setDoc(Document doc) {
         SSKServices.doc = doc;
     }
     
@@ -176,6 +169,7 @@ public class SSKServices {
     
     public void initializeData()  throws  Exception{
         this.handleData = true;
+        //JsonArray scenarioAndStep;
         String relaxNgContent = githubApiService.getGithubFileContent("spec", teiSSKRelaxNgPath);
         convertStringToFile(relaxNgContent, teiSSKRelaxNgPath);
         String xsltContent = githubApiService.getGithubFileContent("spec", teiToJsonFileName);
@@ -184,9 +178,6 @@ public class SSKServices {
         
         //load Glossary's terms
         this.loadGlossaryTerms();
-        
-        //load Standards
-        this.loadStandards();
         
         // Get List of Scenarios
         JsonArray scenarios = githubApiService.getSSKElementsList("scenarios");
@@ -197,7 +188,7 @@ public class SSKServices {
                 JsonObject scenario = scenarioElt.getAsJsonObject();
                 String scenarioName = scenario.get("name").getAsString();
                 logger.info("SCENARIO " + scenarioName);
-                
+    
                 if (scenarioName.equals("1_ScenarioTest.xml")) return;
                 if ( scenarioName.equals("0_test.xml")) return;
                 if (scenarioName.equals("1_SSK_sc_loremIpsum.xml")) return;
@@ -213,8 +204,6 @@ public class SSKServices {
                     try {
                         JsonObject scenarioJson = teiToJson(scenarioContent, true, scenarioType);
                         scenarioJson.addProperty("GithubRef", scenarioName);
-                        scenarioJson.addProperty("type", "scenario");
-                        scenarioJson.addProperty("lastUpdate", this.githubApiService.getLastCommitDate("scenarios",scenarioName ));
                         
                         scenarioAndStep.add(scenarioJson);
                         JsonArray steps = scenarioJson.getAsJsonObject("TEI").getAsJsonObject("text").getAsJsonObject("body").getAsJsonObject("div").getAsJsonObject("listEvent").getAsJsonArray("event");
@@ -227,7 +216,7 @@ public class SSKServices {
                                 subtypeEventManagement(scenarioAndStep, step, j + 1);
                                 continue;
                             }
-                            JsonObject stepJson = stepProcessing(stepReference, j + 1, scenarioName);
+                            JsonObject stepJson = stepProcessing(stepReference, j + 1);
                             if (stepJson == null) { // Référence de l'étape malformée (avec des caractères spéciaux) ou bien étapes non existantes
                                 continue; //break;
                             } else {
@@ -250,7 +239,7 @@ public class SSKServices {
         this.handleData = false;
     }
     
-    private JsonObject stepProcessing(String stepReference, int position, String parent) throws SAXException, ParserConfigurationException, XPathExpressionException, IOException {
+    private JsonObject stepProcessing(String stepReference, int position) throws SAXException, ParserConfigurationException, XPathExpressionException, IOException {
         String stepContent = githubApiService.getGithubFileContent(stepType, stepReference + ".xml");
         if (!validateSSKFile(stepContent, false)) {
             return null;
@@ -260,9 +249,6 @@ public class SSKServices {
             JsonObject stepJson = teiToJson(stepContent, false, stepType);
             stepJson.addProperty("position", position);
             stepJson.addProperty("GithubRef", stepReference);
-            stepJson.addProperty("type", "step");
-            stepJson.addProperty("parent", parent.split("\\.")[0]);
-            stepJson.addProperty("lastUpdate", this.githubApiService.getLastCommitDate("steps",stepReference + ".xml" ));
             return stepJson;
         }
     }
@@ -304,10 +290,11 @@ public class SSKServices {
         }
     }
     
-    //Here I have to send mail to Scenario Author if content is not valide against relaxNg
+    // Here I have to send mail to Scenario Author if content is not valide against relaxNg
     public boolean validateSSKFile(String sskContent, boolean deleteFile) {
         boolean result = false;
         File command = getFile("/lib/jing.jar");
+    
         if (command != null) {
             convertStringToFile(sskContent, sskContentFileName);
             File sskFile = getFile(sskContentFileName);
@@ -315,9 +302,11 @@ public class SSKServices {
             if (teiSSKRelaxNg != null && sskFile != null) {
                 result = Boolean.parseBoolean(executeCommand(false, "java -jar " + command.getPath(), "", teiSSKRelaxNg.getPath(), sskFile.getPath()));
             }
+        
+        
             if (deleteFile) deleteFiles(sskFile, teiSSKRelaxNg);
         }
-        
+    
         return result;
     }
     
@@ -387,14 +376,14 @@ public class SSKServices {
     public void convertStringToFile(String xmlStr, String path) {
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-            
+    
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document doc = builder.parse(new InputSource(new StringReader(xmlStr)));
             DOMSource source = new DOMSource(doc);
             FileWriter writer = new FileWriter(new File(classLoader.getResource("./").getPath() + path));
             logger.info("--Create file '" + path + "' -- : OK");
             StreamResult result = new StreamResult(writer);
-            
+    
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             transformer.transform(source, result);
@@ -492,11 +481,6 @@ public class SSKServices {
         result.add("resources", this.parser.parse(resourcesMap.toString()));
     }
     
-    /*
-    This function retrieves from Elasticsearch whole data about  a specific standard
-     */
-    
-    
     public JsonArray getWholeStandard(JsonArray standards) throws Exception {
         JsonArray result = new JsonArray();
         standards.forEach(standard -> {
@@ -508,7 +492,7 @@ public class SSKServices {
                     //ResponseEntity<String> response = this.restTemplate.getForEntity(dariahApiUrl + URLEncoder.encode(clef, "UTF-8") + "&wt=json", String.class);
                     JsonArray standardArray = this.elasticGetDataServices.getStandard(URLEncoder.encode(clef, "UTF-8")).getAsJsonArray();
                     if (standardArray.size() > 0) {
-                        JsonObject standardElt = standardArray.get(0).getAsJsonObject().getAsJsonObject("_source");
+                        JsonObject standardElt = standardArray.get(0).getAsJsonObject();
                         JsonObject elt = new JsonObject();
                         JsonArray descArray = new JsonArray();
                         standardElt.getAsJsonObject().entrySet().forEach(entry -> {
@@ -548,7 +532,6 @@ public class SSKServices {
                     }
                 } catch (Exception e) {
                     logger.error(e.getMessage());
-                    logger.error("Empty content for standard "+ clef + " This standard is not registered in our Database");
                 }
             }
         });
@@ -561,8 +544,6 @@ public class SSKServices {
         String urlAddOn;
         if (id.contains("zotero.org")) {
             urlAddOn = id.split("zotero.org/")[1];
-            String [] terms = urlAddOn.split("/");
-            id = terms[terms.length -1];
         } else {
             if (id.contains(":")) {
                 urlAddOn = platforms.get(id.split(":")[0]) + "/items/" + id.split(":")[1];
@@ -571,7 +552,6 @@ public class SSKServices {
             }
         }
         
-        result.addProperty("id", id);
         
         ResponseEntity<String> response = this.restTemplate.getForEntity(zoteroApihUrl + urlAddOn, String.class);
         JsonObject data = this.parser.parse(response.getBody()).getAsJsonObject().get("data").getAsJsonObject();
@@ -580,7 +560,7 @@ public class SSKServices {
         if (data.has("url") && removeDoubleQuote(data.get("url").toString()) != "")
             result.addProperty("url", removeDoubleQuote(data.get("url").toString()));
         if (data.has("date") && !removeDoubleQuote(data.get("date").toString()).isEmpty()){
-            result.addProperty("period", data.get("date").toString());
+            result.addProperty("date", data.get("date").toString());
         }
         if (data.has("abstractNote") && removeDoubleQuote(data.get("abstractNote").toString()) != "")
             result.addProperty("abstract", removeDoubleQuote(data.get("abstractNote").toString()));
@@ -601,75 +581,38 @@ public class SSKServices {
         return result;
     }
     
-    
-    public JsonObject getHalResource(String target) throws IOException {
+    private JsonObject scrapGithub(String target) throws IOException, XPathExpressionException, ParserConfigurationException, SAXException {
         org.jsoup.nodes.Document document = Jsoup.connect(target).get();
-        JsonObject result = new JsonObject();
-        result.addProperty("title", document.select("title").text());
-        result.addProperty("abstract", document.getElementsByAttributeValue("name", "description").attr("content"));
-        JsonArray elts = new JsonArray();
-        Arrays.asList(document.getElementsByAttributeValue("name", "keywords").attr("content").split(";")).forEach(elts::add);
-        result.add("keywords", elts);
-        elts = new JsonArray();
-        for (org.jsoup.nodes.Element elt : document.select("meta[name=citation_author]")) {
-            elts.add(elt.getElementsByAttributeValue("name", "citation_author").attr("content"));
-        }
-        result.add("creators", elts);
-        result.addProperty("period", document.getElementsByAttributeValue("name", "citation_publication_date").attr("content"));
-        result.addProperty("id", document.getElementsByAttributeValue("name", "DC.identifier").eq(1).attr("content"));
-        return result;
-    }
-    
-    private JsonObject scrapGithub(String target) throws IOException, XPathExpressionException, ParserConfigurationException {
-        org.jsoup.nodes.Document document = Jsoup.connect(target).get();
-        JsonObject result = new JsonObject();
+        
         Elements newsHeadlines = document.getElementsByTag("article");
-        newsHeadlines.select("img").remove();
         setXmlStringBuilder(new StringBuilder().append(newsHeadlines));
-        try {
-            setDoc(DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new ByteArrayInputStream((xmlStringBuilder.toString().replaceAll("<br>", "").replaceAll("<hr>", "")).getBytes("UTF-8"))));
-            setxPath(XPathFactory.newInstance().newXPath());
-            setNode((NodeList) xPath.compile("/article/p").evaluate(doc, XPathConstants.NODESET));
-           
-            if (node.getLength() > 0) {
-                result.addProperty("abstract", node.item(0).getTextContent());
-            }
-            newsHeadlines = document.select("h1.public");
-            setXmlStringBuilder(new StringBuilder().append(newsHeadlines));
-            setDoc(DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new ByteArrayInputStream(xmlStringBuilder.toString().getBytes("UTF-8"))));
-            setNode((NodeList) xPath.compile("//span[@class='author' and @itemprop='author']").evaluate(doc, XPathConstants.NODESET));
-            List<String> creators = new ArrayList<>();
-            if (node.getLength() > 0) {
-                creators.add(node.item(0).getTextContent());
-                result.addProperty("creators", creators.toString());
-            }
-            setNode((NodeList) xPath.compile("//strong[ @itemprop='name']").evaluate(doc, XPathConstants.NODESET));
-            if (node.getLength() > 0) {
-                result.addProperty("title", node.item(0).getTextContent());
-            }
-            org.jsoup.nodes.Element date = document.getElementsByClass("age").last().getElementsByTag("span").first();
-    
-            if (date.children().hasText() && date.data() != "") {
-                result.addProperty("period", date.data());
-            }
-            result.addProperty("abstract", document.getElementsByAttributeValue("name", "description").attr("content").split("\\.")[0]);
+        setDoc(DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new ByteArrayInputStream((xmlStringBuilder.toString().replaceAll("<br>", "").replaceAll("<hr>", "")).getBytes("UTF-8"))));
+        setxPath(XPathFactory.newInstance().newXPath());
+        setNode((NodeList) xPath.compile("/article/p").evaluate(doc, XPathConstants.NODESET));
+        JsonObject result = new JsonObject();
+        if (node.getLength() > 0) {
+            result.addProperty("abstract", node.item(0).getTextContent());
         }
-        catch (Exception e){
-            logger.error(e.getMessage());
-            String title [] = document.select("title").text().split("-");
-            if(title.length > 1){
-                result.addProperty("title", title[1].replace("/",":"));
-            }
-            else{
-                result.addProperty("title", title[0]);
-            }
-            result.addProperty("abstract", document.getElementsByAttributeValue("name", "description").attr("content").split("\\.")[0]);
+    
+        newsHeadlines = document.select("h1.public");
+        setXmlStringBuilder(new StringBuilder().append(newsHeadlines));
+        setDoc(DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new ByteArrayInputStream(xmlStringBuilder.toString().getBytes("UTF-8"))));
+        setNode((NodeList) xPath.compile("//span[@class='author' and @itemprop='author']").evaluate(doc, XPathConstants.NODESET));
+        List<String> creators = new ArrayList<>();
+        if (node.getLength() > 0) {
+            creators.add(node.item(0).getTextContent());
+            result.addProperty("creators", creators.toString());
+        }
+        setNode((NodeList) xPath.compile("//strong[ @itemprop='name']").evaluate(doc, XPathConstants.NODESET));
+        if (node.getLength() > 0) {
+            result.addProperty("title", node.item(0).getTextContent());
+        }
+        org.jsoup.nodes.Element date = document.getElementsByClass("age").last().getElementsByTag("span").first();
+    
+        if (date.children().hasText() && date.data() != "") {
+            result.addProperty("date", date.data());
         }
         return result;
-    }
-    
-    private void setDoc(StringBuilder content) throws SAXException{
-    
     }
     
     public File getFile(String path) {
@@ -694,7 +637,7 @@ public class SSKServices {
             while ((line = reader.readLine()) != null) {
                 output.append(line + "\n");
             }
-            
+           
             if (!content)
                 result = (output.toString().contains("SUCCESSFUL") || (output.toString().isEmpty())) ? "true" : "false";
             if (content) result = output.toString();
@@ -717,15 +660,7 @@ public class SSKServices {
                        .body(null);
     }
     
-    public ResponseEntity<String> notFound() {
-        JsonObject result = new JsonObject();
-        result.addProperty("result", "NOT FOUND");
-        return ResponseEntity
-                       .status(HttpStatus.NOT_FOUND)
-                       .body(result.toString());
-    }
-    
-    public  String removeDoubleQuote(String content) {
+    public static String removeDoubleQuote(String content) {
         return content.replaceAll("\"", "");
     }
     
@@ -755,7 +690,7 @@ public class SSKServices {
         if (step.has("type")) {
             type = this.removeDoubleQuote(step.get("type").toString());
         }
-        // String scenarioField = (subtype == "prerequisite") ? "prerequisites" : ;
+       // String scenarioField = (subtype == "prerequisite") ? "prerequisites" : ;
         switch (subtype) {
             case "prerequisite":
                 JsonArray prerequisites = new JsonArray();
@@ -769,14 +704,14 @@ public class SSKServices {
                     items.add(item);
                     scenarioAndSteps.get(0).getAsJsonObject().add("prerequisites", items);
                 }
-                break;
+            break;
             case "include":
                 String scenarioReference = this.removeDoubleQuote(step.get("ref").toString());
                 JsonObject param = (step.has("param")) ? step.getAsJsonObject("param") : null;
                 if (param != null) {
                     this.includeStepFromOneScenarioToAnother(scenarioAndSteps, scenarioReference, param.get("value").getAsString(), stepPosition);
                 }
-                break;
+            break;
             case "postStep":
                 JsonArray optionals = new JsonArray();
                 JsonObject elt = new JsonObject();
@@ -843,12 +778,12 @@ public class SSKServices {
                 switch (attribute[0]){
                     case "ref":
                         stepReference = this.removeDoubleQuote(attribute[1]);
-                        break;
+                    break;
                     case "xml:id":
                         stepId = this.removeDoubleQuote(attribute[1]);
-                        break;
+                    break;
                     default:
-                        break;
+                    break;
                 }
                 if ((stepId.contains("s"+ positionInSourceScenario) || stepId.contains("step"+ positionInSourceScenario)) && stepReference!="" ) {
                     exitFirstLoop = true;
@@ -860,72 +795,33 @@ public class SSKServices {
             if (exitFirstLoop) break;;
             
         }
-        return this.stepProcessing(stepReference, positionInTargetScenario, scenarioRef);
+        return this.stepProcessing(stepReference, positionInTargetScenario);
     }
     
     
     private void loadGlossaryTerms() throws Exception{
-        String termsContentTEI = githubApiService.getGithubFileContent("spec", glossary);
+        boolean result = true;
+        String termsContentTEI = githubApiService.getGithubFileContent("spec", glossagy);
         JsonObject termsContentJSON = teiToJson(termsContentTEI, true, null);
-        termsContentJSON.addProperty("type", "glossary");
-        HttpEntity entity = requestHeadersParams.addDetectNoop(termsContentJSON);
-        ResponseEntity<String> response = this.restTemplate.exchange( elasticSearchPort + "/" + sskIndex + "/_doc/"+this.elasticServices.toHex(glossary) , HttpMethod.PUT, entity, String.class);
+        HttpEntity entity = new HttpEntity<>(termsContentJSON.toString(), new RequestHeadersParams().getHeaders());
+        ResponseEntity<String> response = this.restTemplate.exchange( this.elasticServices.getElasticSearchPort() + "/ssk/glossary" , HttpMethod.POST, entity, String.class);
         JSONObject responseBody = new JSONObject(response.getBody());
-        if (responseBody.get("result").toString().equals("created")) {
-            logger.info("Successful loading  of glossary");
-        }
-        else if(responseBody.get("result").toString().equals("updated")){
-            logger.info("Successful updating of glossary");
+        result = result && Boolean.parseBoolean(responseBody.get("created").toString());
+        if (result) {
+            logger.info("Successful loading  glossary terms");
         }
         else{
             logger.error("Failure loading  glossary terms");
         }
-        
+    
     }
-    
-    
-    private void loadStandards(){
-        File standard = this.getFile("./standards.json");
-        JsonArray jsonStandards;
-        final String[] standardAbbrName = new String[1];
-        final String[] standardId = new String[1];
-        try {
-            final HttpEntity<String>[] entity = new HttpEntity[1];
-            jsonStandards  = this.getParser().parse(new FileReader(standard)).getAsJsonArray();
-            final JsonElement[] jsonResult = new JsonElement[1];
-            jsonStandards.forEach(standardItem -> {
-                standardAbbrName[0] = standardItem.getAsJsonObject().get("standard_abbr_name").toString().replaceAll("\"", "").replaceAll("\\\\n(\\s)+", " ");
-                logger.info(standardAbbrName[0]);
-                standardItem.getAsJsonObject().addProperty("standard_abbr_name", standardAbbrName[0]);
-                standardId[0] = this.elasticServices.toHex(standardAbbrName[0]);
-                standardItem.getAsJsonObject().addProperty("type", "standard");
-                entity[0] = requestHeadersParams.addDetectNoop(standardItem);
-                //ResponseEntity<String> response = this.restTemplate.exchange(elasticSearchPort+ "/" + sskIndex + "/standard", HttpMethod.POST, entity[0], String.class);
-                ResponseEntity<String> response = this.restTemplate.exchange(elasticSearchPort+ "/" + sskIndex + "/_doc/"+ standardId[0], HttpMethod.PUT, entity[0], String.class);
-                JSONObject responseBody = new JSONObject(response.getBody());
-                if (responseBody.get("result").toString().equals("created")) {
-                    logger.info("Successful pushed of " + standardItem.getAsJsonObject().get("standard_abbr_name").toString() + " Standard");
-                }
-                else if(responseBody.get("result").toString().equals("updated")){
-                    logger.info("Successful update of " + standardItem.getAsJsonObject().get("standard_abbr_name").toString() + " Standard");
-                }
-                else {
-                    logger.error("Standard" + standardItem.getAsJsonObject().get("standard_abbr_name").toString() + " have not been pushed to Elasticsearch");
-                }
-            });
-        } catch (Exception e) {
-            logger.error(e.getMessage());
-            logger.error("Error when load standards");
-        }
-    }
-    
     
     public JsonArray getTermsByType(JsonArray terms, String type){
-        JsonArray result = new JsonArray();
+         JsonArray result = new JsonArray();
         
         for(JsonElement termsBlock: terms){
             JsonObject block = termsBlock.getAsJsonObject();
-            String termId = block.get("id").getAsString();
+            String termId =block.get("id").getAsString();
             if(termId.toLowerCase().contains(type.toLowerCase())) {
                 if(type.equals("activities")){
                     result = block.getAsJsonArray("div");
@@ -938,45 +834,5 @@ public class SSKServices {
         }
         return result;
     }
-    
-    public JsonElement normalizeContent(JsonElement param){
-        JsonElement result = param;
-       
-        if(param.isJsonArray()){
-            int index = 0;
-            for (JsonElement eltParam : param.getAsJsonArray()) {
-                result = changeContentStructure(eltParam, result, (index++));
-            }
-        }
-        else {
-            result = changeContentStructure(param, result, null);
-        }
-        return result;
-    }
-    
-    private JsonElement  changeContentStructure(JsonElement eltParam, JsonElement result, Integer index){
-        String contentString = "";
-        if(eltParam.getAsJsonObject().get("url") == null && eltParam.getAsJsonObject().has("content") &&  eltParam.getAsJsonObject().get("content").isJsonArray()){
-            JsonArray  content = eltParam.getAsJsonObject().getAsJsonArray("content");
-            for (JsonElement elt : content) {
-                if (elt.getAsJsonObject().has("part")) {
-                    contentString += elt.getAsJsonObject().get("part").getAsString()+",";
-                }
-                else {
-                    contentString += elt.getAsJsonObject().toString() + ",";
-                }
-            }
-            
-            if(index == null) {
-                result.getAsJsonObject().add("content", this.elasticServices.getGson().toJsonTree(contentString.substring(0, contentString.length()-1)));
-            }
-            else {
-                result.getAsJsonArray().get((index++)).getAsJsonObject().add("content", this.elasticServices.getGson().toJsonTree(contentString.substring(0, contentString.length()-1)));
-            }
-        }
-        return result;
-    }
-    
-   
 }
 
