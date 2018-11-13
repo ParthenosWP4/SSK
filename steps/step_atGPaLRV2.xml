@@ -35,10 +35,10 @@
             </availability>
          </publicationStmt>
          <sourceDesc>
-            <p part="N">Created from scratch</p>
+            <p>Created from scratch</p>
          </sourceDesc>
       </fileDesc>
-      <revisionDesc status="draft"><!-- Use only for major changes -->
+      <revisionDesc><!-- Use only for major changes -->
          <change status="draft"/>
       </revisionDesc>
    </teiHeader>
