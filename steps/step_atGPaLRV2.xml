@@ -9,19 +9,19 @@
             <title>step_atGPaLRstep_V2.xml</title>
             <author>
                <persName>Maurizio Sanesi</persName>
-               <affiliation instant="false">SISMEL</affiliation>
+               <affiliation>SISMEL</affiliation>
             </author>
             <author>
                <persName>Karolien Verbrugge</persName>
-               <affiliation instant="false">NIOD</affiliation>
+               <affiliation>NIOD</affiliation>
             </author>
             <author>
                <persName> Claus Spiecker</persName>
-               <affiliation instant="false">FHP</affiliation>
+               <affiliation>FHP</affiliation>
             </author>
             <author>
                <persName>Roberta Giacomi</persName>
-               <affiliation instant="false">SISMEL</affiliation>
+               <affiliation>SISMEL</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
          </titleStmt>
@@ -45,7 +45,7 @@
    <text>
       <body>
          <listEvent>
-            <event type="researchStep" mode="add" instant="false"><!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
+            <event type="researchStep" mode="add"><!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
                <head type="stepTitle" xml:lang="en" mode="add">Adhere to guidance, policies and legal
                   requirements</head>
                <head type="stepTitle" xml:lang="fr" mode="add">Titre de l'étape en Français</head>
