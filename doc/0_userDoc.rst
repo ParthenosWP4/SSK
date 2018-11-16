@@ -251,18 +251,18 @@ concrete use cases in which a similar task was accomplished. The
 material contained in these sections is of various kinds:
 
 -  The most important is the **state-of-the-art bibliography**, which
-  includes all the documentation needed to carry out a given task.
-  The bibliographical references are up-to-date and gathered within
-  a `Zotero library <https://www.zotero.org/groups/427927/ssk-parthenos>`__,
-  which was specially created for this project. This choice was made
-  to ease the resource selection process and to allow for a
-  collaborative watch and curation of relevant information. When the
-  resource is available online, a direct link is provided;
-  otherwise, the user is given all the necessary metadata.
+   includes all the documentation needed to carry out a given task.
+   The bibliographical references are up-to-date and gathered within
+   a `Zotero library <https://www.zotero.org/groups/427927/ssk-parthenos>`__,
+   which was specially created for this project. This choice was made
+   to ease the resource selection process and to allow for a
+   collaborative watch and curation of relevant information. When the
+   resource is available online, a direct link is provided;
+   otherwise, the user is given all the necessary metadata.
 
 -  The SSK also offers the possibility to point to more **technical
-  resources**, such as stylesheets, code samples, software or
-  services.
+   resources**, such as stylesheets, code samples, software or
+   services.
 
 -  **Training materials** such as tutorials.
 
