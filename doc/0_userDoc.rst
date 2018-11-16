@@ -64,12 +64,11 @@ of the `Society of American Archivists <https://www2.archivists.org/>`_.
 Because there is no obligation to use a given standard, it is essential
 to provide potential users with:
 
-1. awareness about the appropriate standards and the interest to adopt
-      them,
+1. awareness about the appropriate standards and the interest to adopt them,
 
 2. the cognitive tools to help them identify the optimal use of
-      standards through selection and possibly customization of a
-      reference portfolio.
+   standards through selection and possibly customization of a
+   reference portfolio.
 
 The experience gained within the various communities and infrastructure
 represented in `PARTHENOS <http://parthenos-project.eu/>`__ that have
@@ -122,25 +121,25 @@ related to the deployment and use of standards in the Humanities and
 Cultural Heritage fields:
 
 -  **Documenting** existing standards to provide a reference for
-      scholars who want to find out more about their role and content.
-      This relates to the specific provision of bibliographic sources,
-      available documentation, specific targeted introductions, as well
-      as providing prototypical examples which can serve as models for
-      similar work, possibly made available through focused Virtual
-      Research Environments within the PARTHENOS infrastructure;
+   scholars who want to find out more about their role and content.
+   This relates to the specific provision of bibliographic sources,
+   available documentation, specific targeted introductions, as well
+   as providing prototypical examples which can serve as models for
+   similar work, possibly made available through focused Virtual
+   Research Environments within the PARTHENOS infrastructure;
 
 -  **Supporting** the actual adoption of standards by identifying how
-      they relate to research scenarios and gathering the essential
-      materials for controlling their deployment (e.g. schemas);
+   they relate to research scenarios and gathering the essential
+   materials for controlling their deployment (e.g. schemas);
 
 -  **Communicating** with research communities so that they can be made
-      aware of both the need to apply standards in their digital
-      scholarly practices but also be informed of the essential
-      standards for their own fields.
+   aware of both the need to apply standards in their digital
+   scholarly practices but also be informed of the essential
+   standards for their own fields.
 
 -  **Training** for researchers, by giving them access to complete
-      frameworks so that they may acquire knowledge and know-how on
-      standardized methodologies.
+   frameworks so that they may acquire knowledge and know-how on
+   standardized methodologies.
 
 In order to apply these four principles, the SSK focuses on giving
 researchers access to standards in a meaningful way. That is why it is
@@ -186,17 +185,17 @@ With these principles in mind, the SSK should enable the user, to
 perform two main actions:
 
 1. **Consult and follow the guidelines expressed in the scenarios** you
-      are interested in for your project. Finding the most relevant ones
-      should be easy since the navigation relies on strong taxonomies
-      covering the different aspects of research: the disciplines, the
-      type of techniques and objects involved, the concrete activities
-      carried out, the standards needed.
+   are interested in for your project. Finding the most relevant ones
+   should be easy since the navigation relies on strong taxonomies
+   covering the different aspects of research: the disciplines, the
+   type of techniques and objects involved, the concrete activities
+   carried out, the standards needed.
 
 2. **Propose new scenarios** of your own by following a predefined
-      model, with the possibility of both adding new content (steps as
-      well as resources) and reusing existing content (to avoid
-      duplication if a general step is already available in another
-      scenario).
+   model, with the possibility of both adding new content (steps as
+   well as resources) and reusing existing content (to avoid
+   duplication if a general step is already available in another
+   scenario).
 
 The first feature is fully operational. It was tested for the first time
 in April 2018, and iterations with test users have contributed to
