@@ -45,7 +45,6 @@
                             key="Analysis" />
 							<term type="standard" source="standard_list" key="XML"/>
                         <term type="standard" source="standard_list" key="RDFS"/>
-                        <term type="policies" source="WP3Wizard" key="CD"/>
                     </desc>
                     <linkGrp type="generalResources">
 						<ref type="code" source="D4SCIENCE"
