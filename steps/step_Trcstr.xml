@@ -44,7 +44,6 @@
                                    
                         <term type="activity" source="http://tadirah.dariah.eu/"
                             key="Creation" />
-                        <term type="policies" source="WP3Wizard" key="CD"/>
                     </desc>
                     <linkGrp type="generalResources">
 						<ref type="code" source="D4SCIENCE"
