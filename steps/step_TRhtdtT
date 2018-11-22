@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!-- You have to type the TEI file, with researchStep or researchScenario -->
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="st_0000000001">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>step_TRhtdtT.xml</title>
+                <author>
+                    <persName>Maurizio Sanesi</persName>
+                    <affiliation>SISMEL</affiliation>
+				  </author>
+	              <author>
+                    <persName>Roberta Giacomi</persName>
+                    <affiliation>SISMEL</affiliation>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <authority>Parthenos</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/">
+                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.</p>
+                    </licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Created from scratch</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <!-- Use only for major changes -->
+            <change/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listEvent>
+                <event type="researchStep">
+                    <!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
+                    <head type="stepTitle" xml:lang="en">The researcher has to download the tool usage manual to become familiar with the parameters required for its operation, and with the operation of the tool itself.</head>
+                    <desc xml:lang="en" type="terms">
+                                   
+                        <term type="activity" source="http://tadirah.dariah.eu/"
+                            key="Analysis" />
+					<term type="standard" source="standard_list" key="XML"/>
+                   <term type="standard" source="standard_list" key="RDFS"/>
+                    </desc>
+                    <linkGrp type="generalResources">
+						<ref type="code" source="D4SCIENCE"
+                            target="https://www.d4science.org/">                            
+                        </ref>		
+                    </linkGrp>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>
