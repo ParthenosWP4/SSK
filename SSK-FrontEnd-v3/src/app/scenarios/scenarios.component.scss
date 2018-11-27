@@ -2,10 +2,12 @@
 @import '../../partials/variables';
 
 
-input.search{
+input{
   font-size: 1rem;
   font-family: $roboto-regular;
   color: $color-48;
+  width: inherit;
+  border: red;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -165,6 +167,7 @@ ul li a:hover{
   border-right: none;
   border-left: none;
   border-radius: 0.5rem;
+  line-height: 0rem !important
  // box-shadow: 5px 5px 25px 0 rgba(46,61,73,0.50);
 }
 
@@ -173,29 +176,27 @@ div.input-group{
   box-shadow: 1px 5px 25px 2px rgba(46, 61, 73, 0.5);
   background-color: $color-3;
   padding: 0.5rem  0.7rem ;
-  ::placeholder{
-    color: $color-48;
-    font-family: $roboto-light;
-    font-size: 1rem;
-    font-weight: lighter
-  }
+  
   
 }
-
+::placeholder, ::-moz-placeholder{
+  color: $color-48;
+  font-family: $roboto-light;
+  font-size: 1.4rem;
+  font-weight: lighter
+}
 
 
 input.form-control{
- // min-width: 30px !important;
   border: 1px solid $color-3;
   padding: 0px !important;
   font-family: $roboto-light;
-    font-size: 1rem;
+  font-size: 1.4rem;
+  width: 100%;
+    
 }
 
-input.form-control:focus{
-  //border: 1px solid rgba(0, 0, 0, 0.15);
-  //outline: none;
-}
+
 .input-group-addon{
   background-color: $color-3;
   border-top-right-radius: 0.5rem;
@@ -221,19 +222,23 @@ input.form-control:focus{
 
 }
 
-.searchBtn{
+.searchImg{
   margin-left: auto;
-  cursor: pointer;
-  background: transparent !important;
 }
 button:focus {
- outline: $color-3;
+// outline: $color-3;
 }
 button:disabled,
 button[disabled]{
   color: #666666;
   cursor: not-allowed;
 }
+
+
+
+
+
+
 
 
 

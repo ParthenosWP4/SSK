@@ -27,7 +27,7 @@ export class ResourceCardComponent implements OnInit {
     } else {
       this.res.redirect = this.res.url;
       this.res.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.res.url);
-      if (!isUndefined(this.res.creators) ) {
+      if (this.res.creators !== undefined) {
         this.res.creators = this.res.creators.toString();
         const creators  = this.res.creators;
         creators.replace('[', '').replace(']', '').replace('"', '');
@@ -51,6 +51,9 @@ export class ResourceCardComponent implements OnInit {
           () => {
                 console.log('Iframe matchineg')
           });*/
+      }
+      if (this.res.abstract !== undefined) {
+        this.res.abstract = this.res.abstract.replace(/\\n/g, '<br />');
       }
     }
 

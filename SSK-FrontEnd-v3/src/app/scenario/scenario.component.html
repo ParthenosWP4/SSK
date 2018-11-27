@@ -26,22 +26,23 @@
           {{item}}
           <img  [src]= "forImage + '/assets/images/interrogationDot.png'" class="pb-1" alt="Responsive image">
         </span>
-          <button type="button" class="btn btn-secondary disabled m-1" *ngFor=" let elt of scenarioTags[changeTag(item)]?.slice(0,2)" tooltip ="{{'Type: '  +elt?.type +  ' | Source : '+ elt?.source  }}">{{tagShow(elt)?.key}} </button>
+        <span class="tag my-1  mr-2 py-1" [ngClass] ="elt?.type"  *ngFor=" let elt of scenarioTags[changeTag(item)]; let k = index"  tooltip="{{elt?.type +  '-'+ elt?.source  }}" containerClass="tagClass" >{{tagShow(elt)?.key}}</span>
+         <!-- <button type="button" class="btn btn-secondary disabled m-1" *ngFor=" let elt of scenarioTags[changeTag(item)]?.slice(0,2)" tooltip ="{{'Type: '  +elt?.type +  ' | Source : '+ elt?.source  }}">{{tagShow(elt)?.key}} </button>
           <span  *ngIf = "scenarioTags[changeTag(item)]?.length > 2" class="collapsed text-center" data-toggle="collapse"  [attr.data-target]="'#tag' +m"  aria-expanded="false"> More ...</span>
         </p>
         <p *ngIf = "(scenarioTags[changeTag(item)] !== undefined) && scenarioTags[changeTag(item)]?.length > 2"  [attr.id]="'tag' + m" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <span class="tag my-1  mr-2 py-1" [ngClass] ="elt?.type"  *ngFor=" let elt of scenarioTags[changeTag(item)]?.slice(2,scenarioTags[changeTag(item)]?.length); let k = index"  tooltip="{{elt?.type +  '-'+ elt?.source  }}" containerClass="tagClass" >{{elt?.key}} {{elt?.abbr}}</span>
           <button *ngFor=" let elt of scenarioTags[changeTag(item)]?.slice(2,scenarioTags[changeTag(item)]?.length)"  tooltip ="{{'Type: '  +elt?.type +  ' | Source : '+ elt?.source  }}"  type="button"  class="btn btn-secondary  m-1" >{{elt?.key}}  {{elt?.abbr}}</button>
-        </p>
+        </p>-->
       </ng-container>
     </div>
   </div>
-
   <div class="row ">
     <div class="col-10 mx-auto">
       <div id="ontimeline">
         <ul class="timeline timeline-horizontal">
           <li class="timeline-item"  *ngFor="let step of scenarioElt?.steps; let i = index">
-            <div class="timeline-badge " [ngClass]="(i==idSelectedStep)? 'selected':''" (click)="updateContent(step, i, $event)">
+            <div class="timeline-badge " [ngClass]="(step?.position==idSelectedStep)? 'selected':''" (click)="updateContent(step, step.position)">
               <i class="glyphicon glyphicon-check" >{{i+1}}
              </i>
             </div>
@@ -74,12 +75,14 @@
                 {{item}}
                 <img  [src]= "forImage + '/assets/images/interrogationDot.png'" class="pb-1" alt="Responsive image">
               </span>
-              <button type="button" class="btn btn-secondary disabled m-1" *ngFor=" let elt of stepTags[changeTag(item)]?.slice(0,2)" tooltip ="{{'Type: '  +elt?.type +  ' | Source : '+ elt?.source  }}">{{tagShow(elt)?.key}} </button>
+              <span class="tag my-1  mr-2 py-1" [ngClass] ="elt?.type"  *ngFor=" let elt of stepTags[changeTag(item)]"  tooltip="{{elt?.type +  '-'+ elt?.source  }}" containerClass="tagClass" >{{tagShow(elt)?.key}}</span>
+             <!-- <button type="button" class="btn btn-secondary disabled m-1" *ngFor=" let elt of stepTags[changeTag(item)]?.slice(0,2)" tooltip ="{{'Type: '  +elt?.type +  ' | Source : '+ elt?.source  }}">{{tagShow(elt)?.key}} </button>
               <span  *ngIf = "stepTags[changeTag(item)]?.length > 2" class="collapsed text-center" data-toggle="collapse"  [attr.data-target]="'#tag' +m"  aria-expanded="false"> More ...</span>
             </p>
             <p *ngIf = "(stepTags[changeTag(item)] !== undefined) && stepTags[changeTag(item)]?.length > 2"  [attr.id]="'tag' + m" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <span class="tag my-1  mr-2 py-1" [ngClass] ="elt?.type"  *ngFor=" let elt of stepTags[changeTag(item)]?.slice(2, stepTags[changeTag(item)]?.length); let k = index"  tooltip="{{elt?.type +  '-'+ elt?.source  }}" containerClass="tagClass" >{{elt?.key}}</span>
               <button *ngFor=" let elt of stepTags[changeTag(item)]?.slice(2, stepTags[changeTag(item)]?.length)"  tooltip ="{{'Type: '  +elt?.type +  ' | Source : '+ elt?.source  }}"  type="button"  class="btn btn-secondary  m-1" >{{elt?.key}}  {{elt?.abbr}}</button>
-            </p>
+            </p>-->
           </ng-container>
         </div>
   </div>
@@ -93,7 +96,7 @@
       </div>
 
 <div class="w-100"></div>
-    <div class=" my-lg-5 " *ngIf="!selectedStep?.generals &&  !selectedStep?.projects && !spinner" [ngClass]="(selectedStep?.metadata?.standard?.length > 0  )? 'col-lg-7 col-sm-12':'col-lg-12'" >
+    <div class=" my-lg-5 " *ngIf="!selectedStep?.generals &&  !selectedStep?.projects && !spinner" [ngClass]="(!selectedStep?.generals &&  !selectedStep?.projects)? 'col-lg-7 col-sm-12':'col-lg-12'" >
           <span  class="nohead  ">
            There are no available resources  for this step.
         </span>
@@ -123,7 +126,8 @@
     <div *ngIf="selectedStep?.metadata?.standards && (selectedStep?.metadata?.standards.length > 0)" class=" ml-5 my-lg-5 desc"  [ngClass]="(!selectedStep?.generals ||  !selectedStep?.projects) ? 'col-lg-4 col-sm-12':'col-lg-12'">
       <div > <p><span>standards  <img  [src]= "forImage + '/assets/images/interrogationDot.png'" class="pb-1" alt="Responsive image"></span></p>
         <div *ngFor=" let elt of selectedStep?.metadata?.standards" class="my-2">
-          <button type="button" class="btn btn-secondary disabled m-1" >{{elt?.abbr}} {{elt?.key}}</button>
+          <!--<button type="button" class="btn btn-secondary disabled m-1" >{{elt?.abbr}} {{elt?.key}}</button>-->
+          <span class="tag my-1  mr-2 py-1 standard"   tooltip="{{elt?.type}}" containerClass="tagClass" >{{elt?.abbr}} {{elt?.key}}</span>
           <span *ngIf="elt?.complete != null"  (click)="cleanAndOpen(elt?.link)"  class="complete" [innerHtml]="clean(elt?.complete)"></span>
           <p *ngIf="elt?.desc != null" class="desc" [innerHtml]="clean(elt?.desc[0]?.eng)"></p>
         </div>

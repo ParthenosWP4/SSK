@@ -35,7 +35,6 @@ export class SearchTabComponent implements OnInit {
   private scenarioResults = [];
   private stepsResults = [];
   private resourcesResults = [];
-  spinner = false;
   constructor(private elasticSearchServ: ElastichsearchService,
               private ssKServices: SskService,
               private scenariosComponent: ScenariosComponent) { }
@@ -45,34 +44,6 @@ export class SearchTabComponent implements OnInit {
 
   ngOnInit() {
     this.filters = this.ssKServices.getFilters();
-    _.map(this.data['disciplines'], item => {
-      item = this.getMetaDataNumber(item, 'scenario', false);
-      item.type = 'disciplines';
-      item.filter = item.term;
-    });
-    _.map(this.data['objects'], item => {
-      item = this.getMetaDataNumber(item, 'scenario', false);
-      item.type = 'objects';
-      item.filter = item.term;
-    });
-    _.map(this.data['techniques'], item => {
-      item = this.getMetaDataNumber(item, 'scenario', false);
-      item.type = 'techniques';
-      item.filter = item.term;
-    });
-    _.map(this.data['standards'], item => {
-      item = this.getMetaDataNumber(item, 'step', true);
-      item.type = 'standards';
-      item.filter = item.standard_abbr_name;
-    });
-    _.forEach(this.data['activities'], (elt, key) => {
-      _.map(elt[this.objectKeys(elt)[0]], item => {
-        item = this.getMetaDataNumber(item, 'step', false);
-        item.type = 'activities';
-        item.index = key;
-        item.filter = item.term;
-      });
-    });
   }
 
   change(e, content: any) {
@@ -81,10 +52,10 @@ export class SearchTabComponent implements OnInit {
     let temp, filterTerm: any;
     if (content.group === undefined ) {
       if (content.standard_abbr_name !== undefined) {
-        tag = content.standard_abbr_name;
+        tag = content.filter;
         type = 'step';
       } else {
-        tag = content.term;
+        tag = content.filter;
         type = 'scenario';
       }
     } else {
@@ -92,15 +63,15 @@ export class SearchTabComponent implements OnInit {
       type = 'step';
     }
     if (content.type === 'activities') {
-      filterTerm = _.filter((this.data[content.type][content.index])[content.group], {'filter': tag})[0];
+      filterTerm = _.filter((this.data[content.type][content.index])[content.group], {'filter': content.filter})[0];
     } else {
-      filterTerm = _.filter(this.data[content.type], {'filter': tag})[0];
+      filterTerm = _.filter(this.data[content.type], {'filter': content.filter})[0];
     }
     if (tag !== undefined && type !== undefined) {
-    if (_.findIndex(this.ssKServices.getFilters(), function(o) { return o.tag === tag; } ) === -1 ) {
+    if (_.findIndex(this.ssKServices.getFilters(), function(o) { return o.filter === content.filter; } ) === -1 ) {
       this.elasticSearchServ.updateSearchResult(filterTerm).subscribe(
       result => {
-        this.ssKServices.addToFilters({'tag': tag, 'type': type, 'results': this.elasticSearchServ.searchResult['data']} );
+        this.ssKServices.addToFilters(filterTerm);
       },
       error => {},
       () => {
@@ -134,7 +105,7 @@ export class SearchTabComponent implements OnInit {
       });
     } else {
       const removedTag = _.remove(this.ssKServices.getFilters(), function (v) {
-        return v.tag === tag;
+        return v.filter === content.filter;
       });
       this.elasticSearchServ.updateSearchResult(filterTerm).subscribe(
         result => {
@@ -150,7 +121,7 @@ export class SearchTabComponent implements OnInit {
             this.elasticSearchServ.setResourceResults([]);
             this.scenariosComponent.setResources(this.elasticSearchServ.getResources());
           } else {
-            this.ssKServices.updateStepsOrScenarios(removedTag).subscribe((value) => {
+            this.ssKServices.updateStepsOrScenarios(type, removedTag).subscribe((value) => {
               temp = value;
               }, (error) => {
               console.log(error);
@@ -206,6 +177,10 @@ export class SearchTabComponent implements OnInit {
 
   getBlock(elt: any) {
     return elt.list.item;
+  }
+
+  getSpinner() {
+    return this.elasticSearchServ.spinner;
   }
 
 }

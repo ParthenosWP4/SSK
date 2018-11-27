@@ -77,9 +77,10 @@ public class InitData {
 		new Thread(() -> {
 			try {
 				this.createIndex();
-				this.setElasticForResearch();
 				//this.sskServices.initializeData();
+				//this.setElasticForResearch();
 			} catch (Exception e) {
+				e.printStackTrace();
 				logger.error(e.getMessage());
 				if(e.getMessage().contains("I/O error on HEAD request for \"" + elasticSearchPort+"/"+sskIndex+"\"")){
 					logger.error("Elasticsearch is not running, Please contact server administrator!!!");
@@ -119,6 +120,8 @@ public class InitData {
 		response = this.restTemplate.exchange(elasticSearchPort + "/" + sskIndex , HttpMethod.PUT,entity,  String.class);
 		if(response.getStatusCode().is2xxSuccessful()) {
 			logger.info("Successful set Elasticsearch for research !!!");
+		}else{
+			logger.info("Erro");
 		}
 	}
 }

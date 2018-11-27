@@ -65,8 +65,9 @@ export class ScenarioCardComponent implements OnInit,  AfterViewInit {
     } else {
       this.desc = this.scenario.desc;
     }
+    this.desc = this.sskServices.updateText( this.desc, null);
    // this.shortDesc = this.sskServices.shorten(this.desc, 250);
-   this.desc = this.sskServices.updateText( this.desc, null);
+ 
 
     if (this.scenario.scenario_metadata.objects instanceof Array ) {
       this.metadata  =  this.metadata.concat(this.scenario.scenario_metadata.objects);

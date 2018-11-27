@@ -18,7 +18,7 @@
       <ul>
         <li  *ngFor = "let elt of data; let k = index">
           <span *ngIf="elt?.standard_abbr_name" class="btn" data-toggle="collapse" [attr.data-target]="'#' + trim(elt?.standard_abbr_name)" aria-expanded="false" [attr.aria-controls]="elt?.standard_abbr_name">
-           
+              <i class="fa fa-open fa-1x" aria-hidden="true"></i>
             {{elt?.standard_abbr_name}}
           </span>
           <span *ngIf="elt?.head" class="btn head" data-toggle="collapse" [attr.data-target]="'#' + trim(elt?.head)" aria-expanded="false" [attr.aria-controls]="elt?.head">

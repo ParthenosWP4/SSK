@@ -8,6 +8,7 @@ import {Title} from '@angular/platform-browser';
 import {HttpClient, HttpResponse} from '@angular/common/http';
 import {Router} from '@angular/router';
 import { ScenarioComponent } from './scenario/scenario.component';
+import { CompileMetadataResolver } from '@angular/compiler';
 
 @Injectable()
 export class SskService {
@@ -75,7 +76,7 @@ export class SskService {
   }
 
   isUrl(s) {
-    const regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/
+    const regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
     return regexp.test(s);
   }
 
@@ -149,7 +150,7 @@ export class SskService {
 
  updateText(desc: any, type: string) {
   let text = '';
-  if ( desc['content'] && (desc.content) instanceof Array) {
+  if ( desc['content'] !== undefined && desc['content'] instanceof Array) {
       _.forEach(Array.from(desc.content), (part) => {
           if (part['ref']) {
             text += this.setLink(part['ref']) + ' ';
@@ -162,15 +163,14 @@ export class SskService {
       });
   } else  if (desc.content !== undefined) {
             return desc['content'];
-          }
-          else {
-            return desc;
+          } else {
+            return null;
           }
   return text;
 }
 
 setLink(content: object) {
-  return '<a href=\"' + content['target'] + '\" target = \"_blank\" >' + ((content['content'])[0])['part']+ '</a>';
+  return '<a href=\"' + content['target'] + '\" target = \"_blank\" >' + ((content['content'])[0])['part'] + '</a>';
 }
 
 setList(part: object) {
@@ -212,57 +212,41 @@ addCount(array1, array2: Array<any>, type: string):  Promise<any[]> {
 });
 }
 
-updateStepsOrScenarios(removeTag?: any): Observable<any[]> {
+updateStepsOrScenarios(type: string, removeTag?: any ): Observable<any[]> {
   removeTag = removeTag[0];
   let retreivedElt: any;
-  if (removeTag.type === 'step') {
-    retreivedElt = _.remove(this.elasticService.getStepResults(), item => {
-      return _.includes(_.map(removeTag.results, '_id'), item['_id']);
-    });
-    _.remove(this.elasticService.getScenarioResults(), item => {
-      return _.includes(_.map(retreivedElt, 'parent'), item['id']);
-    });
-  } else {
-    retreivedElt = _.remove(this.elasticService.getScenarioResults(), item => {
-      return _.includes(_.map(removeTag.results, '_id'), item['id']);
-    });
-    _.remove(this.elasticService.getStepResults(), item => {
-      return _.includes(_.map(retreivedElt, 'id'), item['parent']);
-    });
-  }
-_.forEach(this.getFilters(), filter => {
-    if (filter['type'] === 'step' ) {
-        retreivedElt = _.remove(_.clone(this.elasticService.getSteps()), item => {
-                          return _.includes(_.map(filter['results'], '_id'), item['_id']);
-                        });
-        this.elasticService.setStepResults(_.uniqBy(_.filter(_.concat(this.elasticService.getStepResults(),
-        retreivedElt), undefined), '_id'));
+    this.elasticService.setStepResults([]);
+    this.elasticService.setScenarioResults([]);
+    _.forEach(this.getFilters(), filter => {
+      if ( _.includes(['activities', 'standards' ], filter.type) ) {
+          retreivedElt = _.remove(_.clone(this.elasticService.getSteps()), item => {
+                            return _.includes(_.map(filter['data'], '_id'), item['_id']);
+                          });
+          this.elasticService.setStepResults(_.uniqBy(_.filter(_.concat(this.elasticService.getStepResults(),
+          retreivedElt), undefined), '_id'));
+          retreivedElt = _.remove(_.clone(this.elasticService.getScenarios()), item => {
+            return _.includes(_.uniq(_.flatMapDeep(_.map(this.elasticService.getStepResults(), 'parents'))), item['id']);
+          });
+          this.elasticService.setScenarioResults(_.uniqBy(_.filter(_.concat(this.elasticService.getScenarioResults(),
+          retreivedElt), undefined), 'id'));
+      } else {
         retreivedElt = _.remove(_.clone(this.elasticService.getScenarios()), item => {
-          return _.includes(_.map(this.elasticService.getStepResults(), 'parent'), item['id']);
+          return _.includes(_.map(filter['data'], '_id'), item['id']);
         });
-        this.elasticService.setScenarioResults(_.uniqBy(_.filter(_.concat(this.elasticService.getScenarios(),
-        retreivedElt), undefined), 'id'));
-    } else {
-      retreivedElt = _.remove(_.clone(this.elasticService.getScenarios()), item => {
-        return _.includes(_.map(filter['results'], '_id'), item['id']);
-      });
-      this.elasticService.setScenarioResults(_.uniqBy(_.filter(_.concat(this.elasticService.getScenarioResults(),
-        retreivedElt), undefined), 'id'));
-        retreivedElt = _.remove(_.clone(this.elasticService.getSteps()), item => {
-          return _.includes(_.map(this.elasticService.getScenarioResults(), 'id'), item['parent']);
-        });
-        this.elasticService.setStepResults(_.uniqBy(_.filter(_.concat(this.elasticService.getStepResults(),
-        retreivedElt), undefined), '_id'));
-
-    }
-});
-/*
-  const stepResultOnFilter = _.filter(this.getFilters(), ['type' , 'step']);
-  const scenarioResultOnFilter = _.filter(this.getFilters(), ['type' , 'scenario']);
-
-  const tempSteps = _.remove(_.clone(this.elasticService.getSteps()), item => {
-    return _.includes(_.map(_.flattenDeep(_.map(_.filter(this.getFilters(), ['type' , 'step']), 'results')), '_id'), item['id']);
-  });*/
+        this.elasticService.setScenarioResults(_.uniqBy(_.filter(_.concat(this.elasticService.getScenarioResults(),
+          retreivedElt), undefined), 'id'));
+          retreivedElt = [];
+          _.forEach(this.elasticService.getScenarioResults(), (value) => {
+            const elt = _.remove(_.clone(this.elasticService.getSteps()), item => {
+              return _.includes(item['parents'], value.id);
+            });
+            retreivedElt.push(elt);
+          });
+          retreivedElt = _.flatMapDeep(retreivedElt);
+          this.elasticService.setStepResults(_.uniqBy(_.filter(_.concat(this.elasticService.getStepResults(),
+          retreivedElt), undefined), '_id'));
+      }
+  });
     return Observable.of(this.elasticService.getStepResults());
 }
 
@@ -271,7 +255,6 @@ updateScenarios(): Observable<any[]> {
     scenarioResults = _.remove(_.clone(this.elasticService.getScenarios()), item => {
       return _.includes(_.map(_.flattenDeep(_.map(_.filter(this.getFilters(), ['type' , 'scenario']), 'results')), '_id'), item['id']);
     });
-    console.log(scenarioResults);
     return Observable.of(scenarioResults);
 }
 
@@ -281,11 +264,15 @@ updateScenarios(): Observable<any[]> {
   containing these steps and the resources included in these steps
   */
  updateScenariosAndResouces(temp: any) {
-  const  scenariosToFilter = _.remove(_.clone(this.elasticService.getScenarios()), item => {
-    return _.includes(_.map(temp, 'parent'), item['id']);
+
+  const  scenariosToFilter = [];
+  _.forEach(temp, (value) => {
+    const elt = _.remove(_.clone(this.elasticService.getScenarios()), item => {
+      return _.includes(value.parents, item['id']);
+    });
+    scenariosToFilter.push(elt[0]);
   });
-  const scenariosTemp = _.uniq(_.filter(_.concat(_.clone(this.elasticService.getScenarioResults()), scenariosToFilter)));
-  this.elasticService.setScenarioResults(scenariosTemp);
+  this.elasticService.setScenarioResults(scenariosToFilter);
    let  resourcesToFilter = _.remove(_.clone(this.elasticService.getResources()), item => {
     return _.includes(_.map(temp, '_id'), item['parent']);
   });
@@ -295,19 +282,20 @@ updateScenarios(): Observable<any[]> {
 
 
 updateStepsAndResouces(temp: any, removeFromFilter: boolean) {
-  let removedSteps = _.remove(_.clone(this.elasticService.getSteps()), item => {
-    return _.includes(_.map(temp, 'id'), item['parent']);
+  let  steps = [];
+  _.forEach(temp, (value) => {
+    const elt = _.remove(_.clone(this.elasticService.getSteps()), item => {
+      return _.includes(item['parents'], value.id);
+    });
+    steps.push(elt);
   });
-  removedSteps = _.uniq(_.filter(_.concat(_.clone(this.elasticService.getStepResults()), removedSteps), undefined));
-  this.elasticService.setStepResults(removedSteps);
+  steps = _.flatten(steps);
   let removedResources = _.remove(_.clone(this.elasticService.getResources()), item => {
-    return _.includes(_.map(removedSteps, '_id'), item['parent']);
+    return _.includes(_.map(steps, '_id'), item['parent']);
   });
   removedResources = _.uniq(_.filter(_.concat(_.clone(this.elasticService.getResourceResults()), removedResources)));
+  this.elasticService.setStepResults(steps);
   this.elasticService.setResourceResults(removedResources);
 }
-
-
-
 
 }

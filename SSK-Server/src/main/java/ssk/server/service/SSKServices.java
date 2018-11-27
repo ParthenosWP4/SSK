@@ -73,10 +73,8 @@ public class SSKServices {
     private static final String resourcesPath = "/TEI/text/body/listEvent/event/linkGrp";
     private static final String resourceStandardPath = "/TEI/text/body/listEvent/event/linkGrp/ref/term[contains(@type, \"standard\")]";
     private static List<String> metaDataTab = Arrays.asList("techniques", "standard", "discipline", "objects", "activity", "object", "technique");
-    
     private static String zoteroApihUrl = "https://api.zotero.org/";
-    private static List<String> dateFormats = Arrays.asList("yyyy-MM-dd", "dd MMMMM yyyy", "yyyy-MM",  "yyyy");
-    
+    private JsonObject parentSteps;
     
     private JsonParser parser;
     private static Gson gson;
@@ -84,15 +82,10 @@ public class SSKServices {
     private static Document doc;
     private static XPath xPath;
     private static NodeList node;
-    private ArrayList<String> scenariosToUpdate;
-    
     private static final Logger logger = LoggerFactory.getLogger(SSKServices.class);
-    
     private Map<String, JsonElement> standardsTab = new HashMap<>();
+
     
-    public static StringBuilder getXmlStringBuilder() {
-        return xmlStringBuilder;
-    }
     
     public static void setXmlStringBuilder(StringBuilder xmlStringBuilder) {
         SSKServices.xmlStringBuilder = xmlStringBuilder;
@@ -149,6 +142,7 @@ public class SSKServices {
         parser = new JsonParser();
         gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
         platforms.put("wp4", "groups/427927");
+        parentSteps = new JsonObject();
         
     }
     
@@ -197,7 +191,8 @@ public class SSKServices {
                 JsonObject scenario = scenarioElt.getAsJsonObject();
                 String scenarioName = scenario.get("name").getAsString();
                 logger.info("SCENARIO " + scenarioName);
-                
+    
+                //if (!scenarioName.equals("SSK_sc_ProsopographyV2.xml")) return;
                 if (scenarioName.equals("1_ScenarioTest.xml")) return;
                 if ( scenarioName.equals("0_test.xml")) return;
                 if (scenarioName.equals("1_SSK_sc_loremIpsum.xml")) return;
@@ -251,6 +246,7 @@ public class SSKServices {
     }
     
     private JsonObject stepProcessing(String stepReference, int position, String parent) throws SAXException, ParserConfigurationException, XPathExpressionException, IOException {
+         JsonArray parents = new JsonArray();
         String stepContent = githubApiService.getGithubFileContent(stepType, stepReference + ".xml");
         if (!validateSSKFile(stepContent, false)) {
             return null;
@@ -261,7 +257,14 @@ public class SSKServices {
             stepJson.addProperty("position", position);
             stepJson.addProperty("GithubRef", stepReference);
             stepJson.addProperty("type", "step");
-            stepJson.addProperty("parent", parent.split("\\.")[0]);
+            if(parentSteps.get(stepReference) != null){
+                parents = parentSteps.get(stepReference).getAsJsonArray();
+                parents.add(parent.split("\\.")[0]);
+            } else {
+                parents.add(parent.split("\\.")[0]);
+                parentSteps.add(stepReference, parents );
+            }
+            stepJson.add("parents", parents);
             stepJson.addProperty("lastUpdate", this.githubApiService.getLastCommitDate("steps",stepReference + ".xml" ));
             return stepJson;
         }

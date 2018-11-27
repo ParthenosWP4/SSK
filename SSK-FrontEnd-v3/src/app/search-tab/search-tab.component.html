@@ -3,10 +3,10 @@
     filter by
   </span>
   <div>
-      <div class=" col-8 mx-auto text-center" *ngIf="spinner">
+      <div class=" col-8 mx-auto text-center" *ngIf="getSpinner()">
           <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
       </div>
-      <div *ngIf="!spinner">
+      <div *ngIf="!getSpinner()">
     <div class=" mt-lg-3 elt-tab" *ngFor="let item of tags"  >
       <span class="mx-lg-3 group mb-lg-2"    [attr.data-target]="'#' + item"   [ngClass]="item?.name.substring(0, item?.name.length - 1)">
         {{item?.name}}  
@@ -19,40 +19,25 @@
                 <span class="my-5">{{objectKeys(elt)[0]}}<img  [src]= "forImage + '/assets/images/Shape.svg'" class="ml-3" alt="int_dot"/></span><br>
             <div *ngFor="let activity of  elt[objectKeys(elt)[0]]" class="">
                 <label class="form-check-label ml-3">
-                    <input type="checkbox" [attr.name]="normalize(activity?.term)"
-                           [id]="normalize(activity?.term)"
-                           class="form-check-input" (change)="change($event, activity)" > {{normalize(activity?.term)}}
+                    <input type="checkbox" [attr.name]="normalize(activity?.filter)"
+                           [id]="activity?.filter"
+                           class="form-check-input" (change)="change($event, activity)" > {{normalize(activity?.filter)}}
                            <span *ngIf= "activity?.count" class= "scenarioCount"  [ngClass]="item?.name.substring(0, item?.name.length - 1)"  [innerHTML]="'('+activity?.count+')'"></span>
                   </label>
                 </div>
               </div>
            
           <label class="form-check-label" *ngIf="(item?.name !== 'activities') ">
-            <input type="checkbox" [attr.name]="(elt?.standard_abbr_name !== undefined) ? elt?.standard_abbr_name : normalize(elt?.term)"
-                   [id]="(elt?.standard_abbr_name !== undefined) ? normalize(elt?.standard_abbr_name) : normalize(elt?.term)"
-                   class="form-check-input"(change)="change($event, elt)"> {{normalize(elt?.term)}} {{elt?.standard_abbr_name}}
+            <input type="checkbox" [attr.name]="elt?.filter"
+                   [id]=" elt?.filter"
+                   class="form-check-input"(change)="change($event, elt)"> {{normalize(elt?.filter)}}
                   <span *ngIf="elt?.count" class= "scenarioCount"  [ngClass]="item?.name.substring(0, item?.name.length - 1)"  [innerHTML]="'('+elt?.count+')'"></span>
           </label>
         
         </div>
-       <!-- <span *ngIf=" data[item]?.length > 5" class="" data-toggle="collapse"  [attr.data-target]="'#' + item + '2'">See more</span>
-          <div [id] =" item + '2'" class="collapse" role="tabpanel">
-            <div class="form-check" *ngFor="let elt of data[item]?.slice(5, data[item]?.length )">
-              <label class="form-check-label">
-                <input type="checkbox" [id]="(elt?.standard_abbr_name !== undefined) ? elt?.standard_abbr_name : normalize(elt?.term)"
-                       class="form-check-input" (change)="change($event, elt)"
-                       [attr.name]="(elt?.standard_abbr_name !== undefined) ? elt?.standard_abbr_name : normalize(elt?.term)">{{normalize(elt?.term)}}{{elt?.standard_abbr_name}}
-              </label>
-            </div>
-        </div>-->
       </div>
       <div class="col-xs-12" style="height:50px;"></div>
   </div>
   </div>
     </div>
   </div>
-<!--<span  *ngIf = "tagExist(item, 'scenario')?.length > 2" class="collapsed text-center" data-toggle="collapse"  [attr.data-target]="'#tag' +m"  aria-expanded="false"> More ...</span>
-</p>
-<p *ngIf = "tagExist(item, 'scenario')?.length > 2"  [attr.id]="'tag' + m" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
-  <button *ngFor=" let elt of tagExist(item, 'scenario')?.slice(2,tagExist(item, 'scenario')?.length)"  tooltip ="{{'Type: '  +elt?.type +  ' | Source : '+ elt?.source  }}"  type="button"  class="btn btn-secondary  m-1" >{{elt?.key}}  {{elt?.abbr}}</button>
-</p>-->

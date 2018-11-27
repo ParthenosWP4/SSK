@@ -329,7 +329,7 @@
   border: 1px solid $color-50;
 }
 
-.object{
+.object, .objects{
   color: $color-51;
   border: 1px solid $color-51;
 }
@@ -337,7 +337,7 @@
   color: $color-52;
   border: 1px solid $color-52;
 }
-.activity{
+.activity, .activitie{
   color: $color-53;
   border: 1px solid $color-53;
 }
@@ -387,6 +387,19 @@ div.popover{
   text-align: left !important;
 }
 
+.tag-info{
+  .tooltip-inner {
+    background-color: $color-47 !important;
+    text-align: left !important;
+    font-family: $avenir_next_ul; 
+    font-size: 1.3rem;
+  }
+  .tooltip-inner:before {
+    border-top-color: $color-47 !important;
+  }
+  
+}
+
 @media (max-width: 576px) {
   .part-text{
     padding-top: 1rem;
@@ -419,6 +432,7 @@ ngb-typeahead-window.dropdown-menu{
   display: block !important;
   padding: 0 !important;
   width: inherit;
+  left: 0px !important;
   .dropdown-item {
     width: inherit;
     display: block;
@@ -436,4 +450,58 @@ ngb-typeahead-window.dropdown-menu{
   .dropdown-item:hover{
     background-color: $color-36;
   }
+}
+
+span.twitter-typeahead{
+  width: inherit !important;
+  
+}
+
+div.tt-menu.tt-open{
+  font-family: $roboto-regular !important;
+  box-shadow: 5px 5px 25px 0 rgba(46,61,73,0.50);
+  display: block !important;
+  width: inherit;
+  background-color: $color-3;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  .group{
+    padding: .5rem .5rem 0rem .5rem;
+    font-family: $avenir_next;
+    color: $color-47;
+    border-bottom: 1px  solid $color-36;
+    font-weight: bold;
+  }
+}
+div.tt-suggestion.tt-selectable {
+  font-family: $roboto-regular !important;
+  width: inherit;
+  display: block;
+  width: 100%;
+  padding-bottom: .5rem;
+  padding-top: 0.5rem;
+  clear: both;
+  font-weight: normal;
+  color: #292b2c;
+  text-align: inherit;
+  white-space: nowrap;
+  background: none;
+  border: 0;
+  padding-left: 1rem;
+  .fa-tag{
+    margin-right: 0.5rem;
+  color: $color-48;
+  font-size: 1.2rem;
+  }
+}
+
+div.tt-suggestion.tt-selectable:hover{
+  background-color: $color-36;
+}
+div.tt-suggestion.tt-selectable.tt-cursor{
+  background-color: $color-36;
+}
+.strong{
+  font-size: 1.2rem;
+  font-weight: bold
 }

@@ -1,9 +1,8 @@
-import {Component, ElementRef, HostListener, OnInit, ApplicationRef, ViewChild, Input, AfterViewInit} from '@angular/core';
+import {Component, ElementRef, HostListener, OnInit, ApplicationRef, ViewChild, AfterViewInit} from '@angular/core';
 import {ElastichsearchService} from '../elastichsearch.service';
 import { Router} from '@angular/router';
 import {isUndefined} from 'util';
 import * as _ from 'lodash';
-import * as $ from 'jquery';
 import {SskService} from '../ssk.service';
 import {environment} from '../../environments/environment';
 import {Location} from '@angular/common';
@@ -12,8 +11,8 @@ import {Observable} from 'rxjs/Observable';
 import {NgbTypeaheadConfig} from '@ng-bootstrap/ng-bootstrap';
 import {Subject} from 'rxjs/Subject';
 import 'rxjs/add/operator/delay';
-import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
-
+import * as Bloodhound from 'bloodhound-js';
+declare const $;
 
 @Component({
   selector: 'app-scenario',
@@ -23,7 +22,7 @@ import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 })
 
 
-export class ScenariosComponent implements OnInit {
+export class ScenariosComponent implements OnInit, AfterViewInit {
   searchPlaceholder = 'Scenarios, steps or resources';
   active = 'scenarios';
   tabList: any = {};
@@ -49,7 +48,6 @@ export class ScenariosComponent implements OnInit {
   private resourcesResults = [];
   resultCount = 0;
   forImage = environment.forImage;
-  spinner = false;
   empty = false;
   public model: any;
   list = [];
@@ -58,30 +56,53 @@ export class ScenariosComponent implements OnInit {
   click$ = new Subject<string>();
   keydown$ = new Subject<HTMLInputElement>();
   public lodash: any;
-  inputSize = '5%';
+  inputSize = '15%';
   fullTextSearch = false;
 
   constructor(
-    private elasticServices: ElastichsearchService,
+    public elasticServices: ElastichsearchService,
     private sskServices: SskService,
     private location: Location,
-    public el: ElementRef,
+    public elementRef: ElementRef,
     private appRef: ApplicationRef,
     config: NgbTypeaheadConfig,
-    private router: Router) {config.showHint = true; config.focusFirst = true; }
-
-    search = (text$: Observable<string>) =>
-    text$.pipe(
-      debounceTime(200),
-      distinctUntilChanged(),
-      map(term => term.length < 2 ? []
-        : this.list.filter(v => v.term.toLowerCase().startsWith(term.toLocaleLowerCase())).splice(0, 10)));
-
-    formatter = (x: {term: string}) => x['term'];
+    private router: Router) {
+      config.showHint = true;
+      config.focusFirst = false;
+     }
 
   ngOnInit() {
     this.lodash = _;
-    this.list = _.map(this.elasticServices.getActivitiesForCount(), 'term');
+    $('#multiple-datasets').hide();
+    if (this.elasticServices.spinner === false) {
+      this.elasticServices.searchTags = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('filter'),
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        local: this.elasticServices.autoCompleteList
+      });
+       this.elasticServices.search = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('filter'),
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        local: this.elasticServices.searchFor
+      });
+      $('#multiple-datasets').show();
+      $('#multiple-datasets .typeahead').typeahead({
+        highlight: true,
+        hint: false
+      },
+      {
+        name: 'search-in-tag',
+        display: 'filter',
+        source: this.elasticServices.searchTags,
+        templates: {
+          header: '<div class="group">Terms</div>',
+          suggestion: function(data) {
+            return '<div><i class="fa fa-tag" aria-hidden="true"></i>' + data.filter + '<span  style = "border:none" class="' +
+            data.type.substring(0, data.type.length - 1) + '"> (' + data.type + ') </span></div>';
+        }
+        }
+      });
+    }
     if (this.router.url.includes('steps')) {
       this.active = 'steps';
      } else if (this.router.url.includes('resources')) {
@@ -96,33 +117,27 @@ export class ScenariosComponent implements OnInit {
       this.filters = this.sskServices.getFilters();
       this.tabList = this.sskServices.browseItems;
       this.selectTab = this.active;
-     if (this.elasticServices.getSearchData() === undefined) {
-        this.setSearchData();
-        this.loadContents(this.active);
-      } else {
-        this.searchData = this.elasticServices.getSearchData();
-        this.list = this.elasticServices.autoCompleteList ;
-        this.loadContents(this.active);
-      }
- }
+      this.loadContents(this.active);
+      this.searchData = this.elasticServices.getSearchData();
+   }
 
-  setSearchData() {
-    this.spinner = true;
-    setTimeout(() => {
-      this.searchData['disciplines'] = this.elasticServices.getDisciplines();
-      this.searchData['activities'] = this.elasticServices.getActivities();
-      this.searchData['techniques'] = this.elasticServices.getTechniques();
-      this.searchData['objects'] = this.elasticServices.getObjects();
-      this.searchData['standards'] = this.elasticServices.getStandards();
-      this.elasticServices.setSearchData(this.searchData);
-      this.list =
-      _.concat(_.map(this.elasticServices.getActivitiesForCount(), item => { return {'term' : this.elasticServices.normalize(item['term']), 'type': 'step'};
-        }), this.elasticServices.getDisciplines(), this.elasticServices.getTechniques(), this.elasticServices.getObjects(),
-        _.map(this.elasticServices.getStandards(), item => { return { 'term' : item['standard_abbr_name'], 'type': 'step' }; }));
-      this.elasticServices.autoCompleteList = this.list;
-      this.spinner = false;
-    }, 5000);
-  }
+   ngAfterViewInit() {
+      $('.typeahead').bind('typeahead:render', (event, suggestions, async, dataset) => {
+        $( '.added').remove();
+         $('.tt-dataset').prepend( '<div class="tt-suggestion tt-selectable added" > <span class="strong"> Search for "' +
+         $('.typeahead').val() + '"</span></div>');
+         const eltRef = this.elementRef.nativeElement.querySelector('.added');
+         if (eltRef) {
+          eltRef.addEventListener('click', this.eventHandler.bind(this));
+         }
+      });
+
+      $('.typeahead').bind('typeahead:select', (ev, suggestion) => {
+        this.selectedItem(suggestion);
+        this.model = null;
+      });
+   }
+
 
   toggle(item: string) {
     this.selectTab = item;
@@ -175,8 +190,8 @@ export class ScenariosComponent implements OnInit {
   }
 
   @HostListener('window:scroll', ['$event']) checkScroll() {
-    const componentPosition = this.el.nativeElement.offsetTop
-    const scrollPosition = window.pageYOffset
+    const componentPosition = this.elementRef.nativeElement.offsetTop;
+    const scrollPosition = window.pageYOffset;
     if ( !isUndefined(this.getScenarios()) &&  this.getScenarios().length  < this.elasticServices.getScenarioNumber()
     && scrollPosition >= componentPosition) {
       const  elt: any = {};
@@ -188,16 +203,29 @@ export class ScenariosComponent implements OnInit {
   }
 
   remove(elt: any) {
-      let temp, filterTerm: any;
+      let filterTerm: any;
+      let temp, type: string;
+      if (elt.group === undefined ) {
+        if (elt.standard_abbr_name !== undefined) {
+          type = 'step';
+          temp = elt.standard_abbr_name;
+        } else {
+          temp = elt.term;
+          type = 'scenario';
+        }
+      } else {
+        temp = elt.term;
+        type = 'step';
+      }
       const removedTag = _.remove(this.sskServices.getFilters(), function (v) {
-        return v.tag === elt.tag;
+        return v.filter === elt.filter;
       });
-      const htmlElt = document.getElementById(_.capitalize(elt.tag)) as HTMLInputElement;
+      const htmlElt = document.getElementById(temp) as HTMLInputElement;
       htmlElt.checked = false;
       if (elt.type === 'activities') {
-        filterTerm = _.filter((this.searchData[elt.type][elt.index])[elt.group], {'filter': elt.tag})[0];
+        filterTerm = _.filter((this.searchData[elt.type][elt.index])[elt.group], {'filter': elt.filter})[0];
       } else {
-        filterTerm = _.filter(this.searchData[elt.type], {'filter': elt.tag})[0];
+        filterTerm = _.filter(this.searchData[elt.type], {'filter': elt.filter})[0];
       }
       this.elasticServices.updateSearchResult(filterTerm).subscribe(
         result => {
@@ -205,15 +233,21 @@ export class ScenariosComponent implements OnInit {
         error => {},
         () => {
           if (this.sskServices.getFilters().length === 0) {
-            this.elasticServices.setResearchStarted(false);
-            this.elasticServices.setScenarioResults([]);
-            this.setScenarios(this.elasticServices.getScenarios());
-            this.elasticServices.setStepResults([]);
-            this.setSteps(this.elasticServices.getSteps());
-            this.elasticServices.setResourceResults([]);
-            this.setResources(this.elasticServices.getResources());
+            Observable.of().subscribe(
+              (value) => {
+                this.elasticServices.setResearchStarted(false);
+                this.elasticServices.setScenarioResults([]);
+                this.elasticServices.setStepResults([]);
+                this.elasticServices.setResourceResults([]);
+              },
+              (error) => { console.log(error); },
+              () => {
+                this.setScenarios(this.elasticServices.getScenarios());
+                this.setSteps(this.elasticServices.getSteps());
+                this.setResources(this.elasticServices.getResources());
+              });
           } else {
-            this.sskServices.updateStepsOrScenarios(removedTag).subscribe((value) => {
+            this.sskServices.updateStepsOrScenarios(type, removedTag).subscribe((value) => {
               temp = value;
               }, (error) => {
               console.log(error);
@@ -263,29 +297,37 @@ setResourcesTab() {
   }
 }
 
-
-
-
 /*
   Here we filters content exactly as tag filtering
 */
-selectedItem(item) {
-  console.log(item)
+selectedItem(item: any) {
+  $('div.tt-dataset').empty();
   this.elasticServices.setResearchStarted(true);
   let temp, filterTerm: any;
-  const tag = item.item.term;
-  const elt = document.getElementById(_.capitalize(tag)) as HTMLInputElement;
-  elt.checked = true;
-  const type = (item.item['type'] === undefined) ? 'scenario' : 'step';
-  if (item.type === 'activities') {
-    filterTerm = _.filter((this.searchData[item.type][item.index])[item.group], {'filter': tag})[0];
+  let tag, type: string;
+  tag = item.filter;
+  if (item.group === undefined ) {
+    if (item.standard_abbr_name !== undefined) {
+     // tag = item.standard_abbr_name;
+      type = 'step';
+    } else {
+     // tag = item.filter;
+      type = 'scenario';
+    }
   } else {
-    filterTerm = _.filter(this.searchData[item.type], {'filter': tag})[0];
+    type = 'step';
+  }
+  const elt = document.getElementById(tag) as HTMLInputElement;
+  elt.checked = true;
+  if (item.type === 'activities') {
+    filterTerm = _.filter((this.elasticServices.getSearchData()[item.type][item.index])[item.group], {'filter': tag})[0];
+  } else {
+    filterTerm = _.filter(this.elasticServices.getSearchData()[item.type], {'filter': tag})[0];
   }
   if (_.findIndex(this.sskServices.getFilters(), function(o) { return o.tag === tag; } ) === -1 ) {
     this.elasticServices.updateSearchResult(filterTerm).subscribe(
     result => {
-      this.sskServices.addToFilters({'tag': tag, 'type': type, 'results': this.elasticServices.searchResult['data']} );
+      this.sskServices.addToFilters(filterTerm);
     },
     error => {},
     () => {
@@ -319,11 +361,14 @@ selectedItem(item) {
     });
   }
 }
+
+
 /*
   Here we make a full text research
 */
 eventHandler(event) {
   event.preventDefault();
+  $('div.tt-dataset').empty();
   this.elasticServices.setResearchStarted(true);
   this.fullTextSearch = true;
   this.elasticServices.searchFromServer(null, this.model).subscribe(
@@ -354,15 +399,6 @@ eventHandler(event) {
 }
 
 
-onKey(event: any) { // without type info
-  if (event.keyCode >= 48 && event.keyCode <= 90) {
-    this.inputSize = ((this.model.length * 5) / 6) + '%';
-    if (this.model.length <= 6) {
-      this.inputSize = '5%';
-    }
-  }
-}
-
 resize() {
  return this.inputSize;
 }
@@ -380,7 +416,11 @@ cleanInput() {
   this.setResources(this.elasticServices.getResources());
   this.fullTextSearch = false;
   $('#sskSearch').val('');
-  this.inputSize = '5%';
+  $('div.tt-menu.tt-open').hide();
+}
+
+getSpinner() {
+  return this.elasticServices.spinner;
 }
 
 searchInSteps(): Observable<any[]> {
@@ -431,11 +471,6 @@ searchInScenarios(): Observable<any[]> {
     return this.elasticServices.getscenariosTemp();
   }
 
-  getStepScenario(step: any) {
-    return _.find(this.elasticServices.getScenarios(), (o)  => {
-      return o.id === step.parent; });
-  }
-
   setResultCount(elt: number ) {
     this.resultCount = elt;
   }
@@ -447,82 +482,4 @@ searchInScenarios(): Observable<any[]> {
   getStepsCount() {
     return this.steps.length;
   }
-
 }
-  /*private repopulate(steps) {
-    if (this.elasticServices.getSearchData() !== undefined){
-      _.forEach(steps, step => {
-        const  activities = _.filter(step.metadata, item => { return item.type === 'activity'; });
-        this.sskServices.addCount(this.elasticServices.getActivitiesForCount(), activities, 'activity')
-            .then((activitiesCompleted) => {
-              Promise.all(_.mergeWith(this.elasticServices.getActivitiesForCount(), activitiesCompleted,  (src, tar) => {
-                if (_.isObject(src) && _.isObject(tar) && (src !== undefined) && (tar !== undefined)
-                && (src.term !== undefined) && (tar.term !== undefined)
-                && src.term.toLowerCase() === tar.term.toLowerCase()) {
-                  src.scenarioIn += tar.scenarionIn;
-                }
-            })).then((activitiesResult) => {
-              this.sskServices.alredyInStepCard++;
-              this.elasticServices.setActivitiesForCount(activitiesResult);
-              if (this.sskServices.alredyInStepCard === this.getSteps().length) {
-                this.elasticServices.setActivities(_.groupBy(this.elasticServices.getActivitiesForCount(), 'group'));
-              Promise.all(_.map(_.toPairs(this.elasticServices.getActivities()),
-                   d => _.fromPairs([d]))).then((completed) => {
-                   this.elasticServices.setActivities(completed);
-                  this.elasticServices.getSearchData().activities = this.elasticServices.getActivities();
-              });
-              this.sskServices.alredyInStepCard = 0;
-              this.appRef.tick();
-              }
-            });
-          });
-  
-          new Promise((resolve, reject) => {
-            this.sskServices.addCount(this.elasticServices.getStandardForCount(),
-          _.filter(step.metadata, function (item) { return item.type === 'standard'; }), 'standard');
-          })
-          .then((standardCompleted) => {
-            Promise.all( _.mergeWith(this.elasticServices.getStandardForCount(), standardCompleted,  (src, tar) => {
-              if (_.isObject(src) && _.isObject(tar) && (src['standard_abbr_name'] !== undefined) &&
-              src['standard_abbr_name'].toLowerCase() === tar['standard_abbr_name'].toLowerCase()) {
-               if (isNaN(tar.scenarionIn)) {
-                tar.scenarionIn = 0;
-               }
-                src.scenarioIn += tar.scenarionIn;
-                return src;
-              }
-            })).then((standardResult) => {
-              this.elasticServices.setStandardForCount(standardResult);
-              this.sskServices.alredyInStepCard++;
-               if ( this.sskServices.alredyInStepCard === this.getSteps().length){
-               this.elasticServices.getSearchData().standards = this.elasticServices.getStandardForCount();
-               this.appRef.tick();
-              }
-            });
-          });
-      });
-    }
-  }
-
-  private emptyNumber() {
-    Promise.all(_.map(this.elasticServices.getSearchData().objects, item => item.scenarioIn = 0))
-    .then(() => (
-      Promise.all(_.map(this.elasticServices.getSearchData().techniques, item => item.scenarioIn = 0))
-        .then(() => (
-          Promise.all(_.map(this.elasticServices.getSearchData().disciplines, item => item.scenarioIn = 0))
-          .then(() => (
-              Promise.all(_.map(this.elasticServices.getSearchData().standards, item => item.scenarioIn = 0))
-              .then(() => (
-                Promise.all(_.map(this.elasticServices.getSearchData().standards, item => item.scenarioIn = 0))
-                .then(() => {
-                    _.map(this.elasticServices.getSearchData().activities, item => {
-                      const head = Object.keys(item)[0];
-                      _.map(item[head], elt =>  {elt.scenarioIn = 0; });
-                  });
-                })
-              ))
-          ))
-        ))
-        ));
-  }
-}*/

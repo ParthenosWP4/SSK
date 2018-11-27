@@ -6,7 +6,8 @@ import * as _ from 'lodash';
 import {isUndefined} from 'util';
 import {environment} from '../environments/environment';
 import {HttpClient} from '@angular/common/http';
-
+import * as Bloodhound from 'bloodhound-js';
+declare const $;
 
 @Injectable()
 export class ElastichsearchService {
@@ -28,7 +29,7 @@ export class ElastichsearchService {
   private activities: any;
   private activitiesForCount: any;
   private activitiesKeys: any;
-  private searchData: any;
+  private searchData = {};
   private techniques: any;
   private objects: any;
   private standards: any;
@@ -49,7 +50,11 @@ export class ElastichsearchService {
   private http: any;
   private httpUrlEncodingCodec: any;
   public autoCompleteList: any;
-
+  objectKey = Object.keys;
+  public spinner = true;
+  public searchTags: any;
+  public searchFor = [{'filter': 'search for xxxxx'}];
+  public search: any;
 
   constructor(inj: Injector) {
     this.http = inj.get(HttpClient);
@@ -64,9 +69,6 @@ export class ElastichsearchService {
     this.setParams(['count']);
     this.setOptions(this.params);
     return this.http.get(this.sskBackendEndpoint + type, this.options);
-      /*.map((response: HttpResponse<any>) => {
-        this.itemsCount = response;
-      }).catch((error: any) => Observable.throw(console.log(error.status) || console.log('Server error')));*/
   }
 
   getScenarioDetails(scenarioId: string): Observable<any> {
@@ -83,12 +85,6 @@ export class ElastichsearchService {
   getAllStepsFromServer() {
     this.setOptions( null);
     return this.http.get(this.sskBackendEndpoint + 'steps/', this.options);
-      /*.map((response: HttpResponse<any>) => {
-        const result = response;
-        console.log(result)
-        this.setStepNumber(result['total']);
-        this.setSteps(result['steps']);
-      }).catch((error: any) => Observable.throw(error.json().error || 'Server error'));*/
   }
 
   getAllStepsMetaDataFromServer() {
@@ -151,9 +147,6 @@ export class ElastichsearchService {
   testUrl(url: string) {
     this.setOptions(null);
     return this.http.get ('https://cors-anywhere.herokuapp.com/' + url, this.options);
-      /*.map((response: HttpResponse<any>) => {
-        console.log(response.headers);
-      }).catch((error: any) => Observable.throw( console.log(error.json()) || console.log('Server error')));*/
   }
 
   testUrlForIframe(url: string) {
@@ -161,9 +154,6 @@ export class ElastichsearchService {
       url = 'http://' + url;
     }
     return this.http.get (url, this.options);
-     /* .map((response: HttpResponse<any>) => {
-        console.log(response.headers.toString());
-      }).catch((error: any) => Observable.throw( console.log(error.headers) || console.log(url + ' can\'t beload into iframe')));*/
   }
 
   loadTermsFromServer(type: string) {
@@ -179,8 +169,13 @@ export class ElastichsearchService {
   }
 
   searchFromServer(type, tag: string) {
-    this.setOptions( {'tag': tag, 'type': type });
-    return this.http.get(this.sskBackendEndpoint + '_search' , this.options);
+    if (type === null) {
+      this.setOptions(null);
+      return this.http.get(this.sskBackendEndpoint + '_search/' + tag , this.options);
+    } else {
+      this.setOptions( {'tag': tag, 'type': type });
+      return this.http.get(this.sskBackendEndpoint + '_search' , this.options);
+    }
   }
 
 
@@ -244,16 +239,10 @@ export class ElastichsearchService {
           this.addScenario(this.detailsResult);
           this.scenariosTemp.pop();
           this.setResultCount((this.getResultCount() + 1));
-          if (this.getScenarios().length === this.getScenarioNumber()) {
-            _.forEach(this.getSteps(), (step) => {
-              step['metadata'] = this.addStepMetadata(step._id + step.position + 'Meta');
-            });
-          }
         }
       );
    }, 1000);
   }
-
 
   getAllStepsMetaData() {
     this.getAllStepsMetaDataFromServer().subscribe(
@@ -272,6 +261,9 @@ export class ElastichsearchService {
       stepResult => {
         this.setStepNumber(stepResult['total']);
         this.setSteps(stepResult['steps']);
+        _.forEach(this.getSteps(), (step) => {
+          step['metadata'] = this.addStepMetadata(step._id + step.position + 'Meta');
+        });
       },
       error => {},
       () => {
@@ -288,42 +280,76 @@ getGlossaryTerms() {
             this.setActivities(result);
             this.setActivitiesKeys(_.map(this.getActivities(), 'head'));
             let items = _.map(_.flattenDeep(_.zip(_.flattenDeep(_.map(this.getActivities(), 'head')),
-            _.map(_.map(this.getActivities(), 'list'), 'item' )) ),  (elt) => {
-              if (typeof elt === 'string') {
-                 this.group = elt;
-                }else {
-                 elt['group'] = this.group;
-              return elt;
-            }
-          });
-          items = _.filter(items, (o)  =>  {return typeof o !== 'undefined';} );
-          this.setActivitiesForCount(items);
-          this.setActivities(_.groupBy(items, 'group'));
-          this.setActivities(_.map(_.toPairs(this.getActivities()), d => _.fromPairs([d])));
-              /* this.setActivities(_.filter(this.getActivities(), (o)  =>  { return typeof o !== undefined;} ));
-            this.setActivitiesForCount(this.getActivities());
-            _.map(this.getActivitiesForCount(), item => {
-              if (item.term.includes('_')) {
-                   item.term = _.join(item.term.split('_'), ' ');
-              }
+                    _.map(_.map(this.getActivities(), 'list'), 'item' )) ),  (elt) => {
+                      if (typeof elt === 'string') {
+                        this.group = elt;
+                        }else {
+                        elt['group'] = this.group;
+                      return elt;
+                    }
             });
-            ;*/
-            break;
+            items = _.filter(items, (o)  =>  typeof o !== 'undefined' );
+            this.setActivitiesForCount(items);
+            this.setActivities(_.groupBy(items, 'group'));
+            this.setActivities(_.map(_.toPairs(this.getActivities()), d => _.fromPairs([d])));
+            this.searchData['activities'] = this.getActivities();
+          break;
           case 'object':
             this.setObjects(result);
-            break;
+            this.searchData['objects'] = this.getObjects();
+          break;
           case 'techniques':
-            this.setTechniques(result);
-            break;
+          this.setTechniques(result);
+            this.searchData['techniques'] = this.getTechniques();
+          break;
           case 'disciplines':
             this.setDisciplines(result);
-            break;
+            this.searchData['disciplines'] = this.getDisciplines();
+          break;
         }
       },
       error => {},
-      () => {});
+      () => {
+        switch (obj.toLowerCase()) {
+          case 'activities':
+          Observable.of(_.forEach(this.searchData['activities'], (elt, key) => {
+            _.map(elt[this.objectKey(elt)[0]], item => {
+              item = this.getMetaDataNumber(item, 'step', false);
+              item.type = 'activities';
+              item.index = key;
+              item.filter = item.term;
+            });
+          })).subscribe(
+            (value) => { },
+            (error) => { console.log(error); },
+            () => {
+              this.getAllStandards();
+            });
+          break;
+          case 'object':
+          _.map(this.searchData['objects'], item => {
+            item = this.getMetaDataNumber(item, 'scenario', false);
+            item.type = 'objects';
+            item.filter = item.term;
+          });
+          break;
+          case 'techniques':
+          _.map(this.searchData['techniques'], item => {
+            item = this.getMetaDataNumber(item, 'scenario', false);
+            item.type = 'techniques';
+            item.filter = item.term;
+          });
+          break;
+          case 'disciplines':
+          _.map(this.searchData['disciplines'], item => {
+            item = this.getMetaDataNumber(item, 'scenario', false);
+            item.type = 'disciplines';
+            item.filter = item.term;
+          });
+          break;
+        }
+      });
   });
-  this.getAllStandards();
 }
 
 getAllStandards() {
@@ -331,9 +357,44 @@ getAllStandards() {
     result => {
       this.setStandards(result['standards']);
       this.setStandardForCount(this.getStandards());
+      this.searchData['standards'] = this.getStandards();
+      _.map(this.searchData['standards'], item => {
+        item = this.getMetaDataNumber(item, 'step', true);
+        item.type = 'standards';
+        item.filter = item.standard_abbr_name;
+      });
     },
     error => {},
     () => {
+      this.autoCompleteList =  _.concat(this.getActivitiesForCount(), this.getDisciplines(), this.getTechniques(), this.getObjects(), this.getStandards());
+       this.searchTags = new Bloodhound({
+            datumTokenizer: Bloodhound.tokenizers.obj.whitespace('filter'),
+            queryTokenizer: Bloodhound.tokenizers.whitespace,
+            local: this.autoCompleteList
+          });
+           this.search = new Bloodhound({
+            datumTokenizer: Bloodhound.tokenizers.obj.whitespace('filter'),
+            queryTokenizer: Bloodhound.tokenizers.whitespace,
+            local: this.searchFor
+          });
+          $('#multiple-datasets').show();
+          $('#multiple-datasets .typeahead').typeahead({
+            highlight: true,
+            hint: false
+          },
+          {
+            name: 'search-in-tag',
+            display: 'filter',
+            source: this.searchTags,
+            templates: {
+              header: '<div class="group">Terms</div>',
+              suggestion: function(data) {
+                return '<div><i class="fa fa-tag" aria-hidden="true"></i>' + data.filter + '<span  style = "border:none" class="' +
+                        data.type.substring(0, data.type.length - 1) + '"> (' + data.type + ') </span></div>';
+            }
+            }
+          });
+      this.spinner = false;
     });
 }
 
@@ -358,6 +419,19 @@ getAllStandards() {
     this.searchResult['total'] = elt['count'];
     this.searchResult['data'] = elt['data'];
     return Observable.of(this.searchResult);
+  }
+
+  getMetaDataNumber(tag: any, type: string, ifStandard: boolean): Observable<any> {
+    this.searchFromServer(type, (!ifStandard ) ? tag.term : tag.standard_abbr_name).subscribe(
+      result => {
+        this.searchResult = result;
+      },
+      error => {},
+      () => {
+        tag['count'] = this.searchResult['total'];
+        tag['data'] = this.searchResult['data'];
+      });
+      return tag;
   }
 
 
@@ -395,7 +469,7 @@ getAllStandards() {
 
   getScenarios() {
     const rems = _.remove(this.scenarios, function(n) {
-      return n.id === 'SSK_sc_corpusModellingInTEI-minusDigitization';
+      return (n.id === 'SSK_sc_corpusModellingInTEI-minusDigitization' ||  n.id === 'SSK_sc_RUBRICA');
     });
     return this.scenarios;
   }

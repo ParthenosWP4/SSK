@@ -4,60 +4,49 @@
         <span class="scenarios-title">Explore scenarios, steps or resources</span>
       </div>  
       <div class="w-100"></div>
-      <div class="col-9 mx-auto mt-lg-5 pb-sm-4" *ngIf='!spinner'>
-        <div class="input-group">
-            <ng-template #rt let-r="result" let-t="term">
-                <ngb-highlight [result]="r.term" [term]="t"></ngb-highlight>
-              </ng-template>
-            <input [ngStyle]="{'max-width': resize(), 'padding-left':'padding-left:1rem !important'}"  (keyup)="onKey($event)"  minlength="2"  #sskSearch="ngModel" name ="sskSearch"  id="sskSearch" (keyup.enter)="eventHandler($event)" (selectItem)="selectedItem($event)" type="text" [resultTemplate]="rt" [inputFormatter]="formatter"  class="form-control border-right-0 font-weight-light search "  placeholder="Search"  [(ngModel)]="model" [ngbTypeahead]="search" />
-            
+      <div class="col-9 mx-auto mt-lg-5 pb-sm-4">
+        <div class="input-group"  id='multiple-datasets'>
             <span  (click)= "cleanInput()" class="clear input-group-addon bg-white border-0 btn-danger" *ngIf='fullTextSearch'>
                 <i class="fa fa-times-circle "></i>
               </span>
-            <button  [disabled] = "(sskSearch?.value === '' || sskSearch?.value?.length <= 2)" class="searchBtn bg-white border-0" (click)="eventHandler($event)"><img  [src]= "forImage + '/assets/images/magnifier-tool.svg'" class="pb-1" alt="int_dot"/></button>
-          </div>
+            <input   type="text"  id="sskSearch"  class="typeahead form-control  font-weight-light search"  placeholder="Search" [(ngModel)]="model" >
+              <img  [src]= "forImage + '/assets/images/magnifier-tool.svg'" class=" searchImg" alt="int_dot"/>
+            </div>
         <div class="w-100"></div>
-        <div *ngIf="sskSearch.invalid && (sskSearch.dirty || sskSearch.touched)" class="alert alert-danger">
-          <div *ngIf="sskSearch.errors.required">
-            Required.
-          </div>
-          <div *ngIf="sskSearch.errors.minlength">
-            At least 2 characters long.
-          </div>
-        </div>
     </div>
   </div>
+  
   <div class="row home">
     <div class="col-lg-9  offset-lg-3" >
       <div class="mt-lg-5   mr-lg-4">
         <ul class="nav nav-tabs  nav-fill mx-lg-5" role="tablist"  >
           <li *ngFor=" let item   of tabList"  class="nav-item " >
             <a class="nav-link pull-left" [ngClass]="(item == active) ? 'active':''" data-toggle="tab"  [attr.data-target]="'#'+ item + '-tab'"  (click)="toggle(item)" >
-              {{item}} ({{(item === 'scenarios') ? getScenarios()?.length :''}} {{(item === 'steps') ? getSteps()?.length :''}} {{(item === 'resources') ? getResources()?.length :''}})
+              {{item}} ({{(item === 'scenarios') ? lodash.uniqBy(scenarios, 'id')?.length :''}} {{(item === 'steps') ? getSteps()?.length :''}} {{(item === 'resources') ? getResources()?.length :''}})
             </a>
           </li>
         </ul>
       </div>
     </div>
  </div>
-      <div class="home row">
-          <div class="col mx-auto text-center m-lg-5 searchTab"  *ngIf="spinner">
-              <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-          </div>
-          <div class=" col-lg-3  mt-3 searchTab" *ngIf="!spinner">
-              <app-search-tab [data] = "searchData" ></app-search-tab>
-            </div>
+ <div class="home row">
+    <div class="col mx-auto text-center m-lg-5 searchTab"  *ngIf="elasticServices?.spinner">
+        <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+    </div>
+    <div class=" col-lg-3  mt-3 searchTab" *ngIf="!elasticServices?.spinner">
+        <app-search-tab [data] = "searchData" ></app-search-tab>
+    </div>
       
     <div class="col-lg-9" >
      <div class="tab-content  mx-5" >
-      <div class=" row my-lg-4 vdivide  ">
-       
-          <span *ngFor = "let elt of filters" class="badge badge-default mx-lg-1"><i class="fa fa-times" aria-hidden="true" (click)="remove(elt)"></i>
-{{elt?.tag}}</span>
+      <div class=" row my-lg-4 vdivide ">
+          <span *ngFor = "let elt of filters" class="badge badge-default mx-lg-1">
+            <i class="fa fa-times" aria-hidden="true" (click)="remove(elt)"></i>
+            {{elt?.filter}}
+          </span>
       </div>
       <div class="tab-pane" id="scenarios-tab"  [ngClass]="(active === 'scenarios') ? 'active':''" >
-        
-          <app-scenario-card  *ngFor="let scen of lodash.uniq(scenarios) " [scenario]="scen "></app-scenario-card>
+          <app-scenario-card  *ngFor="let scen of lodash.uniqBy(scenarios, 'id') " [scenario]="scen"></app-scenario-card>
           <app-scenario-template   *ngFor="let elt of getScenarioTemp()"  ></app-scenario-template>
       </div>
       <div class="tab-pane " id="steps-tab"  [ngClass]="(active === 'steps') ? 'active':''">
@@ -85,16 +74,20 @@
       </div>
     </div>
   </div>
-</div>
+ </div>
   <script>
     $(document).ready(function(){
       $('[data-toggle="tooltip"]').tooltip();
-      interface JQuery {
-    popover():void;
-}
+      $('input[type=text]').tooltip({
+          placement: "top",
+          trigger: "focus"
+      });
+        interface JQuery {
+        popover():void;
+      }
+      
 
-     
-});
+    });
   </script>
 </div>
 

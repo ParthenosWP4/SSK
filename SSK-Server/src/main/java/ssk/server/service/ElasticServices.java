@@ -196,7 +196,6 @@ public class ElasticServices {
 			}
 			if(this.sskServices.removeDoubleQuote(jsonItem[0].get("type").toString()).equals("step")){
 				metadataType[0] = "step_metadata";
-				//jsonItem[0].addProperty("parent", idParent[0]);
 				resources[0] = jsonItem[0].remove("resources").getAsJsonObject();
 			}
 			entity[0] = requestHeadersParams.addDetectNoop(jsonItem[0]);
@@ -217,40 +216,6 @@ public class ElasticServices {
 			}
 			
 		});
-		
-		/*for (int j = 0; j < scenarioAndStep.size(); j++) {
-			//type = "step";
-			 metaData = scenarioAndStep.get(j).getAsJsonObject().remove("metadata").getAsJsonObject();
-			/*if (j == 0) {
-				type = "scenario";
-			} else {
-				type += "?parent=" + idParent;
-				
-			}----
-			if(scenarioAndStep.get(j).getAsJsonObject().get("type").toString().equals("step")){
-				scenarioAndStep.get(j).getAsJsonObject().addProperty("parent", idParent);
-				resources = scenarioAndStep.get(j).getAsJsonObject().remove("resources").getAsJsonObject();
-			}
-			entity = new HttpEntity<>(scenarioAndStep.get(j).toString(), requestHeadersParams.getHeaders());
-			ResponseEntity<String> response = this.restTemplate.exchange( elasticSearchPort + "/" + sskIndex + "/_doc/"+, HttpMethod.POST, entity, String.class);
-			JSONObject responseBody = new JSONObject(response.getBody());
-			//result = result && Boolean.parseBoolean(responseBody.get("created").toString());
-			 result = result && (responseBody.get("result").toString().equals("created"));
-			if (result) {
-				if (j == 0) {
-					idParent = responseBody.get("_id").toString();
-					final String id = idParent;
-					//this.executeThread("scenario_metadata", id, metaData, requestHeadersParams.getHeaders());
-				} else {
-					final String idStep = responseBody.get("_id").toString();
-					//this.executeThread("step_metadata", idStep, metaData, requestHeadersParams.getHeaders());
-					//this.executeThread("resources", idStep, resources, requestHeadersParams.getHeaders());
-					
-				}
-			} else break;
-		}
-		if (result[0])
-			logger.info("----- > Successful push/update scenario " + iteration + " on ElasticSearch with result id: "+ idElement[0]);*/
 		return result[0];
 	}
 	

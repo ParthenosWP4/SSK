@@ -8,6 +8,7 @@ import {isArray, isUndefined} from 'util';
 import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
 import {isDefined} from '@angular/compiler/src/util';
 import {environment} from '../../environments/environment';
+import { CollapseModule } from 'ngx-bootstrap';
 @Component({
   selector: 'app-scenario',
   templateUrl: './scenario.component.html',
@@ -53,41 +54,40 @@ export class ScenarioComponent implements OnInit  {
     this.left = 0;
     this.timelineTotWidth = 0;
     this.selectedStep = {};
-    this.scenarioElt = {};
     this.border.class = 'col-2';
     this.border.border = '1px dashed #979797';
+    this.scenarioElt =  new Object();
   }
 
 
   ngOnInit() {
     this.sskService.setTitle('SSK - Scenario');
     window.scrollTo(0, 0);
-    this.activatedRoute.params
+    Observable.of(this.activatedRoute.params
       .subscribe((params: Params) => {
         this.scenarioId = params['id'];
         this.selectedStep.id = params['stepId'] ;
         this.idSelectedStep = this.selectedStep.id;
-        this.initializeScenarioElt();
       }
-      );
+      )).subscribe(
+        (val) => {this.initializeScenarioElt(); },
+        (error) => console.log(error),
+        () => { });
   }
 
   initializeScenarioElt() {
     this.sskService.checkBackEndAvailability();
-
     if (this.elasticServices.getScenarios().length === 0) {
-      console.log(this.scenarioId)
       this.elasticServices.countItems('scenarios').subscribe(
           result => {
             this.itemResult = result;
-            this.elasticServices.setScenarioNumber(this.itemResult['total']);
-            this.elasticServices.setScenariosID(this.itemResult['scenarios']);
+            this.elasticServices.setScenarioNumber(result['total']);
+            this.elasticServices.setScenariosID(result['scenarios']);
           },
           err => {
             this.router.navigate(['errorpage']);
           },
           () =>  {
-            this.elasticServices.getAllSteps();
             this.elasticServices.getScenariosID().forEach((obj)  => {
               this.elasticServices.getScenarioDetails(obj._id).subscribe(
                 detailsResult => {
@@ -96,62 +96,55 @@ export class ScenarioComponent implements OnInit  {
                   },
                 error => {},
                 () =>  {
-                    this.elasticServices.addScenario(this.scenarioDetails);
-                   // if (this.elasticServices.getScenarios().length === this.elasticServices.getScenarioNumber()) {
-                      this.scenarioElt = _.find(this.elasticServices.getScenarios(), (item) => {
-                        return item.id === this.scenarioId;
-                      });
-                      this.scenarioElt.title = this.sskService.updateText(((this.scenarioElt.title instanceof Array) ?
-                      this.scenarioElt.title[0] : this.scenarioElt.title), null);
-                      this.scenarioElt.descrip = (this.scenarioElt.desc instanceof Array) ? this.scenarioElt.desc[0]
-                        : this.scenarioElt.desc;
-                      this.scenarioDesc = this.sskService.updateText(this.scenarioElt.descrip, null);
-                      this.setScenarioSteps(this.scenarioId);
-                      this.setMetadata('scenario');
-                      this.sskService.setTitle('SSK - ' + this.scenarioElt.title);
-                   // }
-                  });
+                  this.elasticServices.addScenario(this.scenarioDetails);
+                  if (this.scenarioDetails['id'] === this.scenarioId) {
+                    this.scenarioElt = this.scenarioDetails;
+                    this.setCurrentScenario();
+                  }
+                }
+                );
             });
           }
         );
     } else {
-      console.log(this.idSelectedStep)
-      this.scenarioElt = _.find(this.elasticServices.getScenarios(), (item) => {
+      this.scenarioElt = _.find(this.elasticServices.getScenarios(), item => {
         return item.id === this.scenarioId;
       });
-      console.log(this.scenarioElt)
-      this.scenarioElt.title = this.sskService.updateText(((this.scenarioElt.title instanceof Array) ? 
-      this.scenarioElt.title[0] : this.scenarioElt.title), null);
-      this.scenarioElt.descrip = (this.scenarioElt.desc instanceof Array) ? this.scenarioElt.desc[0] : this.scenarioElt.desc;
-      this.scenarioDesc = this.sskService.updateText(this.scenarioElt.descrip, null);
-      this.setMetadata('scenario');
-      this.setScenarioSteps(this.scenarioId);
-      this.sskService.setTitle('SSK - ' + this.scenarioElt.title);
+      this.setCurrentScenario();
     }
   }
 
-  setScenarioSteps(scenarioId: string) {
-   setTimeout(() => {
-      if ( isUndefined(this.elasticServices.getSteps())) {
-        this.elasticServices.getAllSteps();
-        this.scenarioElt.steps = _.sortBy(_.groupBy(this.elasticServices.getSteps(), (item) => {
-          return item.parent === this.scenarioId;
-        }).true, [ 'position']);
-        _.forEach(this.elasticServices.getSteps(), (step) => {
-          step['metadata'] = this.elasticServices.addStepMetadata(step._id);
-        });
-        this.initializeCurrentStep(this.scenarioElt);
-        this.cdr.detectChanges();
-      } else {
-        this.scenarioElt.steps = _.sortBy(_.groupBy(this.elasticServices.getSteps(), (item) => {
-          return item.parent === this.scenarioId;
-        }).true, [ 'position']);
-        this.initializeCurrentStep(this.scenarioElt);
-        //this.cdr.detectChanges();
-      }
-    }, 2000);
 
+  setCurrentScenario() {
+    this.scenarioElt.title = this.sskService.updateText(((this.scenarioElt.title instanceof Array) ?
+    this.scenarioElt.title[0] : this.scenarioElt.title), null);
+    this.scenarioElt.descrip = (this.scenarioElt.desc instanceof Array) ? this.scenarioElt.desc[0] : this.scenarioElt.desc;
+    this.scenarioDesc = this.sskService.updateText(this.scenarioElt.descrip, null);
+    this.setMetadata('scenario');
+    this.setScenarioSteps();
+    this.sskService.setTitle('SSK - ' + this.scenarioElt.title);
   }
+
+  setScenarioSteps() {
+    setTimeout(() => {
+       if ( isUndefined(this.elasticServices.getSteps())) {
+         this.elasticServices.getAllSteps();
+         this.scenarioElt.steps = _.sortBy(_.filter(this.elasticServices.getSteps(), (item) => {
+          return (_.indexOf(item.parents, this.scenarioId) !== -1);
+        }), [ 'position']);
+         _.forEach(this.elasticServices.getSteps(), (step) => {
+           step['metadata'] = this.elasticServices.addStepMetadata(step._id);
+         });
+         this.initializeCurrentStep(this.scenarioElt);
+         this.cdr.detectChanges();
+       } else {
+         this.scenarioElt.steps = _.sortBy(_.filter(this.elasticServices.getSteps(), (item) => {
+          return (_.indexOf(item.parents, this.scenarioId) !== -1);
+        }), [ 'position']);
+         this.initializeCurrentStep(this.scenarioElt);
+       }
+     }, 2000);
+ }
 
   tagExist(tag: string, type: string  ) {
     if ( type === 'scenario' && !isUndefined(this.scenarioElt.scenario_metadata)) {
@@ -182,7 +175,7 @@ export class ScenarioComponent implements OnInit  {
     if (scenario['steps'].length !== 0) {
       this.selectedStep = scenario.steps[this.selectedStep.id - 1];
       this.selectedStep.ref = this.selectedStep._id;
-      this.updateContent(this.selectedStep, this.selectedStep.position, null);
+      this.updateContent(this.selectedStep, this.selectedStep.position);
     }
   }
 
@@ -246,7 +239,7 @@ export class ScenarioComponent implements OnInit  {
     if (this.selectedStep.head instanceof Array) {
       this.selectedStep.title = this.sskService.updateText(this.selectedStep.head[0], null);
     } else {
-      this.selectedStep.title = this.sskService.updateText(this.selectedStep.head,null);
+      this.selectedStep.title = this.sskService.updateText(this.selectedStep.head, null);
     }
     if ( this.selectedStep.desc instanceof Array) {
       // 'description' is a new field
@@ -257,10 +250,10 @@ export class ScenarioComponent implements OnInit  {
     this.stepDesc = this.sskService.updateText(this.selectedStep['description'], 'step');
   }
 
-  updateContent(step: any, index: number, event: any) {
+  updateContent(step: any, index: number) {
     this.spinner = true;
     this.router.navigate(['scenarios', this.scenarioId,  step.position]);
-    this.idSelectedStep = index - 1;
+    this.idSelectedStep = index;
      this.selectedStep = step;
     this.selectedStep.id  =  index;
     this.selectedStep.ref = this.selectedStep._id;
@@ -357,7 +350,6 @@ getStepTitle(step: any) {
     } else {
       this.stepDesc = text;
     }
-    
   }
 
   setLink(part: object) {
@@ -407,9 +399,10 @@ getStepTitle(step: any) {
     let metadata: any = {};
     if (type === 'scenario') {
       metadata = this.scenarioElt.scenario_metadata;
-    }
-    if (type === 'step') {
+      this.scenarioTags = metadata;
+    } else {
       metadata = this.selectedStep.metadata;
+      this.stepTags = metadata ;
     }
     this.elasticServices.getTags().forEach(tag => {
       switch (tag) {
@@ -434,16 +427,6 @@ getStepTitle(step: any) {
           break;
       }
     });
-    if (type === 'scenario') {
-      this.scenarioTags = metadata;
-    }
-    if (type === 'step') {
-     this.stepTags = metadata ;
-    }
-  }
-
 }
-
-
-
+}
 
