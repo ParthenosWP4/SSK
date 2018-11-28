@@ -54,7 +54,6 @@ export class ScenarioCardComponent implements OnInit,  AfterViewInit {
       this.title = this.scenario.title;
     }
      this.title = this.sskServices.updateText( this.title, null);
-   // this.shortTitle = this.sskServices.shorten(this.title, 99);
 
     if (this.scenario.image === null || this.scenario.image === 'null' ||  this.scenario.image === undefined) {
       this.defaultImage = '../../assets/images/ssk_logo.svg';
@@ -66,44 +65,29 @@ export class ScenarioCardComponent implements OnInit,  AfterViewInit {
       this.desc = this.scenario.desc;
     }
     this.desc = this.sskServices.updateText( this.desc, null);
-   // this.shortDesc = this.sskServices.shorten(this.desc, 250);
- 
 
     if (this.scenario.scenario_metadata.objects instanceof Array ) {
       this.metadata  =  this.metadata.concat(this.scenario.scenario_metadata.objects);
-       /*this.elasticServ.setObjects(_.values(_.merge(_.keyBy(this.elasticServ.getObjects(), 'term'),
-                                   _.keyBy(this.sskServices.addCount(this.elasticServ.getObjects(),
-                                   this.scenario.scenario_metadata.objects, 'objects'), 'term') )));*/
+    }
+
+    if (this.scenario.scenario_metadata.object instanceof Array ) {
+      this.metadata  =  this.metadata.concat(this.scenario.scenario_metadata.object);
     }
 
     if (this.scenario.scenario_metadata.discipline instanceof Array) {
       this.metadata  =  this.metadata.concat(this.scenario.scenario_metadata.discipline);
-   /* this.elasticServ.setDisciplines(_.values(_.merge(_.keyBy(this.elasticServ.getDisciplines(), 'term'),
-                                     _.keyBy(this.sskServices.addCount(this.elasticServ.getDisciplines(),
-                                     this.scenario.scenario_metadata.discipline, 'discipline'), 'term') )));*/
     }
 
     if (this.scenario.scenario_metadata.activity instanceof Array) {
       this.metadata  =  this.metadata.concat(this.scenario.scenario_metadata.activity);
-    /*this.elasticServ.setActivities(_.values(_.merge(_.keyBy(this.elasticServ.getActivitiesForCount(), 'term'),
-                                   _.keyBy(this.sskServices.addCount(this.elasticServ.getActivitiesForCount(),
-                                  this.scenario.scenario_metadata.activity, 'activity'), 'term') )));
-                                  this.elasticServ.setActivities(_.groupBy(this.elasticServ.getActivities(), 'group'));
-                                  this.elasticServ.setActivities(_.map(_.toPairs(this.elasticServ.getActivities()), d => _.fromPairs([d])));*/
     }
 
     if (this.scenario.scenario_metadata.techniques instanceof Array) {
       this.metadata  =  this.metadata.concat(this.scenario.scenario_metadata.techniques);
-    /*this.elasticServ.setTechniques(_.values(_.merge(_.keyBy(this.elasticServ.getTechniques(), 'term'),
-                                   _.keyBy(this.sskServices.addCount(this.elasticServ.getTechniques(),
-                                   this.scenario.scenario_metadata.techniques, 'technique'), 'term') )));*/
     }
 
     if (this.scenario.scenario_metadata.standards instanceof Array) {
       this.metadata  =  this.metadata.concat(this.scenario.scenario_metadata.standards);
-   /* this.elasticServ.setStandards(_.values(_.merge(_.keyBy(this.elasticServ.getStandards(), 'standard_abbr_name'),
-                                   _.keyBy(this.sskServices.addCount(this.elasticServ.getStandards(),
-                                   this.scenario.scenario_metadata.standards, 'standard'), 'standard_abbr_name'))));*/
     }
 
     if ( ! (this.scenario.author instanceof Array)) {

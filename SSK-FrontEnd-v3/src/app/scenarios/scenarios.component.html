@@ -9,7 +9,7 @@
             <span  (click)= "cleanInput()" class="clear input-group-addon bg-white border-0 btn-danger" *ngIf='fullTextSearch'>
                 <i class="fa fa-times-circle "></i>
               </span>
-            <input   type="text"  id="sskSearch"  class="typeahead form-control  font-weight-light search"  placeholder="Search" [(ngModel)]="model" >
+            <input  required  type="text"  id="sskSearch"  class="typeahead form-control  font-weight-light search"  placeholder="Search" [(ngModel)]="model" >
               <img  [src]= "forImage + '/assets/images/magnifier-tool.svg'" class=" searchImg" alt="int_dot"/>
             </div>
         <div class="w-100"></div>

@@ -34,7 +34,7 @@ export class ElastichsearchService {
   private objects: any;
   private standards: any;
   private standardsForCount: any;
-  private tags = ['disciplines', 'object', 'techniques', 'activities'] ;
+  private tags = ['disciplines', 'objects', 'object', 'techniques', 'activities'] ;
   private regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
   itemsCount: any;
   private detailsResult = {};
@@ -75,9 +75,6 @@ export class ElastichsearchService {
     this.setParams(['title', 'desc', 'image', 'scenario_metadata', 'author' ]);
     this.setOptions(this.params);
     return this.http.get(this.sskBackendEndpoint + 'scenario/' + scenarioId, this.options);
-      /*.map((response: HttpResponse<any>) => {
-        this.scenarioDetails(response);
-      }).catch((error: any) => Observable.throw(error.json().error || 'Server error'));*/
   }
 
 
@@ -257,7 +254,8 @@ export class ElastichsearchService {
   }
 
   getAllSteps() {
-    this.getAllStepsFromServer().subscribe(
+    return new Promise ((resolve, reject) => {
+   this.getAllStepsFromServer().subscribe(
       stepResult => {
         this.setStepNumber(stepResult['total']);
         this.setSteps(stepResult['steps']);
@@ -268,7 +266,9 @@ export class ElastichsearchService {
       error => {},
       () => {
           this.getAllResources();
+          resolve(true);
       });
+    });
   }
 
 getGlossaryTerms() {
@@ -379,6 +379,7 @@ getAllStandards() {
           });
           $('#multiple-datasets').show();
           $('#multiple-datasets .typeahead').typeahead({
+            minLength: 2,
             highlight: true,
             hint: false
           },

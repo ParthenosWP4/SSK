@@ -1,4 +1,4 @@
-import {Component, ElementRef, HostListener, OnInit, ApplicationRef, ViewChild, AfterViewInit} from '@angular/core';
+import {Component, ElementRef, HostListener, OnDestroy, OnInit, ApplicationRef, ViewChild, AfterViewInit, Renderer2} from '@angular/core';
 import {ElastichsearchService} from '../elastichsearch.service';
 import { Router} from '@angular/router';
 import {isUndefined} from 'util';
@@ -22,7 +22,8 @@ declare const $;
 })
 
 
-export class ScenariosComponent implements OnInit, AfterViewInit {
+export class ScenariosComponent implements OnInit, AfterViewInit, OnDestroy {
+  listenerFn: () => void;
   searchPlaceholder = 'Scenarios, steps or resources';
   active = 'scenarios';
   tabList: any = {};
@@ -51,13 +52,13 @@ export class ScenariosComponent implements OnInit, AfterViewInit {
   empty = false;
   public model: any;
   list = [];
-  @ViewChild('instance') instance: NgbTypeahead;
   focus$ = new Subject<string>();
   click$ = new Subject<string>();
   keydown$ = new Subject<HTMLInputElement>();
   public lodash: any;
   inputSize = '15%';
   fullTextSearch = false;
+  eltRef: any;
 
   constructor(
     public elasticServices: ElastichsearchService,
@@ -66,7 +67,8 @@ export class ScenariosComponent implements OnInit, AfterViewInit {
     public elementRef: ElementRef,
     private appRef: ApplicationRef,
     config: NgbTypeaheadConfig,
-    private router: Router) {
+    private router: Router,
+    private renderer: Renderer2) {
       config.showHint = true;
       config.focusFirst = false;
      }
@@ -87,6 +89,7 @@ export class ScenariosComponent implements OnInit, AfterViewInit {
       });
       $('#multiple-datasets').show();
       $('#multiple-datasets .typeahead').typeahead({
+        minLength: 2,
         highlight: true,
         hint: false
       },
@@ -122,15 +125,19 @@ export class ScenariosComponent implements OnInit, AfterViewInit {
    }
 
    ngAfterViewInit() {
-      $('.typeahead').bind('typeahead:render', (event, suggestions, async, dataset) => {
-        $( '.added').remove();
-         $('.tt-dataset').prepend( '<div class="tt-suggestion tt-selectable added" > <span class="strong"> Search for "' +
-         $('.typeahead').val() + '"</span></div>');
-         const eltRef = this.elementRef.nativeElement.querySelector('.added');
-         if (eltRef) {
-          eltRef.addEventListener('click', this.eventHandler.bind(this));
-         }
-      });
+     $('.typeahead').bind('typeahead:render', (event, suggestions, async, dataset) => {
+      $( '.added').remove();
+      $('.tt-dataset').prepend( '<div class="tt-suggestion tt-selectable added" > <span class="strong"> Search for "' +
+      $('.typeahead').val() + '"</span></div>');
+      //this.eltRef = this.elementRef.nativeElement.querySelector('.added');
+      /*if (this.eltRef) {
+        this.listenerFn = this.renderer.listen(this.eltRef, 'click', (even) => {
+          console.log(this.renderer);
+             this.eventHandler(even);
+             console.log(this.listenerFn);
+           });
+      }*/
+   });
 
       $('.typeahead').bind('typeahead:select', (ev, suggestion) => {
         this.selectedItem(suggestion);
@@ -155,13 +162,15 @@ export class ScenariosComponent implements OnInit, AfterViewInit {
             this.tabRes = false ;
             this.tabScenarios = false;
             if (this.elasticServices.getSteps() === undefined) {
-              setTimeout(() => {
-                this.elasticServices.getAllSteps();
-                this.setStepTab();
-             }, 2000);
+              this.elasticServices.getAllSteps().then(
+                (value) => {
+                  this.setStepTab();
+                  this.setResourcesTab();
+                });
             } else {
                 this.setStepTab();
             }
+            this.elasticServices.setResultCount(this.elasticServices.getScenarios().length);
             break;
           case 'resources':
             this.sskServices.setTitle('SSK - Resources');
@@ -169,13 +178,15 @@ export class ScenariosComponent implements OnInit, AfterViewInit {
             this.tabRes = true;
             this.tabScenarios = false;
             if (this.elasticServices.getResources() === undefined) {
-              setTimeout(() => {
-                this.elasticServices.getAllSteps();
-                this.setResourcesTab();
-              }, 2000);
+                this.elasticServices.getAllSteps().then(
+                  (value) => {
+                    this.setResourcesTab();
+                    this.setStepTab();
+                  });
             } else {
               this.setResourcesTab();
             }
+            this.elasticServices.setResultCount(this.elasticServices.getScenarios().length);
           break;
           case'scenarios':
             if  (!this.elasticServices.getResearchStarted()) {
@@ -189,20 +200,26 @@ export class ScenariosComponent implements OnInit, AfterViewInit {
         }
   }
 
-  @HostListener('window:scroll', ['$event']) checkScroll() {
-    const componentPosition = this.elementRef.nativeElement.offsetTop;
-    const scrollPosition = window.pageYOffset;
-    if ( !isUndefined(this.getScenarios()) &&  this.getScenarios().length  < this.elasticServices.getScenarioNumber()
-    && scrollPosition >= componentPosition) {
-      const  elt: any = {};
-      if (!isUndefined(this.elasticServices.getscenariosTemp().length)  && this.elasticServices.getscenariosTemp().length === 1) {
-        this.elasticServices.getscenariosTemp().pop();
-      }
-    } /*else if ( this.scenarios.length >= this.elasticServices.getScenarioNumber()) {
-    }*/
+  @HostListener('document:click', ['$event']) fullTextSerch(event: Event) {
+    if (_.includes(event['path'][1].getAttribute('class'), 'added')) {
+      this.eventHandler(event);
+   }
   }
 
+
+    @HostListener('window:scroll', ['$event']) checkScroll() {
+      const componentPosition = this.elementRef.nativeElement.offsetTop;
+      const scrollPosition = window.pageYOffset;
+      if ( !isUndefined(this.getScenarios()) &&  this.getScenarios().length  < this.elasticServices.getScenarioNumber()
+      && scrollPosition >= componentPosition) {
+        const  elt: any = {};
+        if (!isUndefined(this.elasticServices.getscenariosTemp().length)  && this.elasticServices.getscenariosTemp().length === 1) {
+          this.elasticServices.getscenariosTemp().pop();
+        }
+      } }
+
   remove(elt: any) {
+    $('#sskSearch').val('');
       let filterTerm: any;
       let temp, type: string;
       if (elt.group === undefined ) {
@@ -308,10 +325,8 @@ selectedItem(item: any) {
   tag = item.filter;
   if (item.group === undefined ) {
     if (item.standard_abbr_name !== undefined) {
-     // tag = item.standard_abbr_name;
       type = 'step';
     } else {
-     // tag = item.filter;
       type = 'scenario';
     }
   } else {
@@ -371,7 +386,7 @@ eventHandler(event) {
   $('div.tt-dataset').empty();
   this.elasticServices.setResearchStarted(true);
   this.fullTextSearch = true;
-  this.elasticServices.searchFromServer(null, this.model).subscribe(
+  this.elasticServices.searchFromServer(null, _.toLower(this.model)).subscribe(
     result => {
       this.elasticServices.searchResult = result;
       this.scenarioResults = _.remove(_.clone(this.elasticServices.searchResult['data']), item => {
@@ -396,6 +411,7 @@ eventHandler(event) {
       this.setSteps(this.elasticServices.getStepResults());
       this.setResources(this.elasticServices.getResourceResults());
     });
+    this.renderer.destroy();
 }
 
 
@@ -481,5 +497,11 @@ searchInScenarios(): Observable<any[]> {
 
   getStepsCount() {
     return this.steps.length;
+  }
+
+  ngOnDestroy() {
+    if (this.listenerFn) {
+      this.listenerFn();
+    }
   }
 }

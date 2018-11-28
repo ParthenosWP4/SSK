@@ -30,7 +30,7 @@
           <label class="form-check-label" *ngIf="(item?.name !== 'activities') ">
             <input type="checkbox" [attr.name]="elt?.filter"
                    [id]=" elt?.filter"
-                   class="form-check-input"(change)="change($event, elt)"> {{normalize(elt?.filter)}}
+                   class="form-check-input"(change)="change($event, elt)"> {{normalize(elt?.term)}} {{elt?.standard_abbr_name}}
                   <span *ngIf="elt?.count" class= "scenarioCount"  [ngClass]="item?.name.substring(0, item?.name.length - 1)"  [innerHTML]="'('+elt?.count+')'"></span>
           </label>
         

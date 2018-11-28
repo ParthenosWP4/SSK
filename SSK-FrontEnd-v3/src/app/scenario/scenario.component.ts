@@ -34,6 +34,7 @@ export class ScenarioComponent implements OnInit  {
   target: any ;
   limit: number ;
   scenarioDesc = '';
+  scenarioTitle = '';
   stepDesc = '';
   scenarioTags = {};
   stepTags = {};
@@ -42,7 +43,10 @@ export class ScenarioComponent implements OnInit  {
   activities = {};
   objects = {};
   spinner = true;
+  spinnerSteps = true;
   forImage = environment.forImage;
+
+
   constructor(
     private sskService: SskService,
     private activatedRoute: ActivatedRoute,
@@ -116,34 +120,36 @@ export class ScenarioComponent implements OnInit  {
 
 
   setCurrentScenario() {
-    this.scenarioElt.title = this.sskService.updateText(((this.scenarioElt.title instanceof Array) ?
+    this.scenarioTitle = this.sskService.updateText(((this.scenarioElt.title instanceof Array) ?
     this.scenarioElt.title[0] : this.scenarioElt.title), null);
     this.scenarioElt.descrip = (this.scenarioElt.desc instanceof Array) ? this.scenarioElt.desc[0] : this.scenarioElt.desc;
     this.scenarioDesc = this.sskService.updateText(this.scenarioElt.descrip, null);
     this.setMetadata('scenario');
     this.setScenarioSteps();
-    this.sskService.setTitle('SSK - ' + this.scenarioElt.title);
+    this.sskService.setTitle('SSK - ' + this.scenarioTitle);
   }
 
   setScenarioSteps() {
-    setTimeout(() => {
-       if ( isUndefined(this.elasticServices.getSteps())) {
-         this.elasticServices.getAllSteps();
-         this.scenarioElt.steps = _.sortBy(_.filter(this.elasticServices.getSteps(), (item) => {
-          return (_.indexOf(item.parents, this.scenarioId) !== -1);
-        }), [ 'position']);
-         _.forEach(this.elasticServices.getSteps(), (step) => {
-           step['metadata'] = this.elasticServices.addStepMetadata(step._id);
-         });
-         this.initializeCurrentStep(this.scenarioElt);
-         this.cdr.detectChanges();
+       if (this.elasticServices.getSteps() === undefined) {
+        this.elasticServices.getAllSteps().then(
+          (value) => {
+            this.scenarioElt.steps = _.sortBy(_.filter(this.elasticServices.getSteps(), (item) => {
+              return (_.indexOf(item.parents, this.scenarioId) !== -1);
+            }), [ 'position']);
+            this.spinnerSteps = false;
+             _.forEach(this.elasticServices.getSteps(), (step) => {
+               step['metadata'] = this.elasticServices.addStepMetadata(step._id);
+             });
+             this.initializeCurrentStep(this.scenarioElt);
+             this.cdr.detectChanges();
+          });
        } else {
          this.scenarioElt.steps = _.sortBy(_.filter(this.elasticServices.getSteps(), (item) => {
           return (_.indexOf(item.parents, this.scenarioId) !== -1);
         }), [ 'position']);
+        this.spinnerSteps = false;
          this.initializeCurrentStep(this.scenarioElt);
        }
-     }, 2000);
  }
 
   tagExist(tag: string, type: string  ) {
@@ -181,44 +187,47 @@ export class ScenarioComponent implements OnInit  {
 
 
   setStepMetadata() {
-    setTimeout(() => {
-    const temp  = _.groupBy(this.elasticServices.getStepsMetadata(),  (item) => {
+    let temp: any;
+    Observable.of(_.groupBy(this.elasticServices.getStepsMetadata(),  (item) => {
       return item._id ===  this.selectedStep._id + this.selectedStep.position + 'Meta';
-    }).true;
-    if ( temp != null && temp[0] != null && !isUndefined(temp[0]._source)) {
-     this.selectedStep.metadata = _.groupBy(_.flatMap(_.map(temp[0]._source)), 'type');
-      this.setMetadata('step');
-      if (!isUndefined(temp[0]._source.standard)) {
-        this.selectedStep.metadata.standards = temp[0]._source.standard;
-      }
-      if (!isUndefined(temp[0]._source.standards)) {
-        this.selectedStep.metadata.standards = temp[0]._source.standards;
-      }
-      this.selectedStep.metadata.standards =  _.uniqWith(this.selectedStep.metadata.standards, _.isEqual);
-    }
-    }, 1000);
+    }).true).subscribe(
+      (value) => { temp = value;  },
+      (error) => { console.log(error); },
+      () => {
+        if ( temp != null && temp[0] != null && !isUndefined(temp[0]._source)) {
+          this.selectedStep.metadata = _.groupBy(_.flatMap(_.map(temp[0]._source)), 'type');
+            this.setMetadata('step');
+            if (!isUndefined(temp[0]._source.standard)) {
+              this.selectedStep.metadata.standards = temp[0]._source.standard;
+            }
+            if (!isUndefined(temp[0]._source.standards)) {
+              this.selectedStep.metadata.standards = temp[0]._source.standards;
+            }
+            this.selectedStep.metadata.standards =  _.uniqWith(this.selectedStep.metadata.standards, _.isEqual);
+          }
+      });
   }
 
   setResources() {
-    setTimeout(() => {
-      this.spinner = true;
-      const resources = _.groupBy(this.elasticServices.getResources(), (item) => {
-        return item.parent === this.selectedStep._id;
-      }).true;
-
-      this.selectedStep.projects = _.groupBy(resources, (item) => {
-        return item.category === 'project';
-      }).true;
-
-      this.selectedStep.generals = _.groupBy(resources, (item) => {
-        return item.category === 'general';
-      }).true;
-      if (this.selectedStep.generals || this.selectedStep.project) {
+    let resources: any;
+    this.spinner = true;
+    Observable.of(_.groupBy(this.elasticServices.getResources(), (item) => {
+      return item.parent === this.selectedStep._id;
+     }).true).subscribe(
+      (value) => { resources = value;  },
+      (error) => { console.log(error); },
+      () => {
+        this.selectedStep.projects = _.groupBy(resources, (item) => {
+          return item.category === 'project';
+        }).true;
+        this.selectedStep.generals = _.groupBy(resources, (item) => {
+          return item.category === 'general';
+        }).true;
+        if (this.selectedStep.generals || this.selectedStep.project) {
+          this.spinner = false;
+        }
         this.spinner = false;
-      }
-      this.spinner = false;
-    }, 2000);
-
+      });
   }
 
 
@@ -384,7 +393,7 @@ getStepTitle(step: any) {
       break;
       case 'objects':
       case 'object':
-        result = 'objects';
+        result = 'object';
       break;
     }
     return result;
@@ -419,7 +428,6 @@ getStepTitle(step: any) {
         break;
         case 'standards':
         case 'standard':
-          //tags.standards = metadata.discipline;
           break;
         case 'objects':
         case 'object':
@@ -427,6 +435,7 @@ getStepTitle(step: any) {
           break;
       }
     });
+    console.log(metadata);
 }
 }
 
