@@ -395,8 +395,6 @@
                             resources, according to the SSK taxonomies, that are:<list>
                                 <item><ref target="http://tadirah.dariah.eu/vocab/index.php">Tadirah
                                         activities, objects and techniques</ref></item>
-                                <item>The NEDIMAH type taxonomy for Information resource (or
-                                        <hi>objects</hi>)</item>
                                 <item>the Dariah-IT Standard Knowledge base</item>
                                 <item>aureHAL disciplines</item>
                             </list>
@@ -415,10 +413,6 @@
                                                   target="#tadirahActivities">research activities
                                                   section</ref>
                                             </item>
-                                            <item>object: the value of <att>key</att> is taken from
-                                                the NEMO taxonomy <hi>Information Resource
-                                                  Types</hi>, <ref target="#nemoObjects">research
-                                                  objects section</ref></item>
                                             <item>technique: the value of <att>key</att> is taken
                                                 from the tadirah ontology, <ref
                                                   target="#tadirahTechniques">research techniques

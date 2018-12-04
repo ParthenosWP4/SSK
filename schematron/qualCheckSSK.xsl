@@ -16,32 +16,21 @@
    <xsl:variable name="document-uri">
       <xsl:value-of select="document-uri(/)"/>
    </xsl:variable>
-
    <!--PHASES-->
-
-
    <!--PROLOG-->
    <xsl:output xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                method="xml"
                omit-xml-declaration="no"
                standalone="yes"
                indent="yes"/>
-
    <!--XSD TYPES FOR XSLT2-->
-
-
    <!--KEYS AND FUNCTIONS-->
-
-
    <!--DEFAULT RULES-->
-
-
    <!--MODE: SCHEMATRON-SELECT-FULL-PATH-->
    <!--This mode can be used to generate an ugly though full XPath for locators-->
    <xsl:template match="*" mode="schematron-select-full-path">
       <xsl:apply-templates select="." mode="schematron-get-full-path"/>
    </xsl:template>
-
    <!--MODE: SCHEMATRON-FULL-PATH-->
    <!--This mode can be used to generate an ugly though full XPath for locators-->
    <xsl:template match="*" mode="schematron-get-full-path">
@@ -80,7 +69,6 @@
          </xsl:otherwise>
       </xsl:choose>
    </xsl:template>
-
    <!--MODE: SCHEMATRON-FULL-PATH-2-->
    <!--This mode can be used to generate prefixed XPath for humans-->
    <xsl:template match="node() | @*" mode="schematron-get-full-path-2">
@@ -114,7 +102,6 @@
          <xsl:text/>/@<xsl:value-of select="name(.)"/>
       </xsl:if>
    </xsl:template>
-
    <!--MODE: GENERATE-ID-FROM-PATH -->
    <xsl:template match="/" mode="generate-id-from-path"/>
    <xsl:template match="text()" mode="generate-id-from-path">
@@ -138,7 +125,6 @@
       <xsl:text>.</xsl:text>
       <xsl:value-of select="concat('.',name(),'-',1+count(preceding-sibling::*[name()=name(current())]),'-')"/>
    </xsl:template>
-
    <!--MODE: GENERATE-ID-2 -->
    <xsl:template match="/" mode="generate-id-2">U</xsl:template>
    <xsl:template match="*" mode="generate-id-2" priority="2">
@@ -161,7 +147,6 @@
    </xsl:template>
    <!--Strip characters-->
    <xsl:template match="text()" priority="-1"/>
-
    <!--SCHEMA SETUP-->
    <xsl:template match="/">
       <svrl:schematron-output xmlns:svrl="http://purl.oclc.org/dsdl/svrl" title="" schemaVersion="">
@@ -178,6 +163,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
+            <xsl:attribute name="name">xml:id</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M3"/>
@@ -185,7 +171,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="name">Authors ans sponsor</xsl:attribute>
+            <xsl:attribute name="name">Authors and sponsor</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M4"/>
@@ -315,44 +301,45 @@
          <xsl:apply-templates select="/" mode="M18"/>
       </svrl:schematron-output>
    </xsl:template>
-
    <!--SCHEMATRON PATTERNS-->
-
-
-   <!--PATTERN -->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl"/>
-
-	  <!--RULE -->
+   <!--PATTERN xml:id-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">xml:id</svrl:text>
+   <xsl:variable name="fileName" select="tokenize(document-uri(/), '/')[last()]"/>
+   <!--RULE -->
    <xsl:template match="tei:TEI" priority="1000" mode="M3">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:TEI"/>
-      <xsl:variable name="fileName" select="tokenize(document-uri(/), '/')[last()]"/>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="@xml:id = substring-before($fileName, '.xml')"/>
+         <xsl:when test="string(.) = substring-before($fileName, '.xml')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="@xml:id = substring-before($fileName, '.xml')">
+                                test="string(.) = substring-before($fileName, '.xml')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>The xml:id of the TEI element
-        should be equal to the name of the file, without the file extension </svrl:text>
+               <svrl:text>The xml:id of the TEI
+        element should be equal to the name of the file, without the file extension. Currently the
+        value of xml:id is "<xsl:text/>
+                  <xsl:value-of select="@xml:id"/>
+                  <xsl:text/>" whilst the file name is "<xsl:text/>
+                  <xsl:value-of select="$fileName"/>
+                  <xsl:text/>"</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="@type = 'researchScenario' or @type = 'researchStep'"/>
+         <xsl:when test="string(.) = 'researchScenario' or . = 'researchStep'"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="@type = 'researchScenario' or @type = 'researchStep'">
+                                test="string(.) = 'researchScenario' or . = 'researchStep'">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>TEI/@type should be
-        either "researchScenario" or "researchStep".</svrl:text>
+        either "researchScenario" or "researchStep". The current value of TEI/@type is "<xsl:text/>
+                  <xsl:value-of select="@type"/>
+                  <xsl:text/>"</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -362,15 +349,12 @@
    <xsl:template match="@*|node()" priority="-2" mode="M3">
       <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M3"/>
    </xsl:template>
-
-   <!--PATTERN Authors ans sponsor-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Authors ans sponsor</svrl:text>
-
-	  <!--RULE -->
+   <!--PATTERN Authors and sponsor-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Authors and sponsor</svrl:text>
+   <!--RULE -->
    <xsl:template match="tei:titleStmt" priority="1001" mode="M4">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:titleStmt"/>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="tei:author"/>
          <xsl:otherwise>
@@ -383,8 +367,7 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--REPORT -->
+      <!--REPORT -->
       <xsl:if test="not(tei:sponsor)">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="not(tei:sponsor)">
             <xsl:attribute name="location">
@@ -396,12 +379,10 @@
       </xsl:if>
       <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M4"/>
    </xsl:template>
-
-	  <!--RULE -->
+   <!--RULE -->
    <xsl:template match="tei:author" priority="1000" mode="M4">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:author"/>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="tei:persName and tei:affiliation"/>
          <xsl:otherwise>
@@ -421,15 +402,12 @@
    <xsl:template match="@*|node()" priority="-2" mode="M4">
       <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M4"/>
    </xsl:template>
-
    <!--PATTERN Authority-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Authority</svrl:text>
-
-	  <!--RULE -->
+   <!--RULE -->
    <xsl:template match="tei:publicationStmt" priority="1000" mode="M5">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:publicationStmt"/>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="tei:authority"/>
          <xsl:otherwise>
@@ -449,15 +427,11 @@
    <xsl:template match="@*|node()" priority="-2" mode="M5">
       <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M5"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
+   <!--RULE -->
    <xsl:template match="tei:licence" priority="1000" mode="M6">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:licence"/>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="@target = 'http://creativecommons.org/licenses/by/4.0/' or @target = 'http://creativecommons.org/publicdomain/zero/1.0/'"/>
          <xsl:otherwise>
@@ -467,7 +441,11 @@
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text> The licences of the scenarios and steps should be CC-BY 4.0 or CC0 1.0 Don't forget to put
-        the link towards the licence reference text in the @target attribute.</svrl:text>
+        the link towards the licence reference text in the @target attribute. The current value of "<xsl:text/>
+                  <xsl:value-of select="name(@target)"/>
+                  <xsl:text/>" is "<xsl:text/>
+                  <xsl:value-of select="@target"/>
+                  <xsl:text/>"</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -477,15 +455,12 @@
    <xsl:template match="@*|node()" priority="-2" mode="M6">
       <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M6"/>
    </xsl:template>
-
    <!--PATTERN Licences-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Licences</svrl:text>
-
-	  <!--RULE -->
+   <!--RULE -->
    <xsl:template match="tei:availability" priority="1000" mode="M7">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:availability"/>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="tei:licence/@target and tei:licence/tei:p"/>
          <xsl:otherwise>
@@ -507,15 +482,12 @@
    <xsl:template match="@*|node()" priority="-2" mode="M7">
       <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M7"/>
    </xsl:template>
-
    <!--PATTERN Source Description-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Source Description</svrl:text>
-
-	  <!--RULE -->
+   <!--RULE -->
    <xsl:template match="tei:sourceDesc" priority="1000" mode="M8">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:sourceDesc"/>
-
-		    <!--REPORT -->
+      <!--REPORT -->
       <xsl:if test="child::*">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="child::*">
             <xsl:attribute name="location">
@@ -531,15 +503,12 @@
    <xsl:template match="@*|node()" priority="-2" mode="M8">
       <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M8"/>
    </xsl:template>
-
    <!--PATTERN revisionStmt-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">revisionStmt</svrl:text>
-
-	  <!--RULE -->
+   <!--RULE -->
    <xsl:template match="tei:change" priority="1000" mode="M9">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:change"/>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="tei:date and tei:persName and tei:affiliation and tei:desc"/>
          <xsl:otherwise>
@@ -548,7 +517,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text> When recording
+               <svrl:text>When recording
         a revision, some precise metadata must be given : the date of the revision, the name of the
         responsibe and his/her affiliation and a description. </svrl:text>
             </svrl:failed-assert>
@@ -560,15 +529,12 @@
    <xsl:template match="@*|node()" priority="-2" mode="M9">
       <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M9"/>
    </xsl:template>
-
    <!--PATTERN head-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">head</svrl:text>
-
-	  <!--RULE -->
+   <!--RULE -->
    <xsl:template match="tei:div/tei:head" priority="1001" mode="M10">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:div/tei:head"/>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="string-length(.) &gt; 9"/>
          <xsl:otherwise>
@@ -584,8 +550,7 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="string-length(.) &lt; 101"/>
          <xsl:otherwise>
@@ -601,8 +566,7 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--REPORT -->
+      <!--REPORT -->
       <xsl:if test="normalize-space(.)">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="normalize-space(.)">
             <xsl:attribute name="location">
@@ -614,12 +578,10 @@
       </xsl:if>
       <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M10"/>
    </xsl:template>
-
-	  <!--RULE -->
+   <!--RULE -->
    <xsl:template match="tei:event/tei:head" priority="1000" mode="M10">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:event/tei:head"/>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="string-length(.) &gt; 9"/>
          <xsl:otherwise>
@@ -631,8 +593,7 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="string-length(.) &lt; 100"/>
          <xsl:otherwise>
@@ -645,8 +606,7 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="matches(., '(^\w*(ing|ion|ment|ments) )|( \w*(ing|ion|ment|ments$))')"/>
          <xsl:otherwise>
@@ -667,16 +627,13 @@
    <xsl:template match="@*|node()" priority="-2" mode="M10">
       <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M10"/>
    </xsl:template>
-
    <!--PATTERN desc definition-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">desc definition</svrl:text>
-
-	  <!--RULE -->
+   <!--RULE -->
    <xsl:template match="tei:desc[@type = 'definition']" priority="1000" mode="M11">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="tei:desc[@type = 'definition']"/>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="string-length(.) &lt; 1500"/>
          <xsl:otherwise>
@@ -692,8 +649,7 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="tei:list or tei:ref"/>
          <xsl:otherwise>
@@ -712,16 +668,13 @@
    <xsl:template match="@*|node()" priority="-2" mode="M11">
       <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M11"/>
    </xsl:template>
-
    <!--PATTERN Image-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Image</svrl:text>
-
-	  <!--RULE -->
+   <!--RULE -->
    <xsl:template match="tei:figure/tei:graphic/@url" priority="1000" mode="M12">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="tei:figure/tei:graphic/@url"/>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="matches(., '\.(JPG|JPEG|PNG|jpg|png|jpeg)$')"/>
          <xsl:otherwise>
@@ -741,28 +694,24 @@
    <xsl:template match="@*|node()" priority="-2" mode="M12">
       <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M12"/>
    </xsl:template>
-
    <!--PATTERN desc term-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">desc term</svrl:text>
-
-	  <!--RULE -->
+   <!--RULE -->
    <xsl:template match="tei:desc[@type = 'terms']" priority="1000" mode="M13">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="tei:desc[@type = 'terms']"/>
-
-		    <!--REPORT -->
+      <!--REPORT -->
       <xsl:if test="ancestor::tei:TEI[@type = 'researchStep'] and count(tei:term[@type = 'activity']) = 0">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                  test="ancestor::tei:TEI[@type = 'researchStep'] and count(tei:term[@type = 'activity']) = 0">
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>A
-        step should be described by an activity term, taken from the TADirAH taxonomy.</svrl:text>
+            <svrl:text>A step should be described by an activity term, taken from the TADirAH
+        taxonomy.</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-
-		    <!--REPORT -->
+      <!--REPORT -->
       <xsl:if test="ancestor::tei:TEI[@type = 'researchScenario'] and count(tei:term[@type = 'standard']) = 0">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                  test="ancestor::tei:TEI[@type = 'researchScenario'] and count(tei:term[@type = 'standard']) = 0">
@@ -773,8 +722,7 @@
         related to standards. Check the documentation for more details</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-
-		    <!--REPORT -->
+      <!--REPORT -->
       <xsl:if test="ancestor::tei:TEI[@type = 'researchScenario'] and count(tei:term[@type = 'discipline']) = 0">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                  test="ancestor::tei:TEI[@type = 'researchScenario'] and count(tei:term[@type = 'discipline']) = 0">
@@ -785,8 +733,7 @@
         related to disciplines. Check the documentation for more details.</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-
-		    <!--REPORT -->
+      <!--REPORT -->
       <xsl:if test="ancestor::tei:TEI[@type = 'researchScenario'] and count(tei:term[@type = 'technique']) = 0">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                  test="ancestor::tei:TEI[@type = 'researchScenario'] and count(tei:term[@type = 'technique']) = 0">
@@ -797,8 +744,7 @@
         related to research techniques. Check the Tadirah taxonomy for more details.</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-
-		    <!--REPORT -->
+      <!--REPORT -->
       <xsl:if test="ancestor::tei:TEI[@type = 'researchScenario'] and count(tei:term[@type = 'object']) = 0">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                  test="ancestor::tei:TEI[@type = 'researchScenario'] and count(tei:term[@type = 'object']) = 0">
@@ -810,13 +756,12 @@
         details.</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="count(tei:term[@type = 'standard']) lt 5"/>
+         <xsl:when test="count(tei:term[@type = 'standard']) &lt; 5"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="count(tei:term[@type = 'standard']) lt 5">
+                                test="count(tei:term[@type = 'standard']) &lt; 5">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
@@ -825,13 +770,12 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="count(tei:term[@type = 'discipline']) lt 5"/>
+         <xsl:when test="count(tei:term[@type = 'discipline']) &lt; 5"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="count(tei:term[@type = 'discipline']) lt 5">
+                                test="count(tei:term[@type = 'discipline']) &lt; 5">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
@@ -840,13 +784,12 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="count(tei:term[@type = 'technique']) lt 5"/>
+         <xsl:when test="count(tei:term[@type = 'technique']) &lt; 5"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="count(tei:term[@type = 'technique']) lt 5">
+                                test="count(tei:term[@type = 'technique']) &lt; 5">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
@@ -855,13 +798,12 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="count(tei:term[@type = 'object']) lt 5"/>
+         <xsl:when test="count(tei:term[@type = 'object']) &lt; 5"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="count(tei:term[@type = 'object']) lt 5">
+                                test="count(tei:term[@type = 'object']) &lt; 5">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
@@ -876,16 +818,14 @@
    <xsl:template match="@*|node()" priority="-2" mode="M13">
       <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M13"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="tei:desc[@type='terms']/tei:term" priority="1000" mode="M14">
+   <!--RULE -->
+   <xsl:template match="tei:desc[@type = 'terms']/tei:term"
+                 priority="1000"
+                 mode="M14">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="tei:desc[@type='terms']/tei:term"/>
-
-		    <!--ASSERT -->
+                       context="tei:desc[@type = 'terms']/tei:term"/>
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="@source"/>
          <xsl:otherwise>
@@ -898,8 +838,7 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--REPORT -->
+      <!--REPORT -->
       <xsl:if test="ancestor::tei:TEI[@type = 'researchScenario'] and @type = 'activity'">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                  test="ancestor::tei:TEI[@type = 'researchScenario'] and @type = 'activity'">
@@ -917,18 +856,15 @@
    <xsl:template match="@*|node()" priority="-2" mode="M14">
       <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M14"/>
    </xsl:template>
-
    <!--PATTERN Resources-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Resources</svrl:text>
-
-	  <!--RULE -->
+   <!--RULE -->
    <xsl:template match="tei:linkGrp[@type = 'projectResources']"
                  priority="1001"
                  mode="M15">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="tei:linkGrp[@type = 'projectResources']"/>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="normalize-space(@corresp)"/>
          <xsl:otherwise>
@@ -941,8 +877,7 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="matches(@corresp, '^https?:')"/>
          <xsl:otherwise>
@@ -952,12 +887,16 @@
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>Value of @corresp should be a valid
-        URI</svrl:text>
+        URI. The current value of @corresp for "<xsl:text/>
+                  <xsl:value-of select="name(.)"/>
+                  <xsl:text/>" is <xsl:text/>
+                  <xsl:value-of select="@corresp"/>
+                  <xsl:text/>
+               </svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="normalize-space(@source)"/>
          <xsl:otherwise>
@@ -966,21 +905,24 @@
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>The attribute @source should contain the name of
-        the project whose references are listed inside the &lt;linkGrp&gt;</svrl:text>
+        the project whose references are listed inside the &lt;linkGrp&gt;. The current value of @source for "<xsl:text/>
+                  <xsl:value-of select="name(.)"/>
+                  <xsl:text/>" is <xsl:text/>
+                  <xsl:value-of select="@source"/>
+                  <xsl:text/>
+               </svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
       <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M15"/>
    </xsl:template>
-
-	  <!--RULE -->
+   <!--RULE -->
    <xsl:template match="tei:linkGrp/tei:ref[@source = 'zotero']"
                  priority="1000"
                  mode="M15">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="tei:linkGrp/tei:ref[@source = 'zotero']"/>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="matches(@target, '(wp2|wp3|wp4):[A-Z0-9]{8}') or matches(@target, '[A-Z0-9]{8}')"/>
          <xsl:otherwise>
@@ -1001,15 +943,11 @@
    <xsl:template match="@*|node()" priority="-2" mode="M15">
       <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M15"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
+   <!--RULE -->
    <xsl:template match="tei:linkGrp/tei:ref" priority="1000" mode="M16">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:linkGrp/tei:ref"/>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="tei:term"/>
          <xsl:otherwise>
@@ -1028,18 +966,15 @@
    <xsl:template match="@*|node()" priority="-2" mode="M16">
       <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M16"/>
    </xsl:template>
-
    <!--PATTERN @type-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">@type</svrl:text>
-
-	  <!--RULE -->
+   <!--RULE -->
    <xsl:template match="tei:body[ancestor::tei:TEI[@type = 'researchScenario']]/tei:div/@type"
                  priority="1003"
                  mode="M17">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="tei:body[ancestor::tei:TEI[@type = 'researchScenario']]/tei:div/@type"/>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test=". = 'researchScenario'"/>
          <xsl:otherwise>
@@ -1059,15 +994,13 @@
       </xsl:choose>
       <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M17"/>
    </xsl:template>
-
-	  <!--RULE -->
+   <!--RULE -->
    <xsl:template match="tei:body[ancestor::tei:TEI[@type = 'researchStep']]/tei:div/@type"
                  priority="1002"
                  mode="M17">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="tei:body[ancestor::tei:TEI[@type = 'researchStep']]/tei:div/@type"/>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test=". = 'researchStep'"/>
          <xsl:otherwise>
@@ -1076,10 +1009,10 @@
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>@type attribute incoherence: document type is
-        '<xsl:text/>
+          '<xsl:text/>
                   <xsl:value-of select="ancestor::tei:TEI/@type"/>
                   <xsl:text/>' and current element type value is
-        '<xsl:text/>
+          '<xsl:text/>
                   <xsl:value-of select="."/>
                   <xsl:text/>'</svrl:text>
             </svrl:failed-assert>
@@ -1087,15 +1020,13 @@
       </xsl:choose>
       <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M17"/>
    </xsl:template>
-
-	  <!--RULE -->
+   <!--RULE -->
    <xsl:template match="tei:head[ancestor::tei:TEI[@type = 'researchScenario']]/@type"
                  priority="1001"
                  mode="M17">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="tei:head[ancestor::tei:TEI[@type = 'researchScenario']]/@type"/>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test=". = 'scenarioTitle'"/>
          <xsl:otherwise>
@@ -1104,10 +1035,10 @@
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>@type attribute incoherence: document type is
-        '<xsl:text/>
+          '<xsl:text/>
                   <xsl:value-of select="ancestor::tei:TEI/@type"/>
                   <xsl:text/>' and current element type value is
-        '<xsl:text/>
+          '<xsl:text/>
                   <xsl:value-of select="."/>
                   <xsl:text/>'</svrl:text>
             </svrl:failed-assert>
@@ -1115,15 +1046,13 @@
       </xsl:choose>
       <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M17"/>
    </xsl:template>
-
-	  <!--RULE -->
+   <!--RULE -->
    <xsl:template match="tei:head[ancestor::tei:TEI[@type = 'researchStep']]/@type"
                  priority="1000"
                  mode="M17">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="tei:head[ancestor::tei:TEI[@type = 'researchStep']]/@type"/>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test=". = 'stepTitle'"/>
          <xsl:otherwise>
@@ -1132,10 +1061,10 @@
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>@type attribute incoherence: document type is
-        '<xsl:text/>
+          '<xsl:text/>
                   <xsl:value-of select="ancestor::tei:TEI/@type"/>
                   <xsl:text/>' and current element type value is
-        '<xsl:text/>
+          '<xsl:text/>
                   <xsl:value-of select="."/>
                   <xsl:text/>'</svrl:text>
             </svrl:failed-assert>
@@ -1147,28 +1076,22 @@
    <xsl:template match="@*|node()" priority="-2" mode="M17">
       <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M17"/>
    </xsl:template>
-
    <!--PATTERN -->
-
-
-	  <!--RULE -->
+   <!--RULE -->
    <xsl:template match="tei:event" priority="1000" mode="M18">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:event"/>
-
-		    <!--REPORT -->
+      <!--REPORT -->
       <xsl:if test="ancestor::tei:TEI[@type = 'researchStep'] and not(tei:desc[@type = 'definition']) and not(tei:desc[@type = 'terms'])">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                  test="ancestor::tei:TEI[@type = 'researchStep'] and not(tei:desc[@type = 'definition']) and not(tei:desc[@type = 'terms'])">
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>we need a desc
-        element for the description of the step or the scenario and a desc element for the
-        associated terms.</svrl:text>
+            <svrl:text>we need a desc element for the description of the step or the scenario and a desc element
+        for the associated terms.</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-
-		    <!--ASSERT -->
+      <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="@type = 'researchStep'"/>
          <xsl:otherwise>
