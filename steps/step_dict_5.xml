@@ -49,7 +49,8 @@
                   <term key="Modeling" source="TaDiRAH" type="activity"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref source="zotero" target="H6M4KL6H" type="specification"/>
+                  <ref source="zotero" target="ZE34VR34" type="specification"/>
+                  <ref source="zotero" target="DLFKEFKC" type="service"/>
                </linkGrp>
             </event>
          </listEvent>

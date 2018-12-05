@@ -41,16 +41,19 @@
          <div type="scenario">
             <head type="scenarioTitle" xml:lang="en">Create a dictionary in TEI</head>
             <desc type="definition" xml:lang="en">This scenario sets out the best practices for
-               creating a born-digital dictionary with the TEI (Text Encoding Initiative).</desc>
+               creating a born-digital dictionary, especially with the TEI (Text Encoding
+               Initiative). However, buiding a standardized lexicographical dataset is not only a
+               data format problem, it is also an intellectual and technical process where one has
+               to choose how to model their data, and with which tools operate in order to create an
+               easy-to-use and sustainable resource.</desc>
             <desc type="terms" xml:lang="en">
                <term source="aureHAL" type="discipline" key="Linguistics"/>
                <term key="Encoding" source="tadirah" type="technique"/>
+               <term type="standard" key="TEI" source="SSK"/>
             </desc>
             <figure type="image">
                <head/>
-               <graphic
-                  url="https://images.unsplash.com/photo-1530970279610-8234f88384c3"
-               />
+               <graphic url="https://images.unsplash.com/photo-1530970279610-8234f88384c3"/>
                <figDesc>Photo by ActionVance on Unsplash.com</figDesc>
             </figure>
             <listEvent>

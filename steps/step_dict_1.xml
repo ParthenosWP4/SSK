@@ -46,7 +46,7 @@
                   Some steps to consider may be:<list>
                      <item>Identify the apporpriate language code (ideally BCP 47) for the linguistic varieties 
                         involved in the dictionary projec</item>
-                     <item>Check the TEI guidelines (Dictionary section)</item>
+                     <item>Check the TEI guidelines (section 9, Dictionaries)</item>
                      <item>Experiment with an XML editor (like Oxygen) and a TEI schema.</item>
                   </list>
                </desc>
@@ -57,6 +57,7 @@
                   <ref source="zotero" target="H6M4KL6H" type="specification"/>
                   <ref type="website" source="zotero" target="CHEQTDE9"/>
                   <ref type="documentation" source="zotero" target="VE2C5SZW"/>
+                  <ref type="documentation" source="zotero" target="U6HVF6P8"/>
                </linkGrp>
             </event>
          </listEvent>
