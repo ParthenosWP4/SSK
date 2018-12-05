@@ -47,7 +47,8 @@
                <desc type="term" xml:lang="en">
                   <term key="Modeling" source="TaDiRAH" type="activity"/>
                </desc>
-               <ref source="zotero" target="KIRW2HCI" type="specification"/>
+               <linkGrp type="generalResources">
+                  <ref source="zotero" target="KIRW2HCI" type="specification"/>
                </linkGrp>
             </event>
          </listEvent>
