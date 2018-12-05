@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_I_06022018">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Step "Build a corpus around the dictionary"</title>
+            <author>
+               <persName>Karlheinz Mörth</persName>
+               <affiliation>OEAW-ACDH</affiliation>
+            </author>
+            <author>
+               <persName>Charles Riondet</persName>
+               <affiliation>Inria</affiliation>
+            </author>
+            <author>
+               <persName>Lionel Tadjou</persName>
+               <affiliation>Inria</affiliation>
+            </author>
+            <sponsor>Dariah</sponsor>
+         </titleStmt>
+         <publicationStmt>
+            <authority>lexMC18</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
+                     this document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head xml:lang="en">Create a corpus of useful resources for the dictionary.</head>
+               <desc type="definition" xml:lang="en">These resrouces can be corpora as well as other
+                  dictionaries, used as references or direct sources to build the dictionary.
+                  Depending on the cases, this step may require digitizing printed text (see the
+                  related scenario on <ref type="link"
+                     target="http://ssk.huma-num.fr/#/scenarios/SSK_sc_digitization"
+                     >digitization</ref>), and/or build a normalized and lemmatized corpus (see <ref
+                     type="link"
+                     target="http://ssk.huma-num.fr/#/scenarios/SSK_sc_corpusModellingInTEI/8"
+                     >here</ref> the related scenario).</desc>
+               <desc type="term" xml:lang="en">
+                  <term key="Modeling" source="TaDiRAH" type="activity"/>
+               </desc>
+               <ref source="zotero" target="H6M4KL6H" type="specification"/>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
+</TEI>

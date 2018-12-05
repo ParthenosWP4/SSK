@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario" xml:id="id_0_test">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>"Create a dictionary in TEI" scenario</title>
+            <author>
+               <persName>Karlheinz Mörth</persName>
+               <affiliation>OEAW-ACDH</affiliation>
+            </author>
+            <author>
+               <persName>Charles Riondet</persName>
+               <affiliation>Inria</affiliation>
+            </author>
+            <author>
+               <persName>Lionel Tadjou</persName>
+               <affiliation>Inria</affiliation>
+            </author>
+            <sponsor>Dariah</sponsor>
+         </titleStmt>
+         <publicationStmt>
+            <authority>lexMC18</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
+                     this document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div type="scenario">
+            <head type="scenarioTitle" xml:lang="en">Create a dictionary in TEI</head>
+            <desc type="definition" xml:lang="en">This scenario sets out the best practices for
+               creating a born-digital dictionary with the TEI (Text Encoding Initiative).</desc>
+            <desc type="terms" xml:lang="en">
+               <term source="aureHAL" type="discipline" key="Linguistics"/>
+               <term key="Encoding" source="tadirah" type="technique"/>
+            </desc>
+            <figure type="image">
+               <head/>
+               <graphic
+                  url="https://images.unsplash.com/photo-1530970279610-8234f88384c3"
+               />
+               <figDesc>Photo by ActionVance on Unsplash.com</figDesc>
+            </figure>
+            <listEvent>
+               <event ref="step_dict_1" type="researchStep" xml:id="s1"/>
+               <event ref="step_dict_2" type="researchStep" xml:id="s2"/>
+               <event ref="step_dict_3" type="researchStep" xml:id="s3"/>
+               <event ref="step_dict_4" type="researchStep" xml:id="s4"/>
+               <event ref="step_dict_5" type="researchStep" xml:id="s5"/>
+            </listEvent>
+         </div>
+      </body>
+   </text>
+</TEI>

@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0"
-     type="researchStep"
-     xml:id="step_I_06022018">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_I_06022018">
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Step "Model the dictionary"</title>
+            <title>Step "Setting up the publishing environment"</title>
             <author>
-            <persName>Karlheinz Mörth</persName>
-            <affiliation>OEAW-ACDH</affiliation>
+               <persName>Karlheinz Mörth</persName>
+               <affiliation>OEAW-ACDH</affiliation>
             </author>
             <author>
                <persName>Charles Riondet</persName>
@@ -25,8 +23,8 @@
             <authority>lexMC18</authority>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
-                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
-       document.</p>
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
+                     this document.</p>
                </licence>
             </availability>
          </publicationStmt>
@@ -42,17 +40,13 @@
       <body>
          <listEvent>
             <event type="researchStep">
-               <head xml:lang="en">Image</head>
-               <head xml:lang="fr">Numériser</head>
-               <desc type="definition" xml:lang="en">Now that the scanning method and the requirements are
-      set, the imaging procedure can start.</desc>
-               <desc type="definition" xml:lang="fr"/>
+               <head xml:lang="en">Setting up the publishing environment</head>
+               <desc type="definition" xml:lang="en">Web interface, printing if necessary</desc>
                <desc type="term" xml:lang="en">
-                  <term key="Scanning" source="TaDiRAH" type="technique"/>
-                  <term key="Imaging" source="TaDiRAH" type="activity"/>
+                  <term key="Modeling" source="TaDiRAH" type="activity"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref source="zotero" target="UR7IKVIU" type="tutorial"/>
+                  <ref source="zotero" target="H6M4KL6H" type="specification"/>
                </linkGrp>
             </event>
          </listEvent>
