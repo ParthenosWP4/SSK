@@ -41,11 +41,11 @@
          <listEvent>
             <event type="researchStep">
                <head xml:lang="en">Build the model of the dictionary</head>
-               <desc type="definition" xml:lang="en">The first step is to identify the important
-                  information for the dictionary and test of they can be represented in TEI.
+               <desc type="definition" xml:lang="en">The first step is to identify the structural components 
+                  of the dictionary and test if they can be represented in TEI.
                   Some steps to consider may be:<list>
-                     <item>Get the ISO code (or any code) for the language(s) of the
-                        dictionary</item>
+                     <item>Identify the apporpriate language code (ideally BCP 47) for the linguistic varieties 
+                        involved in the dictionary projec</item>
                      <item>Check the TEI guidelines (Dictionary section)</item>
                      <item>Experiment with an XML editor (like Oxygen) and a TEI schema.</item>
                   </list>
