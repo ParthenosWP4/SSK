@@ -40,8 +40,9 @@
       <body>
          <listEvent>
             <event type="researchStep">
-               <head xml:lang="en">Create a long term archive</head>
-               <desc type="definition" xml:lang="en">On an open repository like Zenodo, archive the
+               <head xml:lang="en">Provide for long-term availability</head>
+               <desc type="definition" xml:lang="en">Archive the dictionary in a repository providing for long-term and 
+                  free accessibility, such as  Zenodo. Archive the
                   dictionary, the documentation (in ODD) and the stylesheets used for the
                   post-processing and the publication.</desc>
                <desc type="term" xml:lang="en">
