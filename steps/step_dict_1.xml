@@ -41,12 +41,14 @@
          <listEvent>
             <event type="researchStep">
                <head xml:lang="en">Build the model of the dictionary</head>
-               <desc type="definition" xml:lang="en">The first step is to identify the structural components 
-                  of the dictionary and test if they can be represented in TEI.
-                  Some steps to consider may be:<list>
-                     <item>Identify the apporpriate language code (ideally BCP 47) for the linguistic varieties 
-                        involved in the dictionary projec</item>
+               <desc type="definition" xml:lang="en">The first step is to identify the structural
+                  components of the dictionary and test if they can be represented in TEI. Some
+                  steps to consider may be: <list>
+                     <item>Identify the apporpriate language code (ideally BCP 47) for the
+                        linguistic varieties involved in the dictionary project</item>
                      <item>Check the TEI guidelines (section 9, Dictionaries)</item>
+                     <item>For existing dictionaries, try to find one example for all possible
+                        variants of the entry.</item>
                      <item>Experiment with an XML editor (like Oxygen) and a TEI schema.</item>
                   </list>
                </desc>
@@ -58,6 +60,7 @@
                   <ref type="website" source="zotero" target="CHEQTDE9"/>
                   <ref type="documentation" source="zotero" target="VE2C5SZW"/>
                   <ref type="documentation" source="zotero" target="U6HVF6P8"/>
+                  <ref type="documentation" source="zotero" target="283XL2PV"/>
                </linkGrp>
             </event>
          </listEvent>

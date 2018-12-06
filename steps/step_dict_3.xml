@@ -41,9 +41,10 @@
          <listEvent>
             <event type="researchStep">
                <head xml:lang="en">Setting up the editing environment</head>
-               <desc type="definition" xml:lang="en">Choose a tool for editinig the dictionary, and also consider the back-end. 
-                  For the latter one, we can discern two prototypical approaches: systems based on relational databases 
-                  (MySQL, PostgreSQL etc.) and native XML databases (eXist, BaseX).</desc>
+               <desc type="definition" xml:lang="en">Choose a tool for editinig the dictionary, and
+                  also consider the back-end. For the latter one, we can discern two prototypical
+                  approaches: systems based on relational databases (MySQL, PostgreSQL etc.) and
+                  native XML databases (eXist, BaseX).</desc>
                <desc type="term" xml:lang="en">
                   <term key="Modeling" source="TaDiRAH" type="activity"/>
                </desc>
@@ -51,6 +52,7 @@
                   <ref source="zotero" target="KIRW2HCI" type="specification"/>
                   <ref source="zotero" target="U2654R3W" type="tool"/>
                   <ref source="zotero" target="L6M9Q4T5" type="tool"/>
+                  <ref source="zotero" target="PZPN9Y2F" type="tool"/>
                </linkGrp>
             </event>
          </listEvent>

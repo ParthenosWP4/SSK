@@ -41,12 +41,23 @@
          <listEvent>
             <event type="researchStep">
                <head xml:lang="en">Setting up the publishing environment</head>
-               <desc type="definition" xml:lang="en">Web interface, printing if necessary</desc>
+               <desc type="definition" xml:lang="en">"For web publication, it may be necessary to
+                  set up a rich envirnomment with complex querying funcionalities. Tools like
+                  ElasticSearch can help provide such a framework, but require development skills.
+                  For printed output, you can choose betwen XSL-FO, CSS for Paged Media, LaTeX
+                  or InDesign Markup Language with postprocessing."</desc>
                <desc type="term" xml:lang="en">
                   <term key="Modeling" source="TaDiRAH" type="activity"/>
+                  <term type="standard" key="XSL"/>
+                  <term type="standard" key="CSS for Paged Media"/>
+                  <term type="standard" key="XSL-FO"/>
+                  <term type="standard" key="Apache FOP"/>
+                  <term type="standard" key="InDesign Markup Language"/>
                </desc>
                <linkGrp type="generalResources">
                   <ref source="zotero" target="H9NB3WI2" type="specification"/>
+                  <ref source="zotero" target="PZPN9Y2F" type="tool"/>
+                  <ref source="zotero" target="AF3ABSVQ" type="tool"/>
                </linkGrp>
             </event>
          </listEvent>

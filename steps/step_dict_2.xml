@@ -41,21 +41,23 @@
          <listEvent>
             <event type="researchStep">
                <head xml:lang="en">Create a corpus of useful resources for the dictionary.</head>
-               <desc type="definition" xml:lang="en">These resrouces can be corpora as well as other
-                  dictionaries, used as references or direct sources to build the dictionary.
-                  Depending on the cases, this step may require digitizing printed text (see the
+            
+               <desc type="definition" xml:lang="en">These resources can be corpora as well as other dictionaries, used as
+                  references or direct sources to build the dictionary. Depending on the cases, this
+                  step may require digitizing printed text (see the
                   related scenario on <ref type="link"
                      target="http://ssk.huma-num.fr/#/scenarios/SSK_sc_digitization"
                      >digitization</ref>), and/or build a normalized and lemmatized corpus (see <ref
-                     type="link"
-                     target="http://ssk.huma-num.fr/#/scenarios/SSK_sc_corpusModellingInTEI/8"
-                     >here</ref> the related scenario).</desc>
+                        type="link"
+                        target="http://ssk.huma-num.fr/#/scenarios/SSK_sc_corpusModellingInTEI/8"
+                        >here</ref> the related scenario).</desc>
                <desc type="term" xml:lang="en">
                   <term key="Modeling" source="TaDiRAH" type="activity"/>
                </desc>
                <linkGrp type="generalResources">
                   <ref source="zotero" target="MN5XVQ82" type="tool"/>
                   <ref source="zotero" target="2EYDEL5T" type="paper"/>
+                  <ref type="corpus" source="zotero" target="WWSFBBB6"/>
                </linkGrp>
             </event>
          </listEvent>
