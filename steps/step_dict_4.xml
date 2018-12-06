@@ -49,7 +49,7 @@
                <desc type="term" xml:lang="en">
                   <term key="Modeling" source="TaDiRAH" type="activity"/>
                   <term type="standard" key="XSL"/>
-                  <term type="standard" key="CSS for Paged Media"/>
+                  <term type="standard" key="CSS Paged Media"/>
                   <term type="standard" key="XSL-FO"/>
                   <term type="standard" key="Apache FOP"/>
                   <term type="standard" key="InDesign Markup Language"/>
