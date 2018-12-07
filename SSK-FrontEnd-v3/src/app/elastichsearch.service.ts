@@ -207,16 +207,21 @@ export class ElastichsearchService {
           response => {
             this.setScenarioNumber(response['total']);
             this.setScenariosID(response['scenarios']);
+           const rem = _.remove(this.getScenariosID(), function(n) {
+              return (n['_id'] === 'SSK_sc_RUBRICA' ||  n['_id'] === 'SSK_sc_RUBRICA_technical');
+            });
           },
           err => {
             resolve(true);
           },
           () => {
             this.setScenariosTemp(new Array<any>(this.getScenarioNumber()));
-            this.getAllSteps();
-            this.getScenariosID().forEach((obj)  => {
-              this.asynchFunction(obj);
-            });
+            this.getAllSteps().then(
+              (value) => {
+                 this.getScenariosID().forEach((obj)  => {
+                  this.asynchFunction(obj);
+                });
+              });
             resolve(true);
           });
       });
@@ -470,7 +475,7 @@ getAllStandards() {
 
   getScenarios() {
     const rems = _.remove(this.scenarios, function(n) {
-      return (n.id === 'SSK_sc_corpusModellingInTEI-minusDigitization' ||  n.id === 'SSK_sc_RUBRICA');
+      return (n.id === 'SSK_sc_corpusModellingInTEI' ||  n.id === 'SSK_sc_RUBRICA');
     });
     return this.scenarios;
   }

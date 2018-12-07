@@ -245,8 +245,9 @@ public class SSKServices {
         this.handleData = false;
     }
     
-    private JsonObject stepProcessing(String stepReference, int position, String parent) throws SAXException, ParserConfigurationException, XPathExpressionException, IOException {
+    private JsonObject stepProcessing(String stepReference, int position, String parentId) throws SAXException, ParserConfigurationException, XPathExpressionException, IOException {
          JsonArray parents = new JsonArray();
+        JsonObject parentAndPosition = new JsonObject();
         String stepContent = githubApiService.getGithubFileContent(stepType, stepReference + ".xml");
         if (!validateSSKFile(stepContent, false)) {
             return null;
@@ -259,9 +260,13 @@ public class SSKServices {
             stepJson.addProperty("type", "step");
             if(parentSteps.get(stepReference) != null){
                 parents = parentSteps.get(stepReference).getAsJsonArray();
-                parents.add(parent.split("\\.")[0]);
+                parentAndPosition.addProperty("id", parentId.split("\\.")[0] );
+                parentAndPosition.addProperty("position", position );
+                parents.add(parentAndPosition);
             } else {
-                parents.add(parent.split("\\.")[0]);
+                parentAndPosition.addProperty("id", parentId.split("\\.")[0] );
+                parentAndPosition.addProperty("position", position );
+                parents.add(parentAndPosition);
                 parentSteps.add(stepReference, parents );
             }
             stepJson.add("parents", parents);
@@ -390,14 +395,12 @@ public class SSKServices {
     public void convertStringToFile(String xmlStr, String path) {
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-            
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document doc = builder.parse(new InputSource(new StringReader(xmlStr)));
             DOMSource source = new DOMSource(doc);
             FileWriter writer = new FileWriter(new File(classLoader.getResource("./").getPath() + path));
             logger.info("--Create file '" + path + "' -- : OK");
             StreamResult result = new StreamResult(writer);
-            
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             transformer.transform(source, result);

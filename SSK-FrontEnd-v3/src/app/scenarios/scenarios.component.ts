@@ -201,9 +201,13 @@ export class ScenariosComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   @HostListener('document:click', ['$event']) fullTextSerch(event: Event) {
-    if (_.includes(event['path'][1].getAttribute('class'), 'added')) {
-      this.eventHandler(event);
-   }
+    try {
+      if (_.includes(event['path'][1].getAttribute('class'), 'added')) {
+        this.eventHandler(event);
+     }
+    }catch (ex) {
+      console.log(ex);
+    }
   }
 
 

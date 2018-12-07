@@ -134,8 +134,9 @@ export class ScenarioComponent implements OnInit  {
         this.elasticServices.getAllSteps().then(
           (value) => {
             this.scenarioElt.steps = _.sortBy(_.filter(this.elasticServices.getSteps(), (item) => {
-              return (_.indexOf(item.parents, this.scenarioId) !== -1);
+              return (_.indexOf(_.map(item.parents, 'id'), this.scenarioId) !== -1);
             }), [ 'position']);
+            this.updateSteps();
             this.spinnerSteps = false;
              _.forEach(this.elasticServices.getSteps(), (step) => {
                step['metadata'] = this.elasticServices.addStepMetadata(step._id);
@@ -145,11 +146,29 @@ export class ScenarioComponent implements OnInit  {
           });
        } else {
          this.scenarioElt.steps = _.sortBy(_.filter(this.elasticServices.getSteps(), (item) => {
-          return (_.indexOf(item.parents, this.scenarioId) !== -1);
+          return (_.indexOf(_.map(item.parents, 'id'), this.scenarioId) !== -1);
         }), [ 'position']);
+        this.updateSteps();
         this.spinnerSteps = false;
          this.initializeCurrentStep(this.scenarioElt);
        }
+ }
+
+ updateSteps() {
+  const steps = [];
+  _.forEach(this.scenarioElt.steps, (step)  => {
+    if (step.parents.length > 1) {
+        _.forEach(step.parents, (item)  => {
+        const newStep: any = _.clone(step);
+          newStep.position = item['position'];
+          steps.push(newStep);
+        });
+    } else {
+      step.position = step.parents[0].position;
+      steps.push(step);
+    }
+  });
+  this.scenarioElt.steps = _.orderBy(steps, 'position', 'asc');
  }
 
   tagExist(tag: string, type: string  ) {
@@ -435,7 +454,6 @@ getStepTitle(step: any) {
           break;
       }
     });
-    console.log(metadata);
-}
+  }
 }
 
