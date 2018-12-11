@@ -1,0 +1,21 @@
+context,test,location,line,tag,nodeText,message
+tei:TEI,"string(.) = substring-before($fileName, '.xml')",/TEI[1],,,,"The xml:id of the TEI element should be equal to the name of the file, without the file extension. Currently the value of xml:id is ""step_CtR_171117"" whilst the file name is ""step_CtR_171117.xml"""
+tei:TEI,string(.) = 'researchScenario' or . = 'researchStep',/TEI[1],,,,"TEI/@type should be either ""researchScenario"" or ""researchStep"". The current value of TEI/@type is ""researchStep"""
+tei:change,tei:date and tei:persName and tei:affiliation and tei:desc,/TEI[1]/teiHeader[1]/revisionDesc[1]/change[1],33,{http://www.tei-c.org/ns/1.0}change,,"When recording a revision, some precise metadata must be given : the date of the revision, the name of the responsibe and his/her affiliation and a description."
+tei:event/tei:head,"matches(., '(^\w*(ing|ion|ment|ments) )|( \w*(ing|ion|ment|ments$))')",/TEI[1]/text[1]/body[1]/listEvent[1]/event[1]/head[1],40,{http://www.tei-c.org/ns/1.0}head,Contextualize the research,"The title of a step should describe the action to perform, starting or ending with a gerund (or an infinitive), or a noun ."
+tei:desc[@type = 'definition'],tei:list or tei:ref,/TEI[1]/text[1]/body[1]/listEvent[1]/event[1]/desc[1],42,{http://www.tei-c.org/ns/1.0}desc,"Contextualizing the research is valuable to make the
+      reuse of the materials easier. Based on the survey materials, the publications from the
+      research and interviews of the researcher(s), a report completes the survey. It is composed of
+      different sections giving information about the genesis of the survey, the theoretical
+      framework, the realisation of the field survey, the corpus established, the data analysis and
+      the offspring of the survey.","In the <desc type=""definition>, there should be nothing more than text, <list> and <ref>."
+tei:desc[@type = 'definition'],tei:list or tei:ref,/TEI[1]/text[1]/body[1]/listEvent[1]/event[1]/desc[2],48,{http://www.tei-c.org/ns/1.0}desc,"Proposer une contextualisation facilite la réutilisation
+      des matériaux. A partir des matériaux de l'enquête, des publications tirées de la recherche et
+      des entretiens avec le(s) chercheur(s), un rapport vient compléter l'enquête. Il s'organise en
+      plusieurs chapitres et documente la genèse de l'enquête, l'univers théorique de la recherche,
+      la réalisation sur le terrain, le corpus constitué, l'analyse des données et la postérité de
+      l'enquête.","In the <desc type=""definition>, there should be nothing more than text, <list> and <ref>."
+tei:titleStmt,not(tei:sponsor),/TEI[1]/teiHeader[1]/fileDesc[1]/titleStmt[1],8,{http://www.tei-c.org/ns/1.0}titleStmt,"
+            ",The main sponsor of the SSK is the PARTHENOS project. All scenarios and steps should record this information.
+tei:sourceDesc,child::*,/TEI[1]/teiHeader[1]/fileDesc[1]/sourceDesc[1],28,{http://www.tei-c.org/ns/1.0}sourceDesc,"
+            ","sourceDesc in mandatory in TEI, so if you want to give details on the way the scenario was conceived, it is the appropriate location."

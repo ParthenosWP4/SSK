@@ -1,0 +1,22 @@
+context,test,location,line,tag,nodeText,message
+tei:TEI,"string(.) = substring-before($fileName, '.xml')",/TEI[1],,,,"The xml:id of the TEI element should be equal to the name of the file, without the file extension. Currently the value of xml:id is ""step_PiaOSDCtRotME_020218"" whilst the file name is ""step_PiaOSDCtRotME_020218.xml"""
+tei:TEI,string(.) = 'researchScenario' or . = 'researchStep',/TEI[1],,,,"TEI/@type should be either ""researchScenario"" or ""researchStep"". The current value of TEI/@type is ""researchStep"""
+tei:change,tei:date and tei:persName and tei:affiliation and tei:desc,/TEI[1]/teiHeader[1]/revisionDesc[1]/change[1],37,{http://www.tei-c.org/ns/1.0}change,,"When recording a revision, some precise metadata must be given : the date of the revision, the name of the responsibe and his/her affiliation and a description."
+tei:event/tei:head,"matches(., '(^\w*(ing|ion|ment|ments) )|( \w*(ing|ion|ment|ments$))')",/TEI[1]/text[1]/body[1]/listEvent[1]/event[1]/head[2],45,{http://www.tei-c.org/ns/1.0}head,Présenter le résultat de l'édition musicale dans un CMS open source.,"The title of a step should describe the action to perform, starting or ending with a gerund (or an infinitive), or a noun ."
+tei:desc[@type = 'definition'],tei:list or tei:ref,/TEI[1]/text[1]/body[1]/listEvent[1]/event[1]/desc[1],46,{http://www.tei-c.org/ns/1.0}desc,"If the published musical corpus is a critical edition
+      which is expected to be dynamic, publish on Omeka and VexFlow. Otherwise, for instance in case
+      of a library of music scores, publish on Omeka and Verovio (Verovio doesn't support dynamic
+      critical notes for now). It is also possible to use Tikit, a customised distribution of Omeka
+      with Verovio as a preconfigured plugin.","In the <desc type=""definition>, there should be nothing more than text, <list> and <ref>."
+tei:desc[@type = 'definition'],tei:list or tei:ref,/TEI[1]/text[1]/body[1]/listEvent[1]/event[1]/desc[2],51,{http://www.tei-c.org/ns/1.0}desc,"Si le corpus musical à publier est une édition critique
+      que l'on veut dynamique, publier avec Omeka et VexFlow. Autrement, dans le cas d'une
+      bibliothèque de partitions par exemple, publier avec Omeka et Verovio (actuellement Verovio ne
+      supporte pas les notes critiques dynamiques). Il est également possible d'utiliser TiKit, une
+      distribution personnalisée d'Omeka avec le plugin Verovio préconfiguré.","In the <desc type=""definition>, there should be nothing more than text, <list> and <ref>."
+tei:linkGrp/tei:ref,tei:term,/TEI[1]/text[1]/body[1]/listEvent[1]/event[1]/linkGrp[1]/ref[2],65,{http://www.tei-c.org/ns/1.0}ref,,"It is possible to add terms to resources, for instance a standard or a technique."
+tei:linkGrp/tei:ref,tei:term,/TEI[1]/text[1]/body[1]/listEvent[1]/event[1]/linkGrp[1]/ref[3],66,{http://www.tei-c.org/ns/1.0}ref,,"It is possible to add terms to resources, for instance a standard or a technique."
+tei:linkGrp/tei:ref,tei:term,/TEI[1]/text[1]/body[1]/listEvent[1]/event[1]/linkGrp[1]/ref[6],76,{http://www.tei-c.org/ns/1.0}ref,,"It is possible to add terms to resources, for instance a standard or a technique."
+tei:titleStmt,not(tei:sponsor),/TEI[1]/teiHeader[1]/fileDesc[1]/titleStmt[1],8,{http://www.tei-c.org/ns/1.0}titleStmt,"
+            ",The main sponsor of the SSK is the PARTHENOS project. All scenarios and steps should record this information.
+tei:sourceDesc,child::*,/TEI[1]/teiHeader[1]/fileDesc[1]/sourceDesc[1],32,{http://www.tei-c.org/ns/1.0}sourceDesc,"
+            ","sourceDesc in mandatory in TEI, so if you want to give details on the way the scenario was conceived, it is the appropriate location."

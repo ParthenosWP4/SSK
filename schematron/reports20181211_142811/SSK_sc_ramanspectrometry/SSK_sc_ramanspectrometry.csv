@@ -1,0 +1,25 @@
+context,test,location,line,tag,nodeText,message
+tei:TEI,"string(.) = substring-before($fileName, '.xml')",/TEI[1],,,,"The xml:id of the TEI element should be equal to the name of the file, without the file extension. Currently the value of xml:id is ""SSK_sc_ramanspectrometry"" whilst the file name is ""SSK_sc_ramanspectrometry.xml"""
+tei:TEI,string(.) = 'researchScenario' or . = 'researchStep',/TEI[1],,,,"TEI/@type should be either ""researchScenario"" or ""researchStep"". The current value of TEI/@type is ""researchScenario"""
+tei:change,tei:date and tei:persName and tei:affiliation and tei:desc,/TEI[1]/teiHeader[1]/revisionDesc[1]/change[1],35,{http://www.tei-c.org/ns/1.0}change,,"When recording a revision, some precise metadata must be given : the date of the revision, the name of the responsibe and his/her affiliation and a description."
+tei:desc[@type = 'definition'],tei:list or tei:ref,/TEI[1]/text[1]/body[1]/div[1]/desc[1],43,{http://www.tei-c.org/ns/1.0}desc,"Raman spectrometry is a widely used technique for
+     examining various types of cultural heritage objects, with significant contributions in studies
+     concentrating on pigment identification. The Raman effect provides a quick and relatively
+     straightforward molecular identification of a material under examination due to the fact that
+     the Raman spectrum can be considered as a fingerprint that is used for compound identification.
+     The method is considered significantly versatile therefore different types of equipment are
+     commercially available such as bench top and laboratory instruments, probes/portable and
+     handheld instruments. These advantages including the simplicity, accuracy and speed of the
+     analysis has made Raman spectroscopy very successful in the field of cultural heritage. The
+     current scenario presents a methodology for Raman analysis directly on cultural heritage object
+     (no sampling).","In the <desc type=""definition>, there should be nothing more than text, <list> and <ref>."
+tei:sourceDesc,child::*,/TEI[1]/teiHeader[1]/fileDesc[1]/sourceDesc[1],30,{http://www.tei-c.org/ns/1.0}sourceDesc,"
+            ","sourceDesc in mandatory in TEI, so if you want to give details on the way the scenario was conceived, it is the appropriate location."
+tei:div/tei:head,normalize-space(.),/TEI[1]/text[1]/body[1]/div[1]/head[1],41,{http://www.tei-c.org/ns/1.0}head,"Raman spectrometry for the analysis and identification
+     of pigments on cultural heritage objects",The title of a scenario should describe the main goal of the scenario.
+tei:desc[@type = 'terms'],ancestor::tei:TEI[@type = 'researchScenario'] and count(tei:term[@type = 'standard']) = 0,/TEI[1]/text[1]/body[1]/div[1]/desc[2],54,{http://www.tei-c.org/ns/1.0}desc,"
+               ",A scenario could have several keywords related to standards. Check the documentation for more details
+tei:desc[@type = 'terms'],ancestor::tei:TEI[@type = 'researchScenario'] and count(tei:term[@type = 'technique']) = 0,/TEI[1]/text[1]/body[1]/div[1]/desc[2],54,{http://www.tei-c.org/ns/1.0}desc,"
+               ",A scenario could have several keywords related to research techniques. Check the Tadirah taxonomy for more details.
+tei:desc[@type = 'terms'],ancestor::tei:TEI[@type = 'researchScenario'] and count(tei:term[@type = 'object']) = 0,/TEI[1]/text[1]/body[1]/div[1]/desc[2],54,{http://www.tei-c.org/ns/1.0}desc,"
+               ",A scenario could have several keywords related to research objects. Check the Tadirah taxonomy for more details.

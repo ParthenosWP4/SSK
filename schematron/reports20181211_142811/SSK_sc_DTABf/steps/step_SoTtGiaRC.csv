@@ -1,0 +1,20 @@
+context,test,location,line,tag,nodeText,message
+tei:TEI,"string(.) = substring-before($fileName, '.xml')",/TEI[1],,,,"The xml:id of the TEI element should be equal to the name of the file, without the file extension. Currently the value of xml:id is ""step_SoTtGiaRC"" whilst the file name is ""step_SoTtGiaRC.xml"""
+tei:TEI,string(.) = 'researchScenario' or . = 'researchStep',/TEI[1],,,,"TEI/@type should be either ""researchScenario"" or ""researchStep"". The current value of TEI/@type is ""researchStep"""
+tei:change,tei:date and tei:persName and tei:affiliation and tei:desc,/TEI[1]/teiHeader[1]/revisionDesc[1]/change[1],29,{http://www.tei-c.org/ns/1.0}change,,"When recording a revision, some precise metadata must be given : the date of the revision, the name of the responsibe and his/her affiliation and a description."
+tei:desc[@type = 'definition'],tei:list or tei:ref,/TEI[1]/text[1]/body[1]/listEvent[1]/event[1]/desc[1],37,{http://www.tei-c.org/ns/1.0}desc,"Based on the project's bibiography it is advised to
+      search for existing digital resources which might be reused in the current research context.
+      Browsing for digital resources might be perfomed on different platforms, e.g. VLO, Europeana,
+      German Digital Library (for German resources). The primary goal here would be to find
+      digitized full-texts of reliable versions of the works in consideration. However, if digitized
+      full-texts are not available, text recognition has to be considered. For that, the current
+      step may also include a search for digital images of the written records (Europeana, VD, KVK)
+      to be used as a basis for text recognition.","In the <desc type=""definition>, there should be nothing more than text, <list> and <ref>."
+tei:linkGrp/tei:ref,tei:term,/TEI[1]/text[1]/body[1]/listEvent[1]/event[1]/linkGrp[1]/ref[1],57,{http://www.tei-c.org/ns/1.0}ref,VLO,"It is possible to add terms to resources, for instance a standard or a technique."
+tei:linkGrp/tei:ref,tei:term,/TEI[1]/text[1]/body[1]/listEvent[1]/event[1]/linkGrp[1]/ref[2],59,{http://www.tei-c.org/ns/1.0}ref,Europeana Collections,"It is possible to add terms to resources, for instance a standard or a technique."
+tei:linkGrp/tei:ref,tei:term,/TEI[1]/text[1]/body[1]/listEvent[1]/event[1]/linkGrp[1]/ref[3],61,{http://www.tei-c.org/ns/1.0}ref,"Deutsche Digitale Bibliothek (DDB;
+       Digital Library of Germany)","It is possible to add terms to resources, for instance a standard or a technique."
+tei:titleStmt,not(tei:sponsor),/TEI[1]/teiHeader[1]/fileDesc[1]/titleStmt[1],8,{http://www.tei-c.org/ns/1.0}titleStmt,"
+            ",The main sponsor of the SSK is the PARTHENOS project. All scenarios and steps should record this information.
+tei:sourceDesc,child::*,/TEI[1]/teiHeader[1]/fileDesc[1]/sourceDesc[1],24,{http://www.tei-c.org/ns/1.0}sourceDesc,"
+            ","sourceDesc in mandatory in TEI, so if you want to give details on the way the scenario was conceived, it is the appropriate location."
