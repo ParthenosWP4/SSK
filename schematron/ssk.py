@@ -6,6 +6,7 @@ from lxml import etree as ET
 from bs4 import BeautifulSoup
 import csv
 
+
 class schSSK:
 
     def create_directory(self, directory):
@@ -40,7 +41,7 @@ class schSSK:
         successfulReports = svrl.find_all('successful-report')
         fired.extend(successfulReports)
         for fire in fired:
-            location = ssk.getLocations(fire.attrs['location'], tree)
+            location = self.getLocations(fire.attrs['location'], tree)
             if location[1] is not None:
                 lineNumber = location[1].sourceline
                 tagName = location[1].tag

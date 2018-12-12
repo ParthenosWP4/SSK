@@ -1,0 +1,8 @@
+location,line,message
+/TEI[1],,"The xml:id of the TEI element should be equal to the name of the file, without the file extension. Currently the value of xml:id is ""st_0000000001"" whilst the file name is ""step_TRmetracP.xml"""
+/TEI[1],,"TEI/@type should be either ""researchScenario"" or ""researchStep"". The current value of TEI/@type is ""researchStep"""
+/TEI[1]/teiHeader[1]/revisionDesc[1]/change[1],33,"When recording a revision, some precise metadata must be given : the date of the revision, the name of the responsibe and his/her affiliation and a description."
+/TEI[1]/text[1]/body[1]/listEvent[1]/event[1]/head[1],41,The title is too long: 100 characters maximum
+/TEI[1]/text[1]/body[1]/listEvent[1]/event[1]/linkGrp[1]/ref[1],51,"It is possible to add terms to resources, for instance a standard or a technique."
+/TEI[1]/teiHeader[1]/fileDesc[1]/titleStmt[1],7,The main sponsor of the SSK is the PARTHENOS project. All scenarios and steps should record this information.
+/TEI[1]/teiHeader[1]/fileDesc[1]/sourceDesc[1],27,"sourceDesc in mandatory in TEI, so if you want to give details on the way the scenario was conceived, it is the appropriate location."

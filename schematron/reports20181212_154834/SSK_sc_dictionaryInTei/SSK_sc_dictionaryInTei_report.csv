@@ -1,0 +1,8 @@
+location,line,message
+/TEI[1],,"The xml:id of the TEI element should be equal to the name of the file, without the file extension. Currently the value of xml:id is ""id_0_test"" whilst the file name is ""SSK_sc_dictionaryInTei.xml"""
+/TEI[1],,"TEI/@type should be either ""researchScenario"" or ""researchStep"". The current value of TEI/@type is ""researchScenario"""
+/TEI[1]/teiHeader[1]/revisionDesc[1]/change[1],36,"When recording a revision, some precise metadata must be given : the date of the revision, the name of the responsibe and his/her affiliation and a description."
+/TEI[1]/text[1]/body[1]/div[1]/desc[1],43,"In the <desc type=""definition>, there should be nothing more than text, <list> and <ref>."
+/TEI[1]/teiHeader[1]/fileDesc[1]/sourceDesc[1],31,"sourceDesc in mandatory in TEI, so if you want to give details on the way the scenario was conceived, it is the appropriate location."
+/TEI[1]/text[1]/body[1]/div[1]/head[1],42,The title of a scenario should describe the main goal of the scenario.
+/TEI[1]/text[1]/body[1]/div[1]/desc[2],49,A scenario could have several keywords related to research objects. Check the Tadirah taxonomy for more details.
