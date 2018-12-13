@@ -215,7 +215,7 @@ export class ElastichsearchService {
             resolve(true);
           },
           () => {
-            this.setScenariosTemp(new Array<any>(this.getScenarioNumber()));
+            this.setScenariosTemp(new Array<any>(this.getScenariosID().length));
             this.getAllSteps().then(
               (value) => {
                  this.getScenariosID().forEach((obj)  => {
