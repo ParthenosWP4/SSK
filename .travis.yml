@@ -6,11 +6,12 @@ branches:
 language: node_js
 node_js:
   - "10.0.0"
-
+  
+before_install: 
+  -  cd SSK-FrontEnd-v3
 
 
 before_script:
-  - cd SSK-FrontEnd-v3  
   - npm install
 
 script:
