@@ -15,5 +15,4 @@ before_script:
   - npm install
 
 script:
-  - cd SSK-FrontEnd-v3 
   - ng build  --prod --base-href /  --env=prod-huma-num
