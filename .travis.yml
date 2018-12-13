@@ -1,12 +1,13 @@
 sudo: required
-
+branches:
+  only:
+    - dev
+    
 language: node_js
 node_js:
   - "10.0.0"
 
-branches:
-  only:
-    - dev
+
 
 before_script:
   - cd SSK-FrontEnd-v3  
