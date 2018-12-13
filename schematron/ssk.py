@@ -50,13 +50,14 @@ class schSSK:
                 lineNumber = ""
                 tagName = ""
                 tagText = ""
-
+            role = fire.attrs['role']
             message = " ".join(fire.text.split())
             rule = {
                    # "context": fire.findPrevious('fired-rule')['context'],
                     #"test": fire['test'],
                     "location": location[0],
                     "line": lineNumber,
+                    "role" : role,
                     #"tag" : tagName,
                     # "attributes" : location[1].attrib,
                     #"nodeText": tagText,
