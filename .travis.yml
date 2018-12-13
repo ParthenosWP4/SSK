@@ -18,8 +18,10 @@ before_script:
   
 script:
   - ng build  --prod --base-href /  --env=prod-huma-num
+  
 
 before_deploy:
+  - cd SSK-FrontEnd-v3
   - openssl aes-256-cbc -K $encrypted_74c5bbfe5efa_key -iv $encrypted_74c5bbfe5efa_iv  -in deploy_rsa.enc -out /tmp/deploy_rsa -d
   - eval "$(ssh-agent -s)"
   - chmod 600 /tmp/deploy_rsa
