@@ -17,7 +17,7 @@ before_script:
   - npm install
   
 script:
-  #- ng build  --prod --base-href /  --env=prod-huma-num
+  - ng build  --prod --base-href /  --env=prod-huma-num
   
 
 before_deploy:
