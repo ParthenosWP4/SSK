@@ -1,4 +1,9 @@
 sudo: required
+matrix:
+  fast_finish: true
+  include:
+    - env: RUBY_VERSION=ruby-2.4 OPENSSL_VERSION=openssl-1.0.2l
+    
 branches:
   only:
   - dev
