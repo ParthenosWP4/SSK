@@ -7,7 +7,8 @@ import subprocess
 import os
 from bs4 import BeautifulSoup
 from datetime import datetime
-from schematron.ssk import schSSK
+from ssk import schSSK
+
 #Function section (to be moved in a separate file
 #################################################
 #################################################

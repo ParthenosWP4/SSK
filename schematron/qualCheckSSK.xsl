@@ -331,10 +331,10 @@
       </xsl:choose>
       <!--ASSERT error-->
       <xsl:choose>
-         <xsl:when test="string(@type) = 'researchScenario' or . = 'researchStep'"/>
+         <xsl:when test="string(@type) = 'researchScenario' or 'researchStep'"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="string(@type) = 'researchScenario' or . = 'researchStep'">
+                                test="string(@type) = 'researchScenario' or 'researchStep'">
                <xsl:attribute name="role">error</xsl:attribute>
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
@@ -673,9 +673,10 @@
       </xsl:choose>
       <!--ASSERT error-->
       <xsl:choose>
-         <xsl:when test="tei:list or tei:ref"/>
+         <xsl:when test="tei:list or tei:ref or text()"/>
          <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="tei:list or tei:ref">
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="tei:list or tei:ref or text()">
                <xsl:attribute name="role">error</xsl:attribute>
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>

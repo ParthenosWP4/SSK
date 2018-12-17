@@ -9,7 +9,7 @@ from datetime import datetime
 import csv
 import sys
 
-from schematron.ssk import schSSK
+from ssk import schSSK
 
 ssk = schSSK()
 

@@ -1,0 +1,7 @@
+location,line,role,message
+/TEI[1]/teiHeader[1]/revisionDesc[1]/change[1],42,information,"When recording a revision, some precise metadata must be given : the date of the revision, the name of the responsibe and his/her affiliation and a description."
+/TEI[1]/text[1]/body[1]/listEvent[1]/event[1]/head[2],50,information,"The title of a step should describe the action to perform, starting or ending with a gerund (or an infinitive), or a noun ."
+/TEI[1]/text[1]/body[1]/listEvent[1]/event[1]/desc[2],53,warning,More than 4 terms of the same vocabulary type may be too much: STANDARD
+/TEI[1]/text[1]/body[1]/listEvent[1]/event[1]/linkGrp[1]/ref[1],62,information,"It is possible to add terms to resources, for instance a standard or a technique."
+/TEI[1]/teiHeader[1]/fileDesc[1]/titleStmt[1],9,warning,The main sponsor of the SSK is the PARTHENOS project. All scenarios and steps should record this information.
+/TEI[1]/teiHeader[1]/fileDesc[1]/sourceDesc[1],37,information,"sourceDesc in mandatory in TEI, so if you want to give details on the way the scenario was conceived, it is the appropriate location."

@@ -13,7 +13,7 @@
         xml:id of the TEI element should be equal to the name of the file, without the file
         extension. Currently the value of xml:id is "<sch:value-of select="@xml:id"/>" whilst the
         file name is "<sch:value-of select="$fileName"/>"</sch:assert>
-      <sch:assert test="string(@type) = 'researchScenario' or . = 'researchStep'" role="error"
+      <sch:assert test="string(@type) = 'researchScenario' or 'researchStep'" role="error"
         >TEI/@type should be either "researchScenario" or "researchStep". The current value of
         TEI/@type is "<sch:value-of select="@type"/>"</sch:assert>
     </sch:rule>
@@ -110,7 +110,7 @@
       <sch:assert test="string-length(.) &lt; 1500" role="error">The description is too long: 1500 characters
         maximum. Your description is <sch:value-of select="string-length(.) - 1500"/> too
         long</sch:assert>
-      <sch:assert test="tei:list or tei:ref" role="error"> In the &lt;desc type="definition&gt;, there should be
+      <sch:assert test="tei:list or tei:ref or text()" role="error"> In the &lt;desc type="definition&gt;, there should be
         nothing more than text, &lt;list&gt; and &lt;ref&gt;.</sch:assert>
     </sch:rule>
   </sch:pattern>

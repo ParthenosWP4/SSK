@@ -1,0 +1,19 @@
+location,line,role,message
+/TEI[1]/teiHeader[1]/revisionDesc[1]/change[1],49,information,"When recording a revision, some precise metadata must be given : the date of the revision, the name of the responsibe and his/her affiliation and a description."
+/TEI[1]/text[1]/body[1]/div[1]/desc[2],71,warning,More than 4 terms of the same vocabulary type may be too much: OBJECT
+/TEI[1]/text[1]/body[1]/div[1]/desc[2]/term[34],122,error,"The attribute source is important to specifiy which vocabulary was used. The main ones are ""tadirah"", aurehal, ""standard""."
+/TEI[1]/teiHeader[1]/fileDesc[1]/sourceDesc[1],25,information,"sourceDesc in mandatory in TEI, so if you want to give details on the way the scenario was conceived, it is the appropriate location."
+/TEI[1]/text[1]/body[1]/div[1]/head[1],55,information,The title of a scenario should describe the main goal of the scenario.
+/TEI[1]/text[1]/body[1]/div[1]/desc[2]/term[3],76,warning,The activity terms are more suitable for describing steps rather than scenarios. It is recommended to choose one activity term per scenario step.
+/TEI[1]/text[1]/body[1]/div[1]/desc[2]/term[4],77,warning,The activity terms are more suitable for describing steps rather than scenarios. It is recommended to choose one activity term per scenario step.
+/TEI[1]/text[1]/body[1]/div[1]/desc[2]/term[5],80,warning,The activity terms are more suitable for describing steps rather than scenarios. It is recommended to choose one activity term per scenario step.
+/TEI[1]/text[1]/body[1]/div[1]/desc[2]/term[6],81,warning,The activity terms are more suitable for describing steps rather than scenarios. It is recommended to choose one activity term per scenario step.
+/TEI[1]/text[1]/body[1]/div[1]/desc[2]/term[7],84,warning,The activity terms are more suitable for describing steps rather than scenarios. It is recommended to choose one activity term per scenario step.
+/TEI[1]/text[1]/body[1]/div[1]/desc[2]/term[8],85,warning,The activity terms are more suitable for describing steps rather than scenarios. It is recommended to choose one activity term per scenario step.
+/TEI[1]/text[1]/body[1]/div[1]/desc[2]/term[9],86,warning,The activity terms are more suitable for describing steps rather than scenarios. It is recommended to choose one activity term per scenario step.
+/TEI[1]/text[1]/body[1]/div[1]/desc[2]/term[10],89,warning,The activity terms are more suitable for describing steps rather than scenarios. It is recommended to choose one activity term per scenario step.
+/TEI[1]/text[1]/body[1]/div[1]/desc[2]/term[11],92,warning,The activity terms are more suitable for describing steps rather than scenarios. It is recommended to choose one activity term per scenario step.
+/TEI[1]/text[1]/body[1]/div[1]/desc[2]/term[12],95,warning,The activity terms are more suitable for describing steps rather than scenarios. It is recommended to choose one activity term per scenario step.
+/TEI[1]/text[1]/body[1]/div[1]/desc[2]/term[13],98,warning,The activity terms are more suitable for describing steps rather than scenarios. It is recommended to choose one activity term per scenario step.
+/TEI[1]/text[1]/body[1]/div[1]/desc[2]/term[14],99,warning,The activity terms are more suitable for describing steps rather than scenarios. It is recommended to choose one activity term per scenario step.
+/TEI[1]/text[1]/body[1]/div[1]/desc[2]/term[15],100,warning,The activity terms are more suitable for describing steps rather than scenarios. It is recommended to choose one activity term per scenario step.
