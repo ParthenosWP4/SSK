@@ -1,8 +1,4 @@
 sudo: required
-matrix:
-  fast_finish: true
-  include:
-    - env: RUBY_VERSION=ruby-2.4 OPENSSL_VERSION=openssl-1.0.2l
     
 branches:
   only:
@@ -16,9 +12,6 @@ node_js:
   - 10.0.0
 
 before_install:
-  - sudo apt-get install openssl libssl-dev
-  - gem update --system
-  - gem install openssl
   - cd SSK-FrontEnd-v3
 
 before_script:
