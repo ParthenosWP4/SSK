@@ -5,7 +5,8 @@ branches:
   - dev
   
 addons:
-  ssh_known_hosts:ssk.huma-num.fr
+  ssh_known_hosts:
+  - ssk.huma-num.fr
   
 language: node_js
 node_js:
