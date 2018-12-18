@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router, private sskService: SskService) { }
 
   ngOnInit() {
-    this.sskService.setTitle('Standardization Survival Kit');
+    this.sskService.setTitle('Standardization Survival Kit:teste 2');
   }
 
 
