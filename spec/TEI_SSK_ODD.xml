@@ -1053,8 +1053,7 @@
         <back>
             <div>
                 <schemaSpec ident="TEI_SSK" xml:lang="en" start="TEI">
-                    <moduleRef key="core"
-                        include="abbr addrLine address analytic author bibl biblScope biblStruct date desc editor email expan graphic head imprint item label lb list media meeting monogr name p postBox postCode pubPlace publisher ref resp respStmt series street term"/>
+                    <moduleRef key="core"/>
                     <moduleRef key="tei"/>
                     <moduleRef key="header"/>
                     <moduleRef key="textstructure"/>
@@ -1122,12 +1121,10 @@
                         <content>
                             <!-- Allow empty <event> elements -->
                             <sequence>
-                                <classRef key="model.headLike" minOccurs="0" maxOccurs="unbounded"/>
                                 <alternate minOccurs="0" maxOccurs="unbounded">
+                                    <classRef key="model.headLike" minOccurs="0" maxOccurs="unbounded"/>
                                     <classRef key="model.pLike"/>
                                     <classRef key="model.labelLike"/>
-                                </alternate>
-                                <alternate minOccurs="0" maxOccurs="unbounded">
                                     <classRef key="model.noteLike"/>
                                     <classRef key="model.biblLike"/>
                                     <elementRef key="linkGrp"/>
