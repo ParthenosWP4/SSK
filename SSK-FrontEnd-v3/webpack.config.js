@@ -22,7 +22,7 @@ const entryPoints = ["inline","polyfills","sw-register","styles","scripts","vend
 const minimizeCss = false;
 const baseHref = "";
 const deployUrl = "";
-const projectRoot = "/Users/ltadonfo/IdeaProjects/SSK-FrontEnd-v2";
+const projectRoot = ".";
 const postcssPlugins = function () {
         // safe settings based on: https://github.com/ben-eb/cssnano/issues/358#issuecomment-283696193
         const importantCommentRe = /@preserve|@licen[cs]e|[@#]\s*source(?:Mapping)?URL|^!/i;
@@ -409,13 +409,13 @@ module.exports = {
       "sourceMap": true,
       "filename": "scripts.bundle.js",
       "scripts": [
-        "/Users/ltadonfo/IdeaProjects/SSK-FrontEnd-v2/node_modules/jquery/dist/jquery.min.js",
-        "/Users/ltadonfo/IdeaProjects/SSK-FrontEnd-v2/node_modules/tether/dist/js/tether.min.js",
-        "/Users/ltadonfo/IdeaProjects/SSK-FrontEnd-v2/node_modules/popper.js/dist/umd/popper.js",
-        "/Users/ltadonfo/IdeaProjects/SSK-FrontEnd-v2/node_modules/bootstrap/dist/js/bootstrap.min.js",
-        "/Users/ltadonfo/IdeaProjects/SSK-FrontEnd-v2/node_modules/fuse-js-latest/dist/fuse.js"
+        "node_modules/jquery/dist/jquery.min.js",
+        "node_modules/tether/dist/js/tether.min.js",
+        "node_modules/popper.js/dist/umd/popper.js",
+        "node_modules/bootstrap/dist/js/bootstrap.min.js",
+        "node_modules/fuse-js-latest/dist/fuse.js"
       ],
-      "basePath": "/Users/ltadonfo/IdeaProjects/SSK-FrontEnd-v2"
+      "basePath": "."
     }),
     new CopyWebpackPlugin([
       {

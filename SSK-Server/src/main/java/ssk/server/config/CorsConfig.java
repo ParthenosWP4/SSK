@@ -28,6 +28,7 @@ public class CorsConfig  extends  WebMvcConfigurerAdapter{
 		config.addAllowedOrigin("https://ssk.parthenos-project.eu");
 		config.addAllowedOrigin("https://ssk-application.parthenos.d4science.org");
 		config.addAllowedOrigin("http://ssk.huma-num.fr");
+		config.addAllowedOrigin("http://ssk.paris.inria.fr");
 		config.addAllowedOrigin("http://localhost:4300");
 		config.addAllowedOrigin("http://localhost:4200");
 		config.addAllowedHeader("*");

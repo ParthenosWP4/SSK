@@ -77,7 +77,7 @@ public class InitData {
 		new Thread(() -> {
 			try {
 				this.createIndex();
-				// this.sskServices.initializeData();
+				 this.sskServices.initializeData();
 				//this.setElasticForResearch();
 			} catch (Exception e) {
 				e.printStackTrace();
