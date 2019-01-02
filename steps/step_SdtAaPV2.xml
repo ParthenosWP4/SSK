@@ -6,7 +6,7 @@
      xml:id="step_SdtAaPV2">
    <teiHeader>
       <fileDesc>
-         <titleStmt>
+         <titleStmt>PARTHENOS<titleStmt>
             <title>step_SdtAaP_V2.xml</title>
             <author>
                <persName>Maurizio Sanesi</persName>
@@ -39,7 +39,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc><!-- Use only for major changes -->
-         <change/>
+         <change/>V2 on 21/02/2018, edited by Maurizio Sanesi and Roberta Giacomi, SISMEL: formal updates on title, description, links and resources.
       </revisionDesc>
    </teiHeader>
    <text>
@@ -52,7 +52,6 @@
       specific application profiles</desc>
                <desc type="terms" xml:lang="en">
                   <term key="sharing" source="http://tadirah.dariah.eu/" type="activity"/>
-                  <term key="XML" source="standard_list" type="standard"/>
                   <term key="TEI" source="standard_list" type="standard"/>
                   <term key="CIDOC-CRM" source="standard_list" type="standard"/>
                </desc>
