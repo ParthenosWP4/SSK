@@ -4,7 +4,8 @@
       xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario" xml:id="SSK_sc_RUBRICA_technical">
       <teiHeader>
             <fileDesc>
-		    <titleStmt>PARTHENOS</titleStmt>
+		 <sponsor>PARTHENOS</sponsor>   
+		    <titleStmt>
                         <title>Aggregate different datasets using RUBRICA</title>
                         <author>
                               <persName>Maurizio Sanesi</persName>
