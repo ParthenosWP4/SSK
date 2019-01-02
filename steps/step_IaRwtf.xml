@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <!-- You have to type the TEI file, with researchStep or researchScenario -->
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="st_0000000001">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_IaRwtf">
     <teiHeader>
         <fileDesc>
+	<sponsor>PARTHENOS</sponsor>
             <titleStmt>
                 <title>step_IaRwtf.xml</title>
                 <author>
@@ -28,9 +29,7 @@
                 <p>Created from scratch</p>
             </sourceDesc>
         </fileDesc>
-        <revisionDesc>
-            <!-- Use only for major changes -->
-            <change/>
+        <revisionDesc>>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -38,8 +37,9 @@
             <listEvent>
                 <event type="researchStep">
                     <!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
-                    <head type="stepTitle" xml:lang="en">If a researcher wants to find other reference resources beyond his own, he can look for them through the Parthenos registry.</head>
-                    <desc xml:lang="en" type="terms">
+                    <head type="stepTitle" xml:lang="en">Find reference resources</head>
+                   <desc type="definition" xml:lang="en">If a researcher wants to find other reference resources beyond his own, he can look for them through the Parthenos registry.</desc>
+			<desc xml:lang="en" type="terms">
                                    
                         <term type="activity" source="http://tadirah.dariah.eu/"
                             key="Discovering" />
