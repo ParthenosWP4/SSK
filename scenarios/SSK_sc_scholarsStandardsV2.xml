@@ -65,14 +65,13 @@
          </listPrefixDef>
       </encodingDesc>
       <revisionDesc>
-         <change/>
+         <change/>V2 on 21/02/2018, edited by Maurizio Sanesi and Roberta Giacomi, SISMEL: formal updates on title, description, links and resources.
       </revisionDesc>
    </teiHeader>
    <text>
       <body>
          <div type="scenario">
-            <head type="scenarioTitle" xml:lang="en">Representing information about authors, works,
-     documents</head>
+            <head type="scenarioTitle" xml:lang="en">Research standards for scholars</head>
             <desc type="definition" xml:lang="en">In medieval studies, it is often needed to define in an
      unambiguous way information like person names (i.e.: authors), titles of works and documents
      identifiers (i.e.: shelfmarks). In fact, information can frequently be ambiguous: there are
