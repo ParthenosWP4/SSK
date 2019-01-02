@@ -5,7 +5,7 @@
      xml:id="step_EttrLPaAV2">
    <teiHeader>
       <fileDesc>
-         <titleStmt>
+         <titleStmt>PARTHENOS</titleStmt>
             <title>step_EttrLPaA_V2.xml</title>
             <author>
                <persName>Maurizio Sanesi</persName>
@@ -38,14 +38,14 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc><!-- Use only for major changes -->
-         <change/>
+         <change/>V2 on 21/02/2018, edited by Maurizio Sanesi and Roberta Giacomi, SISMEL: formal updates on title, description, links and resources.
       </revisionDesc>
    </teiHeader>
    <text>
       <body>
          <listEvent>
             <event type="researchStep"><!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
-               <head type="stepTitle" xml:lang="en">Ensure that the required legal permissions are available</head>
+               <head type="stepTitle" xml:lang="en">Ensuring that the required legal permissions are available</head>
                <head type="stepTitle" xml:lang="fr">Titre de l'étape en Français</head>
                <desc type="definition" xml:lang="en">In order to publish and share the results of the
       research, it is necessary to check and ensure that all the required legal permissions are
