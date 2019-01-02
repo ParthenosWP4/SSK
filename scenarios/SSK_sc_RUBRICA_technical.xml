@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI 
-      xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario" xml:id="sc_prosopography_research">
+      xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario" xml:id="SSK_sc_RUBRICA_technical">
       <teiHeader>
             <fileDesc>
-                  <titleStmt>
+		    <titleStmt>PARTHENOS</titleStmt>
                         <title>Aggregate different datasets using RUBRICA</title>
                         <author>
                               <persName>Maurizio Sanesi</persName>
@@ -32,7 +32,6 @@
                   </sourceDesc>
             </fileDesc>
             <revisionDesc>
-                  <change/>
             </revisionDesc>
       </teiHeader>
       <text>
