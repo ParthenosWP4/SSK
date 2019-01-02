@@ -6,7 +6,8 @@
      xml:id="step_SEouDatttQV2">
    <teiHeader>
       <fileDesc>
-         <titleStmt>PARTHENOS<titleStmt>
+           <sponsor>PARTHENOS</sponsor>
+         <titleStmt>
             <title>step_SEouDatttQ_V2.xml</title>
             <author>
                <persName>Maurizio Sanesi</persName>
@@ -31,7 +32,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc><!-- Use only for major changes -->
-         <change/>V2 on 21/02/2018, edited by Maurizio Sanesi and Roberta Giacomi, SISMEL: formal updates on title, description, links and resources.
+         <change>V2 on <date when="2018-02-21">February 21st 2018</date>, edited by Maurizio Sanesi and Roberta Giacomi, SISMEL: formal updates on title, description, links and resources.
       </revisionDesc>
    </teiHeader>
    <text>
