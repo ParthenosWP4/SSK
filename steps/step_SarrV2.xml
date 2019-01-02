@@ -6,7 +6,7 @@
      xml:id="step_SarrV2">
    <teiHeader>
       <fileDesc>
-         <titleStmt>
+         <titleStmt>PARTHENOS</titleStmt>
             <title>step_SaRR_V2.xml</title>
             <author>
                <persName>Maurizio Sanesi</persName>
@@ -31,7 +31,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc><!-- Use only for major changes -->
-         <change/>
+         <change/>V2 on 21/02/2018, edited by Maurizio Sanesi and Roberta Giacomi, SISMEL: formal updates on title, description, links and resources.
       </revisionDesc>
    </teiHeader>
    <text>
