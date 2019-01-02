@@ -6,7 +6,7 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Dissemination of a work</title>
+            <title>Tracking the dissemination of a specific work</title>
             <author>
                <persName>Maurizio Sanesi</persName>
                <affiliation>SISMEL</affiliation>
@@ -65,7 +65,7 @@
          </listPrefixDef>
       </encodingDesc>
       <revisionDesc>
-         <change/>
+         <change/> V2 on 21/02/2018, edited by Maurizio Sanesi and Roberta Giacomi, SISMEL: formal updates on title, description, links and resources.
       </revisionDesc>
    </teiHeader>
    <text>
