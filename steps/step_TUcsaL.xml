@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <!-- You have to type the TEI file, with researchStep or researchScenario -->
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="st_0000000001">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_TUcsaL">
     <teiHeader>
         <fileDesc>
+		<sponsor>PARTHENOS</sponsor>
             <titleStmt>
                 <title>step_TUcsaL.xml</title>
                 <author>
@@ -29,8 +30,6 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
-            <!-- Use only for major changes -->
-            <change/>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -38,8 +37,9 @@
             <listEvent>
                 <event type="researchStep">
                     <!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
-                    <head type="stepTitle" xml:lang="en">The user can save a link (equivalent get request) of the results that can be used for citations within publications / papers / other.</head>
-                    <desc xml:lang="en" type="terms">
+                    <head type="stepTitle" xml:lang="en">Link for publications</head>
+                    <desc type="definition" xml:lang="en">The user can save a link (equivalent get request) of the results that can be used for citations within publications / papers / other.</desc>
+			<desc xml:lang="en" type="terms">
                                    
                         <term type="activity" source="http://tadirah.dariah.eu/"
                             key="Dissemination" />
