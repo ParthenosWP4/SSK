@@ -5,7 +5,7 @@
      xml:id="step_FswHasHQcttgV2">
    <teiHeader>
       <fileDesc>
-         <titleStmt>
+         <titleStmt>PARTHENOS</titleStmt>
             <title>step_FswHasHQcttg_V2.xml</title>
             <author>
                <persName>Maurizio Sanesi</persName>
@@ -30,7 +30,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc><!-- Use only for major changes -->
-         <change/>
+         <change/> V2 on 21/02/2018, edited by Maurizio Sanesi and Roberta Giacomi, SISMEL: formal updates on title, description, links and resources.
       </revisionDesc>
    </teiHeader>
    <text>
@@ -38,8 +38,10 @@
          <listEvent>
             <event type="researchStep"><!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
                <head type="stepTitle" xml:lang="en">Formulate specific working hypotheses and specific
+      historical questions</head>
+                 <desc type="definition" xml:lang="en">Formulate specific working hypotheses and specific
       historical questions concerning the target group. Defining strict criteria for limiting the
-      target population and the geographic, chronological and thematic boundaries.</head>
+      target population and the geographic, chronological and thematic boundaries.</desc>
                <desc type="terms" xml:lang="en">
                   <term key="Theorizing" source="http://tadirah.dariah.eu/" type="activity"/>
                   <term key="XML" source="standard_list" type="standard"/>
