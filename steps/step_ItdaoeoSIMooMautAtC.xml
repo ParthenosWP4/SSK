@@ -4,7 +4,8 @@
      type="researchStep"
      xml:id="step_ItdaoeoSIMooMautAtC">
    <teiHeader>
-      <fileDesc>
+      <fileDesc>         
+<sponsor>PARTHENOS</sponsor>
          <titleStmt>
             <title>step_ItdaoeoSIMooMautAtC.xml</title>
             <author>
@@ -38,18 +39,19 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc><!-- Use only for major changes -->
-         <change/>
+         <change>V2 on <date when="2018-02-21">February 21st 2018</date>, edited by Maurizio Sanesi and Roberta Giacomi, SISMEL: formal updates on title, description, links and resources.</change>
       </revisionDesc>
    </teiHeader>
    <text>
       <body>
          <listEvent>
             <event type="researchStep"><!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
-               <head type="stepTitle" xml:lang="en">Interpret these data and offer explanations on
-      statistical information, metrics, or other methods are used to analyse the corpus</head>
+               <head type="stepTitle" xml:lang="en">Interpret data and offer explanations on
+      statistical information</head>
                <head type="stepTitle" xml:lang="fr">Titre de l'étape en Français</head>
                <desc type="definition" xml:lang="en">With the support of services and tools, it is possible
-      to analyze and gather information on the corpus from different points of view</desc>
+      to analyze and gather information on the corpus from different points of view. It is possible to interpret these data and offer explanations on
+      statistical information, metrics, or other methods are used to analyse the corpus</desc>
                <desc type="terms" xml:lang="en">
                   <term key="XML" source="standard_list" type="standard"/>
                   <term key="CIDOC-CRM" source="standard_list" type="standard"/>
