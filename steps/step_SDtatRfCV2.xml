@@ -54,7 +54,6 @@
                <desc type="terms" xml:lang="en">
                   <term key="gathering" source="http://tadirah.dariah.eu/" type="activity"/>
                   <term key="EAC-CPF" source="standard_list" type="standard"/>
-                  <term key="VIAF" source="standard_list" type="standard"/>
                   <term key="CIDOC-CRM" source="standard_list" type="standard"/>
                </desc>
                <linkGrp type="generalResources">
