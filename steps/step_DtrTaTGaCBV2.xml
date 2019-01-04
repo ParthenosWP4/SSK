@@ -5,6 +5,7 @@
      xml:id="step_DtrTaTGaCBV2">
    <teiHeader>
       <fileDesc>
+           <sponsor>PARTHENOS</sponsor>
          <titleStmt>
             <title>step_DtrTaTGaCB_V2.xml</title>
             <author>
@@ -38,15 +39,16 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc><!-- Use only for major changes -->
-         <change/>
+         <change>V2 on <date when="2018-02-21">February 21st 2018</date>, edited by Maurizio Sanesi and Roberta Giacomi, SISMEL: formal updates on title, description, links and resources.</change>
       </revisionDesc>
    </teiHeader>
    <text>
       <body>
          <listEvent>
             <event type="researchStep"><!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
-               <head type="stepTitle" xml:lang="en">Define the research target (persons, works, shelfmarks),
-      and thematic, geographic and chronological boundaries</head>
+               <head type="stepTitle" xml:lang="en">Define the research target</head>
+                 <desc type="definition" xml:lang="en">Define the research target (persons, works, shelfmarks),
+      and thematic, geographic and chronological boundaries</desc>
                <desc type="terms" xml:lang="en">
                   <term key="modeling" source="http://tadirah.dariah.eu/" type="activity"/>
                   <term key="XML" source="standard_list" type="standard"/>
