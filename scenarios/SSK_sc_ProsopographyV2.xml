@@ -73,9 +73,9 @@
      religious movements with other factors.</desc>
             <desc type="terms" xml:lang="en">
                <term key="History" source="aurehal" type="discipline">History</term>
-               <term key="Metadata" source="tadirah" type="objects"/>
-               <term key="Biography" source="nemo" type="objects"/>
-               <term key="Dictionaries" source="nemo" type="objects"/>
+               <term key="Metadata" source="tadirah" type="object"/>
+              <term key="Persons" source="tadirah" type="object"/>
+               <!--<term key="Dictionaries" source="nemo" type="object"/>-->
             </desc>
             <figure type="image">
                <head/>

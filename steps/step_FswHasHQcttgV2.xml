@@ -5,7 +5,7 @@
      xml:id="step_FswHasHQcttgV2">
    <teiHeader>
       <fileDesc>
-         <titleStmt>PARTHENOS</titleStmt>
+         <titleStmt>
             <title>step_FswHasHQcttg_V2.xml</title>
             <author>
                <persName>Maurizio Sanesi</persName>
@@ -15,9 +15,10 @@
                <persName>Roberta Giacomi</persName>
                <affiliation>SISMEL</affiliation>
             </author>
+           <sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+           <authority/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
@@ -30,7 +31,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc><!-- Use only for major changes -->
-         <change/> V2 on 21/02/2018, edited by Maurizio Sanesi and Roberta Giacomi, SISMEL: formal updates on title, description, links and resources.
+        <change>V2 on 21/02/2018, edited by Maurizio Sanesi and Roberta Giacomi, SISMEL: formal updates on title, description, links and resources.</change>
       </revisionDesc>
    </teiHeader>
    <text>
