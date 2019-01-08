@@ -59,7 +59,6 @@ public class SSKScenarioEndpoint {
         }
         catch (NullPointerException e) {
             logger.info("empty, Here get All fields");
-            
         }
         result = new ResponseEntity<>(jsonResult.toString(), this.headers, HttpStatus.OK);
         

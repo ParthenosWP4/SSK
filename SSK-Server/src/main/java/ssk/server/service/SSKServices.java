@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 import org.w3c.dom.*;
 
@@ -44,6 +45,15 @@ public class SSKServices {
     @Value("${elasticsearch.index}")
     private String sskIndex;
     
+    @Value("${specificationsFolder}")
+    private String specDirectory;
+    
+    @Value("${specificationsFolder}")
+    private String glossaryFileName;
+    
+    @Value("${specificationsFolder}")
+    private String standardsFileName;
+    
     
     @Autowired
     private GithubApiService githubApiService;
@@ -61,19 +71,47 @@ public class SSKServices {
     private ClassLoader classLoader;
     private HashMap<String, String> platforms = new HashMap<>();
     
-    private static final String scenarioType = "scenario";
-    private String stepType = "step";
-    private static final String teiSSKRelaxNgPath = "TEI_SSK_ODD.rng";
+    @Value("${scenarioTypeKey}")
+    private String scenarioType;
+    
+    @Value("${stepTypeKey}")
+    private String stepType;
+    
+    @Value("${teiSSKRelaxNgFileName}")
+    private String teiSSKRelaxNgPath;
+    
+    @Value("${teiToJsonFileName}")
+    private String teiToJsonFileName;
+    
+    @Value("${teiSSKODDFileName}")
+    private String teiSSKODDPath;
+    
+    @Value("${glossaryFileName}")
+    private String glossary;
+    
+    @Value("${standardsFileName}")
+    private String standards;
+    
+    @Value("${scenarioMetaDataPath}")
+    private String scenarioMetaData;
+    
+    @Value("${stepMetaDataPath}")
+    private String stepMetaData;
+    
+    @Value("${stepResourcesPath}")
+    private String resourcesPath;
+    
+    @Value("${resourcePathOfStandard}")
+    private String resourceStandardPath;
+    
+    @Value("#{'${metaDataTypeList}'.split(',')}")
+    private List<String> metaDataTab;
+    
+    @Value("${zoteroApihUrl}")
+    private String zoteroApihUrl;
+    
+    
     private static final String sskContentFileName = "SSK_Content.xml";
-    private static final String teiToJsonFileName = "xml-to-json.xsl";
-    private static final String teiSSKODDPath = "TEI_SSK_ODD.xml";
-    private static final String glossary = "SSKvocs.xml";
-    private static final String scenarioMetaData = "/TEI/text/body/div/desc/term";
-    private static final String stepMetaData = "/TEI/text/body/listEvent/event/desc/term";
-    private static final String resourcesPath = "/TEI/text/body/listEvent/event/linkGrp";
-    private static final String resourceStandardPath = "/TEI/text/body/listEvent/event/linkGrp/ref/term[contains(@type, \"standard\")]";
-    private static List<String> metaDataTab = Arrays.asList("techniques", "standard", "discipline", "objects", "activity", "object", "technique");
-    private static String zoteroApihUrl = "https://api.zotero.org/";
     private JsonObject parentSteps;
     
     private JsonParser parser;
@@ -154,14 +192,19 @@ public class SSKServices {
     
     /**
      * In this function, we call application's services to
-     * push all SSK file content in ElasticSerah
+     * push all SSK file content into Elasticsearch</br>
      * This function is launched one time when deploy SSK application on new environment
      * For each scenario :
+     * <ul>
+     *     <li></li>
+     * </ul>
      * get scenario content
-     * validate scenario against relaXNG file
-     * get scenaio's stpes and for each of them
-     * get step content
-     * validate step against relaXNG file
+     * validate scenario with relaXNG file
+     * get scenaio's steps and for each of them
+     * <ul>
+     *     <li>gets content</li>
+     *     <li>validate step with relaXNG file</li>
+     * </ul>
      * if all step files are valide
      * convert scenario content to json and push them in ElasticSearch
      * make the same with all scenario's step
@@ -244,6 +287,34 @@ public class SSKServices {
         });
         this.handleData = false;
     }
+    
+    /**
+     * <p>This function checks if a scenario is complete.
+     *  A scenario is complete if and only if all his steps exist
+     *  To do so, we use XPAth implemented in SAX  to  query all steps.
+     *  Each step is identified by the <event> tag, so we retrieve all event in the content of scenario.
+     *  And then we check the existence of the step on GitHub within the value xml:id (this represents the identifier of a step on Github)
+     *  attribute for an event tag.
+     *
+     * </p>
+     * @param scenarioContent the content(in TEI) of a scenario
+     * @return true or false, according on whether the scenario is complete or not.
+     * @throws IOException if stream to file cannot be written to or closed.
+     * @throws SAXException
+     * @throws XPathExpressionException
+     * @throws ParserConfigurationException
+     */
+     public boolean checkIfScenarioIsComplete(String scenarioContent) throws IOException, SAXException, XPathExpressionException, ParserConfigurationException{
+         setXmlStringBuilder(new StringBuilder().append(scenarioContent));
+         setDoc(DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new ByteArrayInputStream(xmlStringBuilder.toString().getBytes("UTF-8"))));
+         setxPath(XPathFactory.newInstance().newXPath());
+         setNode((NodeList) xPath.compile("//event").evaluate(doc, XPathConstants.NODESET));
+         for (int i = 0; i < node.getLength(); i++) {
+             logger.warn(node.item(i).getAttributes().toString());
+         }
+         return false;
+     }
+    
     
     private JsonObject stepProcessing(String stepReference, int position, String parentId) throws SAXException, ParserConfigurationException, XPathExpressionException, IOException {
          JsonArray parents = new JsonArray();
@@ -329,6 +400,20 @@ public class SSKServices {
         return result;
     }
     
+    
+    /**
+     * <p>
+     *     This function converts a TEI content into JSON format
+     * </p>
+     * @param sskContent The TEI/XML content to convert
+     * @param deleteFile Boolean variable to delete temp file or not after converting
+     * @param type The type (step, scenario, glossary) of content to convert
+     * @return A JSON content
+     * @throws IOException
+     * @throws SAXException
+     * @throws XPathExpressionException
+     * @throws ParserConfigurationException
+     */
     public JsonObject teiToJson(String sskContent, boolean deleteFile, String type) throws IOException, SAXException, XPathExpressionException, ParserConfigurationException {
         sskContent = sskContent.replaceAll("<!--[\\s\\S]*?-->", "");
         File command = getFile("./lib/saxon9he.jar");
@@ -561,7 +646,7 @@ public class SSKServices {
         return result;
     }
     
-    public JsonObject getZoteroResource(String id, String type) throws Exception {
+    public JsonObject getZoteroResource(String id, String type) throws HttpClientErrorException {
         JsonObject result = new JsonObject();
         result.addProperty("type", type);
         String urlAddOn;
@@ -608,7 +693,7 @@ public class SSKServices {
     }
     
     
-    public JsonObject getHalResource(String target) throws IOException {
+    public JsonObject getHalResource(String target) throws IOException, HttpClientErrorException {
         org.jsoup.nodes.Document document = Jsoup.connect(target).get();
         JsonObject result = new JsonObject();
         result.addProperty("title", document.select("title").text());
@@ -674,9 +759,6 @@ public class SSKServices {
         return result;
     }
     
-    private void setDoc(StringBuilder content) throws SAXException{
-    
-    }
     
     public File getFile(String path) {
         File result = null;
@@ -701,10 +783,14 @@ public class SSKServices {
                 output.append(line + "\n");
             }
             
-            if (!content)
+            if (!content){
                 result = (output.toString().contains("SUCCESSFUL") || (output.toString().isEmpty())) ? "true" : "false";
-            if (content) result = output.toString();
+            }
+            else {
+                result = output.toString();
+            }
         } catch (IOException e) {
+            e.printStackTrace();
             logger.error(e.getMessage());
         }
         return result;
@@ -723,6 +809,7 @@ public class SSKServices {
                        .body(null);
     }
     
+    
     public ResponseEntity<String> notFound() {
         JsonObject result = new JsonObject();
         result.addProperty("result", "NOT FOUND");
@@ -735,16 +822,17 @@ public class SSKServices {
         return content.replaceAll("\"", "");
     }
     
-    public <T> T deepCopy(T object, Class<T> type) {
-        try {
-            Gson gson = new Gson();
-            return gson.fromJson(gson.toJson(object, type), type);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
     
+    
+    
+    /**
+     * <p>This function remove an element  from a XML content.
+     * </p>
+     * @param eltToRemove  XML tag to remove from the whole content
+     * @param xmlContent  a part will be deleted
+     * @return XML content without a '@eltToRemove' element
+     * @throws
+     */
     private String removeEltFromXML(String eltToRemove, String xmlContent) {
         if (xmlContent.contains(eltToRemove)) {
             xmlContent = xmlContent.substring(0, xmlContent.indexOf("<" + eltToRemove + ">")) + xmlContent.substring(xmlContent.indexOf("</" + eltToRemove + ">") + eltToRemove.length() + 3, xmlContent.length());
@@ -826,18 +914,26 @@ public class SSKServices {
     }
     
     
-    /*
-    This function gets a step's content from a source scenario and add it to a target one,
-    this is to take into account the concept of parameters in scenario's step list
+    /**
+     * <p>
+     *     This function gets a step's reference from a source scenario and add it to a target one,
+     *     in order to manage the concept of parameters in scenario's steps list
+     * </p>
+     * @param scenarioRef, the scenario's reference
+     * @param positionInSourceScenario the step's position in the source scenario
+     * @param positionInTargetScenario  the step's position in the target scenario
+     * @return A JSON Object
+     * @throws IOException
+     * @throws SAXException
+     * @throws XPathExpressionException
+     * @throws ParserConfigurationException
      */
     private JsonObject getStepReferenceFromScenarioByPosition(String scenarioRef, String positionInSourceScenario, int positionInTargetScenario) throws IOException, SAXException, XPathExpressionException, ParserConfigurationException {
         String scenarioContent = githubApiService.getGithubFileContent(scenarioType, scenarioRef+".xml");
         String listEvent = scenarioContent.substring(scenarioContent.indexOf("<listEvent>"), scenarioContent.indexOf("</listEvent>") + new String("</listEvent>").length());
-        
         setXmlStringBuilder(new StringBuilder().append(listEvent));
         setDoc(DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new ByteArrayInputStream(xmlStringBuilder.toString().getBytes("UTF-8"))));
         setxPath(XPathFactory.newInstance().newXPath());
-        //String path = "//event[@xml:id = s" + positionInSourceScenario + " or  @xml:id=step" + positionInSourceScenario + "]";
         setNode((NodeList) xPath.compile("//event").evaluate(doc, XPathConstants.NODESET));
         String stepReference = "";
         String stepId = "";
@@ -870,23 +966,24 @@ public class SSKServices {
     }
     
     
-    private void loadGlossaryTerms() throws Exception{
-        String termsContentTEI = githubApiService.getGithubFileContent("spec", glossary);
-        JsonObject termsContentJSON = teiToJson(termsContentTEI, true, null);
-        termsContentJSON.addProperty("type", "glossary");
-        HttpEntity entity = requestHeadersParams.addDetectNoop(termsContentJSON);
-        ResponseEntity<String> response = this.restTemplate.exchange( elasticSearchPort + "/" + sskIndex + "/_doc/"+this.elasticServices.toHex(glossary) , HttpMethod.PUT, entity, String.class);
-        JSONObject responseBody = new JSONObject(response.getBody());
-        if (responseBody.get("result").toString().equals("created")) {
-            logger.info("Successful loading  of glossary");
+    private void loadGlossaryTerms() {
+        try{
+            String termsContentTEI = githubApiService.getGithubFileContent(spec, glossary);
+            JsonObject termsContentJSON = teiToJson(termsContentTEI, true, null);
+            termsContentJSON.addProperty("type", "glossary");
+            HttpEntity entity = requestHeadersParams.addDetectNoop(termsContentJSON);
+            ResponseEntity<String> response = this.restTemplate.exchange( elasticSearchPort + "/" + sskIndex + "/_doc/"+this.elasticServices.toHex(glossary) , HttpMethod.PUT, entity, String.class);
+            JSONObject responseBody = new JSONObject(response.getBody());
+            if (responseBody.get("result").toString().equals("created")) {
+                logger.info("Successful loading  of glossary");
+            }
+            else if(responseBody.get("result").toString().equals("updated")){
+                logger.info("Successful updating of glossary");
+            }
         }
-        else if(responseBody.get("result").toString().equals("updated")){
-            logger.info("Successful updating of glossary");
+        catch (HttpClientErrorException| ParserConfigurationException | IOException | XPathExpressionException | SAXException exception) {
+            logger.error(exception.getClass().getCanonicalName() + " - " + exception.getMessage()+ " Failed  to load  glossary terms");
         }
-        else{
-            logger.error("Failure loading  glossary terms");
-        }
-        
     }
     
     
@@ -982,6 +1079,9 @@ public class SSKServices {
         }
         return result;
     }
+    
+    
+   
     
    
 }

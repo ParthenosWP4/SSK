@@ -121,7 +121,7 @@ public class InitData {
 		if(response.getStatusCode().is2xxSuccessful()) {
 			logger.info("Successful set Elasticsearch for research !!!");
 		}else{
-			logger.info("Erro");
+			logger.info("Error");
 		}
 	}
 }

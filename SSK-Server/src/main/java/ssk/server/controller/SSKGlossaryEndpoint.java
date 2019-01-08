@@ -41,7 +41,7 @@ public class SSKGlossaryEndpoint {
 	public ResponseEntity<String> getAllTerms(){
 		JsonElement jsonResult ;
 		ResponseEntity<String> result;
-		jsonResult = this.elasticGetDataServices.getAllResources("glossary").getAsJsonArray();
+		jsonResult = this.elasticGetDataServices.getAllResourcesByType("glossary").getAsJsonArray();
 		result = new ResponseEntity<>(jsonResult.toString(), this.headers, HttpStatus.OK);
 		
 		if(jsonResult.isJsonNull()){
@@ -55,7 +55,7 @@ public class SSKGlossaryEndpoint {
 	public ResponseEntity<String> getTerms(@PathVariable String type){
 		JsonArray jsonResult ;
 		ResponseEntity<String> result;
-		jsonResult = this.elasticGetDataServices.getAllResources("glossary").getAsJsonArray();
+		jsonResult = this.elasticGetDataServices.getAllResourcesByType("glossary").getAsJsonArray();
 		jsonResult = this.sskServices.getTermsByType(jsonResult, type);
 		result = new ResponseEntity<>(jsonResult.toString(), this.headers, HttpStatus.OK);
 		if(jsonResult.isJsonNull()){

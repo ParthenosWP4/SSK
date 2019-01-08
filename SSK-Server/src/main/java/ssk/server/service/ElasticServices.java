@@ -11,9 +11,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 
+import java.io.IOException;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
@@ -56,10 +58,11 @@ public class ElasticServices {
 	
 	private SSKServices sskServices;
 	private GithubApiService githubApiService;
+	private ElasticGetDataServices elasticGetDataServices;
 	private RequestHeadersParams requestHeadersParams;
 	private Gson gson;
 	private List<String> targetList ;
-	private  HttpEntity<String> entity;
+	private HttpEntity<String> entity;
 	
 	
 	private static JsonParser parser  = new JsonParser();
@@ -69,9 +72,10 @@ public class ElasticServices {
 	
 	private HashMap<String, List<String>> resourceTypeVariant = new HashMap<>();
 	
-	public ElasticServices(SSKServices sskServices, GithubApiService githubApiService, RequestHeadersParams requestHeadersParams){
+	public ElasticServices(SSKServices sskServices, GithubApiService githubApiService, ElasticGetDataServices elasticGetDataServices, RequestHeadersParams requestHeadersParams){
 		this.sskServices = sskServices;
 		this.githubApiService = githubApiService;
+		this.elasticGetDataServices = elasticGetDataServices;
 		this.requestHeadersParams  = requestHeadersParams;
 		resourceTypeVariant.put("tool", Arrays.asList("tool", "service", "software"));
 		resourceTypeVariant.put("specification", Arrays.asList("spec", "specification", "standard"));
@@ -79,101 +83,6 @@ public class ElasticServices {
 		this.gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
 		targetList = new ArrayList<>();
 	}
-	
-	public  boolean createMappings(String mappingType) {
-		
-		List<String> nested = new ArrayList<>();
-		JSONObject enabled = new JSONObject();
-		//JSONObject relation = new JSONObject();
-		enabled.put("enabled", false);
-		JSONObject typeContent = new JSONObject();
-		typeContent.put("_all", enabled);
-		typeContent.put("dynamic", true);
-		JSONObject type = new JSONObject();
-		type.put(mappingType, typeContent);
-		JSONObject mapping;
-		JSONObject parentType = new JSONObject();
-		switch (mappingType) {
-			case "step":
-				parentType.put("type", "scenario");
-				typeContent.put("_parent", parentType);
-				/*relation.put("scenario", "step");
-				parentType.put("relations", relation);
-				parentType.put("type", "join");
-				typeContent.put("scenario_"+mappingType, parentType);*/
-				nested = nestedStepMappings;
-				break;
-			case "step_metadata":
-				parentType.put("type", "step");
-				typeContent.put("_parent", parentType);
-				/*relation.put("step", mappingType);
-				parentType.put("relations", relation);
-				parentType.put("type", "join");
-				typeContent.put(mappingType, parentType);*/
-				nested = metadata;
-				break;
-			case "scenario_metadata":
-				parentType.put("type", "scenario");
-				typeContent.put("_parent", parentType);
-				/*relation.put("scenario", mappingType);
-				parentType.put("relations", relation);
-				parentType.put("type", "join");
-				typeContent.put(mappingType, parentType);*/
-				nested = metadata;
-				break;
-			case "resource":
-				parentType.put("type", "step");
-				typeContent.put("_parent", parentType);
-				/*relation.put("step", mappingType);
-				parentType.put("relations", relation);
-				parentType.put("type", "join");
-				typeContent.put("step_"+mappingType, parentType);*/
-				nested = nestedREsMappings;
-				break;
-			case "resource_metadata":
-				parentType.put("type", "resource");
-				typeContent.put("_parent", parentType);
-				/*relation.put("resource", mappingType);
-				parentType.put("relations", relation);
-				parentType.put("type", "join");
-				typeContent.put(mappingType, parentType);*/
-				nested = metadata;
-				break;
-			case "glossary":
-				nested = nestedGlossary;
-				break;
-			case "standard":
-				//nested = nestedStandardMappings;
-				break;
-			default:
-				nested = nestedScenarioMappings;
-				break;
-			
-		}
-		/*JSONObject  properties = new JSONObject();
-		properties.put("properties", typeContent);*/
-		
-		//requestHeadersParams.setHeaders();
-		HttpEntity<String> entity = new HttpEntity<>(typeContent.toString(), requestHeadersParams.getHeaders());
-		ResponseEntity<String> response = this.restTemplate.exchange(elasticSearchPort + "/" + sskIndex + "/_mapping/" + mappingType, HttpMethod.PUT, entity, String.class);
-		//ResponseEntity<String> response = this.restTemplate.exchange(elasticSearchPort + "/" + sskIndex + "/_mapping/_doc", HttpMethod.PUT, entity, String.class);
-		String responseBody = response.getBody();
-		mapping = new JSONObject(responseBody);
-		boolean result = false;
-		Set keys = mapping.keySet();
-		Iterator iter = keys.iterator();
-		while (iter.hasNext()) {
-			String key = (String) iter.next();// loop to get the dynamic key
-			result = (boolean) mapping.get(key);
-			logger.info("key : " + key);
-			logger.info(" value :" + result);
-		}
-		for (int j = 0; j < nested.size(); j++) {
-			addMappingFromPath(nested.get(j), mappingType);
-		}
-		return result;
-	}
-	
 	
 	
 	public boolean pushData(JsonArray scenarioAndStep, int iteration) throws Exception {
@@ -219,6 +128,8 @@ public class ElasticServices {
 		return result[0];
 	}
 	
+	
+	
 	private void executeThread(String type, String id, JsonObject data, HttpHeaders headers, String position) {
 		Thread t = new Thread(() -> {
 			try {
@@ -229,13 +140,28 @@ public class ElasticServices {
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
+				String  errType = "Metadata";
+				if (type.equals("resources")) {
+					errType = "Resource";
+				}
+				logger.error(errType+ " with ID '"+ id +"' has not been pushed into Elasticsearch");
 			}
 		});
-		t.run();
+		t.start();
 	}
 	
-	private void pushResources(String idParent, JsonObject data, HttpHeaders headers) throws Exception {
+	/**
+	 * <p>
+	 *     This function pushed  a step's resource into Elasticsearch
+	 * </p>
+	 * @param idParent : The document's ID in Elasticsearch
+	 * @param data Data of resource to be completed by request  Zotero's API (for  Zotero's resources), GitHub API, HAL API or Web Scraping
+	 * @throws  org.springframework.web.client.HttpClientErrorException triggers an exception if Elasticsearch PUT request returns an error
+	 */
+	 private void pushResources(String idParent, JsonObject data, HttpHeaders headers){
 		Set<Map.Entry<String, JsonElement>> entries = data.entrySet();
+		JsonArray parents = new JsonArray();
+		 final String[] target = {""};
 		final String[] idResource = new String[1];
 		HashMap<String, List<JsonObject>> dataToPush = new HashMap<>();
 		entries.forEach(entry -> {
@@ -264,53 +190,79 @@ public class ElasticServices {
 				if (resource.has("source")) {
 					String source = resource.get("source").getAsString();
 					try {
-						if(!targetList.contains(resource.get("target").getAsString())) {
+						if (!targetList.contains(resource.get("target").getAsString())) {
 							push = true;
 							targetList.add(resource.get("target").getAsString());
 							switch (source) {
 								case "zotero":
-									elt = sskServices.getZoteroResource(resource.get("target").getAsString(), resourceType);
+									target[0] = resource.get("target").getAsString();
+									elt = sskServices.getZoteroResource(target[0], resourceType);
 									idResource[0] = elt.remove("id").getAsString();
 									break;
 								case "github":
-									//resourceData.add(githubApiService.getRepositoryData(resource.get("target").getAsString().split("github.com")[1], resourceType));
-									elt = githubApiService.getRepositoryData(resource.get("target").getAsString().split("github.com")[1], resourceType);
+									target[0] = resource.get("target").getAsString().split("github.com")[1];
+									elt = githubApiService.getRepositoryData(target[0], resourceType);
 									idResource[0] = elt.remove("id").toString();
 									break;
 								case "hal":
-									elt = this.sskServices.getHalResource(resource.get("target").getAsString());
+									target[0] = resource.get("target").getAsString();
+									elt = this.sskServices.getHalResource(target[0]);
 									idResource[0] = elt.remove("id").toString();
 									break;
 								case "BeQuali":
 								default:
-									idResource[0] = this.toHex(source+resource.get("target").getAsString());
+									idResource[0] = this.toHex(source + resource.get("target").getAsString());
 									logger.info("ID created :" + idResource[0]);
 									elt.addProperty("title", source);
 									elt.addProperty("url", resource.get("target").getAsString());
 									elt.addProperty("type", resourceType);
 									resourceData.add(elt);
-									break;
+								break;
 							}
 						}
-					} catch (Exception e) {
-						logger.error("informations " + source + "  " +resource.get("target").getAsString());
-						logger.error(e.getMessage());
-						elt = this.sskServices.scraptWebPage(source, resource.get("target").getAsString(),resourceType);
-						//resourceData.add(this.sskServices.scraptWebPage(source, resource.get("target").getAsString(),resourceType));
+					} catch (HttpClientErrorException exception) {
+						logger.error(exception.getClass().getCanonicalName() + " - " + exception.getMessage()+ " Unsuccessful  Request on "+ source.toUpperCase()  + " for target " + target[0]);
+						elt = this.sskServices.scraptWebPage(source, resource.get("target").getAsString(), resourceType);
 						idResource[0] = this.toHex(source + elt.get("title").getAsString());
+					}
+					catch (Exception  exception){
+						logger.error(exception.getClass().getCanonicalName() + " - " + exception.getMessage());
 					}
 				}
 				if(push){
+					JsonArray resourceParents  ;
+					JsonObject retrievedResource = this.elasticGetDataServices.getDocumentById(idResource[0]);
+					if(retrievedResource == null){
+						resourceParents = new JsonArray();
+						JsonObject parent = new JsonObject();
+						parent.addProperty("id", idParent);
+						resourceParents.add(parent);
+						elt.add("parents", resourceParents);
+					} else {
+						resourceParents = retrievedResource.get("_source").getAsJsonObject().getAsJsonArray("parents");
+						if(!resourceParents.toString().contains(idParent)){
+							JsonObject parent = new JsonObject();
+							parent.addProperty("id", idParent);
+							resourceParents.add(parent);
+							elt.add("parents", resourceParents);
+						}
+					}
 					elt.addProperty("category", category);
 					elt.addProperty("type", "resource");
-					elt.addProperty("parent", idParent);
 					entity = requestHeadersParams.addDetectNoop(elt);
-					this.restTemplate.exchange(elasticSearchPort + "/" + sskIndex + "/_doc/" + idResource[0] , HttpMethod.PUT, entity, String.class);
+					try{
+						ResponseEntity<String> response = this.restTemplate.exchange(elasticSearchPort + "/" + sskIndex + "/_doc/" + idResource[0] , HttpMethod.PUT, entity, String.class);
+						if (response.getStatusCode().is2xxSuccessful()) {
+							logger.info("Resource  with _id " + idResource[0] + " and the step parent " + idParent + " has been successful created");
+						}
+					}catch(HttpClientErrorException ex){
+						logger.error("Error when pushed Resource with id " + idResource[0] + " for the step parent " + idParent + " - Elasticsearch Problem");
+					}
+					
 				}
-				
 			});
 		});
-	}
+	 }
 	
 	
 	private void pushMetadata(String type, String idParent, JsonObject data, HttpHeaders headers, String position) throws Exception {

@@ -14,6 +14,7 @@ import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -63,8 +64,6 @@ public class GithubApiService {
     private Gson gson ;
     
     public String url;
-    
-    //private String  = "token "+ token;
     
     private ResponseEntity<?> response ;
     
@@ -129,7 +128,7 @@ public class GithubApiService {
     /* Get SSK file content
     * File can be scenario, step or relaxNg
     * */
-    public String getGithubFileContent (String  type, String fileName) {
+    public String getGithubFileContent (String  type, String fileName) throws  HttpClientErrorException {
         this.request = new HttpEntity<>(this.updateRequestHeaders("xml", null));
         this.url  = "contents/";
         switch (type){
@@ -145,39 +144,31 @@ public class GithubApiService {
             
             default:
         }
-        try{
-            return this.restTemplate.exchange(getGithubUrl() + this.url, HttpMethod.GET, this.request, String.class).getBody();
-        }
-        catch (Exception e ){
-            logger.trace(e.getMessage());
-            return  null;
-        }
+        return this.restTemplate.exchange(getGithubUrl() + this.url, HttpMethod.GET, this.request, String.class).getBody();
     }
     
-    public JsonObject getRepositoryData(String repo, String type) throws UnsupportedEncodingException{
+    public JsonObject getRepositoryData(String repo, String type) throws UnsupportedEncodingException, HttpClientErrorException {
         this.request = new HttpEntity<>(this.updateRequestHeaders("json", null));
-        ResponseEntity<String> responseEntity =  this.restTemplate.exchange(getGithubApiUrl() + URLEncoder.encode(repo, "UTF-8"), HttpMethod.GET, this.getRequest(), String.class);
-        JsonObject result = gson.fromJson(responseEntity.getBody(), JsonObject.class);
-        JsonObject data = new JsonObject();
-        data.addProperty("type", type);
-        if(result.has("name")) data.addProperty("title", result.get("title").getAsString());
-        if(result.has("id")) data.addProperty("id", result.get("id").getAsString());
-        if(result.has("description"))  data.addProperty ("abstract", result.get("url").getAsString());
-        if(result.has("homepage")) data.addProperty ("url", result.get("homepage").getAsString());
-        if(result.has("created_at")) data.addProperty ("date", result.get("created_at").getAsString());
-        if(result.has("name")) {
-            JsonObject owner = result.getAsJsonObject("owner");
-            JsonObject elt = new JsonObject();
-            if(owner.has("type")) elt.addProperty("type",owner.get("type").getAsString());
-            if(owner.has("login")) elt.addProperty("name",owner.get("login").getAsString());
-            data.add ("creators", elt);
-        }
-        logger.warn(data.toString());
+	        ResponseEntity<String> responseEntity =  this.restTemplate.exchange(getGithubApiUrl() + URLEncoder.encode(repo, "UTF-8"), HttpMethod.GET, this.getRequest(), String.class);
+	        JsonObject result = gson.fromJson(responseEntity.getBody(), JsonObject.class);
+	        JsonObject data = new JsonObject();
+	        data.addProperty("type", type);
+	        if(result.has("name")) data.addProperty("title", result.get("title").getAsString());
+	        if(result.has("id")) data.addProperty("id", result.get("id").getAsString());
+	        if(result.has("description"))  data.addProperty ("abstract", result.get("url").getAsString());
+	        if(result.has("homepage")) data.addProperty ("url", result.get("homepage").getAsString());
+	        if(result.has("created_at")) data.addProperty ("date", result.get("created_at").getAsString());
+	        if(result.has("name")) {
+		        JsonObject owner = result.getAsJsonObject("owner");
+		        JsonObject elt = new JsonObject();
+		        if(owner.has("type")) elt.addProperty("type",owner.get("type").getAsString());
+		        if(owner.has("login")) elt.addProperty("name",owner.get("login").getAsString());
+		        data.add ("creators", elt);
+	        }
         return data;
     }
 
     /* Get Commits on specific Github path */
-    
     public String getLastCommitDate(String type, String fileName ){
         this.url  = "commits?path=" + type + "/" + fileName;
         JsonElement jsonResult;

@@ -32,7 +32,7 @@ public class SSKStandardEndpoint {
 	public ResponseEntity<String> getAllStandard(){
 		JsonElement jsonResult ;
 		ResponseEntity<String> result;
-		jsonResult = this.elasticGetDataServices.getAllResources("standard");
+		jsonResult = this.elasticGetDataServices.getAllResourcesByType("standard");
 		result = new ResponseEntity<>(jsonResult.toString(), this.headers, HttpStatus.OK);
 		if(jsonResult.isJsonNull()){
 			return sskServices.serverError();
