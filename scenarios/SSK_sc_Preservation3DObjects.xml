@@ -113,6 +113,7 @@
           <figDesc>Graph system of aLTAG3D</figDesc>
         </figure>
         <listEvent>
+          <event xml:id="sc1" type="researchScenario" ref="SSK_sc_production3DObjectsScenario" subtype="prelim"></event>
           <event xml:id="s1" type="researchStep" ref="step_Ct3Dltf_190618"/>
           <event xml:id="s2" type="researchStep" ref="step_DaA_190618"/>
           <event xml:id="s3" type="researchStep" ref="step_CaAPw3DDaM_190618"/>
