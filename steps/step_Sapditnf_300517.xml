@@ -1,46 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0"
-     type="researchStep"
-     xml:id="step_Sapditnf_300517">
-   <teiHeader>
-      <fileDesc>
-         <titleStmt>
-            <title>Step "Share and publish data in this new format"</title>
-            <author>
-               <persName>Charles Riondet</persName>
-               <affiliation>Inria</affiliation>
-            </author>
-         </titleStmt>
-         <publicationStmt>
-            <authority>Parthenos</authority>
-            <availability>
-               <licence target="http://creativecommons.org/licenses/by/4.0/">
-                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
-       document.</p>
-               </licence>
-            </availability>
-         </publicationStmt>
-         <sourceDesc>
-            <p>Created from scratch</p>
-         </sourceDesc>
-      </fileDesc>
-      <revisionDesc>
-         <change/>
-      </revisionDesc>
-   </teiHeader>
-   <text>
-      <body>
-         <listEvent>
-            <event type="researchStep">
-               <head xml:lang="en">Share and publish data in this new format</head>
-               <desc type="definition" xml:lang="en"/>
-               <desc type="terms" xml:lang="en">
-                  <term key="Publishing" source="tadirah" type="activity"/>
-                  <term key="Sharing" source="tadirah" type="activity"/>
-               </desc>
-            </event>
-         </listEvent>
-      </body>
-   </text>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_Sapditnf_300517">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Step "Share and publish data in this new format"</title>
+        <author>
+          <persName>Charles Riondet</persName>
+          <affiliation>Inria</affiliation>
+        </author>
+      </titleStmt>
+      <publicationStmt>
+        <authority>Parthenos</authority>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0/">
+            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+              document.</p>
+          </licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Created from scratch</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change/>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listEvent>
+        <event type="researchStep">
+          <head xml:lang="en">Share and publish data in this new format</head>
+          <desc type="definition" xml:lang="en">The data tested and validated with the customized
+            schema can be published on the archival portal.</desc>
+          <desc type="terms" xml:lang="en">
+            <term key="Publishing" source="tadirah" type="activity"/>
+            <term key="Sharing" source="tadirah" type="activity"/>
+          </desc>
+        </event>
+      </listEvent>
+    </body>
+  </text>
 </TEI>

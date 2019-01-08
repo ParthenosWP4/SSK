@@ -55,9 +55,17 @@
           analysis directly on cultural heritage object (no sampling).</desc>
         <desc xml:lang="en" type="terms">
           <term type="discipline" source="aurehal" key="History"/>
+          <term source="aurehal" type="discipline">Art and art history</term>
+          <term source="aurehal" type="discipline">Cultural heritage and museology</term>
           <term type="object" source="tadirah" key="Artifacts"/>
           <term type="object" source="tadirah" key="Data"/>
+          <term key="Scanning" source="tadirah" type="techniques"/>
         </desc>
+        <figure type="image">
+          <head/>
+          <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/SSK-Raman-photo1.png"/>
+          <figDesc/>
+        </figure>
         <listEvent>
           <event xml:id="s1" type="researchStep" ref="step_DtA"/>
           <event xml:id="s2" type="researchStep" ref="step_DtP"/>
