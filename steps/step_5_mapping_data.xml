@@ -58,7 +58,6 @@
                <head xml:lang="en">Mapping the data</head>
                <desc type="definition" xml:lang="en">The step describes tools and good practice to map data
       in a specific metadata format without loss useful information</desc>
-               <desc type="definition" xml:lang="fr"/>
                <desc type="term" xml:lang="en">
                   <term key="http://tadirah.dariah.eu/vocab/index.php?tema=110&amp;/mapping"
                         source="http://tadirah.dariah.eu/"

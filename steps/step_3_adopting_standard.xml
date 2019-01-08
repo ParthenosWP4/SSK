@@ -56,7 +56,6 @@
          <listEvent>
             <event type="researchStep">
                <head xml:lang="en">Adopting a standard for metadata</head>
-               <head xml:lang="fr">TODO</head>
                <desc type="definition" xml:lang="en">The step describes the reasons for choosing a specific
       standard to create metadata</desc>
                <desc type="definition" xml:lang="fr"/>

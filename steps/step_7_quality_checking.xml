@@ -56,7 +56,6 @@
          <listEvent>
             <event type="researchStep">
                <head xml:lang="en">Quality checking</head>
-               <head xml:lang="fr">TODO</head>
                <desc type="definition" xml:lang="en">The step describes the workflow to verify the quality of
       metadata produced and their correspondence with the application profile adopted</desc>
                <desc type="definition" xml:lang="fr"/>

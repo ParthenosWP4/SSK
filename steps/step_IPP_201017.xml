@@ -41,7 +41,6 @@
                <desc type="definition" xml:lang="en">Applying post proccesing methods in order to extract the
       maximum available information from the images but also to produced standardise
       (device-intependent) images that can be compared directly compared.</desc>
-               <desc type="definition" xml:lang="fr"/>
                <desc type="term" xml:lang="en">
                   <term key="http://tadirah.dariah.eu/vocab/index.php?tema=32&amp;/visualization"
                         source="http://tadirah.dariah.eu/"

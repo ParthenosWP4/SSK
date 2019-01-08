@@ -56,10 +56,8 @@
          <listEvent>
             <event type="researchStep">
                <head xml:lang="en">Referring to shared controlled vocabularies or ontologies for metadata</head>
-               <head xml:lang="fr">TODO</head>
                <desc type="definition" xml:lang="en">The step describes the metadata enrichment process via
       controlled vocabularies or ontologies</desc>
-               <desc type="definition" xml:lang="fr"/>
                <desc type="term" xml:lang="en">
                   <term key="http://tadirah.dariah.eu/vocab/index.php?tema=21&amp;/3_enrichment"
                         source="http://tadirah.dariah.eu/"
