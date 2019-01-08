@@ -4,10 +4,10 @@
      type="researchStep"
      xml:id="step_AoSV2">
    <teiHeader>
-      <fileDesc>
-      <sponsor>PARTHENOS</sponsor>     
+      <fileDesc>     
          <titleStmt>
             <title>step_AoS_V2.xml</title>
+           <sponsor>PARTHENOS</sponsor>
             <author>
                <persName>Maurizio Sanesi</persName>
                <affiliation>SISMEL</affiliation>

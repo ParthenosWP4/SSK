@@ -5,7 +5,6 @@
      xml:id="step_ItDV2">
    <teiHeader>
       <fileDesc>
-           <sponsor>PARTHENOS</sponsor>
          <titleStmt>
             <title>step_ItD_V2.xml</title>
             <author>
@@ -24,6 +23,7 @@
                <persName>Roberta Giacomi</persName>
                <affiliation>SISMEL</affiliation>
             </author>
+           <sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
             <authority>Parthenos</authority>

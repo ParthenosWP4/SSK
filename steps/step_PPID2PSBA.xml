@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_PPID2PSBA">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>step "Post process and interpret data. 2. Peak / spectral bands assessment"</title>
+        <author>
+          <persName>Sophia Sotiropoulou</persName>
+          <affiliation>IESL-FORTH</affiliation>
+        </author>
+        <author>
+          <persName>Panayiotis Siozos</persName>
+          <affiliation>IESL-FORTH</affiliation>
+        </author>
+        <author>
+          <persName>Demetrios Anglos</persName>
+          <affiliation>IESL-FORTH</affiliation>
+        </author>
+        <sponsor>PARTHENOS</sponsor>
+      </titleStmt>
+      <publicationStmt>
+        <authority/>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0/">
+            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+              document.</p>
+          </licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Created from spreadsheet</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change/>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listEvent>
+        <event type="researchStep">
+          <head type="stepTitle" xml:lang="en">Post process and interpret data. 2. Peak / spectral
+            bands assessment.</head>
+          <desc type="definition" xml:lang="en">In this step the Raman shift wavenumber and the
+            relative intensity of the observed peaks in the Raman spectrum are identified and
+            documented. The relative intensity can be expressed as weak, moderate or strong.</desc>
+          <linkGrp type="generalResources">
+            <ref type="tool" source="zotero" target="4W7QUMZF"/>
+            <ref type="tool" source="zotero" target="DQMPUT7X"/>
+            <ref type="service" source="zotero" target="US2HB3DN"/>
+            <ref type="tool" source="zotero" target="S5TDK87K"/>
+          </linkGrp>
+        </event>
+      </listEvent>
+    </body>
+  </text>
+</TEI>

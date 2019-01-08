@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_DtM4PPPTMS">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>step "Describe the measurement. 4. Pre- processing / preliminary tests - Measurement
+          setup"</title>
+        <author>
+          <persName>Sophia Sotiropoulou</persName>
+          <affiliation>IESL-FORTH</affiliation>
+        </author>
+        <author>
+          <persName>Panayiotis Siozos</persName>
+          <affiliation>IESL-FORTH</affiliation>
+        </author>
+        <author>
+          <persName>Demetrios Anglos</persName>
+          <affiliation>IESL-FORTH</affiliation>
+        </author>
+        <sponsor>PARTHENOS</sponsor>
+      </titleStmt>
+      <publicationStmt>
+        <authority/>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0/">
+            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+              document.</p>
+          </licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Created from spreadsheet</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change/>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listEvent>
+        <event type="researchStep">
+          <head type="stepTitle" xml:lang="en">Describe the measurement. 4. Pre- processing /
+            preliminary tests - Measurement setup</head>
+          <desc type="definition" xml:lang="en">Preliminary tests operated on the specimen / area
+            under examination using a minimum laser power. The laser power can be progressively
+            increased as well as the acquisition time / average of scans can be optimised as needed
+            to obtain a good spectrum.</desc>
+          <linkGrp type="generalResources">
+            <ref type="paper" source="zotero" target="W39BNU8K"/>
+          </linkGrp>
+        </event>
+      </listEvent>
+    </body>
+  </text>
+</TEI>

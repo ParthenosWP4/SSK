@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_DtP">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>step "Describe the project"</title>
+        <author>
+          <persName>Sophia Sotiropoulou</persName>
+          <affiliation>IESL-FORTH</affiliation>
+        </author>
+        <author>
+          <persName>Panayiotis Siozos</persName>
+          <affiliation>IESL-FORTH</affiliation>
+        </author>
+        <author>
+          <persName>Demetrios Anglos</persName>
+          <affiliation>IESL-FORTH</affiliation>
+        </author>
+        <sponsor>PARTHENOS</sponsor>
+      </titleStmt>
+      <publicationStmt>
+        <authority/>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0/">
+            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+              document.</p>
+          </licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Created from spreadsheet</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change/>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listEvent>
+        <event type="researchStep">
+          <head type="stepTitle" xml:lang="en">Describe the project</head>
+          <desc type="definition" xml:lang="en"><list>
+              <item>Framework, analytical context (motivation - aim of the analytical campaign):
+                Short presentation of the main objectives of the analysis of the
+                artworks/monument</item>
+              <item> Preliminary analysis: Information about any preliminary visual examination and
+                analysis of the artwork using other techniques such as photography, multispectral
+                imaging, XRF, LIBS etc. The prelimenary analysis provides information on the
+                condition and the characteristics of the artwork useful for an effective planning
+                and appropriate selection of measurement points for Raman analysis.<list>
+                  <item>Possible source of error: wrong selection of measurement position, relating
+                    to previous measurements as LIBS (if ignored or not well-documented)</item>
+                </list></item>
+              <item>Known conservation history / archives / oral communication: Research in digital
+                resources, archives and even oral communication with experts concerning information
+                of past analytical data or conservation interventions<list>
+                  <item>Possible source of error: possible interference of (aged) conservation
+                    materials</item>
+                </list></item>
+            </list></desc>
+          <desc type="terms" xml:lang="en">
+            <term key="contextualizing" source="http://tadirah.dariah.eu/" type="activity"/>
+            <term key="CIDOC-CRM" source="standard_list" type="standard"/>
+            <term key="CIDOC-CRMsci" source="standard_list" type="standard"/>
+          </desc>
+          <linkGrp type="generalResources">
+            <ref type="tutorial" source="zotero" target="AQ6RMCT8"/>
+            <ref type="documentation" source="zotero" target="5FHQ64PA"/>
+            <ref type="documentation" source="zotero" target="H7E6FFMP"/>
+          </linkGrp>
+        </event>
+      </listEvent>
+    </body>
+  </text>
+</TEI>

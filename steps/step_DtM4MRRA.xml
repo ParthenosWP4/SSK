@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_DtM4MRRA">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>step "Describe the method - 4. Measurement range, resolution and accuracy"</title>
+        <author>
+          <persName>Sophia Sotiropoulou</persName>
+          <affiliation>IESL-FORTH</affiliation>
+        </author>
+        <author>
+          <persName>Panayiotis Siozos</persName>
+          <affiliation>IESL-FORTH</affiliation>
+        </author>
+        <author>
+          <persName>Demetrios Anglos</persName>
+          <affiliation>IESL-FORTH</affiliation>
+        </author>
+        <sponsor>PARTHENOS</sponsor>
+      </titleStmt>
+      <publicationStmt>
+        <authority/>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0/">
+            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+              document.</p>
+          </licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Created from spreadsheet</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change/>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listEvent>
+        <event type="researchStep">
+          <head type="stepTitle" xml:lang="en">Describe the method - 4. Measurement range, spot
+            size, and resolution / accuracy</head>
+          <desc type="definition" xml:lang="en">The measurement range refers to the measurement
+            distance from the object (contact / short / long / remote), the measurment spot size
+            (dimensions of the analysed spot) and the measurment resolution/accuracy. <list>
+              <item>Possible source of error: Stray light interference: if stray light such as sunlight, fluorescent lamp
+                light or incandesce light is present, should be reported. Moreover, other
+                environmental conditions that can potentially affect the measurements are reported
+                such as levels of temperature and relative humidity.</item>
+            </list></desc>
+          <desc type="terms" xml:lang="en">
+            <term type="activity" source="tadirah" key="designing"/>
+            <term type="standard" source="standard_list" key="CIDOC-CRMsci"/>
+          </desc>
+        </event>
+      </listEvent>
+    </body>
+  </text>
+</TEI>

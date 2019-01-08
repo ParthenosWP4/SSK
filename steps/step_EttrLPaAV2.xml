@@ -5,10 +5,10 @@
      xml:id="step_EttrLPaAV2">
    <teiHeader>
       <fileDesc>      
-     <sponsor>PARTHENOS</sponsor>
          <titleStmt>
             <title>step_EttrLPaA_V2.xml</title>
-            <author>
+           <sponsor>PARTHENOS</sponsor> 
+           <author>
                <persName>Maurizio Sanesi</persName>
                <affiliation>SISMEL</affiliation>
             </author>

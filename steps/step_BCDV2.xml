@@ -5,9 +5,9 @@
      xml:id="step_BCDV2">
    <teiHeader>
       <fileDesc>
-           <sponsor>PARTHENOS</sponsor>
          <titleStmt>
             <title>step_BCD_V2.xml</title>
+           <sponsor>PARTHENOS</sponsor>
             <author>
                <persName>Maurizio Sanesi</persName>
                <affiliation>SISMEL</affiliation>

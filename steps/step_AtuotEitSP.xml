@@ -5,9 +5,9 @@
      xml:id="step_AtuotEitSP">
    <teiHeader>
       <fileDesc>
-           <sponsor>PARTHENOS</sponsor>
          <titleStmt>
             <title>step_AtuotEitSP.xml</title>
+           <sponsor>PARTHENOS</sponsor>
             <author>
                <persName>Maurizio Sanesi</persName>
                <affiliation>SISMEL</affiliation>

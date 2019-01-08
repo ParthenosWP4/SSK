@@ -4,10 +4,10 @@
 <TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_TrhtstRR">
     <teiHeader>
         <fileDesc>
-		<sponsor>PARTHENOS</sponsor>
             <titleStmt>
                 <title>step_TrhtstRR.xml</title>
-                <author>
+              <sponsor>PARTHENOS</sponsor>  
+              <author>
                     <persName>Maurizio Sanesi</persName>
                     <affiliation>SISMEL</affiliation>
 				  </author>

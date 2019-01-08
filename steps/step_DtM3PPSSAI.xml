@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_DtM3PPSSAI">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>step "Describe the measurement.3. Pre-processing / Selection of Sites for analysis
+          and indexing"</title>
+        <author>
+          <persName>Sophia Sotiropoulou</persName>
+          <affiliation>IESL-FORTH</affiliation>
+        </author>
+        <author>
+          <persName>Panayiotis Siozos</persName>
+          <affiliation>IESL-FORTH</affiliation>
+        </author>
+        <author>
+          <persName>Demetrios Anglos</persName>
+          <affiliation>IESL-FORTH</affiliation>
+        </author>
+        <sponsor>PARTHENOS</sponsor>
+      </titleStmt>
+      <publicationStmt>
+        <authority/>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0/">
+            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+              document.</p>
+          </licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Created from spreadsheet</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change/>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listEvent>
+        <event type="researchStep">
+          <head type="stepTitle" xml:lang="en">Describe the measurement.3. Pre-processing /
+            Selection of Sites for analysis and indexing</head>
+          <desc type="definition" xml:lang="en">Select the area of measurement and index it on the
+            reference image (macro detail)<list>
+              <item>Possible source of error: Wrong/ inaccurate indexing of measurement position on
+                the object due to the low resolution of the reference image </item>
+            </list>
+          </desc>
+          <linkGrp type="generalResources">
+            <ref type="paper" source="zotero" target="X5F662RV"/>
+            <ref type="paper" source="zotero" target="56MF9RKI"/>
+          </linkGrp>
+        </event>
+      </listEvent>
+    </body>
+  </text>
+</TEI>

@@ -3,10 +3,10 @@
 <!-- You have to type the TEI file, with researchStep or researchScenario -->
 <TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_ARnaD">
     <teiHeader>
-        <fileDesc>
-	<sponsor>PARTHENOS</sponsor>	
+        <fileDesc>	
             <titleStmt>
                 <title>step_ARnaD.xml</title>
+              <sponsor>PARTHENOS</sponsor>
                 <author>
                     <persName>Maurizio Sanesi</persName>
                     <affiliation>SISMEL</affiliation>

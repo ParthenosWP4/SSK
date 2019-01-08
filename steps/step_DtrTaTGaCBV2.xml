@@ -5,10 +5,10 @@
      xml:id="step_DtrTaTGaCBV2">
    <teiHeader>
       <fileDesc>
-           <sponsor>PARTHENOS</sponsor>
          <titleStmt>
             <title>step_DtrTaTGaCB_V2.xml</title>
-            <author>
+           <sponsor>PARTHENOS</sponsor> 
+           <author>
                <persName>Maurizio Sanesi</persName>
                <affiliation>SISMEL</affiliation>
             </author>
