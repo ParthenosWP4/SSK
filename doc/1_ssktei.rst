@@ -779,18 +779,19 @@ The attributes for ref are type, subtype, source and target.
 
 * The attribute type is required. Its values are taken from the Zotero item types, plus SSK specific values. Possible values are:
 
-  * spec: the specification, of a standard for instance.
-  * report: technical reports
-  * blog: blog posts
-  * tutorial: tutorials or guidelines
-  * script: Scripts and code samples
-  * paper: Scholarly papers
-  * library: Computing libraries
-  * tool: a link to a service or a software useful for a given step.
-  * database:
-  * method
-  * bibliography
-  * schema
+  * spec: the specification (normative document) of a standard;
+  * report: technical reports;
+  * blog: blog posts;
+  * tutorial: tutorials or guidelines;
+  * code: Scripts and code samples;
+  * paper: Scholarly papers;
+  * library: Computing libraries;
+  * tool: a link to a service or a software useful for a given step;
+  * database: a link to a database;
+  * bibliography: A list of bibliographic references
+  * schema: data models and schemas
+  * tool: Computing tool, software;
+  * service: Curating or hosting service.
 
 *  the source attribute in ref is used by the SSK to record where the full information about the resource is stored, and that the SSK queries. The values are a semi-closed list. The source attribute has for possible values:
 

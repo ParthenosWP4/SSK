@@ -1008,15 +1008,7 @@
                   <dataRef key="teidata.enumerated"/>
                 </datatype>
                 <valList type="semi" mode="replace">
-                  <valItem ident="documentation">
-                    <gloss xml:lang="en">Documentation</gloss>
-                    <gloss xml:lang="fr">Documentation</gloss>
-                  </valItem>
-                  <valItem ident="software">
-                    <gloss xml:lang="en">Software</gloss>
-                    <gloss xml:lang="fr">Logiciel</gloss>
-                  </valItem>
-                  <valItem ident="specification">
+                  <valItem ident="spec">
                     <gloss xml:lang="en">Specification</gloss>
                     <gloss xml:lang="fr">Spécification</gloss>
                   </valItem>
@@ -1028,21 +1020,36 @@
                     <gloss xml:lang="en">Blog</gloss>
                     <gloss xml:lang="fr">Article de blog</gloss>
                   </valItem>
-                  <valItem ident="tutorial">
-                    <gloss xml:lang="en">Tutorial</gloss>
-                    <gloss xml:lang="fr">Tutoriel</gloss>
-                  </valItem>
-                  <valItem ident="code_script">
+                  <valItem ident="code">
                     <gloss xml:lang="en">Scripts and code</gloss>
                     <gloss xml:lang="fr">Scripts et code</gloss>
-                  </valItem>
-                  <valItem ident="schema">
-                    <gloss xml:lang="en">schema</gloss>
-                    <gloss xml:lang="fr">Schéma</gloss>
                   </valItem>
                   <valItem ident="paper">
                     <gloss xml:lang="en">Scholarly paper</gloss>
                     <gloss xml:lang="fr">publication scientifique</gloss>
+                  </valItem>
+                  <valItem ident="library">
+                    <gloss xml:lang="en">Computing library</gloss>
+                  </valItem>
+                  <valItem ident="database">
+                    <gloss xml:lang="en">Database</gloss>
+                    <gloss xml:lang="fr">Base de données</gloss>
+                  </valItem>
+                  <valItem ident="tutorial">
+                    <gloss xml:lang="en">Tutorial</gloss>
+                    <gloss xml:lang="fr">Tutoriel</gloss>
+                  </valItem>
+                  <valItem ident="tool">
+                    <gloss xml:lang="en">Computing tool, software</gloss>
+                    <gloss xml:lang="fr">Logiciel, outil computationnel</gloss>
+                  </valItem>
+                  <valItem ident="service">
+                    <gloss xml:lang="en">Curating of hosting service</gloss>
+                    <gloss xml:lang="fr">Offre de service de curation ou d'hébergement</gloss>
+                  </valItem>
+                  <valItem ident="bibliography">
+                    <gloss xml:lang="en">Bibliography</gloss>
+                    <gloss xml:lang="fr">Bibliographie</gloss>
                   </valItem>
                 </valList>
               </attDef>
