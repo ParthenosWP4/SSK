@@ -57,7 +57,7 @@
       <body>
          <listEvent>
             <event type="researchStep">
-               <head xml:lang="en">Archive</head>
+               <head xml:lang="en">Upload the archive in an official reliable repository</head>
                <desc xml:lang="en" type="definition">Submit the packet to a long-term storage
                         service, preferably an official academic public permanent structure (like
                         CINES in France for instance).</desc>

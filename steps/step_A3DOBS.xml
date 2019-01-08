@@ -72,9 +72,9 @@
                </desc>
                <desc xml:lang="en" type="terms">
                   <term type="activity" source="TaDiRAH" key="Imaging"/>
-                  <term type="standard" key="STL (file format)"/>
-                  <term type="standard" key="FLS"/>
-                  <term type="standard" key="FWS"/>
+                  <term type="standard" source="standard" key="STL (file format)"/>
+                  <term type="standard" source="standard" key="FLS"/>
+                  <term type="standard" source="standard" key="FWS"/>
                </desc>
                <linkGrp type="generalResources">
                   <ref type="report" source="zotero" target="JQA2HGXG"/>
