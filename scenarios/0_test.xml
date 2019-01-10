@@ -10,7 +10,7 @@
           <affiliation>Inria</affiliation>
         </author>
         <author>
-          <persName>Lionel TADJOu</persName>
+          <persName>Lionel Tadjou</persName>
           <affiliation>Inria</affiliation>
         </author>
         <sponsor>PARTHENOS</sponsor>
@@ -62,7 +62,24 @@
             url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/SSK-schemCust.jpg"/>
         </figure>
         <listEvent>
-          <event ref="step_EaXswO_150917" type="researchStep" xml:id="s1"/>
+          <event ref="step_EaXswO_150917" type="researchStep" xml:id="s1" mode="change">
+            <desc xml:lang="en" type="terms">
+              <term source="standardList" type="standard" key="CIDOC-CRM" mode="add"/>
+              <term source="standardList" type="standard" key="LIDO" mode="delete"/>
+            </desc>
+            <linkGrp type="generalResources">
+              <ref type="code" source="zotero" target="9SKJDJKS" mode="add"/>
+              <ref type="code" source="zotero" target="9SKORJKS" mode="delete"/>
+            </linkGrp>
+            <linkGrp type="projectResources" source="CODATA" corresp="http://www.codata.org/">
+              <ref type="code" source="zotero" target="9SKJDJKS" mode="add"/>
+              <ref type="code" source="zotero" target="9SKORJKS" mode="delete"/>
+            </linkGrp>
+            <linkGrp type="projectResources" source="EHRI" corresp="http://www.ehri-project.eu">
+              <ref type="code" source="zotero" target="9SKJDJKS" mode="add"/>
+              <ref type="code" source="zotero" target="9SKORJKS" mode="delete"/>
+            </linkGrp>
+          </event>
           <event ref="step_Eprimrf_300517" type="researchStep" xml:id="s2"/>
           <event ref="step_Cad_300517" type="researchStep" xml:id="s3"/>
           <event ref="step_Tdats_300517" type="researchStep" xml:id="s4"/>

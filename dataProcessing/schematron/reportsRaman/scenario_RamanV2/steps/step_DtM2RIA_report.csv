@@ -1,0 +1,3 @@
+location,line,role,message
+/TEI[1]/teiHeader[1]/revisionDesc[1]/change[1],37,information,"When recording a revision, some precise metadata must be given : the date of the revision, the name of the responsibe and his/her affiliation and a description."
+/TEI[1]/teiHeader[1]/fileDesc[1]/sourceDesc[1],32,information,"sourceDesc in mandatory in TEI, so if you want to give details on the way the scenario was conceived, it is the appropriate location."

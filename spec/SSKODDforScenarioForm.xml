@@ -108,7 +108,7 @@
 					<content>
 						<elementRef key="div"/>
 					</content>
-				</elementSpec>
+				</elementSpec>l
 
 				<elementSpec ident="div" module="textstructure">
 					<content>
@@ -184,7 +184,7 @@
 				</elementSpec>
 
 				<elementSpec ident="figDesc">
-					<desc>Image caption</desc>
+				  <desc>Image caption</desc>
 					<content>
 						<textNode/>
 					</content>

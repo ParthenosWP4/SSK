@@ -1,0 +1,6 @@
+location,line,role,message
+/TEI[1]/teiHeader[1]/revisionDesc[1]/change[1],36,information,"When recording a revision, some precise metadata must be given : the date of the revision, the name of the responsibe and his/her affiliation and a description."
+/TEI[1]/text[1]/body[1]/listEvent[1]/event[1]/linkGrp[1]/ref[1],64,information,"It is possible to add terms to resources, for instance a standard or a technique."
+/TEI[1]/text[1]/body[1]/listEvent[1]/event[1]/linkGrp[1]/ref[2],65,information,"It is possible to add terms to resources, for instance a standard or a technique."
+/TEI[1]/teiHeader[1]/fileDesc[1]/sourceDesc[1],31,information,"sourceDesc in mandatory in TEI, so if you want to give details on the way the scenario was conceived, it is the appropriate location."
+/TEI[1]/text[1]/body[1]/listEvent[1]/event[1]/desc[2],59,error,"A step should be described by an activity term, taken from the TADirAH taxonomy."
