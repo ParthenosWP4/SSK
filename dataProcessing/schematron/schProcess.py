@@ -11,7 +11,7 @@ from ssk import schSSK
 if len(sys.argv) > 1:
     paramSc = sys.argv[1]
 else:
-    paramSc = "../scenarios"
+    paramSc = "../../scenarios"
 
 ssk = schSSK()
 reportsFolder = "reports_" + paramSc.split("/")[-1] + "_" + str(datetime.now().strftime('%Y%m%d_%H%M%S'))
@@ -72,7 +72,7 @@ for report in listScReports:
                 readMeLine = "- Step https://github.com/ParthenosWP4/SSK/tree/master/steps/" + Id + "\n"
                 # ParseSVRL the steps corresponding to these IDs
                 try:
-                    input = "-s:../steps/" + Id
+                    input = "-s:../../steps/" + Id
                     query = "saxon " + input + " -xsl:qualCheckSSK.xsl"
                     parseStep = subprocess.check_output(query, shell=True)
                     svrlSt = BeautifulSoup(parseStep, 'xml')
