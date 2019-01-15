@@ -62,6 +62,7 @@
             url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/SSK-schemCust.jpg"/>
         </figure>
         <listEvent>
+          <event ref="SSK_sc_digitization" type="researchScenario" subtype="preliminary"/>
           <event ref="step_EaXswO_150917" type="researchStep" xml:id="s1" mode="change">
             <desc xml:lang="en" type="terms">
               <term source="standardList" type="standard" key="CIDOC-CRM" mode="add"/>
@@ -84,6 +85,7 @@
           <event ref="step_Cad_300517" type="researchStep" xml:id="s3"/>
           <event ref="step_Tdats_300517" type="researchStep" xml:id="s4"/>
           <event ref="step_Sapditnf_300517" type="researchStep" xml:id="s5"/>
+          <event ref="SSK_sc_mei" type="researchScenario" subtype="followUp"/>
         </listEvent>
       </div>
     </body>
