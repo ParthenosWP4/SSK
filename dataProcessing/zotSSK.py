@@ -6,13 +6,14 @@ import sys
 from bs4 import BeautifulSoup
 from datetime import datetime
 import csv
-from ssk import schSSK
+from dataProcessing.ssk import schSSK
 
 #parse les steps, test les ressources, et check celles qui ne sont pas des ID zotero.
 
 
 ssk = schSSK()
-steps = ssk.get_files("../../steps")
+steps = ssk.get_files("../steps")
+
 hardLinks = []
 for step in steps:
     parsedStep = ssk.loadBS(step)

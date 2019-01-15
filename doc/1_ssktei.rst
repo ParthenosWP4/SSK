@@ -713,13 +713,16 @@ Standards knowledge base
 ''''''''''''''''''''''''
 
 The list of the standards already described in the Standards Knowledge
-base can be found here. If you don’t find the standard you want, you can
-create a description using this sample file and upload it here to the GitHub folder `standardsDesc <https://github.com/ParthenosWP4/SSK/tree/master/standardsDesc>`_.
+base can be found `here <http://ssk.huma-num.fr/#/glossary/standards>`_.
 
-Note that the value to indicate in the key is the value of the field
-"standard\_abbr\_name". See below the sample file.
+..
+  If you don’t find the standard you want, you can create a description using this sample file and upload it here to the GitHub folder `standardsDesc <https://github.com/ParthenosWP4/SSK/tree/master/standardsDesc>`_.
 
-.. code-block:: xml
+
+  Note that the value to indicate in the key is the value of the field
+  "standard\_abbr\_name". See below the sample file.
+
+  .. code-block:: xml
 
   <doc>
       <field name="id">33 (must be incremented by 1 for each new standard)</field>
@@ -779,19 +782,19 @@ The attributes for ref are type, subtype, source and target.
 
 * The attribute type is required. Its values are taken from the Zotero item types, plus SSK specific values. Possible values are:
 
-  * spec: the specification (normative document) of a standard;
-  * report: technical reports;
-  * blog: blog posts;
-  * tutorial: tutorials or guidelines;
-  * code: Scripts and code samples;
-  * paper: Scholarly papers;
-  * library: Computing libraries;
-  * tool: a link to a service or a software useful for a given step;
-  * database: a link to a database;
-  * bibliography: A list of bibliographic references
-  * schema: data models and schemas
-  * tool: Computing tool, software;
-  * service: Curating or hosting service.
+  * `spec`: the specification (normative document) of a standard;
+  * `report`: technical reports;
+  * `blog`: blog posts;
+  * `tutorial`: tutorials or guidelines;
+  * `code`: Scripts and code samples;
+  * `paper`: Scholarly papers;
+  * `library`: Computing libraries;
+  * `bibliography`: A list of bibliographic references
+  * `database`: collection of structured data
+  * `tool`: Computing tool, software;
+  * `service`: Curating or hosting service.
+
+
 
 *  the source attribute in ref is used by the SSK to record where the full information about the resource is stored, and that the SSK queries. The values are a semi-closed list. The source attribute has for possible values:
 

@@ -14,3 +14,4 @@ doc/Makefile
 doc/doc
 doc/docs
 **/.DS_Store
+dataProcessing/__pycache__

@@ -5,7 +5,7 @@ import os
 import sys
 from bs4 import BeautifulSoup
 from datetime import datetime
-from ssk import schSSK
+from dataProcessing.ssk import schSSK
 
 #parameter for input (scenarios and steps)
 if len(sys.argv) > 1:

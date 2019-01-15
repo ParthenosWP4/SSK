@@ -110,7 +110,7 @@
           <event xml:id="s2" type="researchStep" ref="step_A3DOBP"/>
           <event xml:id="s3" type="researchStep" ref="step_3DMtTF"/>
           <event xml:id="s4" type="researchStep" ref="step_3DV"/>
-          <event type="researchScenario" xml:id="s5" ref="SSK_sc_Preservation3DObjects" subtype="followup"></event>
+          <event type="researchScenario" xml:id="s5" ref="SSK_sc_Preservation3DObjects" subtype="followUp"></event>
         </listEvent>
       </div>
     </body>

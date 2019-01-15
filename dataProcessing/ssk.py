@@ -6,7 +6,6 @@ from lxml import etree as ET
 from bs4 import BeautifulSoup
 import csv
 
-
 class schSSK:
 
     def create_directory(self, directory):
@@ -18,6 +17,9 @@ class schSSK:
             os.makedirs(directory)
 
     # Manage input files to handle
+    def file_is_empty(self, path):
+        return os.stat(path).st_size == 0
+
     def get_files(self, d):
         filesList = []  # liste fichiers
         for fileName in os.listdir(d):
@@ -92,3 +94,49 @@ class schSSK:
             dict_writer = csv.DictWriter(output_file, keys)
             dict_writer.writeheader()
             dict_writer.writerows(diagnostic)
+
+    def getContributors(self, dirList, output):
+        for folder in dirList:
+            files = (schSSK.get_files(self, folder))
+            authors = []
+            for file in files:
+                soup = schSSK.loadBS(self, file)
+                scontribs = soup.find_all("author")
+                for contrib in scontribs:
+                    line = str(contrib.persName.text).strip() + " (" + str(contrib.affiliation.text).strip() + ")\n"
+                    authors.append(line)
+            with open(output, "w") as contributors:
+                authors = list(set(authors))
+                authors.insert(0, '''SSK Scenarios contributors\n*************************\n\n''')
+                contributors.writelines(authors)
+        return
+
+    def checkZot(self, dir):
+        steps = schSSK.get_files(self, dir)
+        hardLinks = []
+        for step in steps:
+            parsedStep = schSSK.loadBS(self, step)
+            linkGrps = parsedStep.findAll("linkGrp")
+
+            for linkGrp in linkGrps:
+                refs = linkGrp.findAll("ref")
+
+                for ref in refs:
+                    if ref.has_attr("target"):
+                        target = ref["target"]
+                        if target.startswith("http"):
+                            hardlink = {
+                                "step": step,
+                                "resource": str(target)
+                            }
+                            hardLinks.append(hardlink)
+
+        keys = hardLinks[0].keys()
+
+        with open("hardLinks.csv", 'w') as output_file:
+            dict_writer = csv.DictWriter(output_file, keys)
+            dict_writer.writeheader()
+            dict_writer.writerows(hardLinks)
+            # check Zotero si la ressource existe
+            # Si non, on la crée avec API
+            # Si oui, on récupère l'ID et on remplace
