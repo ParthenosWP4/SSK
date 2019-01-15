@@ -42,9 +42,9 @@ import { MomentModule } from 'ngx-moment';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import * as $ from 'jquery';
 import { HighlightPipe } from './highlight.pipe';
-export function dataProviderFactory(provider: ElastichsearchService) {
+/*export function dataProviderFactory(provider: ElastichsearchService) {
   return () => provider.loadData();
-}
+}*/
 
 
 
@@ -97,7 +97,7 @@ export function dataProviderFactory(provider: ElastichsearchService) {
     CUSTOM_ELEMENTS_SCHEMA
   ],
   providers: [appRoutingProviders, SafeHtmlPipe, ElastichsearchService, SskService, GlossaryResolver, HighlightPipe,
-    { provide: APP_INITIALIZER, useFactory: dataProviderFactory, deps: [ElastichsearchService], multi: true },
+    //{ provide: APP_INITIALIZER, useFactory: dataProviderFactory, deps: [ElastichsearchService], multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true}
     ],
   bootstrap: [AppComponent]

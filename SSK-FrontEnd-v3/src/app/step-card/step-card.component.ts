@@ -22,38 +22,15 @@ export class StepCardComponent implements OnInit {
   public activities: any;
   public standards: any;
  
-  constructor(private elastichServices: ElastichsearchService, private sskServices: SskService,
+  constructor(private elasticServices: ElastichsearchService, private sskService: SskService,
               private router: Router, private ref: ChangeDetectorRef) {}
 
   ngOnInit() {
-    if (this.step.head instanceof Array) {
-      this.step.title = this.sskServices.updateText(this.step.head[0], null);
-    } else {
-      this.step.title = this.sskServices.updateText(this.step.head, null);
-    }
-    if ( this.step.desc instanceof Array) {
-      this.step.description = this.sskServices.updateText(this.step.desc[0], null);
-    } else {
-        this.step.description = this.sskServices.updateText(this.step.desc, null);
-    }
-    if (this.step.metadata === undefined) {
-      this.step.metadata = this.elastichServices.addStepMetadata(this.step._id + this.step.position + 'Meta');
-    }
-    setTimeout(() => {
-      this.scenario = _.find(this.elastichServices.getScenarios(), (o)  => {
-        return (_.indexOf(this.step.parents, o.id) !== -1); });
-        if (this.scenario !== undefined) {
-          if (this.scenario.title instanceof Array) {
-            this.scenarioTitle = this.sskServices.updateText(this.scenario.title[0], null);
-          } else {
-            this.scenarioTitle = this.sskServices.updateText(this.scenario.title, null);
-          }
-        }
-    }, 500);
-    
+   
+      this.setStepsInformations();
   
     const urlTag: Array<any>  = _.remove(this.step.metadata, (tag) => {
-        return this.sskServices.isUrl(tag.key);
+        return this.sskService.isUrl(tag.key);
     });
     Observable.of(urlTag).subscribe(
       result => {
@@ -70,8 +47,41 @@ export class StepCardComponent implements OnInit {
       err => {},
       () => {}
     );
-   }
-  
+  }
+
+  setStepsInformations() {
+    Observable.of(_.find(this.elasticServices.getScenarios(), (o)  => {
+      return  _.includes(_.map(this.step.parents, 'id'), o.id);
+    })).subscribe(
+           (value) => {
+             if (value !== undefined) {
+              this.scenario = value;
+              if (this.step.head instanceof Array) {
+                this.step.title = this.sskService.updateText(this.step.head[0], null);
+              } else {
+                this.step.title = this.sskService.updateText(this.step.head, null);
+              }
+              if ( this.step.desc instanceof Array) {
+                this.step.description = this.sskService.updateText(this.step.desc[0], null);
+              } else {
+                  this.step.description = this.sskService.updateText(this.step.desc, null);
+              }
+              if (this.step.metadata === undefined) {
+                this.step.metadata = this.elasticServices.addStepMetadata(this.step._id + this.step.position + 'Meta');
+              }
+              if (this.scenario.title instanceof Array) {
+                this.scenarioTitle = this.sskService.updateText(this.scenario.title[0], null);
+              } else {
+                this.scenarioTitle = this.sskService.updateText(this.scenario.title, null);
+              }
+            }
+          },
+        (error) => { console.log(error); },
+        () => { });
+  }
+
+
+
   toStep() {
     this.router.navigate(['/', 'scenarios', this.scenario.id,  this.step.position]);
   }

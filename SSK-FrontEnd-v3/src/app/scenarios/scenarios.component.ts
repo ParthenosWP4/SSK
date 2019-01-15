@@ -12,6 +12,8 @@ import {NgbTypeaheadConfig} from '@ng-bootstrap/ng-bootstrap';
 import {Subject} from 'rxjs/Subject';
 import 'rxjs/add/operator/delay';
 import * as Bloodhound from 'bloodhound-js';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
+import { ComponentLoader } from 'ngx-bootstrap';
 declare const $;
 
 @Component({
@@ -162,15 +164,21 @@ export class ScenariosComponent implements OnInit, AfterViewInit, OnDestroy {
             this.tabRes = false ;
             this.tabScenarios = false;
             if (this.elasticServices.getSteps() === undefined) {
-              this.elasticServices.getAllSteps().then(
-                (value) => {
-                  this.setStepTab();
-                  this.setResourcesTab();
+              this.elasticServices.loadData().then(
+                value => {
+                 this.setScenarios(value);
+                 this.elasticServices.getAllSteps().then(
+                  (steps) => {
+                    this.setSteps(steps);
+                    this.elasticServices.getAllResources().then(
+                      (resources) => {
+                        this.setResources(resources);
+                      });
+                  });
                 });
             } else {
                 this.setStepTab();
             }
-            this.elasticServices.setResultCount(this.elasticServices.getScenarios().length);
             break;
           case 'resources':
             this.sskServices.setTitle('SSK - Resources');
@@ -178,24 +186,44 @@ export class ScenariosComponent implements OnInit, AfterViewInit, OnDestroy {
             this.tabRes = true;
             this.tabScenarios = false;
             if (this.elasticServices.getResources() === undefined) {
-                this.elasticServices.getAllSteps().then(
-                  (value) => {
-                    this.setResourcesTab();
-                    this.setStepTab();
+              this.elasticServices.loadData().then(
+                value => {
+                 this.setScenarios(value);
+                 this.elasticServices.getAllSteps().then(
+                  (steps) => {
+                    this.setSteps(steps);
+                    this.elasticServices.getAllResources().then(
+                      (resources) => {
+                        this.setResources(resources);
+                      });
                   });
+                });
             } else {
               this.setResourcesTab();
             }
-            this.elasticServices.setResultCount(this.elasticServices.getScenarios().length);
           break;
           case'scenarios':
+          this.sskServices.setTitle('SSK - Scenarios');
+          if (this.elasticServices.getScenarios().length === 0) {
+            this.elasticServices.loadData().then(
+              value => {
+               this.setScenarios(value);
+               this.elasticServices.getAllSteps().then(
+                (steps) => {
+                  this.setSteps(steps);
+                  this.elasticServices.getAllResources().then(
+                    (resources) => {
+                      this.setResources(resources);
+                    });
+                });
+              });
+          } else {
             if  (!this.elasticServices.getResearchStarted()) {
-              this.setScenarios(this.elasticServices.getScenarios());
-            } else {
-              this.setScenarios(this.elasticServices.getScenarioResults());
-            }
-            this.sskServices.setTitle('SSK - Scenarios');
-            this.elasticServices.setResultCount(this.elasticServices.getScenarios().length);
+              this.setScenarios(_.uniqBy(this.elasticServices.getScenarios(), 'id'));
+           } else {
+            this.setScenarios(_.uniqBy(this.elasticServices.getScenarioResults(), 'id'));
+           }
+          }
           break;
         }
   }
@@ -283,6 +311,51 @@ export class ScenariosComponent implements OnInit, AfterViewInit, OnDestroy {
           }
         });
   }
+
+   directAccessToSteporResources() {
+    let scenarioDetails: any ;
+    this.elasticServices.countItems('scenarios').subscribe(
+      result => {
+        this.elasticServices.setScenarioNumber(result['total']);
+        this.elasticServices.setScenariosID(result['scenarios']);
+      },
+      err => {
+        this.router.navigate(['errorpage']);
+      },
+      () =>  {
+        Observable.of(this.elasticServices.getScenariosID().forEach((obj)  => {
+          this.elasticServices.getScenarioDetails(obj._id).subscribe(
+            detailsResult => {
+              scenarioDetails = obj._id;
+              },
+            error => {},
+            () =>  {
+              this.elasticServices.addScenario(scenarioDetails);
+              console.log(this.elasticServices.getScenarios().length);
+            }
+            );
+        })).subscribe(
+          (value) => {
+            this.elasticServices.getAllSteps().then(
+              () => {
+                this.elasticServices.setScenariosTemp(new Array<any>(this.elasticServices.getScenariosID().length));
+                this.elasticServices.asynchFunction();
+                  Observable.of(this.setStepTab()).subscribe(
+                      () => {
+                        this.elasticServices.getAllResources().then(
+                          () => {
+                            this.setResourcesTab();
+                          });
+                      }
+                    );
+              });
+          },
+          (error) => { console.log(error); },
+          () => {
+            console.log('finish');
+          });
+    });
+   }
 
 setStepTab() {
   if (!this.elasticServices.getResearchStarted()) {
@@ -473,6 +546,7 @@ searchInScenarios(): Observable<any[]> {
   }
 
   setScenarios(elts: any) {
+     console.log(elts);
      this.scenarios = elts;
   }
 

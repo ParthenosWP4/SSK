@@ -9,7 +9,7 @@
             <span  (click)= "cleanInput()" class="clear input-group-addon bg-white border-0 btn-danger" *ngIf='fullTextSearch'>
                 <i class="fa fa-times-circle "></i>
               </span>
-            <input   type="text"  id="sskSearch"  class="typeahead form-control  font-weight-light search"  placeholder="Search" [(ngModel)]="model" >
+            <input  autofocus type="text"  id="sskSearch"  class="typeahead form-control  font-weight-light search"  placeholder="Search" [(ngModel)]="model" >
               <img  [src]= "forImage + '/assets/images/magnifier-tool.svg'" class=" searchImg" alt="int_dot"/>
             </div>
         <div class="w-100"></div>
@@ -22,7 +22,7 @@
         <ul class="nav nav-tabs  nav-fill mx-lg-5" role="tablist"  >
           <li *ngFor=" let item   of tabList"  class="nav-item " >
             <a class="nav-link pull-left" [ngClass]="(item == active) ? 'active':''" data-toggle="tab"  [attr.data-target]="'#'+ item + '-tab'"  (click)="toggle(item)" >
-              {{item}} ({{(item === 'scenarios') ? lodash.uniqBy(scenarios, 'id')?.length :''}} {{(item === 'steps') ? getSteps()?.length :''}} {{(item === 'resources') ? getResources()?.length :''}})
+              {{item}} ({{(item === 'scenarios') ? scenarios?.length :''}} {{(item === 'steps') ? getSteps()?.length :''}} {{(item === 'resources') ? getResources()?.length :''}})
             </a>
           </li>
         </ul>
@@ -46,7 +46,7 @@
           </span>
       </div>
       <div class="tab-pane" id="scenarios-tab"  [ngClass]="(active === 'scenarios') ? 'active':''" >
-          <app-scenario-card  *ngFor="let scen of lodash.uniqBy(scenarios, 'id') " [scenario]="scen"></app-scenario-card>
+          <app-scenario-card  *ngFor="let scen of scenarios" [scenario]="scen"></app-scenario-card>
           <app-scenario-template   *ngFor="let elt of getScenarioTemp()"  ></app-scenario-template>
       </div>
       <div class="tab-pane " id="steps-tab"  [ngClass]="(active === 'steps') ? 'active':''">

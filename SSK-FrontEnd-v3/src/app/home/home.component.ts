@@ -40,6 +40,10 @@ export class HomeComponent implements OnInit {
 
 
   redirect(link: string) {
-    this.router.navigate([link]);
+    if (link === 'documentation') {
+      window.open('https://ssk.readthedocs.io/en/latest/', '_blank');
+    } else {
+      this.router.navigate([link]);
+    }
   }
 }

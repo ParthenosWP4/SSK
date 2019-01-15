@@ -1,11 +1,6 @@
 package ssk.server.service;
 
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-//import org.elasticsearch.ElasticsearchException;
-
-import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,17 +8,19 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ExitCodeGenerator;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
-//import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
-import org.springframework.http.*;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
-//import org.elasticsearch.client.Client;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
+
 import javax.annotation.PostConstruct;
-import java.io.File;
-import java.io.FileReader;
 import java.net.ConnectException;
-import java.util.Map;
+
+//import org.elasticsearch.ElasticsearchException;
+//import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
+//import org.elasticsearch.client.Client;
 
 @Component
 public class InitData {

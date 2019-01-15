@@ -7,6 +7,7 @@ import {isUndefined} from 'util';
 import {environment} from '../environments/environment';
 import {HttpClient} from '@angular/common/http';
 import * as Bloodhound from 'bloodhound-js';
+import { t } from '@angular/core/src/render3';
 declare const $;
 
 @Injectable()
@@ -55,6 +56,7 @@ export class ElastichsearchService {
   public searchTags: any;
   public searchFor = [{'filter': 'search for xxxxx'}];
   public search: any;
+  public senariosAvailable = false;
 
   constructor(inj: Injector) {
     this.http = inj.get(HttpClient);
@@ -201,49 +203,49 @@ export class ElastichsearchService {
   }
 
 
-  loadData () {
+  loadData() {
       return new Promise ((resolve, reject) => {
         this.countItems('scenarios').subscribe(
           response => {
             this.setScenarioNumber(response['total']);
             this.setScenariosID(response['scenarios']);
-           const rem = _.remove(this.getScenariosID(), function(n) {
+           /*const rem = _.remove(this.getScenariosID(), function(n) {
               return (n['_id'] === 'SSK_sc_RUBRICA' ||  n['_id'] === 'SSK_sc_RUBRICA_technical');
-            });
+            });*/
           },
           err => {
             resolve(true);
           },
           () => {
             this.setScenariosTemp(new Array<any>(this.getScenariosID().length));
-            this.getAllSteps().then(
-              (value) => {
-                 this.getScenariosID().forEach((obj)  => {
-                  this.asynchFunction(obj);
-                });
-              });
-            resolve(true);
+              this.asynchFunction();
+            
+            resolve(this.getScenarios());
           });
       });
     }
 
 
-  asynchFunction(scenario: any) {
-    setTimeout(() => {
-      this.getScenarioDetails(scenario._id).subscribe(
+  asynchFunction() {
+    Observable.of(this.getScenariosID().forEach((elt) => {
+      this.getScenarioDetails(elt._id).subscribe(
         result => {
-          result.id = scenario._id;
-          result.lastUpdate = scenario._source.lastUpdate;
+          result.id = elt._id;
+          result.lastUpdate = elt._source.lastUpdate;
           this.detailsResult = result;
         },
         error => {  },
         () => {
           this.addScenario(this.detailsResult);
           this.scenariosTemp.pop();
-          this.setResultCount((this.getResultCount() + 1));
+          //this.setResultCount((this.getResultCount() + 1));
         }
       );
-   }, 1000);
+    })).subscribe(
+      value => {
+        
+      }
+    );
   }
 
   getAllStepsMetaData() {
@@ -260,7 +262,7 @@ export class ElastichsearchService {
 
   getAllSteps() {
     return new Promise ((resolve, reject) => {
-   this.getAllStepsFromServer().subscribe(
+      this.getAllStepsFromServer().subscribe(
       stepResult => {
         this.setStepNumber(stepResult['total']);
         this.setSteps(stepResult['steps']);
@@ -270,8 +272,7 @@ export class ElastichsearchService {
       },
       error => {},
       () => {
-          this.getAllResources();
-          resolve(true);
+        resolve(this.getSteps());
       });
     });
   }
@@ -405,16 +406,18 @@ getAllStandards() {
 }
 
   getAllResources() {
-    this.getAllResourcesFromServer().subscribe(
-      resResult => {
-        this.setResourceCount(resResult['total']);
-        this.setResources(resResult['resources']);
-      },
-      error => {  },
-      () => {
-        this.getAllStepsMetaData();
-      }
-    );
+    return new Promise ((resolve, reject) => {
+      this.getAllResourcesFromServer().subscribe(
+        resResult => {
+          this.setResourceCount(resResult['total']);
+          this.setResources(resResult['resources']);
+        },
+         error => {},
+         () => {
+          this.getAllStepsMetaData();
+             resolve(this.getResources());
+         });
+       });
   }
 
   normalize(text: string ) {
