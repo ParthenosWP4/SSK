@@ -179,4 +179,810 @@
   }
 
 
+  /**
+  * CSS of the new scenario's display
+  */
+  .scenarioImageTags{
+    position: relative;
+    z-index: 4;
+   
+  }
+  .styleNumber{
+    color: red;
+  }
+  .image-wrapper{
+    width: 100%;
+  }
+  
+  //---- svg icon ----
+  
+  //quotes-svg-icon 
+  #quotes-svg:hover{
+    #Steps{
+      stroke:rgb(74, 74, 74);
+    }
+  
+    #right-quote{
+      stroke:rgb(74, 74, 74);
+    }
+  
+    circle{
+      fill: white;
+    }
+  }
+  
+  //github-svg-icon 
+  #github-logo-svg:hover{
+    #Steps{
+      stroke:rgb(74, 74, 74);
+    }
+  
+    #github-logo{
+      stroke:rgb(74, 74, 74);
+    }
+  
+    circle{
+      fill: white;
+    }
+  
+  
+    #Full-scenario{
+      stroke: rgb(74, 74, 74);
+      fill:white;
+    }
+  }
+  
+  
+  .grey-background {
+      
+    width: inherit;
+    background-color: #F8F8F8;
+    font-family: $avenir_next;
+  }
+  //---- container-title-tag-picture-text -----
+  .text-description-mobile {
+    font-family: $roboto-light;
+    color: #333333;
+    font-size: 1.00rem;
+    z-index: 1;
+    position: relative;
+  
+  }
+  
+  .pictureReference{
+    font-style: italic;
+  }
+  .title {
+    color: $color-40;
+    font-family: $roboto-regular;
+    font-size: 3rem;
+    letter-spacing: -1.22px;
+  }
+  
+  .authors {
+    color: $color-48;
+    font-size: 1.25rem;
+    letter-spacing: -1.03px;
+    font-family: $avenir_next;
+  }
+  
+  .update-message{
+    font-family: "Avenir Next";
+    color:#9B9B9B;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+  
+  //tags generics
+  .tag1 {
+        
+    color: $color-49;
+    border: 1px solid $color-49;
+  }
+  
+  
+  .tag2 {
+    color: $color-51;
+    border: 1px solid $color-51;
+  }
+  
+  .tag3 {
+    color: $color-50;
+    border: 1px solid $color-50;
+  
+  }
+  
+  .tag{
+    border-radius:15px;
+    font-weight: 600;
+    letter-spacing: -0.59px;
+    background-color: #FFF;
+    font-family: $avenir_next;
+    font-size: 12px;
+    box-sizing: border-box;
+    margin-left: 0.5rem;
+  }
+  
+  
+  //------ Timeline Generics
+  .btn-Back{
+    background-color: #63B9D8;
+    color:white;
+  }
+  .btn-Back:hover{
+    background-color: white;
+    color: #63B9D8;
+    border:1px solid  #63B9D8;
+  
+  }
+  .btnTimeline {
+    background-color: transparent;
+    color:  #63B9D8;
+  }
+  
+  .btnTimeline:hover {
+    text-decoration: underline;
+  }
+  
+  .stepTitle {
+    font-family: "Raleway-Bold";
+    color: #2D4F63;
+    font-size: 2.00rem;
+  }
+  
+  .stepDescription {
+  
+    font-family: $roboto-light;
+    color: #333333;
+    font-size: 1.00rem;
+    background-color: transparent;
+    border-width:0px;
+  
+  }
+  
+  //-------- Modal ressources -----
+  
+  .close-modal {
+      background-color: #ffffff;
+      border: 3px solid #3E6477;
+      width: 60px;
+      height: 60px;
+      position: fixed;
+      right: -30px;
+      top: -23px;
+      overflow: hidden;
+      color: #3E6477;
+      font-size: 30px;
+      border-radius: 50% 50%;
+    text-align: center;
+    cursor: default;
+      
+  }
+  //----------
+  .nav-tabs {
+    border-bottom: 0px;
+    background-color: #F7F7F7;
+    -webkit-box-shadow: 0 4px 6px -6px #222;
+    -moz-box-shadow: 0 4px 6px -6px #222;
+    box-shadow: 0 4px 6px -6px #222;
+  
+    
+  }
+  
+  
+  .nav-link.active{
+    padding-bottom: 0px; 
+    color: #63B9D8;
+    border-bottom: 1px solid  #63B9D8;
+    background-color: transparent;
+  }
+  
+  .nav-link{
+        border-width: 0px;
+      border-color: #ddd #ddd #fff; 
+      text-align: center;
+      padding-bottom: 0px;
+      color: grey;
+  }
+  
+  .modal-content{
+      overflow-y: scroll;
+      border-radius: 0px;
+  }
+  
+  .modal-header {
+    display: inline;
+  }
+  .modal-body {
+      max-height: 80vh; //Sets the height to 80/100ths of the viewport.
+  }
+  
+  #popups-nav1, #popups-nav2{
+    color: #63B9D8;
+  }
+  
+  .popups-nav1,.popups-nav2{
+    text-align: center;
+  }
+  
+  .popups-nav1:hover{
+    border-bottom:2px solid red;
+    
+  }
+  
+  .popups-nav2:hover{
+    border-bottom:2px solid red;
+    
+  }
+  
+  #popups-nav2:hover{
+    color: #63B9D8;
+  }
+  
+  
+  .Content-Generic-Content{
+    color:blue;
+  }
+  
+  
+  .Specific-Resources-Content{
+    color:red;
+    display: block;
+  }
+  
+  
+  @media (min-width: 576px){
+    .modal-dialog {
+      max-width: 80%; 
+      margin: 30px auto;
+      border-radius: 0px;
+    }
+  }
+  
+  
+  
+  #timeline {
+    width: 90%;
+    position: relative;
+  
+    .timeline-item {
+      //padding-bottom: 50px;
+      position: relative;
+  
+      .timeline-icon {
+        background: $color-3;
+        border:3px solid $color-22 ;
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        top: 0;
+        left: 16px;
+        overflow: hidden;
+        color:$color-22;
+        font-size: 30px;	
+        border-radius: 50% 50%;
+  
+        .step-number {
+          position: relative;
+          top: 3px;
+          left: 18px;
+        }
+      }
+  
+      .timeline-content {
+  
+        h2 {
+          padding: 15px;
+          color:$color-22;
+          margin: -20px -20px 0 -20px;
+          font-weight: 300;
+        }
+  
+      }
+      &:before {
+        content:"";
+        width: 5px;
+        height: 100%;
+        background:$color-22;
+        left: 5%;
+        top: 0;
+        position: absolute;
+        
+      }
+    
+  }
+  
+  
+  //Remove the vertical bar only for the last element 
+  #timeline .timeline-item:last-child {
+      
+    &:before {
+      content:"";		
+      background-color: transparent;
+      }
+     }
+    
+  }
+  
+  
+  //----- bottom nav options ------
+  .nav-option {
+  font-size: 1.00rem;
+  background-color:#F8F8F8;
+  
+  }
+  
+  .nav-option:hover {
+  color:$color-47;
+  }
+  
+  .nav-option-left {
+  text-align: center;
+  }
+  
+  .nav-option-right{
+  text-align: center;
+  }
+  
+  //-------- End of Generics css styles properties (colors) --------
+  
+  // @media only screen and (min-width : 1450px)
+  @media only screen and (min-width : 1450px) {
+      .step-Title-and-Tag {
+        display:-webkit-inline-box;
+      }
+      
+      .picture-tag-container{
+        float: right;
+      }
+  
+      .grey-background{
+        width: 100%;
+      }
+      
+      .centericon{
+        text-align: center;
+      }
+      
+      .picture {
+        width:100%;
+      }
+      
+      
+    //---- container-title-tag-picture-text -----
+  
+    .icon-quote-comment-git{
+      margin-left: 5px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      
+    }
+  
+    .img-icon-quote-comment-git{
+      margin:20px;	
+    }
+  
+    
+  
+    .nav-option-left{
+      text-align: center;
+    }
+  
+    .nav-option-right{
+      text-align: center;
+    }
+  
+    //------------------- Timeline
+  
+    img {
+      max-width: 100%;
+    }
+  
+    a {
+      text-decoration: none;
+    }
+  
+    .container {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  
+  
+  
+    .project-name {
+      text-align: center;
+      padding: 10px 0;
+    }
+  
+    #timeline {
+      
+      .timeline-item {
+  
+        .timeline-icon {
+          
+          left: -20px;
+    
+          .step-number {
+            top: 3px;
+            left: 18px;
+          }
+        }
+  
+        &:before {
+          left: 40px;
+        }
+  
+        }
+    }
+  
+    //Remove the vertical bar only for the last element 
+    #timeline .timeline-item:last-child {
+      
+      &:before {
+  
+        content:"";		
+        background-color: transparent;
+  
+      }
+    }
+  }
+  
+  // @media only screen and ( min-width:991px ) 
+  @media only screen and ( max-width:1450px ) and ( min-width:991px )  {
+  
+          .picture-tag-container{
+            float: right;
+          }
+  
+          .grey-background{
+            width: 100%;
+          }
+          
+          
+          .centericon{
+            text-align: center;
+          }
+          
+          .picture {
+            margin-top: 101px;
+            width:100%;
+          }
 
+          .icon-update-container span img{
+            cursor: pointer;
+          }
+          
+          
+        //---- container-title-tag-picture-text -----
+        
+        .icon-quote-comment-git{
+          margin-left: 5px;
+          margin-top: 30px;
+          margin-bottom: 30px;
+          
+        }
+        
+        .img-icon-quote-comment-git{
+          margin:20px;	
+        }
+        
+  
+        //------------------- Timeline
+    
+        img {max-width: 100%;}
+        
+        a {
+          text-decoration: none;
+        }
+        
+        .container {
+          max-width: 100%;
+          margin: 0 auto;
+        }
+        
+    
+  
+        #timeline {
+      
+          .timeline-item {
+  
+            .timeline-icon {
+              
+              left: -15px;
+        
+              .step-number {
+                top: 3px;
+                left: 18px;
+              }
+            }
+  
+            &:before {
+              left: 46px;
+            }
+  
+              }
+        }
+  
+        //Remove the vertical bar only for the last element 
+        #timeline .timeline-item:last-child {
+          
+          &:before {
+  
+            content:"";		
+            background-color: transparent;
+  
+          }
+        }
+      
+  
+  }
+  
+  
+  // @media only screen and ( max-width:991px ) and ( min-width:744px ) 
+  @media only screen and ( max-width:991px ) and ( min-width:576px )  {
+  
+  
+    .grey-background {
+      width: 100%;
+    }
+    
+  
+    
+    .centericon {
+      text-align: center;
+    }
+    
+    .picture {
+      margin-top: 101px;
+      width:100%;
+    }
+    
+    .title-author-icon-container {
+      text-align: center;
+    }
+    //---- container-title-tag-picture-text ----
+  
+    .icon-quote-comment-git{
+      margin-left: 5px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      
+    }
+  
+    .img-icon-quote-comment-git{
+      margin:20px;	
+    }
+  
+    .update-message{
+      font-family: "Avenir Next";
+      color:#9B9B9B;
+    }
+  
+  
+    //------------------- Timeline
+  
+    img {max-width: 100%;}
+  
+    a {
+      text-decoration: none;
+    }
+  
+    .container {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  
+  
+    .project-name {
+      text-align: center;
+      padding: 10px 0;
+    }
+  
+    #timeline {
+  
+      .timeline-item {
+  
+        .timeline-icon {
+          
+          left: 3px;
+  
+          .step-number {
+            top: 3px;
+            left: 18px;
+          }
+        }
+  
+        &:before {
+          left: 16px;
+          background-color: transparent;
+        }
+  
+        }
+      }
+  
+      //Remove the vertical bar only for the last element 
+      #timeline .timeline-item:last-child {
+        
+        &:before {
+  
+          content:"";		
+          background-color: transparent;
+  
+        }
+      }
+  
+  }
+  
+  @media only screen and (max-width:576px)  { 
+  
+  
+      .picture-tag-container{
+                  padding-bottom:10%;
+      }
+  
+  
+      .img-fluid {
+        max-width: 95%;
+        height: auto;
+      }
+  
+      
+      //------ Reordering (Flexbox)  ------
+  
+      //------ picture-tag-container children components
+  
+      //declaring the parent  container as flex box (picture-tag-container)
+  
+      .picture-tag-container {    
+        display: flex;
+        align-items: stretch;
+        flex-direction : column;
+      }  
+  
+      .picture {
+        order : 2;
+        background-color:lightgray;
+      } 
+  
+      .span-tag{
+        order : 1;
+        //background-color:orange;//test
+      }
+  
+      .title-author-icon-container {
+        text-align: center;
+      }
+  
+      //----- container-main direct children components
+  
+      //declaring the parent  container as flex box (container-main)
+      .container-main {    
+        display: flex;
+        align-items: stretch;
+        flex-direction : column;
+      }  
+  
+  
+      //positionning the children components in the parent flex box
+      .timeline-container {
+        order : 1;
+        //background-color:cyan;
+      } 
+  
+      .nav-option {
+        order : 2;
+        //background-color:orange;//test
+      }
+  
+  
+      .container-title-tag-picture-text {    
+        order : 3;
+        margin-top:50px; 
+  
+      }  
+  
+  
+      //----- container-title-tag-picture-text direct component
+      
+      //declaring the parent  container as flex box (container-title-tag-picture-text)
+      .container-title-tag-picture-text {    
+        display: flex;
+        align-items: stretch;
+        flex-direction : column;
+      }  
+  
+      //positionning the children components in the parent flex box
+      .picture-tag-container {
+        order : 3;   
+        // background-color:olivedrab;//test
+      }  
+      
+  
+      .title-container {
+        order : 1;
+        //background-color:grey;//test
+      } 
+      
+      .authors-container {
+        order : 2;
+        //background-color:violet;//test
+      } 
+      
+      .icon-update-container {
+        order : 3;
+        //background-color:red;//test
+        text-align: center;
+      
+      }
+  
+      .icon-update-container * {
+  
+        background-color: inherit;
+      
+      }
+  
+      .centericon, .update-message {
+        text-align: center;
+      }
+  
+  
+      .text-description-mobile{
+        order : 1;
+        //background-color:yellow;//test
+        display: block;
+      }
+  
+      //----- End of  Reordering (Flexbox)  ------	
+      
+      //Timeline
+      
+      #timeline {
+        
+        .timeline-item {
+          max-width: 90%;
+          .timeline-icon {
+            
+            left: 3px;
+      
+            .step-number {
+              top: 3px;
+              left: 18px;
+            }
+          }
+  
+          &:before {
+            left: 16px;
+            background-color: transparent;
+          }
+  
+        }
+      }
+  
+      //Remove the vertical bar only for the last element 
+      #timeline .timeline-item:last-child {
+        
+        &:before {
+  
+          content:"";		
+          background-color: transparent;
+  
+        }
+      }
+  
+  
+      .stepTitle {
+        font-size: 1.75rem;
+        padding-left: 86px;
+        padding-top: 5px;
+    
+      }
+  
+  
+      //interested  link 
+      .interested-link{
+            margin-left:0px; 
+      }
+  }
+  
+  

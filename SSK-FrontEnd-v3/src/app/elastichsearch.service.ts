@@ -219,7 +219,6 @@ export class ElastichsearchService {
           () => {
             this.setScenariosTemp(new Array<any>(this.getScenariosID().length));
               this.asynchFunction();
-            
             resolve(this.getScenarios());
           });
       });
@@ -231,6 +230,7 @@ export class ElastichsearchService {
       this.getScenarioDetails(elt._id).subscribe(
         result => {
           result.id = elt._id;
+          console.log(elt._source.lastUpdate)
           result.lastUpdate = elt._source.lastUpdate;
           this.detailsResult = result;
         },

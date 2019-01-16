@@ -239,7 +239,7 @@ export class ScenariosComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
 
-    @HostListener('window:scroll', ['$event']) checkScroll() {
+    /*@HostListener('window:scroll', ['$event']) checkScroll() {
       const componentPosition = this.elementRef.nativeElement.offsetTop;
       const scrollPosition = window.pageYOffset;
       if ( !isUndefined(this.getScenarios()) &&  this.getScenarios().length  < this.elasticServices.getScenarioNumber()
@@ -248,7 +248,7 @@ export class ScenariosComponent implements OnInit, AfterViewInit, OnDestroy {
         if (!isUndefined(this.elasticServices.getscenariosTemp().length)  && this.elasticServices.getscenariosTemp().length === 1) {
           this.elasticServices.getscenariosTemp().pop();
         }
-      } }
+      } }*/
 
   remove(elt: any) {
     $('#sskSearch').val('');
@@ -331,7 +331,6 @@ export class ScenariosComponent implements OnInit, AfterViewInit, OnDestroy {
             error => {},
             () =>  {
               this.elasticServices.addScenario(scenarioDetails);
-              console.log(this.elasticServices.getScenarios().length);
             }
             );
         })).subscribe(
@@ -546,7 +545,6 @@ searchInScenarios(): Observable<any[]> {
   }
 
   setScenarios(elts: any) {
-     console.log(elts);
      this.scenarios = elts;
   }
 

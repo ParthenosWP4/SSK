@@ -45,6 +45,8 @@ export class ScenarioComponent implements OnInit  {
   spinner = true;
   spinnerSteps = true;
   forImage = environment.forImage;
+  quoteIcon = 'quote' ;
+  githubIcon = 'github-logo';
 
 
   constructor(
@@ -65,6 +67,7 @@ export class ScenarioComponent implements OnInit  {
 
 
   ngOnInit() {
+    
     this.sskService.setTitle('SSK - Scenario');
     window.scrollTo(0, 0);
     Observable.of(this.activatedRoute.params
@@ -96,6 +99,7 @@ export class ScenarioComponent implements OnInit  {
               this.elasticServices.getScenarioDetails(obj._id).subscribe(
                 detailsResult => {
                    detailsResult.id = obj._id;
+                   detailsResult.lastUpdate = obj._source.lastUpdate;
                    this.scenarioDetails = detailsResult;
                   },
                 error => {},
@@ -103,6 +107,7 @@ export class ScenarioComponent implements OnInit  {
                   this.elasticServices.addScenario(this.scenarioDetails);
                   if (this.scenarioDetails['id'] === this.scenarioId) {
                     this.scenarioElt = this.scenarioDetails;
+                    console.log(this.scenarioElt);
                     this.setCurrentScenario();
                   }
                 }
@@ -114,6 +119,7 @@ export class ScenarioComponent implements OnInit  {
       this.scenarioElt = _.find(this.elasticServices.getScenarios(), item => {
         return item.id === this.scenarioId;
       });
+      console.log(this.scenarioElt);
       this.setCurrentScenario();
     }
   }
