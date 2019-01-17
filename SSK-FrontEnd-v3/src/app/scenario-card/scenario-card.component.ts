@@ -48,7 +48,6 @@ export class ScenarioCardComponent implements OnInit,  AfterViewInit {
     });
 }
   ngOnInit() {
-    console.log(this.scenario);
     if (this.scenario.title instanceof Array) {
       this.title = this.scenario.title[0];
     } else {

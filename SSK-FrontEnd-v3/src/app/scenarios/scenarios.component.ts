@@ -351,7 +351,6 @@ export class ScenariosComponent implements OnInit, AfterViewInit, OnDestroy {
           },
           (error) => { console.log(error); },
           () => {
-            console.log('finish');
           });
     });
    }

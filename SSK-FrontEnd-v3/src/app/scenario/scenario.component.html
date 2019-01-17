@@ -77,7 +77,7 @@
         <div *ngIf="!spinnerSteps">
                 <div class="row timeline-container mt-sm-5">
                         <div id="timeline" class="ml-5">
-                                <div class="timeline-item" *ngFor="let step of scenarioElt?.steps; let i = index ">
+                                <div class="timeline-item pb-5" *ngFor="let step of scenarioElt?.steps; let i = index ">
                                         <div class="row step-content">
                                                 <div class="col-1 ml-lg-5 mr-sm-5 mr-md-0 ml-sm-0">
                                                         <div class="timeline-icon">
@@ -88,26 +88,24 @@
                                                         <div class="timeline-content mt-lg-2">
                                                                 <div class=" row">
                                                                         <span class="stepTitle">
-                                                                                {{getStepTitle(step)}}
+                                                                                {{step?.title}}
                                                                         </span>
                                                                         <!--<span *ngFor="let tag of step.TagList" class="{{tag.cssTag}} tag mt-3 mb-3"
                                                                                 tooltip="{{tag?.name}}" containerClass="tagClass">
                                                                                 {{tag.name}}-->
 
-                                                                        <span class="   desc">
-                                                                                <ng-container *ngFor=" let item of tagsLabel; let m = index">
-                                                                                        <p *ngIf="stepTags[changeTag(item)] !== undefined">
+                                                                        <span class="mt-1">
+                                                                                <ng-container *ngFor=" let item of step?.metadata; let m = index">
+                                                                                       <!-- <p *ngIf="stepTags[changeTag(item)] !== undefined">
                                                                                                 <span>
                                                                                                         {{item}}
-                                                                                                        <img [src]="forImage + '/assets/images/interrogationDot.png'"
-                                                                                                                class="pb-1"
-                                                                                                                alt="Responsive image">
-                                                                                                </span>
+                                                                                                        
+                                                                                                </span>-->
                                                                                                 <span class="tag my-1  mr-2 py-1"
-                                                                                                        [ngClass]="elt?.type"
-                                                                                                        *ngFor=" let elt of stepTags[changeTag(item)]"
-                                                                                                        tooltip="{{elt?.type +  '-'+ elt?.source  }}"
-                                                                                                        containerClass="tagClass">{{tagShow(elt)?.key}}</span>
+                                                                                                        [ngClass]="((item?.type === undefined) || ((item?.type).indexOf('standard') !== -1) ) ? 'standard' : item?.type"
+                                                                                                       
+                                                                                                        tooltip="{{((item?.type === undefined) || ((item?.type).indexOf('standard') !== -1) ) ? 'standard' : item?.type + ' - Tadirah'}}"
+                                                                                                        containerClass="tagClass">{{tagShow(item)?.key}}</span>
                                                                                                 <!-- <button type="button" class="btn btn-secondary disabled m-1" *ngFor=" let elt of stepTags[changeTag(item)]?.slice(0,2)" tooltip ="{{'Type: '  +elt?.type +  ' | Source : '+ elt?.source  }}">{{tagShow(elt)?.key}} </button>
                                                                                                     <span  *ngIf = "stepTags[changeTag(item)]?.length > 2" class="collapsed text-center" data-toggle="collapse"  [attr.data-target]="'#tag' +m"  aria-expanded="false"> More ...</span>
                                                                                                   </p>
@@ -121,20 +119,20 @@
 
                                                                         <div class="w-100"></div>
 
-                                                                        <div class="stepDescription" [innerHTML]="stepDesc">
+                                                                        <div class="stepDescription" [innerHTML]="step?.description">
 
                                                                         </div>
 
                                                                         <div class="col-sm-12 col-md-12 pl-0">
 
 
-                                                                                <a href="{{ step.button-check-ressources-src }}"
+                                                                                <!--<a href="{{ step.button-check-ressources-src }}"
                                                                                         class="btn btnTimeline pl-0"
                                                                                         data-toggle="modal" data-target="#myModal">
                                                                                         <img class="my-3" src="{{ step.iconSrc }}">
 
                                                                                         {{step.buttonContent}}
-                                                                                </a>
+                                                                                </a>-->
                                                                         </div>
 
 
@@ -149,7 +147,7 @@
                         </div>
 
                 </div>
-                <div class="col-sm-12 col-md-12 pb-5 nav-option">
+                <div class="col-sm-12 col-md-12 nav-option my-5">
                         <div class="col-12 d-flex justify-content-center">
                                 <a href="#" class="btn btn-Back">Back to the scenarios</a>
                         </div>

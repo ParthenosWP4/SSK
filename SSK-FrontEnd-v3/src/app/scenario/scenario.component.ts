@@ -8,7 +8,7 @@ import {isArray, isUndefined} from 'util';
 import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
 import {isDefined} from '@angular/compiler/src/util';
 import {environment} from '../../environments/environment';
-import { CollapseModule } from 'ngx-bootstrap';
+import { CollapseModule, ComponentLoader } from 'ngx-bootstrap';
 @Component({
   selector: 'app-scenario',
   templateUrl: './scenario.component.html',
@@ -142,12 +142,9 @@ export class ScenarioComponent implements OnInit  {
             this.scenarioElt.steps = _.sortBy(_.filter(this.elasticServices.getSteps(), (item) => {
               return (_.indexOf(_.map(item.parents, 'id'), this.scenarioId) !== -1);
             }), [ 'position']);
+            console.log(this.scenarioElt.steps);
             this.updateSteps();
             this.spinnerSteps = false;
-             _.forEach(this.elasticServices.getSteps(), (step) => {
-               step['metadata'] = this.elasticServices.addStepMetadata(step._id);
-             });
-             this.initializeCurrentStep(this.scenarioElt);
              this.cdr.detectChanges();
           });
        } else {
@@ -156,7 +153,6 @@ export class ScenarioComponent implements OnInit  {
         }), [ 'position']);
         this.updateSteps();
         this.spinnerSteps = false;
-         this.initializeCurrentStep(this.scenarioElt);
        }
  }
 
@@ -165,15 +161,18 @@ export class ScenarioComponent implements OnInit  {
   _.forEach(this.scenarioElt.steps, (step)  => {
     if (step.parents.length > 1) {
         _.forEach(step.parents, (item)  => {
-        const newStep: any = _.clone(step);
+        let newStep: any = _.clone(step);
           newStep.position = item['position'];
+          newStep = this.updateContent(newStep);
           steps.push(newStep);
         });
     } else {
       step.position = step.parents[0].position;
+      step = this.updateContent(step);
       steps.push(step);
     }
   });
+  console.log(steps)
   this.scenarioElt.steps = _.orderBy(steps, 'position', 'asc');
  }
 
@@ -190,7 +189,7 @@ export class ScenarioComponent implements OnInit  {
       return false;
   }
 
-  initializeCurrentStep(scenario: any) {
+ /* initializeCurrentStep(scenario: any) {
     this.timelines = $('.cd-horizontal-timeline');
     this.timelineTotWidth = this.timelines.width();
     this.left = this.timelineTotWidth / 7;
@@ -208,7 +207,7 @@ export class ScenarioComponent implements OnInit  {
       this.selectedStep.ref = this.selectedStep._id;
       this.updateContent(this.selectedStep, this.selectedStep.position);
     }
-  }
+  }*/
 
 
   setStepMetadata() {
@@ -257,6 +256,9 @@ export class ScenarioComponent implements OnInit  {
 
 
   tagShow(tag: any) {
+    if (tag.abbr !== undefined ) {
+      tag.key = tag.abbr;
+    }
     if ( this.sskService.isUrl(tag.key)) {
       tag.url  = tag.key;
       tag.key = tag.url.substr(tag.url.lastIndexOf('/') + 1, tag.url.length);
@@ -269,7 +271,7 @@ export class ScenarioComponent implements OnInit  {
     }
 
 
-  setStepTitleAndDescription() {
+  /*setStepTitleAndDescription() {
     if (this.selectedStep.head instanceof Array) {
       this.selectedStep.title = this.sskService.updateText(this.selectedStep.head[0], null);
     } else {
@@ -282,19 +284,26 @@ export class ScenarioComponent implements OnInit  {
       this.selectedStep.description = this.selectedStep.desc;
     }
     this.stepDesc = this.sskService.updateText(this.selectedStep['description'], 'step');
-  }
+  }*/
 
-  updateContent(step: any, index: number) {
+  updateContent(step: any) {
     this.spinner = true;
-    this.router.navigate(['scenarios', this.scenarioId,  step.position]);
-    this.idSelectedStep = index;
-     this.selectedStep = step;
-    this.selectedStep.id  =  index;
-    this.selectedStep.ref = this.selectedStep._id;
-    this.setStepTitleAndDescription();
-    this.setStepMetadata();
-    this.setResources();
-
+    this.router.navigate(['scenarios', this.scenarioId]);
+    if (step.head instanceof Array) {
+      step.title = this.sskService.updateText(step.head[0], null);
+    } else {
+      step.title = this.sskService.updateText(step.head, null);
+    }
+    if ( step.desc instanceof Array) {
+      // 'description' is a new field
+      step.description = this.sskService.updateText(step.desc[0], 'step');
+    } else {
+      step.description = this.sskService.updateText(step.desc, 'step');
+    }
+   //this.stepDesc = this.sskService.updateText(step['description'], 'step');
+    //this.setStepTitleAndDescription();
+    //this.setResources();
+   return step;
   }
 
   /*nextStep() {
@@ -319,12 +328,12 @@ export class ScenarioComponent implements OnInit  {
   }
 
 
-  // Timeline Functions
+  /* Timeline Functions
   initTimeline(timelines: any) {
     const _self = this;
     timelines.each(function () {
       const timeline = $(this);
-        /*cache timeline components*/
+        /*cache timeline components
       _self.timelineComponents['timelineWrapper'] = timeline.find('.events-wrapper');
       _self.timelineComponents['eventsWrapper'] = _self.timelineComponents['timelineWrapper'].children('.events');
       _self.timelineComponents['fillingLine'] = _self.timelineComponents['eventsWrapper'].children('.filling-line');
@@ -358,7 +367,7 @@ getStepTitle(step: any) {
   } else {
     return this.sskService.updateText(step.head, null);
   }
-}
+}*/
 
   updateText(desc: any, type: string) {
     let text = '';

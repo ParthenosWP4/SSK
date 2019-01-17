@@ -8,6 +8,7 @@ import {environment} from '../environments/environment';
 import {HttpClient} from '@angular/common/http';
 import * as Bloodhound from 'bloodhound-js';
 import { t } from '@angular/core/src/render3';
+import { CollapseModule } from 'ngx-bootstrap';
 declare const $;
 
 @Injectable()
@@ -230,7 +231,6 @@ export class ElastichsearchService {
       this.getScenarioDetails(elt._id).subscribe(
         result => {
           result.id = elt._id;
-          console.log(elt._source.lastUpdate)
           result.lastUpdate = elt._source.lastUpdate;
           this.detailsResult = result;
         },
@@ -238,26 +238,27 @@ export class ElastichsearchService {
         () => {
           this.addScenario(this.detailsResult);
           this.scenariosTemp.pop();
-          //this.setResultCount((this.getResultCount() + 1));
         }
       );
     })).subscribe(
       value => {
-        
       }
     );
   }
 
   getAllStepsMetaData() {
-    this.getAllStepsMetaDataFromServer().subscribe(
-      stepMetadataResult => {
-        this.setStepsMetadata(stepMetadataResult['step_metadata']);
-      },
-      error => {},
-      () => {
-        this.getGlossaryTerms();
-      }
-    );
+    return new Promise ((resolve, reject) => {
+      this.getAllStepsMetaDataFromServer().subscribe(
+        stepMetadataResult => {
+          this.setStepsMetadata(stepMetadataResult['step_metadata']);
+        },
+        error => {},
+        () => {
+          this.getGlossaryTerms();
+          resolve(this.getStepsMetadata());
+        }
+      );
+    });
   }
 
   getAllSteps() {
@@ -266,12 +267,29 @@ export class ElastichsearchService {
       stepResult => {
         this.setStepNumber(stepResult['total']);
         this.setSteps(stepResult['steps']);
-        _.forEach(this.getSteps(), (step) => {
-          step['metadata'] = this.addStepMetadata(step._id + step.position + 'Meta');
-        });
       },
       error => {},
       () => {
+        this.getAllStepsMetaData().then(
+          (value) => {
+            _.forEach(this.getSteps(), (step) => {
+              step['metadata'] = this.addStepMetadata(step._id + step.position + 'Meta');
+            });
+            this.getAllResources().then(
+              (val) => {
+                _.forEach(this.getSteps(), (step) => {
+                  step['resources'] = _.find(this.getResources(), (res) => {
+                    return (res.parent === step._id);
+                  });
+                  if(step['resources'] !== undefined) {
+                    console.log(step['resources'].length);
+                  }
+                });
+                console.log(this.getSteps());
+            });
+          }
+        );
+        console.log(this.getSteps());
         resolve(this.getSteps());
       });
     });
