@@ -58,7 +58,6 @@ const routes: Routes = [
   },
   { path: 'errorpage', component: ErrorpageComponent},
   { path: '**',  component: ErrorpageComponent },
-  
 ];
 
 export const appRoutingProviders: any[] = [];

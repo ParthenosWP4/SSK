@@ -11,7 +11,7 @@ export class ModalResourcesComponent implements OnInit {
   @Input() resources;
   tabList: Array<any> = [ {'label': 'General Resources', 'identifier': 'general'},
                           {'label': 'Project-specific Resources', 'identifier': 'project'}];
-  projetcRes: any;
+  projectRes: any;
   generalRes: any;
   active = 'general';
   border: any = {
@@ -25,6 +25,9 @@ export class ModalResourcesComponent implements OnInit {
     console.log(this.resources);
     this.generalRes = _.filter(this.resources, (res) => {
       return res.category === 'general';
+    });
+    this.projectRes = _.filter(this.resources, (res) => {
+      return res.category === 'project';
     });
   }
   toggle(item: any) {

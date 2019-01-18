@@ -2,19 +2,27 @@
 <div class="row home">
     <div class="col-lg-12  " >
         <ul class="nav nav-tabs  nav-fill mx-lg-5" role="tablist"  >
-          <li *ngFor=" let item   of tabList"  class="nav-item " >
-            <a class="nav-link pull-left" [ngClass]="(item.identiifer == active) ? 'active':''" data-toggle="tab"  [attr.data-target]="'#'+ item.identiifer + '-tab'"  (click)="toggle(item)" >
-              {{item.label}}
+          <li class="nav-item " *ngIf="(generalRes?.length > 0)" >
+            <a class="nav-link pull-left" [ngClass]="(active == 'general' ) ? 'active':''" data-toggle="tab" target="#general-tab"  (click)="toggle('general')" >
+             General resources
             </a>
           </li>
+          <li   class="nav-item " *ngIf="(project?.length > 0)"  >
+              <a class="nav-link pull-left" [ngClass]="(actice == 'project') ? 'active':''" data-toggle="tab" target="#project-tab"  (click)="toggle('project')" >
+                  Project-specific Resources
+              </a>
+            </li>
         </ul>
     </div>
  </div>
  <div   class=" row tab-pane " id="general-tab"  [ngClass]="(active === 'general') ? 'active':''">
-    <app-resource-card   *ngFor="let res of generalRes"  [res]="res" [border]="border"></app-resource-card>
+   <div class="col-lg-12">
+      <app-resource-card  *ngFor="let res of generalRes"  [res]="res" [border]="border"></app-resource-card>
+   </div>
   </div>
   <div class="row tab-pane  " id="project-tab"  [ngClass]="(active === 'project') ? 'active':''">
-     <app-resource-card   *ngFor="let res of projectRes"  [res]="res" [border]="border"></app-resource-card>
-  </div>
-
+      <div class="col-lg-12">
+          <app-resource-card   *ngFor="let res of projectRes"  [res]="res" [border]="border"></app-resource-card>
+      </div>
+    </div>
 </div>
