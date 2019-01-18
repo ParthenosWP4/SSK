@@ -8,7 +8,8 @@ import {isArray, isUndefined} from 'util';
 import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
 import {isDefined} from '@angular/compiler/src/util';
 import {environment} from '../../environments/environment';
-import { CollapseModule, ComponentLoader } from 'ngx-bootstrap';
+import {NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import {ModalResourcesComponent} from './modal-resources/modal-resources.component';
 @Component({
   selector: 'app-scenario',
   templateUrl: './scenario.component.html',
@@ -48,6 +49,7 @@ export class ScenarioComponent implements OnInit  {
   quoteIcon = 'quote' ;
   githubIcon = 'github-logo';
 
+  resourceBtn = 'RESOURCES (specifications, papers, tutorials, etc.)';
 
   constructor(
     private sskService: SskService,
@@ -55,6 +57,7 @@ export class ScenarioComponent implements OnInit  {
     private router: Router,
     private elasticServices: ElastichsearchService,
     private sanitizer: DomSanitizer,
+    private modalService: NgbModal,
     private cdr: ChangeDetectorRef) {
     this.tagsLabel = this.elasticServices.getTags();
     this.left = 0;
@@ -469,6 +472,12 @@ getStepTitle(step: any) {
           break;
       }
     });
+  }
+
+
+  open(resources: any) {
+    const modalRef = this.modalService.open(ModalResourcesComponent, { size: 'lg' });
+    modalRef.componentInstance.resources = resources;
   }
 }
 

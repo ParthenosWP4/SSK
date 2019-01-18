@@ -278,18 +278,13 @@ export class ElastichsearchService {
             this.getAllResources().then(
               (val) => {
                 _.forEach(this.getSteps(), (step) => {
-                  step['resources'] = _.find(this.getResources(), (res) => {
-                    return (res.parent === step._id);
+                  step['resources'] = _.remove(_.clone(this.getResources()), item => {
+                    return item.parent === step._id;
                   });
-                  if(step['resources'] !== undefined) {
-                    console.log(step['resources'].length);
-                  }
                 });
                 console.log(this.getSteps());
             });
-          }
-        );
-        console.log(this.getSteps());
+          });
         resolve(this.getSteps());
       });
     });

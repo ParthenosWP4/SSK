@@ -317,12 +317,17 @@
   
   }
   .btnTimeline {
+    font-family: $avenir_next;
     background-color: transparent;
-    color:  #63B9D8;
+    color:  $color-47;
+    cursor: pointer;
+    font-size: 1.25rem;
+    opacity: 1;
   }
   
   .btnTimeline:hover {
     text-decoration: underline;
+    opacity: 0.5;
   }
   
   .stepTitle {

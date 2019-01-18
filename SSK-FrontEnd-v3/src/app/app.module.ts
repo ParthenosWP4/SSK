@@ -42,6 +42,7 @@ import { MomentModule } from 'ngx-moment';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import * as $ from 'jquery';
 import { HighlightPipe } from './highlight.pipe';
+import { ModalResourcesComponent } from './scenario/modal-resources/modal-resources.component';
 /*export function dataProviderFactory(provider: ElastichsearchService) {
   return () => provider.loadData();
 }*/
@@ -73,7 +74,8 @@ import { HighlightPipe } from './highlight.pipe';
     PageInContructionComponent,
     NewScenarioComponent,
     UserComponent,
-    HighlightPipe
+    HighlightPipe,
+    ModalResourcesComponent
   ],
   imports:
     [
@@ -100,6 +102,9 @@ import { HighlightPipe } from './highlight.pipe';
     //{ provide: APP_INITIALIZER, useFactory: dataProviderFactory, deps: [ElastichsearchService], multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true}
     ],
+    entryComponents: [
+      ModalResourcesComponent,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

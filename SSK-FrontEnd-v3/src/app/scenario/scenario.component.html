@@ -123,16 +123,9 @@
 
                                                                         </div>
 
-                                                                        <div class="col-sm-12 col-md-12 pl-0">
-
-
-                                                                                <!--<a href="{{ step.button-check-ressources-src }}"
-                                                                                        class="btn btnTimeline pl-0"
-                                                                                        data-toggle="modal" data-target="#myModal">
-                                                                                        <img class="my-3" src="{{ step.iconSrc }}">
-
-                                                                                        {{step.buttonContent}}
-                                                                                </a>-->
+                                                                        <div class="col-sm-12 col-md-12 my-2 btnTimeline" *ngIf="step?.resources?.length > 0" (click)="open(step?.resources)">
+                                                                                <img class="p-2" [src]="forImage + '/assets/images/books-stack.svg'" />
+                                                                                <span class="">{{resourceBtn}}</span>
                                                                         </div>
 
 
