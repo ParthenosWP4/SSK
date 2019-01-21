@@ -35,19 +35,10 @@ Contribute to the SSK on GitHub with the TEI
 Users willing to create scenarios in TEI should follow the following
 instructions:
 
--  Download or fork the SSK data repository in GitHub It is necessary to have an account on GitHub:
-  `https://github.com/ParthenosWP4/SSK/tree/master/ <https://github.com/ParthenosWP4/SSK/tree/master/spec/TEI_SSK_ODD.xml>`__
-  (NB: to fork a repository, a GitHub user account is necessary);
-
--  Create your files with your favourite XML editor. Don't forget to
-  validate them against the SSK schema (see above);
-
--  To publish scenarios on the SSK, the TEI files need to be in the
-  *scenarios* and *steps* folders;
-
--  Users with a GitHub account can make a pull request to ask for the
-  update of the repository. Users without an account can contact the
-  SSK team at ssk [at] inria [dot] fr.
+-  Download or fork the SSK data repository in GitHub It is necessary to have an account on GitHub: `https://github.com/ParthenosWP4/SSK/tree/master/ <https://github.com/ParthenosWP4/SSK/tree/master/spec/TEI_SSK_ODD.xml>`__ (NB: to fork a repository, a GitHub user account is necessary);
+-  Create your files with your favourite XML editor. Don't forget to validate them against the SSK schema (see above);
+-  To publish scenarios on the SSK, the TEI files need to be in the *scenarios* and *steps* folders;
+-  Users with a GitHub account can make a pull request to ask for the update of the repository. Users without an account can contact the SSK team at ssk [at] inria [dot] fr.
 
 Main elements
 -------------
