@@ -230,15 +230,12 @@ three main reasons:
 -  to share a project in another form than the usual blog / article (a
    new way to disseminate your work).
 
-SSK components
---------------
+SSK components: Scenarios < Steps < Resources
+--------------------------------------------
 
 The SSK is a web platform builded on three main layers nested within
 each other following a specific order: Research scenarios, steps and
 resources.
-
-Scenarios < Steps < Resources
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Each **scenario** within the SSK works like a high-level research guide
 for scholars. They are made up of successive **steps** or tasks, and can
@@ -266,8 +263,8 @@ material contained in these sections is of various kinds:
 
 -  **Training materials** such as tutorials.
 
-How to create a scenario for the SSK
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How to create a scenario for the SSK (a SSK Tutorial) ?
+-------------------------------------------------------
 
 The following instructions help users create a scenario for the SSK.
 These instructions are themselves conceived as a "scenario", a

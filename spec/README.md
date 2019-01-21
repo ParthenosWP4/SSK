@@ -36,6 +36,5 @@ The possible manipulations are:
 * `tool`: software, service, plugin
 * `database`: collection of structured data
 * `method`: technical methodology (see also TaDiRAH techniques)
-* `documentation`: general information about a tool, a method, a standard
 * `bibliography`: list of references
 * `schema`: direct link to a machine readable schema for a standard or a format
