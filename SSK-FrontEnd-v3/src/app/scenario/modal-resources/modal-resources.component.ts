@@ -23,7 +23,7 @@ export class ModalResourcesComponent implements OnInit {
   } ;
   forImage = environment.forImage;
 
-  constructor(public activeModal: NgbActiveModal,  private location: PlatformLocation,) {
+  constructor(public activeModal: NgbActiveModal,  private location: PlatformLocation) {
     this.location.onPopState(() => this.activeModal.close());
   }
 
