@@ -134,7 +134,7 @@ export class ScenarioCardComponent implements OnInit,  AfterViewInit {
     //if (scenarioId === 'SSK_sc_corpusModellingInTEI') {
      // scenarioId = 'SSK_sc_corpusModellingInTEI-minusDigitization';
     //}
-    this.router.navigate(['scenarios', scenarioId, 1]);
+    this.router.navigate(['scenarios', scenarioId]);
   }
 
   getInnerHTMLValue(text: string ) {

@@ -15,7 +15,7 @@
                                         </ng-container>
                                 </div>
                         </div>
-                        <div class="row ml-lg-1 headScenario">
+                        <div class="row ml-lg-1 headScenario" *ngIf="!spinnerSteps">
                                 <div class="col-sm-12 title mt-3 stitle" [innerHtml]="scenarioTitle">
                                 </div>
                                 <div class="w-100"></div>
@@ -81,7 +81,7 @@
                                         <div class="row step-content">
                                                 <div class="col-1 ml-lg-5 mr-sm-5 mr-md-0 ml-sm-0">
                                                         <div class="timeline-icon">
-                                                                <p class="step-number" [ngClass] = "( i+1 > 9 ) ? 'styleNumber' : ''">{{ i+1}}</p>
+                                                                {{ i+1}}
                                                         </div>
                                                 </div>
                                                 <div class="col">
@@ -118,14 +118,11 @@
 
 
                                                                         <div class="w-100"></div>
-
-                                                                        <div class="stepDescription" [innerHTML]="step?.description">
-
-                                                                        </div>
-
-                                                                        <div class="col-sm-12 col-md-12 my-2 btnTimeline" *ngIf="step?.resources?.length > 0" (click)="open(step?.resources)">
-                                                                                <img class="p-2" [src]="forImage + '/assets/images/books-stack.svg'" />
-                                                                                <span class="">{{resourceBtn}}</span>
+                                                                        <div class="stepDescription" [innerHTML]="step?.description"></div>
+                                                                        <div class="w-100"></div>
+                                                                        <div class="row btnTimeline" *ngIf="step?.resources?.length > 0" (click)="open(i+1, step)">
+                                                                                <img class="m-3" [src]="forImage + '/assets/images/books-stack.svg'" />
+                                                                                <span class="pt-4">{{resourceBtn}}</span>
                                                                         </div>
 
 
@@ -142,7 +139,7 @@
                 </div>
                 <div class="col-sm-12 col-md-12 nav-option my-5">
                         <div class="col-12 d-flex justify-content-center">
-                                <a href="#" class="btn btn-Back">Back to the scenarios</a>
+                                <a routerLink="/scenarios" class="btn btn-Back">Back to the scenarios</a>
                         </div>
                 </div>
         </div>

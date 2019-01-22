@@ -110,7 +110,6 @@ export class ScenarioComponent implements OnInit  {
                   this.elasticServices.addScenario(this.scenarioDetails);
                   if (this.scenarioDetails['id'] === this.scenarioId) {
                     this.scenarioElt = this.scenarioDetails;
-                    console.log(this.scenarioElt);
                     this.setCurrentScenario();
                   }
                 }
@@ -122,7 +121,6 @@ export class ScenarioComponent implements OnInit  {
       this.scenarioElt = _.find(this.elasticServices.getScenarios(), item => {
         return item.id === this.scenarioId;
       });
-      console.log(this.scenarioElt);
       this.setCurrentScenario();
     }
   }
@@ -145,7 +143,6 @@ export class ScenarioComponent implements OnInit  {
             this.scenarioElt.steps = _.sortBy(_.filter(this.elasticServices.getSteps(), (item) => {
               return (_.indexOf(_.map(item.parents, 'id'), this.scenarioId) !== -1);
             }), [ 'position']);
-            console.log(this.scenarioElt.steps);
             this.updateSteps();
             this.spinnerSteps = false;
              this.cdr.detectChanges();
@@ -164,10 +161,12 @@ export class ScenarioComponent implements OnInit  {
   _.forEach(this.scenarioElt.steps, (step)  => {
     if (step.parents.length > 1) {
         _.forEach(step.parents, (item)  => {
-        let newStep: any = _.clone(step);
-          newStep.position = item['position'];
-          newStep = this.updateContent(newStep);
-          steps.push(newStep);
+          if (item.id === this.scenarioId) {
+            let newStep: any = _.clone(step);
+            newStep.position = item['position'];
+            newStep = this.updateContent(newStep);
+            steps.push(newStep);
+          }
         });
     } else {
       step.position = step.parents[0].position;
@@ -175,7 +174,6 @@ export class ScenarioComponent implements OnInit  {
       steps.push(step);
     }
   });
-  console.log(steps)
   this.scenarioElt.steps = _.orderBy(steps, 'position', 'asc');
  }
 
@@ -291,7 +289,7 @@ export class ScenarioComponent implements OnInit  {
 
   updateContent(step: any) {
     this.spinner = true;
-    this.router.navigate(['scenarios', this.scenarioId]);
+    //this.router.navigate(['scenarios', this.scenarioId]);
     if (step.head instanceof Array) {
       step.title = this.sskService.updateText(step.head[0], null);
     } else {
@@ -329,48 +327,6 @@ export class ScenarioComponent implements OnInit  {
   cleanAndOpen( text: string ) {
     window.open((text.indexOf('://') === -1) ? 'http://' + text.replace(/\\n/g, '') : text.replace(/\\n/g, ''), '_blank');
   }
-
-
-  /* Timeline Functions
-  initTimeline(timelines: any) {
-    const _self = this;
-    timelines.each(function () {
-      const timeline = $(this);
-        /*cache timeline components
-      _self.timelineComponents['timelineWrapper'] = timeline.find('.events-wrapper');
-      _self.timelineComponents['eventsWrapper'] = _self.timelineComponents['timelineWrapper'].children('.events');
-      _self.timelineComponents['fillingLine'] = _self.timelineComponents['eventsWrapper'].children('.filling-line');
-      _self.timelineComponents['timelineEvents'] = _self.timelineComponents['eventsWrapper'].find('a');
-      _self.timelineComponents['timelineNavigation'] = timeline.find('.cd-timeline-navigation');
-      _self.timelineComponents['eventsContent'] = timeline.children('.events-content');
-    });
-  }
-
-
-  updateSlide(string: string, event: any) {
-    event.preventDefault();
-    this.target  = $('ul.timeline.timeline-horizontal');
-    this.limit = -((this.scenarioElt.steps.length - 3) * $('li.timeline-item').width());
-    this.move = (2.5 * $('li.timeline-item').width()) + 'px';
-
-    const currentPosition = Number(this.target.css('left').replace('px', '' ));
-
-    if (string === 'next' && currentPosition >= this.limit) {
-      $('.timeline').stop(false, true).animate({left: '-=' + this.move}, { duration: 400});
-    }
-
-    if (string === 'prev' && currentPosition < 0) {
-      $('.timeline').stop(false, true).animate({left: '+=' + this.move}, { duration: 400});
-    }
-  }
-
-getStepTitle(step: any) {
-  if (step.head instanceof Array) {
-    return this.sskService.updateText(step.head[0], null);
-  } else {
-    return this.sskService.updateText(step.head, null);
-  }
-}*/
 
   updateText(desc: any, type: string) {
     let text = '';
@@ -475,9 +431,10 @@ getStepTitle(step: any) {
   }
 
 
-  open(resources: any) {
+  open(position: number, step: any) {
     const modalRef = this.modalService.open(ModalResourcesComponent, { size: 'lg' });
-    modalRef.componentInstance.resources = resources;
+    modalRef.componentInstance.step = step;
+    modalRef.componentInstance.position = position;
   }
 }
 

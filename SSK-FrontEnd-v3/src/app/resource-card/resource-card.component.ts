@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
+import {AfterViewInit, Component, Input, OnInit, Pipe, PipeTransform} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
 import {ElastichsearchService} from '../elastichsearch.service';
 import {isObject, isUndefined} from 'util';
@@ -25,8 +25,9 @@ export class ResourceCardComponent implements OnInit {
     if (this.url === '') {
       this.icon = 'open-book.svg';
     } else {
-      this.res.redirect = this.res.url;
+      
       this.res.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.res.url);
+      this.res.redirect = this.res.url.changingThisBreaksApplicationSecurity;
       if (this.res.creators !== undefined) {
         this.res.creators = this.res.creators.toString();
         const creators  = this.res.creators;
@@ -72,6 +73,10 @@ export class ResourceCardComponent implements OnInit {
     }else {
       return 'pointer';
     }
+  }
+  cleanURL(url: string) {
+     const targetUrl: any = this.sanitizer.bypassSecurityTrustResourceUrl(url);
+    return targetUrl.changingThisBreaksApplicationSecurity;
   }
 
 

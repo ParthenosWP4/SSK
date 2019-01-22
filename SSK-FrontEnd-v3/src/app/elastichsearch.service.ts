@@ -282,7 +282,6 @@ export class ElastichsearchService {
                     return item.parent === step._id;
                   });
                 });
-                console.log(this.getSteps());
             });
           });
         resolve(this.getSteps());

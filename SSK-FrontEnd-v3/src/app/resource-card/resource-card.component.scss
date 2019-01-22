@@ -4,7 +4,7 @@
   box-shadow: none !important;
   border: none !important;
   border-radius: unset !important;
-  font-family: $roboto-regular !important;
+  
   border-bottom: none;
   font-size: $twenty;
 }
@@ -17,22 +17,41 @@
   display: table-cell !important;;
 }
 .author{
-  color : $color-30 !important;
   display: inherit;
 
 }
 .title{
-  color: $color-31;
+  color: $color-12;
   display: inherit;
+  font-size: 1.4rem;
 }
 .date{
-  font-size: 16px;
-  color: $color-32;
+  font-size: 1rem;
 }
 .item{
+  font-family: $roboto-regular !important;
   //cursor: pointer;
   .col-1{
     padding: 0;
+  }
+
+  .desc{
+    font-size: 1rem;
+  }
+}
+
+ins{
+  text-decoration: none;
+}
+span.url{
+  overflow-wrap: break-word;
+  text-decoration: underline;
+  color: $color-44;
+  cursor: pointer;
+  :hover{
+    text-decoration: underline;
+   color: $color-44;
+   opacity: 0.5;
   }
 }
 

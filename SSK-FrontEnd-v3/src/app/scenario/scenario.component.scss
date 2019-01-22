@@ -178,6 +178,19 @@
     margin-top: -2.5%;
   }
 
+  .numberCircle {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 4px;
+    border: 2px solid $color-22;
+    color: $color-22;
+    text-align: center;
+    font-size: 1.2rem ;
+    font-family: $avenir-next;
+    display: inline-block;
+  }
+
 
   /**
   * CSS of the new scenario's display
@@ -454,18 +467,21 @@
     .timeline-item {
       //padding-bottom: 50px;
       position: relative;
+
+      
   
       .timeline-icon {
         background: $color-3;
         border:3px solid $color-22 ;
         width: 60px;
         height: 60px;
+        padding: 10%;
         position: absolute;
         top: 0;
         left: 16px;
-        overflow: hidden;
         color:$color-22;
-        font-size: 30px;	
+        font-size: 1.4rem ;
+        text-align: center;
         border-radius: 50% 50%;
   
         .step-number {

@@ -14,11 +14,12 @@
    cursor: pointer;
   }
   
-  a.nav-link.pull-left.active{
+  a.nav-link.active{
     border-bottom: 5px solid $color-47 !important;
     background-color: transparent !important;
     color: $color-47 !important;
     font-weight: bold;
+    //width: 100%;
   }
   
   ul li a {
@@ -30,4 +31,45 @@
     border-bottom: 5px solid $color-47 !important;
     color: $color-47 !important;
     font-weight: bold;
+  }
+
+  .resDesc{
+    color: $color-40;
+    font-size: 1.0rem;
+    font-family: $avenir-next;
+  }
+
+  .numberCircle {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    border: 2px solid $color-22;
+    color: $color-22;
+    text-align: center;
+    font-size: 1.2rem ;
+    font-family: $avenir-next;
+    display: inline-block;
+  }
+
+  .stepTitle{
+    color: $color-22;
+    font-size: 1.5rem;
+  }
+    .scroll{
+      height: 100vh * .70;
+      overflow-y: auto;
+   
+  }
+
+  .tab{
+   width: 100%;
+   box-shadow: 0 1px 5px 0 $color-48;
+  }
+
+  .close{
+      position: absolute;
+      right: -8%;
+      top: -(100vh * 0.05);
+      opacity: 1 !important;
   }

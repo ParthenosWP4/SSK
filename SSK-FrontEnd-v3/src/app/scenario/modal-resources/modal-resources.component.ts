@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import * as _ from 'lodash';
+import {environment} from '../../../environments/environment';
 @Component({
   selector: 'app-modal-resources',
   templateUrl: './modal-resources.component.html',
@@ -8,7 +9,8 @@ import * as _ from 'lodash';
 })
 export class ModalResourcesComponent implements OnInit {
 
-  @Input() resources;
+  @Input() step;
+  @Input() position;
   tabList: Array<any> = [ {'label': 'General Resources', 'identifier': 'general'},
                           {'label': 'Project-specific Resources', 'identifier': 'project'}];
   projectRes: any;
@@ -16,22 +18,27 @@ export class ModalResourcesComponent implements OnInit {
   active = 'general';
   border: any = {
     'class' : 'col-1',
-    'border' : '1px solid #979797'
+    'border' : '1px dashed  #979797'
   } ;
+  forImage = environment.forImage;
 
   constructor(public activeModal: NgbActiveModal) {}
 
   ngOnInit() {
-    console.log(this.resources);
-    this.generalRes = _.filter(this.resources, (res) => {
+    this.generalRes = _.filter(this.step.resources, (res) => {
       return res.category === 'general';
     });
-    this.projectRes = _.filter(this.resources, (res) => {
+    this.projectRes = _.filter(this.step.resources, (res) => {
       return res.category === 'project';
     });
   }
-  toggle(item: any) {
-    this.active = item.identifier;
+
+  toggle(item: string) {
+    this.active = item;
+  }
+
+  closeModal() {
+    this.activeModal.dismiss();
   }
 
 }
