@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import * as _ from 'lodash';
 import {environment} from '../../../environments/environment';
+import { PlatformLocation } from '@angular/common';
 @Component({
   selector: 'app-modal-resources',
   templateUrl: './modal-resources.component.html',
@@ -22,7 +23,9 @@ export class ModalResourcesComponent implements OnInit {
   } ;
   forImage = environment.forImage;
 
-  constructor(public activeModal: NgbActiveModal) {}
+  constructor(public activeModal: NgbActiveModal,  private location: PlatformLocation,) {
+    this.location.onPopState(() => this.activeModal.close());
+  }
 
   ngOnInit() {
     this.generalRes = _.filter(this.step.resources, (res) => {

@@ -1,5 +1,6 @@
 import {Component, ElementRef, HostListener, OnDestroy, OnInit, ApplicationRef, ViewChild, AfterViewInit, Renderer2} from '@angular/core';
 import {ElastichsearchService} from '../elastichsearch.service';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router} from '@angular/router';
 import {isUndefined} from 'util';
 import * as _ from 'lodash';
@@ -12,8 +13,8 @@ import {NgbTypeaheadConfig} from '@ng-bootstrap/ng-bootstrap';
 import {Subject} from 'rxjs/Subject';
 import 'rxjs/add/operator/delay';
 import * as Bloodhound from 'bloodhound-js';
-import { analyzeAndValidateNgModules } from '@angular/compiler';
-import { ComponentLoader } from 'ngx-bootstrap';
+
+
 declare const $;
 
 @Component({
@@ -69,13 +70,16 @@ export class ScenariosComponent implements OnInit, AfterViewInit, OnDestroy {
     public elementRef: ElementRef,
     private appRef: ApplicationRef,
     config: NgbTypeaheadConfig,
+    private modalService: NgbActiveModal,
     private router: Router,
+   
     private renderer: Renderer2) {
       config.showHint = true;
       config.focusFirst = false;
      }
 
   ngOnInit() {
+    
     this.lodash = _;
     $('#multiple-datasets').hide();
     if (this.elasticServices.spinner === false) {

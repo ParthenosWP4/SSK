@@ -6,7 +6,6 @@ import {ElastichsearchService} from '../elastichsearch.service';
 import * as _ from 'lodash';
 import {isArray, isUndefined} from 'util';
 import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
-import {isDefined} from '@angular/compiler/src/util';
 import {environment} from '../../environments/environment';
 import {NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {ModalResourcesComponent} from './modal-resources/modal-resources.component';

@@ -43,6 +43,7 @@ import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import * as $ from 'jquery';
 import { HighlightPipe } from './highlight.pipe';
 import { ModalResourcesComponent } from './scenario/modal-resources/modal-resources.component';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 /*export function dataProviderFactory(provider: ElastichsearchService) {
   return () => provider.loadData();
 }*/
@@ -98,7 +99,7 @@ import { ModalResourcesComponent } from './scenario/modal-resources/modal-resour
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],
-  providers: [appRoutingProviders, SafeHtmlPipe, ElastichsearchService, SskService, GlossaryResolver, HighlightPipe,
+  providers: [ NgbActiveModal, appRoutingProviders, SafeHtmlPipe, ElastichsearchService, SskService, GlossaryResolver, HighlightPipe,
     //{ provide: APP_INITIALIZER, useFactory: dataProviderFactory, deps: [ElastichsearchService], multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true}
     ],
