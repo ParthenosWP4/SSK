@@ -12,6 +12,7 @@ spec/SSKdoc2.rst
 SSK_Client
 doc/Makefile
 doc/doc
+doc/junk.rst
 doc/docs
 **/.DS_Store
 dataProcessing/__pycache__

@@ -26,7 +26,9 @@ architecture, they can be used in several scenarios. Customisation
 mechanisms are added to make sure that the information displayed is
 linked to the context of the scenarios as much as possible, namely
 according to disciplines, research objects and techniques.
+
 The SSK TEI specification can be accessed on GitHub: https://github.com/ParthenosWP4/SSK/tree/master/spec/TEI_SSK_ODD.xml.
+
 This ODD specification allows us to generate a RELAXNG Schema : https://github.com/ParthenosWP4/SSK/tree/master/spec/TEI_SSK_ODD.rng.
 
 Contribute to the SSK on GitHub with the TEI
@@ -35,7 +37,7 @@ Contribute to the SSK on GitHub with the TEI
 Users willing to create scenarios in TEI should follow the following
 instructions:
 
--  Download or fork the SSK data repository in GitHub It is necessary to have an account on GitHub: `https://github.com/ParthenosWP4/SSK/tree/master/ <https://github.com/ParthenosWP4/SSK/tree/master/spec/TEI_SSK_ODD.xml>`__ (NB: to fork a repository, a GitHub user account is necessary);
+-  Download or fork the SSK data repository in GitHub. It is necessary to have an account on GitHub: `https://github.com/ParthenosWP4/SSK/tree/master/ <https://github.com/ParthenosWP4/SSK/tree/master/`__ (NB: to fork a repository, a GitHub user account is necessary);
 -  Create your files with your favourite XML editor. Don't forget to validate them against the SSK schema (see above);
 -  To publish scenarios on the SSK, the TEI files need to be in the *scenarios* and *steps* folders;
 -  Users with a GitHub account can make a pull request to ask for the update of the repository. Users without an account can contact the SSK team at ssk [at] inria [dot] fr.
@@ -109,13 +111,13 @@ Zotero
 ------
 
 The resources to be presented in the SSK are preferably stored in a Zotero
-database, accessible  `here <https://www.zotero.org/groups/427927/ssk-parthenos>`_ . To add a resource, an account
+database, accessible  `here <https://www.zotero.org/groups/427927/ssk-parthenos>`_. To add a resource, an account
 on Zotero is required. Contact the SSK team to join the group (ssk [at]
-inria [dot] fr)
+inria [dot] fr).
 
 The Zotero database fields required by the SSK are:
 
-* `Item type`: The item type is most of the time identified by Zotero but it's important to check it. The most used item types are:
+* ``Item type``: The item type is most of the time identified by Zotero but it's important to check it. The most used item types are:
 
   * webpage
   * blogpost
@@ -124,12 +126,13 @@ The Zotero database fields required by the SSK are:
   * book
   * presentation
 
-* `Title`: The title of the resource
-* `Author`: The author of the resource
-* `Date`: The date of the resource
-* `Url`: the url of the resource
-* `Language`: the language of the resource
-* `Source`:
+* ``Title``: The title of the resource
+* ``Author``: The author of the resource
+* ``Date``: The date of the resource
+* ``Url``: The url of the resource
+* ``DOI``: The DOI
+* ``Language``: the language of the resource
+* ``Source``:
 
   * For webpages: website title
   * For blogposts: blog title
@@ -800,164 +803,37 @@ The attributes for ref are type, subtype, source and target.
 
   <ref type="spec" subtype="standard" target="http://zotero.org/groups/427927/items/BEVAWMPX"/>
 
-param
-~~~~~
-
-See below the advanced features section
-
-Advanced features
-=================
-
 .. _custom:
 
-Customize a step or a scenario
-------------------------------
+Point to other scenarios
+========================
+Beforehand and follow-up scenarios can be referenced just like steps within the list of steps (element ``<listEvent>``).
 
+
+Customize a step
+================
+
+Steps
+-----
 It is possible to modify the content of a step directly in the scenario
-file, for instance, modifying the label to contextualize it, or adding a
-very specific resource. To do so, event and its children can be
-specified with the mode attribute; with the possible following values:
+file. To do so, ``<event>`` and its children can be specified with the mode attribute; with the possible following values:
 
-- `change`
-- `add`
+- ``add``
+- ``delete``
 
 .. code-block:: xml
 
-  <event type="step" ref="step_EaXswO_290517">
-   <head mode="add" xml:lang="jp">...</head>
-   <desc type="definition" mode="change">...</desc>
-   ...
-  </event>
-
-.. _param:
-
-The parameters
---------------
-
-When pointing to a step inside a scenario, it is possible to use
-parameters to refine the behaviour of this step. This parametrization
-uses the element ``<param>`` in ``<event>``. Two different uses are possible for the
-moment, to refine the resources selection in a given step, or to
-include some steps of a scenario in another scenario.
-
-Parameter #1 : refine the resources
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-It is possible to select the resources to be displayed in a scenario.
-The criteria are based on the taxonomies used by the SSK model :
-
-- Tadirah Activities
-- Tadirah techniques
-- NEMO Data types
-- aureHAL disciplines
-- Standards
-
-The element param contains an attribute name, that contains a formal name to identify on which taxonomy the parameter is applied. The possible values are :
-
--  activity
-
--  technique
-
--  datatype
-
--  discipline
-
--  standard
-
-Another attribute value contains the term used to select the
-wanted resources. In other words, in the example below, the resources
-displayed would only be the ref that contains one or more term
-elements with values "XML", "conversion" and "Text Bearing Objects".
-
-.. code-block:: xml
-
-  <event type="researchStep" ref="referencedStep">
-   <label mode="replace">New label</label>
-   <desc mode="replace">new description</desc>
-   <!-- resources -->
-   <param name="standard" value="XML"/>
-   <param name="activity" value="conversion"/>
-   <param name="technique" value="Text Bearing Objects"/> ...
-  </event>
-
-In this situation, all the following
-resources would be selected.
-
-.. code-block:: xml
-
-  <ref type="code" target="// URL //">
-   <term type="activity" source="tadirah" key="conversion"/>
-   <term type="standard" key="XML"/>
-  </ref>
-
-  <ref type="code" target="// URL //">
-   <term type="technique" source="tadirah" key="Text Bearing Objects"/>
-   <term type="standard" key="XML"/>
-  </ref>
-
-  <ref type="code" target="// URL //">
-   <term type="technique" source="tadirah" key="Text Bearing Objects"/>
-   <term type="activity" source="tadirah" key="conversion"/>
-  </ref>
-
-  <ref type="code" target="URL">
-   <term type="standard" key="XML"/>
-  </ref>
-
-Parameter #2 : include partially a scenario into another
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This mechanism records :
-
-* The reference to a scenario
-* A set of steps, not necessarily consecutive.
-
-In this case, the attributes of param are also name and value, but they have a
-different behaviour. The name value is range. The attribute value
-records the interval of the steps (i.e. their order number) in the
-scenario to include. To indicate an consecutive interval, the steps
-indexes should be separated by an hyphen: ``-``. To indicate
-non-consecutive steps, the steps indexes should be separated by a
-comma: ``,``. These two behaviours can be mixed (see examples below)
-
-A set of steps, sometimes consecutive, sometimes not consecutive
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This parameter would select steps 1, 2 and 3.
-
-.. code-block:: xml
-
-  <event xml:id="jjjj" type="researchScenario" ref="scenario_to_Be_Included">
-    <param name="range" value="1-3"/>
-  </event>
-
-This parameter would select steps 1 and 3.
-
-.. code-block:: xml
-
-  <event xml:id="jjjj" type="researchScenario" ref="scenario_to_Be_Included">
-    <param name="range" value="1,3"/>
-  </event>
-
-This parameter would select steps 1, 3, 5, 6 and 7.
-
-.. code-block:: xml
-
-  <event xml:id="jjjj" type="researchScenario" ref="scenario_to_Be_Included">
-    <param name="range" value="1,3,5-7"/>
-  </event>
-
-Mixing parameters
-~~~~~~~~~~~~~~~~~
-
-This example shows the inclusion of a scenario into another and a
-filter based on a keyword for a particular step in this subset. If the
-@corresp is not used, the param will be applied to all the included
-steps.
-
-.. code-block:: xml
-
-  <event xml:id="jjjj" type="researchScenario" ref="scenario_to_Be_Included">
-    <param name="range" value="1,2,4-6"/>
-    <!-- filter resources of the step nr 2 -->
-    <param name="standards" value="XML" corresp="#2"/>
-  </event>
+  <event xml:id="s5" type="researchStep" ref="step_Sapditnf_300517">
+   <desc xml:lang="en" type="terms">
+     <term source="standardList" type="standard" key="CIDOC-CRM" mode="add"/>
+     <term source="standardList" type="standard" key="LIDO" mode="delete"/>
+   </desc>
+   <linkGrp type="generalResources">
+     <ref type="code" source="zotero" target="9SKJDJKS" mode="add"/>
+     <ref type="code" source="zotero" target="9SKORJKS" mode="delete"/>
+   </linkGrp>
+   <linkGrp type="projectResources" source="CODATA" corresp="http://www.codata.org/">
+     <ref type="code" source="zotero" target="9SKJDJKS" mode="add"/>
+     <ref type="code" source="zotero" target="9SKORJKS" mode="delete"/>
+   </linkGrp>
+ </event>

@@ -2,6 +2,7 @@
 
 from os import listdir
 from bs4 import BeautifulSoup
+import json2table
 import json
 
 #Extracting the information from the XML nodes
@@ -29,7 +30,7 @@ def parseSteps(files):
                 hText = head.text.replace('\n', ' ').replace('\r', '').replace('  ', '').strip()
                 step = {
                     "name" : hText,
-                    "url" : xmlBase + xml_file[3:]
+                    "url" : xmlBase + xml_file[6:]
                     }
                 dictSteps.append(step)
     return dictSteps
@@ -37,7 +38,7 @@ def parseSteps(files):
 
 def parseSSK(files):
     listScens = []
-    stepsList = parseSteps(get_files("../steps"))
+    stepsList = parseSteps(get_files("../../steps"))
     for xml_file in files:
         with open(xml_file) as file:
             soup = BeautifulSoup(file, "xml")
@@ -45,7 +46,7 @@ def parseSSK(files):
         hText = head.text.replace('\n',' ').replace('\r', '').replace('  ', '').strip()
         dictScen = {
             "name" : hText,
-            "url" : xmlBase + xml_file[3:]
+            "url" : xmlBase + xml_file[6:]
         }
         dictScen["steps"] = []
         events = soup.find_all("event")
@@ -67,7 +68,11 @@ def parseSSK(files):
 
     return SSKParsed
 
-parsedSSK = parseSSK(get_files("../scenarios"))
+parsedSSK = parseSSK(get_files("../../scenarios"))
 
-with open('scenariosStepsSSK2.json', 'w') as file:
-    json.dump(parsedSSK, file)
+infoFromJson = json.dumps(parsedSSK)
+build_direction = "TOP_TO_BOTTOM"
+table_attributes = {"style": "width:100%"}
+print(json2table.convert(infoFromJson,
+                         build_direction=build_direction,
+                         table_attributes=table_attributes))
