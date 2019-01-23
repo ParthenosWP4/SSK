@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2019-01-08T14:19:44Z. .
+Schema generated from ODD source 2019-01-23T15:38:25Z. .
 TEI Edition: Version 3.4.0. Last updated on
 	23rd July 2018, revision 1fa0b54
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.4.0/
@@ -134,7 +134,7 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.4.0/
             </choice>
          </zeroOrMore>
       </element>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e72141-constraint">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e70189-constraint">
          <rule context="tei:content">
             <report test="descendant::*[not(namespace-uri(.) =               ('http://relaxng.org/ns/structure/1.0', 'http://www.tei-c.org/ns/1.0'))]">content descendants must be in the
               namespaces
@@ -183,7 +183,7 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.4.0/
             </choice>
          </zeroOrMore>
       </element>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e73399-constraint">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e71447-constraint">
          <rule context="tei:datatype">
             <report test="descendant::*[not(namespace-uri(.) =               ('http://relaxng.org/ns/structure/1.0', 'http://www.tei-c.org/ns/1.0'))]">datatype descendants must be in the
               namespaces
@@ -2263,7 +2263,6 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
       <choice>
          <ref name="index"/>
          <ref name="link"/>
-         <ref name="linkGrp"/>
          <ref name="timeline"/>
          <ref name="join"/>
          <ref name="joinGrp"/>
@@ -4699,38 +4698,10 @@ Suggested values include: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syl
       <element name="label">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains any label or heading used to identify part of a text, typically but not exclusively in a list or glossary. [3.7. Lists]</a:documentation>
          <ref name="macro.phraseSeq"/>
-         <ref name="att.combinable.attributes"/>
-         <ref name="att.global.attribute.xmlid"/>
-         <ref name="att.global.attribute.n"/>
-         <ref name="att.global.attribute.xmlbase"/>
-         <ref name="att.global.attribute.xmlspace"/>
-         <ref name="att.global.rendition.attribute.rend"/>
-         <ref name="att.global.rendition.attribute.style"/>
-         <ref name="att.global.rendition.attribute.rendition"/>
-         <ref name="att.global.linking.attribute.corresp"/>
-         <ref name="att.global.linking.attribute.synch"/>
-         <ref name="att.global.linking.attribute.sameAs"/>
-         <ref name="att.global.linking.attribute.copyOf"/>
-         <ref name="att.global.linking.attribute.next"/>
-         <ref name="att.global.linking.attribute.prev"/>
-         <ref name="att.global.linking.attribute.exclude"/>
-         <ref name="att.global.linking.attribute.select"/>
-         <ref name="att.global.responsibility.attribute.cert"/>
-         <ref name="att.global.responsibility.attribute.resp"/>
-         <ref name="att.global.source.attribute.source"/>
+         <ref name="att.global.attributes"/>
          <ref name="att.typed.attributes"/>
          <ref name="att.placement.attributes"/>
          <ref name="att.written.attributes"/>
-         <attribute name="xml:lang">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(language) indicates the language of the element content using a tag generated according to BCP 47.</a:documentation>
-            <choice>
-               <data type="language"/>
-               <choice>
-                  <value/>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               </choice>
-            </choice>
-         </attribute>
          <empty/>
       </element>
    </define>
@@ -9152,19 +9123,7 @@ Sample values include: 1] primary; 2] secondary; 3] undergraduate; 4] graduate; 
             <zeroOrMore>
                <ref name="event"/>
             </zeroOrMore>
-            <zeroOrMore>
-               <ref name="param"/>
-            </zeroOrMore>
          </group>
-         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="TEI_SSK-event-paramInScenarios-constraint-rule-10">
-            <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
-                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                      context="tei:param">
-                  <sch:assert test="ancestor::tei:TEI[@type ='researchScenario']">Parameters should
-                    only be used in scenario files</sch:assert>
-                </sch:rule>
-         </pattern>
          <ref name="att.combinable.attributes"/>
          <ref name="att.global.attributes"/>
          <ref name="att.datable.attributes"/>
@@ -9346,12 +9305,6 @@ Sample values include: 1] listening; 2] speaking; 3] reading; 4] writing</a:docu
             <oneOrMore>
                <ref name="model.eventLike"/>
             </oneOrMore>
-            <zeroOrMore>
-               <choice>
-                  <ref name="relation"/>
-                  <ref name="listRelation"/>
-               </choice>
-            </zeroOrMore>
          </group>
          <ref name="att.global.attributes"/>
          <ref name="att.typed.attributes"/>
@@ -9864,7 +9817,7 @@ Sample values include: 1] primary; 2] other; 3] paid; 4] unpaid</a:documentation
             <ref name="desc"/>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="TEI_SSK-relation-reforkeyorname-constraint-assert-10">
+                  id="TEI_SSK-relation-reforkeyorname-constraint-assert-9">
             <rule context="tei:relation">
                <assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                        test="@ref or @key or @name">One of the attributes  'name', 'ref' or 'key' must be supplied</assert>
@@ -10320,7 +10273,7 @@ Sample values include: 1] atBirth; 2] atDeath; 3] dependent; 4] inherited; 5] in
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">defines an association or hypertextual link among elements or passages, of some type not more precisely specifiable by other elements. [16.1. Links]</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="TEI_SSK-link-linkTargets3-constraint-assert-11">
+                  id="TEI_SSK-link-linkTargets3-constraint-assert-10">
             <rule context="tei:link">
                <sch:assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns="http://www.tei-c.org/ns/1.0"
@@ -10339,31 +10292,9 @@ Sample values include: 1] atBirth; 2] atDeath; 3] dependent; 4] inherited; 5] in
       <element name="linkGrp">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(link group) defines a collection of associations or hypertextual links. [16.1. Links]</a:documentation>
          <oneOrMore>
-            <choice>
-               <ref name="ref"/>
-               <ref name="linkGrp"/>
-            </choice>
+            <ref name="ref"/>
          </oneOrMore>
-         <ref name="att.global.attributes"/>
-         <ref name="att.pointing.group.attribute.domains"/>
-         <ref name="att.pointing.group.attribute.targFunc"/>
-         <ref name="att.pointing.attribute.targetLang"/>
-         <ref name="att.pointing.attribute.target"/>
-         <ref name="att.pointing.attribute.evaluate"/>
-         <ref name="att.typed.attribute.subtype"/>
-         <attribute name="type">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes the element in some sense, using any convenient classification scheme or typology.
-Suggested values include: 1] generalResources; 2] projectResources</a:documentation>
-            <choice>
-               <value>generalResources</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <value>projectResources</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <data type="token">
-                  <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
-               </data>
-            </choice>
-         </attribute>
+         <ref name="att.combinable.attributes"/>
          <empty/>
       </element>
    </define>
@@ -10547,7 +10478,7 @@ Suggested values include: 1] d (days) ; 2] h (hours) ; 3] min (minutes) ; 4] s (
             </choice>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="TEI_SSK-join-joinTargets3-constraint-assert-12">
+                  id="TEI_SSK-join-joinTargets3-constraint-assert-11">
             <rule context="tei:join">
                <assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                        test="contains(@target,' ')">
@@ -10713,7 +10644,7 @@ You must supply at least two values for @target on <name/>
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="TEI_SSK-att.repeatable-MINandMAXoccurs-constraint-rule-11">
+            id="TEI_SSK-att.repeatable-MINandMAXoccurs-constraint-rule-10">
       <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -10725,7 +10656,7 @@ You must supply at least two values for @target on <name/>
       </sch:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="TEI_SSK-att.repeatable-MINandMAXoccurs-constraint-rule-12">
+            id="TEI_SSK-att.repeatable-MINandMAXoccurs-constraint-rule-11">
       <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -10801,7 +10732,7 @@ You must supply at least two values for @target on <name/>
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="TEI_SSK-att.identified-spec-in-module-constraint-rule-13">
+            id="TEI_SSK-att.identified-spec-in-module-constraint-rule-12">
       <rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
             context="tei:elementSpec[@module]|tei:classSpec[@module]|tei:macroSpec[@module]">
         <assert test="         (not(ancestor::tei:schemaSpec | ancestor::tei:TEI | ancestor::tei:teiCorpus)) or         (not(@module) or          (not(//tei:moduleSpec) and not(//tei:moduleRef))  or         (//tei:moduleSpec[@ident = current()/@module]) or          (//tei:moduleRef[@key = current()/@module]))         ">
@@ -10822,7 +10753,7 @@ should correspond to an existing module, via a moduleSpec or
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="TEI_SSK-att.deprecated-validUntil-deprecated-constraint-rule-14">
+            id="TEI_SSK-att.deprecated-validUntil-deprecated-constraint-rule-13">
       <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -11112,7 +11043,7 @@ Sample values include: 1] TEI (text encoding initiative) ; 2] DBK (docbook) ; 3]
             <ref name="content"/>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="TEI_SSK-moduleRef-modref-constraint-rule-15">
+                  id="TEI_SSK-moduleRef-modref-constraint-rule-14">
             <rule xmlns:sch="http://purl.oclc.org/dsdl/schematron" context="tei:moduleRef">
                <report test="* and @key">
 Child elements of <name/> are only allowed when an external module is being loaded
@@ -11127,7 +11058,7 @@ Child elements of <name/> are only allowed when an external module is being load
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="TEI_SSK-moduleRef-prefix-not-same-prefix-constraint-rule-16">
+                  id="TEI_SSK-moduleRef-prefix-not-same-prefix-constraint-rule-15">
             <rule xmlns:sch="http://purl.oclc.org/dsdl/schematron" context="tei:moduleRef">
                <report test="//*[ not( generate-id(.) eq generate-id(      current() ) ) ]/@prefix = @prefix">The prefix attribute
 	    of <name/> should not match that of any other
@@ -11776,7 +11707,7 @@ Child elements of <name/> are only allowed when an external module is being load
             </zeroOrMore>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="TEI_SSK-model-no_dup_default_models-constraint-rule-17">
+                  id="TEI_SSK-model-no_dup_default_models-constraint-rule-16">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -11789,7 +11720,7 @@ Child elements of <name/> are only allowed when an external module is being load
             </sch:rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="TEI_SSK-model-no_dup_models-constraint-rule-18">
+                  id="TEI_SSK-model-no_dup_models-constraint-rule-17">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -12106,7 +12037,7 @@ Suggested values include: 1] alternate; 2] default; 3] height; 4] id; 5] label; 
             </oneOrMore>
          </choice>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="TEI_SSK-content-empty-content-deprecated-constraint-assert-18">
+                  id="TEI_SSK-content-empty-content-deprecated-constraint-assert-17">
             <rule context="tei:content">
                <sch:assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns="http://www.tei-c.org/ns/1.0"
@@ -12142,7 +12073,7 @@ Suggested values include: 1] alternate; 2] default; 3] height; 4] id; 5] label; 
             <ref name="model.contentPart"/>
          </oneOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="TEI_SSK-sequence-sequencechilden-constraint-assert-19">
+                  id="TEI_SSK-sequence-sequencechilden-constraint-assert-18">
             <rule context="tei:sequence">
                <sch:assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns="http://www.tei-c.org/ns/1.0"
@@ -12168,7 +12099,7 @@ Suggested values include: 1] alternate; 2] default; 3] height; 4] id; 5] label; 
             <ref name="model.contentPart"/>
          </oneOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="TEI_SSK-alternate-alternatechilden-constraint-assert-20">
+                  id="TEI_SSK-alternate-alternatechilden-constraint-assert-19">
             <rule context="tei:alternate">
                <sch:assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns="http://www.tei-c.org/ns/1.0"
@@ -12241,7 +12172,7 @@ Suggested values include: 1] alternate; 2] default; 3] height; 4] id; 5] label; 
              prefix="sch"
              uri="http://purl.oclc.org/dsdl/schematron"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="TEI_SSK-constraintSpec-needrules-constraint-rule-19">
+                  id="TEI_SSK-constraintSpec-needrules-constraint-rule-18">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -12332,7 +12263,7 @@ Suggested values include: 1] schematron (ISO Schematron) </a:documentation>
              prefix="teix"
              uri="http://www.tei-c.org/ns/Examples"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="TEI_SSK-attDef-attDefContents-constraint-assert-23">
+                  id="TEI_SSK-attDef-attDefContents-constraint-assert-22">
             <rule context="tei:attDef">
                <assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -12342,7 +12273,7 @@ Suggested values include: 1] schematron (ISO Schematron) </a:documentation>
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="TEI_SSK-attDef-noDefault4Required-constraint-rule-20">
+                  id="TEI_SSK-attDef-noDefault4Required-constraint-rule-19">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -12351,7 +12282,7 @@ Suggested values include: 1] schematron (ISO Schematron) </a:documentation>
             </sch:rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="TEI_SSK-attDef-defaultIsInClosedList-twoOrMore-constraint-rule-21">
+                  id="TEI_SSK-attDef-defaultIsInClosedList-twoOrMore-constraint-rule-20">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -12363,7 +12294,7 @@ Suggested values include: 1] schematron (ISO Schematron) </a:documentation>
             </sch:rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="TEI_SSK-attDef-defaultIsInClosedList-one-constraint-rule-22">
+                  id="TEI_SSK-attDef-defaultIsInClosedList-one-constraint-rule-21">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -12464,7 +12395,7 @@ Suggested values include: 1] schematron (ISO Schematron) </a:documentation>
             <ref name="dataFacet"/>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="TEI_SSK-dataRef-restrictDataFacet-constraint-rule-23">
+                  id="TEI_SSK-dataRef-restrictDataFacet-constraint-rule-22">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -12474,7 +12405,7 @@ Suggested values include: 1] schematron (ISO Schematron) </a:documentation>
             </sch:rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="TEI_SSK-dataRef-restrictAttRestriction-constraint-rule-24">
+                  id="TEI_SSK-dataRef-restrictAttRestriction-constraint-rule-23">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
