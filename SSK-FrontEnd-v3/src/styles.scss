@@ -506,3 +506,18 @@ div.tt-suggestion.tt-selectable.tt-cursor{
   font-weight: bold
 }
 
+ins{
+  text-decoration: none;
+}
+span.url{
+  overflow-wrap: break-word;
+  text-decoration: underline;
+  color: $color-44;
+  cursor: pointer;
+  :hover{
+    text-decoration: underline;
+   color: $color-44;
+   opacity: 0.5;
+  }
+}
+

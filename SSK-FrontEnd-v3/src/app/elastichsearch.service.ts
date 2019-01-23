@@ -36,7 +36,7 @@ export class ElastichsearchService {
   private objects: any;
   private standards: any;
   private standardsForCount: any;
-  private tags = ['disciplines', 'objects', 'object', 'techniques', 'activities'] ;
+  private tags = ['disciplines', 'standards', 'object', 'techniques', 'activities'] ;
   private regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
   itemsCount: any;
   private detailsResult = {};
@@ -58,6 +58,7 @@ export class ElastichsearchService {
   public searchFor = [{'filter': 'search for xxxxx'}];
   public search: any;
   public senariosAvailable = false;
+  private glossaryOK = false;
 
   constructor(inj: Injector) {
     this.http = inj.get(HttpClient);
@@ -180,27 +181,45 @@ export class ElastichsearchService {
 
 
   glossaryChange(item: string) {
-    switch (item) {
-      case 'objects':
-        this.setGlossaryData(this.getObjects());
-        break;
-      case 'standards':
-        this.setGlossaryData(_.sortBy(this.getStandards(), [function(o) { return o.standard_abbr_name; }]));
-        break;
-      case 'techniques':
-        this.setGlossaryData(this.getTechniques());
-        break;
-      case 'activities':
-        const temp = _.groupBy(_.each(this.getActivitiesForCount(), elt => {
-              elt['term'] = this.normalize(elt['term']);
-        }), 'group');
-        this.setGlossaryData(Object.entries(temp).map(([key, obj]) => Object.assign({ head: key , items: obj})));
-        break;
-      case 'disciplines':
-        this.setGlossaryData(_.sortBy(this.getDisciplines(), [function(o) { return o.term; }]));
-        break;
+    if (this.glossaryOK) {
+       return this.getGlossary(item);
+    } else {
+      return this.getGlossaryTerms().then(
+        (val) => {
+          return this.getGlossary(item);
+        }
+      );
     }
-    return this.getGlossaryData();
+  }
+
+  getGlossary(item: string) {
+    return new Promise ((resolve, reject) => {
+      Observable.of(this.tags).subscribe(
+        (value) => {
+          switch (item) {
+            case 'objects':
+              this.setGlossaryData(this.getObjects());
+              break;
+            case 'standards':
+                  this.setGlossaryData(_.sortBy(this.getStandards(), [function(o) { return o.standard_abbr_name; }]));
+              break;
+            case 'techniques':
+              this.setGlossaryData(this.getTechniques());
+              break;
+            case 'activities':
+              const temp = _.groupBy(_.each(this.getActivitiesForCount(), elt => {
+                    elt['term'] = this.normalize(elt['term']);
+              }), 'group');
+              this.setGlossaryData(Object.entries(temp).map(([key, obj]) => Object.assign({ head: key , items: obj})));
+              break;
+            case 'disciplines':
+              this.setGlossaryData(_.sortBy(this.getDisciplines(), [function(o) { return o.term; }]));
+              break;
+          }
+            resolve(this.getGlossaryData());
+        },
+        () => {});
+    });
   }
 
 
@@ -218,12 +237,100 @@ export class ElastichsearchService {
             resolve(true);
           },
           () => {
+            this.loadGlossary();
             this.setScenariosTemp(new Array<any>(this.getScenariosID().length));
-              this.asynchFunction();
+            this.asynchFunction();
             resolve(this.getScenarios());
           });
       });
     }
+
+  private loadGlossary() {
+    this.getGlossaryTerms().then(
+      (val) => {
+        Observable.of(this.tags.forEach((obj)  => {
+          switch (obj.toLowerCase()) {
+            case 'activities':
+            Observable.of(_.forEach(this.searchData['activities'], (elt, key) => {
+              _.map(elt[this.objectKey(elt)[0]], item => {
+                item = this.getMetaDataNumber(item, 'step', false);
+                item.type = 'activities';
+                item.index = key;
+                item.filter = item.term;
+              });
+            })).subscribe(
+              (value) => { },
+              (error) => { console.log(error); },
+              () => {
+                //this.getAllStandards();
+              });
+            break;
+            case 'object':
+            _.map(this.searchData['objects'], item => {
+              item = this.getMetaDataNumber(item, 'scenario', false);
+              item.type = 'objects';
+              item.filter = item.term;
+            });
+            break;
+            case 'techniques':
+            _.map(this.searchData['techniques'], item => {
+              item = this.getMetaDataNumber(item, 'scenario', false);
+              item.type = 'techniques';
+              item.filter = item.term;
+            });
+            break;
+            case 'disciplines':
+            _.map(this.searchData['disciplines'], item => {
+              item = this.getMetaDataNumber(item, 'scenario', false);
+              item.type = 'disciplines';
+              item.filter = item.term;
+            });
+            break;
+            case 'standards':
+            _.map(this.searchData['standards'], item => {
+              item = this.getMetaDataNumber(item, 'step', true);
+              item.type = 'standards';
+              item.filter = item.standard_abbr_name;
+            });
+            break;
+          }
+        })).subscribe(
+          (dat) => {
+            this.autoCompleteList =  _.concat(this.getActivitiesForCount(), this.getDisciplines(), this.getTechniques(), this.getObjects(), this.getStandards());
+             this.searchTags = new Bloodhound({
+              datumTokenizer: Bloodhound.tokenizers.obj.whitespace('filter'),
+              queryTokenizer: Bloodhound.tokenizers.whitespace,
+              local: this.autoCompleteList
+            });
+             this.search = new Bloodhound({
+              datumTokenizer: Bloodhound.tokenizers.obj.whitespace('filter'),
+              queryTokenizer: Bloodhound.tokenizers.whitespace,
+              local: this.searchFor
+            });
+            $('#multiple-datasets').show();
+            $('#multiple-datasets .typeahead').typeahead({
+              minLength: 2,
+              highlight: true,
+              hint: false
+            },
+            {
+              name: 'search-in-tag',
+              display: 'filter',
+              source: this.searchTags,
+              templates: {
+                header: '<div class="group">Terms</div>',
+                suggestion: function(data) {
+                  return '<div><i class="fa fa-tag" aria-hidden="true"></i>' + data.filter + '<span  style = "border:none" class="' +
+                          data.type.substring(0, data.type.length - 1) + '"> (' + data.type + ') </span></div>';
+              }
+              }
+            });
+            this.spinner = false;
+          }
+        );
+      }
+    );
+  }
 
 
   asynchFunction() {
@@ -254,7 +361,6 @@ export class ElastichsearchService {
         },
         error => {},
         () => {
-          this.getGlossaryTerms();
           resolve(this.getStepsMetadata());
         }
       );
@@ -290,7 +396,12 @@ export class ElastichsearchService {
   }
 
 getGlossaryTerms() {
-  this.tags.forEach((obj)  => {
+  let count = 0;
+  return new Promise ((resolve, reject) => {
+    this.tags.forEach((obj)  => {
+      if (obj === 'standards') {
+        return;
+      }
     this.loadTermsFromServer(obj).subscribe(
       result => {
         switch (obj.toLowerCase()) {
@@ -324,97 +435,41 @@ getGlossaryTerms() {
             this.setDisciplines(result);
             this.searchData['disciplines'] = this.getDisciplines();
           break;
+          case 'standards':
+            this.setDisciplines(result);
+            this.searchData['disciplines'] = this.getDisciplines();
+          break;
         }
       },
       error => {},
       () => {
-        switch (obj.toLowerCase()) {
-          case 'activities':
-          Observable.of(_.forEach(this.searchData['activities'], (elt, key) => {
-            _.map(elt[this.objectKey(elt)[0]], item => {
-              item = this.getMetaDataNumber(item, 'step', false);
-              item.type = 'activities';
-              item.index = key;
-              item.filter = item.term;
+        count++;
+        if (count === 4) {
+          this.getAllStandards().then(
+            (standards) => {
+               this.setGlossaryData(_.sortBy(this.getStandards(), [function(o) { return o.standard_abbr_name; }]));
+               this.glossaryOK = true;
+                resolve(true);
             });
-          })).subscribe(
-            (value) => { },
-            (error) => { console.log(error); },
-            () => {
-              this.getAllStandards();
-            });
-          break;
-          case 'object':
-          _.map(this.searchData['objects'], item => {
-            item = this.getMetaDataNumber(item, 'scenario', false);
-            item.type = 'objects';
-            item.filter = item.term;
-          });
-          break;
-          case 'techniques':
-          _.map(this.searchData['techniques'], item => {
-            item = this.getMetaDataNumber(item, 'scenario', false);
-            item.type = 'techniques';
-            item.filter = item.term;
-          });
-          break;
-          case 'disciplines':
-          _.map(this.searchData['disciplines'], item => {
-            item = this.getMetaDataNumber(item, 'scenario', false);
-            item.type = 'disciplines';
-            item.filter = item.term;
-          });
-          break;
         }
       });
   });
+});
 }
 
 getAllStandards() {
-   this.loadStandardsFromServer().subscribe(
-    result => {
-      this.setStandards(result['standards']);
-      this.setStandardForCount(this.getStandards());
-      this.searchData['standards'] = this.getStandards();
-      _.map(this.searchData['standards'], item => {
-        item = this.getMetaDataNumber(item, 'step', true);
-        item.type = 'standards';
-        item.filter = item.standard_abbr_name;
+  return new Promise ((resolve, reject) => {
+    this.loadStandardsFromServer().subscribe(
+      result => {
+        this.setStandards(result['standards']);
+        this.setStandardForCount(this.getStandards());
+        this.searchData['standards'] = this.getStandards();
+      },
+      error => {},
+      () => {
+        resolve(this.getStandards());
       });
-    },
-    error => {},
-    () => {
-      this.autoCompleteList =  _.concat(this.getActivitiesForCount(), this.getDisciplines(), this.getTechniques(), this.getObjects(), this.getStandards());
-       this.searchTags = new Bloodhound({
-            datumTokenizer: Bloodhound.tokenizers.obj.whitespace('filter'),
-            queryTokenizer: Bloodhound.tokenizers.whitespace,
-            local: this.autoCompleteList
-          });
-           this.search = new Bloodhound({
-            datumTokenizer: Bloodhound.tokenizers.obj.whitespace('filter'),
-            queryTokenizer: Bloodhound.tokenizers.whitespace,
-            local: this.searchFor
-          });
-          $('#multiple-datasets').show();
-          $('#multiple-datasets .typeahead').typeahead({
-            minLength: 2,
-            highlight: true,
-            hint: false
-          },
-          {
-            name: 'search-in-tag',
-            display: 'filter',
-            source: this.searchTags,
-            templates: {
-              header: '<div class="group">Terms</div>',
-              suggestion: function(data) {
-                return '<div><i class="fa fa-tag" aria-hidden="true"></i>' + data.filter + '<span  style = "border:none" class="' +
-                        data.type.substring(0, data.type.length - 1) + '"> (' + data.type + ') </span></div>';
-            }
-            }
-          });
-      this.spinner = false;
-    });
+  });
 }
 
   getAllResources() {
@@ -426,7 +481,6 @@ getAllStandards() {
         },
          error => {},
          () => {
-          this.getAllStepsMetaData();
              resolve(this.getResources());
          });
        });

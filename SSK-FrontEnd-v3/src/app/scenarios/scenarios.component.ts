@@ -72,14 +72,12 @@ export class ScenariosComponent implements OnInit, AfterViewInit, OnDestroy {
     config: NgbTypeaheadConfig,
     private modalService: NgbActiveModal,
     private router: Router,
-   
     private renderer: Renderer2) {
       config.showHint = true;
       config.focusFirst = false;
      }
 
   ngOnInit() {
-    
     this.lodash = _;
     $('#multiple-datasets').hide();
     if (this.elasticServices.spinner === false) {

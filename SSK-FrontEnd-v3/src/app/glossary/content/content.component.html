@@ -16,7 +16,7 @@
           <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
       </div>
       <ul>
-        <li  *ngFor = "let elt of data; let k = index">
+        <li  [attr.id]="elt?.standard_abbr_name"  [attr.name]="elt?.standard_abbr_name" *ngFor = "let elt of data; let k = index">
           <span *ngIf="elt?.standard_abbr_name" class="btn" data-toggle="collapse" [attr.data-target]="'#' + trim(elt?.standard_abbr_name)" aria-expanded="false" [attr.aria-controls]="elt?.standard_abbr_name">
               <i class="fa fa-open fa-1x" aria-hidden="true"></i>
             {{elt?.standard_abbr_name}}
@@ -42,7 +42,7 @@
               <i class="fa fa-circle fa-stack-2x"></i>
              <i class="fa fa-code fa-stack-1x fa-inverse"></i>
             </span>-->
-            <div *ngIf="item?.term" [attr.id]="trim(item?.term)" class="collapse mb-2 ml-5" [ngClass]="(i == 0) ? 'show' : ''"   aria-labelledby="headingOne" data-parent="#accordion">
+            <div  *ngIf="item?.term" [attr.id]="trim(item?.term)" class="collapse mb-2 ml-5" [ngClass]="(i == 0) ? 'show' : ''"   aria-labelledby="headingOne" data-parent="#accordion">
               <div class="card-body">
                 {{item?.desc}}
               </div>
@@ -58,6 +58,7 @@
             <div class="card-body">
               {{elt?.standard_desc_eng}}
             </div>
+            <div (click)="open(elt?.standard_link)" class=" my-3" *ngIf="elt?.standard_link"><ins class="">URL :</ins>    <span class="url" >{{elt?.standard_link}}</span></div>
           </div>
         </li>
       </ul>

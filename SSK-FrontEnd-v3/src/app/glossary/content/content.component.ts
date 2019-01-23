@@ -23,17 +23,23 @@ export class ContentComponent implements OnInit {
 
   ngOnInit() {
     this.item = this.sskServ.getGlossarylink();
-
-    setTimeout(() => {
-      this.data = this.elastiServ.glossaryChange(this.item);
-      this.spinner = false;
-    }, 2000);
+      this.elastiServ.glossaryChange(this.item).then(
+        (value) => {
+          this.data = value;
+          this.spinner = false;
+        }
+      );
   }
 
   itemChangedHandler(item: string) {
     this.item = item;
-    this.data = this.elastiServ.glossaryChange(item);
     this.sskServ.setTitle('SSK - ' + _.capitalize(item));
+    this.elastiServ.glossaryChange(this.item).then(
+      (value) => {
+        this.data = value;
+        this.spinner = false;
+      }
+    );
   }
 
   trim(text: string) {
@@ -43,4 +49,9 @@ export class ContentComponent implements OnInit {
       .replace('-', '')
       .replace(':', '');
   }
+
+  open(url: string) {
+    window.open((url.indexOf('://') === -1) ? 'http://' + url.replace(/\\n/g, '')
+      : url.replace(/\\n/g, ''), '_blank');
+}
 }
