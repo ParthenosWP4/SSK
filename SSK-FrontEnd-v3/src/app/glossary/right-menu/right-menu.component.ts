@@ -1,9 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {GlossaryComponent} from '../glossary.component';
 import * as _ from 'lodash';
-import {ElastichsearchService} from '../../elastichsearch.service';
 import {Location} from '@angular/common';
-
 @Component({
   selector: 'app-right-menu',
   templateUrl: './right-menu.component.html',
@@ -17,7 +15,7 @@ export class RightMenuComponent implements OnInit {
 
   menuItem: Array<string> = [];
 
-  constructor(private location: Location, private glossaryComponent: GlossaryComponent, private elasticServ: ElastichsearchService) { }
+  constructor(private location: Location, private glossaryComponent: GlossaryComponent) { }
 
   ngOnInit() {
     this.menuItem = _.clone(this.glossaryComponent.glossaryItems);
@@ -31,8 +29,7 @@ export class RightMenuComponent implements OnInit {
     this.menuItem = _.remove(this.menuItem, (elt) =>  {
       return elt !== item;
     });
-    this.location.replaceState('glossary/' + item);
     this.itemChanged.emit(item);
+    this.location.replaceState('glossary/' + item);
   }
-
 }

@@ -85,4 +85,19 @@ export class StepCardComponent implements OnInit {
   toStep() {
     this.router.navigate(['/', 'scenarios', this.scenario.id,  this.step.position]);
   }
+  
+  tagShow(tag: any) {
+    if (tag['abbr'] !== undefined ) {
+      tag.key = tag.abbr;
+    }
+    if ( this.sskService.isUrl(tag.key)) {
+      tag.url  = tag.key;
+      tag.key = tag.url.substr(tag.url.lastIndexOf('/') + 1, tag.url.length);
+      const otherKey = tag.key.split('=');
+      if (otherKey.length > 0) {
+        tag.key = otherKey[otherKey.length - 1];
+      }
+    }
+      return tag;
+    }
 }

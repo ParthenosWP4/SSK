@@ -13,9 +13,11 @@ import {NgbTypeaheadConfig} from '@ng-bootstrap/ng-bootstrap';
 import {Subject} from 'rxjs/Subject';
 import 'rxjs/add/operator/delay';
 import * as Bloodhound from 'bloodhound-js';
+import { CodegenComponentFactoryResolver } from '@angular/core/src/linker/component_factory_resolver';
 
 
 declare const $;
+
 
 @Component({
   selector: 'app-scenario',
@@ -131,16 +133,14 @@ export class ScenariosComponent implements OnInit, AfterViewInit, OnDestroy {
    ngAfterViewInit() {
      $('.typeahead').bind('typeahead:render', (event, suggestions, async, dataset) => {
       $( '.added').remove();
-      $('.tt-dataset').prepend( '<div class="tt-suggestion tt-selectable added" > <span class="strong"> Search for "' +
-      $('.typeahead').val() + '"</span></div>');
-      //this.eltRef = this.elementRef.nativeElement.querySelector('.added');
-      /*if (this.eltRef) {
-        this.listenerFn = this.renderer.listen(this.eltRef, 'click', (even) => {
-          console.log(this.renderer);
-             this.eventHandler(even);
-             console.log(this.listenerFn);
-           });
-      }*/
+      const child = document.createElement('div');
+      this.renderer.addClass(child, 'strong');
+      this.renderer.addClass(child, 'tt-suggestion');
+      this.renderer.addClass(child, 'tt-selectable');
+      child.innerText = 'Search for "' + this.model + '"';
+      child.addEventListener('click', this.eventHandler.bind(this));
+      this.renderer.insertBefore(this.elementRef.nativeElement.querySelector('.tt-dataset'), child,
+                        this.elementRef.nativeElement.querySelector('.tt-dataset').firstChild);
    });
 
       $('.typeahead').bind('typeahead:select', (ev, suggestion) => {
@@ -157,7 +157,7 @@ export class ScenariosComponent implements OnInit, AfterViewInit, OnDestroy {
     this.location.replaceState(item);
   }
 
-   public loadContents(type: string) {
+  public loadContents(type: string) {
          switch (type) {
           case 'steps':
             this.sskServices.setTitle('SSK - Steps');
@@ -229,29 +229,6 @@ export class ScenariosComponent implements OnInit, AfterViewInit, OnDestroy {
           break;
         }
   }
-
-  @HostListener('document:click', ['$event']) fullTextSerch(event: Event) {
-    try {
-      if (_.includes(event['path'][1].getAttribute('class'), 'added')) {
-        this.eventHandler(event);
-     }
-    }catch (ex) {
-      console.log(ex);
-    }
-  }
-
-
-    /*@HostListener('window:scroll', ['$event']) checkScroll() {
-      const componentPosition = this.elementRef.nativeElement.offsetTop;
-      const scrollPosition = window.pageYOffset;
-      if ( !isUndefined(this.getScenarios()) &&  this.getScenarios().length  < this.elasticServices.getScenarioNumber()
-      && scrollPosition >= componentPosition) {
-        const  elt: any = {};
-        if (!isUndefined(this.elasticServices.getscenariosTemp().length)  && this.elasticServices.getscenariosTemp().length === 1) {
-          this.elasticServices.getscenariosTemp().pop();
-        }
-      } }*/
-
   remove(elt: any) {
     $('#sskSearch').val('');
       let filterTerm: any;
@@ -458,9 +435,8 @@ selectedItem(item: any) {
 /*
   Here we make a full text research
 */
-eventHandler(event) {
-  event.preventDefault();
-  $('div.tt-dataset').empty();
+eventHandler() {
+  document.querySelector('div.tt-dataset').innerHTML = null;
   this.elasticServices.setResearchStarted(true);
   this.fullTextSearch = true;
   this.elasticServices.searchFromServer(null, _.toLower(this.model)).subscribe(

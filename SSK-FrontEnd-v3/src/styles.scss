@@ -127,7 +127,9 @@
   font-style: normal;
 }
 
-
+body{
+  overflow-x: hidden !important;
+}
 
 .ic {
   display: inline-block;

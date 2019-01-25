@@ -5,7 +5,7 @@
     <div class="container mt-4" *ngIf="getLink()">
       <div class="col-sm-4" *ngFor =" let item of glossaryItems" >
         <div class="card text-center mb-4" >
-          <a class="card-block" (click)="goTo(item)" [routerLink]="['/', item]">
+          <a class="card-block" (click)="goTo(item)" [routerLink]="['/', item,'']">
             <h4 class="card-title py-4">{{item}}</h4>
             <p class="card-text py-4">
               <img class="card-img-top" [src]="'/assets/images/' + item + '.svg'" alt="Card image cap">

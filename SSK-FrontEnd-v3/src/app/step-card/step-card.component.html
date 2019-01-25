@@ -17,6 +17,9 @@
   <div class="descmt-2 mb-3" [innerHTML]="step?.description">
   </div>
   <p>
-      <span class="tag my-1  mr-2 py-1" [ngClass] ="elt?.type"  *ngFor=" let elt of step?.metadata; let k = index"  tooltip="{{ elt?.type }} {{(elt?.source === undefined )? '': '-' + elt?.source}}" containerClass="tagClass" >{{elt?.key}}{{elt?.abbr}}</span>
+      <span class="tag my-1  mr-2 py-1" [ngClass]="((elt?.type === undefined) || ((elt?.type).indexOf('standard') !== -1) ) ? 'standard' : elt?.type"
+        *ngFor=" let elt of step?.metadata; let k = index"  
+        tooltip="{{((elt?.type === undefined) || ((elt?.type).indexOf('standard') !== -1) ) ? 'standard' : elt?.type + ' - Tadirah'}}"
+         containerClass="tagClass" >{{elt?.key}}{{elt?.abbr}}</span>
     </p>
 </div>

@@ -44,6 +44,8 @@ import * as $ from 'jquery';
 import { HighlightPipe } from './highlight.pipe';
 import { ModalResourcesComponent } from './scenario/modal-resources/modal-resources.component';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { TagDirectiveDirective } from './tag-directive.directive';
+
 /*export function dataProviderFactory(provider: ElastichsearchService) {
   return () => provider.loadData();
 }*/
@@ -76,7 +78,8 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
     NewScenarioComponent,
     UserComponent,
     HighlightPipe,
-    ModalResourcesComponent
+    ModalResourcesComponent,
+    TagDirectiveDirective
   ],
   imports:
     [
@@ -99,7 +102,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],
-  providers: [ NgbActiveModal, appRoutingProviders, SafeHtmlPipe, ElastichsearchService, SskService, GlossaryResolver, HighlightPipe,
+  providers: [NgbActiveModal, appRoutingProviders, SafeHtmlPipe, ElastichsearchService, SskService, GlossaryResolver, HighlightPipe,
     //{ provide: APP_INITIALIZER, useFactory: dataProviderFactory, deps: [ElastichsearchService], multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true}
     ],

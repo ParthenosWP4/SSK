@@ -69,7 +69,6 @@ export class ScenarioComponent implements OnInit  {
 
 
   ngOnInit() {
-    
     this.sskService.setTitle('SSK - Scenario');
     window.scrollTo(0, 0);
     Observable.of(this.activatedRoute.params

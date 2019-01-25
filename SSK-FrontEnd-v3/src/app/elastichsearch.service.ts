@@ -412,10 +412,11 @@ getGlossaryTerms() {
                     _.map(_.map(this.getActivities(), 'list'), 'item' )) ),  (elt) => {
                       if (typeof elt === 'string') {
                         this.group = elt;
-                        }else {
+                      } else {
                         elt['group'] = this.group;
-                      return elt;
-                    }
+                        elt.term = elt.term.replace('_', ' ');
+                       return elt;
+                      }
             });
             items = _.filter(items, (o)  =>  typeof o !== 'undefined' );
             this.setActivitiesForCount(items);

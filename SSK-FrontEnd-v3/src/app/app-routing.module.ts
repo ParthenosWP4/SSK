@@ -46,13 +46,17 @@ const routes: Routes = [
       text: 'Glossary'
     },
   children: [
-    { path: ':item', component: ContentComponent,
+    { path: ':type', component: ContentComponent,
       resolve: {
-        item: GlossaryResolver
+        type: GlossaryResolver
       },
       data: {
-        breadcrumbs: '{{item}}',
-      }
+        breadcrumbs: '{{type}}',
+      },
+      children: [
+        { path: ':item', component: ContentComponent,
+        }
+      ]
     }
   ]
   },
