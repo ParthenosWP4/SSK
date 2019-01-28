@@ -9,8 +9,8 @@ To know more about the partners please visit the dedicated page.
 
 Within the PARTHENOS infrastructure,  the Work Package 4 (WP4) addressed the standards set up by community needs and defined, managed and maintained by international initiatives. The standards concern all the aspects of digital activity, from individual items to documents and collections.
 
-Behind the scenes
------------------
+Team
+----
 
 The design and development of the **Standardization Survival Kit** has been carried out the WP4 members and lead by Inria ALMAnaCH.
 
