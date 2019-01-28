@@ -1,7 +1,0 @@
-location,line,role,message
-/TEI[1],,error,"TEI/@type should be either ""researchScenario"" or ""researchStep"". The current value of TEI/@type is ""researchStep"""
-/TEI[1]/teiHeader[1]/revisionDesc[1]/change[1],51,information,"When recording a revision, some precise metadata must be given : the date of the revision, the name of the responsibe and his/her affiliation and a description."
-/TEI[1]/text[1]/body[1]/listEvent[1]/event[1]/desc[1],59,error,"In the <desc type=""definition>, there should be nothing more than text, <list> and <ref>."
-/TEI[1]/text[1]/body[1]/listEvent[1]/event[1]/desc[2],62,error,"In the <desc type=""definition>, there should be nothing more than text, <list> and <ref>."
-/TEI[1]/teiHeader[1]/fileDesc[1]/titleStmt[1],8,warning,The main sponsor of the SSK is the PARTHENOS project. All scenarios and steps should record this information.
-/TEI[1]/teiHeader[1]/fileDesc[1]/sourceDesc[1],24,information,"sourceDesc in mandatory in TEI, so if you want to give details on the way the scenario was conceived, it is the appropriate location."

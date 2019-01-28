@@ -32,18 +32,14 @@
       <change>Second major revision on <date when="2017-09-11">September 11th 2017</date> by Laurent
         Romary and Charles Riondet. Replacement of <gi>listRef</gi> by <gi>linkGrp</gi> in the
         events.</change>
+      <change>On <date when="2019-01-23">January 23th January</date>, The SSK specification
+        underwent an important cleanup by Charles Riondet, in particular the documentation part,
+        mostly outdated. The up-to-date version of the documentation can be found at <ref
+          target="https://ssk.readthedocs.io">https://ssk.readthedocs.io</ref>.</change>
     </revisionDesc>
   </teiHeader>
   <text>
     <body>
-      <!--    <div>
-                <head>Introduction</head>
-                <p/>
-            </div>
-            <div>
-                <head>Text Encoding Initative Guidelines</head>
-                <p/>
-            </div>-->
       <div>
         <head>The SSK TEI in short</head>
         <p>The SSK offers researchers needing standardized methods and resources complete frameworks
@@ -51,7 +47,6 @@
           of step by step research scenarios where the use of standards is clearly identified.
           Theses scenarios are divided into different steps, implying specific tasks. Each step
           contains a set of bibliographical resources.</p>
-
         <div>
           <head>Main elements</head>
           <p>The main elements of the SSK TEI are: <specList>
@@ -61,7 +56,7 @@
               <specDesc key="ref"/>
             </specList>
           </p>
-          <p> A scenario is a list of events (<gi>listEvent</gi>), each scenario step is an event
+          <p>A scenario is a list of events (<gi>listEvent</gi>), each scenario step is an event
               (<gi>event</gi>). </p>
           <p><gi>event</gi>, core element of the SSK scenario, is a full description of the scenario
             step: <list>
@@ -78,12 +73,12 @@
               <item>bibliographical references:<specList>
                   <specDesc key="ref"/>
                 </specList></item>
-            </list> Events are stored in external files, allowing them to be used in different
+            </list>Events are stored in external files, allowing them to be used in different
             scenarios. Scenario files gather <gi>event</gi> in a <gi>listEvent</gi> element, by
             referencing them with a <att>ref</att> attribute. It is however possible to modify the
             content of the event called in a scenario, using the attribute <att>mode</att> (see
             below)</p>
-          <p> The resources consists of bibliographical references. They are gathered in
+          <p>The resources consists of bibliographical references. They are gathered in
               <gi>linkGrp</gi> elements. They are of two types : <code>general resources</code> and
               <code>project specific</code>. <gi>linkGrp</gi> elements can be repeated (one per
               <code>project</code>). At each level, the elements are enriched with keywords that can
@@ -98,750 +93,16 @@
                   target="http://www.iana.org/assignments/language-subtag-registry"
                   >http://www.iana.org/assignments/language-subtag-registry</ref>. <egXML
                   xmlns="http://www.tei-c.org/ns/Examples">
-                  <label xml:lang="en">Create associated documentation</label>
-                  <label xml:lang="fr">Création de la documentation associée</label>
+                  <head xml:lang="en">Create associated documentation</head>
+                  <head xml:lang="fr">Création de la documentation associée</head>
                 </egXML></item>
-              <item><att>mode</att>, available for all content elements. the <att>mode</att> is used
-                in scenario files to allow for modification of the imported steps. <egXML
-                  xmlns="http://www.tei-c.org/ns/Examples">
-                  <event xml:id="s1" type="step" ref="step_EaXswO_290517">
-                    <head mode="change">
-                      <!-- The new <label> replace the initial step label, in the declared language-->
-                      <label mode="change" xml:lang="jp">...</label>
-                      <!-- A new term is added to the step -->
-                      <term mode="add"/>
-                    </head> ... </event>
-                </egXML></item>
-              <item>the <att>type</att> attribute is required in most elements. See below for
-                details.</item>
+              <item><att>mode</att>, available for some content elements. The <att>mode</att> is
+                used in scenario files to allow for modification of the imported steps.</item>
+              <item>the <att>type</att> attribute is required in most elements.</item>
             </list>
           </p>
         </div>
       </div>
-      <div>
-        <head>The Resources</head>
-        <div>
-          <head>Zotero</head>
-          <p>The resources to be presented in the SSK are preferably stored in Zotero Parthenos WP4
-            database, accessible <ref target="https://www.zotero.org/groups/427927">here</ref>. To
-            add a resource, an account on Zotero is required. Contact the SSK team to join the group
-            (ssk [at] inria [dot] fr)</p>
-          <p>The Zotero database fields required by the SSK are:<list>
-              <item><label>Item type</label>: <desc>The item type is most of the time identified by
-                  Zotero but it's important to check it. The most used item types are:<list>
-                    <item>webpage</item>
-                    <item>blogpost</item>
-                    <item>journal article</item>
-                    <item>book section</item>
-                    <item>book</item>
-                    <item>presentation</item>
-                  </list></desc></item>
-              <item><label>Title</label>: <desc>The title of the resource</desc></item>
-              <item><label>Author</label>: <desc>The author of the resource</desc></item>
-              <item><label>Date</label>: <desc>The date of the resource</desc></item>
-              <item><label>Url</label>: <desc>the url of the resource</desc></item>
-              <item><label>Language</label>: <desc>the language of the resource</desc></item>
-              <item><label>Source</label>: <desc><list>
-                    <item>For webpages: website title</item>
-                    <item>For blogposts: blog title</item>
-                    <item>For journal articles, books, book sections, documents: library
-                      catalog</item>
-                  </list></desc>
-              </item>
-            </list> NB: A short description of the resource should be provided when possible. In
-            Zotero, the appropriate field is <hi>abstract</hi>, but it is also possible to add this
-            description in the TEI, with a <gi>desc</gi> element, as shown in the following example:
-              <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <linkGrp type="generalResources">
-                <ref source="zotero" subtype="book" target="PM5P3JDB" type="tutorial">
-                  <desc xml:lang="en" type="resourceDesc"> This booklet is intended as an
-                    introductory textbook for students and end-users interested in knowing more
-                    about the exciting developments in this high-tech area of conservation and
-                    conservation science. Their teachers are invited to use the texts and
-                    photographic materials for educational purposes, while the conservation
-                    scientist might appreciate the short reviews of applications and of the science
-                    underlying the described processes. </desc>
-                  <term key="Laser cleaning" type="tutorial"/>
-                </ref>
-              </linkGrp>
-            </egXML></p>
-        </div>
-        <div>
-          <head>GitHub</head>
-          <p>It is also possible to point to a GitHub user or repository. In this case, the
-            informations that the SSK shows (via the API) are:</p>
-          <list>
-            <item>For a GitHub User<list>
-                <item>name</item>
-                <item>html_url</item>
-                <item>bio</item>
-                <item>updated_at</item>
-                <item>type</item>
-                <item>avatar_url</item>
-              </list></item>
-            <item>For a GitHub repository<list>
-                <item>owner (NB : a GitHub user)</item>
-                <item>full_name</item>
-                <item>html_url</item>
-                <item>description</item>
-              </list>
-            </item>
-          </list>
-          <p>A dedicated GitHub repository has been set for projects supported or maintained by
-            Parthenos. It is available <ref
-              target="https://github.com/ParthenosWP4/standardsLibrary">here</ref>. Contact the SSK
-            team for more information.</p>
-        </div>
-      </div>
-      <div>
-        <head>Detailed structure</head>
-        <p><ref target="#SSKScenarios">Scenarios</ref> and <ref target="#SSKSteps">steps</ref> are
-          represented in different files. This choice has been made to facilitate the use of a step
-          in several scenarios, with or without modifications. </p>
-        <p>Files naming conventions are the following:<list>
-            <item>for scenarios:<list>
-                <item><code>sc</code> for scenario</item>
-                <item>an underscore</item>
-                <item>a condensed title of the scenario in camel case</item>
-              </list></item>
-            <item>for steps:<list>
-                <item>the string <code>step</code></item>
-                <item>an underscore</item>
-                <item>the intials of the step name, with the liaison words in lower case, and the
-                  meaningful words in upper case</item>
-                <item>an underscore and the date (optional)</item>
-              </list></item>
-          </list></p>
-        <div>
-          <head>Scenarios and steps structure</head>
-          <div xml:id="SSKScenarios">
-            <head>Scenarios</head>
-            <p>The scenario is represented by the element <gi>listEvent</gi>, containing a set of
-                <gi>event</gi> elements that reference external TEI files.</p>
-            <div>
-              <head>Header</head>
-              <p>The structure of the Scenario header is as follows:</p>
-              <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                <TEI type="scenario">
-                  <teiHeader>
-                    <fileDesc>
-                      <titleStmt>
-                        <title><!-- Title of the tei document, not title of the scenario --></title>
-                        <author>
-                          <persName>...</persName>
-                          <affiliation>...</affiliation>
-                        </author>
-                      </titleStmt>
-                      <publicationStmt>
-                        <authority>Parthenos ...</authority>
-                        <availability>
-                          <licence target="http://creativecommons.org/licenses/by/4.0/">
-                            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence
-                              applies to this document.</p>
-                          </licence>
-                        </availability>
-                      </publicationStmt>
-                      <sourceDesc>
-                        <p>Created from scratch</p>
-                      </sourceDesc>
-                    </fileDesc>
-                    <revisionDesc>
-                      <change>
-                        <!-- Only for major changes: addition of an author, of a step, etc. -->
-                      </change>
-                    </revisionDesc>
-                  </teiHeader> ... </TEI>
-              </egXML>
-              <p>The scenario header includes the following data elements: <list type="unordered">
-                  <item>the title of the document (which is not the title of the scenario)</item>
-                  <item>the authors of the scenarios</item>
-                  <item>the majors modifications</item>
-                </list>
-              </p>
-            </div>
-            <div>
-              <head>Structure</head>
-              <p>In a scenario file, <gi>event</gi> elements are used as pointers to link to full
-                  <gi>event</gi> elements stored in external files.</p>
-              <p>
-                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <listEvent>
-                    <event xml:id="s1" type="step" ref="step_EaXswO_290517"/>
-                    <event xml:id="s2" type="step" ref="step_Eprimrf_300517"/>
-                    <event xml:id="s3" type="step" ref="step_Cad_300517"/>
-                    <event xml:id="s4" type="step" ref="step_Tdats_300517"/>
-                    <event xml:id="s5" type="step" ref="step_Sapditnf_300517"/>
-                  </listEvent>
-                </egXML>
-              </p>
-              <p>It is also possible to refer to another scenario, that will be entirely (or
-                partially by using parameters - see below) include in the described scenario. <egXML
-                  xmlns="http://www.tei-c.org/ns/Examples">
-                  <listEvent>
-                    <event type="scenario" ref="SSK_digitization.xml"/>
-                    <event xml:id="s1" type="step" ref="step_KedKep_170717"/> ... </listEvent>
-                </egXML>
-              </p>
-              <p>It is possible to modify the content of an existing step directly in the scenario
-                file. See <ref target="#custom">the advanced features</ref> for more
-                information.</p>
-            </div>
-          </div>
-          <div xml:id="SSKSteps">
-            <head>Steps</head>
-            <p>A full description of the scenario step.</p>
-            <div>
-              <head>header</head>
-              <p>The structure of the step header is as follows:</p>
-              <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                <TEI type="step">
-                  <teiHeader>
-                    <fileDesc>
-                      <titleStmt>
-                        <title><!-- title of the file, not title of the step --></title>
-                        <author>
-                          <persName>Charles Riondet</persName>
-                          <affiliation>Inria</affiliation>
-                        </author>
-                      </titleStmt>
-                      <publicationStmt>
-                        <authority>Parthenos</authority>
-                        <availability>
-                          <licence target="http://creativecommons.org/licenses/by/4.0/">
-                            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence
-                              applies to this document.</p>
-                          </licence>
-                        </availability>
-                      </publicationStmt>
-                      <sourceDesc>
-                        <p>Created from scratch</p>
-                      </sourceDesc>
-                    </fileDesc>
-                    <revisionDesc>
-                      <change/>
-                    </revisionDesc>
-                  </teiHeader> ... </TEI>
-              </egXML>
-              <p>The step header includes the following data elements: <list>
-                  <item>the title of the document</item>
-                  <item>the author of the step</item>
-                  <item>the major modification</item>
-                </list>
-              </p>
-            </div>
-
-            <div>
-              <head>structure</head>
-              <p>The main elements of a <gi>event</gi> are the description of the event, and the
-                resources related to it. The description is recorded in the elements <gi>head</gi>
-                  (<ref target="#SSK_head">see below</ref>) and <gi>desc</gi> (<ref
-                  target="#SSK_desc">see below</ref>) and the resources are contained by one or two
-                  <gi>linkGrp</gi> (<ref target="#SSK_linkGrp">see below</ref>).</p>
-            </div>
-          </div>
-        </div>
-        <div>
-          <head>Content of scenarios and steps</head>
-          <div xml:id="SSK_head">
-            <head>head</head>
-            <p>The TEI <gi>head</gi> element record the title of a scenario or a step.</p>
-            <p>The attribute <att>xml:lang</att> is mandatory. The element <gi>head</gi> can be
-              repeated to give as many translated versions as possible.</p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <head xml:lang="en">Create associated documentation</head>
-            </egXML>
-          </div>
-          <div xml:id="SSK_desc">
-            <head>desc</head>
-            <p>The element <gi>desc</gi> is used in two ways for the description of the scenarios
-              and the steps. The disctinction is made with the attribute <att>type</att>
-              <list>
-                <item>When the value of <att>type</att> is <code>definition</code>, the content of
-                    <gi>desc</gi> is a short text describing the scenario or the step</item>
-                <item>When the value of <att>type</att> is <code>term</code>, the content of
-                    <gi>desc</gi> is a set of <gi>term</gi> elements</item>
-              </list></p>
-          </div>
-          <div xml:id="SSK_term">
-            <head>term</head>
-            <p><gi>term</gi> elements are used to tag the scenarios, the steps and the resources,
-              according to the SSK taxonomies, that are:<list>
-                <item><ref target="http://tadirah.dariah.eu/vocab/index.php">Tadirah activities,
-                    objects and techniques</ref></item>
-                <item>the Dariah-IT Standard Knowledge base</item>
-                <item>aureHAL disciplines</item>
-              </list>
-            </p>
-            <div>
-              <head>Functioning</head>
-              <p>These taxonomies are declared with the attributes <att>type</att> and
-                  <att>source</att>. The attributes of <gi>term</gi> are <list>
-                  <item>The <att>type</att> attribute gives an information about the kind of term
-                    used. Its values are <list>
-                      <item>standard: the <att>key</att> gives the id of a standard referenced in
-                        the SSK standards Knowledge base</item>
-                      <item>activity: the value of <att>key</att> is taken from the tadirah
-                        ontology, <ref target="#tadirahActivities">research activities section</ref>
-                      </item>
-                      <item>technique: the value of <att>key</att> is taken from the tadirah
-                        ontology, <ref target="#tadirahTechniques">research techniques
-                        section</ref></item>
-                      <item>discipline, taken from the <ref target="#aurehalDisciplines">aureHAL
-                          taxonomy</ref></item>
-                    </list></item>
-                  <item>The <att>source</att> attribute sets a reference link for the
-                    taxonomy.</item>
-                  <item>The <att>key</att> attribute gives either an URI when the label of the term
-                    can be taken from or directly a label</item>
-                </list>
-                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <term type="standard" source="standard_list" key="XML"/>
-                </egXML>
-                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <term type="activity" source="http://tadirah.dariah.eu/" key="annotating"/>
-                </egXML>
-                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <term type="objects" source="http://tadirah.dariah.eu/" key="Data"/>
-                </egXML>
-              </p>
-            </div>
-            <div>
-              <head>Taxonomies</head>
-              <div xml:id="tadirahActivities">
-                <head>Tadirah activities</head>
-                <p>the activities must be chosen in the following list (only pick between the second
-                  level values):<list>
-
-                    <item>Capture <list>
-                        <item>Conversion</item>
-                        <item>Data Recognition</item>
-                        <item>Discovering</item>
-                        <item>Gathering</item>
-                        <item>Imaging</item>
-                        <item>Recording</item>
-                        <item>Transcription</item>
-                      </list></item>
-
-                    <item>Creation <list>
-                        <item>Designing</item>
-                        <item>Programming</item>
-                        <item>Translation</item>
-                        <item>Web development</item>
-                        <item>Writing</item>
-                      </list></item>
-
-                    <item>Enrichment <list>
-                        <item>Annotating</item>
-                        <item>Cleanup</item>
-                        <item>Editing</item>
-                      </list></item>
-
-                    <item>Analysis <list>
-                        <item>Content Analysis</item>
-                        <item>Network Analysis</item>
-                        <item>Relational Analysis</item>
-                        <item>Spatial Analysis</item>
-                        <item>Structural Analysis</item>
-                        <item>Stylistic Analysis</item>
-                        <item>Visualization</item>
-                      </list></item>
-
-                    <item>Interpretation <list>
-                        <item>Contextualizing</item>
-                        <item>Modeling</item>
-                        <item>Theorizing</item>
-                      </list></item>
-
-                    <item>Storage <list>
-                        <item>Archiving</item>
-                        <item>Identifying</item>
-                        <item>Organizing</item>
-                        <item>Preservation</item>
-                      </list></item>
-
-                    <item>Dissemination <list>
-                        <item>Collaboration</item>
-                        <item>Commenting</item>
-                        <item>Communicating</item>
-                        <item>Crowdsourcing</item>
-                        <item>Publishing</item>
-                        <item>Sharing</item>
-                      </list></item>
-
-                    <item>Meta-Activities <list>
-                        <item>Meta: Assessing</item>
-                        <item>Meta: Community Building</item>
-                        <item>Meta: Give Overview</item>
-                        <item>Meta: Project Management</item>
-                        <item>Meta: Teaching / Learning</item>
-                      </list></item>
-                  </list></p>
-              </div>
-              <div xml:id="tadirahTechniques">
-                <head>Tadirah techniques</head>
-                <p>The Tadirah techniques are the following : <list>
-                    <item>Bit Stream Preservation</item>
-                    <item>Brainstorming</item>
-                    <item>Browsing</item>
-                    <item>Cluster Analysis</item>
-                    <item>Collocation Analysis</item>
-                    <item>Commenting</item>
-                    <item>Concordancing</item>
-                    <item>Debugging</item>
-                    <item>Distance Measures</item>
-                    <item>Durable Persistent Media</item>
-                    <item>Emulation</item>
-                    <item>Encoding</item>
-                    <item>Gamification</item>
-                    <item>Georeferencing</item>
-                    <item>Information Retrieval</item>
-                    <item>Linked Open Data</item>
-                    <item>Machine Learning</item>
-                    <item>Mapping</item>
-                    <item>Migration</item>
-                    <item>Named Entity Recognition</item>
-                    <item>Open Archival Information Systems</item>
-                    <item>Pattern Recognition</item>
-                    <item>Photography</item>
-                    <item>POS-Tagging</item>
-                    <item>Preservation Metadata</item>
-                    <item>Principal Component Analysis</item>
-                    <item>Replication</item>
-                    <item>Scanning</item>
-                    <item>Searching</item>
-                    <item>Sentiment Analysis</item>
-                    <item>Sequence Alignment</item>
-                    <item>Technology Preservation</item>
-                    <item>Topic Modeling</item>
-                    <item>Versioning</item>
-                    <item>Web Crawling</item>
-                    <item>Text Mining</item>
-                  </list></p>
-              </div>
-              <div xml:id="researchObjects">
-                <head>Research objects taxonomies</head>
-                <div xml:id="tadirahObjects">
-                  <head>TaDIRAH Objects</head>
-                  <p>The TaDIRAH objects vocabulary contains 36 types of research objects, including
-                    the most common used by Arts and Humanities scholars.</p>
-                  <list>
-                    <item> Artifacts </item>
-                    <item> Bibliographic Listings </item>
-                    <item> Code </item>
-                    <item> Computers </item>
-                    <item> Curricula </item>
-                    <item> Digital Humanities </item>
-                    <item> Data </item>
-                    <item> File </item>
-                    <item> Images </item>
-                    <item> Images (3D) </item>
-                    <item> Infrastructure </item>
-                    <item> Interaction </item>
-                    <item> Language </item>
-                    <item> Link </item>
-                    <item> Literature </item>
-                    <item> Manuscript </item>
-                    <item> Map </item>
-                    <item> Metadata </item>
-                    <item> Methods </item>
-                    <item> Multimedia </item>
-                    <item> Multimodal </item>
-                    <item> Named Entities </item>
-                    <item> Persons </item>
-                    <item> Projects </item>
-                    <item> Research </item>
-                    <item> Research Process </item>
-                    <item> Research Results </item>
-                    <item> Sheet Music </item>
-                    <item> Software </item>
-                    <item> Sound </item>
-                    <item> Standards </item>
-                    <item> Text </item>
-                    <item> Text Bearing Objects </item>
-                    <item> Tools </item>
-                    <item> Video </item>
-                    <item> VREs </item>
-                  </list>
-                </div>
-              </div>
-              <div xml:id="aurehalDisciplines">
-                <head>aureHAL disciplines</head>
-                <p> The disciplines must be chosen in the following list: <list>
-                    <item> Biological anthropology</item>
-                    <item>Social Anthropology and ethnology</item>
-                    <item>Archaeology and Prehistory</item>
-                    <item>Architecture, space management</item>
-                    <item>Art and art history</item>
-                    <item>Classical studies</item>
-                    <item>Demography</item>
-                    <item>Law</item>
-                    <item>Economies and finances</item>
-                    <item>Education</item>
-                    <item>Environmental studies</item>
-                    <item>Gender studies</item>
-                    <item>Geography</item>
-                    <item>Management</item>
-                    <item>History, Philosophy and Sociology of Sciences</item>
-                    <item>History</item>
-                    <item>Communication sciences</item>
-                    <item>Linguistics</item>
-                    <item>Literature</item>
-                    <item>Cultural heritage and museology</item>
-                    <item>Musicology and performing arts</item>
-                    <item>Philosophy</item>
-                    <item>Psychology</item>
-                    <item>Religions</item>
-                    <item>Political science</item>
-                    <item>Sociology</item>
-                    <item>Methods and statistics</item>
-                  </list>
-                </p>
-              </div>
-              <div>
-                <head>Standards knowledge base</head>
-                <!-- Change the link to the list of standards in the SSK environment when ready -->
-                <p>The list of the standards already described in the Standards Knowledge base can
-                  be found <ref
-                    target="http://it.dariah.eu:8983/solr/WP4/select?indent=on&amp;q=*:*&amp;wt=json"
-                    >here</ref>. If you don’t find the standard you want, you can create a
-                  description using this <ref
-                    target="https://github.com/ParthenosWP4/SSK/tree/master/standardsDesc">sample
-                    file</ref> and upload it <ref
-                    target="http://it.dariah.eu:8983/solr/#/WP4/documents">here</ref>: choose
-                    <code>XML</code> for Document Type, paste the content of the file in Document(s)
-                  and submit.</p>
-                <p>Note that the value to indicate in the <att>key</att> is the value of the field
-                  "standard_abbr_name". See below the sample file</p>
-
-                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <doc>
-                    <field name="id">33 (must be incremented by 1 for each new standard)</field>
-                    <field name="standard_abbr_name">Standard abbreviated Name : This information
-                      will be used in the TEI file to refer to this description</field>
-                    <field name="standard_complete_name">Standard Complete name</field>
-                    <field name="standard_type">Two values: 'standard' OR 'method'. When describing
-                      a format, use 'standard', when describing a protocol or a set of techniques,
-                      use 'method'</field>
-                    <field name="standard_desc_eng">English Description</field>
-                    <field name="standard_desc_fr">French Description</field>
-                    <field name="standard_desc_deu">German Description</field>
-                    <field name="standard_desc_esp">Spanish Description</field>
-                    <field name="standard_data_type">select from: Horizontal->e.g. XML, CSV and
-                      vertical ->e.g. EDM</field>
-                    <field name="standard_link">http://link_to_standard_official_page.com</field>
-                    <field name="standard_tags">Tag1: example-> Classification</field>
-                    <field name="standard_tags">Tag2: example-> Human-history</field>
-                    <field name="standard_tags">Tag3: example-> Research Activities -
-                      Organizing</field>
-                    <field name="standard_tags">Tag4: example-> Research Objects - Digital
-                      Humanities</field>
-                    <field name="standard_resources">http://link_to_resource_about_the
-                      _standard.com</field>
-                  </doc>
-                </egXML>
-              </div>
-            </div>
-          </div>
-          <div xml:id="SSK_linkGrp">
-            <head>linkGrp</head>
-            <p><gi>linkGrp</gi> is the container for the resources associated to a given step. It
-              can have three attributes: <list>
-                <item>The attribute <att>type</att> is required and can have two values:<list>
-                    <item><code>generalResources</code>: for resources that give general input about
-                      a standard, a protocol, ...</item>
-                    <item><code>projectResources</code>: for resources that show examples of real
-                      projects using the described standard, protocol, ...</item>
-                  </list></item>
-                <item>When <att>type</att> has <code>projectResources</code> for value, two more
-                  attributes are required: <list>
-                    <item><att>source</att> for the name of the project mentioned</item>
-                    <item><att>corresp</att> for a url pointing to or identifying the project</item>
-                  </list></item>
-
-              </list>
-            </p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <linkGrp type="generalResources">
-                <ref type="Report" source="zotero" target="ZQVB6CIP"/>
-              </linkGrp>
-              <linkGrp type="projectResources" source="CODATA" corresp="http://www.codata.org/">
-                <ref type="Report" source="zotero" target="G4UPDPG3"/>
-              </linkGrp>
-            </egXML>
-          </div>
-          <div xml:id="SSK_ref">
-            <head>ref</head>
-            <p>the attributes for <gi>ref</gi> are <att>type</att>, <att>subtype</att>,
-                <att>source</att> and <att>target</att>. <list>
-                <item>The attribute <att>type</att> is required. Its values are taken from the
-                  Zotero item types, plus SSK specific values. Possible values are:<list>
-                    <item><code>spec</code>: the specification, of a standard for instance.</item>
-                    <item><code>report</code>: technical reports</item>
-                    <item><code>blog</code>: blog posts</item>
-                    <item><code>tutorial</code>: tutorials or guidelines</item>
-                    <item><code>script</code>: Scripts and code samples</item>
-                    <item><code>paper</code>: Scholarly papers</item>
-                    <item><code>library</code>: Computing libraries</item>
-                    <item><code>tool</code>: a link to a service or a software useful for a given
-                      step.</item>
-                    <item><code>database</code>: </item>
-                    <item><code>method</code></item>
-                    <item><code>bibliography</code></item>
-                    <item><code>schema</code></item>
-                  </list></item>
-                <item>the <att>source</att> attribute in <gi>ref</gi> is used by the SSK to record
-                  where the full information about the resource is stored, and that the SSK queries.
-                  The values are a semi-closed list. The <att>source</att> attribute has for
-                  possible values:<list>
-                    <item>zotero: The Parthenos WP4 Zotero library: <ref
-                        target="https://www.zotero.org/groups/parthenos-wp4">WP4 Zotero
-                        Library</ref></item>
-                    <item>github: resources hosted in a GitHub repository, preferably the <ref
-                        target="https://github.com/ParthenosWP4/standardsLibrary">Parthenos WP4
-                        repository</ref>, but not exclusively</item>
-                    <item>isidore: resources described in the platform of search <ref
-                        target="http://rechercheisidore.org">Isidore</ref> dedicated to Humanities
-                      and Social Sciences.</item>
-                  </list></item>
-                <item>The <att>target</att> attribute specifies the destination of the reference
-                  with an URI.</item>
-              </list>
-              <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                <ref type="spec" subtype="standard"
-                  target="http://zotero.org/groups/427927/items/BEVAWMPX"/>
-              </egXML>
-            </p>
-          </div>
-          <div>
-            <head>param</head>
-            <p>See below the <ref target="#SSK_param">advanced features section</ref></p>
-          </div>
-        </div>
-      </div>
-      <div xml:id="advanced">
-        <head>Advanced features</head>
-        <div xml:id="custom">
-          <head>Customize a step or a scenario</head>
-          <p>It is possible to modify the content of a step directly in the scenario file, for
-            instance, modifying the label to contextualize it, or adding a very specific resource.
-            To do so, <gi>event</gi> and its children can be specified with the <att>mode</att>
-            attribute; with the possible following values:<list>
-              <item><code>change</code></item>
-              <item><code>add</code></item>
-            </list>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <event type="step" ref="step_EaXswO_290517">
-                <head mode="add" xml:lang="jp">...</head>
-                <desc type="definition" mode="change">...</desc> ... </event>
-            </egXML>
-          </p>
-        </div>
-        <div xml:id="SSK_param">
-          <head>The parameters</head>
-          <p>When pointing to a step inside a scenario, it is possible to use parameters to refine
-            the behaviour of this step. This parametrization uses the element <gi>param</gi> in
-              <gi>event</gi>. Two different uses are possible for the moment, <ref target="#param1"
-              >(1)</ref> to refine the resources selection in a given step, <ref target="#param2"
-              >(2)</ref> to include some steps of a scenario in another scenario.</p>
-          <div xml:id="param1">
-            <head>Parameter #1 : refine the resources</head>
-            <p>It is possible to select the resources to be displayed in a scenario. The criteria
-              are based on the taxonomies used by the SSK model : <list>
-                <item>Tadirah Activities</item>
-                <item>Tadirah techniques</item>
-                <item>aureHAL disciplines</item>
-                <item>Standards</item>
-              </list> The element <gi>param</gi> contains an attribute <att>name</att>, that
-              contains a formal name to identify on which taxonomy the parameter is applied. The
-              possible values are : <list>
-                <item>activity</item>
-                <item>technique</item>
-                <item>datatype</item>
-                <item>discipline</item>
-                <item>standard</item>
-              </list> Another attribute <att>value</att> contains the term used to select the wanted
-              resources. In other words, in the example below, the resources displayed would only be
-              the <gi>ref</gi> that contains one or more <gi>term</gi> elements with values "XML",
-              "conversion" and "Text Bearing Objects". <egXML
-                xmlns="http://www.tei-c.org/ns/Examples"><event type="researchStep"
-                  ref="referencedStep">
-                  <label mode="replace">New label</label>
-                  <desc mode="replace">new description</desc>
-                  <!-- resources -->
-                  <param name="standard" value="XML"/>
-                  <param name="activity" value="conversion"/>
-                  <param name="technique" value="Text Bearing Objects"/> ... </event>
-              </egXML> In this situation, all the following resources would be selected. <egXML
-                xmlns="http://www.tei-c.org/ns/Examples">
-                <ref type="code" target="// URL //">
-                  <term type="activity" source="tadirah" key="conversion"/>
-                  <term type="standard" key="XML"/>
-                </ref>
-              </egXML>
-              <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                <ref type="code" target="// URL //">
-                  <term type="technique" source="tadirah" key="Text Bearing Objects"/>
-                  <term type="standard" key="XML"/>
-                </ref>
-              </egXML>
-              <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                <ref type="code" target="// URL //">
-                  <term type="technique" source="tadirah" key="Text Bearing Objects"/>
-                  <term type="activity" source="tadirah" key="conversion"/>
-                </ref>
-              </egXML>
-              <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                <ref type="code" target="URL">
-                  <term type="standard" key="XML"/>
-                </ref>
-              </egXML>
-            </p>
-          </div>
-          <div xml:id="param2">
-            <head>Parameter #2 : include partially a scenario into another</head>
-            <p>This mechanism records : <list>
-                <item>The reference to a scenario</item>
-                <item>A set of steps, not necessarily consecutive.</item>
-              </list> In this case, the attributes of <gi>param</gi> are also <att>name</att> and
-                <att>value</att>, but they have a different behaviour. The <att>name</att> value is
-                <code>range</code>. The attribute <att>value</att> records the interval of the steps
-              (i.e. their order number) in the scenario to include. To indicate an consecutive
-              interval, the steps indexes should be separated by an hyphen: <code>-</code>. To
-              indicate non-consecutive steps, the steps indexes should be separated by a comma:
-                <code>,</code>. These two behaviours can be mixed (<ref target="#range3"/>see
-              examples below) </p>
-
-            <div>
-              <head>A set of steps, sometimes consecutive, sometimes not consecutive</head>
-              <p xml:id="range1"><egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <event xml:id="jjjj" type="researchScenario" ref="scenario_to_Be_Included">
-                    <param name="range" value="1-3"/>
-                  </event></egXML> This parameter would select steps 1, 2 and 3.</p>
-              <p xml:id="range2"><egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <event xml:id="jjjj" type="researchScenario" ref="scenario_to_Be_Included">
-                    <param name="range" value="1,3"/>
-                  </event></egXML> This parameter would select steps 1 and 3.</p>
-              <p xml:id="range3"><egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <event xml:id="jjjj" type="researchScenario" ref="scenario_to_Be_Included">
-                    <param name="range" value="1,3,5-7"/>
-                  </event></egXML> This parameter would select steps 1, 3, 5, 6 and 7.</p>
-            </div>
-          </div>
-          <div>
-            <head>Mixing parameters </head>
-            <p>This example shows the inclusion of a scenario into another and a filter based on a
-              keyword for a particular step in this subset. If the @corresp is not used, the
-                <gi>param</gi> will be applied to all the included steps. <egXML
-                xmlns="http://www.tei-c.org/ns/Examples"><event xml:id="jjjj"
-                  type="researchScenario" ref="scenario_to_Be_Included">
-                  <param name="range" value="1,2,4-6"/>
-                  <!-- filter resources of the step nr 2 -->
-                  <param name="standards" value="XML" corresp="#2"/>
-                </event></egXML></p>
-          </div>
-        </div>
-      </div>
-
     </body>
     <back>
       <div>
@@ -862,6 +123,30 @@
                 <sch:ns prefix="tei" uri="http://www.tei-c.org/ns/1.0"/>
               </constraint>
             </constraintSpec>
+            <constraintSpec ident="xmlid" scheme="schematron" type="SSK">
+              <constraint>
+                <sch:rule context="tei:TEI">
+                  <sch:let name="fileName" value="tokenize(document-uri(/), '/')[last()]"/>
+                  <sch:assert test="string(@xml:id) = substring-before($fileName, '.xml')"
+                    role="error">The xml:id of the TEI element should be equal to the name of the
+                    file, without the file extension. Currently the value of xml:id is
+                      "<sch:value-of select="@xml:id"/>" whilst the file name is "<sch:value-of
+                      select="$fileName"/>"</sch:assert>
+                  <sch:assert test="string(@type) = 'researchScenario' or 'researchStep'"
+                    role="error">TEI/@type should be either "researchScenario" or "researchStep".
+                    The current value of TEI/@type is "<sch:value-of select="@type"/>"</sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <constraintSpec ident="TEItype" scheme="schematron" type="SSK">
+              <constraint>
+                <sch:rule context="tei:TEI">
+                  <sch:assert test="string(@type) = 'researchScenario' or 'researchStep'"
+                    role="error">TEI/@type should be either "researchScenario" or "researchStep".
+                    The current value of TEI/@type is "<sch:value-of select="@type"/>"</sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
             <attList>
               <attDef ident="type" usage="req" mode="change">
                 <datatype>
@@ -875,30 +160,129 @@
             </attList>
           </elementSpec>
 
-          <!-- What is this ? -->
-          <!--                    <elementSpec ident="alternate" mode="change">
-                        <classes mode="change">
-                            <memberOf key="model.eventLike"/>
-                        </classes>
-                        <content>
-                            <sequence>
-                                <alternate>
-                                    <classRef key="model.eventLike" maxOccurs="unbounded"/>
-                                    <classRef key="model.contentPart" maxOccurs="unbounded"/>
-                                </alternate>
-                            </sequence>
-                        </content>
-                    </elementSpec>-->
+          <elementSpec ident="titleStmt" mode="change">
+            <constraintSpec ident="authorsReq" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:titleStmt">
+                  <sch:assert test="tei:author" role="error">All scenarios and steps should have
+                    identified authors.</sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <constraintSpec ident="sponsorReq" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:titleStmt">
+                  <sch:report test="not(tei:sponsor)" role="warning">The main sponsor of the SSK is
+                    the PARTHENOS project. All scenarios and steps should record this
+                    information.</sch:report>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+          </elementSpec>
 
+          <elementSpec ident="author" mode="change">
+            <constraintSpec ident="nameAffiliation" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:author">
+                  <sch:assert test="tei:persName and tei:affiliation" role="error">You need to
+                    supply the name and the affiliation of all authors.</sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+          </elementSpec>
+
+          <elementSpec ident="publicationStmt" mode="change">
+            <constraintSpec ident="authorityReq" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:publicationStmt">
+                  <sch:assert test="tei:authority" role="error">An authority responsibile for making
+                    the scenario or the step available should be provided. This authority can be the
+                    project or the team in the context which the research process described in the
+                    scenario has been carried out.</sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+          </elementSpec>
+
+          <elementSpec ident="availability" mode="change">
+            <constraintSpec ident="licenceReq" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:availability">
+                  <sch:assert test="tei:licence/@target and tei:licence/tei:p" role="error">A
+                    licence should be applied to all scenarios and steps. The declaration of the
+                    licence chosen in made by a clear sentence in natural language (in a p element)
+                    and a link towards the licence (with the attribute @target).</sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <constraintSpec ident="CClicence" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:availability/tei:licence">
+                  <sch:assert
+                    test="@target = 'http://creativecommons.org/licenses/by/4.0/' or @target = 'http://creativecommons.org/publicdomain/zero/1.0/'"
+                    role="error"> The licences of the scenarios and steps should be CC-BY 4.0 or CC0
+                    1.0 Don't forget to put the link towards the licence reference text in the
+                    @target attribute. The current value of "<sch:name path="@target"/>" is
+                      "<sch:value-of select="@target"/>"</sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+          </elementSpec>
+
+          <elementSpec ident="sourceDesc" mode="change">
+            <constraintSpec ident="sourceDescWarn" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:sourceDesc" role="warning">
+                  <sch:report test="child::*" role="information">sourceDesc in mandatory in TEI, so
+                    if you want to give details on the way the scenario was conceived, it is the
+                    appropriate location.</sch:report>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+          </elementSpec>
+
+          <elementSpec ident="revisionDesc" mode="change">
+            <constraintSpec ident="changeConstr" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:revisionDesc/tei:change">
+                  <sch:assert test="tei:date and tei:persName and tei:affiliation and tei:desc"
+                    role="information">When recording a revision, some precise metadata must be
+                    given : the date of the revision, the name of the responsibe and his/her
+                    affiliation and a description. </sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+          </elementSpec>
+          
+          <elementSpec ident="body" mode="change">
+            <constraintSpec ident="typeInconsistency1" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:body[ancestor::tei:TEI[@type = 'researchScenario']]/tei:div/@type">
+                  <sch:assert test=". = 'researchScenario'" role="warning">@type attribute incoherence: document
+                    type is '<sch:value-of select="ancestor::tei:TEI/@type"/>' and current element type value is
+                    '<sch:value-of select="."/>'</sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            
+            <constraintSpec ident="typeInconsistency2" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:body[ancestor::tei:TEI[@type = 'researchStep']]/tei:div/@type">
+                  <sch:assert test=". = 'researchStep'" role="warning">@type attribute incoherence: document
+                    type is '<sch:value-of select="ancestor::tei:TEI/@type"/>' and current element type value is
+                    '<sch:value-of select="."/>'</sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+           
+          </elementSpec>
+
+ 
           <elementSpec ident="listEvent" mode="change">
             <content>
               <sequence>
                 <classRef key="model.headLike" minOccurs="0" maxOccurs="unbounded"/>
                 <classRef key="model.eventLike" minOccurs="1" maxOccurs="unbounded"/>
-                <alternate minOccurs="0" maxOccurs="unbounded">
-                  <elementRef key="relation"/>
-                  <elementRef key="listRelation"/>
-                </alternate>
               </sequence>
             </content>
           </elementSpec>
@@ -906,9 +290,7 @@
           <elementSpec ident="event" mode="change">
             <classes mode="change">
               <!--2017-07-17: <event> is now member of the class att.combinable, i.e., can have @mode for attribute. In the SSK,
-                        it is used when a scenario uses a step, but want to add additional information, or change it
-                        NB : the prose element we use in <event>, namely <label>, <desc>, and the terms <term>, contained by <head>, are also member
-                        of att.combinable -->
+                        it is used when a scenario uses a step, but want to add additional information, or change it-->
               <memberOf key="att.combinable"/>
             </classes>
             <content>
@@ -925,10 +307,10 @@
                 </alternate>
                 <elementRef key="event" minOccurs="0" maxOccurs="unbounded"/>
                 <!-- 2017-11-15: Add param as child of event-->
-                <elementRef key="param" minOccurs="0" maxOccurs="unbounded"/>
+                <!--<elementRef key="param" minOccurs="0" maxOccurs="unbounded"/>-->
               </sequence>
             </content>
-            <constraintSpec scheme="schematron" ident="paramInScenarios">
+            <!--<constraintSpec scheme="schematron" ident="paramInScenarios">
               <desc>the parameters, expressed by <gi>param</gi> should only be used in scenario
                 files, i.e. files where TEI <att>type</att> is <hi>researchScenario</hi></desc>
               <constraint>
@@ -937,7 +319,7 @@
                     only be used in scenario files</sch:assert>
                 </sch:rule>
               </constraint>
-            </constraintSpec>
+            </constraintSpec>-->
             <attList>
               <attDef ident="type" usage="req" mode="change">
                 <datatype>
@@ -952,12 +334,65 @@
           </elementSpec>
           <elementSpec ident="head" mode="change">
             <classes mode="change">
-              <!--2017-07-17: <event> is now member of the class att.combinable, i.e., can have @mode for attribute. In the SSK,
-                        it is used when a scenario uses a step, but want to add additional information, or change it
-                        NB : the prose element we use in <event>, namely <label>, <desc>, and the terms <term>, contained by <head>, are also member
-                        of att.combinable -->
+              <!--2017-07-17: <head> is now member of the class att.combinable, i.e., can have @mode for attribute. In the SSK,
+                        it is used when a scenario uses a step, but want to add additional information, or change it -->
               <memberOf key="att.combinable"/>
             </classes>
+            <constraintSpec ident="headShort" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:head[parent::div or parent::event]">
+                  <sch:assert test="string-length(.) &gt; 9" role="error"> The title is too short:
+                    10 characters minimum. Your title is <sch:value-of
+                      select="10 - string-length(.)"/> characters too short.</sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <constraintSpec ident="headLong" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:head[parent::div or parent::event]">
+                  <sch:assert test="string-length(.) &lt; 101" role="error">The title is too long:
+                    100 characters maximum. Your title is <sch:value-of
+                      select="string-length(.) - 100"/> characters too long.</sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <constraintSpec ident="headSc" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:head[parent::div]">
+                  <sch:report test="normalize-space(.)" role="information">The title of a scenario
+                    should describe the main goal of the scenario.</sch:report>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <constraintSpec ident="headSt" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:head[parent::event]">
+                  <sch:assert
+                    test="matches(., '(^\w*(ing|ion|ment|ments) )|( \w*(ing|ion|ment|ments$))')"
+                    role="information">The title of a step should describe the action to perform,
+                    starting or ending with a gerund (or an infinitive), or a noun .</sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <constraintSpec ident="typeInconsistency1" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:head[ancestor::tei:TEI[@type = 'researchScenario']]/@type">
+                  <sch:assert test=". = 'scenarioTitle'" role="warning">@type attribute incoherence: document
+                    type is '<sch:value-of select="ancestor::tei:TEI/@type"/>' and current element type value is
+                    '<sch:value-of select="."/>'</sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <constraintSpec ident="typeInconsistency2" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:head[ancestor::tei:TEI[@type = 'researchStep']]/@type">
+                  <sch:assert test=". = 'stepTitle'" role="warning">@type attribute incoherence: document type
+                    is '<sch:value-of select="ancestor::tei:TEI/@type"/>' and current element type value is
+                    '<sch:value-of select="."/>'</sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            
             <attList>
               <attDef ident="type" mode="change">
                 <datatype>
@@ -970,22 +405,43 @@
               </attDef>
             </attList>
           </elementSpec>
-          <!--  <elementSpec ident="listRef" mode="change">
-                        <classes mode="change">
-                            <!-\- 2017-07-17 ADDED model.ptrlike and att.typed -\->
-                            <memberOf key="att.global"/>
-                            <memberOf key="att.typed"/>
-                            <memberOf key="model.oddDecl"/>
-                            <memberOf key="model.ptrLike"/>
-                        </classes>
-                    </elementSpec>-->
+
           <elementSpec ident="linkGrp" mode="change">
+            <classes>
+              <!--2019-01-23: <linkGrp> is now member of the class att.combinable, i.e., can have @mode for attribute. In the SSK,
+                        it is used when a scenario uses a step, but want to add additional information, or change it -->
+              <memberOf key="att.combinable"/>
+            </classes>
             <content>
-              <alternate minOccurs="1" maxOccurs="unbounded">
-                <elementRef key="ref"/>
-                <elementRef key="linkGrp"/>
-              </alternate>
+              <elementRef key="ref" minOccurs="1" maxOccurs="unbounded"/>
             </content>
+            <constraintSpec ident="projectResources1" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:linkGrp[@type = 'projectResources']">
+                  <sch:assert test="normalize-space(@corresp)" role="error">Need a value for
+                    @corresp</sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <constraintSpec ident="projectResources2" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:linkGrp[@type = 'projectResources']">
+                  <sch:assert test="matches(@corresp, '^https?:')" role="error">Value of @corresp should be a
+                    valid URI. The current value of @corresp for "<sch:name path="."/>" is <sch:value-of
+                      select="@corresp"/></sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <constraintSpec ident="projectResources3" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:linkGrp[@type = 'projectResources']">
+                  <sch:assert test="normalize-space(@source)" role="error">The attribute @source should contain
+                    the name of the project whose references are listed inside the &lt;linkGrp&gt;. The current
+                    value of @source for "<sch:name path="."/>" is <sch:value-of select="@source"/></sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            
             <attList>
               <attDef ident="type" usage="req" mode="change">
                 <datatype>
@@ -998,16 +454,30 @@
               </attDef>
             </attList>
           </elementSpec>
+          
           <elementSpec ident="ref" mode="change">
             <classes mode="change">
               <memberOf key="att.combinable"/>
             </classes>
+            <constraintSpec ident="zotero" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:ref[@source = 'zotero'][parent::tei:linkGrp]">
+                  <sch:assert
+                    test="matches(@target, '(wp2|wp3|wp4):[A-Z0-9]{8}') or matches(@target, '[A-Z0-9]{8}')"
+                    role="warning">The reference of a Zotero record is made with the Zotero item key (8 capitals
+                    or digits)</sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
             <attList>
               <attDef ident="type" usage="req" mode="replace">
                 <datatype>
                   <dataRef key="teidata.enumerated"/>
                 </datatype>
                 <valList type="semi" mode="replace">
+                  <valItem ident="linkDesc">
+                    <gloss xml:lang="en">link for the &lt;desc&gt; element</gloss>
+                  </valItem>
                   <valItem ident="spec">
                     <gloss xml:lang="en">Specification</gloss>
                     <gloss xml:lang="fr">Spécification</gloss>
@@ -1072,9 +542,7 @@
           <elementSpec ident="term" mode="change">
             <classes mode="change">
               <!--2017-07-17: <term> is now member of the class att.combinable, i.e., can have @mode for attribute. In the SSK,
-                        it is used when a scenario uses a step, but want to add additional information, or change it
-                        NB : the prose element we use in <event>, namely <label>, <desc>, and the terms <term>, contained by <head>, are also member
-                        of att.combinable -->
+                        it is used when a scenario uses a step, but want to add additional information, or change it -->
               <memberOf key="att.combinable"/>
             </classes>
             <attList>
@@ -1096,9 +564,7 @@
           <elementSpec ident="desc" mode="change">
             <classes mode="change">
               <!--2017-07-17: <desc> is now member of the class att.combinable, i.e., can have @mode for attribute. In the SSK,
-                        it is used when a scenario uses a step, but want to add additional information, or change it
-                        NB : the prose element we use in <event>, namely <label>, <desc>, and the terms <term>, contained by <head>, are also member
-                        of att.combinable -->
+                        it is used when a scenario uses a step, but want to add additional information, or change it-->
               <memberOf key="att.combinable"/>
             </classes>
             <content>
@@ -1111,6 +577,157 @@
                 <elementRef key="term" minOccurs="0"/>
               </alternate>
             </content>
+            <constraintSpec ident="descShort" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:desc[@type = 'definition'][parent::div]">
+                  <sch:assert test="string-length(.) &gt; 299" role="error"> The description is a
+                    bit too short and should be around 300 characters long minimum. Your despcrition is
+                      <sch:value-of select="string-length(.)"/> characters long. Note that you can
+                    use the following TEI tags: &lt;list&gt;, &lt;item&gt; and
+                    &lt;ref&gt;.</sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <constraintSpec ident="descLong" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:desc[@type = 'definition'][parent::div]">
+                  <sch:assert test="string-length(.) &lt; 1500" role="error">The scenario description is a bit long. We recommand a maximum lenght of 1.500
+                    characters. Your description is <sch:value-of select="string-length"/> characters
+                    long.</sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <constraintSpec ident="refList" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:desc[@type='definition']">
+                  <sch:assert test="tei:list or tei:ref or text()" role="error"> In the &lt;desc
+                    type="definition&gt;, there should be nothing more than text, &lt;list&gt; and
+                    &lt;ref&gt;.</sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            
+            <constraintSpec ident="noTermsActivity" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:desc[@type = 'terms']">
+                  <sch:report
+                    test="ancestor::tei:TEI[@type = 'researchStep'] and count(tei:term[@type = 'activity']) = 0"
+                    role="error">A step should be described by an activity term, taken from the TADirAH
+                    taxonomy.</sch:report>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            
+            <constraintSpec ident="scenarioActivity" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:desc[@type = 'terms']">
+                  <sch:report
+                    test="ancestor::tei:TEI[@type = 'researchScenario'] and term[@type = 'activity']"
+                    role="error">The activity terms are more suitable for describing steps rather than
+                    scenarios. It is recommended to choose one activity term per step.</sch:report>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            
+            <constraintSpec ident="noTermsStandards" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:desc[@type = 'terms']">
+                  <sch:report
+                    test="count(tei:term[@type = 'standard']) = 0"
+                    see="http://ssk.huma-num.fr/#/glossary/standards" role="information">A scenario or a step could have
+                    several keywords related to standards. Check the documentation for more details</sch:report>
+              </sch:rule></constraint>
+            </constraintSpec>
+            
+            <constraintSpec ident="noTermsDiscipline" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:desc[@type = 'terms']">
+                  <sch:report
+                    test="ancestor::tei:TEI[@type = 'researchScenario'] and count(tei:term[@type = 'discipline']) = 0"
+                    see="http://ssk.huma-num.fr/#/glossary/disciplines" role="information">A scenario could have
+                    several keywords related to disciplines. Check the documentation for more
+                    details.</sch:report>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            
+            <constraintSpec ident="noTermsTechniques" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:desc[@type = 'terms']">
+                  <sch:report
+                    test="ancestor::tei:TEI[@type = 'researchScenario'] and count(tei:term[@type = 'technique']) = 0"
+                    see="http://ssk.huma-num.fr/#/glossary/techniques" role="information">A scenario could have
+                    several keywords related to research techniques. Check the Tadirah taxonomy for more
+                    details.</sch:report>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            
+            <constraintSpec ident="noTermsObject" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:desc[@type = 'terms']">
+                  <sch:report
+                    test="ancestor::tei:TEI[@type = 'researchScenario'] and count(tei:term[@type = 'object']) = 0"
+                    see="http://ssk.huma-num.fr/#/glossary/standards/objects" role="information">A scenario
+                    could have several keywords related to research objects. Check the Tadirah taxonomy for more
+                    details.</sch:report>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            
+            <constraintSpec ident="TMTermsActivity" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:desc[@type = 'terms']">
+                  <sch:assert test="count(tei:term[@type = 'activity']) &lt; 2" role="error">A step should be described by just one activity tag.</sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            
+            <constraintSpec ident="TMTermsStandards" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:desc[@type = 'terms']">
+                  <sch:assert test="count(tei:term[@type = 'standard']) &lt; 5" role="warning">More than 4 terms
+                    of the same vocabulary type may be too much: STANDARD</sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            
+            <constraintSpec ident="TMTermsDisciplines" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:desc[@type = 'terms']">
+                  <sch:assert test="count(tei:term[@type = 'discipline']) &lt; 5" role="warning">More than 4 terms
+                    of the same vocabulary type may be too much: DISCIPLINE</sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <constraintSpec ident="TMTermsTechniques" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:desc[@type = 'terms']">
+                  <sch:assert test="count(tei:term[@type = 'technique']) &lt; 5" role="warning">More than 4 terms
+                    of the same vocabulary type may be too much: TECHNIQUE</sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            
+            <constraintSpec ident="TMTermsObjects" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:desc[@type = 'terms']">
+                  <sch:assert test="count(tei:term[@type = 'object']) &lt; 5" role="warning">More than 4 terms
+                    of the same vocabulary type may be too much: OBJECT</sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            
+            <constraintSpec ident="sourceTerms" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:desc[@type = 'terms']/tei:term">
+                  <sch:assert test="@source" role="error">The attribute source is important to specifiy which
+                    vocabulary was used. The main ones are "tadirah", aurehal, "standard".</sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+           
+            
             <attList>
               <attDef ident="type" usage="req" mode="change">
                 <datatype>
@@ -1125,18 +742,16 @@
               <attDef ident="xml:lang" usage="req" mode="change"/>
             </attList>
           </elementSpec>
-          <elementSpec ident="label" mode="change">
-            <classes mode="change">
-              <!--2017-07-17: <label> is now member of the class att.combinable, i.e., can have @mode for attribute. In the SSK,
-                        it is used when a scenario uses a step, but want to add additional information, or change it
-                        NB : the prose element we use in <event>, namely <label>, <desc>, and the terms <term>, contained by <head>, are also member
-                        of att.combinable -->
-              <memberOf key="att.combinable"/>
-            </classes>
-            <attList>
-              <!-- @xml:lang is required -->
-              <attDef ident="xml:lang" usage="req" mode="change"/>
-            </attList>
+          
+          <elementSpec ident="graphic" mode="change">
+            <constraintSpec ident="imgFormats" scheme="schematron">
+              <constraint>
+                <sch:rule context="tei:graphic/@url">
+                  <sch:assert test="matches(., '\.(JPG|JPEG|PNG|jpg|png|jpeg)$')" role="error">The image format
+                    should be JPG or PNG. Accepted extensions are: jpg, JPG, jpeg, JPEG, png, PNG</sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
           </elementSpec>
         </schemaSpec>
       </div>

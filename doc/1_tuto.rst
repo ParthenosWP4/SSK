@@ -1,5 +1,7 @@
+.. _reTuto:
+
 =======================================================
-How to create a scenario for the SSK (a SSK Tutorial) ?
+How to create a scenario for the SSK? (a SSK Tutorial)
 =======================================================
 
 The following instructions help users create a scenario for the SSK.
@@ -21,7 +23,8 @@ The choice of good titles for a scenario and its steps is crucial. They will be 
 * that starts with a verb or a gerund, describing the process (for a scenario) or the action (for a step) that the user will read about;
 * with a number of characters comprised between 10 and 100.
 
-References:
+References
+----------
 
 * Leahy, Richard. ‘Twenty Titles for the Writer’. College Composition and Communication 43, no. 4 (1992): 516–19. https://doi.org/10.2307/358644.
 * Documentation of the TEI element :ref:`head`
@@ -47,7 +50,8 @@ The form of this text should respect the following constraints:
 
 * Lists are also available. The TEI elements are <list> and <item>
 
-References:
+References
+----------
 
 * Universitat Autònoma de Barcelona. ‘Describing a Process’. Coursera. Accessed 29 June 2018. https://www.coursera.org/lecture/teaching-english/3-1-1-describing-a-process-mjuio.
 * Documentation of the TEI element :ref:`desc`
@@ -72,7 +76,8 @@ When editing the description of a scenario, the available keywords are:
 
 For the steps, the most important keyword is the **Activity**, that should be unique for each step. It also possible to pick some **techniques**, **objects** and **standards**. For each keyword type, we recommend to choose between **1 and 4** terms.
 
-References:
+References
+----------
 
 * `TaDiRAH - Taxonomy of Digital Research Activities in the Humanities <http://tadirah.dariah.eu/>`_
 * Documentation of the TEI element :ref:`term`
@@ -89,7 +94,8 @@ Choose an illustration for the scenario
 * Accepted formats : png or jpg
 * It must be published under the licence CC-BY or CC-0.
 
-References:
+References
+----------
 
 * `Unsplash <https://unsplash.com/>`_, a gallery of free images and photos
 
@@ -107,40 +113,74 @@ The resources should be separated into several groups:
 * First, general resources like standard specifications
 * Second, project-related resources, i.e. how the standards are used in a real research project.
 
-References:
+References
+----------
 
 * `State of the art Wikipedia article <https://en.wikipedia.org/w/index.php?title=State_of_the_art&oldid=845308793>`_
 
 Link the resources to the step
-=======================================================
+==============================
 
-There is different ways to link resources to a step (TEI : <ref>; element). The one we favour is the recording of
+There is different ways to link resources to a step. The one we favour is the recording of
 the resource metadata in the dedicated SSK Zotero Library (see `here <https://www.zotero.org/groups/427927/items?>`_).
 
-1. To populate it, a Zotero account is necessary (create it  `here <https://www.zotero.org/user/register>`_) as well as a membership in the SSK group (apply `here <https://www.zotero.org/groups/427927/ssk-parthenos?>`_). The SSK library is organized in collections and sub-collections, by domains or standards. To learn more about how to use Zotero, many tutorial and learning resources are available `here <https://www.zotero.org/support/screencast_tutorials>`_.
-2. Each group of resources (general and project specific) should be gathered: One group for the general resources and one group for each project. In the TEI, these groups are represented by ``<linkGrp>`` elements.
-3. The references added to the Zotero Library are linked to the step with the help of their Zotero key, i.e. the last part of the URL of the resource record on the Zotero website. For instance, in the following example, the key is 4B62GJ5I: *https://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/4B62GJ5I*. In TEI, the Zotero key should be used like this:
+The Zotero fields required by the SSK are:
+
+* ``Item type``: The item type is most of the time identified by Zotero but it's important to check it. The most used item types are:
+
+  * webpage
+  * blogpost
+  * journal article
+  * book section
+  * book
+  * presentation
+  * conference Paper
+  * document
+
+* ``Title``
+* ``Author``
+* ``Date``
+* ``Url``: The url of the resource is most of the time mandatory (except when the resource is a printed document unavailable online).
+* ``abstract``: An abstract is very important to give an overview of what the user will find under the linked resource. Zotero is very often able to get this abstract from the webpage, but it may be necessary to check it, and sometimes create it.
+* ``Language``: the language of the resource
+
+Add resource to the Zotero Library
+----------------------------------
+
+1. To populate it, a Zotero account is necessary (create it  `here <https://www.zotero.org/user/register>`_) as well as a membership in the SSK group (apply `here <https://www.zotero.org/groups/427927/ssk-parthenos?>`_).
+
+  .. image:: img/zot2.jpg
+    :scale: 65 %
+
+  The SSK library is organized in collections and sub-collections, by domains or standards. To learn more about how to use Zotero, many tutorial and learning resources are available `here <https://www.zotero.org/support/screencast_tutorials>`_.
+
+  .. image:: img/zot1.jpg
+    :scale: 50 %
+
+2. Each group of resources (general and project specific) should be gathered: One group for the general resources and one group for each project. In the TEI, these groups are represented by `<linkGrp>` elements:
+  #. One `<linkGrp>` for the general resources;
+  #. one `<linkGrp>` for each project.
+3. The references added to the Zotero Library are linked to the step with the help of their Zotero key, i.e. the last part of the URL of the resource record on the Zotero website.
+  For instance, in the following example, the key is 4B62GJ5I: *https://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/4B62GJ5I*. In TEI, the Zotero key should be used like this:
 
   .. code-block:: xml
 
     <ref type="zotero" key="4B62GJ5I"/ >
 
-4. It is possible to put directly the URL of a Github repository or a document stored in HAL, and skip the Zotero part (the metadata would be fetched directly via the APIs)
-5. It is possible and recommended to add a description of the resource, in addition of the Zotero metadata. This description should make the link between the resource and the SSK step that references it. In TEI, the element to use is `<desc>`, inside a `<ref>` element
-
-References:
+References
+----------
 
 * Documentation of the TEI element :ref:`resources`
 * Documentation of the TEI element :ref:`refs`
 
-Advanced SSK functions (1) : customize a step or a scenario
-=======================================================
+Advanced SSK functions (1) : customize a step
+=============================================
 
 The SSK is adaptable by nature and contributors don't have to start from scratch their scenario. It is possible to create a scenario with existing steps as basis. But if the content of the step doesn't exactly fit, it is also possible to modify it, by updating the
 initial step (but with care), or, more safely, directly in the new scenario.
 
-In TEI, the update of element is made with the help of the attribute @mode.
-See more in the section: :ref:`custom`.
+In TEI, the update of some elements is made with the help of the attribute @mode.
+See more in the section: :ref:`stepsInScen`.
 
 Advanced SSK functions (2) : link scenarios
 =======================================================
