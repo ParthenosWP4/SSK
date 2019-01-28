@@ -12,7 +12,7 @@ export class TagDirectiveDirective {
   clickEvent(event) {
     event.preventDefault();
     event.stopPropagation();
-    const type = this.elementRef.nativeElement.getAttribute('ng-reflect-tooltip').split('-')[0];
+    const type = this.elementRef.nativeElement.getAttribute('class').split(' ')[4];
     this.router.navigate(['glossary', (type === 'standard' || type === 'object' || type === 'technique' ||
         type === 'discipline') ? type + 's' : 'activities', encodeURI(this.elementRef.nativeElement.innerText) ]);
   }
