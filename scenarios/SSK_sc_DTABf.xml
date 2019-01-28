@@ -7,7 +7,7 @@
       <fileDesc>
          <titleStmt>
             <title>sc_DTABf.xml</title>
-            <author><!--<persName><surname>Haaf</surname><forename>Susanne</forename></persName>-->
+            <author>
                <persName>Haaf Susanne</persName>
                <affiliation>Berlin-Brandenburg Academy of Sciences and Humanities</affiliation>
             </author>
@@ -46,14 +46,14 @@
          </listPrefixDef>
       </encodingDesc>
       <revisionDesc>
-         <change/>
+         <change when="2019-01-28" who="Haaf, Susanne (BBAW)">added sponsor; added and deleted terms; modified scenario title</change>
       </revisionDesc>
    </teiHeader>
    <text>
       <body>
          <div type="scenario" xml:id="sc_schemaCustomization">
-            <head type="scenarioTitle" xml:lang="en">Harmonization of digitized textual resources
-               with the DTABf</head>
+            <head type="scenarioTitle" xml:lang="en">Creating interoperable TEI text resources
+               with the DTA 'Base Format' (DTABf)</head>
             <desc type="definition" xml:lang="en">Currently, initiatives for the digitization of
                textual resources and their provision to the interested community are manifold and
                various. Hence, scholars who want to base their research on digitized texts,
@@ -71,18 +71,20 @@
             <desc type="terms" xml:lang="en"><!-- Can I reference the D2.1 use case corresponding with this scenario somewhere here? -->
                <term key="XML" source="standard_list" type="standard"/>
                <term key="TEI" source="standard_list" type="standard"/>
+            	
+            	 <term key="Gathering" source="http://tadirah.dariah.eu/" type="activity"/>
+            	 <term key="Conversion" source="http://tadirah.dariah.eu/" type="activity"/>
+            	 <term key="Editing" source="http://tadirah.dariah.eu/" type="activity"/>
+            	 <term key="Sharing" source="http://tadirah.dariah.eu/" type="activity"/>
+            	 
                <term key="Encoding" source="http://tadirah.dariah.eu/" type="technique"/>
-               <term key="Mapping" source="http://tadirah.dariah.eu/" type="technique"/>
-               <term key="Searching" source="http://tadirah.dariah.eu/" type="technique"/>
-               <term key="Browsing" source="http://tadirah.dariah.eu/" type="technique"/>
-               <!-- For this scenario some techniques are missing in TADIRAH, I think: Converting; Homogenizing/Harmonizing; Collecting -->
-               <term key="Language" source="http://tadirah.dariah.eu/" type="object"/>
+               <term key="Preservation Metadata" source="http://tadirah.dariah.eu/" type="technique"/>
+            	
                <term key="Metadata" source="http://tadirah.dariah.eu/" type="object"/>
+            	 <term key="Data" source="http://tadirah.dariah.eu/" type="object"/>
                <term key="Standards" source="http://tadirah.dariah.eu/" type="object"/>
                <term key="Text" source="http://tadirah.dariah.eu/" type="object"/>
-               <term key="Digital Humanities"
-                     source="http://tadirah.dariah.eu/"
-                     type="object"/>               
+                             
                <term key="History" source="aureHAL" type="discipline"/>
                <term key="Linguistics" source="aureHAL" type="discipline"/>
                <term key="Literature" source="aureHAL" type="discipline"/>

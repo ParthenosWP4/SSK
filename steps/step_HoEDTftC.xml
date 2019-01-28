@@ -7,10 +7,11 @@
       <fileDesc>
          <titleStmt>
             <title>step_HoEDTftC.xml</title>
-            <author><!--<persName><surname>Haaf</surname><forename>Susanne</forename></persName>-->
+            <author>
                <persName>Haaf Susanne</persName>
                <affiliation>Berlin-Brandenburg Academy of Sciences and Humanities</affiliation>
             </author>
+         		<sponsor>Parthenos</sponsor>
          </titleStmt>
          <publicationStmt>
             <authority>Parthenos</authority>
@@ -26,7 +27,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change/>
+        <change when="2019-01-28" who="Haaf, Susanne (BBAW)">added sponsor; added terms to resource links; added "Schematron" to //desc/terms; changed @source="standard_list" to @source="ssk"</change>
       </revisionDesc>
    </teiHeader>
    <text>
@@ -48,24 +49,28 @@
                   </list>
                </desc>
                <desc type="terms" xml:lang="en">
-                  <term key="Meta:Assessing"
-                        source="http://tadirah.dariah.eu/"
-                        type="activity"/>
+                  <term key="Meta:Assessing" source="http://tadirah.dariah.eu/" type="activity"/>
                   <term key="Annotating" source="http://tadirah.dariah.eu/" type="activity"/>
                   <term key="Cleanup" source="http://tadirah..eu/" type="activity"/>
+               		<term key="Converting" source="http://tadirah..eu/" type="activity"/>
                   <term key="Encoding" source="http://tadirah.dariah.eu/" type="technique"/>
                   <term key="Data" source="http://tadirah.dariah.eu/" type="object"/>
                   <term key="Text" source="http://tadirah.dariah.eu/" type="object"/>
-                  <term key="XML" source="standard_list" type="standard"/>
-                  <term key="TEI" source="standard_list" type="standard"/>
+                  <term key="XML" source="ssk" type="standard"/>
+                  <term key="TEI" source="ssk" type="standard"/>
+               		<term key="Schematron" source="ssk" type="standard"/>
                </desc>
                <linkGrp type="generalResources"><!-- Ressources: schema for the evaluation of how close a TEI text is to the DTABf -->
-                  <ref source="zotero"
-                       target="https://www.zotero.org/groups/427927/items/4BWPP9WT"
-                       type="specification">OxGarage</ref>
-                  <ref source="zotero"
-                       target="https://www.zotero.org/groups/427927/items/T7672NJ8"
-                       type="specification">DTABf transcription and annotation guidelines</ref>
+                  <ref source="zotero" target="https://www.zotero.org/groups/427927/items/4BWPP9WT" type="specification">
+                  	<term key="Converting" source="http://tadirah..eu/" type="activity"/>
+                  	OxGarage
+                  </ref>
+                  <ref source="zotero" target="https://www.zotero.org/groups/427927/items/T7672NJ8" type="specification">
+                  	<term type="standard" source="ssk" key="TEI"/>
+                  	<term type="standard" source="ssk" key="Schematron"/>
+                  	<term key="Annotating" source="http://tadirah.dariah.eu/" type="activity"/>
+                  	<term key="Transcription" source="http://tadirah.dariah.eu/" type="activity"/>
+                  	DTABf transcription and annotation guidelines</ref>
                </linkGrp>
             </event>
          </listEvent>

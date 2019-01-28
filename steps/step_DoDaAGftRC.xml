@@ -14,7 +14,7 @@
          		<sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority>PARTHENOS</authority>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
@@ -27,7 +27,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2019-01-28" who="Haaf, Susanne (BBAW)">Merged two github resources in linkGrp; added terms to resource links; added sponsor</change>
+         <change when="2019-01-28" who="Haaf, Susanne (BBAW)">Merged two github resources in linkGrp; added terms to resource links; added sponsor; changed @source="standard_list" to @source="ssk"; added "Schematron" to //desc/terms</change>
       </revisionDesc>
    </teiHeader>
    <text>
@@ -74,11 +74,15 @@
                   <ref source="zotero" target="https://www.zotero.org/groups/427927/items/T7672NJ8" type="specification">
                   	<term type="standard" source="ssk" key="TEI"/>
                   	<term type="standard" source="ssk" key="Schematron"/>
+                  	<term key="Annotating" source="http://tadirah.dariah.eu/" type="activity"/>
+                  	<term key="Transcription" source="http://tadirah.dariah.eu/" type="activity"/>
                   	DTA 'Base Format' (DTABf)
                   </ref>
                   <ref source="github" target="https://github.com/deutschestextarchiv/dtabf/" type="specification">
                   	<term type="standard" source="ssk" key="TEI"/>
                   	<term type="standard" source="ssk" key="Schematron"/>
+                  	<term key="Annotating" source="http://tadirah.dariah.eu/" type="activity"/>
+                  	<term key="Transcription" source="http://tadirah.dariah.eu/" type="activity"/>
                   	Source files of the DTA 'Base Format' (DTABf) documentation and schema
                   </ref>
                   <ref source="zotero" target="https://www.zotero.org/groups/427927/items/DVKJRRVU" type="paper">
@@ -94,6 +98,7 @@
                   </ref>
                   <ref source="zotero" target="https://www.zotero.org/groups/427927/items/V6NJ5IBX" type="website">
                   	<term type="standard">TEI</term>
+                  	<term key="Annotating" source="http://tadirah.dariah.eu/" type="activity"/>
                   	TEI Customizations
                   </ref>
                </linkGrp>

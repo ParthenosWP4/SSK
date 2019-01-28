@@ -7,13 +7,14 @@
       <fileDesc>
          <titleStmt>
             <title>step_RoM.xml</title>
-            <author><!--<persName><surname>Haaf</surname><forename>Susanne</forename></persName>-->
+            <author>
                <persName>Haaf Susanne</persName>
                <affiliation>Berlin-Brandenburg Academy of Sciences and Humanities</affiliation>
             </author>
+         		<sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority>PARTHENOS</authority>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
@@ -26,7 +27,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change/>
+          <change when="2019-01-28" who="Haaf, Susanne (BBAW)">added sponsor; changed @source='clarinStandards'|'standards_list' to @source='ssk'; added terms to resource links; added VLO as a projectResource</change>
       </revisionDesc>
    </teiHeader>
    <text>
@@ -38,12 +39,16 @@
       bibliographic information. The DTABf provides an extensive TEI Header to hold this
       information, containing not only title, author and year of publication, but also further
       information on the digital publication and licensing, notes about the text sources,
-      responsibilities, etc. Several resources are provided to facilitate this step: <list>
+      responsibilities, etc. Metadata records based on the DTABf can easily be converted 
+      into other metadata formats, e.g. into similarly rich CMDI records. For this, there 
+      is a DTABf-based CMDI profile available. This way, the digitized documents can be made 
+      findable from other platforms, e.g. CLARINs Virtual Language Observatory. 
+      Several resources are provided to facilitate this step:<list>
                      <item>A web form to record the necessary metadata in a WYSIWYG environment and to
         automatically create the DTABf conformant teiHeader</item>
                      <item>Extensive documentation on the recording of metadata according to DTABf</item>
-                     <item>The DTABf-RNG-schema to validate the entire TEI-Document including its metadata
-      </item>
+                     <item>The DTABf-RNG-schema to validate the entire TEI-Document including its metadata</item>
+      							<item>The DTABf-based CMDI profile</item>
                   </list>
                </desc>
                <desc type="terms" xml:lang="en">
@@ -52,19 +57,30 @@
                         type="activity"/>
                   <term key="Encoding" source="http://tadirah.dariah.eu/" type="technique"/>
                   <term key="Metadata" source="http://tadirah.dariah.eu/" type="object"/>
-                  <term key="TEI" source="standard_list" type="standard"/>
-                  <term key="XML" source="standard_list" type="standard"/>
-                  <term key="CMDI" source="clarinStandards" type="standard"/>
+                  <term key="TEI" source="ssk" type="standard"/>
+                  <term key="XML" source="ssk" type="standard"/>
+                  <term key="CMDI" source="ssk" type="standard"/>
                </desc>
                <linkGrp type="generalResources"><!-- Ressources: Metadata web form, XSLT, CMDI -->
-                  <ref source="zotero"
-                       target="https://www.zotero.org/groups/427927/items/T7672NJ8"
-                       type="specification">DTABf documentation</ref>
-                  <ref source="github"
-                       target="https://github.com/deutschestextarchiv/dtabf/tree/master/schema"
-                       type="specification">Formal specification of the DTABf: ODDs, schemas, Schematron
+                  <ref source="zotero" target="T7672NJ8" type="specification">
+                  	<term key="TEI" source="ssk" type="standard"/>
+                  	DTABf documentation</ref>
+                  <ref source="github" target="https://github.com/deutschestextarchiv/dtabf/tree/master/schema" type="specification">
+                  	<term key="TEI" source="ssk" type="standard"/>
+                  	Formal specification of the DTABf: ODDs, schemas, Schematron
        Constraints</ref>
+               		<ref source="zotero" target="VF3A7QRI" type="specification">
+               			<term key="XML" source="ssk" type="standard"/>
+            	 			<term key="Metadata" source="http://tadirah.dariah.eu/" type="object"/>
+               			DTABf-based CMDI profile
+               		</ref>
                </linkGrp>
+            	 <linkGrp type="projectResources">
+            	 	<ref source="zotero" target="8BD6FDKR" type="website">
+            	 		<term key="XML" source="ssk" type="standard"/>
+            	 		<term key="Metadata" source="http://tadirah.dariah.eu/" type="object"/>
+            	 		Virtual Language Observatory (VLO)</ref>
+            	 </linkGrp>
             </event>
          </listEvent>
       </body>
