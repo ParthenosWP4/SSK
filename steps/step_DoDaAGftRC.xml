@@ -7,13 +7,14 @@
       <fileDesc>
          <titleStmt>
             <title>step_DoDaAGftRC.xml</title>
-            <author><!--<persName><surname>Haaf</surname><forename>Susanne</forename></persName>-->
+            <author>
                <persName>Haaf Susanne</persName>
                <affiliation>Berlin-Brandenburg Academy of Sciences and Humanities</affiliation>
             </author>
+         		<sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority>PARTHENOS</authority>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
@@ -26,7 +27,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change/>
+         <change when="2019-01-28" who="Haaf, Susanne (BBAW)">Merged two github resources in linkGrp; added terms to resource links; added sponsor; changed @source="standard_list" to @source="ssk"; added "Schematron" to //desc/terms</change>
       </revisionDesc>
    </teiHeader>
    <text>
@@ -65,32 +66,41 @@
                         source="http://tadirah.dariah.eu/"
                         type="object"/>
                   <term key="Standards" source="NEMO" type="object"/>
-                  <term key="XML" source="standard_list" type="standard"/>
-                  <term key="TEI" source="standard_list" type="standard"/>
+                  <term key="XML" source="ssk" type="standard"/>
+                  <term key="TEI" source="ssk" type="standard"/>
+               		<term key="Schematron" source="ssk" type="standard"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref source="zotero"
-                       target="https://www.zotero.org/groups/427927/items/T7672NJ8"
-                       type="specification">DTABf website</ref>
-                  <ref source="github"
-                       target="https://github.com/deutschestextarchiv/dtabf/"
-                       type="specification">DTABf source documents</ref>
-                  <ref source="github"
-                       target="https://github.com/deutschestextarchiv/dtabf/tree/master/schema"
-                       type="specification">DTABf ODDs and Schemas</ref>
-                  <ref source="zotero"
-                       target="https://www.zotero.org/groups/427927/items/DVKJRRVU"
-                       type="paper">Haaf/Geyken/Wiegand (2015)</ref>
-                  <ref source="zotero"
-                       target="https://www.zotero.org/groups/427927/items/ZEZE3HV8"
-                       type="paper">Haaf/Thomas (2017)</ref>
-                  <ref source="zotero"
-                       target="https://www.zotero.org/groups/427927/items/8XCAEJXX"
-                       type="blog">
-       Haaf (2017) </ref>
-                  <ref source="zotero"
-                       target="https://www.zotero.org/groups/427927/items/V6NJ5IBX"
-                       type="website">TEI Customizations</ref>
+                  <ref source="zotero" target="https://www.zotero.org/groups/427927/items/T7672NJ8" type="specification">
+                  	<term type="standard" source="ssk" key="TEI"/>
+                  	<term type="standard" source="ssk" key="Schematron"/>
+                  	<term key="Annotating" source="http://tadirah.dariah.eu/" type="activity"/>
+                  	<term key="Transcription" source="http://tadirah.dariah.eu/" type="activity"/>
+                  	DTA 'Base Format' (DTABf)
+                  </ref>
+                  <ref source="github" target="https://github.com/deutschestextarchiv/dtabf/" type="specification">
+                  	<term type="standard" source="ssk" key="TEI"/>
+                  	<term type="standard" source="ssk" key="Schematron"/>
+                  	<term key="Annotating" source="http://tadirah.dariah.eu/" type="activity"/>
+                  	<term key="Transcription" source="http://tadirah.dariah.eu/" type="activity"/>
+                  	Source files of the DTA 'Base Format' (DTABf) documentation and schema
+                  </ref>
+                  <ref source="zotero" target="https://www.zotero.org/groups/427927/items/DVKJRRVU" type="paper">
+                  	<term type="standard" source="ssk" key="TEI"/>
+                  	Haaf/Geyken/Wiegand (2015)
+                  </ref>
+                  <ref source="zotero" target="https://www.zotero.org/groups/427927/items/ZEZE3HV8" type="paper">
+                  	<term type="standard" source="ssk" key="TEI"/>
+                  	Haaf/Thomas (2017)</ref>
+                  <ref source="zotero" target="https://www.zotero.org/groups/427927/items/8XCAEJXX" type="blog">
+                  	<term type="standard" source="ssk" key="TEI"/>
+                  	Haaf (2017)
+                  </ref>
+                  <ref source="zotero" target="https://www.zotero.org/groups/427927/items/V6NJ5IBX" type="website">
+                  	<term type="standard">TEI</term>
+                  	<term key="Annotating" source="http://tadirah.dariah.eu/" type="activity"/>
+                  	TEI Customizations
+                  </ref>
                </linkGrp>
             </event>
          </listEvent>

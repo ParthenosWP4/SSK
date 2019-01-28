@@ -7,13 +7,14 @@
       <fileDesc>
          <titleStmt>
             <title>step_SoTtGiaRC.xml</title>
-            <author><!--<persName><surname>Haaf</surname><forename>Susanne</forename></persName>-->
+            <author>
                <persName>Haaf Susanne</persName>
                <affiliation>Berlin-Brandenburg Academy of Sciences and Humanities</affiliation>
             </author>
+         		<sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority>PARTHENOS</authority>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
@@ -26,7 +27,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change/>
+         <change when="2019-01-28" who="Haaf, Susanne (BBAW)">added sponsor; added terms to resource links</change>
       </revisionDesc>
    </teiHeader>
    <text>
@@ -54,12 +55,21 @@
                   <term key="Images" source="http://tadirah.dariah.eu/" type="object"/>
                </desc>
                <linkGrp type="generalResources"><!-- add: KVK, VDs, ZVDD -->
-                  <ref source="zotero" target="8BD6FDKR" type="website">VLO</ref>
+                  <ref source="zotero" target="8BD6FDKR" type="website">
+                  	<term key="Browsing" source="http://tadirah.dariah.eu/" type="technique"/>
+                  	<term key="Searching" source="http://tadirah.dariah.eu/" type="technique"/>
+                  	VLO
+                  </ref>
                   <!-- add date -->
-                  <ref source="zotero" target="33XHNMST" type="website">Europeana Collections</ref>
+                  <ref source="zotero" target="33XHNMST" type="website">
+                  	<term key="Browsing" source="http://tadirah.dariah.eu/" type="technique"/>
+                  	<term key="Searching" source="http://tadirah.dariah.eu/" type="technique"/>
+                  	Europeana Collections</ref>
                   <!-- add date -->
-                  <ref source="zotero" target="ZI8NZUC2" type="website">Deutsche Digitale Bibliothek (DDB;
-       Digital Library of Germany)</ref>
+                  <ref source="zotero" target="ZI8NZUC2" type="website">
+                  	<term key="Browsing" source="http://tadirah.dariah.eu/" type="technique"/>
+                  	<term key="Searching" source="http://tadirah.dariah.eu/" type="technique"/>
+                  	Deutsche Digitale Bibliothek (DDB; Digital Library of Germany)</ref>
                   <!-- add date -->
                </linkGrp>
             </event>
