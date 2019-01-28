@@ -274,7 +274,6 @@
                 </sch:rule>
               </constraint>
             </constraintSpec>
-           
           </elementSpec>
 
  
@@ -332,6 +331,7 @@
               </attDef>
             </attList>
           </elementSpec>
+          
           <elementSpec ident="head" mode="change">
             <classes mode="change">
               <!--2017-07-17: <head> is now member of the class att.combinable, i.e., can have @mode for attribute. In the SSK,
@@ -407,7 +407,7 @@
           </elementSpec>
 
           <elementSpec ident="linkGrp" mode="change">
-            <classes>
+            <classes mode="change">
               <!--2019-01-23: <linkGrp> is now member of the class att.combinable, i.e., can have @mode for attribute. In the SSK,
                         it is used when a scenario uses a step, but want to add additional information, or change it -->
               <memberOf key="att.combinable"/>
@@ -415,6 +415,7 @@
             <content>
               <elementRef key="ref" minOccurs="1" maxOccurs="unbounded"/>
             </content>
+            
             <constraintSpec ident="projectResources1" scheme="schematron">
               <constraint>
                 <sch:rule context="tei:linkGrp[@type = 'projectResources']">
