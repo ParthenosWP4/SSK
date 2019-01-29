@@ -523,3 +523,17 @@ span.url{
   }
 }
 
+mc-breadcrumbs{
+  width: 100% !important;
+}
+
+ol.breadcrumb {
+   background-color: $color-55 !important;
+    margin-bottom: 0.21rem !important;
+   border-radius: 0 !important;
+   -moz-box-shadow:   0 1px 4px 0 $color-48 !important;
+  -webkit-box-shadow: 0 1px 4px 0  $color-48 !important;
+  box-shadow:        0 1px 4px 0  $color-48 !important;
+}
+
+

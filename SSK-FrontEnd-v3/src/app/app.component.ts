@@ -34,7 +34,8 @@ export class AppComponent implements  OnInit, AfterViewInit {
                                   { 'item' : 'Add a standard', 'link': 'add-standard'},
                                   { 'item' : 'Check our Github', 'link': 'https://github.com/ParthenosWP4/SSK'} ];
   learnMoreItems: Array<any> = [{ 'item' : 'Documentation', 'link': 'https://ssk.readthedocs.io/en/latest/'},
-                                 {'item' : 'Project team', 'link': 'team'} ];
+                                {'item' : 'Project team', 'link': '#team'} ];
+
   footerText = 'PARTHENOS is a Horizon 2020 project funded by the European Commission. The views and opinions '
                 + 'expressed in this publication are the sole responsibility of the author and do not necessarily '
                 + 'reflect the views of the European Commission.';

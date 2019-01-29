@@ -23,16 +23,43 @@ import { DocumentationComponent } from './infos/documentation/documentation.comp
 
 const routes: Routes = [
   { path: '#', redirectTo: '/', pathMatch: 'full' },
-  { path: '', component: HomeComponent},
-  { path: 'scenarios', component: ScenariosComponent},
-  { path: 'steps', component: ScenariosComponent},
-  { path: 'resources', component: ScenariosComponent},
-  { path: 'scenarios/:id', component: ScenarioComponent},
+  { path: '', component: HomeComponent,
+  data: {
+    breadcrumbs: true,
+  }},
+  { path: 'scenarios', component: ScenariosComponent,
+  data: {
+    breadcrumbs: true,
+    text: 'Scenarios'
+  }},
+  { path: 'steps', component: ScenariosComponent,
+  data: {
+    breadcrumbs: true,
+    text: 'Steps'
+  }
+ },
+  { path: 'resources', component: ScenariosComponent,
+  data: {
+    breadcrumbs: true,
+    text: 'Resources'
+  }
+  },
+  { path: 'scenarios/:id', component: ScenarioComponent,
+  data: {
+    breadcrumbs: 'Scenarios',
+  }
+},
   { path: 'construction',  component: PageInContructionComponent },
   { path: 'contact',  component: ContactComponent },
   { path: 'new-scenario',  component: NewScenarioComponent },
   { path: 'add-standard',  component: AddStandardComponent },
-  { path: 'team',  component: TeamComponent },
+  { path: 'team',  component: TeamComponent,
+    data: {
+      breadcrumbs: true,
+      text: 'Project Team'
+    }
+  },
+
   { path: 'documentation',  component: DocumentationComponent },
   { path: 'policy',  component: PolicyComponent },
   { path: 'license',  component: LicenseCitationComponent },

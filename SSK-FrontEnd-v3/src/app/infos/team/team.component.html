@@ -1,1 +1,63 @@
-<app-page-in-contruction  [title]= 'title'></app-page-in-contruction>
+
+<div class="row team">
+        <div class=" presentationProjectTeam" >
+            <div class="col-12 text-center team-title pt-4 pb-4">
+                    <h1 class="">{{ contentProjectTeamPage[0].title }}</h1>
+            </div>
+            <div class="col-10 mx-auto text-justify presentationText pt-4 pb-4">
+                    <span class="">{{ contentProjectTeamPage[1].projectPresentationTextPart1 }}</span>
+            </div>
+            <div class="col-10 mx-auto text-justify presentationText pt-4 pb-4">
+                    <span class="">{{ contentProjectTeamPage[2].projectPresentationTextPart2 }}</span>
+            </div>
+            <div class="col-10 mx-auto text-justify presentationText pt-4 pb-4">
+                    <span class="">{{ contentProjectTeamPage[3].projectPresentationTextPart3 }}</span>
+            </div>
+        </div>
+
+        <div class="behind-the-scene-part" >
+            <h2 class="col-12 text-center team-title pt-4 pb-4  pt-4 pb-4">
+                    <span class="">{{ behindTheSceneContent[0].behindTheSceneTitle }}</span>
+            </h2>
+            <div class="col-10 mx-auto text-justifypresentationText pt-4 pb-4">
+                    <span class="">{{ behindTheSceneContent[1].behindTheScenePresentationTextPart1 }}</span>
+            </div>
+            <div class="col-10 mx-auto text-justify presentationText pt-4 pb-4">
+                    <span class="">{{ behindTheSceneContent[2].behindTheScenePresentationTextPart2 }}</span>
+            </div>
+        </div>
+
+        <div class=" d-flex h-100  my-5 team-bio-part">
+                <div class="col-4 text-center " *ngFor="let teamMember of teamInfoMembersList; let i = index" [ngClass]= "((i+1) % 2  === 0) ? 'mx-1':''">
+                        <img class="profile-image"  [src]= "forImage + '/assets/images/' + teamMember.profileImage" > 
+               <span class="text-center my-2 author">
+                    {{ teamMember.name}}
+               </span>
+               <span class="text-center role  mb-2">
+                    {{ teamMember.role}}
+               </span>
+               <span class="col-3"> 
+                    {{teamMember.bio}}
+               </span>
+                </div>
+                
+            </div>
+            <div class=" d-flex h-100  my-5 team-bio-part">
+                    <div class="col-4 text-center " *ngFor="let teamMember2 of teamInfoMembersList2; let i = index" [ngClass]= "((i+1) % 2  === 0) ? 'mx-1':''">
+                            <img class="profile-image"  [src]= "forImage + '/assets/images/' + teamMember2.profileImage" > 
+                   <span class="text-center my-2 author">
+                        {{ teamMember2?.name}}
+                   </span>
+                   <span class="text-center role  mb-2">
+                        {{ teamMember2?.role}}
+                   </span>
+                   <span class="col-3"> 
+                        {{teamMember2?.bio}}
+                   </span>
+                    </div>
+                    
+                </div>
+        
+        
+</div>
+

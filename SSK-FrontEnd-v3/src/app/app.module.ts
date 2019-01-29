@@ -121,7 +121,7 @@ export class AppModule {
       if (x.length && x[0].text !== 'Home') {
         y = [
           {
-            text: 'Home',
+            text: 'SSK',
             path: ''
           }].concat(x);
         if (x.length = 2) {
