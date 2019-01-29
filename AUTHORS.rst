@@ -22,4 +22,5 @@ The design and development of the **Standardization Survival Kit** has been carr
 
 * Dorian Seillier (UX designer)
 * Lionel Tadjou (lead developer)
+holds a Master Degree in Computer science with major in software engineering. He is currently research engineer at the French National Institute for Computer Science and Applied Mathematic (Inria) in Paris, and member of the ALMAnaCH team where he  works as a lead developer. He is involved in European Union funded Horizon 2020 projects PARTHENOS
 * Damien Biabiany (developer)
