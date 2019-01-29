@@ -14,7 +14,7 @@ Team
 
 The design and development of the **Standardization Survival Kit** has been carried out the WP4 members and lead by Inria ALMAnaCH.
 
-* Laurent Romary (Project leader) Directeur de Recherche at Inria (team ALMAnaCH (France)), France and director general of DARIAH. He received a PhD degree in computational linguistics in 1989 and his Habilitation in 1999. He carries out research on the modelling of semi-structured documents, with a specific emphasis on texts and linguistic resources. He has been active in standardisation activities with ISO, as chair of committee ISO/TC 37/SC 4 (2002-2014), chair of ISO/TC 37 (2016-) and the Text Encoding Initiative, as member (2001-2011) and chair (2008-2011) of its technical council. He also has a long-standing implication in open science related activities.
+* Laurent Romary (Project Leader) Directeur de Recherche at Inria (France), within the team ALMAnaCH, and former director general of DARIAH (2014-2018). He carries out research on the modelling of semi-structured documents, with a specific emphasis on texts and linguistic resources. He has been active in standardisation activities within ISO committee TC 37 and the Text Encoding Initiative. He has also been working since many years on the advancement of open access.
 
 * Charles Riondet (project management, data modelling) History Ph.D. and Archivist is research Engineer in Digital Humanities at the French Institute for Research in Computer Science and Automation (Inria) in Paris, Member of the Team ALMAnaCH. He is involved in European Union funded Horizon 2020 projects PARTHENOS and EHRI as a metadata and standards specialist, with a focus on the standardization of textual data (XML-TEI), archival metadata (EAD, EAC-CPF) and also research workflows.
 
