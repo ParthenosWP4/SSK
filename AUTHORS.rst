@@ -12,13 +12,13 @@ Within the PARTHENOS infrastructure,  the Work Package 4 (WP4) addressed the sta
 Team
 ----
 
-The design and development of the **Standardization Survival Kit** has been carried out the WP4 members and lead by Inria ALMAnaCH.
+The design and development of the **Standardization Survival Kit** has been carried out by PARTHENOS WP4 members (PIN, CLARIN, KNAW, CNR, CSIC, FORTH, OEAW, MIBACT-ICCU, SISMEL, Academy of Athens, FH Potsdam, Huma-Num, Inria) and lead by Inria (team ALMAnaCH).
 
 * Laurent Romary (Project Leader) Directeur de Recherche at Inria (France), within the team ALMAnaCH, and former director general of DARIAH (2014-2018). He carries out research on the modelling of semi-structured documents, with a specific emphasis on texts and linguistic resources. He has been active in standardisation activities within ISO committee TC 37 and the Text Encoding Initiative. He has also been working since many years on the advancement of open access.
 
 * Charles Riondet (project management, data modelling) History Ph.D. and Archivist is research Engineer in Digital Humanities at the French Institute for Research in Computer Science and Automation (Inria) in Paris, Member of the Team ALMAnaCH. He is involved in European Union funded Horizon 2020 projects PARTHENOS and EHRI as a metadata and standards specialist, with a focus on the standardization of textual data (XML-TEI), archival metadata (EAD, EAC-CPF) and also research workflows.
 
-* Marie Puren (until 2018) (project management, data modelling): Postdoctoral researcher in Digital History at the CNRS' Laboratory for Historical Research - Rhône Alpes (LARHRA), and research associate at the Bibliothèque Nationale de France. She received her PhD in History at the Sorbonne University, and is a lecturer in Digital Humanities at the Ecole Nationale des Chartes and at the Université de Versailles - Saint Quentin. She is also a responsible for the French version of the Programming Historian. Her main research interests are intellectual history, French literature, digital humanities, and digital data modelization and management.
+* Marie Puren (until 2018) (project management, data modelling): Postdoctoral researcher in Digital History at the CNRS' Laboratory for Historical Research - Rhône Alpes (LARHRA), and research associate at the Bibliothèque Nationale de France. She received her PhD in History at the Sorbonne University, and is a lecturer in Digital Humanities at the Ecole Nationale des Chartes and at the Université de Versailles - Saint Quentin. She is also a responsible for the French version of the Programming Historian.
 
 * Dorian Seillier (UX designer)
 
