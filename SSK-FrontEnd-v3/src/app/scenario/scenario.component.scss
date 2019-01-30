@@ -103,13 +103,17 @@
   }
 
   :host /deep/ div.tooltip-inner {
-    background-color: $color-3 !important;
+    background-color: $color-16 !important;
     font-family: $roboto-light !important;
     border: 1px solid  $color-32;
-    color: $color-32;
+    color: $color-3;
     font-size: larger !important;
     font-weight: bold !important;
 
+  }
+
+  .github-icon{
+    width: 1.6rem;
   }
 
   :host /deep/ div.tooltip-inner::before{
@@ -1004,6 +1008,11 @@
       .interested-link{
             margin-left:0px; 
       }
+  }
+  .popover{
+    width:200%;
+    height:250px;    
+    transform: none !important;
   }
   
   

@@ -10,6 +10,7 @@
     .team-title{
         color: #4A4A4A;
         font-family: $avenir-next;
+        font-size: 2rem;
     }
     .presentationText{
         font-family: $roboto-light;
@@ -27,10 +28,9 @@
     }
     
     .role{
-       
         font-family: $avenir_next_ul ;
         display: block;
-       
+        font-size: 1.2rem;
     }
     .author{
         font-family: $avenir-next;
@@ -41,6 +41,12 @@
     .team-bio-part{
         width: 85%;
         margin: 0 auto;
+    }
+    .twitter{
+        height: 1.3rem;
+    }
+    .bio{
+        font-size: 0.9rem;
     }
 }
 

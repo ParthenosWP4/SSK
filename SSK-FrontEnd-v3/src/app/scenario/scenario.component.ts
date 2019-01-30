@@ -1,20 +1,21 @@
-import {ChangeDetectionStrategy, Component, OnInit, ChangeDetectorRef} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild, ChangeDetectorRef, Renderer2, ElementRef} from '@angular/core';
 import {Params, Router, ActivatedRoute } from '@angular/router';
 import {SskService} from '../ssk.service';
 import {Observable} from 'rxjs/Observable';
 import {ElastichsearchService} from '../elastichsearch.service';
 import * as _ from 'lodash';
-import {isArray, isUndefined} from 'util';
+import {isArray, isUndefined, isObject} from 'util';
 import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
 import {environment} from '../../environments/environment';
 import {NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {ModalResourcesComponent} from './modal-resources/modal-resources.component';
+import { IfObservable } from 'rxjs/observable/IfObservable';
 @Component({
   selector: 'app-scenario',
   templateUrl: './scenario.component.html',
   styleUrls: ['./scenario.component.scss'],
 })
-export class ScenarioComponent implements OnInit  {
+export class ScenarioComponent implements OnInit, AfterViewInit {
 
   timelineComponents = {};
   timelines: any;
@@ -47,15 +48,17 @@ export class ScenarioComponent implements OnInit  {
   forImage = environment.forImage;
   quoteIcon = 'quote' ;
   githubIcon = 'github-logo';
-
   resourceBtn = 'RESOURCES (specifications, papers, tutorials, etc.)';
+
+ @ViewChild('authors') public authors: ElementRef;
 
   constructor(
     private sskService: SskService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private elasticServices: ElastichsearchService,
-    private sanitizer: DomSanitizer,
+    private renderer: Renderer2,
+    private elementRef: ElementRef,
     private modalService: NgbModal,
     private cdr: ChangeDetectorRef) {
     this.tagsLabel = this.elasticServices.getTags();
@@ -66,6 +69,8 @@ export class ScenarioComponent implements OnInit  {
     this.border.border = '1px dashed #979797';
     this.scenarioElt =  new Object();
   }
+
+
 
 
   ngOnInit() {
@@ -82,6 +87,8 @@ export class ScenarioComponent implements OnInit  {
         (error) => console.log(error),
         () => { });
   }
+
+  ngAfterViewInit() {}
 
   initializeScenarioElt() {
     this.sskService.checkBackEndAvailability();
@@ -108,6 +115,15 @@ export class ScenarioComponent implements OnInit  {
                   this.elasticServices.addScenario(this.scenarioDetails);
                   if (this.scenarioDetails['id'] === this.scenarioId) {
                     this.scenarioElt = this.scenarioDetails;
+                    if (typeof(this.scenarioElt.author.length) === 'undefined') {
+                      const tem = new Array<any>(); tem.push(this.scenarioElt.author);
+                      this.scenarioElt.author = tem;
+                    }
+                    Observable.of(this.scenarioElt.author).subscribe(
+                      (value) => {
+                        this.setAuthors();
+                      }
+                    );
                     this.setCurrentScenario();
                   }
                 }
@@ -119,6 +135,11 @@ export class ScenarioComponent implements OnInit  {
       this.scenarioElt = _.find(this.elasticServices.getScenarios(), item => {
         return item.id === this.scenarioId;
       });
+      Observable.of(this.scenarioElt.author).subscribe(
+        (value) => {
+          this.setAuthors();
+        }
+      );
       this.setCurrentScenario();
     }
   }
@@ -188,26 +209,6 @@ export class ScenarioComponent implements OnInit  {
       return false;
   }
 
- /* initializeCurrentStep(scenario: any) {
-    this.timelines = $('.cd-horizontal-timeline');
-    this.timelineTotWidth = this.timelines.width();
-    this.left = this.timelineTotWidth / 7;
-    if (!isUndefined(this.scenarioElt.steps) && this.scenarioElt.steps.length > 5) {
-      this.timelineTotWidth = this.timelineTotWidth + this.left * (this.scenarioElt.steps.length - 5);
-    }
-
-    if ( this.timelines.length > 0) {
-      this.initTimeline(this.timelines);
-    }
-    this.timelineTranslate = 0;
-    this.initTimeline(this.timelines);
-    if (scenario['steps'].length !== 0) {
-      this.selectedStep = scenario.steps[this.selectedStep.id - 1];
-      this.selectedStep.ref = this.selectedStep._id;
-      this.updateContent(this.selectedStep, this.selectedStep.position);
-    }
-  }*/
-
 
   setStepMetadata() {
     let temp: any;
@@ -270,53 +271,21 @@ export class ScenarioComponent implements OnInit  {
     }
 
 
-  /*setStepTitleAndDescription() {
-    if (this.selectedStep.head instanceof Array) {
-      this.selectedStep.title = this.sskService.updateText(this.selectedStep.head[0], null);
-    } else {
-      this.selectedStep.title = this.sskService.updateText(this.selectedStep.head, null);
-    }
-    if ( this.selectedStep.desc instanceof Array) {
-      // 'description' is a new field
-      this.selectedStep.description = this.selectedStep.desc[0];
-    } else {
-      this.selectedStep.description = this.selectedStep.desc;
-    }
-    this.stepDesc = this.sskService.updateText(this.selectedStep['description'], 'step');
-  }*/
-
   updateContent(step: any) {
     this.spinner = true;
-    //this.router.navigate(['scenarios', this.scenarioId]);
     if (step.head instanceof Array) {
       step.title = this.sskService.updateText(step.head[0], null);
     } else {
       step.title = this.sskService.updateText(step.head, null);
     }
     if ( step.desc instanceof Array) {
-      // 'description' is a new field
       step.description = this.sskService.updateText(step.desc[0], 'step');
     } else {
       step.description = this.sskService.updateText(step.desc, 'step');
     }
-   //this.stepDesc = this.sskService.updateText(step['description'], 'step');
-    //this.setStepTitleAndDescription();
-    //this.setResources();
    return step;
   }
 
-  /*nextStep() {
-      this.idSelectedStep = this.selectedStep.position ;
-      this.router.navigate(['scenarios', this.scenarioId,  this.idSelectedStep + 1]);
-      this.passSlide();
-      this.selectedStep = _.find(this.scenarioElt.steps, (item) => {
-        return item.position === this.idSelectedStep + 1;
-      });
-      this.selectedStep.ref = this.selectedStep._id;
-      this.setStepTitleAndDescription();
-      this.setStepMetadata()
-      this.setResources();
-  }*/
 
   clean(text: string) {
     return text.replace(/\\n/g, '');
@@ -433,6 +402,43 @@ export class ScenarioComponent implements OnInit  {
     const modalRef = this.modalService.open(ModalResourcesComponent, { size: 'lg' });
     modalRef.componentInstance.step = step;
     modalRef.componentInstance.position = position;
+  }
+
+  setAuthors() {
+    console.log(this.scenarioElt)
+     let i = 0;
+    this.scenarioElt.author.forEach( (elt) => {
+      const authorSpan: HTMLElement = document.createElement('span');
+      const comma = ( ++i < this.scenarioElt.author.length ) ? ',  ' : ' ';
+      this.renderer.addClass(authorSpan, 'pop');
+      this.renderer.setProperty(authorSpan, 'innerHTML', elt.persName + comma );
+       this.renderer.setAttribute(authorSpan, 'data-container', 'body');
+       this.renderer.setAttribute(authorSpan, 'data-toggle', 'popover');
+       this.renderer.setAttribute(authorSpan, 'data-placement', 'right');
+       this.renderer.setAttribute(authorSpan, 'data-content', `<div class="row"><div class="col-3">
+       <img  src= ` + this.forImage + `'/assets/images/usertooltip.svg'"
+         class="pull-right img-fluid main" ></div><div class="col author">` + elt.persName +
+       `<br> <span class="affiliation">` + elt.affiliation + `</span></div></div> </div>`);
+       this.renderer.appendChild(this.authors.nativeElement, authorSpan);
+    });
+    (<any>$('.pop')).popover({ trigger: 'manual' , html: true, animation: false})
+       .on('mouseenter', function () {
+           const _this = this;
+           (<any>$(this)).popover('show');
+           $('.popover').on('mouseleave', function () {
+             (<any>$(_this)).popover('hide');
+           });
+       }).on('mouseleave', function () {
+           const _this = this;
+           setTimeout(function () {
+               if (!$('.popover:hover').length) {
+                 (<any>$(_this)).popover('hide');
+               }
+           }, 40);
+     });
+  }
+  toGithub() {
+    window.open('https://github.com/ParthenosWP4/SSK/blob/master/scenarios/' + this.scenarioId + '.xml', '_blank');
   }
 }
 

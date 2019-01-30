@@ -39,10 +39,10 @@
                   <span  #linkRef *ngIf="elt?.head" class="btn" data-toggle="collapse"  class="item" [attr.data-target]="'#' + trim(item?.term)" aria-expanded="false" [attr.aria-controls]="elt?.head">
                   <i class="fa fa-sub mr-1" aria-hidden="true"></i>{{item?.term}}</span>
                   
-                  <!-- <span class="fa-stack fa-lg">
+                  <span class="fa-stack fa-lg" ngxClipboard (click)="copy(item)"  data-placement="right" tooltip="Click to copy TEI code" containerClass="tagSearchClass">
                     <i class="fa fa-circle fa-stack-2x"></i>
                    <i class="fa fa-code fa-stack-1x fa-inverse"></i>
-                  </span>-->
+                  </span>
                   <div  *ngIf="item?.term" [attr.id]="trim(item?.term)" class="collapse mb-2 ml-5" [ngClass]="(k == 0 && i==0) ? 'show' : ''"   aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
                       {{item?.desc}}
@@ -51,10 +51,10 @@
                 </li>
               </div>
               </ul>
-               <!-- <span *ngIf=" elt?.term || elt?.standard_abbr_name" class="fa-stack fa-lg">
+                <span *ngIf=" elt?.term || elt?.standard_abbr_name" class="fa-stack fa-lg" ngxClipboard (click)="copy(elt)" data-placement="right" tooltip="Click to copy TEI code" containerClass="tagSearchClass">
                     <i class="fa fa-circle fa-stack-2x"></i>
                     <i class="fa fa-code fa-stack-1x fa-inverse"></i>
-                </span>-->
+                </span>
                 <div *ngIf="elt?.standard_abbr_name" [attr.id]="trim(elt?.standard_abbr_name)" class="collapse mb-2 ml-5"  [ngClass]="(k == 0) ? 'show' : ''"  aria-labelledby="headingOne" data-parent="#accordion">
                   <div class="card-body">
                     {{elt?.standard_desc_eng}}

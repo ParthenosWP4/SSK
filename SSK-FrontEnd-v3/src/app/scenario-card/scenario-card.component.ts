@@ -31,7 +31,7 @@ export class ScenarioCardComponent implements OnInit,  AfterViewInit {
 
 
   ngAfterViewInit() {
-    (<any>$('.pop')).popover({ trigger: 'manual' , html: true, animation: false})
+   /* (<any>$('.pop')).popover({ trigger: 'manual' , html: true, animation: false})
       .on('mouseenter', function () {
           const _this = this;
           (<any>$(this)).popover('show');
@@ -45,7 +45,7 @@ export class ScenarioCardComponent implements OnInit,  AfterViewInit {
                 (<any>$(_this)).popover('hide');
               }
           }, 40);
-    });
+    });*/
 }
   ngOnInit() {
     if (this.scenario.title instanceof Array) {

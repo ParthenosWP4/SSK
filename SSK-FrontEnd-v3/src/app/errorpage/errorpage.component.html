@@ -1,6 +1,6 @@
 <div class="background  row py-lg-5">
   <div class="col-lg-12 text-center mb-sm-5">
-    <img class="" src="./assets/images/error-block.png" alt="zok">
+    <img class="" [src]= "forImage + '/assets/images/error-block.png'" alt="zok">
     <div class="centered ">{{title}}</div>
   </div>
     <div class="col-12">
@@ -11,10 +11,10 @@
   </div>
   <div class="col-12">
     <div class="col-lg-6 col-sm-12 col-md-6 error-page">
-      <img class="mx-auto d-block " src="./assets/images/tork.png" alt="Card image cap" *ngIf = '!error'>
+      <img class="mx-auto d-block " [src]= "forImage + '/assets/images/tork.png'" alt="Card image cap" *ngIf = '!error'>
     </div>
     <div class="col-lg-6 col-sm-12 col-md-6 error-page" ngClass = "(error === false)? push-lg-6 :''" >
-      <img class="mx-auto d-block " src="./assets/images/mork.png" alt="Card image cap" *ngIf = 'error' >
+      <img class="mx-auto d-block " [src]= "forImage + '/assets/images/mork.png'" alt="Card image cap" *ngIf = 'error' >
     </div>
   </div>
 </div>

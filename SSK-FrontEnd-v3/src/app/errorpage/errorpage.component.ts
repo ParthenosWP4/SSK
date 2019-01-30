@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SskService} from '../ssk.service';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-errorpage',
@@ -11,6 +12,7 @@ export class ErrorpageComponent implements OnInit {
    title: string;
    message: string;
   error = true;
+  forImage = environment.forImage;
   constructor(private sskServ: SskService) { }
 
   ngOnInit() {

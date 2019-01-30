@@ -45,6 +45,7 @@ import { HighlightPipe } from './highlight.pipe';
 import { ModalResourcesComponent } from './scenario/modal-resources/modal-resources.component';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { TagDirectiveDirective } from './tag-directive.directive';
+import { ClipboardModule } from 'ngx-clipboard';
 
 /*export function dataProviderFactory(provider: ElastichsearchService) {
   return () => provider.loadData();
@@ -97,7 +98,8 @@ import { TagDirectiveDirective } from './tag-directive.directive';
       BrowserAnimationsModule,
       MomentModule,
       ReactiveFormsModule,
-      NgbModule.forRoot()
+      NgbModule.forRoot(),
+      ClipboardModule
     ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

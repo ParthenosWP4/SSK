@@ -15,48 +15,29 @@
                                         </ng-container>
                                 </div>
                         </div>
-                        <div class="row ml-lg-1 headScenario" *ngIf="!spinnerSteps">
+                        <div class="row ml-lg-1 headScenario" >
                                 <div class="col-sm-12 title mt-3 stitle" [innerHtml]="scenarioTitle">
                                 </div>
                                 <div class="w-100"></div>
-                                <div class="col-sm-12 my-2 authors authors-container ">
-                                        <span *ngFor="let author of scenarioElt?.author; let j=index">
-                                                <span *ngIf="j <= (scenarioElt?.author?.length - 1) && j>0">,</span>
-                                                {{author?.persName}}</span>
-                                        <!--<<div class="author " *ngFor=" let author of scenario?.author; let j=index">
-                        ng-template  #authorPop >
-                                <div class="row" >
-                                        <div class="col-3">
-                                        {{author.persName}}
-                                        </div>
-                                        <div class="col">
-                                        {{author.affiliation}}
-                                </div>
-                                <div class="col-1">
-        1
-                                </div>
-                                </div>
-                        </ng-template>
-                        
-                        <span  class="pop" data-container="body" data-toggle="popover" data-placement="top"  triggers="click"
-                        [attr.data-content]='"<div class=\"row\"><div class=\"col-3\"><img  src= "+forImage + "/assets/images/usertooltip.svg class=\"pull-right img-fluid main\" ></div><div class=\"col author\">
-                                "+author.persName+" <br> <span class=\"affiliation\">"+ author.affiliation+"</span></div></div>
-                                </div>"'
-                                data-original-title="" title="">
-                                <span *ngIf = "j <= (scenario?.author?.length - 1) && j>0">,</span>
-                                {{author?.persName}}
-                        </span>
-                        </div>-->
+                                <div  #authors class="col-sm-12 my-2 authors authors-container ">
+                                                <!--<span *ngFor="let author of scenarioElt?.author; let j=index" class="pop" data-container="body" data-toggle="popover" data-placement="right"  triggers="click"
+                                                [attr.data-content]='"<div class=\"row\"><div class=\"col-3\"><img  src= "+forImage + "/assets/images/usertooltip.svg class=\"pull-right img-fluid main\" ></div><div class=\"col author\">
+                                                        "+author.persName+" <br> <span class=\"affiliation\">"+ author.affiliation+"</span></div></div>
+                                                        </div>"'
+                                                    data-original-title="" title="">
+                                                    <span *ngIf="j <= (scenarioElt?.author?.length - 1) && j>0">, </span>
+                                                    {{author?.persName}}
+                                                </span>-->
                                 </div>
                                 <div class="w-100"></div>
                                 <!-- lien  vers github -->
                                 <div class="col-sm-12 col-md-12 col-lg-4 mt-1 icon-update-container">
                                         <span (mouseout)="githubIcon = 'github-logo'" (mouseover)="githubIcon = 'github_hover'"
-                                                class=" mr-2" data-toggle="tooltip" data-toggle="popover" data-content="popover content">
+                                                class=" mr-2" (click)="toGithub()" data-placement="bottom" tooltip="Check this scenario on Github" containerClass="tagSearchClass">
                                                 <img class="p-2" [src]="forImage + '/assets/images/'+ githubIcon + '.svg'" />
                                         </span>
-                                        <span (mouseout)="quoteIcon = 'quote'" (mouseover)="quoteIcon='quote_hover'"
-                                                class=" ml-3" data-toggle="tooltip" data-toggle="popover" data-content="popover content">
+                                        <span (mouseout)="quoteIcon = 'quote'" (mouseover)="quoteIcon='quote_hover'"  
+                                                class=" ml-3" data-placement="bottom" tooltip="Copy the reference of the scenario" containerClass="tagSearchClass">
                                                 <img class="p-2" [src]="forImage + '/assets/images/'+ quoteIcon + '.svg'" />
                                         </span>
 
@@ -89,6 +70,8 @@
                                                                 <div class=" row">
                                                                         <span class="stepTitle">
                                                                                 {{step?.title}}
+                                                                                <a  target="_blank"[href] ="'https://github.com/ParthenosWP4/SSK/blob/master/steps/' + step?.GithubRef + '.xml'" class=" ml-2"  data-placement="bottom" tooltip="Check this step on Github" containerClass="tagSearchClass">
+                                                                                <img class="github-icon" [src]="forImage + '/assets/images/'+ githubIcon + '.svg'" /></a>
                                                                         </span>
                                                                         <!--<span *ngFor="let tag of step.TagList" class="{{tag.cssTag}} tag mt-3 mb-3"
                                                                                 tooltip="{{tag?.name}}" containerClass="tagClass">
@@ -96,17 +79,16 @@
 
                                                                         <span class="mt-1">
                                                                                 <ng-container *ngFor=" let item of step?.metadata; let m = index">
-                                                                                       <!-- <p *ngIf="stepTags[changeTag(item)] !== undefined">
+                                                                                        <!-- <p *ngIf="stepTags[changeTag(item)] !== undefined">
                                                                                                 <span>
                                                                                                         {{item}}
                                                                                                         
                                                                                                 </span>-->
-                                                                                                <span class="tag my-1  mr-2 py-1"
-                                                                                                        [ngClass]="((item?.type === undefined) || ((item?.type).indexOf('standard') !== -1) ) ? 'standard' : item?.type"
-                                                                                                       
-                                                                                                        tooltip="{{((item?.type === undefined) || ((item?.type).indexOf('standard') !== -1) ) ? 'standard' : item?.type + ' - Tadirah'}}"
-                                                                                                        containerClass="tagClass">{{tagShow(item)?.key}}</span>
-                                                                                                <!-- <button type="button" class="btn btn-secondary disabled m-1" *ngFor=" let elt of stepTags[changeTag(item)]?.slice(0,2)" tooltip ="{{'Type: '  +elt?.type +  ' | Source : '+ elt?.source  }}">{{tagShow(elt)?.key}} </button>
+                                                                                        <span class="tag my-1  mr-2 py-1"
+                                                                                                [ngClass]="((item?.type === undefined) || ((item?.type).indexOf('standard') !== -1) ) ? 'standard' : item?.type"
+                                                                                                tooltip="{{((item?.type === undefined) || ((item?.type).indexOf('standard') !== -1) ) ? 'standard' : item?.type + ' - Tadirah'}}"
+                                                                                                containerClass="tagClass">{{tagShow(item)?.key}}</span>
+                                                                                        <!-- <button type="button" class="btn btn-secondary disabled m-1" *ngFor=" let elt of stepTags[changeTag(item)]?.slice(0,2)" tooltip ="{{'Type: '  +elt?.type +  ' | Source : '+ elt?.source  }}">{{tagShow(elt)?.key}} </button>
                                                                                                     <span  *ngIf = "stepTags[changeTag(item)]?.length > 2" class="collapsed text-center" data-toggle="collapse"  [attr.data-target]="'#tag' +m"  aria-expanded="false"> More ...</span>
                                                                                                   </p>
                                                                                                   <p *ngIf = "(stepTags[changeTag(item)] !== undefined) && stepTags[changeTag(item)]?.length > 2"  [attr.id]="'tag' + m" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
@@ -120,7 +102,8 @@
                                                                         <div class="w-100"></div>
                                                                         <div class="stepDescription" [innerHTML]="step?.description"></div>
                                                                         <div class="w-100"></div>
-                                                                        <div class="row btnTimeline" *ngIf="step?.resources?.length > 0" (click)="open(i+1, step)">
+                                                                        <div class="row btnTimeline" *ngIf="step?.resources?.length > 0"
+                                                                                (click)="open(i+1, step)">
                                                                                 <img class="m-3" [src]="forImage + '/assets/images/books-stack.svg'" />
                                                                                 <span class="pt-4">{{resourceBtn}}</span>
                                                                         </div>

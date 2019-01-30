@@ -55,11 +55,7 @@
                                  </div>
                             </ng-template>
                             
-                            <span  class="pop" data-container="body" data-toggle="popover" data-placement="top"  triggers="click"
-                            [attr.data-content]='"<div class=\"row\"><div class=\"col-3\"><img  src= "+forImage + "/assets/images/usertooltip.svg class=\"pull-right img-fluid main\" ></div><div class=\"col author\">
-                                    "+author.persName+" <br> <span class=\"affiliation\">"+ author.affiliation+"</span></div></div>
-                                    </div>"'
-                                data-original-title="" title="">
+                            <span >
                                 <span *ngIf = "j <= (scenario?.author?.length - 1) && j>0">,</span>
                                 {{author?.persName}}
                             </span>

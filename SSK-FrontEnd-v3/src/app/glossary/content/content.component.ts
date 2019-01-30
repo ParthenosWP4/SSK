@@ -5,6 +5,7 @@ import {ElastichsearchService} from '../../elastichsearch.service';
 import * as _ from 'lodash';
 declare var $: any;
 import {DomSanitizer} from '@angular/platform-browser';
+import { ClipboardService } from 'ngx-clipboard';
 
 
 @Component({
@@ -28,7 +29,7 @@ export class ContentComponent implements OnInit, AfterViewInit {
   questionElem: any;
 
   constructor(private  sskServ: SskService, private elastiServ: ElastichsearchService, private router: Router,
-    private renderer: Renderer2, private sanitizer: DomSanitizer) {
+    private renderer: Renderer2, private _clipboardService: ClipboardService) {
     }
 
   ngOnInit() {
@@ -36,6 +37,8 @@ export class ContentComponent implements OnInit, AfterViewInit {
     if (this.urls.length > 3) {
       this.current = this.urls[this.urls.length - 1];
       this.type = this.urls[this.urls.length - 2];
+    } else {
+      this.type = this.urls[this.urls.length - 1];
     }
     this.item = this.sskServ.getGlossarylink();
       this.elastiServ.glossaryChange(this.item).then(
@@ -48,6 +51,7 @@ export class ContentComponent implements OnInit, AfterViewInit {
 
   itemChangedHandler(item: string) {
     this.item = item;
+    this.type = item;
     this.sskServ.setTitle('SSK - ' + _.capitalize(item));
     this.elastiServ.glossaryChange(this.item).then(
       (value) => {
@@ -101,5 +105,22 @@ export class ContentComponent implements OnInit, AfterViewInit {
         }
         });
     }
+  }
+
+  copy(elt: any) {
+    const eltType = (this.type === 'activities') ? 'activity' : this.type.substring(0, this.type.length - 1);
+    let eltKey: string;
+    let eltSource = 'Tadirah';
+    if (elt.standard_abbr_name !== undefined) {
+      eltKey = elt.standard_abbr_name;
+      eltSource = 'ssk';
+    } else {
+      if (eltType === 'discipline') {
+        eltSource = 'AureHAL';
+      }
+      eltKey = elt.term;
+    }
+     const term = '<term key="' + eltKey + '" source="' + eltSource + '" type="' + eltType + '"/>';
+    this._clipboardService.copyFromContent(term);
   }
 }
