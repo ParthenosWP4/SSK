@@ -20,7 +20,7 @@ The design and development of the **Standardization Survival Kit** has been carr
 
 * Marie Puren (until 2018) (project management, data modelling): Postdoctoral researcher in Digital History at the CNRS' Laboratory for Historical Research - Rhône Alpes (LARHRA), and research associate at the Bibliothèque Nationale de France. She received her PhD in History at the Sorbonne University, and is a lecturer in Digital Humanities at the Ecole Nationale des Chartes and at the Université de Versailles - Saint Quentin. She is also a responsible for the French version of the Programming Historian.
 
-* Dorian Seillier (UX designer)
+* Dorian Seillier (UX designer) Master’s degree in Medieval History and in Information Architecture at the ENS de Lyon. He is currently a member of the Team ALMAnaCH at Inria Paris, where he works as a UX Designer / Information Architect.
 
 * Lionel Tadjou (lead developer): Holds a Master Degree in Computer science with major in software engineering. He is currently research engineer at the French National Institute for Computer Science and Applied Mathematic (Inria) in Paris, and member of the ALMAnaCH team where he  works as a lead developer. He is involved in European Union funded Horizon 2020 projects PARTHENOS
 * Damien Biabiany (developer)
