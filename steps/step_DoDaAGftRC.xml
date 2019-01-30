@@ -71,14 +71,14 @@
                		<term key="Schematron" source="ssk" type="standard"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref source="zotero" target="https://www.zotero.org/groups/427927/items/T7672NJ8" type="specification">
+                  <ref source="zotero" target="https://www.zotero.org/groups/427927/items/T7672NJ8" type="spec">
                   	<term type="standard" source="ssk" key="TEI"/>
                   	<term type="standard" source="ssk" key="Schematron"/>
                   	<term key="Annotating" source="http://tadirah.dariah.eu/" type="activity"/>
                   	<term key="Transcription" source="http://tadirah.dariah.eu/" type="activity"/>
                   	DTA 'Base Format' (DTABf)
                   </ref>
-                  <ref source="github" target="https://github.com/deutschestextarchiv/dtabf/" type="specification">
+                  <ref source="github" target="https://github.com/deutschestextarchiv/dtabf/" type="spec">
                   	<term type="standard" source="ssk" key="TEI"/>
                   	<term type="standard" source="ssk" key="Schematron"/>
                   	<term key="Annotating" source="http://tadirah.dariah.eu/" type="activity"/>

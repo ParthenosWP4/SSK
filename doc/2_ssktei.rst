@@ -331,6 +331,12 @@ For each kind of ``<term>``, the values of the attributes ``type``, ``source`` a
 | Disciplines          | discipline| aurehal   | http://ssk.huma-num.fr/#/glossary/disciplines        |
 +----------------------+-----------+-----------+------------------------------------------------------+
 
+NB: The value of the ``key`` attribute must be the exact same string the one displayed on the Glossary page. Use *copy & paste* to avoid trouble.
+
+.. code-block:: xml
+
+  <term type="activity" source="tadirah" target="Encoding"/>
+
 .. _resources:
 
 ``<linkGrp>`` element
@@ -380,7 +386,11 @@ The attributes for ``<ref>`` are ``type``, ``source`` and ``target``.
   * `service`: Curating or hosting service.
 
 * The ``source`` attribute in ``<ref>`` records that the ``target`` refers to a zotero ID. The value of ``source`` is most of the time `zotero`
-* The ``target`` attribute specifies the destination of the reference, i.e. the ID of the Zotero record.
+* The ``target`` attribute specifies the destination of the reference, i.e. the ID of the Zotero record. This ID is last part of the URL of the Zotero online record:
+
+``https://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/BEVAWMPX``
+
+A relatively easy way to quickly get this ID when you just added the resource to zotero is to go to the SSK group page, that lists the recently added items: https://www.zotero.org/groups/427927/ssk-parthenos
 
 Example:
 
