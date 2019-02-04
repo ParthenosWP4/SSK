@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_ner">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Step \"Named-entity recognition\"</title>
+                <author>
+                    <persName>Matej Ďurčo</persName>
+                    <affiliation>OEAW-ACDH</affiliation>
+                </author>
+                <author>
+                    <persName>Tom Gheldof</persName>
+                    <affiliation>KU Leuven, DARIAH-BE</affiliation>
+                </author>
+                <author>
+                    <persName>Hannes Pirker</persName>
+                    <affiliation>OEAW-ACDH</affiliation>
+                </author>
+                <author>
+                    <persName>Gerlinde Schneider</persName>
+                    <affiliation>ZIM-ACDH</affiliation>
+                </author>
+                <sponsor>DARIAH-EU</sponsor>
+            </titleStmt>
+            <publicationStmt>
+                <authority>DARIAH-EU</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/">
+                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                            to this document.</p>
+                    </licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Created from scratch</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <!-- Use only for major changes -->
+            <change/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listEvent>
+                <event type="researchStep">
+                    <head type="stepTitle" xml:lang="en">Named-entity recognition</head>
+                    <desc type="definition" xml:lang="en">Named-entity recognition (NER) identifies
+                        named entities/proper names in a text and classifies them into predefined
+                        classes (e.g., person names, place names, date and time etc.).</desc>
+                    <desc xml:lang="en" type="terms">
+                        <term type="standard" source="standard_list" key="XML"/>
+                        <term type="standard" source="standard_list" key="TEI"/>
+                        <term type="standard" source="standard_list" key="TCF"/>
+                        <term type="standard" source="standard_list" key="LAF"/>
+                        <term type="activity" source="http://tadirah.dariah.eu/" key="annotating"/>
+                    </desc>
+                    <linkGrp type="generalResources">
+                        <ref type="software" source="zotero" target="RX7BRGK8"><!-- Stanford Named Entity Recognizer (NER) -->
+                            <term type="software" key="Stanford NER"/>
+                        </ref>
+                    </linkGrp>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>

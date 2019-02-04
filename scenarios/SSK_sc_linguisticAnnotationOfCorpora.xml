@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario"
+  xml:id="SSK_sc_linguisticAnnotationOfCorpora">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Scenario \"Linguistic annotation of corpora\"</title>
+        <author>
+          <persName>Matej Ďurčo</persName>
+          <affiliation>OEAW-ACDH</affiliation>
+        </author>
+        <author>
+          <persName>Tom Gheldof</persName>
+          <affiliation>KU Leuven, DARIAH-BE</affiliation>
+        </author>
+        <author>
+          <persName>Hannes Pirker</persName>
+          <affiliation>OEAW-ACDH</affiliation>
+        </author>
+        <author>
+          <persName>Gerlinde Schneider</persName>
+          <affiliation>ZIM-ACDH</affiliation>
+        </author>
+        <sponsor>DARIAH-EU</sponsor>
+      </titleStmt>
+      <publicationStmt>
+        <authority>DARIAH-EU</authority>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0/">
+            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+              document.</p>
+          </licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Created from scratch</p>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <listPrefixDef>
+        <prefixDef ident="wp2" matchPattern="(.*?)" replacementPattern="groups/368112">
+          <p>The prefix wp2 needs to be used before resources taken from the <ref
+              target="https://www.zotero.org/groups/368112/parthenos_wp2" type="url">Parthenos WP2
+              Zotero Library</ref>.</p>
+          <p>In the <att>target</att>attribute, the prefix in separated by the Zotero ID by a colon
+            ":". Ex: target="wp2:JHSD76DS"</p>
+        </prefixDef>
+        <prefixDef ident="wp3" matchPattern="(.*?)" replacementPattern="groups/520841">
+          <p>The prefix wp3 needs to be used before resources taken from the <ref
+              target="https://www.zotero.org/groups/520841/parthenos_wp3" type="url">Parthenos WP3
+              Zotero Library</ref>.</p>
+          <p>In the <att>target</att>attribute, the prefix in separated by the Zotero ID by a colon
+            ":". Ex: target="wp2:JHSD76DS"</p>
+        </prefixDef>
+        <prefixDef ident="wp4" matchPattern="(.*?)" replacementPattern="groups/427927">
+          <p>The prefix wp4 needs to be used before resources taken from the <ref
+              target="https://www.zotero.org/groups/427927/parthenos_wp4" type="url">Parthenos WP4
+              Zotero Library</ref>.</p>
+          <p>In the <att>target</att>attribute, the prefix in separated by the Zotero ID by a colon
+            ":". Ex: target="wp2:JHSD76DS"</p>
+        </prefixDef>
+      </listPrefixDef>
+    </encodingDesc>
+    <revisionDesc>
+      <change><!-- Only for major changes: addition of an author, of a step, etc. --></change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div type="researchScenario">
+        <head type="scenarioTitle" xml:lang="en">Linguistic annotation of corpora</head>
+        <desc type="definition" xml:lang="en"> This scenario explains the steps to take to annotate
+          a corpus in order to conduct linguistic and statistical analysis based on it. This
+          scenario wants to provide general information for people starting with linguistic
+          annotation. The aim is to provide a generic scenario with no specific tool in mind: We
+          refer to tools but don't specify how to use them. There are various tools and frameworks
+          to perform the steps in this scenario that can be used depending on the language/s you are
+          working with or your programming environment. A number of tool-boxes for Natural language
+          processing (NLP) exist, which are able to perform several of the annotation steps in an
+          integrated way. These resources are listed below under "Using an existing NLP pipeline".
+          The next step after performing the procedures described in this scenario usually is to put
+          the annotated corpus into a corpus query engine to query and analyze it based on its
+          annotations. Again, some popular query engines already provide a built-in pipeline that is
+          able to perform the basic processing steps in one go, taking most of the burden off the
+          user. </desc>
+        <desc type="terms" xml:lang="en">
+          <term source="aurehal" type="discipline">Linguistics</term>
+          <term key="Cluster Analysis" source="Tadirah" type="technique"/>
+          <term key="Collocation Analysis" source="Tadirah" type="technique"/>
+          <term key="Concordancing" source="Tadirah" type="technique"/>
+          <term key="Encoding" source="Tadirah" type="technique"/>
+          <term key="Named Entity Recognition" source="Tadirah" type="technique"/>
+          <term key="Pattern Recognition" source="Tadirah" type="technique"/>
+          <term key="Sequence Alignment" source="Tadirah" type="technique"/>
+          <term key="POS-Tagging" source="Tadirah" type="technique"/>
+          <term key="text" source="Tadirah" type="object"/>
+        </desc>
+        <figure type="image">
+          <head>Quranic Arabic Grammar - dependency syntax tree from the Quranic Arabic Corpus</head>
+          <graphic
+            url="https://upload.wikimedia.org/wikipedia/commons/5/5c/Quranic-arabic-corpus.png"/>
+          <figDesc>Photo by Arabismo (Creative Commons Attribution 3.0 Unported)</figDesc>
+        </figure>
+        <listEvent>
+          <event ref="step_tokenizing" type="researchStep" xml:id="s1"/>
+          <event ref="step_posTagging" type="researchStep" xml:id="s2"/>
+          <event ref="step_lemmatizing" type="researchStep" xml:id="s3"/>
+          <event ref="step_stemming" type="researchStep" xml:id="s4"/>
+          <event ref="step_ner" type="researchStep" xml:id="s5"/>
+          <event ref="step_manualAnnotation" type="researchStep" xml:id="s6"/>
+          <event ref="step_nlpPipeline" type="researchStep" xml:id="s7"/>
+        </listEvent>
+      </div>
+    </body>
+  </text>
+</TEI>
