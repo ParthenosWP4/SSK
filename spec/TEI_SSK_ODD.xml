@@ -562,14 +562,18 @@
               </attDef>
             </attList>
           </elementSpec>
+         
           <elementSpec ident="desc" mode="change">
             <classes mode="change">
               <!--2017-07-17: <desc> is now member of the class att.combinable, i.e., can have @mode for attribute. In the SSK,
                         it is used when a scenario uses a step, but want to add additional information, or change it-->
               <memberOf key="att.combinable"/>
+              <memberOf key="model.pLike"/>
             </classes>
             <content>
               <alternate minOccurs="0" maxOccurs="unbounded">
+                <!-- Allow <p> in <desc>. -->
+                <elementRef key="p" minOccurs="0"/>
                 <textNode/>
                 <elementRef key="list" minOccurs="0"/>
                 <elementRef key="ref" minOccurs="0"/>
@@ -582,7 +586,7 @@
               <constraint>
                 <sch:rule context="tei:desc[@type = 'definition'][parent::div]">
                   <sch:assert test="string-length(.) &gt; 299" role="error"> The description is a
-                    bit too short and should be around 300 characters long minimum. Your despcrition is
+                    bit too short and should be around 300 characters long minimum. Your description is
                       <sch:value-of select="string-length(.)"/> characters long. Note that you can
                     use the following TEI tags: &lt;list&gt;, &lt;item&gt; and
                     &lt;ref&gt;.</sch:assert>
@@ -742,6 +746,20 @@
               <!-- @xml:lang is required -->
               <attDef ident="xml:lang" usage="req" mode="change"/>
             </attList>
+          </elementSpec>
+          
+          <elementSpec ident="p" mode="change">
+            <!-- Constraint the possibilities within <p> -->
+            <content>
+              <alternate minOccurs="0" maxOccurs="unbounded">
+                <textNode/>
+                <elementRef key="list" minOccurs="0"/>
+                <elementRef key="ref" minOccurs="0"/>
+                <elementRef key="abbr" minOccurs="0"/>
+                <elementRef key="expan" minOccurs="0"/>
+                <elementRef key="term" minOccurs="0"/>
+              </alternate>
+            </content>
           </elementSpec>
           
           <elementSpec ident="graphic" mode="change">

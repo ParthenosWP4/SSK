@@ -37,18 +37,18 @@
     <body>
       <div type="scenario">
         <head type="scenarioTitle" xml:lang="en">Project-centered EAD customization</head>
-        <desc type="definition" xml:lang="en">TEI ODD can be used to document data models external
-          to the TEI environment. Several projects working with archival standards (in particular
-          EAD) use it as well. PARTHENOS created and maintain an instance of the EAD specification
-          in ODD, that can be used to create project oriented customizations. <list>
-            <item>
-              <list>
-                <item>Item 1 is a list</item>
-                <item>Item 2 de la 2e liste</item>
-              </list>
-            </item>
-            <item>Item 2</item>
-          </list></desc>
+        <desc type="definition" xml:lang="en"><p>TEI ODD can be used to document data models
+            external to the TEI environment. Several projects working with archival standards (in
+            particular EAD) use it as well. PARTHENOS created and maintain an instance of the EAD
+            specification in ODD, that can be used to create project oriented customizations. <list>
+              <item>
+                <list>
+                  <item>Item 1 is a list</item>
+                  <item>Item 2 de la 2e liste</item>
+                </list>
+              </item>
+              <item>Item 2</item>
+            </list></p></desc>
         <desc type="terms" xml:lang="en">
           <term source="aureHAL" type="discipline">Library and information sciences</term>
           <term source="aureHAL" type="discipline">Cultural heritage and museology</term>

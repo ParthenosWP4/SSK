@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2019-01-28T15:39:02Z. .
+Schema generated from ODD source 2019-02-06T15:41:19Z. .
 TEI Edition: Version 3.4.0. Last updated on
 	23rd July 2018, revision 1fa0b54
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.4.0/
@@ -134,7 +134,7 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.4.0/
             </choice>
          </zeroOrMore>
       </element>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e70597-constraint">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e70603-constraint">
          <rule context="tei:content">
             <report test="descendant::*[not(namespace-uri(.) =               ('http://relaxng.org/ns/structure/1.0', 'http://www.tei-c.org/ns/1.0'))]">content descendants must be in the
               namespaces
@@ -183,7 +183,7 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.4.0/
             </choice>
          </zeroOrMore>
       </element>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e71855-constraint">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e71861-constraint">
          <rule context="tei:datatype">
             <report test="descendant::*[not(namespace-uri(.) =               ('http://relaxng.org/ns/structure/1.0', 'http://www.tei-c.org/ns/1.0'))]">datatype descendants must be in the
               namespaces
@@ -2723,22 +2723,28 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
    <define name="model.pLike">
       <choice>
          <ref name="p"/>
+         <ref name="desc"/>
          <ref name="ab"/>
       </choice>
    </define>
    <define name="model.pLike_alternation">
       <choice>
          <ref name="p"/>
+         <ref name="desc"/>
          <ref name="ab"/>
       </choice>
    </define>
    <define name="model.pLike_sequence">
       <ref name="p"/>
+      <ref name="desc"/>
       <ref name="ab"/>
    </define>
    <define name="model.pLike_sequenceOptional">
       <optional>
          <ref name="p"/>
+      </optional>
+      <optional>
+         <ref name="desc"/>
       </optional>
       <optional>
          <ref name="ab"/>
@@ -2749,12 +2755,18 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <ref name="p"/>
       </zeroOrMore>
       <zeroOrMore>
+         <ref name="desc"/>
+      </zeroOrMore>
+      <zeroOrMore>
          <ref name="ab"/>
       </zeroOrMore>
    </define>
    <define name="model.pLike_sequenceRepeatable">
       <oneOrMore>
          <ref name="p"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="desc"/>
       </oneOrMore>
       <oneOrMore>
          <ref name="ab"/>
@@ -3738,7 +3750,26 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
    <define name="p">
       <element name="p">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(paragraph) marks paragraphs in prose. [3.1. Paragraphs 7.2.5. Speech Contents]</a:documentation>
-         <ref name="macro.paraContent"/>
+         <zeroOrMore>
+            <choice>
+               <text/>
+               <optional>
+                  <ref name="list"/>
+               </optional>
+               <optional>
+                  <ref name="ref"/>
+               </optional>
+               <optional>
+                  <ref name="abbr"/>
+               </optional>
+               <optional>
+                  <ref name="expan"/>
+               </optional>
+               <optional>
+                  <ref name="term"/>
+               </optional>
+            </choice>
+         </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="TEI_SSK-p-abstractModel-structure-p-constraint-report-4">
             <rule context="tei:p">
@@ -3949,6 +3980,9 @@ Suggested values include: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] for
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(description) contains a brief description of the object documented by its parent element, typically a documentation element or an entity. [22.4.1. Description of Components]</a:documentation>
          <zeroOrMore>
             <choice>
+               <optional>
+                  <ref name="p"/>
+               </optional>
                <text/>
                <optional>
                   <ref name="list"/>
@@ -3973,7 +4007,7 @@ Suggested values include: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] for
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       context="tei:desc[@type = 'definition'][parent::div]">
                   <sch:assert test="string-length(.) &gt; 299" role="error"> The description is a
-                    bit too short and should be around 300 characters long minimum. Your despcrition is
+                    bit too short and should be around 300 characters long minimum. Your description is
                       <sch:value-of select="string-length(.)"/> characters long. Note that you can
                     use the following TEI tags: &lt;list&gt;, &lt;item&gt; and
                     &lt;ref&gt;.</sch:assert>
