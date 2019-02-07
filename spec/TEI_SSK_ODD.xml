@@ -291,6 +291,7 @@
               <!--2017-07-17: <event> is now member of the class att.combinable, i.e., can have @mode for attribute. In the SSK,
                         it is used when a scenario uses a step, but want to add additional information, or change it-->
               <memberOf key="att.combinable"/>
+              <memberOf key="model.global"/>
             </classes>
             <content>
               <!-- Allow empty <event> elements -->
@@ -303,6 +304,7 @@
                   <classRef key="model.biblLike"/>
                   <elementRef key="linkGrp"/>
                   <elementRef key="link"/>
+                  <elementRef key="figure"/>
                 </alternate>
                 <elementRef key="event" minOccurs="0" maxOccurs="unbounded"/>
                 <!-- 2017-11-15: Add param as child of event-->

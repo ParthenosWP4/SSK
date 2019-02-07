@@ -1,242 +1,267 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../spec/out/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario" xml:id="SSK_sc_creatingMetadata">
-   <teiHeader>
-      <fileDesc>
-         <titleStmt>
-            <title>Creation of Metadata scenario</title>
-            <author>
-               <persName>Antonio Davide Madonna</persName>
-               <affiliation>MIBACT-ICCU</affiliation>
-            </author>
-            <sponsor>PARTHENOS</sponsor>
-         </titleStmt>
-         <publicationStmt>
-            <authority/>
-            <availability>
-               <licence target="http://creativecommons.org/licenses/by/4.0/">
-                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
-                     this document.</p>
-               </licence>
-            </availability>
-         </publicationStmt>
-         <sourceDesc>
-            <p>This Google doc:
-               https://docs.google.com/document/d/1K_JSaML4bjXPNs83JB00UVnO8OpniwJiX4UkYeifCAw/edit#heading=h.26xtcwgdha6a
-            </p>
-         </sourceDesc>
-      </fileDesc>
-      <encodingDesc>
-         <listPrefixDef>
-            <prefixDef ident="wp2" matchPattern="(.*?)" replacementPattern="groups/368112">
-               <p>The prefix wp2 needs to be used before resources taken from the <ref
-                     target="https://www.zotero.org/groups/368112/parthenos_wp2" type="url"
-                     >Parthenos WP2 Zotero Library</ref> .</p>
-               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a
-                  colon ":". Ex: target="wp2:JHSD76DS"</p>
-            </prefixDef>
-            <prefixDef ident="wp3" matchPattern="(.*?)" replacementPattern="groups/520841">
-               <p>The prefix wp3 needs to be used before resources taken from the <ref
-                     target="https://www.zotero.org/groups/520841/parthenos_wp3" type="url"
-                     >Parthenos WP3 Zotero Library</ref> .</p>
-               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a
-                  colon ":". Ex: target="wp2:JHSD76DS"</p>
-            </prefixDef>
-            <prefixDef ident="wp4" matchPattern="(.*?)" replacementPattern="groups/427927">
-               <p>The prefix wp4 needs to be used before resources taken from the <ref
-                     target="https://www.zotero.org/groups/427927/parthenos_wp4" type="url"
-                     >Parthenos WP4 Zotero Library</ref> .</p>
-               <p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a
-                  colon ":". Ex: target="wp2:JHSD76DS"</p>
-            </prefixDef>
-         </listPrefixDef>
-      </encodingDesc>
-      <revisionDesc>
-         <change/>
-      </revisionDesc>
-   </teiHeader>
-   <text>
-      <body>
-         <div type="reseachScenario" xml:id="sc_creatingMetadata">
-            <head type="scenarioTitle" xml:lang="en">Creating Metadata</head>
-            <desc type="definition" xml:lang="en">Scenario consisting of a step-by-step guide to
-               make metadata in a specific application profile from data structured in different
-               manners</desc>
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Creation of Metadata scenario</title>
+        <author>
+          <persName>Antonio Davide Madonna</persName>
+          <affiliation>MIBACT-ICCU</affiliation>
+        </author>
+        <sponsor>PARTHENOS</sponsor>
+      </titleStmt>
+      <publicationStmt>
+        <authority/>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0/">
+            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+              document.</p>
+          </licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>This Google doc:
+          https://docs.google.com/document/d/1K_JSaML4bjXPNs83JB00UVnO8OpniwJiX4UkYeifCAw/edit#heading=h.26xtcwgdha6a
+        </p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change/>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div type="reseachScenario" xml:id="sc_creatingMetadata">
+        <head type="scenarioTitle" xml:lang="en">Creating Metadata</head>
+        <desc type="definition" xml:lang="en">Scenario consisting of a step-by-step guide to make
+          metadata in a specific application profile from data structured in different
+          manners</desc>
+        <desc type="terms" xml:lang="en">
+          <term key="Metadata" source="TaDiRAH" type="object"/>
+          <term key="Standards" source="TaDiRAH" type="object"/>
+          <term key="Mapping" source="TaDiRAH" type="technique"/>
+          <term key="Creation" source="TaDiRAH" type="activity"/>
+          <term key="Conversion" source="TaDiRAH" type="activity"/>
+        </desc>
+        <figure type="image">
+          <head>Mapping schema</head>
+          <graphic
+            url="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Figure-1-A-schema-mapping-in-Clio.png/640px-Figure-1-A-schema-mapping-in-Clio.png"/>
+          <figDesc>example of mapping between original data and a specific application profile
+          </figDesc>
+        </figure>
+        <listEvent>
+          <event type="researchScenario" ref="SSK_sc_digitization" subtype="preliminary">
+            <biblFull>
+              <titleStmt>
+                <!-- Title of the tei document, not title of the scenario -->
+                <title>Digitization scenario</title>
+                <author>
+                  <persName>Frank Uiterwaal</persName>
+                  <affiliation>NIOD-KNAW</affiliation>
+                </author>
+                <author>
+                  <persName>Reinier de Valk</persName>
+                  <affiliation>DANS-KNAW</affiliation>
+                </author>
+                <sponsor>PARTHENOS</sponsor>
+              </titleStmt>
+              <publicationStmt>
+                <authority/>
+                <availability>
+                  <licence target="http://creativecommons.org/licenses/by/4.0/">
+                    <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
+                      this document.</p>
+                  </licence>
+                </availability>
+              </publicationStmt>
+            </biblFull>
+            <head type="scenarioTitle" xml:lang="en">Digitizing textual material</head>
+            <desc type="definition" xml:lang="en">The digitisation process of original objects lies
+              at the core of many activities in the digital humanities field. The way in which a
+              source is digitised, determines to a large extent what kind of information can be
+              gathered from this virtual replica. While there are many complimentary processes which
+              can enrich the the object (metadating, adding augmented layers etc.), these data will
+              build upon the digital fascimile.</desc>
             <desc type="terms" xml:lang="en">
-               <term key="Metadata" source="TaDiRAH" type="object"/>
-               <term key="Standards" source="TaDiRAH" type="object"/>
-               <term key="Mapping" source="TaDiRAH" type="technique"/>
-               <term key="Creation" source="TaDiRAH" type="activity"/>
-               <term key="Conversion" source="TaDiRAH" type="activity"/>
+              <term source="aureHAL" type="discipline" key="Social Anthropology and ethnology">Social Anthropology and ethnology</term>
+              <term source="aureHAL" type="discipline" key="History">History</term>
+              <term source="aureHAL" type="discipline" key="Philosophy and Sociology of Sciences">Philosophy and Sociology of Sciences</term>
+              <term source="aureHAL" type="discipline" key="Library and information sciences">Library and information sciences</term>
+              <term key="Data" source="TaDiRAH" type="object"/>
+              <term key="Image" source="TaDiRAH" type="object"/>
+              <term key="Literature" source="TaDiRAH" type="object"/>
+              <term key="Manuscript" source="TaDiRAH" type="object"/>
+              <term key="Sheet Music" source="TaDiRAH" type="object"/>
+              <term key="Text" source="TaDiRAH" type="object"/>
+              <term key="Text Bearing Objects" source="TaDiRAH" type="object"/>
+              <term key="Scanning" source="TaDiRAH" type="technique"/>
+              <term key="Transcription" source="TaDiRAH" type="technique"/>
             </desc>
             <figure type="image">
-               <head>Mapping schema</head>
-               <graphic
-                  url="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Figure-1-A-schema-mapping-in-Clio.png/640px-Figure-1-A-schema-mapping-in-Clio.png"/>
-               <figDesc>example of mapping between original data and a specific application profile
-               </figDesc>
+              <head>Digitisation station</head>
+              <graphic url="https://i.ytimg.com/vi/CmONh1F_atk/maxresdefault.jpg"/>
+              <figDesc/>
             </figure>
-            <listEvent>
-               <event ref="step_1_creating_metadata_scenario" type="researchStep" xml:id="s1">
-                  <biblFull>
-                     <fileDesc>
-                        <titleStmt>
-                           <title>Step "Select Data (or existing Metadata) to be transformed in
-                              Metadata"</title>
-                           <author>
-                              <persName>Antonio Davide Madonna</persName>
-                              <affiliation>MIBACT-ICCU</affiliation>
-                           </author>
-                        </titleStmt>
-                        <publicationStmt>
-                           <authority>Parthenos</authority>
-                           <availability>
-                              <licence target="http://creativecommons.org/licenses/by/4.0/">
-                                 <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0)
-                                    Licence applies to this document.</p>
-                              </licence>
-                           </availability>
-                        </publicationStmt>
-                        <sourceDesc>
-                           <p>Created from scratch</p>
-                        </sourceDesc>
-                     </fileDesc>
-                     <!-- <profileDesc> element TO BE ADDED TO ALL INCLUDED STEP FILES for the API : It means we need to rebuild each time the URL-->
-                     <profileDesc>
-                        <creation>The original document describing this step is the following:
-                           https://github.com/ParthenosWP4/SSK/blob/master/steps/step_1_creating_metadata_scenario.xml</creation>
-                     </profileDesc>
-                  </biblFull>
-                  <!-- The content of the <event> element -->
-                  <head xml:lang="en">Select Data (or existing Metadata) to be transformed in
-                     Metadata</head>
-                  <desc type="definition" xml:lang="en">This step describes Data (or Metadata)
-                     selection process, based on predefined criteria: format, homogeneity,
-                     implemented fields, etc. etc.</desc>
-                  <desc type="definition" xml:lang="fr"/>
-                  <desc type="term" xml:lang="en">
-                     <term key="http://tadirah.dariah.eu/vocab/index.php?tema=25&amp;/4_analysis"
-                        source="http://tadirah.dariah.eu/" type="activity"/>
-                  </desc>
-                  <linkGrp type="generalResources">
-                     <ref source="zotero" subtype="standard" target="wp2:D59ARI5T"
-                        type="specification">
-                        <term key="Metadata" source="standard_list" type="standard"/>
-                        <!-- In the  <ref>, we have the <biblStruct>, taken from the zotero API query.
+          </event>
+          <event ref="step_1_creating_metadata_scenario" type="researchStep" xml:id="s1">
+            <biblFull>
+              <fileDesc>
+                <titleStmt>
+                  <title>Step "Select Data (or existing Metadata) to be transformed in
+                    Metadata"</title>
+                  <author>
+                    <persName>Antonio Davide Madonna</persName>
+                    <affiliation>MIBACT-ICCU</affiliation>
+                  </author>
+                </titleStmt>
+                <publicationStmt>
+                  <authority>Parthenos</authority>
+                  <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/">
+                      <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+                        to this document.</p>
+                    </licence>
+                  </availability>
+                </publicationStmt>
+                <sourceDesc>
+                  <p>Created from scratch</p>
+                </sourceDesc>
+              </fileDesc>
+              <!-- <profileDesc> element TO BE ADDED TO ALL INCLUDED STEP FILES for the API : It means we need to rebuild each time the URL-->
+              <profileDesc>
+                <creation>The original document describing this step is the following:
+                  https://github.com/ParthenosWP4/SSK/blob/master/steps/step_1_creating_metadata_scenario.xml</creation>
+              </profileDesc>
+            </biblFull>
+            <!-- The content of the <event> element -->
+            <head xml:lang="en">Select Data (or existing Metadata) to be transformed in
+              Metadata</head>
+            <desc type="definition" xml:lang="en">This step describes Data (or Metadata) selection
+              process, based on predefined criteria: format, homogeneity, implemented fields, etc.
+              etc.</desc>
+            <desc type="definition" xml:lang="fr"/>
+            <desc type="term" xml:lang="en">
+              <term key="http://tadirah.dariah.eu/vocab/index.php?tema=25&amp;/4_analysis"
+                source="http://tadirah.dariah.eu/" type="activity"/>
+            </desc>
+            <linkGrp type="generalResources" xml:base="http://zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+              <ref source="zotero" subtype="standard" target="2A578PYX" type="specification">
+                <term key="Metadata" source="standard_list" type="standard"/>
+                <!-- In the  <ref>, we have the <biblStruct>, taken from the zotero API query.
                         We remove the new namespace ns1 and the id. -->
-                        <!--<biblStruct type="conferencePaper" xmlns:ns1="http://www.w3.org/XML/1998/namespace" ns1:id="Arranz2012" corresp="http://zotero.org/groups/368112/items/D59ARI5T">-->
-                        <biblStruct type="conferencePaper"
-                           corresp="http://zotero.org/groups/368112/items/D59ARI5T">
-                           <analytic>
-                              <title level="a">Describing LRs with Metadata: Towards Flexibility and
-                                 Interoperability in the Documentation of LR</title>
-                           </analytic>
-                           <monogr>
-                              <title level="m">LREC 2012, Eighth International Conference on
-                                 Language Resources and Evaluation</title>
-                              <title type="conferenceName">LREC 2012, Eighth International
-                                 Conference on Language Resources and Evaluation</title>
-                              <editor>
-                                 <forename>Victoria</forename>
-                                 <surname>Arranz</surname>
-                              </editor>
-                              <editor>
-                                 <forename>Daan</forename>
-                                 <surname>Broeder</surname>
-                              </editor>
-                              <editor>
-                                 <forename>Bertrand</forename>
-                                 <surname>Gaiffe</surname>
-                              </editor>
-                              <editor>
-                                 <forename>Maria</forename>
-                                 <surname>Gavrilidou</surname>
-                              </editor>
-                              <editor>
-                                 <forename>Monica</forename>
-                                 <surname>Monachini</surname>
-                              </editor>
-                              <editor>
-                                 <forename>Thorsten</forename>
-                                 <surname>Trippel</surname>
-                              </editor>
-                              <imprint>
-                                 <pubPlace>Istanbul, Turkey</pubPlace>
-                                 <date>2012</date>
-                                 <note type="url"
-                                    >http://www.lrec-conf.org/proceedings/lrec2012/workshops/11.LREC2012%20Metadata%20Proceedings.pdf</note>
-                              </imprint>
-                           </monogr>
-                        </biblStruct>
-                     </ref>
-                     <ref source="zotero" subtype="standard" target="wp2:NDW392WD"
-                        type="documentation">
-                        <term key="Metadata" source="standard_list" type="standard"/>
-                        <biblStruct type="conferencePaper"
-                           corresp="http://zotero.org/groups/368112/items/NDW392WD">
-                           <analytic>
-                              <title level="a">Reusing CMDI components for a textCorpusProfile -
-                                 towards a generic textCorpusProfile</title>
-                              <author>
-                                 <forename>Lene</forename>
-                                 <surname>Offersgaard</surname>
-                              </author>
-                              <author>
-                                 <forename>Dorte Haltrup</forename>
-                                 <surname>Hansen</surname>
-                              </author>
-                           </analytic>
-                           <monogr>
-                              <title type="conferenceName">Selected Papers from the CLARIN 2014
-                                 Conference</title>
-                              <imprint>
-                                 <pubPlace>Soesterberg, The Netherlands</pubPlace>
-                                 <date>2014</date>
-                                 <note type="url"
-                                    >http://www.clarin.eu/sites/default/files/cac2014_submission_18_0.pdf</note>
-                              </imprint>
-                           </monogr>
-                        </biblStruct>
-                     </ref>
-                     <ref source="zotero" subtype="standard" target="wp2:MAAJ25EV"
-                        type="documentation">
-                        <term key="Metadata" source="standard_list" type="standard"/>
-                        <biblStruct type="webpage"
-                           corresp="http://zotero.org/groups/368112/items/MAAJ25EV">
-                           <analytic>
-                              <title level="a">World Digital Library - Content Workflow</title>
-                              <author>
-                                 <name>WDL Content Selection Committee</name>
-                              </author>
-                           </analytic>
-                           <monogr>
-                              <title level="m">WDL</title>
-                              <imprint>
-                                 <date/>
-                                 <note type="accessed">2015-07-12T13:19:10Z</note>
-                                 <note type="url">http://project.wdl.org/content/</note>
-                                 <!-- The abstract is not available from the TEI output of the API. We need to fetch it from another output format -->
-                                 <note type="abstract">This page walks you through the delivery and
-                                    processing workflow for partners. In addition to specific steps
-                                    that partners should follow, WDL has provided links to resources
-                                    that can help you prepare materials.</note>
-                              </imprint>
-                           </monogr>
-                        </biblStruct>
-                     </ref>
-                  </linkGrp>
-               </event>
-               <event ref="step_2_defining_responsabilities_and_policies" type="researchStep"
-                  xml:id="s2"/>
-               <event ref="step_3_adopting_standard" type="researchStep" xml:id="s3"/>
-               <event ref="step_4_metadata_enrichment" type="researchStep" xml:id="s4"/>
-               <event ref="step_5_mapping_data" type="researchStep" xml:id="s5"/>
-               <event ref="step_6_creating_or_converting_metadata_in_a_standard_format"
-                  type="researchStep" xml:id="s6"/>
-               <event ref="step_7_quality_checking" type="researchStep" xml:id="s7"/>
-               <event ref="step_8_applying_license" type="researchStep" xml:id="s8"/>
-            </listEvent>
-         </div>
-      </body>
-   </text>
+                <!--<biblStruct type="conferencePaper" xmlns:ns1="http://www.w3.org/XML/1998/namespace" ns1:id="Arranz2012" corresp="http://zotero.org/groups/368112/items/D59ARI5T">-->
+                <biblStruct type="conferencePaper"
+                  corresp="http://zotero.org/groups/427927/ssk-parthenos/items/itemKey/2A578PYX">
+                  <analytic>
+                    <title level="a">Describing LRs with Metadata: Towards Flexibility and
+                      Interoperability in the Documentation of LR</title>
+                  </analytic>
+                  <monogr>
+                    <title level="m">LREC 2012, Eighth International Conference on Language
+                      Resources and Evaluation</title>
+                    <title type="conferenceName">LREC 2012, Eighth International Conference on
+                      Language Resources and Evaluation</title>
+                    <editor>
+                      <forename>Victoria</forename>
+                      <surname>Arranz</surname>
+                    </editor>
+                    <editor>
+                      <forename>Daan</forename>
+                      <surname>Broeder</surname>
+                    </editor>
+                    <editor>
+                      <forename>Bertrand</forename>
+                      <surname>Gaiffe</surname>
+                    </editor>
+                    <editor>
+                      <forename>Maria</forename>
+                      <surname>Gavrilidou</surname>
+                    </editor>
+                    <editor>
+                      <forename>Monica</forename>
+                      <surname>Monachini</surname>
+                    </editor>
+                    <editor>
+                      <forename>Thorsten</forename>
+                      <surname>Trippel</surname>
+                    </editor>
+                    <imprint>
+                      <pubPlace>Istanbul, Turkey</pubPlace>
+                      <date>2012</date>
+                      <note type="url"
+                        >http://www.lrec-conf.org/proceedings/lrec2012/workshops/11.LREC2012%20Metadata%20Proceedings.pdf</note>
+                    </imprint>
+                  </monogr>
+                </biblStruct>
+              </ref>
+              <ref source="zotero" subtype="standard" target="JXWHSBPE" type="documentation">
+                <term key="Metadata" source="standard_list" type="standard"/>
+                <biblStruct type="conferencePaper"
+                  corresp="http://zotero.org/groups/427927/ssk-parthenos/items/JXWHSBPE">
+                  <analytic>
+                    <title level="a">Reusing CMDI components for a textCorpusProfile - towards a
+                      generic textCorpusProfile</title>
+                    <author>
+                      <forename>Lene</forename>
+                      <surname>Offersgaard</surname>
+                    </author>
+                    <author>
+                      <forename>Dorte Haltrup</forename>
+                      <surname>Hansen</surname>
+                    </author>
+                  </analytic>
+                  <monogr>
+                    <title type="conferenceName">Selected Papers from the CLARIN 2014
+                      Conference</title>
+                    <imprint>
+                      <pubPlace>Soesterberg, The Netherlands</pubPlace>
+                      <date>2014</date>
+                      <note type="url"
+                        >http://www.clarin.eu/sites/default/files/cac2014_submission_18_0.pdf</note>
+                    </imprint>
+                  </monogr>
+                </biblStruct>
+              </ref>
+              <ref source="zotero" subtype="standard" target="V2T2YJLL" type="documentation">
+                <term key="Metadata" source="standard_list" type="standard"/>
+                <biblStruct type="webpage" corresp="http://zotero.org/groups/427927/ssk-parthenos/items/V2T2YJLL">
+                  <analytic>
+                    <title level="a">World Digital Library - Content Workflow</title>
+                    <author>
+                      <name>WDL Content Selection Committee</name>
+                    </author>
+                  </analytic>
+                  <monogr>
+                    <title level="m">WDL</title>
+                    <imprint>
+                      <date/>
+                      <note type="accessed">2015-07-12T13:19:10Z</note>
+                      <note type="url">http://project.wdl.org/content/</note>
+                      <!-- The abstract is not available from the TEI output of the API. We need to fetch it from another output format -->
+                      <note type="abstract">This page walks you through the delivery and processing
+                        workflow for partners. In addition to specific steps that partners should
+                        follow, WDL has provided links to resources that can help you prepare
+                        materials.</note>
+                    </imprint>
+                  </monogr>
+                </biblStruct>
+              </ref>
+            </linkGrp>
+          </event>
+          <!-- same thing for all steps -->
+          <event ref="step_2_defining_responsabilities_and_policies" type="researchStep" xml:id="s2"/>
+          <event ref="step_3_adopting_standard" type="researchStep" xml:id="s3"/>
+          <event ref="step_4_metadata_enrichment" type="researchStep" xml:id="s4"/>
+          <event ref="step_5_mapping_data" type="researchStep" xml:id="s5"/>
+          <event ref="step_6_creating_or_converting_metadata_in_a_standard_format"
+            type="researchStep" xml:id="s6"/>
+          <event ref="step_7_quality_checking" type="researchStep" xml:id="s7"/>
+          <event ref="step_8_applying_license" type="researchStep" xml:id="s8"/>
+          <!-- For <event type="researchScenario" ref="" subtype="followUp">, same pattern than the preliminary scenario -->
+        </listEvent>
+      </div>
+    </body>
+  </text>
 </TEI>

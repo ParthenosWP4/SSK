@@ -42,29 +42,31 @@
         <event type="researchStep">
           <head type="stepTitle" xml:lang="en">Describe the artwork</head>
           <desc type="definition" xml:lang="en"><list>
-              <item>Description of the object/monument identity: The title and a short descrption
+              <item>Description of the object/monument identity: The title and a short description
                 and context/known history of the artwork/monument are included. Additional
                 information on the artwork can be also included or linked such as inventory number,
                 photograph(s) and physical dimensions.</item>
               <item>Location of the Site / Museum: Location of the permanent position/storage of the
                 artwork/monument</item>
               <item>Owner of the object / Scholar - keeper: Information about the owner or the
-                keeper or scholar with permission for analysis.</item>
+                keeper or scholar owing permission for analysis.</item>
               <item>Date/period: Information about the date or period that the artwork/monument was
                 created/constructed including information about the creator.</item>
-              <item>Type of object: Information about the type of the object such us polychromy on
+              <item>Type of object: Information about the type of the object such as polychromy on
                 sculpture, panel painting etc.</item>
               <item>Type of material(s) for examination: Type(s) of materials for examination. e.g.
-                pigments and other materials related to painted objects</item>
+                substrate, coatings, pigments or other materials related to surface finishing
+                decoration.</item>
             </list></desc>
           <desc type="terms" xml:lang="en">
             <term key="contextualizing" source="http://tadirah.dariah.eu/" type="activity"/>
             <term key="CIDOC-CRM" source="standard_list" type="standard"/>
             <term key="CIDOC-CRMsci" source="standard_list" type="standard"/>
           </desc>
-          <linkGrp type="generalResources">
+          <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
             <ref type="tutorial" source="zotero" target="AQ6RMCT8"/>
             <ref type="documentation" source="zotero" target="5FHQ64PA"/>
+            <ref type="documentation" source="zotero" target="6A3YJDRQ"/>
             <ref type="documentation" source="zotero" target="H7E6FFMP"/>
           </linkGrp>
         </event>
