@@ -56,7 +56,7 @@
   </teiHeader>
   <text>
     <body>
-      <div type="scenario" xml:id="sc_schemaCustomization">
+      <div type="scenario" xml:id="SSK_sc_DTABf">
         <head type="scenarioTitle" xml:lang="en">Creating interoperable TEI text resources with the
           DTA 'Base Format' (DTABf)</head>
         <desc type="definition" xml:lang="en">Currently, initiatives for the digitization of textual
