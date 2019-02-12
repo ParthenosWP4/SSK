@@ -52,7 +52,7 @@
             curation</head>
           <head type="stepTitle" xml:lang="fr">Titre de l'étape en Français</head>
           <desc type="definition" xml:lang="en">Gather and select data that need to be curated in
-            time and select the type of curation needed</desc>
+            time and select the type of curation needed: it is important to preserve, maintain and eventually update data in order to have them functioning in time</desc>
           <desc type="terms" xml:lang="en">
             <term key="gathering" source="http://tadirah.dariah.eu/" type="activity"/>
             <term key="EAC-CPF" source="standard_list" type="standard"/>
