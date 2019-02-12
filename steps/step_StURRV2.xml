@@ -40,6 +40,7 @@
          <listEvent>
             <event type="researchStep"><!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
                <head type="stepTitle" xml:lang="en">Share the Unique Reference Resource</head>
+                <desc type="definition" xml:lang="en">Share/publish the Unique Reference Resource as result of the research</desc>
                <desc type="terms" xml:lang="en">
                   <term key="Sharing" source="http://tadirah.dariah.eu/" type="activity"/>
                   <term key="XML" source="standard_list" type="standard"/>
