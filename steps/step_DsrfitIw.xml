@@ -37,8 +37,10 @@
             <listEvent>
                 <event type="researchStep">
                     <!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
-                    <head type="stepTitle" xml:lang="en">Disseminate search result files in the Infrastructure workspace.</head>
+                    <head type="stepTitle" xml:lang="en">Dissemination of results</head>
                     <desc xml:lang="en" type="terms">
+			     <desc type="definition" xml:lang="en">Disseminate and publish the result files of RUBRICA research 
+				     in the Infrastructure workspace</desc>
                                    
                         <term type="activity" source="http://tadirah.dariah.eu/"
                             key="Dissemination" />
