@@ -37,9 +37,9 @@
             <listEvent>
                 <event type="researchStep">
                     <!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
-                    <head type="stepTitle" xml:lang="en">The researcher has to start the application using the "Start Computation" command.</head>
-			<desc xml:lang="en" type="terms">
-                                   
+                    <head type="stepTitle" xml:lang="en">Starting RUBRICA</head>
+			 <desc type="definition" xml:lang="en">The researcher can start the application using the "Start Computation" command.</desc>
+			<desc xml:lang="en" type="terms">         
                         <term type="activity" source="http://tadirah.dariah.eu/"
                             key="Analysis" />
 					<term type="standard" source="standard_list" key="XML"/>
