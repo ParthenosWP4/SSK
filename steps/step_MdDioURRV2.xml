@@ -40,6 +40,8 @@
             <event type="researchStep"><!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
                <head type="stepTitle" xml:lang="en">Merge different databases in one Unique Reference
       Resource</head>
+                <desc type="definition" xml:lang="en">The researcher can now combine the different databases he retains useful for his research 
+                 in a Unique Reference Resource.</desc>
                <desc type="terms" xml:lang="en">
                   <term key="Modeling" source="http://tadirah.dariah.eu/" type="activity"/>
                   <term key="XML" source="standard_list" type="standard"/>
