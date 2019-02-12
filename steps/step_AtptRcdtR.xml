@@ -37,9 +37,10 @@
             <listEvent>
                 <event type="researchStep">
                     <!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
-                    <head type="stepTitle" xml:lang="en">At this point the researcher can download the results by choosing the output format.</head>
-                    <desc xml:lang="en" type="terms">
-                                   
+                    <head type="stepTitle" xml:lang="en">Downloading results</head>
+                     <desc type="definition" xml:lang="en">Once RUBRICA has ended its computation, the researcher can download the results 
+			choosing the most suitable output format</desc>
+			<desc xml:lang="en" type="terms">         
                         <term type="activity" source="http://tadirah.dariah.eu/"
                             key="Capture" />
 							<term type="standard" source="standard_list" key="XML"/>
