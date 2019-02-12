@@ -39,6 +39,7 @@
          <listEvent>
             <event type="researchStep"><!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
                <head type="stepTitle" xml:lang="en">Apply access controls and authentication procedures</head>
+                <desc type="definition" xml:lang="en">The researcher can apply access controls or authentication procedures to data.</desc>
                <desc type="terms" xml:lang="en">
                   <term key="Preservation"
                         source="http://tadirah.dariah.eu/"
