@@ -40,6 +40,8 @@
          <listEvent>
             <event type="researchStep"><!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
                <head type="stepTitle" xml:lang="en">Select appropriate reference resource</head>
+                 <desc type="definition" xml:lang="en">Appropriate reference resources have to be selected according to the objectives
+                 of the researcher and the data chosen, in order to get useful results.</desc>
                <desc type="terms" xml:lang="en">
                   <term key="Gathering" source="http://tadirah.dariah.eu/" type="activity"/>
                   <term key="EAC-CPF" source="standard_list" type="standard"/>
