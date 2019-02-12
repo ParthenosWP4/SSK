@@ -39,8 +39,9 @@
                 <event type="researchStep">
                     <!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
                     <head type="stepTitle" xml:lang="en">Use of RUBRICA through the Project VREs.</head>
-                    <desc xml:lang="en" type="terms">
-                                   
+		 <desc type="definition" xml:lang="en">RUBRICA is available between PARTHENOS VREs on D4Science, 
+			 and it is integrated in the project services</desc>
+                    <desc xml:lang="en" type="terms">           
                         <term type="activity" source="http://tadirah.dariah.eu/"
                             key="Analysis" />
 							<term type="standard" source="standard_list" key="XML"/>
