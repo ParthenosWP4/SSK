@@ -41,6 +41,8 @@
             <event type="researchStep"><!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
                <head type="stepTitle" xml:lang="en">Provide tools that allow collaboration in the use and
       reuse of data</head>
+                <desc type="definition" xml:lang="en">Data curation in time has to allow data reuse: the researcher has to provide appropriate
+                 tools and support in order to facilitate the use and reuse of shared data</desc>
                <desc type="terms" xml:lang="en">
                   <term key="Collaboration"
                         source="http://tadirah.dariah.eu/"
