@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario" xml:id="SSK_sc_creatingMetadata">
   <teiHeader>
     <fileDesc>
@@ -55,7 +55,6 @@
           <event type="researchScenario" ref="SSK_sc_digitization" subtype="preliminary">
             <biblFull>
               <titleStmt>
-                <!-- Title of the tei document, not title of the scenario -->
                 <title>Digitization scenario</title>
                 <author>
                   <persName>Frank Uiterwaal</persName>
@@ -85,10 +84,13 @@
               can enrich the the object (metadating, adding augmented layers etc.), these data will
               build upon the digital fascimile.</desc>
             <desc type="terms" xml:lang="en">
-              <term source="aureHAL" type="discipline" key="Social Anthropology and ethnology">Social Anthropology and ethnology</term>
+              <term source="aureHAL" type="discipline" key="Social Anthropology and ethnology"
+                >Social Anthropology and ethnology</term>
               <term source="aureHAL" type="discipline" key="History">History</term>
-              <term source="aureHAL" type="discipline" key="Philosophy and Sociology of Sciences">Philosophy and Sociology of Sciences</term>
-              <term source="aureHAL" type="discipline" key="Library and information sciences">Library and information sciences</term>
+              <term source="aureHAL" type="discipline" key="Philosophy and Sociology of Sciences"
+                >Philosophy and Sociology of Sciences</term>
+              <term source="aureHAL" type="discipline" key="Library and information sciences"
+                >Library and information sciences</term>
               <term key="Data" source="TaDiRAH" type="object"/>
               <term key="Image" source="TaDiRAH" type="object"/>
               <term key="Literature" source="TaDiRAH" type="object"/>
@@ -146,7 +148,8 @@
               <term key="http://tadirah.dariah.eu/vocab/index.php?tema=25&amp;/4_analysis"
                 source="http://tadirah.dariah.eu/" type="activity"/>
             </desc>
-            <linkGrp type="generalResources" xml:base="http://zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+            <linkGrp type="generalResources"
+              xml:base="http://zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
               <ref source="zotero" subtype="standard" target="2A578PYX" type="specification">
                 <term key="Metadata" source="standard_list" type="standard"/>
                 <!-- In the  <ref>, we have the <biblStruct>, taken from the zotero API query.
@@ -226,7 +229,8 @@
               </ref>
               <ref source="zotero" subtype="standard" target="V2T2YJLL" type="documentation">
                 <term key="Metadata" source="standard_list" type="standard"/>
-                <biblStruct type="webpage" corresp="http://zotero.org/groups/427927/ssk-parthenos/items/V2T2YJLL">
+                <biblStruct type="webpage"
+                  corresp="http://zotero.org/groups/427927/ssk-parthenos/items/V2T2YJLL">
                   <analytic>
                     <title level="a">World Digital Library - Content Workflow</title>
                     <author>
