@@ -4,7 +4,7 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>Project-centered customization scenario</title>
+        <title>Test Scenario</title>
         <author>
           <persName>Charles Riondet</persName>
           <affiliation>Inria</affiliation>
@@ -36,7 +36,7 @@
   <text>
     <body>
       <div type="scenario">
-        <head type="scenarioTitle" xml:lang="en">Project-centered EAD customization</head>
+        <head type="scenarioTitle" xml:lang="en">Test Scenario</head>
         <desc type="definition" xml:lang="en">
           <p>TEI ODD can be used to document data models external to the TEI environment. Several
             projects working with archival standards (in particular EAD) use it as well. PARTHENOS
