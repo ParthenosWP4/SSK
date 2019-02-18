@@ -49,7 +49,7 @@
                <linkGrp type="generalResources">
                   <ref source="github"
                        subtype="library_(computing)"
-                       target="https://github.com/jcupitt/libvips"
+                       target="NDT75L9A"
                        type="code">
                      <term key="libvips" type="library_(computing)"/>
                   </ref>

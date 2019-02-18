@@ -65,7 +65,7 @@
                   <ref source="zotero" target="T7672NJ8" type="specification">
                   	<term key="TEI" source="ssk" type="standard"/>
                   	DTABf documentation</ref>
-                  <ref source="github" target="https://github.com/deutschestextarchiv/dtabf/tree/master/schema" type="specification">
+                  <ref source="github" target="558UTLGYtree/master/schema" type="specification">
                   	<term key="TEI" source="ssk" type="standard"/>
                   	Formal specification of the DTABf: ODDs, schemas, Schematron
        Constraints</ref>

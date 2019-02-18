@@ -74,7 +74,7 @@
                <linkGrp type="projectResources"
                         source="CINES"
                         corresp="https://www.cines.fr/">
-                  <ref type="webpage" target="https://www.cines.fr/"/>
+                  <ref type="webpage" target="GTKRM6WS"/>
                </linkGrp>
             </event>
          </listEvent>

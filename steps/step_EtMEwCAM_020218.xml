@@ -74,13 +74,13 @@
                <linkGrp corresp="https://ricercar.gesualdo-online.cesr.univ-tours.fr/"
                         source="Gesualdo Online"
                         type="projectResources">
-                  <ref target="https://ricercar.gesualdo-online.cesr.univ-tours.fr/"
+                  <ref target="FGKUISHK"
                        type="database"/>
                </linkGrp>
                <linkGrp corresp="http://digitalduchemin.org/"
                         source="The Lost Voices Project"
                         type="projectResources">
-                  <ref target="http://digitalduchemin.org/" type="database"/>
+                  <ref target="F8MVTEMT" type="database"/>
                </linkGrp>
             </event>
          </listEvent>

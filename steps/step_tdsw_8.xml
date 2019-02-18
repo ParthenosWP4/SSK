@@ -57,12 +57,12 @@
                </desc>
                <linkGrp type="generalResources">
                   <ref source="Biblissima"
-                       target="http://www.biblissima-condorcet.fr/en/resources/biblissima-resources"
+                       target="KJB5UBGY"
                        type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
                   <ref source="MLGB3 - Medieval Libraries of Great Britain"
-                       target="http://mlgb3.bodleian.ox.ac.uk"
+                       target="CGGG2BTD"
                        type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>

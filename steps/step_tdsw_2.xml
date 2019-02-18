@@ -57,7 +57,7 @@
                </desc>
                <linkGrp type="generalResources">
                   <ref source="GETTY Thesaurus of Geographic Names"
-                       target="http://www.getty.edu/research/tools/vocabularies/tgn/index.html"
+                       target="JEF4GFGT"
                        type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>

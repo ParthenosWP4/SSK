@@ -47,7 +47,7 @@
                   <!--<term key="CD" source="WP3Wizard" type="policies"/>-->
                </desc>
                <linkGrp type="generalResources">
-                  <ref source="D4SCIENCE" target="https://www.d4science.org/" type="code"/>
+                  <ref source="D4SCIENCE" target="REPS374P" type="code"/>
                </linkGrp>
             </event>
          </listEvent>

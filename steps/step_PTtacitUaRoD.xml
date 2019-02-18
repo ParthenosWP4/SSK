@@ -46,10 +46,10 @@
                         type="activity"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref source="XML" target="https://www.w3.org/XML/" type="code"/>
+                  <ref source="XML" target="Q2C4H3FC" type="code"/>
                   <ref source="CIDOC-CRM" target="www.cidoc-crm.org" type="code"/>
                   <ref source="OAI-PMH"
-                       target="https://www.openarchives.org/pmh/"
+                       target="VEAVKF6S"
                        type="code"/>
                </linkGrp>
             </event>

@@ -41,9 +41,25 @@
       <listEvent>
         <event type="researchStep">
           <head type="stepTitle" xml:lang="en">Describe the method - 1. Use (scope)</head>
-          <desc type="definition" xml:lang="en">Scientific analysis, archaelogical excavation,
-            conservation in course, demonstration, promotion, service, e.g.: pigments identification
-            to be integrated in the overall material characterisation of the artwork</desc>
+          <desc type="definition" xml:lang="en"><list>
+              <item>Scope: (scientific analysis? Archaelogical excavation? conservation in course?
+                Demonstration? Promotion? Service?) e.g. pigments identification to be integrated in
+                the overall material characterisation of the artwork</item>
+              <item>Analysis expected outcome Information to be obtained /analysis outcome -
+                research expected result: Identification of inorganic or organic compounds (mainly
+                pigments, dyes, fillers) through the fingerprint vibrational spectra of the
+                molecular structure (amorphous, cristalline and polymorph particles are
+                detectable).</item>
+            <item>Skills requirements (level of training of the operator):
+              Scientist specialised in Raman Spectroscopy</item>
+            </list></desc>
+          <desc xml:lang="en" type="terms">
+            <term key="Contextualizing" source="Tadirah" type="activity"/>
+          </desc>
+          <linkGrp type="generalResources" xml:base="https://www.zotero.org/groups/368112/parthenos_wp2/items/itemKey/">
+            <ref type="article" source="zotero" target="CTNH7TPZ"/>
+            <ref type="article" source="zotero" target="LERDFNGM"/>
+          </linkGrp>
         </event>
       </listEvent>
     </body>

@@ -29,31 +29,6 @@
         <p>Created from scratch</p>
       </sourceDesc>
     </fileDesc>
-    <encodingDesc>
-      <listPrefixDef>
-        <prefixDef ident="wp2" matchPattern="(.*?)" replacementPattern="groups/368112">
-          <p>The prefix wp2 needs to be used before resources taken from the <ref
-              target="https://www.zotero.org/groups/368112/parthenos_wp2" type="url">Parthenos WP2
-              Zotero Library</ref>.</p>
-          <p>In the <att>target</att>attribute, the prefix in separated by the Zotero ID by a colon
-            ":". Ex: target="wp2:JHSD76DS"</p>
-        </prefixDef>
-        <prefixDef ident="wp3" matchPattern="(.*?)" replacementPattern="groups/520841">
-          <p>The prefix wp3 needs to be used before resources taken from the <ref
-              target="https://www.zotero.org/groups/520841/parthenos_wp3" type="url">Parthenos WP3
-              Zotero Library</ref>.</p>
-          <p>In the <att>target</att>attribute, the prefix in separated by the Zotero ID by a colon
-            ":". Ex: target="wp2:JHSD76DS"</p>
-        </prefixDef>
-        <prefixDef ident="wp4" matchPattern="(.*?)" replacementPattern="groups/427927">
-          <p>The prefix wp4 needs to be used before resources taken from the <ref
-              target="https://www.zotero.org/groups/427927/parthenos_wp4" type="url">Parthenos WP4
-              Zotero Library</ref>.</p>
-          <p>In the <att>target</att>attribute, the prefix in separated by the Zotero ID by a colon
-            ":". Ex: target="wp2:JHSD76DS"</p>
-        </prefixDef>
-      </listPrefixDef>
-    </encodingDesc>
     <revisionDesc>
       <change/>
     </revisionDesc>

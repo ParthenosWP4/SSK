@@ -58,19 +58,19 @@
                   <term key="publishing" source="http://tadirah.dariah.eu/" type="activity"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref source="NERD" target="http://nerd.eurecom.fr/" type="code">
+                  <ref source="NERD" target="35LQP6YP" type="code">
                      <term key="content analysis" source="tadirah" type="activity"/>
                   </ref>
                   <ref source="DANDELION"
-                       target="https://dandelion.eu/docs/api/datatxt/nex/v1/"
+                       target="XISZR9RA"
                        type="code">
                      <term key="content analysis" source="tadirah" type="activity"/>
                   </ref>
-                  <ref source="PLEIADES" target="https://pleiades.stoa.org/" type="code">
+                  <ref source="PLEIADES" target="ZW2W949X" type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
                   <ref
-                       target="http://www.getty.edu/research/tools/vocabularies/tgn/index.html"
+                       target="JEF4GFGT"
                        type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>

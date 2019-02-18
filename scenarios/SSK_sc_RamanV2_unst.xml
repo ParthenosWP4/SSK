@@ -40,8 +40,8 @@
   <text>
     <body>
       <div>
-        <head type="scenarioTitle" xml:lang="en">Raman spectrometry to analyse and
-          identify pigments directly on cultural heritage objects</head>
+        <head type="scenarioTitle" xml:lang="en">Raman spectrometry for the analysis and
+          identification of pigments on cultural heritage objects</head>
         <desc type="definition" xml:lang="en">Raman spectrometry is a widely used technique for
           examining various types of cultural heritage objects, with significant contributions in
           studies concentrating on pigment identification. The Raman effect provides a quick and
@@ -55,21 +55,23 @@
           analysis directly on cultural heritage object (no sampling).</desc>
         <desc xml:lang="en" type="terms">
           <term type="discipline" source="aurehal" key="History"/>
-          <term source="aurehal" type="discipline">Art and art history</term>
-          <term source="aurehal" type="discipline">Cultural heritage and museology</term>
+          <term source="aurehal" type="discipline" key="Art and art history">Art and art history</term>
+          <term source="aurehal" type="discipline" key="Cultural heritage and museology">Cultural heritage and museology</term>
           <term type="object" source="tadirah" key="Artifacts"/>
           <term type="object" source="tadirah" key="Data"/>
           <term key="Scanning" source="tadirah" type="techniques"/>
         </desc>
         <figure type="image">
           <head/>
-          <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/SSK-Raman-photo1.png"/>
+          <graphic
+            url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/SSK-Raman-photo1.png"/>
           <figDesc/>
         </figure>
         <listEvent>
           <event xml:id="s1" type="researchStep" ref="step_DtA"/>
           <event xml:id="s2" type="researchStep" ref="step_DtP"/>
           <event xml:id="s3" type="researchStep" ref="step_DtM1U"/>
+          <!-- la -->
           <event xml:id="s4" type="researchStep" ref="step_DtM2AEO"/>
           <event xml:id="s5" type="researchStep" ref="step_DtM3SR"/>
           <event xml:id="s6" type="researchStep" ref="step_DtM4MRRA"/>

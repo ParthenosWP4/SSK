@@ -69,18 +69,18 @@
                <linkGrp type="generalResources">
                   <ref source="github"
                        subtype="tool"
-                       target="https://github.com/DuChemin/MEIMassaging"
+                       target="PXMVHWK8"
                        type="code">
                      <term key="MEIMassaging" type="tool"/>
                   </ref>
                   <ref source="github"
-                       target="https://github.com/zolaemil/meiView"
+                       target="CLD9LAMF"
                        type="tool">
                      <term key="MeiView" type="tool"/>
                   </ref>
                   <ref source="github"
                        subtype="tool"
-                       target="https://github.com/TEI-Music-SIG/MEItoVexFlow"
+                       target="25XE4RMY"
                        type="code">
                      <term key="MEItoVexFlow" type="tool"/>
                   </ref>

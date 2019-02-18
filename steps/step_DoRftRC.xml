@@ -63,14 +63,14 @@
                		<term key="Schematron" source="ssk" type="standard"/>
                </desc>
                <linkGrp type="generalResources"><!-- Ressources: DTAoX, DTABf-TR, DTABf-Vorlagedatei -->
-                  <ref source="github" target="https://github.com/deutschestextarchiv/dtabf/tree/master/schema" type="specification">
+                  <ref source="github" target="558UTLGYtree/master/schema" type="specification">
                   	<term type="standard" source="ssk" key="TEI"/>
                   	<term type="standard" source="ssk" key="Schematron"/>
                   	<term key="Annotating" source="http://tadirah.dariah.eu/" type="activity"/>
                   	<term key="Transcription" source="http://tadirah.dariah.eu/" type="activity"/>
                   	Formal specification of the DTABf: ODDs, schemas, Schematron
        Constraints</ref>
-                  <ref source="zotero" target="https://www.zotero.org/groups/427927/items/T7672NJ8" type="specification">
+                  <ref source="zotero" target="T7672NJ8" type="specification">
                   	<term type="standard" source="ssk" key="TEI"/>
                   	<term type="standard" source="ssk" key="Schematron"/>
                   	<term key="Annotating" source="http://tadirah.dariah.eu/" type="activity"/>

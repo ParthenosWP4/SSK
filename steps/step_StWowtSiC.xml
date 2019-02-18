@@ -59,17 +59,17 @@
                </desc>
                <linkGrp type="generalResources">
                   <ref source="Mirabile"
-                       target="http://www.mirabileweb.it/"
+                       target="KJLKJT69"
                        type="database">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
                   <ref source="TEXT-inc"
-                       target="http://textinc.bodleian.ox.ac.uk/"
+                       target="XJDYI9AN"
                        type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
                   <ref source="BASE"
-                       target="https://www.base-search.net/about/en/"
+                       target="I32B6KKT"
                        type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>

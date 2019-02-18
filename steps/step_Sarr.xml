@@ -44,13 +44,13 @@
                </desc>
                <linkGrp type="generalResources">
                   <ref source="EAC-CPF"
-                       target="http://eac.staatsbibliothek-berlin.de/"
+                       target="DQTQDNPS"
                        type="code"/>
-                  <ref source="FOAF" target="http://www.foaf-project.org/" type="code"/>
+                  <ref source="FOAF" target="QQ3SKSNP" type="code"/>
                   <ref source="GND (ex PND)"
-                       target="http://www.dnb.de/EN/Standardisierung/GND/gnd_node.html"
+                       target="TWBUXXJN"
                        type="code"/>
-                  <ref source="VIAF" target="https://viaf.org/" type="code"/>
+                  <ref source="VIAF" target="76VC5TC4" type="code"/>
                </linkGrp>
             </event>
          </listEvent>

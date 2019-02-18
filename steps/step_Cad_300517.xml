@@ -63,7 +63,7 @@
                         type="projectResources">
                   <ref source="zotero" target="XDZWRCUG" type="documentation"/>
                   <ref source="hal"
-                       target="https://hal.inria.fr/hal-01503235"
+                       target="FY8U9JME"
                        type="report">
                      <term key="Schematron" source="standard_list" type="standard"/>
                      <term key="EAD" source="standard_list" type="standard"/>

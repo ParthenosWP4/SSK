@@ -59,16 +59,16 @@
                   
                </desc>
                <linkGrp type="generalResources">
-                  <ref source="WorldCat" target="https://www.worldcat.org/" type="code">
+                  <ref source="WorldCat" target="A8ESQDLF" type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
                   <ref source="MEI - Material Evidence in Incunabola"
-                       target="https://data.cerl.org/mei/_search"
+                       target="V5WXVD5C"
                        type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
                   <ref source="Manus Online"
-                       target="https://manus.iccu.sbn.it/"
+                       target="SNFR7WZG"
                        type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>

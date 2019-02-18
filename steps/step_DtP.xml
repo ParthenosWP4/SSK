@@ -42,10 +42,10 @@
         <event type="researchStep">
           <head type="stepTitle" xml:lang="en">Describe the project</head>
           <desc type="definition" xml:lang="en"><list>
-              <item>Framework, analytical context (motivation - aim of the analytical campaign):
+              <item>Framework, analytical context (motivation - aim of the analytical campaign);
                 Short presentation of the main objectives of the analysis of the
                 artworks/monument</item>
-              <item> Preliminary analysis: Information about any preliminary visual examination and
+              <item>Preliminary analysis: Information about any preliminary visual examination and
                 analysis of the artwork using other techniques such as photography, multispectral
                 imaging, XRF, LIBS etc. The prelimenary analysis provides information on the
                 condition and the characteristics of the artwork useful for an effective planning
@@ -69,6 +69,8 @@
             <ref type="tutorial" source="zotero" target="AQ6RMCT8"/>
             <ref type="documentation" source="zotero" target="5FHQ64PA"/>
             <ref type="documentation" source="zotero" target="H7E6FFMP"/>
+            <ref type="spec" source="zotero" target="Q7ZV9XLK"/>
+            <ref type="spec" source="zotero" target="6A3YJDRQ"/>
           </linkGrp>
         </event>
       </listEvent>

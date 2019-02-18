@@ -38,71 +38,59 @@
       license for metadata and related digital objects</desc>
                <desc type="definition" xml:lang="fr"/>
                <desc type="term" xml:lang="en">
-                  <term key="---" source="http://tadirah.dariah.eu/" type="activity"/>
-                  <!-- I did not find any tadirah term that matches with this step. -->
+                 <term key="Publishing" source="Tadirah" type="activity"/> 
                </desc>
                <linkGrp type="generalResources">
                   <ref source="zotero"
                        subtype="standard"
-                       target="wp2:Z2JMRVUJ"
+                       target="V9IKZP7D"
                        type="spec">
-                     <term key="IPR ISSUES" source="standard_list" type="standard"/>
                   </ref>
                   <ref source="zotero"
                        subtype="standard"
-                       target="wp2:VFP6G6DN"
+                       target="33WH5S2G"
                        type="spec">
-                     <term key="IPR ISSUES" source="standard_list" type="standard"/>
                   </ref>
                   <ref source="zotero"
                        subtype="standard"
-                       target="wp2:9VERTQD5"
+                       target="4DRWSWCR"
                        type="spec">
-                     <term key="IPR ISSUES" source="standard_list" type="standard"/>
                   </ref>
                   <ref source="zotero"
                        subtype="standard"
-                       target="wp2:SKVD76FW"
+                       target="MBQEN74L"
                        type="spec">
-                     <term key="LICENSES" source="standard_list" type="standard"/>
                   </ref>
                   <ref source="zotero"
                        subtype="standard"
-                       target="wp2:ZXQFGKKJ"
+                       target="EKHEQA78"
                        type="spec">
-                     <term key="Legal requirements" source="standard_list" type="standard"/>
                   </ref>
                   <ref source="zotero"
                        subtype="standard"
-                       target="wp2:RH4HVTJE"
-                       type="spec">
-                     <term key="" source="standard_list" type="standard"/>
+                       target="L5QAQKPZ"
+                       type="spec">                     
                   </ref>
                   <ref source="zotero"
                        subtype="standard"
-                       target="wp2:8UEFSE66"
-                       type="spec">
-                     <term key="IPR ISSUES" source="standard_list" type="standard"/>
+                       target="F5BK6Z2P"
+                       type="spec">                     
                   </ref>
                   <ref source="zotero"
                        subtype="standard"
-                       target="wp2:48FT7629"
-                       type="spec">
-                     <term key="ipr" source="standard_list" type="standard"/>
+                       target="I9N7235C"
+                       type="spec">                     
                   </ref>
                   <ref source="zotero"
                        subtype="standard"
-                       target="wp2:93A4F6PJ"
+                       target="AZH95JBG"
                        type="spec">
-                     <term key="" source="standard_list" type="standard"/>
                   </ref>
                   <ref source="zotero"
                        subtype="standard"
-                       target="wp2:BJVG52WX"
+                       target="G7LU4I2S"
                        type="spec">
-                     <term key="" source="standard_list" type="standard"/>
                   </ref>
-                  <!-- substantially, here i copy all the documents present in ZOTERO. They all present a discussion about licenses.  -->
                </linkGrp>
             </event>
          </listEvent>

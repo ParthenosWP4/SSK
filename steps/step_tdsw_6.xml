@@ -57,30 +57,30 @@
                </desc>
                <linkGrp type="generalResources">
                   <ref source="META-OPAC CERL Portal"
-                       target="https://www.cerl.org/resources/cerl_portal"
+                       target="6ZFUTU53"
                        type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
                   <ref source="KVK - Karlsruher Virtueller Katalog"
-                       target="https://kvk.bibliothek.kit.edu/?digitalOnly=0=0=0"
+                       target="Q4W9D8YV"
                        type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
                   <ref source="Incunabula Short Title Catalogue"
-                       target="http://www.bl.uk/catalogues/istc/"
+                       target="CK74XUJB"
                        type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
-                  <ref source="Mirabile" target="http://www.mirabileweb.it/" type="code">
+                  <ref source="Mirabile" target="KJLKJT69" type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
                   <ref source="TEXT-inc"
-                       target="http://textinc.bodleian.ox.ac.uk/"
+                       target="XJDYI9AN"
                        type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
                   <ref source="BASE"
-                       target="https://www.base-search.net/about/en/"
+                       target="I32B6KKT"
                        type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>

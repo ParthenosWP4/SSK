@@ -66,12 +66,12 @@
                <linkGrp corresp="http://historyofwork.iisg.nl/"
                         source="History of Work Information System"
                         type="projectResources">
-                  <ref target="http://historyofwork.iisg.nl/" type="webpage"/>
+                  <ref target="BBR32UYM" type="webpage"/>
                </linkGrp>
                <linkGrp corresp="http://www.hisma.org/HISMA/HISCAM.html"
                         source="HISCAM"
                         type="projectResources">
-                  <ref target="http://www.hisma.org/HISMA/HISCAM.html" type="webpage"/>
+                  <ref target="WYXSPBCA" type="webpage"/>
                </linkGrp>
             </event>
          </listEvent>

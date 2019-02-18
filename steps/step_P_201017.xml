@@ -62,10 +62,10 @@
                            type="standard"/>
                   </ref>
                </linkGrp>
-               <linkGrp corresp="http://www.charismaproject.eu/"
+               <linkGrp corresp="https://cordis.europa.eu/project/rcn/92569/factsheet/en/"
                         source="CHARISMA"
                         type="projectResources">
-                  <ref target="http://www.charismaproject.eu" type="webpage"/>
+                  <ref target="AVQTPABS" type="webpage"/>
                </linkGrp>
             </event>
          </listEvent>

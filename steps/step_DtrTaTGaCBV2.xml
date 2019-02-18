@@ -56,9 +56,9 @@
                </desc>
                <linkGrp type="generalResources">
                   <ref source="GETTY"
-                       target="http://www.getty.edu/research/tools/vocabularies/tgn/index.html"
+                       target="JEF4GFGT"
                        type="code"/>
-                  <ref source="MIRABILE" target="http://www.mirabileweb.it/" type="code"/>
+                  <ref source="MIRABILE" target="KJLKJT69" type="code"/>
                </linkGrp>
             </event>
          </listEvent>

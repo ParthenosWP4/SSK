@@ -57,7 +57,7 @@
                </desc>
                <linkGrp type="generalResources">
                   <ref source="CERL Thesaurus"
-                       target="https://thesaurus.cerl.org/cgi-bin/search.pl?lang=en"
+                       target="D4ZDU8RS"
                        type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>

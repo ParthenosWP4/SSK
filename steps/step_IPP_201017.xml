@@ -48,7 +48,7 @@
                </desc>
                <linkGrp type="generalResources">
                   <ref source="github"
-                       target="https://github.com/jcupitt/libvips"
+                       target="NDT75L9A"
                        type="library"/>
                   <ref source="zotero" subtype="tool" target="H23RCNAH" type="website"/>
                   <ref source="zotero" subtype="tool" target="AWRNIGUR" type="website"/>
