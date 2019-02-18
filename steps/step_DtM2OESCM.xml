@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_DtM2AEO">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_DtM2OESCM">
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>step "Describe the method - 2. Analysis expected outcome"</title>
+        <title>step "Describe the method. 2. Operational environmental and safety conditions for the
+          measurement"</title>
         <author>
           <persName>Sophia Sotiropoulou</persName>
           <affiliation>IESL-FORTH</affiliation>
@@ -40,12 +41,16 @@
     <body>
       <listEvent>
         <event type="researchStep">
-          <head type="stepTitle" xml:lang="en">Describe the method - 2. Analysis expected
-            outcome</head>
-          <desc type="definition" xml:lang="en">Information to be obtained /analysis outcome -
-            research expected result, e.g.: Identification of inorganic or organic compounds (mainly
-            pigments, dyes, filler ) through the fingerprint vibrational spectra of the molecular
-            structure (amorphous, cristalline and polymorph particles are detectable). </desc>
+          <head type="stepTitle" xml:lang="en">Describe the method. 2. Operational environmental and
+            safety conditions for the measurement</head>
+          <desc type="definition" xml:lang="en"><p>Assure preferably low level of illuminance or
+              dark conditions to avoid any light interference. Assure stability of the device set up
+              and the artwork under investigation - avoid vibrations. The analytical protocol does
+              not involve any risk for the safety of the operators or the public.</p>
+            <p>Possible source of error: Stray light interference: if stray light such as sunlight,
+              fluorescent lamp light or incandesce light is present, should be reported. Moreover,
+              other environmental conditions that can potentially affect the measurements are
+              reported such as levels of temperature or relative humidity.</p></desc>
           <linkGrp type="generalResources">
             <ref type="paper" source="zotero" target="CTNH7TPZ"/>
             <ref type="paper" source="zotero" target="LERDFNGM"/>
