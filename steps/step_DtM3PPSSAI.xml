@@ -4,8 +4,8 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>step "Describe the measurement.3. Pre-processing / Selection of Sites for analysis
-          and indexing"</title>
+        <title>step "Describe the measurement. 3. Pre- processing / preliminary tests - Measurement
+          setup"</title>
         <author>
           <persName>Sophia Sotiropoulou</persName>
           <affiliation>IESL-FORTH</affiliation>
@@ -41,17 +41,14 @@
     <body>
       <listEvent>
         <event type="researchStep">
-          <head type="stepTitle" xml:lang="en">Describe the measurement.3. Pre-processing /
-            Selection of Sites for analysis and indexing</head>
-          <desc type="definition" xml:lang="en">Select the area of measurement and index it on the
-            reference image (macro detail)<list>
-              <item>Possible source of error: Wrong/ inaccurate indexing of measurement position on
-                the object due to the low resolution of the reference image </item>
-            </list>
-          </desc>
+          <head type="stepTitle" xml:lang="en">Describe the measurement. 3. Pre- processing /
+            preliminary tests - Measurement setup</head>
+          <desc type="definition" xml:lang="en">Preliminary tests operated on the specimen / area
+            under examination using a minimum laser power. The laser power can be progressively
+            increased as well as the integration time / average of scans can be optimised as needed
+            to obtain a good spectrum.</desc>
           <linkGrp type="generalResources">
-            <ref type="paper" source="zotero" target="X5F662RV"/>
-            <ref type="paper" source="zotero" target="56MF9RKI"/>
+            <ref type="paper" source="zotero" target="W39BNU8K"/>
           </linkGrp>
         </event>
       </listEvent>

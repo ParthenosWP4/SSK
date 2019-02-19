@@ -4,8 +4,8 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>step "Describe the measurement. 2. Pre- processing / Reference image
-          acquisition"</title>
+        <title>step "Describe the measurement. 2. Pre- processing / selection and annotation of
+          Measurement Sites on reference images"</title>
         <author>
           <persName>Sophia Sotiropoulou</persName>
           <affiliation>IESL-FORTH</affiliation>
@@ -42,12 +42,15 @@
       <listEvent>
         <event type="researchStep">
           <head type="stepTitle" xml:lang="en">Describe the measurement. 2. Pre- processing /
-            Reference image acquisition</head>
-          <desc type="definition" xml:lang="en">Reference image acquisition (scale / multiscale /
-            map / 2D / 3D) Acquire high resolution image of the entire object or of the part under
-            study (in case of a monument). Τhe detailed reference images will be used to document
-            the points of analysis. Zoom in and acquire hih resolution image of the detail under
-            examination</desc>
+            selection and annotation of Measurement Sites on reference images</head>
+          <desc type="definition" xml:lang="en"><p>Select the sites of analysis. Use high resolution
+            detailed reference images of the entire object or of the part under study (in case of a
+            monument) to anotate the points of analysis.</p>
+            <p>Possible source of error: Wrong/ inaccurate indexing of measurement position on the object due to the low resolution of the reference image</p></desc>
+          <linkGrp type="generalResources" xml:base="https://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+             <ref type="article" source="zotero" target="X5F662RV"/>
+            <ref type="article" source="zotero" target="56MF9RKI"/>
+        </linkGrp>
         </event>
       </listEvent>
     </body>

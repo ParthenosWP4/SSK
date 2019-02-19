@@ -71,23 +71,19 @@
           <event xml:id="s1" type="researchStep" ref="step_DtA"/>
           <event xml:id="s2" type="researchStep" ref="step_DtP"/>
           <event xml:id="s3" type="researchStep" ref="step_DtM1U"/>
-          <!-- la -->
-          <event xml:id="s4" type="researchStep" ref="step_DtM2AEO"/>
-          <event xml:id="s5" type="researchStep" ref="step_DtM3SR"/>
+          <event xml:id="s4" type="researchStep" ref="step_DtM2OESCM"/>
+          <event xml:id="s5" type="researchStep" ref="step_DtM3ES"/>
           <event xml:id="s6" type="researchStep" ref="step_DtM4MRRA"/>
-          <event xml:id="s7" type="researchStep" ref="step_DtM5ES"/>
-          <event xml:id="s8" type="researchStep" ref="step_DtM1PPSL"/>
-          <event xml:id="s9" type="researchStep" ref="step_DtM2RIA"/>
-          <event xml:id="s10" type="researchStep" ref="step_DtM3PPSSAI"/>
-          <event xml:id="s11" type="researchStep" ref="step_DtM4PPPTMS"/>
-          <event xml:id="s12" type="researchStep" ref="step_DtM5MSA"/>
-          <event xml:id="s13" type="researchStep" ref="step_DtM6SDMF"/>
-          <event xml:id="s14" type="researchStep" ref="step_PPID1SLSBC"/>
-          <event xml:id="s15" type="researchStep" ref="step_PPID2PSBA"/>
-          <event xml:id="s16" type="researchStep" ref="step_PPID3PMI"/>
-          <event xml:id="s17" type="researchStep" ref="step_DR1DMSPS"/>
-          <event xml:id="s18" type="researchStep" ref="step_DR2PR"/>
-          <event xml:id="s19" type="researchStep" ref="step_DR3PR"/>
+          <event xml:id="s7" type="researchStep" ref="step_DtM1PPSL"/>
+          <event xml:id="s8" type="researchStep" ref="step_DtM2RIA"/>
+          <event xml:id="s9" type="researchStep" ref="step_DtM3PPSSAI"/>
+          <event xml:id="s10" type="researchStep" ref="step_DtM4PPPTMS"/>          
+          <event xml:id="s11" type="researchStep" ref="step_PPID1SLSBC"/>
+          <event xml:id="s12" type="researchStep" ref="step_PPID2PSBA"/>
+          <event xml:id="s13" type="researchStep" ref="step_PPID3PMI"/>
+          <event xml:id="s14" type="researchStep" ref="step_DR1DMSPS"/>
+          <event xml:id="s15" type="researchStep" ref="step_DR2PR"/>
+          <event xml:id="s16" type="researchStep" ref="step_DR3PR"/>
         </listEvent>
       </div>
     </body>

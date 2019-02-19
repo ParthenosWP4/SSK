@@ -43,14 +43,13 @@
         <event type="researchStep">
           <head type="stepTitle" xml:lang="en">Post process and interpret the data. 3.
             Pigment/material identification</head>
-          <desc type="definition" xml:lang="en">The accurate identification of pigments requires the
-            comparison of the Raman peaks with those reported in databases of Raman spectra of
-            interest for cultural heritage studies. Several databases are available that cover a
-            wide range of materials, from pigments and minerals to organic media and plastics. <list>
-              <item>Possible source of error: Reference spectra acquired with a different laser with
-                respect to the experimental one, may have variation in relative intensity of
-                band.</item>
-            </list></desc>
+          <desc type="definition" xml:lang="en"><p>The accurate identification of pigments requires
+              the comparison of the Raman peaks with those reported in databases of Raman spectra of
+              interest for cultural heritage studies. Several databases are available that cover a
+              wide range of materials, from pigments and minerals to organic media and
+              plastics.</p><p>Possible source of error: Reference spectra acquired with a different
+              laser with respect to the experimental one, may have variation in relative intensity
+              of band.</p></desc>
           <linkGrp type="generalResources">
             <ref type="blog" source="zotero" target="B8ELGI8W"/>
             <ref type="blog" source="zotero" target="HBESBCV2"/>

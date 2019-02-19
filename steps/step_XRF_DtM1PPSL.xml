@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_DR3PR">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_DtM1PPSL">
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>step "Disseminate the results. 3. Publish the results"</title>
+        <title>step "Describe the measurement. 1. Pre-processing/ safe limits
+          protocol for safe application (for the user and the object  damage protection)"</title>
         <author>
-          <persName>Sophia Sotiropoulou</persName>
-          <affiliation>IESL-FORTH</affiliation>
-        </author>
-        <author>
-          <persName>Panayiotis Siozos</persName>
-          <affiliation>IESL-FORTH</affiliation>
-        </author>
-        <author>
-          <persName>Demetrios Anglos</persName>
-          <affiliation>IESL-FORTH</affiliation>
+          <persName>Laura Cartechini</persName>
+          <affiliation>CNR-ISTM</affiliation>
         </author>
         <sponsor>PARTHENOS</sponsor>
       </titleStmt>
@@ -40,15 +33,14 @@
     <body>
       <listEvent>
         <event type="researchStep">
-          <head type="stepTitle" xml:lang="en">Disseminate the results. 3. Publish the
-            results</head>
-          <desc type="definition" xml:lang="en">Publish the results according to the licencing/IPR /
-            reuse restrictions </desc>
-          <desc xml:lang="en" type="terms">
-            <term type="activity" source="tadriah" key="Publishing"/>
-          </desc>
+          <head type="stepTitle" xml:lang="en">Describe the measurement. 1. Pre-processing/ safe limits
+            protocol for safe application (for the user and the object  damage protection)</head>
+          <desc type="definition" xml:lang="en">To assure safe operating procedures to avoid human exposure to X-ray radiation</desc>
           <linkGrp type="generalResources">
-            <ref type="service" source="zotero" target="TXK2S5FC"/>
+            <ref type="paper" source="zotero" target="W39BNU8K"/>
+            <ref type="paper" source="zotero" target="NHB3KIQS"/>
+            <ref type="paper" source="zotero" target="ASKEGJ63"/>
+            <ref type="paper" source="zotero" target="CVI5TJZV"/>
           </linkGrp>
         </event>
       </listEvent>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_XRF_DtM2OESCM">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>step "Describe the method. 2. Operational environmental and safety conditions for the
+          measurement"</title>
+        <author>
+          <persName>Laura Cartechini</persName>
+          <affiliation>CNR-ISTM</affiliation>
+        </author>
+        <sponsor>PARTHENOS</sponsor>
+      </titleStmt>
+      <publicationStmt>
+        <authority/>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0/">
+            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+              document.</p>
+          </licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Created from spreadsheet</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change/>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listEvent>
+        <event type="researchStep">
+          <head type="stepTitle" xml:lang="en">Describe the method. 2. Operational environmental and
+            safety conditions for the measurement</head>
+          <desc type="definition" xml:lang="en"><p>"Bearing in mind the high penetrating power of X-Rays,
+            <list>
+            <item>Choose carefully the support/check also the back of the artwork to avoid interferences.</item>
+            <item>Determine and mark carefully the security restricted area and define the set-up geometry (X-ray beam direction) for safety of the operators and public.</item>
+          </list> 
+            </p>
+          </desc>
+        </event>
+      </listEvent>
+    </body>
+  </text>
+</TEI>

@@ -4,7 +4,7 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>step "Describe the method - 4. Measurement range, resolution and accuracy"</title>
+        <title>step "Describe the method. 4. Measurement range, spot size and spatial resolution/ accuracy"</title>
         <author>
           <persName>Sophia Sotiropoulou</persName>
           <affiliation>IESL-FORTH</affiliation>
@@ -40,16 +40,9 @@
     <body>
       <listEvent>
         <event type="researchStep">
-          <head type="stepTitle" xml:lang="en">Describe the method - 4. Measurement range, spot
-            size, and resolution / accuracy</head>
-          <desc type="definition" xml:lang="en">The measurement range refers to the measurement
-            distance from the object (contact / short / long / remote), the measurment spot size
-            (dimensions of the analysed spot) and the measurment resolution/accuracy. <list>
-              <item>Possible source of error: Stray light interference: if stray light such as sunlight, fluorescent lamp
-                light or incandesce light is present, should be reported. Moreover, other
-                environmental conditions that can potentially affect the measurements are reported
-                such as levels of temperature and relative humidity.</item>
-            </list></desc>
+          <head type="stepTitle" xml:lang="en">Describe the method. 4. Measurement range, spot size and spatial resolution/ accuracy</head>
+          <desc type="definition" xml:lang="en">The measurement distance from the object is  short, however, a long working distance objective is preferable for in situ measurements to avoid any contact with the artwork surface.
+            The measurement spot size (dimensions of the analysed spot) and the measurment resolution/accuracy depends on the magnification of the objective used.</desc>
           <desc type="terms" xml:lang="en">
             <term type="activity" source="tadirah" key="designing"/>
             <term type="standard" source="standard_list" key="CIDOC-CRMsci"/>

@@ -42,15 +42,15 @@
         <event type="researchStep">
           <head type="stepTitle" xml:lang="en">Describe the measurement. 1. Pre-processing/ safe
             limits</head>
-          <desc type="definition" xml:lang="en">Protocol for safe application (for the user and the
-            object damage protection) Significant precautions must be taken into account during
-            measurement to avoid such kind of incident.<list>
-              <item>Significant absorption of the laser beam by the material is likely to generate
-                photochemical damage or local overheating, which in turn can produce chemical
-                alteration and degrade the irradiated area of the sample under examination. The
-                laser-degraded area may also give rise to a Raman spectrum which can be incorrectly
-                attributed as a different material.</item>
-            </list></desc>
+          <desc type="definition" xml:lang="en"><p>Protocol for safe application (for the object
+              damage protection). Particular attention is put to control the Laser intensity during
+              measurement to avoid any risk of photochemical damage or local overheating of the
+              irradiated area.</p>
+            <p>Possible source of error: Significant absorption of the laser beam by the material is
+              likely to generate photochemical damage or local overheating, which in turn can
+              produce chemical alteration and degrade the irradiated area of the sample under
+              examination. The laser-degraded area may also give rise to a Raman spectrum which can
+              be incorrectly attributed as a different material.</p></desc>
           <linkGrp type="generalResources">
             <ref type="paper" source="zotero" target="W39BNU8K"/>
             <ref type="paper" source="zotero" target="NHB3KIQS"/>

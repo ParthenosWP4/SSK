@@ -4,8 +4,8 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>step "Describe the measurement. 4. Pre- processing / preliminary tests - Measurement
-          setup"</title>
+        <title>step "Describe the measurement. 4. Measurement / Spectra acquisition / Storage of
+          data and metadata files"</title>
         <author>
           <persName>Sophia Sotiropoulou</persName>
           <affiliation>IESL-FORTH</affiliation>
@@ -41,14 +41,24 @@
     <body>
       <listEvent>
         <event type="researchStep">
-          <head type="stepTitle" xml:lang="en">Describe the measurement. 4. Pre- processing /
-            preliminary tests - Measurement setup</head>
-          <desc type="definition" xml:lang="en">Preliminary tests operated on the specimen / area
-            under examination using a minimum laser power. The laser power can be progressively
-            increased as well as the acquisition time / average of scans can be optimised as needed
-            to obtain a good spectrum.</desc>
+          <head type="stepTitle" xml:lang="en">Describe the measurement. 4. Measurement / Spectra
+            acquisition / Storage of data and metadata files</head>
+          <desc type="definition" xml:lang="en"><p>Acquire and store the Raman spectra taken on
+              representative sites on the CH object. A preliminary evaluation of the spectrum is
+              done (assessement of Raman peaks or flueoresence emission)</p>
+            <p>The conditions for each measurement constitute essential metadata which are
+              documented either in a text file for all the measurements or in form of metadata file
+              for each spectrum file. Laser excitation wavelength; laser power at the sample;
+              spectral range (cut off); spectral resolution; integration time; number of
+            scans.</p></desc>
+          <desc xml:lang="en" type="terms">
+            <term type="standard" source="ssk" key="ACSCII"/>
+            <term type="standard" source="ssk" key="CSV"/>
+            <term type="standard" source="ssk" key="SPC"/>
+            <term type="standard" source="ssk" key="JCAMP-DX"/>
+          </desc>
           <linkGrp type="generalResources">
-            <ref type="paper" source="zotero" target="W39BNU8K"/>
+            <ref type="paper" source="zotero" target="56MF9RKI"/>
           </linkGrp>
         </event>
       </listEvent>

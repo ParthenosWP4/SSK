@@ -43,13 +43,17 @@
         <event type="researchStep">
           <head type="stepTitle" xml:lang="en">Post process and interpret the data. 1: Stray light
             substraction / Baseline correction.</head>
-          <desc type="definition" xml:lang="en">Straylight correction (dark substraction) Baseline
-            correction - Substraction of the fluorescence background from the spectra.<list>
-              <item>Possible source of error: Fluorescence is the most commonly encountered issue when working with
-                conventional Raman spectroscopy. For cultural heritage applications, it can be due
-                to organic materials with chromophore groups or to inclusions and impurities in some
-                mineral compounds</item>
-            </list></desc>
+          <desc type="definition" xml:lang="en"><p>Straylight correction (dark substraction)
+              Baseline correction - Substraction of the fluorescence background from the
+              spectra.</p><p> Possible source of error: <list>
+                <item>Fluorescence is the most commonly encountered issue when working with
+                  conventional Raman spectroscopy. For cultural heritage applications, it can be due
+                  to organic materials with chromophore groups or to inclusions and impurities in
+                  some mineral compounds.</item>
+                <item>Some new equipment have algorithm for automatic background substraction, this
+                  should be specified.</item>
+              </list></p>
+          </desc>
           <linkGrp type="generalResources">
             <ref type="spec" source="zotero" target="FCKKBJ8X"/>
             <ref type="spec" source="zotero" target="2PAJ6NGT"/>
