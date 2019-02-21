@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_XRF_DtM2OESCM">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_XRFmapping_DtM1U">
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>step "Describe the method. 2. Operational environmental and safety conditions for the
-          measurement"</title>
+        <title>step "Describe the method - 1. Use (scope)"</title>
         <author>
           <persName>Laura Cartechini</persName>
           <affiliation>CNR-ISTM</affiliation>
@@ -33,15 +32,21 @@
     <body>
       <listEvent>
         <event type="researchStep">
-          <head type="stepTitle" xml:lang="en">Describe the method. Operational environmental and
-            safety conditions for the measurement</head>
-          <desc type="definition" xml:lang="en"><p>Bearing in mind the high penetrating power of X-Rays,
-            <list>
-            <item>Choose carefully the support/check also the back of the artwork to avoid interferences.</item>
-            <item>Determine and mark carefully the security restricted area and define the set-up geometry (X-ray beam direction) for safety of the operators and public.</item>
-          </list> 
-            </p>
+          <head type="stepTitle" xml:lang="en">Describe the method - 1. Use (scope)</head>
+          <desc type="definition" xml:lang="en"><list>
+              <item>Scope: (scientific analysis? Archaelogical excavation? conservation in course?
+                Demonstration? Promotion? Service?)</item>
+            <item>Skills requirements (level of training of the operator):
+              Scientist trained in macroXRFmapping analysis</item>
+            </list></desc>
+          <desc xml:lang="en" type="terms">
+            <term key="Contextualizing" source="Tadirah" type="activity"/>
           </desc>
+          <linkGrp type="generalResources" xml:base="https://www.zotero.org/groups/368112/parthenos_wp2/items/itemKey/">
+            <ref type="article" source="zotero" target="WKAJUKFD"/>
+            <ref type="article" source="zotero" target="ZUDX68X2"/>
+            <ref type="article" source="zotero" target="CLQU8VH9"/>
+          </linkGrp>
         </event>
       </listEvent>
     </body>

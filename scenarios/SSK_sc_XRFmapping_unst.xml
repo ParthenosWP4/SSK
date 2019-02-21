@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario" xml:id="SSK_sc_pXRF">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>scenario "Macro-X-ray fluorescence mapping of materials on cultural heritage
+          objects"</title>
+        <author>
+          <persName>Laura Cartechini</persName>
+          <affiliation>CNR-ISTM</affiliation>
+        </author>
+        <sponsor>PARTHENOS</sponsor>
+      </titleStmt>
+      <publicationStmt>
+        <authority/>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0/">
+            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+              document.</p>
+          </licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Created from spreadsheet</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change/>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div>
+        <head type="scenarioTitle" xml:lang="en">Macro-X-ray fluorescence mapping of materials on
+          cultural heritage objects</head>
+        <desc type="definition" xml:lang="en">Scanning X-ray fluorescence spectroscopy (MAXRF)
+          encompasses all the benefits of conventional point analysis XRF for the in situ
+          characterization of the chemical (major to trace elements) composition of materials in
+          archaeological objects and artworks. In addition it offers the unvaulable information
+          about distribution of these materials on the investigated surface, which can provide a
+          unique insight into the creative process of the artist (revealing hidden sub-surface
+          layers) but also can uncover restorations on the surface. Then, elemental maps can be used
+          for direct intercomparison with other spectral imaging data</desc>
+        <desc xml:lang="en" type="terms">
+          <term type="discipline" source="aurehal" key="History"/>
+          <term source="aurehal" type="discipline" key="Art and art history">Art and art
+            history</term>
+          <term source="aurehal" type="discipline" key="Cultural heritage and museology">Cultural
+            heritage and museology</term>
+          <term type="object" source="tadirah" key="Artifacts"/>
+          <term type="object" source="tadirah" key="Data"/>
+          <term key="Scanning" source="tadirah" type="techniques"/>
+        </desc>
+        <figure type="image">
+          <head/>
+          <graphic
+            url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/XRFmapping.jpeg"/>
+          <figDesc/>
+        </figure>
+        <listEvent>
+          <event xml:id="s1" type="researchStep" ref="step_DtA"/>
+          <event xml:id="s2" type="researchStep" ref="step_DtP"/>
+          <event xml:id="s3" type="researchStep" ref="step_XRFmapping_DtM1U"/>
+          <event xml:id="s4" type="researchStep" ref="step_XRF_DtM2OESCM"/>
+          <event xml:id="s5" type="researchStep" ref="step_XRF_DtM3ES"/>
+          <event xml:id="s6" type="researchStep" ref="step_XRF_DtM4MRRA"/>
+          <event xml:id="s7" type="researchStep" ref="step_XRF_DtM5RISMM2D3D"/>
+          <event xml:id="s8" type="researchStep" ref="step_XRF_DtM1PPSL"/>
+          <event xml:id="s9" type="researchStep" ref="step_XRF_DtM2PPSAMSRI"/>
+          <event xml:id="s10" type="researchStep" ref="step_XRF_DtM3PPPTMS"/>
+          <event xml:id="s11" type="researchStep" ref="step_XRF_DtM4MSASDMF" mode="change">
+            <linkGrp type="generalResources" xml:base="www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+              <ref type="tool" source="zotero" target="9V4ZM2U7" mode="add"/>
+              <ref type="tool" source="zotero" target="7MNHZGXX" mode="add"/>
+            </linkGrp>
+          </event>
+          <event xml:id="s12" type="researchStep" ref="step_XRF_PPID1PSBA"/>
+          <event xml:id="s13" type="researchStep" ref="step_XRF_PPID2MIPA"/>
+          <event xml:id="s14" type="researchStep" ref="step_DR1DMSPS"/>
+          <event xml:id="s15" type="researchStep" ref="step_DR2PR"/>
+          <event xml:id="s16" type="researchStep" ref="step_DR3PR"/>
+        </listEvent>
+      </div>
+    </body>
+  </text>
+</TEI>

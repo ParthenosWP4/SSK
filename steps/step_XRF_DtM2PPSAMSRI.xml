@@ -35,11 +35,12 @@
         <event type="researchStep">
           <head type="stepTitle" xml:lang="en">Describe the measurement. 2. Pre-processing /
             selection and annotation of measurement sites on reference images</head>
-          <desc type="definition" xml:lang="en">Select the sites of analysis. Use (or Acquire) high
-            resolution detailed images of the entire object and of the part under study as
-            references. Zoom in and acquire high resolution image of the detail under examination.
-            Select the area of measurement and use the detailed reference images to annotate the
-            points of analysis.</desc>
+          <desc type="definition" xml:lang="en"><p>Select the sites of analysis. The point of analysis
+            (3 to 5 mm diameter) has to be optically flat to inhibit diffuse reflection. Acquire
+            high resolution detailed reference images of the entire object or of the part under
+            study (in case of a monument). Use the detailed reference images to document the points
+            of analysis.</p>
+            <p>Possible source of error: Diffuse reflection results from a combined process including reflection, refraction and diffraction of the incident radiation due to interactions with particles of the sample. Diffuse reflection spectra appear to be similar to transmission spectra derived from poorly prepared  KBr disks.</p></desc>
           <linkGrp type="generalResources">
             <ref type="paper" source="zotero" target="4W7QUMZF"/>
           </linkGrp>

@@ -41,7 +41,6 @@
             <event type="researchStep">
                <head xml:lang="en">Determining laser characteristics</head>
                <desc type="definition" xml:lang="en">Testing and characterization of lasers.</desc>
-               <desc type="definition" xml:lang="fr"/>
                <desc type="term" xml:lang="en">
                   <term key="ISO 11554:2017" source="standard_list" type="standard"/>
                   <term key="http://tadirah.dariah.eu/vocab/index.php?tema=26&amp;/content-analysis"

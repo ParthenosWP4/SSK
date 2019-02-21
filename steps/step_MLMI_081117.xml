@@ -40,7 +40,6 @@
                <head xml:lang="en">Modeling Laser-Material Interactions</head>
                <desc type="definition" xml:lang="en">Modeling Laser-Material Interactions in COMSOL
       Multiphysics.</desc>
-               <desc type="definition" xml:lang="fr"/>
                <desc type="term" xml:lang="en">
                   <term key="http://tadirah.dariah.eu/vocab/index.php?tema=35&amp;/modeling"
                         source="http://tadirah.dariah.eu/"

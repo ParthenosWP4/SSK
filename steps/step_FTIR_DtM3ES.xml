@@ -6,16 +6,8 @@
       <titleStmt>
         <title>step "Describe the method - 3. Equipment specifications"</title>
         <author>
-          <persName>Sophia Sotiropoulou</persName>
-          <affiliation>IESL-FORTH</affiliation>
-        </author>
-        <author>
-          <persName>Panayiotis Siozos</persName>
-          <affiliation>IESL-FORTH</affiliation>
-        </author>
-        <author>
-          <persName>Demetrios Anglos</persName>
-          <affiliation>IESL-FORTH</affiliation>
+          <persName>Barbara Salvadori</persName>
+          <affiliation>CNR-ICVBC</affiliation>
         </author>
         <sponsor>PARTHENOS</sponsor>
       </titleStmt>
@@ -45,10 +37,7 @@
           <desc type="definition" xml:lang="en"><p>The equipment specifications of the instrument
               and the overall appartus are documented such as type of equipment, manufacturing
               company, laser excitation wavelength, optical system (camera) /objective lens used and
-              any other component used.</p>
-            <p>If possible a proper excitation line should be used for spefic materials. Both in
-              consideration of stability under the laser, the scattering probability and also
-              photochemical damage should be considered.</p></desc>
+              any other component used.</p></desc>
         </event>
       </listEvent>
     </body>

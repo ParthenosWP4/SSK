@@ -7,8 +7,8 @@
         <title>step "Describe measurement. 4. Measurement / Spectra acquisition / Storage of data
           and metadata files"</title>
         <author>
-          <persName>Laura Cartechini</persName>
-          <affiliation>CNR-ISTM</affiliation>
+          <persName>Barbara Salvadori</persName>
+          <affiliation>CNR-ICVBC</affiliation>
         </author>
         <sponsor>PARTHENOS</sponsor>
       </titleStmt>
@@ -35,17 +35,22 @@
         <event type="researchStep">
           <head type="stepTitle" xml:lang="en">Describe measurement. 4. Measurement / Spectra
             acquisition / Storage of data and metadata files</head>
-          <desc type="definition" xml:lang="en"><list>
-              <item>Record data taken on representative sites on the CH object. A preliminary
-                evaluation of the spectrum is relevant (assessement of major, minor elements
-                present)</item>
-              <item>Store data and metadata files</item>
-              <item>The measurment conditions (Voltage, current, acquisition time, any filter used)
-                are documented in a text file for all the measurements or in form of metadata file
-                for each spectrum file.</item>
-            </list></desc>
-          <linkGrp type="generalResources" xml:base="www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-            <ref type="tool" source="zotero" target="Z74MYJZM"/>
+          <desc type="definition" xml:lang="en"><p>Recording of the FTIR spectra taken on
+              representative sites on the CH object. First evaluation of the spectrum (assessment of
+              FTIR peaks and eventually distortions). The measurement conditions (number of scans,
+              acquisition specral range, spectral resolution) are documented in a text file for all
+              the measurements or in form of metadata file for each spectrum file.</p>
+            <p>The position of the instrument must be kept as fixed as possible to avoid artefacts
+              and data rejection by the processing system.</p></desc>
+          <desc xml:lang="en" type="terms">
+            <term type="standard" key="ASCII"/>
+            <term type="standard" key="SPC"/>
+          </desc>
+          <linkGrp type="generalResources"
+            xml:base="www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+            <ref type="spec" source="zotero" target="TMIE6GNJ"/>
+            <ref type="tool" source="zotero" target="4W7QUMZF"/>
+            <ref type="service" source="zotero" target="US2HB3DN"/>
           </linkGrp>
         </event>
       </listEvent>

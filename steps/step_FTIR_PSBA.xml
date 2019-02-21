@@ -4,8 +4,7 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>step "Describe measurement. 3. Pre-processing / preliminary tests - Measurement
-          setup"</title>
+        <title>step "Post-process and interpret data. 2. Peak / spectral bands assessment"</title>
         <author>
           <persName>Barbara Salvadori</persName>
           <affiliation>CNR-ICVBC</affiliation>
@@ -33,15 +32,16 @@
     <body>
       <listEvent>
         <event type="researchStep">
-          <head type="stepTitle" xml:lang="en">Describe measurement. 3. Pre-processing / preliminary
-            tests - Measurement setup</head>
-          <desc type="definition" xml:lang="en"><p>The instrument head must access the point of
-              analysis, taking into account that the working distance must be optimized checking the
-              signal amplitude. A tentative spectrum is obtained on the specimen / area under
-              examination acquiring the number of scans that seems appropriate. The scans may be
-              increased according to the final output.</p><p>Depending on surface morphology and
-              composition, it may be necessary to optimize the acquisition parameters to improve the
-              spectral profile.</p></desc>
+          <head type="stepTitle" xml:lang="en">Post-process and interpret data. 2. Peak / spectral
+            bands assessment</head>
+          <desc type="definition" xml:lang="en"><p>In this step the band position (wavenumber) and
+              the relative intensity of the observed peaks in the FTIR spectrum are identified and
+              assigned to functional groups vibrations. The relative intensity can be expressed as
+              weak, moderate or strong.</p></desc>
+          <linkGrp type="generalResources" xml:base="www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+            <ref type="book" source="zotero" target="CIHITZQE"/>
+            <ref type="tool" source="zotero" target="4W7QUMZF"/>
+          </linkGrp>
         </event>
       </listEvent>
     </body>

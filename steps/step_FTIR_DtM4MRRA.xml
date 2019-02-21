@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_DtM1PPSL">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_DtM4MRRA">
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>step "Describe measurement. 3. Pre-processing / preliminary tests - Measurement
-          setup"</title>
+        <title>step "Describe the method. 4. Measurement range, spot size and spatial resolution/
+          accuracy"</title>
         <author>
           <persName>Barbara Salvadori</persName>
           <affiliation>CNR-ICVBC</affiliation>
@@ -33,15 +33,17 @@
     <body>
       <listEvent>
         <event type="researchStep">
-          <head type="stepTitle" xml:lang="en">Describe measurement. 3. Pre-processing / preliminary
-            tests - Measurement setup</head>
-          <desc type="definition" xml:lang="en"><p>The instrument head must access the point of
-              analysis, taking into account that the working distance must be optimized checking the
-              signal amplitude. A tentative spectrum is obtained on the specimen / area under
-              examination acquiring the number of scans that seems appropriate. The scans may be
-              increased according to the final output.</p><p>Depending on surface morphology and
-              composition, it may be necessary to optimize the acquisition parameters to improve the
-              spectral profile.</p></desc>
+          <head type="stepTitle" xml:lang="en">Describe the method. Measurement range, spot size and
+            spatial resolution/ accuracy</head>
+          <desc type="definition" xml:lang="en">Contact or short distance from the surface is
+            required: The instrument head must access the point of analysis, taking into account
+            that the working distance must be optimized checking the signal amplitude. The
+            measurment spot size (dimensions of the analysed spot) and the measurment
+            resolution/accuracy are documented"</desc>
+          <desc type="terms" xml:lang="en">
+            <term type="activity" source="tadirah" key="designing"/>
+            <term type="standard" source="standard_list" key="CIDOC-CRMsci"/>
+          </desc>
         </event>
       </listEvent>
     </body>
