@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario"
-  xml:id="SSK_sc_corpusModellingInTEI-minusDigitization">
+  xml:id="SSK_sc_corpusModellingInTEI">
   <teiHeader>
     <fileDesc>
       <titleStmt>
@@ -61,6 +61,7 @@
             Susanne Haaf)</figDesc>
         </figure>
         <listEvent>
+          <event type="researchScenario" subtype="preliminary" ref="SSK_sc_digitization"/>
           <event ref="step_corpusComposition" type="researchStep" xml:id="s1"/>
           <event ref="step_verificationAndCleanup" type="researchStep" xml:id="s2"/>
           <event ref="step_conversionToTEI" type="researchStep" xml:id="s3"/>

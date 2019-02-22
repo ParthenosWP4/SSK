@@ -11,6 +11,10 @@
                <persName>Frank Uiterwaal</persName>
                <affiliation>NIOD-KNAW</affiliation>
             </author>
+           <author>
+             <persName>Tomasz Parkoła</persName>
+             <affiliation> Poznańskie Centrum Superkomputerowo-Sieciowe, Poznań</affiliation>
+           </author>
          </titleStmt>
          <publicationStmt>
             <authority>Parthenos</authority>

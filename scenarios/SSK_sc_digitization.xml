@@ -39,7 +39,7 @@
       <body>
          <div type="scenario" xml:id="sc_digitization">
             <head type="scenarioTitle" xml:lang="en">Digitizing textual material</head>
-            <desc type="definition" xml:lang="en">The digitisation process of original objects lies at the
+            <desc type="definition" xml:lang="en">The digitization process of original objects lies at the
      core of many activities in the digital humanities field. The way in which a source is
      digitised, determines to a large extent what kind of information can be gathered from this
      virtual replica. While there are many complimentary processes which can enrich the the object
@@ -52,13 +52,10 @@
                <term source="aureHAL" type="discipline">Library and information sciences</term>
                <term key="Data" source="TaDiRAH" type="object"/>
                <term key="Image" source="TaDiRAH" type="object"/>
-               <term key="Literature" source="TaDiRAH" type="object"/>
                <term key="Manuscript" source="TaDiRAH" type="object"/>
                <term key="Sheet Music" source="TaDiRAH" type="object"/>
-               <term key="Text" source="TaDiRAH" type="object"/>
                <term key="Text Bearing Objects" source="TaDiRAH" type="object"/>
                <term key="Scanning" source="TaDiRAH" type="technique"/>
-               <term key="Transcription" source="TaDiRAH" type="technique"/>
             </desc>
             <figure type="image">
                <head>Digitisation station</head>
@@ -74,7 +71,7 @@
                <event ref="step_SMF_06022018" type="researchStep" xml:id="s6"/>
                <event ref="step_PP_06022018" type="researchStep" xml:id="s7"/>
                <event ref="step_SEF_06022018" type="researchStep" xml:id="s8"/>
-               <event ref="step_DTM_06022018" type="researchStep" xml:id="s9"/>
+               <!--<event ref="step_DTM_06022018" type="researchStep" xml:id="s9"/>-->
             </listEvent>
          </div>
       </body>
