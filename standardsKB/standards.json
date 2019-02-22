@@ -891,5 +891,26 @@
   "standard_desc_esp": "",
   "standard_desc_ita": "",
   "standard_link": "http://jcamp-dx.org"
+},
+{
+       "id":63,
+       "standard_abbr_name": "PAGE XML",
+       "standard_complete_name": "Page Analysis and Ground-Truth Elements",
+       "standard_desc_eng": "There is a plethora of established and proposed document representation formats but none that can adequately support individual stages within an entire sequence of document image analysis methods (from document image enhancement to layout analysis to OCR) and their evaluation. This paper describes PAGE, a new XML-based page image representation framework that records information on image characteristics (image borders, geometric distortions and corresponding corrections, binarisation etc.) in addition to layout structure and page content. The suitability of the framework to the evaluation of entire workflows as well as individual stages has been extensively validated by using it in high-profile applications such as in public contemporary and historical ground-truthed datasets and in the ICDAR Page Segmentation competition series.",
+       "standard_desc_fr": "",
+       "standard_desc_deu": "",
+       "standard_desc_esp": "",
+       "standard_desc_ita": "",
+       "standard_link": "http://dx.doi.org/10.1109/ICPR.2010.72"
+},
+{
+       "standard_abbr_name": "hOCR",
+       "standard_complete_name": "hOCR",
+       "standard_desc_eng": "hOCR is an open standard for representing document layout analysis and OCR results as a subset of HTML. The goal is to reuse as much existing technology as possible, and to arrive at a representation that makes it easy to store, share, process and display OCR results. This specification defines many features that can represent a variety of OCR-related information. However, being built on top of HTML, hOCR is designed to make it easy to start simple and gradually use more complex constructs when necessary. Consider you have an HTML document that encodes a book: Wrapping page elements in <div class=\"ocr_page\"> tags will convey the page boundaries to hOCR-capable agents and turn the HTML document into an hOCR document.",
+       "standard_desc_fr": "",
+       "standard_desc_deu": "",
+       "standard_desc_esp": "",
+       "standard_desc_ita": "",
+       "standard_link": "http://kba.cloud/hocr-spec/1.2/"
 }
 ]
