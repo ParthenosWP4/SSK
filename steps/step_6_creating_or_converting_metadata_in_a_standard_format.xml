@@ -37,7 +37,7 @@
                <head xml:lang="fr">TODO</head>
                <desc type="definition" xml:lang="en">The step describes tools and good practice to create or
       convert data and metadata in a specific metadata format without loss useful information</desc>
-               <desc type="definition" xml:lang="fr"/>
+               
                <desc type="term" xml:lang="en">
                   <term key="http://tadirah.dariah.eu/vocab/index.php?tema=8&amp;/conversion"
                         source="http://tadirah.dariah.eu/"

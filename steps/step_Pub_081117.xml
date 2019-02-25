@@ -39,7 +39,7 @@
             <event type="researchStep">
                <head xml:lang="en">Publishing</head>
                <desc type="definition" xml:lang="en">Disseminating the characterization report.</desc>
-               <desc type="definition" xml:lang="fr"/>
+               
                <desc type="term" xml:lang="en">
                   <term key="http://tadirah.dariah.eu/vocab/index.php?tema=47&amp;/publishing"
                         source="http://tadirah.dariah.eu/"

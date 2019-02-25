@@ -582,6 +582,7 @@
                 <elementRef key="abbr" minOccurs="0"/>
                 <elementRef key="expan" minOccurs="0"/>
                 <elementRef key="term" minOccurs="0"/>
+                <elementRef key="head" minOccurs="0"/>
               </alternate>
             </content>
             <constraintSpec ident="descShort" scheme="schematron">

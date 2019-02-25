@@ -43,7 +43,7 @@
       good way to prevent having to rescan an image when requirements change over time (due to new
       research needs or improved technology which sets higher expectations) or when better post
       processing methods become available.</desc>
-               <desc type="definition" xml:lang="fr"/>
+               
                <desc type="term" xml:lang="en">
                   <term key="Archiving" source="TaDiRAH" type="activity"/>
                   <term key="Files" source="TaDiRAH" type="object"/>

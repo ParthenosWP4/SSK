@@ -37,7 +37,7 @@
           <desc type="definition" xml:lang="en">This step describes Data (or Metadata) selection
             process, based on predefined criteria: format, homogeneity, implemented fields, etc.
             etc.</desc>
-          <desc type="definition" xml:lang="fr"/>
+          
           <desc type="term" xml:lang="en">
             <term key="http://tadirah.dariah.eu/vocab/index.php?tema=25&amp;/4_analysis"
               source="http://tadirah.dariah.eu/" type="activity"/>

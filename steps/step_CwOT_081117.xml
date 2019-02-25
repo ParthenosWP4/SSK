@@ -41,7 +41,7 @@
                <desc type="definition" xml:lang="en">Compare the obtained results by LIBS with results from
       other analytical techniques employed in the characterization of the same glass object or other
       glasses.</desc>
-               <desc type="definition" xml:lang="fr"/>
+               
                <desc type="term" xml:lang="en">
                   <term key="LIBS" source="standard_list" type="standard"/>
                   <term key="http://tadirah.dariah.eu/vocab/index.php?tema=34&amp;/contextualizing"

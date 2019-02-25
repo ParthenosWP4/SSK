@@ -40,7 +40,7 @@
                <head xml:lang="en">Elaborate a systematic report</head>
                <desc type="definition" xml:lang="en">Developing a report that contains all the relevant data
       related to the LIBS characterization of glass artefacts.</desc>
-               <desc type="definition" xml:lang="fr"/>
+               
                <desc type="term" xml:lang="en">
                   <term key="http://tadirah.dariah.eu/vocab/index.php?tema=20&amp;/writing"
                         source="http://tadirah.dariah.eu/"

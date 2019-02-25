@@ -41,7 +41,7 @@
                <desc type="definition" xml:lang="en">In this step the wavelength and the relative intensity
       of the observed peaks in the Raman spectrum are identified and documented. The relative
       intensity can be expressed as weak, moderate or strong.</desc>
-               <desc type="definition" xml:lang="fr"/>
+               
                <desc type="term" xml:lang="en">
                   <term key="http://tadirah.dariah.eu/vocab/index.php?tema=26&amp;/content-analysis"
                         source="http://tadirah.dariah.eu/"

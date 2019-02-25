@@ -277,13 +277,6 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:apply-templates/>
-         </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M16"/>
-         <svrl:active-pattern>
-            <xsl:attribute name="document">
-               <xsl:value-of select="document-uri(/)"/>
-            </xsl:attribute>
             <xsl:attribute name="name">@type</xsl:attribute>
             <svrl:text>body/div</svrl:text>
             <svrl:text>head</svrl:text>
@@ -291,14 +284,14 @@
             <svrl:text>event</svrl:text>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M17"/>
+         <xsl:apply-templates select="/" mode="M16"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M18"/>
+         <xsl:apply-templates select="/" mode="M17"/>
       </svrl:schematron-output>
    </xsl:template>
    <!--SCHEMATRON PATTERNS-->
@@ -339,8 +332,9 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>TEI/@type should be either "researchScenario" or "researchStep". The current value of
-        TEI/@type is "<xsl:text/>
+               <svrl:text>TEI/@type
+        should be either "researchScenario" or "researchStep". The current value of TEI/@type is
+          "<xsl:text/>
                   <xsl:value-of select="@type"/>
                   <xsl:text/>"</svrl:text>
             </svrl:failed-assert>
@@ -378,8 +372,8 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>The main sponsor of the SSK is the PARTHENOS project. All
-        scenarios and steps should record this information.</svrl:text>
+            <svrl:text>The main sponsor of the SSK is the
+        PARTHENOS project. All scenarios and steps should record this information.</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M4"/>
@@ -397,8 +391,8 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>You need to supply the name and the
-        affiliation of all authors.</svrl:text>
+               <svrl:text>You need to supply the name
+        and the affiliation of all authors.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -480,10 +474,10 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>A licence should be applied to
-        all scenarios and steps. The declaration of the licence chosen in made by a clear sentence
-        in natural language (in a p element) and a link towards the licence (with the attribute
-        @target).</svrl:text>
+               <svrl:text>A licence should be
+        applied to all scenarios and steps. The declaration of the licence chosen in made by a clear
+        sentence in natural language (in a p element) and a link towards the licence (with the
+        attribute @target).</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -499,7 +493,7 @@
    <xsl:template match="tei:sourceDesc" priority="1000" mode="M8">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="tei:sourceDesc"
-                       role="error"/>
+                       role="warning"/>
       <!--REPORT information-->
       <xsl:if test="child::*">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="child::*">
@@ -507,8 +501,9 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>sourceDesc in mandatory in TEI, so if you want to give details on
-        the way the scenario was conceived, it is the appropriate location.</svrl:text>
+            <svrl:text>sourceDesc in mandatory in TEI, so if you want
+        to give details on the way the scenario was conceived, it is the appropriate
+        location.</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M8"/>
@@ -532,9 +527,9 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>When recording a
-        revision, some precise metadata must be given : the date of the revision, the name of the
-        responsibe and his/her affiliation and a description. </svrl:text>
+               <svrl:text>When recording a revision, some precise metadata must be given : the date
+        of the revision, the name of the responsibe and his/her affiliation and a description.
+      </svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -558,8 +553,8 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text> The title is too short: 10 characters minimum.
-        Your title is <xsl:text/>
+               <svrl:text> The title is too short: 10 characters
+        minimum. Your title is <xsl:text/>
                   <xsl:value-of select="10 - string-length(.)"/>
                   <xsl:text/> characters too
         short.</svrl:text>
@@ -575,11 +570,11 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>The title is too long: 100 characters maximum.
-        Your title is <xsl:text/>
+               <svrl:text>The title is too long: 100
+        characters maximum. Your title is <xsl:text/>
                   <xsl:value-of select="string-length(.) - 100"/>
-                  <xsl:text/> characters too
-        long.</svrl:text>
+                  <xsl:text/> characters
+        too long.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -590,8 +585,8 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>The title of a scenario should describe the main goal of
-        the scenario.</svrl:text>
+            <svrl:text>The title of a scenario should
+        describe the main goal of the scenario.</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M10"/>
@@ -608,7 +603,8 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text> The title is too short: 10 characters minimum </svrl:text>
+               <svrl:text> The title is too short: 10 characters
+        minimum </svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -621,8 +617,8 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>The title is too long: 100 characters
-        maximum</svrl:text>
+               <svrl:text>The title is too long: 100
+        characters maximum</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -636,9 +632,8 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>The
-        title of a step should describe the action to perform, starting or ending with a gerund (or
-        an infinitive), or a noun .</svrl:text>
+               <svrl:text>The title of a step should describe the action to perform, starting or
+        ending with a gerund (or an infinitive), or a noun .</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -663,8 +658,8 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>The description is too long: 1500 characters
-        maximum. Your description is <xsl:text/>
+               <svrl:text>The description is too long: 1500
+        characters maximum. Your description is <xsl:text/>
                   <xsl:value-of select="string-length(.) - 1500"/>
                   <xsl:text/> too
         long</svrl:text>
@@ -681,8 +676,9 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text> In the &lt;desc type="definition&gt;, there should be
-        nothing more than text, &lt;list&gt; and &lt;ref&gt;.</svrl:text>
+               <svrl:text> In the &lt;desc
+        type="definition&gt;, there should be nothing more than text, &lt;list&gt; and
+        &lt;ref&gt;.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -708,8 +704,8 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>The image format should be JPG
-        or PNG. Accepted extensions are: jpg, JPG, jpeg, JPEG, png, PNG</svrl:text>
+               <svrl:text>The image format
+        should be JPG or PNG. Accepted extensions are: jpg, JPG, jpeg, JPEG, png, PNG</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -745,8 +741,8 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>A scenario could have several keywords
-        related to standards. Check the documentation for more details</svrl:text>
+            <svrl:text>A scenario could have
+        several keywords related to standards. Check the documentation for more details</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <!--REPORT information-->
@@ -757,8 +753,9 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>A scenario could have several keywords
-        related to disciplines. Check the documentation for more details.</svrl:text>
+            <svrl:text>A scenario could have
+        several keywords related to disciplines. Check the documentation for more
+        details.</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <!--REPORT information-->
@@ -769,8 +766,9 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>A scenario could have several keywords
-        related to research techniques. Check the Tadirah taxonomy for more details.</svrl:text>
+            <svrl:text>A scenario could have
+        several keywords related to research techniques. Check the Tadirah taxonomy for more
+        details.</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <!--REPORT information-->
@@ -781,8 +779,8 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>A scenario could have several
-        keywords related to research objects. Check the Tadirah taxonomy for more
+            <svrl:text>A scenario
+        could have several keywords related to research objects. Check the Tadirah taxonomy for more
         details.</svrl:text>
          </svrl:successful-report>
       </xsl:if>
@@ -796,8 +794,8 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>More than 4 terms of the same
-        vocabulary type may be too much: STANDARD</svrl:text>
+               <svrl:text>More than 4 terms
+        of the same vocabulary type may be too much: STANDARD</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -811,8 +809,8 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>More than 4 terms of the same
-        vocabulary type may be too much: DISCIPLINE</svrl:text>
+               <svrl:text>More than 4
+        terms of the same vocabulary type may be too much: DISCIPLINE</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -826,8 +824,8 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>More than 4 terms of the same
-        vocabulary type may be too much: TECHNIQUE</svrl:text>
+               <svrl:text>More than 4
+        terms of the same vocabulary type may be too much: TECHNIQUE</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -841,8 +839,8 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>More than 4 terms of the same
-        vocabulary type may be too much: OBJECT</svrl:text>
+               <svrl:text>More than 4 terms
+        of the same vocabulary type may be too much: OBJECT</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -868,8 +866,8 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>The attribute source is important to specifiy which vocabulary was
-        used. The main ones are "tadirah", aurehal, "standard".</svrl:text>
+               <svrl:text>The attribute source is important to specifiy which
+        vocabulary was used. The main ones are "tadirah", aurehal, "standard".</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -881,9 +879,8 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>The
-        activity terms are more suitable for describing steps rather than scenarios. It is
-        recommended to choose one activity term per scenario step.</svrl:text>
+            <svrl:text>The activity terms are more suitable for describing steps rather than
+        scenarios. It is recommended to choose one activity term per scenario step.</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M14"/>
@@ -910,7 +907,8 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Need a value for @corresp</svrl:text>
+               <svrl:text>Need a value for
+        @corresp</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -924,8 +922,8 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Value of @corresp should be a valid URI. The
-        current value of @corresp for "<xsl:text/>
+               <svrl:text>Value of @corresp should be a
+        valid URI. The current value of @corresp for "<xsl:text/>
                   <xsl:value-of select="name(.)"/>
                   <xsl:text/>" is <xsl:text/>
                   <xsl:value-of select="@corresp"/>
@@ -943,9 +941,9 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>The attribute @source should contain the name of
-        the project whose references are listed inside the &lt;linkGrp&gt;. The current value of
-        @source for "<xsl:text/>
+               <svrl:text>The attribute @source should contain
+        the name of the project whose references are listed inside the &lt;linkGrp&gt;. The current
+        value of @source for "<xsl:text/>
                   <xsl:value-of select="name(.)"/>
                   <xsl:text/>" is <xsl:text/>
                   <xsl:value-of select="@source"/>
@@ -972,9 +970,8 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>The
-        reference of a Zotero record is made with the Zotero item key (8 capitals or
-        digits)</svrl:text>
+               <svrl:text>The reference of a Zotero record is made with the Zotero item key (8 capitals
+        or digits)</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -984,36 +981,12 @@
    <xsl:template match="@*|node()" priority="-2" mode="M15">
       <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M15"/>
    </xsl:template>
-   <!--PATTERN -->
-   <!--RULE -->
-   <xsl:template match="tei:linkGrp/tei:ref" priority="1000" mode="M16">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:linkGrp/tei:ref"/>
-      <!--ASSERT information-->
-      <xsl:choose>
-         <xsl:when test="tei:term"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="tei:term">
-               <xsl:attribute name="role">information</xsl:attribute>
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>It is possible to add terms to resources, for instance a standard
-        or a technique.</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-      <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M16"/>
-   </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M16"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M16">
-      <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M16"/>
-   </xsl:template>
    <!--PATTERN @type-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">@type</svrl:text>
    <!--RULE -->
    <xsl:template match="tei:body[ancestor::tei:TEI[@type = 'researchScenario']]/tei:div/@type"
                  priority="1003"
-                 mode="M17">
+                 mode="M16">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="tei:body[ancestor::tei:TEI[@type = 'researchScenario']]/tei:div/@type"/>
       <!--ASSERT warning-->
@@ -1025,8 +998,8 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>@type attribute incoherence: document type is
-          '<xsl:text/>
+               <svrl:text>@type attribute incoherence: document
+        type is '<xsl:text/>
                   <xsl:value-of select="ancestor::tei:TEI/@type"/>
                   <xsl:text/>' and current element type value is
           '<xsl:text/>
@@ -1035,12 +1008,12 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M17"/>
+      <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M16"/>
    </xsl:template>
    <!--RULE -->
    <xsl:template match="tei:body[ancestor::tei:TEI[@type = 'researchStep']]/tei:div/@type"
                  priority="1002"
-                 mode="M17">
+                 mode="M16">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="tei:body[ancestor::tei:TEI[@type = 'researchStep']]/tei:div/@type"/>
       <!--ASSERT warning-->
@@ -1052,8 +1025,8 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>@type attribute incoherence: document type is
-          '<xsl:text/>
+               <svrl:text>@type attribute incoherence: document
+        type is '<xsl:text/>
                   <xsl:value-of select="ancestor::tei:TEI/@type"/>
                   <xsl:text/>' and current element type value is
           '<xsl:text/>
@@ -1062,12 +1035,12 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M17"/>
+      <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M16"/>
    </xsl:template>
    <!--RULE -->
    <xsl:template match="tei:head[ancestor::tei:TEI[@type = 'researchScenario']]/@type"
                  priority="1001"
-                 mode="M17">
+                 mode="M16">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="tei:head[ancestor::tei:TEI[@type = 'researchScenario']]/@type"/>
       <!--ASSERT warning-->
@@ -1079,8 +1052,8 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>@type attribute incoherence: document type is
-          '<xsl:text/>
+               <svrl:text>@type attribute incoherence: document
+        type is '<xsl:text/>
                   <xsl:value-of select="ancestor::tei:TEI/@type"/>
                   <xsl:text/>' and current element type value is
           '<xsl:text/>
@@ -1089,12 +1062,12 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M17"/>
+      <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M16"/>
    </xsl:template>
    <!--RULE -->
    <xsl:template match="tei:head[ancestor::tei:TEI[@type = 'researchStep']]/@type"
                  priority="1000"
-                 mode="M17">
+                 mode="M16">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="tei:head[ancestor::tei:TEI[@type = 'researchStep']]/@type"/>
       <!--ASSERT warning-->
@@ -1106,8 +1079,8 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>@type attribute incoherence: document type is
-          '<xsl:text/>
+               <svrl:text>@type attribute incoherence: document type
+        is '<xsl:text/>
                   <xsl:value-of select="ancestor::tei:TEI/@type"/>
                   <xsl:text/>' and current element type value is
           '<xsl:text/>
@@ -1116,15 +1089,15 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M17"/>
+      <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M16"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M17"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M17">
-      <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M17"/>
+   <xsl:template match="text()" priority="-1" mode="M16"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M16">
+      <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M16"/>
    </xsl:template>
    <!--PATTERN -->
    <!--RULE -->
-   <xsl:template match="tei:event" priority="1000" mode="M18">
+   <xsl:template match="tei:event" priority="1000" mode="M17">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:event"/>
       <!--REPORT error-->
       <xsl:if test="ancestor::tei:TEI[@type = 'researchStep'] and not(tei:desc[@type = 'definition']) and not(tei:desc[@type = 'terms'])">
@@ -1134,8 +1107,8 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>we need a desc element for the description of the step or the scenario and a desc element
-        for the associated terms.</svrl:text>
+            <svrl:text>we need a desc element for the description of the step or the scenario and a
+        desc element for the associated terms.</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <!--ASSERT error-->
@@ -1152,10 +1125,10 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M18"/>
+      <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M17"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M18"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M18">
-      <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M18"/>
+   <xsl:template match="text()" priority="-1" mode="M17"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M17">
+      <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M17"/>
    </xsl:template>
 </xsl:stylesheet>

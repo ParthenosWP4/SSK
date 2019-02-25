@@ -37,7 +37,7 @@
                <head xml:lang="fr">Conserver les fichies édités</head>
                <desc type="definition" xml:lang="en">After first storing the master file, it is time to store
       the edited file as well.</desc>
-               <desc type="definition" xml:lang="fr"/>
+               
                <desc type="term" xml:lang="en">
                   <term key="archiving" source="TaDiRAH" type="activity"/>
                   <term key="File" source="TaDiRAH" type="object"/>

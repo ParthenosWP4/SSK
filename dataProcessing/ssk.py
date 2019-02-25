@@ -5,6 +5,7 @@ import os
 from lxml import etree as ET
 from bs4 import BeautifulSoup
 import csv
+from pathlib import Path
 
 class schSSK:
 
@@ -23,12 +24,13 @@ class schSSK:
     def get_files(self, d):
         filesList = []  # liste fichiers
         for fileName in os.listdir(d):
+            folder = Path(d)
             if fileName.endswith(".xml"):
-                filesList.append(d + "/" + fileName)
+                filesList.append(folder / fileName)
         return filesList
 
     def loadBS(self, xmlfile):
-        with open(xmlfile) as file:
+        with open(xmlfile, encoding='utf-8') as file:
             testedFile = BeautifulSoup(file, 'xml')
             return testedFile
 
@@ -87,8 +89,8 @@ class schSSK:
 
     def writeCSV(self, diagnostic, report, reportFolder):
         keys = diagnostic[0].keys()
-        reportFile = re.search('\/(.+?)\.xml', report).group(1) + "_report.csv"
-        csvFile = reportFolder + "/" + os.path.basename(os.path.normpath(reportFile))
+        reportFile = str(report.split("/")[-1])[:-4] + "_report.csv"
+        csvFile = os.path.join(reportFolder, os.path.basename(os.path.normpath(reportFile)))
 
         with open(csvFile, 'w') as output_file:
             dict_writer = csv.DictWriter(output_file, keys)

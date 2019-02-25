@@ -37,7 +37,7 @@
                <head xml:lang="fr">Analyser</head>
                <desc type="definition" xml:lang="en">Calculate p-values for significance, by using Analysis
       of Variance (ANOVA) or regression-analyses</desc>
-               <desc type="definition" xml:lang="fr"/>
+               
                <desc type="term" xml:lang="en">
                   <term key="http://tadirah.dariah.eu/vocab/index.php?tema=30&amp;/structural-analysis"
                         source="http://tadirah.dariah.eu/"

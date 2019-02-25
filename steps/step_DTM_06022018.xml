@@ -38,7 +38,7 @@
                <desc type="definition" xml:lang="en">Depending on the readibility of the source on one side
       and the quality of machine transciption software on the other, you can decide whether manual
       transcriptiob or machine transcription is the most suitable course of action.</desc>
-               <desc type="definition" xml:lang="fr"/>
+               
                <desc type="term" xml:lang="en">
                   <term key="transcription" source="TaDiRAH" type="activity"/>
                </desc>

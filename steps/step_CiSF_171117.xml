@@ -42,7 +42,7 @@
                <desc type="definition" xml:lang="en">Choose a sustainable (open, interoperable and
       maintained) format according to the nature of the data. Consult a up-to-date list of
       maintained formats.</desc>
-               <desc type="definition" xml:lang="fr"/>
+               
                <desc type="term" xml:lang="en">
                   <term key="http://tadirah.dariah.eu/vocab/index.php?tema=8&amp;/conversion"
                         source="http://tadirah.dariah.eu/"

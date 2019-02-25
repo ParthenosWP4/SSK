@@ -40,7 +40,7 @@
                <head xml:lang="en">Prepare report</head>
                <desc type="definition" xml:lang="en">Organizing data to prepare a document with the results
       and the conclusion of the Raman analysis.</desc>
-               <desc type="definition" xml:lang="fr"/>
+               
                <desc type="term" xml:lang="en">
                   <term key="http://tadirah.dariah.eu/vocab/index.php?tema=40&amp;/organizing"
                         source="http://tadirah.dariah.eu/"

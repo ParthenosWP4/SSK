@@ -40,7 +40,7 @@
     <body>
       <listEvent>
         <event type="researchStep">
-          <head type="stepTitle" xml:lang="en">Post process and interpret data. 2. Peak / spectral
+          <head type="stepTitle" xml:lang="en">Post process and interpret data.  Peak / spectral
             bands assessment.</head>
           <desc type="definition" xml:lang="en">In this step the Raman shift wavenumber and the
             relative intensity of the observed peaks in the Raman spectrum are identified and

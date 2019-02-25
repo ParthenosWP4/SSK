@@ -40,7 +40,7 @@
     <body>
       <listEvent>
         <event type="researchStep">
-          <head type="stepTitle" xml:lang="en">Describe the method - 1. Use (scope)</head>
+          <head type="stepTitle" xml:lang="en">Describe the method -  Use (scope)</head>
           <desc type="definition" xml:lang="en"><list>
               <item>Scope: (scientific analysis? Archaelogical excavation? conservation in course?
                 Demonstration? Promotion? Service?) e.g. pigments identification to be integrated in

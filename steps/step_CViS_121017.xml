@@ -36,7 +36,7 @@
                <head xml:lang="en">Combine variables into scales</head>
                <head xml:lang="fr"/>
                <desc type="definition" xml:lang="en">Perform Exploratory Factor Analysis (EFA)</desc>
-               <desc type="definition" xml:lang="fr"/>
+               
                <desc type="term" xml:lang="en">
                   <term key="http://tadirah.dariah.eu/vocab/index.php?tema=34&amp;/contextualizing"
                         source="http://tadirah.dariah.eu/"

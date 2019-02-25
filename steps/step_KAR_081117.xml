@@ -39,7 +39,7 @@
             <event type="researchStep">
                <head xml:lang="en">Keep access to the report</head>
                <desc type="definition" xml:lang="en">Using a sustainable repository.</desc>
-               <desc type="definition" xml:lang="fr"/>
+               
                <desc type="term" xml:lang="en">
                   <term key="http://tadirah.dariah.eu/vocab/index.php?tema=38&amp;/archiving"
                         source="http://tadirah.dariah.eu/"

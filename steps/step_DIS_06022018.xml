@@ -42,7 +42,7 @@
                <desc type="definition" xml:lang="en">Setting requirements for the digital fascimile helps to
       make sure that it is suitable for intended purposes. This includes defining image file
       format(s), resoultion, metadata, naming protocol, color schema, etc.</desc>
-               <desc type="definition" xml:lang="fr"/>
+               
                <desc type="term" xml:lang="en">
                   <term key="Brainstorming" source="TaDiRAH" type="technique"/>
                   <term key="Scanning" source="TaDiRAH" type="technique"/>

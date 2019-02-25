@@ -36,7 +36,7 @@
                <head xml:lang="en">Model the relationship between variables</head>
                <head xml:lang="fr"/>
                <desc type="definition" xml:lang="en">Perform Structural Equation Modelling (SEM)</desc>
-               <desc type="definition" xml:lang="fr"/>
+               
                <desc type="term" xml:lang="en">
                   <term key="http://tadirah.dariah.eu/vocab/index.php?tema=30&amp;/structural-analysis"
                         source="http://tadirah.dariah.eu/"

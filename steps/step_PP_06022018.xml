@@ -38,7 +38,7 @@
                <desc type="definition" xml:lang="en">Software can be used to enhance the quality of the
       scanned image. This could be done by - for instance - reducing noise or by deskewing the
       picture, making it easier to read (both by man and by machine).</desc>
-               <desc type="definition" xml:lang="fr"/>
+               
                <desc type="term" xml:lang="en">
                   <term key="Cleanup" source="TaDiRAH" type="activity"/>
                   <term key="Tools" source="TaDiRAH" type="object"/>

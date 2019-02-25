@@ -36,7 +36,7 @@
                <head xml:lang="en">Applying a license</head>
                <desc type="definition" xml:lang="en">The step describes good practices to identify the right
       license for metadata and related digital objects</desc>
-               <desc type="definition" xml:lang="fr"/>
+               
                <desc type="term" xml:lang="en">
                  <term key="Publishing" source="Tadirah" type="activity"/> 
                </desc>

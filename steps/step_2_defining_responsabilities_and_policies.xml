@@ -37,7 +37,7 @@
                <desc type="definition" xml:lang="en">The step describes in which way the responsible(s) for
       metadata maintenance must be identified and the related policies for their preservation in
       short, medium and long period.</desc>
-               <desc type="definition" xml:lang="fr"/>
+               
                <desc type="term" xml:lang="en">
                   <term key="http://tadirah.dariah.eu/vocab/index.php?tema=117&amp;/preservation-metadata-storage-preservation"
                         source="http://tadirah.dariah.eu/"

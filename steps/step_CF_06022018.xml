@@ -37,7 +37,7 @@
                <head xml:lang="fr">Choisir le format</head>
                <desc type="definition" xml:lang="en">First, carefully decide what is the best format to
       transcribe the data in. Consider the use of fonts and tabs.</desc>
-               <desc type="definition" xml:lang="fr"/>
+               
                <desc type="term" xml:lang="en">
                   <term key="meta-assessing" source="TaDiRAH" type="activity"/>
                </desc>

@@ -46,7 +46,7 @@
                <head xml:lang="fr">Numériser les documents</head>
                <desc type="definition" xml:lang="en">Now that the scanning method and the requirements are
       set, the imaging procedure can start.</desc>
-               <desc type="definition" xml:lang="fr"/>
+               
                <desc type="term" xml:lang="en">
                   <term key="Scanning" source="TaDiRAH" type="technique"/>
                   <term key="Imaging" source="TaDiRAH" type="activity"/>

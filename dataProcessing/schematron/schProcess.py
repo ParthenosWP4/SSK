@@ -68,11 +68,12 @@ for report in listScReports:
                 firstLine = "Validation report for https://github.com/ParthenosWP4/SSK/tree/master/scenarios/" + os.path.basename(os.path.normpath(report)) + "\n"
                 f.write(firstLine)
             for step in steps:
-                Id = str(step.get("ref")) + ".xml"
-                readMeLine = "- Step https://github.com/ParthenosWP4/SSK/tree/master/steps/" + Id + "\n"
+                if step.get("type") == "researchStep":
+                    Id = str(step.get("ref")) + ".xml"
+                    readMeLine = "- Step https://github.com/ParthenosWP4/SSK/tree/master/steps/" + Id + "\n"
+                    input = "-s:../../steps/" + Id
                 # ParseSVRL the steps corresponding to these IDs
                 try:
-                    input = "-s:../../steps/" + Id
                     query = "saxon " + input + " -xsl:qualCheckSSK.xsl"
                     parseStep = subprocess.check_output(query, shell=True)
                     svrlSt = BeautifulSoup(parseStep, 'xml')

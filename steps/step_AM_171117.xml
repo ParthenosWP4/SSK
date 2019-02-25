@@ -41,7 +41,7 @@
                <head xml:lang="fr">Saisie des métadonnées</head>
                <desc type="definition" xml:lang="en">Add metadata according to the appropriate schema (for
       example keywords in DDI, classification plan in EAD).</desc>
-               <desc type="definition" xml:lang="fr"/>
+               
                <desc type="term" xml:lang="en">
                   <term key="http://tadirah.dariah.eu/vocab/index.php?tema=22&amp;/annotating"
                         source="http://tadirah.dariah.eu/"

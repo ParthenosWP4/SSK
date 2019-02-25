@@ -41,7 +41,7 @@
     <body>
       <listEvent>
         <event type="researchStep">
-          <head type="stepTitle" xml:lang="en">Disseminate the results. 1. Data and metadata
+          <head type="stepTitle" xml:lang="en">Disseminate the results.  Data and metadata
             storage, publication and sharing</head>
           <desc type="definition" xml:lang="en">Organize data and metadata in standard format for
             open access repositories. The metadata should incorporate descriptions of the equipment,

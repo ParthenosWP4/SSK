@@ -40,7 +40,7 @@
                <head xml:lang="en">Pre-processing of spectra</head>
                <desc type="definition" xml:lang="en">Applying corrections to spectra for subsequent analysis
       and interpretation.</desc>
-               <desc type="definition" xml:lang="fr"/>
+               
                <desc type="term" xml:lang="en">
                   <term key="http://tadirah.dariah.eu/vocab/index.php?tema=23&amp;/cleanup                      "
                         source="http://tadirah.dariah.eu/"

@@ -41,7 +41,7 @@
     <body>
       <listEvent>
         <event type="researchStep">
-          <head type="stepTitle" xml:lang="en">Describe the method. 2. Operational environmental and
+          <head type="stepTitle" xml:lang="en">Describe the method.  Operational environmental and
             safety conditions for the measurement</head>
           <desc type="definition" xml:lang="en"><p>Assure preferably low level of illuminance or
               dark conditions to avoid any light interference. Assure stability of the device set up

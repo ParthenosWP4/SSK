@@ -4,7 +4,7 @@
       xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario" xml:id="SSK_sc_RUBRICA_technical">
       <teiHeader>
             <fileDesc>
-		 <sponsor>PARTHENOS</sponsor>   
+		    
 		    <titleStmt>
                         <title>Aggregate different datasets using RUBRICA</title>
                         <author>
@@ -19,6 +19,7 @@
 						 <persName>Emiliano Degl'Innocenti</persName>
                               <affiliation>CNR-OVI</affiliation>
                         </author>
+		      <sponsor>PARTHENOS</sponsor>
                   </titleStmt>
                   <publicationStmt>
                         <authority>Parthenos</authority>
@@ -33,6 +34,7 @@
                   </sourceDesc>
             </fileDesc>
             <revisionDesc>
+              <change/>
             </revisionDesc>
       </teiHeader>
       <text>

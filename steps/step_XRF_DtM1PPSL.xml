@@ -4,8 +4,8 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>step "Describe the measurement. 1. Pre-processing/ safe limits
-          protocol for safe application (for the user and the object  damage protection)"</title>
+        <title>step "Describe the measurement. 1. Pre-processing/ safe limits protocol for safe
+          application (for the user and the object damage protection)"</title>
         <author>
           <persName>Laura Cartechini</persName>
           <affiliation>CNR-ISTM</affiliation>
@@ -33,9 +33,11 @@
     <body>
       <listEvent>
         <event type="researchStep">
-          <head type="stepTitle" xml:lang="en">Describe the measurement. 1. Pre-processing/ safe limits
-            protocol for safe application (for the user and the object  damage protection)</head>
-          <desc type="definition" xml:lang="en">To assure safe operating procedures to avoid human exposure to X-ray radiation</desc>
+          <head type="stepTitle" xml:lang="en">Describe the measurement: Pre-processing/ safe
+            limits</head>
+          <desc type="definition" xml:lang="en">A protocol for safe application (for the user and
+            the object damage protection) is necessary to ensure safe operating procedures to avoid
+            human exposure to X-ray radiation</desc>
           <linkGrp type="generalResources">
             <ref type="paper" source="zotero" target="W39BNU8K"/>
             <ref type="paper" source="zotero" target="NHB3KIQS"/>
