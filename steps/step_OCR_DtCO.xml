@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_OCR_DtCO">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Step "Define the characteristics of the outcome"</title>
+        <author>
+          <persName>Saranya Balasubramanian</persName>
+          <affiliation>OEAW-ACDH</affiliation>
+        </author>
+        <author>
+          <persName>Peter Catrie</persName>
+          <affiliation>Koninklijke Bibliotheek van België</affiliation>
+        </author>
+        <author>
+          <persName>Dario Kampkaspar</persName>
+          <affiliation>OEAW-ACDH</affiliation>
+        </author>
+        <author>
+          <persName>Tomasz Parkoła</persName>
+          <affiliation> Poznańskie Centrum Superkomputerowo-Sieciowe, Poznań</affiliation>
+        </author>
+        <author>
+          <persName>Charles Riondet</persName>
+          <affiliation>Inria</affiliation>
+        </author>
+        <author>
+          <persName>Pavel Stranak</persName>
+          <affiliation>Institute of Formal and Applied Linguistics, Charles University</affiliation>
+        </author>
+        <author>
+          <persName>Daniel Schopper</persName>
+          <affiliation>OEAW-ACDH</affiliation>
+        </author>
+        <sponsor/>
+      </titleStmt>
+      <publicationStmt>
+        <authority/>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0/">
+            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+              document.</p>
+          </licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Created from scratch</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change/>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listEvent>
+        <event type="researchStep">
+          <head type="stepTitle" xml:lang="en">Define the characteristics of the outcome</head>
+          <desc type="definition" xml:lang="en">First you need to precise what is the purpose of
+            your text extraction task. There are many possible goals of text extraction, e.g. <list>
+              <item>Get searchable text: plain text ocr, without page segmentation, e.g. in order to
+                use it in search engine or statistical analysis of textual data</item>
+              <item>„reading text“ (reconstructing the main text flow excluding running heads etc.)
+                e.g. to use it in further text collation exercises</item>
+              <item>reconstruct page layout with all the details, e.g. to use it for further
+                annotation exercises</item>
+            </list>It is also important to define text representation guidelines, or normalisation
+            choices.</desc>
+          <desc xml:lang="en" type="terms">
+            <term key="Modeling" source="Tadirah" type="activity"/>
+          </desc>
+          <linkGrp type="generalResources">
+            <ref type="spec" source="zotero" target="DBTZQZJH"/>
+            <ref type="spec" source="zotero" target="Q5C4PQUT"/>
+          </linkGrp>
+        </event>
+      </listEvent>
+    </body>
+  </text>
+</TEI>
