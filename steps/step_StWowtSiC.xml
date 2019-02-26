@@ -59,13 +59,13 @@
                         type="activity"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref source="Mirabile" target="KJLKJT69" type="database">
+                  <ref source="zotero" target="KJLKJT69" type="database">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
-                  <ref source="TEXT-inc" target="XJDYI9AN" type="code">
+                  <ref source="zotero" target="XJDYI9AN" type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
-                  <ref source="BASE" target="I32B6KKT" type="code">
+                  <ref source="zotero" target="I32B6KKT" type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
                </linkGrp>

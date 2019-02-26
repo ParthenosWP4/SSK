@@ -55,8 +55,8 @@
                   <term key="TEI" source="standard_list" type="standard"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref source="GETTY" target="JEF4GFGT" type="code"/>
-                  <ref source="MIRABILE" target="KJLKJT69" type="code"/>
+                  <ref source="zotero" target="JEF4GFGT" type="code"/>
+                  <ref source="zotero" target="KJLKJT69" type="code"/>
                </linkGrp>
             </event>
          </listEvent>

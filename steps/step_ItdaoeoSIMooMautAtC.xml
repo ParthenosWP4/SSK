@@ -60,16 +60,16 @@
                   <term key="publishing" source="http://tadirah.dariah.eu/" type="activity"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref source="NERD" target="35LQP6YP" type="code">
+                  <ref source="zotero" target="35LQP6YP" type="code">
                      <term key="content analysis" source="tadirah" type="activity"/>
                   </ref>
-                  <ref source="DANDELION" target="XISZR9RA" type="code">
+                  <ref source="zotero" target="XISZR9RA" type="code">
                      <term key="content analysis" source="tadirah" type="activity"/>
                   </ref>
-                  <ref source="PLEIADES" target="ZW2W949X" type="code">
+                  <ref source="zotero" target="ZW2W949X" type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
-                  <ref source="GETTYThesaurusOfGeographicNames"
+                  <ref source="zotero"
                        target="JEF4GFGT"
                        type="code">
                      <term key="discovering" source="tadirah" type="activity"/>

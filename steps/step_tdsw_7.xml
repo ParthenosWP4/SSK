@@ -59,15 +59,15 @@
                   <term key="theorizing" source="http://tadirah.dariah.eu/" type="activity"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref source="WorldCat" target="A8ESQDLF" type="code">
+                  <ref source="zotero" target="A8ESQDLF" type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
-                  <ref source="MEI - Material Evidence in Incunabola"
+                  <ref source="zotero"
                        target="V5WXVD5C"
                        type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
-                  <ref source="Manus Online" target="SNFR7WZG" type="code">
+                  <ref source="zotero" target="SNFR7WZG" type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
                </linkGrp>

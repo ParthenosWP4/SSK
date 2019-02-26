@@ -63,7 +63,7 @@
                         source="EHRI"
                         type="projectResources">
                   <ref source="zotero" target="XDZWRCUG" type="documentation"/>
-                  <ref source="hal" target="FY8U9JME" type="report">
+                  <ref source="zotero" target="FY8U9JME" type="report">
                      <term key="Schematron" source="standard_list" type="standard"/>
                      <term key="EAD" source="standard_list" type="standard"/>
                      <term key="TEI" source="standard_list" type="standard"/>

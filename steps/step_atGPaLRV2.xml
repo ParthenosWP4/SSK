@@ -62,7 +62,7 @@
                   <!--<term key="CD" source="WP3Wizard" type="policies"/>-->
                </desc>
                <linkGrp type="generalResources">
-                  <ref source="Common policies Guideline"
+                  <ref source="zotero"
                        target="ZUEGLA6W"
                        type="code"
                        mode="add"/>

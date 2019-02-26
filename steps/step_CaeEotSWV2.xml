@@ -57,26 +57,26 @@
                   <!--<term key="CD" source="WP3Wizard" type="policies"/>-->
                </desc>
                <linkGrp type="generalResources">
-                  <ref source="META-OPAC CERL Portal" target="6ZFUTU53" type="code">
+                  <ref source="zotero" target="6ZFUTU53" type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
-                  <ref source="KVK - Karlsruher Virtueller Katalog"
+                  <ref source="zotero"
                        target="Q4W9D8YV"
                        type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
-                  <ref source="Incunabula Short Title Catalogue"
+                  <ref source="zotero"
                        target="CK74XUJB"
                        type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
-                  <ref source="Mirabile" target="KJLKJT69" type="code">
+                  <ref source="zotero" target="KJLKJT69" type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
-                  <ref source="TEXT-inc" target="XJDYI9AN" type="code">
+                  <ref source="zotero" target="XJDYI9AN" type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
-                  <ref source="BASE" target="I32B6KKT" type="code">
+                  <ref source="zotero" target="I32B6KKT" type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
                </linkGrp>

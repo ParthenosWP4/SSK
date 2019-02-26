@@ -91,18 +91,18 @@
             value.</xd:desc>
     </xd:doc>
     <xsl:template match="tei:TEI/@xml:id">
-        <xsl:message>Checking <xsl:value-of select="tokenize(base-uri(), '/')[last()]"
-            /></xsl:message>
-        <xsl:variable name="currentID" select="."/>
+      <xsl:variable name="currentID" select="."/>
+      <xsl:if test="boolean($currentID = $fileName) = false()">
         <xsl:message>current value of xml:id: //<xsl:value-of select="$currentID"/>//</xsl:message>
         <xsl:message>current value of file name without the extension: //<xsl:value-of
-                select="$fileName"/>//</xsl:message>
+          select="$fileName"/>//</xsl:message>
         <xsl:message>
-            <xsl:value-of select="boolean($currentID = $fileName)"/>
+          <xsl:value-of select="boolean($currentID = $fileName)"/>
         </xsl:message>
+      </xsl:if>
+       
         <xsl:choose>
             <xsl:when test="$currentID = $fileName">
-                <xsl:message>xml:id equals file name</xsl:message>
                 <xsl:attribute name="xml:id" select="$currentID"/>
             </xsl:when>
             <xsl:when test="not($currentID = $fileName)">

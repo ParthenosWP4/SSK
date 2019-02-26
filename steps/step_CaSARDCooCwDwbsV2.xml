@@ -58,7 +58,7 @@
                   <term key="TEI" source="standard_list" type="standard"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref source="HAL" target="hal.inria.fr" type="code"/>
+                  <ref source="zotero" target="TXK2S5FC" type="code"/>
                </linkGrp>
             </event>
          </listEvent>

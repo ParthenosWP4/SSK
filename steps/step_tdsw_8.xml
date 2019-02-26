@@ -57,10 +57,10 @@
                   <term key="modeling" source="http://tadirah.dariah.eu/" type="activity"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref source="Biblissima" target="KJB5UBGY" type="code">
+                  <ref source="zotero" target="KJB5UBGY" type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
-                  <ref source="MLGB3 - Medieval Libraries of Great Britain"
+                  <ref source="zotero"
                        target="CGGG2BTD"
                        type="code">
                      <term key="discovering" source="tadirah" type="activity"/>

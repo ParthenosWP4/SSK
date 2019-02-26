@@ -56,7 +56,7 @@
                   <term key="TEI" source="standard_list" type="standard"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref source="GETTY Thesaurus of Geographic Names"
+                  <ref source="zotero"
                        target="JEF4GFGT"
                        type="code">
                      <term key="discovering" source="tadirah" type="activity"/>

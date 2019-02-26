@@ -57,7 +57,7 @@
                         type="activity"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref source="CERL Thesaurus" target="D4ZDU8RS" type="code">
+                  <ref source="zotero" target="D4ZDU8RS" type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
                </linkGrp>

@@ -58,7 +58,7 @@
                <linkGrp corresp="http://bequali.fr/fr/"
                         source="BeQuali"
                         type="projectResources">
-                  <ref source="BeQuali" target="SM4GIA8J" type="webpage"/>
+                  <ref source="zotero" target="SM4GIA8J" type="webpage"/>
                </linkGrp>
             </event>
          </listEvent>
