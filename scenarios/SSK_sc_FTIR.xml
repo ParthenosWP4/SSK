@@ -80,12 +80,13 @@
           <event xml:id="s10" type="researchStep" ref="step_FTIR_PSBA"/>
           <event xml:id="s11" type="researchStep" ref="step_FTIR_MI"/>
           <event xml:id="s12" type="researchStep" ref="step_DR1DMSPS"/>
-          <event xml:id="s13" type="researchStep" ref="step_DR2PR" mode="change">
+          <event xml:id="s13" type="researchStep" ref="step_DR2PR"/>
+          <!--<event xml:id="s13" type="researchStep" ref="step_DR2PR" mode="change">
             <linkGrp type="generalResources" xml:base="www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
               <ref type="tool" source="zotero" target="4W7QUMZF" mode="add"/>
               <ref type="service" source="zotero" target="TZX5QSR7" mode="add"/>
             </linkGrp>
-          </event>
+          </event>-->
           <event xml:id="s14" type="researchStep" ref="step_DR3PR"/>
         </listEvent>
       </div>
