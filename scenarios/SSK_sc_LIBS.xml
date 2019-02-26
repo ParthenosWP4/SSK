@@ -45,8 +45,8 @@
      sample preparation, microscopic resolution and in-situ characterization proper to the
      technique.</desc>
             <desc type="terms" xml:lang="en">
-               <term key="AAH" source="aurehal" type="discipline">Art and art history</term>
-               <term key="CHM" source="aurehal" type="discipline">Cultural heritage and museology</term>
+              <term key="Art and art history" source="aurehal" type="discipline">Art and art history</term>
+              <term key="Cultural heritage and museology" source="aurehal" type="discipline">Cultural heritage and museology</term>
                <term key="Research results" source="tadirah" type="objects"/>
                <term key="Standards" source="tadirah" type="objects"/>
                <term key="Technology preservation" source="tadirah" type="techniques"/>

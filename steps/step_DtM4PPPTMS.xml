@@ -41,11 +41,12 @@
     <body>
       <listEvent>
         <event type="researchStep">
-          <head type="stepTitle" xml:lang="en">Describe the measurement.  Measurement / Spectra
+          <head type="stepTitle" xml:lang="en">Describe the measurement. Measurement / Spectra
             acquisition / Storage of data and metadata files</head>
-          <desc type="definition" xml:lang="en"><p>Acquire and store the Raman spectra taken on
-              representative sites on the CH object. A preliminary evaluation of the spectrum is
-              done (assessement of Raman peaks or flueoresence emission)</p>
+          <desc type="definition" xml:lang="en">
+            <p>Acquire and store the Raman spectra taken on representative sites on the CH object. A
+              preliminary evaluation of the spectrum is done (assessement of Raman peaks or
+              flueoresence emission)</p>
             <p>The conditions for each measurement constitute essential metadata which are
               documented either in a text file for all the measurements or in form of metadata file
               for each spectrum file. Laser excitation wavelength; laser power at the sample;
