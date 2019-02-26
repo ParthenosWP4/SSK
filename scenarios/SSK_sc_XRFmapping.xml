@@ -31,7 +31,7 @@
   </teiHeader>
   <text>
     <body>
-      <div>
+      <div type="researchScenario">
         <head type="scenarioTitle" xml:lang="en">Macro-X-ray fluorescence mapping of materials on
           cultural heritage objects</head>
         <desc type="definition" xml:lang="en">Scanning X-ray fluorescence spectroscopy (MAXRF)
