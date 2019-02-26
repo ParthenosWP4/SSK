@@ -1,51 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_DtM1PPSL">
-  <teiHeader>
-    <fileDesc>
-      <titleStmt>
-        <title>step "Describe the measurement. 2. Pre-processing / selection and annotation of
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_FTIR_DtM2PPSAMSRI">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>step "Describe the measurement. 2. Pre-processing / selection and annotation of
           measurement sites on reference images"</title>
-        <author>
-          <persName>Barbara Salvadori</persName>
-          <affiliation>CNR-ICVBC</affiliation>
-        </author>
-        <sponsor>PARTHENOS</sponsor>
-      </titleStmt>
-      <publicationStmt>
-        <authority/>
-        <availability>
-          <licence target="http://creativecommons.org/licenses/by/4.0/">
-            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+            <author>
+               <persName>Barbara Salvadori</persName>
+               <affiliation>CNR-ICVBC</affiliation>
+            </author>
+            <sponsor>PARTHENOS</sponsor>
+         </titleStmt>
+         <publicationStmt>
+            <authority/>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
               document.</p>
-          </licence>
-        </availability>
-      </publicationStmt>
-      <sourceDesc>
-        <p>Created from spreadsheet</p>
-      </sourceDesc>
-    </fileDesc>
-    <revisionDesc>
-      <change/>
-    </revisionDesc>
-  </teiHeader>
-  <text>
-    <body>
-      <listEvent>
-        <event type="researchStep">
-          <head type="stepTitle" xml:lang="en">Describe the measurement. Pre-processing /
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from spreadsheet</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head type="stepTitle" xml:lang="en">Describe the measurement. Pre-processing /
             selection and annotation of measurement sites on reference images</head>
-          <desc type="definition" xml:lang="en"><p>Select the sites of analysis. The point of
+               <desc type="definition" xml:lang="en">
+                  <p>Select the sites of analysis. The point of
               analysis (3 to 5 mm diameter) has to be optically flat to inhibit diffuse reflection.
               Acquire high resolution detailed reference images of the entire object or of the part
               under study (in case of a monument). Use the detailed reference images to document the
               points of analysis.</p>
-            <p>Possible source of error: Diffuse reflection results from a combined process
+                  <p>Possible source of error: Diffuse reflection results from a combined process
               including reflection, refraction and diffraction of the incident radiation due to
               interactions with particles of the sample. Diffuse reflection spectra appear to be
-              similar to transmission spectra derived from poorly prepared KBr disks.</p></desc>
-        </event>
-      </listEvent>
-    </body>
-  </text>
+              similar to transmission spectra derived from poorly prepared KBr disks.</p>
+               </desc>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

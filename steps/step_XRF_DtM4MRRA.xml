@@ -1,46 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_XRF_DtM4MRRA">
-  <teiHeader>
-    <fileDesc>
-      <titleStmt>
-        <title>step "Describe the method. 4. Measurement range, spot size and spatial resolution/
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_XRF_DtM4MRRA">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>step "Describe the method. 4. Measurement range, spot size and spatial resolution/
           accuracy"</title>
-        <author>
-          <persName>Laura Cartechini</persName>
-          <affiliation>CNR-ISTM</affiliation>
-        </author>
-        <sponsor>PARTHENOS</sponsor>
-      </titleStmt>
-      <publicationStmt>
-        <authority/>
-        <availability>
-          <licence target="http://creativecommons.org/licenses/by/4.0/">
-            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+            <author>
+               <persName>Laura Cartechini</persName>
+               <affiliation>CNR-ISTM</affiliation>
+            </author>
+            <sponsor>PARTHENOS</sponsor>
+         </titleStmt>
+         <publicationStmt>
+            <authority/>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
               document.</p>
-          </licence>
-        </availability>
-      </publicationStmt>
-      <sourceDesc>
-        <p>Created from spreadsheet</p>
-      </sourceDesc>
-    </fileDesc>
-    <revisionDesc>
-      <change/>
-    </revisionDesc>
-  </teiHeader>
-  <text>
-    <body>
-      <listEvent>
-        <event type="researchStep">
-          <head type="stepTitle" xml:lang="en">Describe the method.  Measurement range, spot size
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from spreadsheet</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head type="stepTitle" xml:lang="en">Describe the method.  Measurement range, spot size
             and spatial resolution/ accuracy</head>
-          <desc type="definition" xml:lang="en">The measurement conditions are documented and
+               <desc type="definition" xml:lang="en">The measurement conditions are documented and
             stored. In particular, the measurement distance from the object (contact / short / long
             / remote), the spot size (dimensions of the analysed area) and the measurment
             resolution/accuracy</desc>
-        </event>
-      </listEvent>
-    </body>
-  </text>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

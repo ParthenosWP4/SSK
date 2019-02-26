@@ -1,59 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_XRF_DtM4MSASDMF">
-  <teiHeader>
-    <fileDesc>
-      <titleStmt>
-        <title>step "Describe measurement. Measurement / Spectra acquisition / Storage of data
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_FTIR_DtM4MSASDMF">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>step "Describe measurement. Measurement / Spectra acquisition / Storage of data
           and metadata files"</title>
-        <author>
-          <persName>Barbara Salvadori</persName>
-          <affiliation>CNR-ICVBC</affiliation>
-        </author>
-        <sponsor>PARTHENOS</sponsor>
-      </titleStmt>
-      <publicationStmt>
-        <authority/>
-        <availability>
-          <licence target="http://creativecommons.org/licenses/by/4.0/">
-            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+            <author>
+               <persName>Barbara Salvadori</persName>
+               <affiliation>CNR-ICVBC</affiliation>
+            </author>
+            <sponsor>PARTHENOS</sponsor>
+         </titleStmt>
+         <publicationStmt>
+            <authority/>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
               document.</p>
-          </licence>
-        </availability>
-      </publicationStmt>
-      <sourceDesc>
-        <p>Created from spreadsheet</p>
-      </sourceDesc>
-    </fileDesc>
-    <revisionDesc>
-      <change/>
-    </revisionDesc>
-  </teiHeader>
-  <text>
-    <body>
-      <listEvent>
-        <event type="researchStep">
-          <head type="stepTitle" xml:lang="en">Describe measurement. Measurement / Spectra
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from spreadsheet</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head type="stepTitle" xml:lang="en">Describe measurement. Measurement / Spectra
             acquisition / Storage of data and metadata files</head>
-          <desc type="definition" xml:lang="en"><p>Recording of the FTIR spectra taken on
+               <desc type="definition" xml:lang="en">
+                  <p>Recording of the FTIR spectra taken on
               representative sites on the CH object. First evaluation of the spectrum (assessment of
               FTIR peaks and eventually distortions). The measurement conditions (number of scans,
               acquisition specral range, spectral resolution) are documented in a text file for all
               the measurements or in form of metadata file for each spectrum file.</p>
-            <p>The position of the instrument must be kept as fixed as possible to avoid artefacts
-              and data rejection by the processing system.</p></desc>
-          <desc xml:lang="en" type="terms">
-            <term type="standard" key="ASCII"/>
-            <term type="standard" key="SPC"/>
-          </desc>
-          <linkGrp type="generalResources"
-            xml:base="www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-            <ref type="spec" source="zotero" target="TMIE6GNJ"/>
-            <ref type="tool" source="zotero" target="4W7QUMZF"/>
-            <ref type="service" source="zotero" target="US2HB3DN"/>
-          </linkGrp>
-        </event>
-      </listEvent>
-    </body>
-  </text>
+                  <p>The position of the instrument must be kept as fixed as possible to avoid artefacts
+              and data rejection by the processing system.</p>
+               </desc>
+               <desc xml:lang="en" type="terms">
+                  <term type="standard" key="ASCII"/>
+                  <term type="standard" key="SPC"/>
+               </desc>
+               <linkGrp type="generalResources"
+                        xml:base="www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+                  <ref type="spec" source="zotero" target="TMIE6GNJ"/>
+                  <ref type="tool" source="zotero" target="4W7QUMZF"/>
+                  <ref type="service" source="zotero" target="US2HB3DN"/>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

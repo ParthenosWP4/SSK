@@ -1,55 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_DtM1PPSL">
-  <teiHeader>
-    <fileDesc>
-      <titleStmt>
-        <title>step "Post-process and interpret data. 3. Material identification"</title>
-        <author>
-          <persName>Barbara Salvadori</persName>
-          <affiliation>CNR-ICVBC</affiliation>
-        </author>
-        <sponsor>PARTHENOS</sponsor>
-      </titleStmt>
-      <publicationStmt>
-        <authority/>
-        <availability>
-          <licence target="http://creativecommons.org/licenses/by/4.0/">
-            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_FTIR_MI">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>step "Post-process and interpret data. 3. Material identification"</title>
+            <author>
+               <persName>Barbara Salvadori</persName>
+               <affiliation>CNR-ICVBC</affiliation>
+            </author>
+            <sponsor>PARTHENOS</sponsor>
+         </titleStmt>
+         <publicationStmt>
+            <authority/>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
               document.</p>
-          </licence>
-        </availability>
-      </publicationStmt>
-      <sourceDesc>
-        <p>Created from spreadsheet</p>
-      </sourceDesc>
-    </fileDesc>
-    <revisionDesc>
-      <change/>
-    </revisionDesc>
-  </teiHeader>
-  <text>
-    <body>
-      <listEvent>
-        <event type="researchStep">
-          <head type="stepTitle" xml:lang="en">Post-process and interpret data.  Material
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from spreadsheet</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head type="stepTitle" xml:lang="en">Post-process and interpret data.  Material
             identification</head>
-          <desc type="definition" xml:lang="en"><p>Following bands assignment, the accurate
+               <desc type="definition" xml:lang="en">
+                  <p>Following bands assignment, the accurate
               identification of materials requires the comparison of the FTIR bands with those
               reported in databases of FTIR spectra of interest for cultural heritage studies. Some
               databases are available that cover a wide range of materials, from pigments and
               minerals to organic media and plastics.</p>
-            <p>The assignment of bands obtained in total reflection mode is a critical issue due to
+                  <p>The assignment of bands obtained in total reflection mode is a critical issue due to
               the possible distortion of the bands in the fingerprint region. Special care must be
-              taken to correctly interpret derivative-like peaks and inverted bands.</p></desc>
-          <linkGrp type="generalResources"
-            xml:base="www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-            <ref type="book" source="blog" target="YWZ6GDSG"/>
-            <ref type="tool" source="blog" target="87ZJ6LTI"/>
-            <ref type="tool" source="blog" target="WEWWPZE8"/>
-          </linkGrp>
-        </event>
-      </listEvent>
-    </body>
-  </text>
+              taken to correctly interpret derivative-like peaks and inverted bands.</p>
+               </desc>
+               <linkGrp type="generalResources"
+                        xml:base="www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+                  <ref type="book" source="blog" target="YWZ6GDSG"/>
+                  <ref type="tool" source="blog" target="87ZJ6LTI"/>
+                  <ref type="tool" source="blog" target="WEWWPZE8"/>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

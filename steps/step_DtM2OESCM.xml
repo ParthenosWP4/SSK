@@ -1,62 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_DtM2OESCM">
-  <teiHeader>
-    <fileDesc>
-      <titleStmt>
-        <title>step "Describe the method. 2. Operational environmental and safety conditions for the
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_DtM2OESCM">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>step "Describe the method. 2. Operational environmental and safety conditions for the
           measurement"</title>
-        <author>
-          <persName>Sophia Sotiropoulou</persName>
-          <affiliation>IESL-FORTH</affiliation>
-        </author>
-        <author>
-          <persName>Panayiotis Siozos</persName>
-          <affiliation>IESL-FORTH</affiliation>
-        </author>
-        <author>
-          <persName>Demetrios Anglos</persName>
-          <affiliation>IESL-FORTH</affiliation>
-        </author>
-        <sponsor>PARTHENOS</sponsor>
-      </titleStmt>
-      <publicationStmt>
-        <authority/>
-        <availability>
-          <licence target="http://creativecommons.org/licenses/by/4.0/">
-            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+            <author>
+               <persName>Sophia Sotiropoulou</persName>
+               <affiliation>IESL-FORTH</affiliation>
+            </author>
+            <author>
+               <persName>Panayiotis Siozos</persName>
+               <affiliation>IESL-FORTH</affiliation>
+            </author>
+            <author>
+               <persName>Demetrios Anglos</persName>
+               <affiliation>IESL-FORTH</affiliation>
+            </author>
+            <sponsor>PARTHENOS</sponsor>
+         </titleStmt>
+         <publicationStmt>
+            <authority/>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
               document.</p>
-          </licence>
-        </availability>
-      </publicationStmt>
-      <sourceDesc>
-        <p>Created from spreadsheet</p>
-      </sourceDesc>
-    </fileDesc>
-    <revisionDesc>
-      <change/>
-    </revisionDesc>
-  </teiHeader>
-  <text>
-    <body>
-      <listEvent>
-        <event type="researchStep">
-          <head type="stepTitle" xml:lang="en">Describe the method.  Operational environmental and
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from spreadsheet</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head type="stepTitle" xml:lang="en">Describe the method.  Operational environmental and
             safety conditions for the measurement</head>
-          <desc type="definition" xml:lang="en"><p>Assure preferably low level of illuminance or
+               <desc type="definition" xml:lang="en">
+                  <p>Assure preferably low level of illuminance or
               dark conditions to avoid any light interference. Assure stability of the device set up
               and the artwork under investigation - avoid vibrations. The analytical protocol does
               not involve any risk for the safety of the operators or the public.</p>
-            <p>Possible source of error: Stray light interference: if stray light such as sunlight,
+                  <p>Possible source of error: Stray light interference: if stray light such as sunlight,
               fluorescent lamp light or incandesce light is present, should be reported. Moreover,
               other environmental conditions that can potentially affect the measurements are
-              reported such as levels of temperature or relative humidity.</p></desc>
-          <linkGrp type="generalResources">
-            <ref type="paper" source="zotero" target="CTNH7TPZ"/>
-            <ref type="paper" source="zotero" target="LERDFNGM"/>
-          </linkGrp>
-        </event>
-      </listEvent>
-    </body>
-  </text>
+              reported such as levels of temperature or relative humidity.</p>
+               </desc>
+               <linkGrp type="generalResources">
+                  <ref type="paper" source="zotero" target="CTNH7TPZ"/>
+                  <ref type="paper" source="zotero" target="LERDFNGM"/>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

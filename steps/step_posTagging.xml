@@ -1,82 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_posTagging">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Step \"Part-of-speech tagging\"</title>
-                <author>
-                    <persName>Matej Ďurčo</persName>
-                    <affiliation>OEAW-ACDH</affiliation>
-                </author>
-                <author>
-                    <persName>Tom Gheldof</persName>
-                    <affiliation>KU Leuven, DARIAH-BE</affiliation>
-                </author>
-                <author>
-                    <persName>Hannes Pirker</persName>
-                    <affiliation>OEAW-ACDH</affiliation>
-                </author>
-                <author>
-                    <persName>Gerlinde Schneider</persName>
-                    <affiliation>ZIM-ACDH</affiliation>
-                </author>
-                <sponsor>DARIAH-EU</sponsor>
-            </titleStmt>
-            <publicationStmt>
-                <authority>DARIAH-EU</authority>
-                <availability>
-                    <licence target="http://creativecommons.org/licenses/by/4.0/">
-                        <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_posTagging">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Step \"Part-of-speech tagging\"</title>
+            <author>
+               <persName>Matej Ďurčo</persName>
+               <affiliation>OEAW-ACDH</affiliation>
+            </author>
+            <author>
+               <persName>Tom Gheldof</persName>
+               <affiliation>KU Leuven, DARIAH-BE</affiliation>
+            </author>
+            <author>
+               <persName>Hannes Pirker</persName>
+               <affiliation>OEAW-ACDH</affiliation>
+            </author>
+            <author>
+               <persName>Gerlinde Schneider</persName>
+               <affiliation>ZIM-ACDH</affiliation>
+            </author>
+            <sponsor>DARIAH-EU</sponsor>
+         </titleStmt>
+         <publicationStmt>
+            <authority>DARIAH-EU</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies
                             to this document.</p>
-                    </licence>
-                </availability>
-            </publicationStmt>
-            <sourceDesc>
-                <p>Created from scratch</p>
-            </sourceDesc>
-        </fileDesc>
-        <revisionDesc>
-            <!-- Use only for major changes -->
-            <change/>
-        </revisionDesc>
-    </teiHeader>
-    <text>
-        <body>
-            <listEvent>
-                <event type="researchStep">
-                    <head type="stepTitle" xml:lang="en">Part-of-speech tagging</head>
-                    <desc type="definition" xml:lang="en">Part-of-speech tagging (POS or PoS
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc><!-- Use only for major changes -->
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head type="stepTitle" xml:lang="en">Part-of-speech tagging</head>
+               <desc type="definition" xml:lang="en">Part-of-speech tagging (POS or PoS
                         tagging) refers to assigning grammatical information to the units of the
                         text. There are defined tagsets commonly used for individual languages or
                         language groups.Particularly noteworthy is the Universal Dependencies (UD)
                         initiative which aims at mapping the idiosyncratic tagsets to one harmonized
                         vocabulary/tagset. Most current tools used for PoS tagging rely on machine
                         learning technologies. </desc>
-                    <desc xml:lang="en" type="terms">
-                        <term type="standard" source="standard_list" key="XML"/>
-                        <term type="standard" source="standard_list" key="TEI"/>
-                        <term type="standard" source="standard_list" key="TCF"/>
-                        <term type="standard" source="standard_list" key="LAF"/>
-                        <term type="activity" source="http://tadirah.dariah.eu/" key="annotating"/>
-                    </desc>
-                    <linkGrp type="generalResources">
-                        <ref type="software" source="zotero" target="QWC72FYG"><!-- German tagset -->
-                            <term type="standards" key="tagset"/>
-                        </ref>
-                        <ref type="software" source="zotero" target="WU7J6X5E"><!-- Universal dependencies -->
-                            <term type="standards" key="tagset"/>
-                        </ref>
-                        <ref type="software" source="zotero" target="78U8XZ2L"><!-- OLiA ontologies -->
-                            <term type="standards" key="tagset"/>
-                        </ref>
-
-                        <ref type="software" source="zotero" target="MN5XVQ82"><!-- TreeTagger -->
-                            <term type="software" key="TreeTagger"/>
-                        </ref>
-                    </linkGrp>
-                </event>
-            </listEvent>
-        </body>
-    </text>
+               <desc xml:lang="en" type="terms">
+                  <term type="standard" source="standard_list" key="XML"/>
+                  <term type="standard" source="standard_list" key="TEI"/>
+                  <term type="standard" source="standard_list" key="TCF"/>
+                  <term type="standard" source="standard_list" key="LAF"/>
+                  <term type="activity" source="http://tadirah.dariah.eu/" key="annotating"/>
+               </desc>
+               <linkGrp type="generalResources">
+                  <ref type="software" source="zotero" target="QWC72FYG"><!-- German tagset -->
+                     <term type="standards" key="tagset"/>
+                  </ref>
+                  <ref type="software" source="zotero" target="WU7J6X5E"><!-- Universal dependencies -->
+                     <term type="standards" key="tagset"/>
+                  </ref>
+                  <ref type="software" source="zotero" target="78U8XZ2L"><!-- OLiA ontologies -->
+                     <term type="standards" key="tagset"/>
+                  </ref>
+                  <ref type="software" source="zotero" target="MN5XVQ82"><!-- TreeTagger -->
+                     <term type="software" key="TreeTagger"/>
+                  </ref>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

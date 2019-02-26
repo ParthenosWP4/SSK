@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0"
-   type="researchStep"
-   xml:id="step_atGPaLRV2">
+     type="researchStep"
+     xml:id="step_atGPaLRV2">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>step_atGPaLRstep_V2.xml</title>
-           <sponsor>PARTHENOS</sponsor>
+            <sponsor>PARTHENOS</sponsor>
             <author>
                <persName>Maurizio Sanesi</persName>
                <affiliation>SISMEL</affiliation>
@@ -27,7 +27,7 @@
             <sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
@@ -54,18 +54,18 @@
                   for data selected for research</desc>
                <desc type="terms" xml:lang="en" mode="add">
                   <term key="organizing"
-                     source="http://tadirah.dariah.eu/"
-                     type="activity"
-                     mode="add"/>
+                        source="http://tadirah.dariah.eu/"
+                        type="activity"
+                        mode="add"/>
                   <term key="XML" source="standard_list" type="standard" mode="add"/>
                   <term key="TEI" source="standard_list" type="standard" mode="add"/>
                   <!--<term key="CD" source="WP3Wizard" type="policies"/>-->
                </desc>
                <linkGrp type="generalResources">
                   <ref source="Common policies Guideline"
-                     target="ZUEGLA6W"
-                     type="code"
-                     mode="add"/>
+                       target="ZUEGLA6W"
+                       type="code"
+                       mode="add"/>
                </linkGrp>
             </event>
          </listEvent>

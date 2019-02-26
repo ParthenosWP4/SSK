@@ -1,55 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_XRF_DtM1U">
-  <teiHeader>
-    <fileDesc>
-      <titleStmt>
-        <title>step "Describe the method - 1. Use (scope)"</title>
-        <author>
-          <persName>Laura Cartechini</persName>
-          <affiliation>CNR-ISTM</affiliation>
-        </author>
-        <sponsor>PARTHENOS</sponsor>
-      </titleStmt>
-      <publicationStmt>
-        <authority/>
-        <availability>
-          <licence target="http://creativecommons.org/licenses/by/4.0/">
-            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_XRF_DtM1U">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>step "Describe the method - 1. Use (scope)"</title>
+            <author>
+               <persName>Laura Cartechini</persName>
+               <affiliation>CNR-ISTM</affiliation>
+            </author>
+            <sponsor>PARTHENOS</sponsor>
+         </titleStmt>
+         <publicationStmt>
+            <authority/>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
               document.</p>
-          </licence>
-        </availability>
-      </publicationStmt>
-      <sourceDesc>
-        <p>Created from spreadsheet</p>
-      </sourceDesc>
-    </fileDesc>
-    <revisionDesc>
-      <change/>
-    </revisionDesc>
-  </teiHeader>
-  <text>
-    <body>
-      <listEvent>
-        <event type="researchStep">
-          <head type="stepTitle" xml:lang="en">Describe the method -  Use (scope)</head>
-          <desc type="definition" xml:lang="en"><list>
-              <item>Scope: (scientific analysis? Archaelogical excavation? conservation in course?
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from spreadsheet</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head type="stepTitle" xml:lang="en">Describe the method -  Use (scope)</head>
+               <desc type="definition" xml:lang="en">
+                  <list>
+                     <item>Scope: (scientific analysis? Archaelogical excavation? conservation in course?
                 Demonstration? Promotion? Service?)</item>
-            <item>Analysis expected outcome: Identification of inorganic compounds through elemental analysis.</item>
-            <item>Skills requirements (level of training of the operator):
+                     <item>Analysis expected outcome: Identification of inorganic compounds through elemental analysis.</item>
+                     <item>Skills requirements (level of training of the operator):
               Scientist specialised in XRF Spectroscopy</item>
-            </list></desc>
-          <desc xml:lang="en" type="terms">
-            <term key="Contextualizing" source="Tadirah" type="activity"/>
-          </desc>
-          <linkGrp type="generalResources" xml:base="https://www.zotero.org/groups/368112/parthenos_wp2/items/itemKey/">
-            <ref type="article" source="zotero" target="3E3JVGRH"/>
-            <ref type="article" source="zotero" target="3I8DG4VQ"/>
-            <ref type="article" source="zotero" target="3CUKUNQL"/>
-          </linkGrp>
-        </event>
-      </listEvent>
-    </body>
-  </text>
+                  </list>
+               </desc>
+               <desc xml:lang="en" type="terms">
+                  <term key="Contextualizing" source="Tadirah" type="activity"/>
+               </desc>
+               <linkGrp type="generalResources"
+                        xml:base="https://www.zotero.org/groups/368112/parthenos_wp2/items/itemKey/">
+                  <ref type="article" source="zotero" target="3E3JVGRH"/>
+                  <ref type="article" source="zotero" target="3I8DG4VQ"/>
+                  <ref type="article" source="zotero" target="3CUKUNQL"/>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

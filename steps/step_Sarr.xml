@@ -16,9 +16,10 @@
                <persName>Roberta Giacomi</persName>
                <affiliation>SISMEL</affiliation>
             </author>
+            <sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
@@ -43,13 +44,9 @@
                   <term key="Gathering" source="http://tadirah.dariah.eu/" type="activity"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref source="EAC-CPF"
-                       target="DQTQDNPS"
-                       type="code"/>
+                  <ref source="EAC-CPF" target="DQTQDNPS" type="code"/>
                   <ref source="FOAF" target="QQ3SKSNP" type="code"/>
-                  <ref source="GND (ex PND)"
-                       target="TWBUXXJN"
-                       type="code"/>
+                  <ref source="GND (ex PND)" target="TWBUXXJN" type="code"/>
                   <ref source="VIAF" target="76VC5TC4" type="code"/>
                </linkGrp>
             </event>

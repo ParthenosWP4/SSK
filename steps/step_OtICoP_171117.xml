@@ -15,9 +15,10 @@
                <persName>Marie Puren</persName>
                <affiliation>INRIA</affiliation>
             </author>
+            <sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
@@ -43,7 +44,6 @@
       risks and benefits of research participation and data sharing. Inform them how research data
       will be stored, preserved and used in the long-term, and how confidentiality can be protected
       when needed.</desc>
-               
                <desc type="term" xml:lang="en">
                   <term key="http://tadirah.dariah.eu/vocab/index.php?tema=11&amp;/gathering"
                         source="http://tadirah.dariah.eu/"

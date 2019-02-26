@@ -19,9 +19,10 @@
                <persName>Hélène Gautier</persName>
                <affiliation>CNRS</affiliation>
             </author>
+            <sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
@@ -54,10 +55,7 @@
                <linkGrp type="generalResources">
                   <ref source="zotero" target="PAFCE6CF" type="tutorial"/>
                   <ref source="zotero" target="HA3HBEA6" type="documentation"/>
-                  <ref source="github"
-                       subtype="tool"
-                       target="NBYQEYUX"
-                       type="code">
+                  <ref source="zotero" subtype="tool" target="NBYQEYUX" type="code">
                      <term key="MerMEId" type="tool"/>
                   </ref>
                </linkGrp>

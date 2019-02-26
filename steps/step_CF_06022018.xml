@@ -11,9 +11,10 @@
                <persName>Frank Uiterwaal</persName>
                <affiliation>NIOD-KNAW</affiliation>
             </author>
+            <sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
@@ -37,7 +38,6 @@
                <head xml:lang="fr">Choisir le format</head>
                <desc type="definition" xml:lang="en">First, carefully decide what is the best format to
       transcribe the data in. Consider the use of fonts and tabs.</desc>
-               
                <desc type="term" xml:lang="en">
                   <term key="meta-assessing" source="TaDiRAH" type="activity"/>
                </desc>

@@ -15,9 +15,10 @@
                <persName>Marie Puren</persName>
                <affiliation>INRIA</affiliation>
             </author>
+            <sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
@@ -41,7 +42,6 @@
                <head xml:lang="fr">Saisie des métadonnées</head>
                <desc type="definition" xml:lang="en">Add metadata according to the appropriate schema (for
       example keywords in DDI, classification plan in EAD).</desc>
-               
                <desc type="term" xml:lang="en">
                   <term key="http://tadirah.dariah.eu/vocab/index.php?tema=22&amp;/annotating"
                         source="http://tadirah.dariah.eu/"

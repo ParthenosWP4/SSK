@@ -11,9 +11,10 @@
                <persName>Antonio Davide Madonna</persName>
                <affiliation>MIBACT-ICCU</affiliation>
             </author>
+            <sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
@@ -36,61 +37,50 @@
                <head xml:lang="en">Applying a license</head>
                <desc type="definition" xml:lang="en">The step describes good practices to identify the right
       license for metadata and related digital objects</desc>
-               
                <desc type="term" xml:lang="en">
-                 <term key="Publishing" source="Tadirah" type="activity"/> 
+                  <term key="Publishing" source="Tadirah" type="activity"/>
                </desc>
                <linkGrp type="generalResources">
                   <ref source="zotero"
                        subtype="standard"
                        target="V9IKZP7D"
-                       type="spec">
-                  </ref>
+                       type="spec"/>
                   <ref source="zotero"
                        subtype="standard"
                        target="33WH5S2G"
-                       type="spec">
-                  </ref>
+                       type="spec"/>
                   <ref source="zotero"
                        subtype="standard"
                        target="4DRWSWCR"
-                       type="spec">
-                  </ref>
+                       type="spec"/>
                   <ref source="zotero"
                        subtype="standard"
                        target="MBQEN74L"
-                       type="spec">
-                  </ref>
+                       type="spec"/>
                   <ref source="zotero"
                        subtype="standard"
                        target="EKHEQA78"
-                       type="spec">
-                  </ref>
+                       type="spec"/>
                   <ref source="zotero"
                        subtype="standard"
                        target="L5QAQKPZ"
-                       type="spec">                     
-                  </ref>
+                       type="spec"/>
                   <ref source="zotero"
                        subtype="standard"
                        target="F5BK6Z2P"
-                       type="spec">                     
-                  </ref>
+                       type="spec"/>
                   <ref source="zotero"
                        subtype="standard"
                        target="I9N7235C"
-                       type="spec">                     
-                  </ref>
+                       type="spec"/>
                   <ref source="zotero"
                        subtype="standard"
                        target="AZH95JBG"
-                       type="spec">
-                  </ref>
+                       type="spec"/>
                   <ref source="zotero"
                        subtype="standard"
                        target="G7LU4I2S"
-                       type="spec">
-                  </ref>
+                       type="spec"/>
                </linkGrp>
             </event>
          </listEvent>

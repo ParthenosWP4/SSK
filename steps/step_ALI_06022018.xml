@@ -11,9 +11,10 @@
                <persName>Frank Uiterwaal</persName>
                <affiliation>NIOD-KNAW</affiliation>
             </author>
+            <sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
@@ -39,7 +40,6 @@
       legal status is a strict requirement. By doing this, you find out what the originator of the
       material - be it a picture, a document or an object - allows you to do with the object in
       terms of (re-)use.</desc>
-               
                <desc type="term" xml:lang="en">
                   <term key="meta-assessing" source="TaDiRAH" type="activity"/>
                </desc>

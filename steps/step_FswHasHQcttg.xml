@@ -7,8 +7,8 @@
       <fileDesc>
          <titleStmt>
             <title>step_FswHasHQcttg.xml</title>
-           <sponsor>PARTHENOS</sponsor> 
-           <author>
+            <sponsor>PARTHENOS</sponsor>
+            <author>
                <persName>Maurizio Sanesi</persName>
                <affiliation>SISMEL</affiliation>
             </author>
@@ -18,7 +18,7 @@
             </author>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
@@ -40,7 +40,7 @@
             <event type="researchStep"><!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
                <head type="stepTitle" xml:lang="en">Formulate specific working hypotheses and specific
       historical questions</head>
-                  <desc type="definition" xml:lang="en">Formulate specific working hypotheses and specific
+               <desc type="definition" xml:lang="en">Formulate specific working hypotheses and specific
       historical questions concerning the target group. Defining strict criteria for limiting the
       target population and the geographic, chronological and thematic boundaries.</desc>
                <desc type="terms" xml:lang="en">
@@ -68,9 +68,7 @@
                   <ref source="zotero" target="69CGH77A" type="tutorial">
                      <term key="TEI" source="standard_list" type="standard"/>
                   </ref>
-                  <ref source="github"
-                       target="9SKJK8BF"
-                       type="spec">
+                  <ref source="zotero" target="9SKJK8BF" type="spec">
                      <term key="TEI" source="standard_list" type="standard"/>
                      <term key="EAD" source="standard_list" type="standard"/>
                   </ref>

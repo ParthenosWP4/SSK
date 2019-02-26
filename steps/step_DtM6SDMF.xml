@@ -1,72 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_DtM6SDMF">
-  <teiHeader>
-    <fileDesc>
-      <titleStmt>
-        <title>step "Describe the measurement. 6. Storage of data and metadata files"</title>
-        <author>
-          <persName>Sophia Sotiropoulou</persName>
-          <affiliation>IESL-FORTH</affiliation>
-        </author>
-        <author>
-          <persName>Panayiotis Siozos</persName>
-          <affiliation>IESL-FORTH</affiliation>
-        </author>
-        <author>
-          <persName>Demetrios Anglos</persName>
-          <affiliation>IESL-FORTH</affiliation>
-        </author>
-        <sponsor>PARTHENOS</sponsor>
-      </titleStmt>
-      <publicationStmt>
-        <authority/>
-        <availability>
-          <licence target="http://creativecommons.org/licenses/by/4.0/">
-            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_DtM6SDMF">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>step "Describe the measurement. 6. Storage of data and metadata files"</title>
+            <author>
+               <persName>Sophia Sotiropoulou</persName>
+               <affiliation>IESL-FORTH</affiliation>
+            </author>
+            <author>
+               <persName>Panayiotis Siozos</persName>
+               <affiliation>IESL-FORTH</affiliation>
+            </author>
+            <author>
+               <persName>Demetrios Anglos</persName>
+               <affiliation>IESL-FORTH</affiliation>
+            </author>
+            <sponsor>PARTHENOS</sponsor>
+         </titleStmt>
+         <publicationStmt>
+            <authority/>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
               document.</p>
-          </licence>
-        </availability>
-      </publicationStmt>
-      <sourceDesc>
-        <p>Created from spreadsheet</p>
-      </sourceDesc>
-    </fileDesc>
-    <revisionDesc>
-      <change/>
-    </revisionDesc>
-  </teiHeader>
-  <text>
-    <body>
-      <listEvent>
-        <event type="researchStep">
-          <head type="stepTitle" xml:lang="en">Describe the measurement. 6. Storage of data and
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from spreadsheet</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head type="stepTitle" xml:lang="en">Describe the measurement. 6. Storage of data and
             metadata files</head>
-          <desc type="definition" xml:lang="en">The conditions for each measurement constitute
+               <desc type="definition" xml:lang="en">The conditions for each measurement constitute
             essential metadata which are documented either in a text file for all the measurements
             or in form of metadata file for each spectrum file. <list>
-              <item>Laser excitation wavelength,</item>
-              <item>laser power at the sample,</item>
-              <item>spectral range (cut off),</item>
-              <item>spectral resolution,</item>
-              <item>integration time,</item>
-              <item>number of scans.</item>
-            </list>
-            <list>
-              <item>Possible source of error: Some new equipment have algorithm for automatic
+                     <item>Laser excitation wavelength,</item>
+                     <item>laser power at the sample,</item>
+                     <item>spectral range (cut off),</item>
+                     <item>spectral resolution,</item>
+                     <item>integration time,</item>
+                     <item>number of scans.</item>
+                  </list>
+                  <list>
+                     <item>Possible source of error: Some new equipment have algorithm for automatic
                 background substraction, this should be specified.</item>
-            </list></desc>
-          <desc xml:lang="en" type="terms">
-            <term type="activity" source="tadirah" key="annotation"/>
-            <term type="standard" source="standard_list" target="ASCII"/>
-            <term type="standard" source="standard_list" target="CSV"/>
-          </desc>
-          <linkGrp type="generalResources">
-            <ref type="spec" source="zotero" target="9325XIHG"/>
-            <ref type="spec" source="zotero" target="HX7KGKY3"/>
-          </linkGrp>
-        </event>
-      </listEvent>
-    </body>
-  </text>
+                  </list>
+               </desc>
+               <desc xml:lang="en" type="terms">
+                  <term type="activity" source="tadirah" key="annotation"/>
+                  <term type="standard" source="standard_list" target="ASCII"/>
+                  <term type="standard" source="standard_list" target="CSV"/>
+               </desc>
+               <linkGrp type="generalResources">
+                  <ref type="spec" source="zotero" target="9325XIHG"/>
+                  <ref type="spec" source="zotero" target="HX7KGKY3"/>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

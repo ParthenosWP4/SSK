@@ -15,9 +15,10 @@
                <persName>Marie Puren</persName>
                <affiliation>INRIA</affiliation>
             </author>
+            <sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
@@ -48,7 +49,6 @@
       data and easier than spending time later removing it from a recording or transcript. Do the
       anonymization on file copies: use repositionable tapes for paper documents and XML markers for
       digital documents.</desc>
-               
                <desc type="term" xml:lang="en">
                   <term key="http://tadirah.dariah.eu/vocab/index.php?tema=50&amp;/meta-assessing"
                         source="http://tadirah.dariah.eu/"

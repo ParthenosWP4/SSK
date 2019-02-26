@@ -15,9 +15,10 @@
                <persName>Mikel Sanz</persName>
                <affiliation>CSIC</affiliation>
             </author>
+            <sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
@@ -39,11 +40,8 @@
             <event type="researchStep">
                <head xml:lang="en">Keep access to the report</head>
                <desc type="definition" xml:lang="en">Using a sustainable repository.</desc>
-               
                <desc type="terms" xml:lang="en">
-                  <term key="Archiving"
-                        source="tadirah"
-                        type="activity"/>
+                  <term key="Archiving" source="tadirah" type="activity"/>
                </desc>
                <linkGrp type="generalResources">
                   <ref source="zotero"

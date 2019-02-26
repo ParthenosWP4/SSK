@@ -8,8 +8,8 @@
          <titleStmt>
             <title>Step "Model the dictionary"</title>
             <author>
-            <persName>Karlheinz Mörth</persName>
-            <affiliation>OEAW-ACDH</affiliation>
+               <persName>Karlheinz Mörth</persName>
+               <affiliation>OEAW-ACDH</affiliation>
             </author>
             <author>
                <persName>Charles Riondet</persName>
@@ -46,7 +46,6 @@
                <head xml:lang="fr">Numériser les documents</head>
                <desc type="definition" xml:lang="en">Now that the scanning method and the requirements are
       set, the imaging procedure can start.</desc>
-               
                <desc type="term" xml:lang="en">
                   <term key="Scanning" source="TaDiRAH" type="technique"/>
                   <term key="Imaging" source="TaDiRAH" type="activity"/>

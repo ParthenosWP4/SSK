@@ -4,10 +4,10 @@
      type="researchStep"
      xml:id="step_DtdattURRV2">
    <teiHeader>
-      <fileDesc>         
+      <fileDesc>
          <titleStmt>
             <title>step_DtdattURR_V2.xml</title>
-           <sponsor>PARTHENOS</sponsor>
+            <sponsor>PARTHENOS</sponsor>
             <author>
                <persName>Maurizio Sanesi</persName>
                <affiliation>SISMEL</affiliation>
@@ -18,7 +18,7 @@
             </author>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
@@ -39,7 +39,7 @@
          <listEvent>
             <event type="researchStep"><!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
                <head type="stepTitle" xml:lang="en">Disambiguate data</head>
-                <desc type="definition" xml:lang="en">According to the Unique Reference Resource, the researcher is now able 
+               <desc type="definition" xml:lang="en">According to the Unique Reference Resource, the researcher is now able 
                  to disambiguate the selected data.</desc>
                <desc type="terms" xml:lang="en">
                   <term key="Organizing" source="http://tadirah.dariah.eu/" type="activity"/>

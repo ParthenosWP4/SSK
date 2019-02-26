@@ -24,9 +24,10 @@
                <persName>Roberta Giacomi</persName>
                <affiliation>SISMEL</affiliation>
             </author>
+            <sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
@@ -61,17 +62,13 @@
                   <ref source="NERD" target="35LQP6YP" type="code">
                      <term key="content analysis" source="tadirah" type="activity"/>
                   </ref>
-                  <ref source="DANDELION"
-                       target="XISZR9RA"
-                       type="code">
+                  <ref source="DANDELION" target="XISZR9RA" type="code">
                      <term key="content analysis" source="tadirah" type="activity"/>
                   </ref>
                   <ref source="PLEIADES" target="ZW2W949X" type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
-                  <ref
-                       target="JEF4GFGT"
-                       type="code">
+                  <ref target="JEF4GFGT" type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
                </linkGrp>

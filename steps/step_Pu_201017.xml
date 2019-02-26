@@ -15,9 +15,10 @@
                <persName>Demetrios Anglos</persName>
                <affiliation>IESL-FORTH</affiliation>
             </author>
+            <sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
@@ -52,9 +53,7 @@
                        type="website">
                      <term key="POLYGNOSIS" type="service"/>
                   </ref>
-                  <ref subtype="service"
-                       target="H793RGGY "
-                       type="website">
+                  <ref subtype="service" target="H793RGGY " type="website">
                      <term key="Hal" type="service"/>
                   </ref>
                </linkGrp>

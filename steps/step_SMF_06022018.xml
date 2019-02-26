@@ -11,13 +11,14 @@
                <persName>Frank Uiterwaal</persName>
                <affiliation>NIOD-KNAW</affiliation>
             </author>
-           <author>
-             <persName>Tomasz Parkoła</persName>
-             <affiliation> Poznańskie Centrum Superkomputerowo-Sieciowe, Poznań</affiliation>
-           </author>
+            <author>
+               <persName>Tomasz Parkoła</persName>
+               <affiliation> Poznańskie Centrum Superkomputerowo-Sieciowe, Poznań</affiliation>
+            </author>
+            <sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
@@ -43,7 +44,6 @@
       good way to prevent having to rescan an image when requirements change over time (due to new
       research needs or improved technology which sets higher expectations) or when better post
       processing methods become available.</desc>
-               
                <desc type="term" xml:lang="en">
                   <term key="Archiving" source="TaDiRAH" type="activity"/>
                   <term key="Files" source="TaDiRAH" type="object"/>

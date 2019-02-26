@@ -15,9 +15,10 @@
                <persName>Demetrios Anglos</persName>
                <affiliation>IESL-FORTH</affiliation>
             </author>
+            <sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
@@ -41,7 +42,6 @@
                <desc type="definition" xml:lang="en">The points of analysis are selected. The exact position
       of the points on the object are related to the high relosultion image that have been acquired
       during preparation.</desc>
-               
                <desc type="term" xml:lang="en">
                   <term key="LIBS" source="standard_list" type="standard"/>
                   <term key="Raman Spectroscopy" source="standard_list" type="standard"/>

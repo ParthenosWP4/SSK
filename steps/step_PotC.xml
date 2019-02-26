@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_PotC">
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_PotC">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -9,10 +11,10 @@
                <persName>Haaf Susanne</persName>
                <affiliation>Berlin-Brandenburg Academy of Sciences and Humanities</affiliation>
             </author>
-         		<sponsor>PARTHENOS</sponsor>
+            <sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>PARTHENOS</authority>
+            <authority/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to
@@ -48,37 +50,42 @@
                   the corpus.</desc>
                <desc type="terms" xml:lang="en">
                   <term key="Archiving" source="http://tadirah.dariah.eu/" type="activity"/>
-                  <term key="Preservation" source="http://tadirah.dariah.eu/" type="activity"/>
+                  <term key="Preservation"
+                        source="http://tadirah.dariah.eu/"
+                        type="activity"/>
                   <term key="Publishing" source="http://tadirah.dariah.eu/" type="activity"/>
                   <term key="Sharing" source="http://tadirah.dariah.eu/" type="activity"/>
                   <term key="Data" source="http://tadirah.dariah.eu/" type="object"/>
                   <term key="CMDI" source="ssk" type="standard"/>
                   <term key="TCF" source="ssk" type="standard"/>
                </desc>
-               <linkGrp type="generalResources">
-                  <!-- further ressources: conversion DTABf to CMDI, DTABf CMDI profile, paper Geyken et al. 2018 -->
+               <linkGrp type="generalResources"><!-- further ressources: conversion DTABf to CMDI, DTABf CMDI profile, paper Geyken et al. 2018 -->
                   <ref source="zotero" target="8BD6FDKR" type="service">VLO</ref>
                   <ref source="zotero" target="HNU9RXFC" type="service">WebLicht</ref>
                   <ref source="zotero" target="A5NVUWZB" type="service">
-                  	<term key="TEI" source="ssk" type="standard"/>
-                  	<term key="TCF" source="ssk" type="standard"/>
+                     <term key="TEI" source="ssk" type="standard"/>
+                     <term key="TCF" source="ssk" type="standard"/>
                   	TEI-TCF encoder+decoder</ref>
                   <ref source="zotero" target="ZJ7ZSJWT" type="specification">
-                  	<term key="Sharing" source="http://tadirah.dariah.eu/" type="activity"/>
-                  	<term key="Preservation" source="http://tadirah.dariah.eu/" type="activity"/>
+                     <term key="Sharing" source="http://tadirah.dariah.eu/" type="activity"/>
+                     <term key="Preservation"
+                           source="http://tadirah.dariah.eu/"
+                           type="activity"/>
                   	FAIR principles</ref>
                   <ref source="zotero" target="BNFTBS5W" type="specification">
-                  	<term key="CMDI" source="ssk" type="standard"/>
+                     <term key="CMDI" source="ssk" type="standard"/>
                   	CMDI 1.2 specification</ref>
                   <ref source="zotero" target="IHWJQT9N" type="specification">
-                  	<term key="TCF" source="ssk" type="standard"/>
+                     <term key="TCF" source="ssk" type="standard"/>
                   	TCF documentation</ref>
                </linkGrp>
-            	<linkGrp type="projectResources" source="DTA" target="http://www.deutschestextarchiv.de">
-            		<ref source="zotero" target="AGAAKQ2D" type="website">
-            			<term key="TEI" source="ssk" type="standard"/>
+               <linkGrp type="projectResources"
+                        source="DTA"
+                        target="http://www.deutschestextarchiv.de">
+                  <ref source="zotero" target="AGAAKQ2D" type="website">
+                     <term key="TEI" source="ssk" type="standard"/>
             			Deutsches Textarchiv (DTA)</ref>
-            	</linkGrp>
+               </linkGrp>
             </event>
          </listEvent>
       </body>

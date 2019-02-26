@@ -15,10 +15,10 @@
                <persName>Roberta Giacomi</persName>
                <affiliation>SISMEL</affiliation>
             </author>
-           <sponsor>PARTHENOS</sponsor>
+            <sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-           <authority/>
+            <authority/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
@@ -31,7 +31,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-        <change>V2 on <date when="2018-02-21">February 21st 2018</date>, edited by Maurizio Sanesi and Roberta Giacomi, SISMEL: formal updates on title, description, links and resources.</change>
+         <change>V2 on <date when="2018-02-21">February 21st 2018</date>, edited by Maurizio Sanesi and Roberta Giacomi, SISMEL: formal updates on title, description, links and resources.</change>
       </revisionDesc>
    </teiHeader>
    <text>
@@ -40,7 +40,7 @@
             <event type="researchStep"><!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
                <head type="stepTitle" xml:lang="en">Formulate specific working hypotheses and specific
       historical questions</head>
-                 <desc type="definition" xml:lang="en">Formulate specific working hypotheses and specific
+               <desc type="definition" xml:lang="en">Formulate specific working hypotheses and specific
       historical questions concerning the target group. Defining strict criteria for limiting the
       target population and the geographic, chronological and thematic boundaries.</desc>
                <desc type="terms" xml:lang="en">

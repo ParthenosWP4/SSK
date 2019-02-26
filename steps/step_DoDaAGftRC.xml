@@ -11,10 +11,10 @@
                <persName>Haaf Susanne</persName>
                <affiliation>Berlin-Brandenburg Academy of Sciences and Humanities</affiliation>
             </author>
-         		<sponsor>PARTHENOS</sponsor>
+            <sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>PARTHENOS</authority>
+            <authority/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
@@ -68,37 +68,41 @@
                   <term key="Standards" source="NEMO" type="object"/>
                   <term key="XML" source="ssk" type="standard"/>
                   <term key="TEI" source="ssk" type="standard"/>
-               		<term key="Schematron" source="ssk" type="standard"/>
+                  <term key="Schematron" source="ssk" type="standard"/>
                </desc>
                <linkGrp type="generalResources">
                   <ref source="zotero" target="T7672NJ8" type="spec">
-                  	<term type="standard" source="ssk" key="TEI"/>
-                  	<term type="standard" source="ssk" key="Schematron"/>
-                  	<term key="Annotating" source="http://tadirah.dariah.eu/" type="activity"/>
-                  	<term key="Transcription" source="http://tadirah.dariah.eu/" type="activity"/>
+                     <term type="standard" source="ssk" key="TEI"/>
+                     <term type="standard" source="ssk" key="Schematron"/>
+                     <term key="Annotating" source="http://tadirah.dariah.eu/" type="activity"/>
+                     <term key="Transcription"
+                           source="http://tadirah.dariah.eu/"
+                           type="activity"/>
                   	DTA 'Base Format' (DTABf)
                   </ref>
-                  <ref source="github" target="558UTLGY" type="spec">
-                  	<term type="standard" source="ssk" key="TEI"/>
-                  	<term type="standard" source="ssk" key="Schematron"/>
-                  	<term key="Annotating" source="http://tadirah.dariah.eu/" type="activity"/>
-                  	<term key="Transcription" source="http://tadirah.dariah.eu/" type="activity"/>
+                  <ref source="zotero" target="558UTLGY" type="spec">
+                     <term type="standard" source="ssk" key="TEI"/>
+                     <term type="standard" source="ssk" key="Schematron"/>
+                     <term key="Annotating" source="http://tadirah.dariah.eu/" type="activity"/>
+                     <term key="Transcription"
+                           source="http://tadirah.dariah.eu/"
+                           type="activity"/>
                   	Source files of the DTA 'Base Format' (DTABf) documentation and schema
                   </ref>
                   <ref source="zotero" target="DVKJRRVU" type="paper">
-                  	<term type="standard" source="ssk" key="TEI"/>
+                     <term type="standard" source="ssk" key="TEI"/>
                   	Haaf/Geyken/Wiegand (2015)
                   </ref>
                   <ref source="zotero" target="ZEZE3HV8" type="paper">
-                  	<term type="standard" source="ssk" key="TEI"/>
+                     <term type="standard" source="ssk" key="TEI"/>
                   	Haaf/Thomas (2017)</ref>
                   <ref source="zotero" target="8XCAEJXX" type="blog">
-                  	<term type="standard" source="ssk" key="TEI"/>
+                     <term type="standard" source="ssk" key="TEI"/>
                   	Haaf (2017)
                   </ref>
                   <ref source="zotero" target="V6NJ5IBX" type="website">
-                  	<term type="standard">TEI</term>
-                  	<term key="Annotating" source="http://tadirah.dariah.eu/" type="activity"/>
+                     <term type="standard">TEI</term>
+                     <term key="Annotating" source="http://tadirah.dariah.eu/" type="activity"/>
                   	TEI Customizations
                   </ref>
                </linkGrp>

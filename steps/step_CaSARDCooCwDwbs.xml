@@ -23,9 +23,10 @@
                <persName>Roberta Giacomi</persName>
                <affiliation>SISMEL</affiliation>
             </author>
+            <sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
@@ -85,9 +86,7 @@
                   <ref source="zotero" target="2Z29AVQV" type="spec">
                      <term key="EAD" source="standard_list" type="standard"/>
                   </ref>
-                  <ref source="github"
-                       target="9SKJK8BF"
-                       type="spec">
+                  <ref source="zotero" target="9SKJK8BF" type="spec">
                      <term key="TEI" source="standard_list" type="standard"/>
                      <term key="EAD" source="standard_list" type="standard"/>
                   </ref>

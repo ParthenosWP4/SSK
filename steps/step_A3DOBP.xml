@@ -31,9 +31,10 @@
                <persName>Sarah Tournon-Valiente</persName>
                <affiliation>3D-SHS Huma-Num's consortium</affiliation>
             </author>
+            <sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority/>
             <date/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
@@ -94,12 +95,8 @@
                   <ref type="tutorial" source="zotero" target="F4ZNGB66"/>
                   <ref type="tutorial" source="zotero" target="GE3IIHCF"/>
                   <ref type="tutorial" source="zotero" target="TUMJ4AP7"/>
-                  <ref type="code"
-                       source="github"
-                       target="DPXLXYIR"/>
-                  <ref type="documentation"
-                       source="github"
-                       target="PTW2WNUI"/>
+                  <ref type="code" source="zotero" target="DPXLXYIR"/>
+                  <ref type="documentation" source="zotero" target="PTW2WNUI"/>
                   <ref type="documentation" source="zotero" target="KXE3XV2Q"/>
                   <ref type="software" source="zotero" target="8GDIFMTR"/>
                   <ref type="tutorial" source="zotero" target="FE6DWAI3"/>

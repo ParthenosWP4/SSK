@@ -1,54 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_DtM4MRRA">
-  <teiHeader>
-    <fileDesc>
-      <titleStmt>
-        <title>step "Describe the method. 4. Measurement range, spot size and spatial resolution/ accuracy"</title>
-        <author>
-          <persName>Sophia Sotiropoulou</persName>
-          <affiliation>IESL-FORTH</affiliation>
-        </author>
-        <author>
-          <persName>Panayiotis Siozos</persName>
-          <affiliation>IESL-FORTH</affiliation>
-        </author>
-        <author>
-          <persName>Demetrios Anglos</persName>
-          <affiliation>IESL-FORTH</affiliation>
-        </author>
-        <sponsor>PARTHENOS</sponsor>
-      </titleStmt>
-      <publicationStmt>
-        <authority/>
-        <availability>
-          <licence target="http://creativecommons.org/licenses/by/4.0/">
-            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_DtM4MRRA">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>step "Describe the method. 4. Measurement range, spot size and spatial resolution/ accuracy"</title>
+            <author>
+               <persName>Sophia Sotiropoulou</persName>
+               <affiliation>IESL-FORTH</affiliation>
+            </author>
+            <author>
+               <persName>Panayiotis Siozos</persName>
+               <affiliation>IESL-FORTH</affiliation>
+            </author>
+            <author>
+               <persName>Demetrios Anglos</persName>
+               <affiliation>IESL-FORTH</affiliation>
+            </author>
+            <sponsor>PARTHENOS</sponsor>
+         </titleStmt>
+         <publicationStmt>
+            <authority/>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
               document.</p>
-          </licence>
-        </availability>
-      </publicationStmt>
-      <sourceDesc>
-        <p>Created from spreadsheet</p>
-      </sourceDesc>
-    </fileDesc>
-    <revisionDesc>
-      <change/>
-    </revisionDesc>
-  </teiHeader>
-  <text>
-    <body>
-      <listEvent>
-        <event type="researchStep">
-          <head type="stepTitle" xml:lang="en">Describe the method. Measurement range, spot size and spatial resolution/ accuracy</head>
-          <desc type="definition" xml:lang="en">The measurement distance from the object is  short, however, a long working distance objective is preferable for in situ measurements to avoid any contact with the artwork surface.
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from spreadsheet</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head type="stepTitle" xml:lang="en">Describe the method. Measurement range, spot size and spatial resolution/ accuracy</head>
+               <desc type="definition" xml:lang="en">The measurement distance from the object is  short, however, a long working distance objective is preferable for in situ measurements to avoid any contact with the artwork surface.
             The measurement spot size (dimensions of the analysed spot) and the measurment resolution/accuracy depends on the magnification of the objective used.</desc>
-          <desc type="terms" xml:lang="en">
-            <term type="activity" source="tadirah" key="designing"/>
-            <term type="standard" source="standard_list" key="CIDOC-CRMsci"/>
-          </desc>
-        </event>
-      </listEvent>
-    </body>
-  </text>
+               <desc type="terms" xml:lang="en">
+                  <term type="activity" source="tadirah" key="designing"/>
+                  <term type="standard" source="standard_list" key="CIDOC-CRMsci"/>
+               </desc>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

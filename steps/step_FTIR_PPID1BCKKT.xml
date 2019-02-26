@@ -1,54 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_XRF_DtM4MSASDMF">
-  <teiHeader>
-    <fileDesc>
-      <titleStmt>
-        <title>step "Post-process and interpret data. 1. Baseline correction / Kramers-Kronig
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_FTIR_PPID1BCKKT">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>step "Post-process and interpret data. 1. Baseline correction / Kramers-Kronig
           transformation"</title>
-        <author>
-          <persName>Barbara Salvadori</persName>
-          <affiliation>CNR-ICVBC</affiliation>
-        </author>
-        <sponsor>PARTHENOS</sponsor>
-      </titleStmt>
-      <publicationStmt>
-        <authority/>
-        <availability>
-          <licence target="http://creativecommons.org/licenses/by/4.0/">
-            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+            <author>
+               <persName>Barbara Salvadori</persName>
+               <affiliation>CNR-ICVBC</affiliation>
+            </author>
+            <sponsor>PARTHENOS</sponsor>
+         </titleStmt>
+         <publicationStmt>
+            <authority/>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
               document.</p>
-          </licence>
-        </availability>
-      </publicationStmt>
-      <sourceDesc>
-        <p>Created from spreadsheet</p>
-      </sourceDesc>
-    </fileDesc>
-    <revisionDesc>
-      <change/>
-    </revisionDesc>
-  </teiHeader>
-  <text>
-    <body>
-      <listEvent>
-        <event type="researchStep">
-          <head type="stepTitle" xml:lang="en">Post-process and interpret data.  Baseline
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from spreadsheet</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head type="stepTitle" xml:lang="en">Post-process and interpret data.  Baseline
             correction / Kramers-Kronig transformation</head>
-          <desc type="definition" xml:lang="en"><p>Baseline correction. In addition, when specular
+               <desc type="definition" xml:lang="en">
+                  <p>Baseline correction. In addition, when specular
               reflection leads to first derivative-like spectral features and strong inverted bands
               (so called Reststrahlen bands), mathematical transformation (Kramers-Kronig
               transformation) has to be applied in order to gain absorbance-like spectra which may
-              be compared to actual database spectra.</p><p>Some drawbacks of this method mainly
+              be compared to actual database spectra.</p>
+                  <p>Some drawbacks of this method mainly
               concern the distortion of the spectra in the fingerprint region. These distortions are
               caused by anomalous dispersion due to variations in the refractive index across an
-              absorption band</p></desc>
-          <linkGrp type="generalResources"
-            xml:base="www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-            <ref type="spec" source="zotero" target="DHPE6ZGA"/>
-          </linkGrp>
-        </event>
-      </listEvent>
-    </body>
-  </text>
+              absorption band</p>
+               </desc>
+               <linkGrp type="generalResources"
+                        xml:base="www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+                  <ref type="spec" source="zotero" target="DHPE6ZGA"/>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

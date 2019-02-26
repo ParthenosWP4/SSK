@@ -19,9 +19,10 @@
                <persName>Hélène Gautier</persName>
                <affiliation>CNRS</affiliation>
             </author>
+            <sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
@@ -67,26 +68,17 @@
                   <ref source="zotero" subtype="tool" target="P7KERH4G" type="webpage">
                      <term key="Verovio" type="tool"/>
                   </ref>
-                  <ref source="github"
-                       subtype="tool"
-                       target="5L64P2MB"
-                       type="code">
+                  <ref source="zotero" subtype="tool" target="5L64P2MB" type="code">
                      <term key="Verovio" type="tool"/>
                   </ref>
                   <ref source="zotero" target="DVTQ5HQD" type="tutorial"/>
                   <ref source="zotero" subtype="tool" target="QPVXUQQR" type="webpage">
                      <term key="VexFlow" type="tool"/>
                   </ref>
-                  <ref source="github"
-                       subtype="tool"
-                       target="44A5IYLX"
-                       type="code">
+                  <ref source="zotero" subtype="tool" target="44A5IYLX" type="code">
                      <term key="VexFlow" type="tool"/>
                   </ref>
-                  <ref source="github"
-                       subtype="tool"
-                       target="Z3CNMMI5"
-                       type="code">
+                  <ref source="zotero" subtype="tool" target="Z3CNMMI5" type="code">
                      <term key="TiKit" type="tool"/>
                   </ref>
                </linkGrp>

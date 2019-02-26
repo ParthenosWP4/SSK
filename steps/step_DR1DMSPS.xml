@@ -1,62 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_DR1DMSPS">
-  <teiHeader>
-    <fileDesc>
-      <titleStmt>
-        <title>step "Disseminate the results. 1. Data and metadata storage, publication and
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_DR1DMSPS">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>step "Disseminate the results. 1. Data and metadata storage, publication and
           sharing"</title>
-        <author>
-          <persName>Sophia Sotiropoulou</persName>
-          <affiliation>IESL-FORTH</affiliation>
-        </author>
-        <author>
-          <persName>Panayiotis Siozos</persName>
-          <affiliation>IESL-FORTH</affiliation>
-        </author>
-        <author>
-          <persName>Demetrios Anglos</persName>
-          <affiliation>IESL-FORTH</affiliation>
-        </author>
-        <sponsor>PARTHENOS</sponsor>
-      </titleStmt>
-      <publicationStmt>
-        <authority/>
-        <availability>
-          <licence target="http://creativecommons.org/licenses/by/4.0/">
-            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+            <author>
+               <persName>Sophia Sotiropoulou</persName>
+               <affiliation>IESL-FORTH</affiliation>
+            </author>
+            <author>
+               <persName>Panayiotis Siozos</persName>
+               <affiliation>IESL-FORTH</affiliation>
+            </author>
+            <author>
+               <persName>Demetrios Anglos</persName>
+               <affiliation>IESL-FORTH</affiliation>
+            </author>
+            <sponsor>PARTHENOS</sponsor>
+         </titleStmt>
+         <publicationStmt>
+            <authority/>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
               document.</p>
-          </licence>
-        </availability>
-      </publicationStmt>
-      <sourceDesc>
-        <p>Created from spreadsheet</p>
-      </sourceDesc>
-    </fileDesc>
-    <revisionDesc>
-      <change/>
-    </revisionDesc>
-  </teiHeader>
-  <text>
-    <body>
-      <listEvent>
-        <event type="researchStep">
-          <head type="stepTitle" xml:lang="en">Disseminate the results.  Data and metadata
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from spreadsheet</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head type="stepTitle" xml:lang="en">Disseminate the results.  Data and metadata
             storage, publication and sharing</head>
-          <desc type="definition" xml:lang="en">Organize data and metadata in standard format for
+               <desc type="definition" xml:lang="en">Organize data and metadata in standard format for
             open access repositories. The metadata should incorporate descriptions of the equipment,
             instrumental setup and measurement conditions and information related to the
             artwork/monument. Finally, the (meta)data should follow the FAIR principles.</desc>
-          <desc xml:lang="en" type="terms">
-            <term type="activity" source="tadriah" key="Annotating"/>
-          </desc>
-          <linkGrp type="generalResources">
-            <ref type="paper" source="zotero" target="3EJUM3DI"/>
-            <ref type="report" source="zotero" target="NPHC485H"/>
-            <ref type="spec" source="zotero" target="ZJ7ZSJWT"/>
-          </linkGrp>
-        </event>
-      </listEvent>
-    </body>
-  </text>
+               <desc xml:lang="en" type="terms">
+                  <term type="activity" source="tadriah" key="Annotating"/>
+               </desc>
+               <linkGrp type="generalResources">
+                  <ref type="paper" source="zotero" target="3EJUM3DI"/>
+                  <ref type="report" source="zotero" target="NPHC485H"/>
+                  <ref type="spec" source="zotero" target="ZJ7ZSJWT"/>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

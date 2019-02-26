@@ -15,9 +15,10 @@
                <persName>Marie Puren</persName>
                <affiliation>INRIA</affiliation>
             </author>
+            <sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
@@ -42,7 +43,6 @@
                <desc type="definition" xml:lang="en">Choose a sustainable (open, interoperable and
       maintained) format according to the nature of the data. Consult a up-to-date list of
       maintained formats.</desc>
-               
                <desc type="term" xml:lang="en">
                   <term key="http://tadirah.dariah.eu/vocab/index.php?tema=8&amp;/conversion"
                         source="http://tadirah.dariah.eu/"
@@ -59,7 +59,6 @@
                      <term key="PDF" source="standard_list" type="standard"/>
                   </ref>
                   <ref source="zotero" target="5UIZH29M" type="service"/>
-                  
                   <ref source="zotero" target="5UIZH29M" type="service">
                      <term key="XML" source="standard_list" type="standard"/>
                   </ref>

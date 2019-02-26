@@ -15,9 +15,10 @@
                <persName>Demetrios Anglos</persName>
                <affiliation>IESL-FORTH</affiliation>
             </author>
+            <sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
@@ -42,7 +43,6 @@
       working with conventional Raman spectroscopy. For cultural heritage applications, it can be
       due to organic materials with chromophore groups or to inclusions and impurities in some
       mineral compounds.</desc>
-               
                <desc type="term" xml:lang="en">
                   <term key="SERDS" source="stanard_list" type="standard"/>
                   <term key="SSRS" source="stanard_list" type="standard"/>

@@ -1,64 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_DtM1PPSL">
-  <teiHeader>
-    <fileDesc>
-      <titleStmt>
-        <title>step "Describe the measurement. 1. Pre-processing/ safe limits"</title>
-        <author>
-          <persName>Sophia Sotiropoulou</persName>
-          <affiliation>IESL-FORTH</affiliation>
-        </author>
-        <author>
-          <persName>Panayiotis Siozos</persName>
-          <affiliation>IESL-FORTH</affiliation>
-        </author>
-        <author>
-          <persName>Demetrios Anglos</persName>
-          <affiliation>IESL-FORTH</affiliation>
-        </author>
-        <sponsor>PARTHENOS</sponsor>
-      </titleStmt>
-      <publicationStmt>
-        <authority/>
-        <availability>
-          <licence target="http://creativecommons.org/licenses/by/4.0/">
-            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_DtM1PPSL">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>step "Describe the measurement. 1. Pre-processing/ safe limits"</title>
+            <author>
+               <persName>Sophia Sotiropoulou</persName>
+               <affiliation>IESL-FORTH</affiliation>
+            </author>
+            <author>
+               <persName>Panayiotis Siozos</persName>
+               <affiliation>IESL-FORTH</affiliation>
+            </author>
+            <author>
+               <persName>Demetrios Anglos</persName>
+               <affiliation>IESL-FORTH</affiliation>
+            </author>
+            <sponsor>PARTHENOS</sponsor>
+         </titleStmt>
+         <publicationStmt>
+            <authority/>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
               document.</p>
-          </licence>
-        </availability>
-      </publicationStmt>
-      <sourceDesc>
-        <p>Created from spreadsheet</p>
-      </sourceDesc>
-    </fileDesc>
-    <revisionDesc>
-      <change/>
-    </revisionDesc>
-  </teiHeader>
-  <text>
-    <body>
-      <listEvent>
-        <event type="researchStep">
-          <head type="stepTitle" xml:lang="en">Describe the measurement.  Pre-processing/ safe
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from spreadsheet</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head type="stepTitle" xml:lang="en">Describe the measurement.  Pre-processing/ safe
             limits</head>
-          <desc type="definition" xml:lang="en"><p>Protocol for safe application (for the object
+               <desc type="definition" xml:lang="en">
+                  <p>Protocol for safe application (for the object
               damage protection). Particular attention is put to control the Laser intensity during
               measurement to avoid any risk of photochemical damage or local overheating of the
               irradiated area.</p>
-            <p>Possible source of error: Significant absorption of the laser beam by the material is
+                  <p>Possible source of error: Significant absorption of the laser beam by the material is
               likely to generate photochemical damage or local overheating, which in turn can
               produce chemical alteration and degrade the irradiated area of the sample under
               examination. The laser-degraded area may also give rise to a Raman spectrum which can
-              be incorrectly attributed as a different material.</p></desc>
-          <linkGrp type="generalResources">
-            <ref type="paper" source="zotero" target="W39BNU8K"/>
-            <ref type="paper" source="zotero" target="NHB3KIQS"/>
-            <ref type="paper" source="zotero" target="ASKEGJ63"/>
-            <ref type="paper" source="zotero" target="CVI5TJZV"/>
-          </linkGrp>
-        </event>
-      </listEvent>
-    </body>
-  </text>
+              be incorrectly attributed as a different material.</p>
+               </desc>
+               <linkGrp type="generalResources">
+                  <ref type="paper" source="zotero" target="W39BNU8K"/>
+                  <ref type="paper" source="zotero" target="NHB3KIQS"/>
+                  <ref type="paper" source="zotero" target="ASKEGJ63"/>
+                  <ref type="paper" source="zotero" target="CVI5TJZV"/>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

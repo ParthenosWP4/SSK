@@ -8,8 +8,8 @@
       <fileDesc>
          <titleStmt>
             <title>step_SEouDatttQ_V2.xml</title>
-           <sponsor>PARTHENOS</sponsor> 
-           <author>
+            <sponsor>PARTHENOS</sponsor>
+            <author>
                <persName>Maurizio Sanesi</persName>
                <affiliation>SISMEL</affiliation>
             </author>
@@ -19,7 +19,7 @@
             </author>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
@@ -40,7 +40,7 @@
          <listEvent>
             <event type="researchStep"><!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
                <head type="stepTitle" xml:lang="en">Select / Extrapolate only useful data</head>
-                  <desc type="definition" xml:lang="en">According to the question need to be answered in order to obtain results, and checking
+               <desc type="definition" xml:lang="en">According to the question need to be answered in order to obtain results, and checking
                  the selection of reference resources chosen, the researcher can extrapolate useful data. </desc>
                <desc type="terms" xml:lang="en">
                   <term key="Gathering" source="http://tadirah.dariah.eu/" type="activity"/>

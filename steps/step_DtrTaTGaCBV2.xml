@@ -7,8 +7,8 @@
       <fileDesc>
          <titleStmt>
             <title>step_DtrTaTGaCB_V2.xml</title>
-           <sponsor>PARTHENOS</sponsor> 
-           <author>
+            <sponsor>PARTHENOS</sponsor>
+            <author>
                <persName>Maurizio Sanesi</persName>
                <affiliation>SISMEL</affiliation>
             </author>
@@ -26,7 +26,7 @@
             </author>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
@@ -47,7 +47,7 @@
          <listEvent>
             <event type="researchStep"><!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
                <head type="stepTitle" xml:lang="en">Define the research target</head>
-                 <desc type="definition" xml:lang="en">Define the research target (persons, works, shelfmarks),
+               <desc type="definition" xml:lang="en">Define the research target (persons, works, shelfmarks),
       and thematic, geographic and chronological boundaries</desc>
                <desc type="terms" xml:lang="en">
                   <term key="modeling" source="http://tadirah.dariah.eu/" type="activity"/>
@@ -55,9 +55,7 @@
                   <term key="TEI" source="standard_list" type="standard"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref source="GETTY"
-                       target="JEF4GFGT"
-                       type="code"/>
+                  <ref source="GETTY" target="JEF4GFGT" type="code"/>
                   <ref source="MIRABILE" target="KJLKJT69" type="code"/>
                </linkGrp>
             </event>

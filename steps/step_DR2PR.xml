@@ -1,58 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_DR2PR">
-  <teiHeader>
-    <fileDesc>
-      <titleStmt>
-        <title>step "Disseminate the results. 2. Prepare report"</title>
-        <author>
-          <persName>Sophia Sotiropoulou</persName>
-          <affiliation>IESL-FORTH</affiliation>
-        </author>
-        <author>
-          <persName>Panayiotis Siozos</persName>
-          <affiliation>IESL-FORTH</affiliation>
-        </author>
-        <author>
-          <persName>Demetrios Anglos</persName>
-          <affiliation>IESL-FORTH</affiliation>
-        </author>
-        <sponsor>PARTHENOS</sponsor>
-      </titleStmt>
-      <publicationStmt>
-        <authority/>
-        <availability>
-          <licence target="http://creativecommons.org/licenses/by/4.0/">
-            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_DR2PR">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>step "Disseminate the results. 2. Prepare report"</title>
+            <author>
+               <persName>Sophia Sotiropoulou</persName>
+               <affiliation>IESL-FORTH</affiliation>
+            </author>
+            <author>
+               <persName>Panayiotis Siozos</persName>
+               <affiliation>IESL-FORTH</affiliation>
+            </author>
+            <author>
+               <persName>Demetrios Anglos</persName>
+               <affiliation>IESL-FORTH</affiliation>
+            </author>
+            <sponsor>PARTHENOS</sponsor>
+         </titleStmt>
+         <publicationStmt>
+            <authority/>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
               document.</p>
-          </licence>
-        </availability>
-      </publicationStmt>
-      <sourceDesc>
-        <p>Created from spreadsheet</p>
-      </sourceDesc>
-    </fileDesc>
-    <revisionDesc>
-      <change/>
-    </revisionDesc>
-  </teiHeader>
-  <text>
-    <body>
-      <listEvent>
-        <event type="researchStep">
-          <head type="stepTitle" xml:lang="en">Disseminate the results.  Prepare report</head>
-          <desc type="definition" xml:lang="en">Prepare a document that includes the objectives of
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from spreadsheet</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head type="stepTitle" xml:lang="en">Disseminate the results.  Prepare report</head>
+               <desc type="definition" xml:lang="en">Prepare a document that includes the objectives of
             the project/study, information on the artwork, technical /exprimental information,
             selection of representative data obtained, results and conclusions on the overall work.</desc>
-          <desc xml:lang="en" type="terms">
-            <term type="activity" source="tadriah" key="Gathering"/>
-          </desc>
-          <linkGrp type="generalResources">
-            <ref type="tool" source="zotero" target="4W7QUMZF"/>
-            <ref type="service" source="zotero" target="TZX5QSR7"/>
-          </linkGrp>
-        </event>
-      </listEvent>
-    </body>
-  </text>
+               <desc xml:lang="en" type="terms">
+                  <term type="activity" source="tadriah" key="Gathering"/>
+               </desc>
+               <linkGrp type="generalResources">
+                  <ref type="tool" source="zotero" target="4W7QUMZF"/>
+                  <ref type="service" source="zotero" target="TZX5QSR7"/>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

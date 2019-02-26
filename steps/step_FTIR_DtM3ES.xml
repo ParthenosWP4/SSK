@@ -1,45 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_DtM3ES">
-  <teiHeader>
-    <fileDesc>
-      <titleStmt>
-        <title>step "Describe the method - 3. Equipment specifications"</title>
-        <author>
-          <persName>Barbara Salvadori</persName>
-          <affiliation>CNR-ICVBC</affiliation>
-        </author>
-        <sponsor>PARTHENOS</sponsor>
-      </titleStmt>
-      <publicationStmt>
-        <authority/>
-        <availability>
-          <licence target="http://creativecommons.org/licenses/by/4.0/">
-            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_FTIR_DtM3ES">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>step "Describe the method - 3. Equipment specifications"</title>
+            <author>
+               <persName>Barbara Salvadori</persName>
+               <affiliation>CNR-ICVBC</affiliation>
+            </author>
+            <sponsor>PARTHENOS</sponsor>
+         </titleStmt>
+         <publicationStmt>
+            <authority/>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
               document.</p>
-          </licence>
-        </availability>
-      </publicationStmt>
-      <sourceDesc>
-        <p>Created from spreadsheet</p>
-      </sourceDesc>
-    </fileDesc>
-    <revisionDesc>
-      <change/>
-    </revisionDesc>
-  </teiHeader>
-  <text>
-    <body>
-      <listEvent>
-        <event type="researchStep">
-          <head type="stepTitle" xml:lang="en">Describe the method -  Equipment
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from spreadsheet</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head type="stepTitle" xml:lang="en">Describe the method -  Equipment
             specifications</head>
-          <desc type="definition" xml:lang="en"><p>The equipment specifications of the instrument
+               <desc type="definition" xml:lang="en">
+                  <p>The equipment specifications of the instrument
               and the overall appartus are documented such as type of equipment, manufacturing
               company, laser excitation wavelength, optical system (camera) /objective lens used and
-              any other component used.</p></desc>
-        </event>
-      </listEvent>
-    </body>
-  </text>
+              any other component used.</p>
+               </desc>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

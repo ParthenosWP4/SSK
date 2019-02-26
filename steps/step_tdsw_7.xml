@@ -24,9 +24,10 @@
                <persName>Roberta Giacomi</persName>
                <affiliation>SISMEL</affiliation>
             </author>
+            <sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
@@ -56,7 +57,6 @@
                   <term key="TEI" source="standard_list" type="standard"/>
                   <term key="CIDOC-CRM" source="standard_list" type="standard"/>
                   <term key="theorizing" source="http://tadirah.dariah.eu/" type="activity"/>
-                  
                </desc>
                <linkGrp type="generalResources">
                   <ref source="WorldCat" target="A8ESQDLF" type="code">
@@ -67,9 +67,7 @@
                        type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
-                  <ref source="Manus Online"
-                       target="SNFR7WZG"
-                       type="code">
+                  <ref source="Manus Online" target="SNFR7WZG" type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
                </linkGrp>

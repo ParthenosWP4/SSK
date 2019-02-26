@@ -24,9 +24,10 @@
                <persName>Roberta Giacomi</persName>
                <affiliation>SISMEL</affiliation>
             </author>
+            <sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">
                   <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
@@ -56,9 +57,7 @@
                   <term key="gathering" source="http://tadirah.dariah.eu/" type="activity"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref source="META-OPAC CERL Portal"
-                       target="6ZFUTU53"
-                       type="code">
+                  <ref source="META-OPAC CERL Portal" target="6ZFUTU53" type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
                   <ref source="KVK - Karlsruher Virtueller Katalog"
@@ -74,14 +73,10 @@
                   <ref source="Mirabile" target="KJLKJT69" type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
-                  <ref source="TEXT-inc"
-                       target="XJDYI9AN"
-                       type="code">
+                  <ref source="TEXT-inc" target="XJDYI9AN" type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
-                  <ref source="BASE"
-                       target="I32B6KKT"
-                       type="code">
+                  <ref source="BASE" target="I32B6KKT" type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
                </linkGrp>

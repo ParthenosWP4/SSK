@@ -31,9 +31,10 @@
                <persName>Sarah Tournon-Valiente</persName>
                <affiliation>3D-SHS Huma-Num's consortium</affiliation>
             </author>
+            <sponsor>PARTHENOS</sponsor>
          </titleStmt>
          <publicationStmt>
-            <authority>Parthenos</authority>
+            <authority/>
             <date/>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/">

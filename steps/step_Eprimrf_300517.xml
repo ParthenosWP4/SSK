@@ -1,94 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_Eprimrf_300517">
-  <teiHeader>
-    <fileDesc>
-      <titleStmt>
-        <title>Step "Express projects requirements in machine-readable format"</title>
-        <author>
-          <persName>Charles Riondet</persName>
-          <affiliation>Inria</affiliation>
-        </author>
-      </titleStmt>
-      <publicationStmt>
-        <authority>Parthenos</authority>
-        <availability>
-          <licence target="http://creativecommons.org/licenses/by/4.0/">
-            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_Eprimrf_300517">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Step "Express projects requirements in machine-readable format"</title>
+            <author>
+               <persName>Charles Riondet</persName>
+               <affiliation>Inria</affiliation>
+            </author>
+            <sponsor>PARTHENOS</sponsor>
+         </titleStmt>
+         <publicationStmt>
+            <authority/>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
               document.</p>
-          </licence>
-        </availability>
-      </publicationStmt>
-      <sourceDesc>
-        <p>Created from scratch</p>
-      </sourceDesc>
-    </fileDesc>
-    <revisionDesc>
-      <change/>
-    </revisionDesc>
-  </teiHeader>
-  <text>
-    <body>
-      <listEvent>
-        <event type="researchStep">
-          <head xml:lang="en">Express projects requirements in machine-readable format</head>
-          <desc type="definition" xml:lang="en">With ODD, it is possible to customize a schema in
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head xml:lang="en">Express projects requirements in machine-readable format</head>
+               <desc type="definition" xml:lang="en">With ODD, it is possible to customize a schema in
             different ways.To add specific, or project-oriented, rules, the best way is to embed
             schematron rules in the Schema specification.</desc>
-          <desc type="definition" xml:lang="fr">Avec l'ODD, il est possible de personnaliser un
+               <desc type="definition" xml:lang="fr">Avec l'ODD, il est possible de personnaliser un
             schéma de différentes façons. Pour ajouter des règles spécifiques ou axées sur le
             projet, la meilleure façon est d'intégrer les règles de sshematron dans la spécification
             du Schema.</desc>
-          <desc type="terms" xml:lang="en">
-            <term key="XML" source="standard_list" type="standard"/>
-            <term key="TEI" source="standard_list" type="standard"/>
-            <term key="EAD" source="standard_list" type="standard"/>
-            <term key="Schematron" source="standard_list" type="standard"/>
-            <term key="Modeling" source="tadirah" type="activity"/>
-          </desc>
-          <linkGrp type="generalResources">
-            <ref type="code_script" source="zotero" target="MUEUJK6J"/>
-            <ref source="zotero" target="7THSVQ9K" type="spec">
-              <term key="Schematron" source="standard_list" type="standard"/>
-            </ref>
-            <ref source="zotero" target="E2C8BNVH" type="report">
-              <term key="Schematron" source="standard_list" type="standard"/>
-            </ref>
-            <ref source="zotero" target="ZT3MRZJ6" type="spec">
-              <term key="Schematron" source="standard_list" type="standard"/>
-            </ref>
-            <ref source="github" target=" https://github.com/Schematron" type="spec">
-              <term key="Schematron" source="standard_list" type="standard"/>
-            </ref>
-            <ref source="zotero" target="54DUV6MG" type="spec">
-              <term key="TEI" source="standard_list" type="standard"/>
-            </ref>
-            <ref target="87B9E4AX"
-              type="schema">
-              <term key="Schematron" source="standard_list" type="standard"/>
-            </ref>
-          </linkGrp>
-          <linkGrp corresp="http://ehri-project.eu" source="EHRI" type="projectResources">
-            <ref source="github"
-              target="9SKJK8BF"
-              type="code">
-              <term key="Schematron" source="standard_list" type="standard"/>
-              <term key="EAD" source="standard_list" type="standard"/>
-              <term key="TEI" source="standard_list" type="standard"/>
-            </ref>
-            <ref type="paper" source="zotero" target="7KB8PI78"/>
-            <ref type="paper" source="zotero" target="UXEAGIZ8"/>
-            <ref source="zotero" target="J3JH54VE" type="tutorial">
-              <term key="Schematron" source="standard_list" type="standard"/>
-            </ref>
-            <ref source="hal" target="FY8U9JME" type="report">
-              <term key="Schematron" source="standard_list" type="standard"/>
-              <term key="EAD" source="standard_list" type="standard"/>
-              <term key="TEI" source="standard_list" type="standard"/>
-            </ref>
-          </linkGrp>
-        </event>
-      </listEvent>
-    </body>
-  </text>
+               <desc type="terms" xml:lang="en">
+                  <term key="XML" source="standard_list" type="standard"/>
+                  <term key="TEI" source="standard_list" type="standard"/>
+                  <term key="EAD" source="standard_list" type="standard"/>
+                  <term key="Schematron" source="standard_list" type="standard"/>
+                  <term key="Modeling" source="tadirah" type="activity"/>
+               </desc>
+               <linkGrp type="generalResources">
+                  <ref type="code_script" source="zotero" target="MUEUJK6J"/>
+                  <ref source="zotero" target="7THSVQ9K" type="spec">
+                     <term key="Schematron" source="standard_list" type="standard"/>
+                  </ref>
+                  <ref source="zotero" target="E2C8BNVH" type="report">
+                     <term key="Schematron" source="standard_list" type="standard"/>
+                  </ref>
+                  <ref source="zotero" target="ZT3MRZJ6" type="spec">
+                     <term key="Schematron" source="standard_list" type="standard"/>
+                  </ref>
+                  <ref source="zotero" target=" https://github.com/Schematron" type="spec">
+                     <term key="Schematron" source="standard_list" type="standard"/>
+                  </ref>
+                  <ref source="zotero" target="54DUV6MG" type="spec">
+                     <term key="TEI" source="standard_list" type="standard"/>
+                  </ref>
+                  <ref target="87B9E4AX" type="schema">
+                     <term key="Schematron" source="standard_list" type="standard"/>
+                  </ref>
+               </linkGrp>
+               <linkGrp corresp="http://ehri-project.eu"
+                        source="EHRI"
+                        type="projectResources">
+                  <ref source="zotero" target="9SKJK8BF" type="code">
+                     <term key="Schematron" source="standard_list" type="standard"/>
+                     <term key="EAD" source="standard_list" type="standard"/>
+                     <term key="TEI" source="standard_list" type="standard"/>
+                  </ref>
+                  <ref type="paper" source="zotero" target="7KB8PI78"/>
+                  <ref type="paper" source="zotero" target="UXEAGIZ8"/>
+                  <ref source="zotero" target="J3JH54VE" type="tutorial">
+                     <term key="Schematron" source="standard_list" type="standard"/>
+                  </ref>
+                  <ref source="hal" target="FY8U9JME" type="report">
+                     <term key="Schematron" source="standard_list" type="standard"/>
+                     <term key="EAD" source="standard_list" type="standard"/>
+                     <term key="TEI" source="standard_list" type="standard"/>
+                  </ref>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

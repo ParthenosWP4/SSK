@@ -1,58 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_DtM2RIA">
-  <teiHeader>
-    <fileDesc>
-      <titleStmt>
-        <title>step "Describe the measurement. 2. Pre- processing / selection and annotation of
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_DtM2RIA">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>step "Describe the measurement. 2. Pre- processing / selection and annotation of
           Measurement Sites on reference images"</title>
-        <author>
-          <persName>Sophia Sotiropoulou</persName>
-          <affiliation>IESL-FORTH</affiliation>
-        </author>
-        <author>
-          <persName>Panayiotis Siozos</persName>
-          <affiliation>IESL-FORTH</affiliation>
-        </author>
-        <author>
-          <persName>Demetrios Anglos</persName>
-          <affiliation>IESL-FORTH</affiliation>
-        </author>
-        <sponsor>PARTHENOS</sponsor>
-      </titleStmt>
-      <publicationStmt>
-        <authority/>
-        <availability>
-          <licence target="http://creativecommons.org/licenses/by/4.0/">
-            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+            <author>
+               <persName>Sophia Sotiropoulou</persName>
+               <affiliation>IESL-FORTH</affiliation>
+            </author>
+            <author>
+               <persName>Panayiotis Siozos</persName>
+               <affiliation>IESL-FORTH</affiliation>
+            </author>
+            <author>
+               <persName>Demetrios Anglos</persName>
+               <affiliation>IESL-FORTH</affiliation>
+            </author>
+            <sponsor>PARTHENOS</sponsor>
+         </titleStmt>
+         <publicationStmt>
+            <authority/>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
               document.</p>
-          </licence>
-        </availability>
-      </publicationStmt>
-      <sourceDesc>
-        <p>Created from spreadsheet</p>
-      </sourceDesc>
-    </fileDesc>
-    <revisionDesc>
-      <change/>
-    </revisionDesc>
-  </teiHeader>
-  <text>
-    <body>
-      <listEvent>
-        <event type="researchStep">
-          <head type="stepTitle" xml:lang="en">Describe the measurement.  Pre- processing /
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from spreadsheet</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head type="stepTitle" xml:lang="en">Describe the measurement.  Pre- processing /
             selection and annotation of Measurement Sites on reference images</head>
-          <desc type="definition" xml:lang="en"><p>Select the sites of analysis. Use high resolution
+               <desc type="definition" xml:lang="en">
+                  <p>Select the sites of analysis. Use high resolution
             detailed reference images of the entire object or of the part under study (in case of a
             monument) to anotate the points of analysis.</p>
-            <p>Possible source of error: Wrong/ inaccurate indexing of measurement position on the object due to the low resolution of the reference image</p></desc>
-          <linkGrp type="generalResources" xml:base="https://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-             <ref type="article" source="zotero" target="X5F662RV"/>
-            <ref type="article" source="zotero" target="56MF9RKI"/>
-        </linkGrp>
-        </event>
-      </listEvent>
-    </body>
-  </text>
+                  <p>Possible source of error: Wrong/ inaccurate indexing of measurement position on the object due to the low resolution of the reference image</p>
+               </desc>
+               <linkGrp type="generalResources"
+                        xml:base="https://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+                  <ref type="article" source="zotero" target="X5F662RV"/>
+                  <ref type="article" source="zotero" target="56MF9RKI"/>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>
