@@ -39,7 +39,7 @@
   </teiHeader>
   <text>
     <body>
-      <div>
+      <div type="researchScenario">
         <head type="scenarioTitle" xml:lang="en">Raman spectrometry for the analysis and
           identification of pigments on cultural heritage objects</head>
         <desc type="definition" xml:lang="en">Raman spectrometry is a widely used technique for
