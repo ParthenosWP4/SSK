@@ -31,7 +31,7 @@
   </teiHeader>
   <text>
     <body>
-      <div>
+      <div type="researchScenario">
         <head type="scenarioTitle" xml:lang="en">In situ FTIR Analysis for the characterisation of
           materials on archaeological or cultural heritage objects</head>
         <desc type="definition" xml:lang="en">FTIR spectroscopy is a widely used technique for
