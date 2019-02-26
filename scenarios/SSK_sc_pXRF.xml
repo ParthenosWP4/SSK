@@ -31,7 +31,7 @@
   </teiHeader>
   <text>
     <body>
-      <div>
+      <div type="researchScenario">
         <head type="scenarioTitle" xml:lang="en">In situ X-Ray fluorescence analysis for the
           characterisation of materials on cultural heritage objects</head>
         <desc type="definition" xml:lang="en">X-ray fluorescence spectroscopy is a well-established
