@@ -56,7 +56,7 @@
                   <!--<term key="CD" source="WP3Wizard" type="policies"/>-->
                </desc>
                <linkGrp type="generalResources">
-                  <ref source="D4SCIENCE" target="REPS374P" type="code">
+                  <ref source="zotero" target="REPS374P" type="code">
                      <term key="organizing" source="tadirah" type="activity"/>
                   </ref>
                </linkGrp>

@@ -35,11 +35,14 @@
         <event type="researchStep">
           <head type="stepTitle" xml:lang="en">Describe the method. Operational environmental and
             safety conditions for the measurement</head>
-          <desc type="definition" xml:lang="en"><p>Bearing in mind the high penetrating power of X-Rays,
-            <list>
-            <item>Choose carefully the support/check also the back of the artwork to avoid interferences.</item>
-            <item>Determine and mark carefully the security restricted area and define the set-up geometry (X-ray beam direction) for safety of the operators and public.</item>
-          </list> 
+          <desc type="definition" xml:lang="en"><p>Bearing in mind the high penetrating power of
+              X-Rays, <list>
+                <item>Choose carefully the support/check also the back of the artwork to avoid
+                  interferences.</item>
+                <item>Determine and mark carefully the security restricted area and define the
+                  set-up geometry (X-ray beam direction) for safety of the operators and
+                  public.</item>
+              </list>
             </p>
           </desc>
         </event>
