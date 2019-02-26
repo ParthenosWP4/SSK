@@ -253,30 +253,32 @@
               </constraint>
             </constraintSpec>
           </elementSpec>
-          
+
           <elementSpec ident="body" mode="change">
             <constraintSpec ident="typeInconsistency1" scheme="schematron">
               <constraint>
-                <sch:rule context="tei:body[ancestor::tei:TEI[@type = 'researchScenario']]/tei:div/@type">
-                  <sch:assert test=". = 'researchScenario'" role="warning">@type attribute incoherence: document
-                    type is '<sch:value-of select="ancestor::tei:TEI/@type"/>' and current element type value is
-                    '<sch:value-of select="."/>'</sch:assert>
+                <sch:rule
+                  context="tei:body[ancestor::tei:TEI[@type = 'researchScenario']]/tei:div/@type">
+                  <sch:assert test=". = 'researchScenario'" role="warning">@type attribute
+                    incoherence: document type is '<sch:value-of select="ancestor::tei:TEI/@type"/>'
+                    and current element type value is '<sch:value-of select="."/>'</sch:assert>
                 </sch:rule>
               </constraint>
             </constraintSpec>
-            
+
             <constraintSpec ident="typeInconsistency2" scheme="schematron">
               <constraint>
-                <sch:rule context="tei:body[ancestor::tei:TEI[@type = 'researchStep']]/tei:div/@type">
-                  <sch:assert test=". = 'researchStep'" role="warning">@type attribute incoherence: document
-                    type is '<sch:value-of select="ancestor::tei:TEI/@type"/>' and current element type value is
-                    '<sch:value-of select="."/>'</sch:assert>
+                <sch:rule
+                  context="tei:body[ancestor::tei:TEI[@type = 'researchStep']]/tei:div/@type">
+                  <sch:assert test=". = 'researchStep'" role="warning">@type attribute incoherence:
+                    document type is '<sch:value-of select="ancestor::tei:TEI/@type"/>' and current
+                    element type value is '<sch:value-of select="."/>'</sch:assert>
                 </sch:rule>
               </constraint>
             </constraintSpec>
           </elementSpec>
 
- 
+
           <elementSpec ident="listEvent" mode="change">
             <content>
               <sequence>
@@ -333,7 +335,7 @@
               </attDef>
             </attList>
           </elementSpec>
-          
+
           <elementSpec ident="head" mode="change">
             <classes mode="change">
               <!--2017-07-17: <head> is now member of the class att.combinable, i.e., can have @mode for attribute. In the SSK,
@@ -379,22 +381,22 @@
             <constraintSpec ident="typeInconsistency1" scheme="schematron">
               <constraint>
                 <sch:rule context="tei:head[ancestor::tei:TEI[@type = 'researchScenario']]/@type">
-                  <sch:assert test=". = 'scenarioTitle'" role="warning">@type attribute incoherence: document
-                    type is '<sch:value-of select="ancestor::tei:TEI/@type"/>' and current element type value is
-                    '<sch:value-of select="."/>'</sch:assert>
+                  <sch:assert test=". = 'scenarioTitle'" role="warning">@type attribute incoherence:
+                    document type is '<sch:value-of select="ancestor::tei:TEI/@type"/>' and current
+                    element type value is '<sch:value-of select="."/>'</sch:assert>
                 </sch:rule>
               </constraint>
             </constraintSpec>
             <constraintSpec ident="typeInconsistency2" scheme="schematron">
               <constraint>
                 <sch:rule context="tei:head[ancestor::tei:TEI[@type = 'researchStep']]/@type">
-                  <sch:assert test=". = 'stepTitle'" role="warning">@type attribute incoherence: document type
-                    is '<sch:value-of select="ancestor::tei:TEI/@type"/>' and current element type value is
-                    '<sch:value-of select="."/>'</sch:assert>
+                  <sch:assert test=". = 'stepTitle'" role="warning">@type attribute incoherence:
+                    document type is '<sch:value-of select="ancestor::tei:TEI/@type"/>' and current
+                    element type value is '<sch:value-of select="."/>'</sch:assert>
                 </sch:rule>
               </constraint>
             </constraintSpec>
-            
+
             <attList>
               <attDef ident="type" mode="change">
                 <datatype>
@@ -417,7 +419,7 @@
             <content>
               <elementRef key="ref" minOccurs="1" maxOccurs="unbounded"/>
             </content>
-            
+
             <constraintSpec ident="projectResources1" scheme="schematron">
               <constraint>
                 <sch:rule context="tei:linkGrp[@type = 'projectResources']">
@@ -429,22 +431,23 @@
             <constraintSpec ident="projectResources2" scheme="schematron">
               <constraint>
                 <sch:rule context="tei:linkGrp[@type = 'projectResources']">
-                  <sch:assert test="matches(@corresp, '^https?:')" role="error">Value of @corresp should be a
-                    valid URI. The current value of @corresp for "<sch:name path="."/>" is <sch:value-of
-                      select="@corresp"/></sch:assert>
+                  <sch:assert test="matches(@corresp, '^https?:')" role="error">Value of @corresp
+                    should be a valid URI. The current value of @corresp for "<sch:name path="."/>"
+                    is <sch:value-of select="@corresp"/></sch:assert>
                 </sch:rule>
               </constraint>
             </constraintSpec>
             <constraintSpec ident="projectResources3" scheme="schematron">
               <constraint>
                 <sch:rule context="tei:linkGrp[@type = 'projectResources']">
-                  <sch:assert test="normalize-space(@source)" role="error">The attribute @source should contain
-                    the name of the project whose references are listed inside the &lt;linkGrp&gt;. The current
-                    value of @source for "<sch:name path="."/>" is <sch:value-of select="@source"/></sch:assert>
+                  <sch:assert test="normalize-space(@source)" role="error">The attribute @source
+                    should contain the name of the project whose references are listed inside the
+                    &lt;linkGrp&gt;. The current value of @source for "<sch:name path="."/>" is
+                      <sch:value-of select="@source"/></sch:assert>
                 </sch:rule>
               </constraint>
             </constraintSpec>
-            
+
             <attList>
               <attDef ident="type" usage="req" mode="change">
                 <datatype>
@@ -457,7 +460,7 @@
               </attDef>
             </attList>
           </elementSpec>
-          
+
           <elementSpec ident="ref" mode="change">
             <classes mode="change">
               <memberOf key="att.combinable"/>
@@ -467,8 +470,8 @@
                 <sch:rule context="tei:ref[@source = 'zotero'][parent::tei:linkGrp]">
                   <sch:assert
                     test="matches(@target, '(wp2|wp3|wp4):[A-Z0-9]{8}') or matches(@target, '[A-Z0-9]{8}')"
-                    role="warning">The reference of a Zotero record is made with the Zotero item key (8 capitals
-                    or digits)</sch:assert>
+                    role="warning">The reference of a Zotero record is made with the Zotero item key
+                    (8 capitals or digits)</sch:assert>
                 </sch:rule>
               </constraint>
             </constraintSpec>
@@ -564,7 +567,7 @@
               </attDef>
             </attList>
           </elementSpec>
-         
+
           <elementSpec ident="desc" mode="change">
             <classes mode="change">
               <!--2017-07-17: <desc> is now member of the class att.combinable, i.e., can have @mode for attribute. In the SSK,
@@ -589,8 +592,8 @@
               <constraint>
                 <sch:rule context="tei:desc[@type = 'definition'][parent::div]">
                   <sch:assert test="string-length(.) &gt; 299" role="error"> The description is a
-                    bit too short and should be around 300 characters long minimum. Your description is
-                      <sch:value-of select="string-length(.)"/> characters long. Note that you can
+                    bit too short and should be around 300 characters long minimum. Your description
+                    is <sch:value-of select="string-length(.)"/> characters long. Note that you can
                     use the following TEI tags: &lt;list&gt;, &lt;item&gt; and
                     &lt;ref&gt;.</sch:assert>
                 </sch:rule>
@@ -599,8 +602,9 @@
             <constraintSpec ident="descLong" scheme="schematron">
               <constraint>
                 <sch:rule context="tei:desc[@type = 'definition'][parent::div]">
-                  <sch:assert test="string-length(.) &lt; 1500" role="error">The scenario description is a bit long. We recommand a maximum lenght of 1.500
-                    characters. Your description is <sch:value-of select="string-length"/> characters
+                  <sch:assert test="string-length(.) &lt; 1500" role="error">The scenario
+                    description is a bit long. We recommand a maximum lenght of 1.500 characters.
+                    Your description is <sch:value-of select="string-length"/> characters
                     long.</sch:assert>
                 </sch:rule>
               </constraint>
@@ -614,128 +618,132 @@
                 </sch:rule>
               </constraint>
             </constraintSpec>
-            
+
             <constraintSpec ident="noTermsActivity" scheme="schematron">
               <constraint>
                 <sch:rule context="tei:desc[@type = 'terms']">
                   <sch:report
                     test="ancestor::tei:TEI[@type = 'researchStep'] and count(tei:term[@type = 'activity']) = 0"
-                    role="error">A step should be described by an activity term, taken from the TADirAH
-                    taxonomy.</sch:report>
+                    role="error">A step should be described by an activity term, taken from the
+                    TADirAH taxonomy.</sch:report>
                 </sch:rule>
               </constraint>
             </constraintSpec>
-            
+
             <constraintSpec ident="scenarioActivity" scheme="schematron">
               <constraint>
                 <sch:rule context="tei:desc[@type = 'terms']">
                   <sch:report
                     test="ancestor::tei:TEI[@type = 'researchScenario'] and term[@type = 'activity']"
-                    role="error">The activity terms are more suitable for describing steps rather than
-                    scenarios. It is recommended to choose one activity term per step.</sch:report>
+                    role="error">The activity terms are more suitable for describing steps rather
+                    than scenarios. It is recommended to choose one activity term per
+                    step.</sch:report>
                 </sch:rule>
               </constraint>
             </constraintSpec>
-            
+
             <constraintSpec ident="noTermsStandards" scheme="schematron">
               <constraint>
                 <sch:rule context="tei:desc[@type = 'terms']">
-                  <sch:report
-                    test="count(tei:term[@type = 'standard']) = 0"
-                    see="http://ssk.huma-num.fr/#/glossary/standards" role="information">A scenario or a step could have
-                    several keywords related to standards. Check the documentation for more details</sch:report>
-              </sch:rule></constraint>
+                  <sch:report test="count(tei:term[@type = 'standard']) = 0"
+                    see="http://ssk.huma-num.fr/#/glossary/standards" role="information">A scenario
+                    or a step could have several keywords related to standards. Check the
+                    documentation for more details</sch:report>
+                </sch:rule></constraint>
             </constraintSpec>
-            
+
             <constraintSpec ident="noTermsDiscipline" scheme="schematron">
               <constraint>
                 <sch:rule context="tei:desc[@type = 'terms']">
                   <sch:report
                     test="ancestor::tei:TEI[@type = 'researchScenario'] and count(tei:term[@type = 'discipline']) = 0"
-                    see="http://ssk.huma-num.fr/#/glossary/disciplines" role="information">A scenario could have
-                    several keywords related to disciplines. Check the documentation for more
-                    details.</sch:report>
+                    see="http://ssk.huma-num.fr/#/glossary/disciplines" role="information">A
+                    scenario could have several keywords related to disciplines. Check the
+                    documentation for more details.</sch:report>
                 </sch:rule>
               </constraint>
             </constraintSpec>
-            
+
             <constraintSpec ident="noTermsTechniques" scheme="schematron">
               <constraint>
                 <sch:rule context="tei:desc[@type = 'terms']">
                   <sch:report
                     test="ancestor::tei:TEI[@type = 'researchScenario'] and count(tei:term[@type = 'technique']) = 0"
-                    see="http://ssk.huma-num.fr/#/glossary/techniques" role="information">A scenario could have
-                    several keywords related to research techniques. Check the Tadirah taxonomy for more
-                    details.</sch:report>
+                    see="http://ssk.huma-num.fr/#/glossary/techniques" role="information">A scenario
+                    could have several keywords related to research techniques. Check the Tadirah
+                    taxonomy for more details.</sch:report>
                 </sch:rule>
               </constraint>
             </constraintSpec>
-            
+
             <constraintSpec ident="noTermsObject" scheme="schematron">
               <constraint>
                 <sch:rule context="tei:desc[@type = 'terms']">
                   <sch:report
                     test="ancestor::tei:TEI[@type = 'researchScenario'] and count(tei:term[@type = 'object']) = 0"
-                    see="http://ssk.huma-num.fr/#/glossary/standards/objects" role="information">A scenario
-                    could have several keywords related to research objects. Check the Tadirah taxonomy for more
-                    details.</sch:report>
+                    see="http://ssk.huma-num.fr/#/glossary/standards/objects" role="information">A
+                    scenario could have several keywords related to research objects. Check the
+                    Tadirah taxonomy for more details.</sch:report>
                 </sch:rule>
               </constraint>
             </constraintSpec>
-            
+
             <constraintSpec ident="TMTermsActivity" scheme="schematron">
               <constraint>
                 <sch:rule context="tei:desc[@type = 'terms']">
-                  <sch:assert test="count(tei:term[@type = 'activity']) &lt; 2" role="error">A step should be described by just one activity tag.</sch:assert>
+                  <sch:assert test="count(tei:term[@type = 'activity']) &lt; 2" role="error">A step
+                    should be described by just one activity tag.</sch:assert>
                 </sch:rule>
               </constraint>
             </constraintSpec>
-            
+
             <constraintSpec ident="TMTermsStandards" scheme="schematron">
               <constraint>
                 <sch:rule context="tei:desc[@type = 'terms']">
-                  <sch:assert test="count(tei:term[@type = 'standard']) &lt; 5" role="warning">More than 4 terms
-                    of the same vocabulary type may be too much: STANDARD</sch:assert>
+                  <sch:assert test="count(tei:term[@type = 'standard']) &lt; 5" role="warning">More
+                    than 4 terms of the same vocabulary type may be too much: STANDARD</sch:assert>
                 </sch:rule>
               </constraint>
             </constraintSpec>
-            
+
             <constraintSpec ident="TMTermsDisciplines" scheme="schematron">
               <constraint>
                 <sch:rule context="tei:desc[@type = 'terms']">
-                  <sch:assert test="count(tei:term[@type = 'discipline']) &lt; 5" role="warning">More than 4 terms
-                    of the same vocabulary type may be too much: DISCIPLINE</sch:assert>
+                  <sch:assert test="count(tei:term[@type = 'discipline']) &lt; 5" role="warning"
+                    >More than 4 terms of the same vocabulary type may be too much:
+                    DISCIPLINE</sch:assert>
                 </sch:rule>
               </constraint>
             </constraintSpec>
             <constraintSpec ident="TMTermsTechniques" scheme="schematron">
               <constraint>
                 <sch:rule context="tei:desc[@type = 'terms']">
-                  <sch:assert test="count(tei:term[@type = 'technique']) &lt; 5" role="warning">More than 4 terms
-                    of the same vocabulary type may be too much: TECHNIQUE</sch:assert>
+                  <sch:assert test="count(tei:term[@type = 'technique']) &lt; 5" role="warning">More
+                    than 4 terms of the same vocabulary type may be too much: TECHNIQUE</sch:assert>
                 </sch:rule>
               </constraint>
             </constraintSpec>
-            
+
             <constraintSpec ident="TMTermsObjects" scheme="schematron">
               <constraint>
                 <sch:rule context="tei:desc[@type = 'terms']">
-                  <sch:assert test="count(tei:term[@type = 'object']) &lt; 5" role="warning">More than 4 terms
-                    of the same vocabulary type may be too much: OBJECT</sch:assert>
+                  <sch:assert test="count(tei:term[@type = 'object']) &lt; 5" role="warning">More
+                    than 4 terms of the same vocabulary type may be too much: OBJECT</sch:assert>
                 </sch:rule>
               </constraint>
             </constraintSpec>
-            
+
             <constraintSpec ident="sourceTerms" scheme="schematron">
               <constraint>
                 <sch:rule context="tei:desc[@type = 'terms']/tei:term">
-                  <sch:assert test="@source" role="error">The attribute source is important to specifiy which
-                    vocabulary was used. The main ones are "tadirah", aurehal, "standard".</sch:assert>
+                  <sch:assert test="@source" role="error">The attribute source is important to
+                    specifiy which vocabulary was used. The main ones are "tadirah", aurehal,
+                    "standard".</sch:assert>
                 </sch:rule>
               </constraint>
             </constraintSpec>
-           
-            
+
+
             <attList>
               <attDef ident="type" usage="req" mode="change">
                 <datatype>
@@ -750,7 +758,7 @@
               <attDef ident="xml:lang" usage="req" mode="change"/>
             </attList>
           </elementSpec>
-          
+
           <elementSpec ident="p" mode="change">
             <!-- Constraint the possibilities within <p> -->
             <content>
@@ -761,16 +769,18 @@
                 <elementRef key="abbr" minOccurs="0"/>
                 <elementRef key="expan" minOccurs="0"/>
                 <elementRef key="term" minOccurs="0"/>
+                <elementRef key="lb" minOccurs="0"/>
               </alternate>
             </content>
           </elementSpec>
-          
+
           <elementSpec ident="graphic" mode="change">
             <constraintSpec ident="imgFormats" scheme="schematron">
               <constraint>
                 <sch:rule context="tei:graphic/@url">
-                  <sch:assert test="matches(., '\.(JPG|JPEG|PNG|jpg|png|jpeg)$')" role="error">The image format
-                    should be JPG or PNG. Accepted extensions are: jpg, JPG, jpeg, JPEG, png, PNG</sch:assert>
+                  <sch:assert test="matches(., '\.(JPG|JPEG|PNG|jpg|png|jpeg)$')" role="error">The
+                    image format should be JPG or PNG. Accepted extensions are: jpg, JPG, jpeg,
+                    JPEG, png, PNG</sch:assert>
                 </sch:rule>
               </constraint>
             </constraintSpec>
