@@ -52,9 +52,6 @@
                   <ref source="zotero" target="5UIZH29M" type="service">
                      <term key="ODT" source="standard_list" type="standard"/>
                   </ref>
-                  <ref type="service">
-                     <term key="CSV" source="standard_list" type="standard"/>
-                  </ref>
                   <ref source="zotero" target="5UIZH29M" type="service">
                      <term key="PDF" source="standard_list" type="standard"/>
                   </ref>
