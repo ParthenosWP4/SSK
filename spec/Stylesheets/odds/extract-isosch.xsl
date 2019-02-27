@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet xmlns:teix="http://www.tei-c.org/ns/Examples"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                xmlns:tei="http://www.tei-c.org/ns/1.0"
-                xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                xmlns="http://purl.oclc.org/dsdl/schematron"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:d="http://www.oxygenxml.com/ns/doc/xsl"
+                xmlns:xi=  "http://www.w3.org/2001/XInclude"
+                xmlns:xs=  "http://www.w3.org/2001/XMLSchema"
+                xmlns:rng= "http://relaxng.org/ns/structure/1.0"
+                xmlns:tei= "http://www.tei-c.org/ns/1.0"
+                xmlns:sqf= "http://www.schematron-quickfix.com/validator/process"
+                xmlns:sch= "http://purl.oclc.org/dsdl/schematron"
+                xmlns=     "http://purl.oclc.org/dsdl/schematron"
+                xmlns:xsl= "http://www.w3.org/1999/XSL/Transform"
+                xmlns:d=   "http://www.oxygenxml.com/ns/doc/xsl"
                 version="2.0"
                 xpath-default-namespace="http://www.tei-c.org/ns/1.0"
                 exclude-result-prefixes="#all">
@@ -15,7 +16,7 @@
 
   <d:doc scope="stylesheet" type="stylesheet">
     <d:desc>
-      <d:p> TEI stylesheet for extracting Schematron rules from  TEI ODD </d:p>
+      <d:p>TEI stylesheet for extracting Schematron rules from TEI ODD</d:p>
       <d:p>This software is dual-licensed:
 
 1. Distributed under a Creative Commons Attribution-ShareAlike 3.0
@@ -51,6 +52,9 @@ of this software, even if advised of the possibility of such damage.
       <d:p>Author: See AUTHORS</d:p>
       <d:p>Copyright: 2014, TEI Consortium</d:p>
       <d:p/>
+      <d:p>Modified 2018-09-25 by Syd Bauman:
+      Bug fix. Handle sqf: namespace semi-intelligently.</d:p>
+      <d:p>Modified 2016-07-22 by Syd Bauman &amp; Martin Holmes: ...</d:p>
       <d:p>Modified 2016-07-09 by Syd Bauman:
       Bug fix. Changing the language processing last month means that many Schematron constructs
       are not copied over from an ODD that does <d:i>not</d:i> delcare its language explicitly
@@ -114,12 +118,21 @@ of this software, even if advised of the possibility of such damage.
   <xsl:param name="verbose" select="'false'"/>
   <xsl:param name="lang" select="'en'"/>
   <d:doc>
-    <d:desc>"eip" stands for "Extract Iso schematron Prefix". Silly, I know, but
-     my first thought (honestly) was "Tei Extract Iso schematron" :-|</d:desc>
+    <d:desc>For the prefix for prefixes the default “esp” stands for
+     “Extract Schematron Prefix”. Silly, I know, but my first thought
+     (honestly) was "Tei Extract Isoschematron" :-|</d:desc>
   </d:doc>
-  <xsl:param name="ns-prefix-prefix" select="'eip-'"/>
-  <xsl:variable name="xslns">http://www.w3.org/1999/XSL/Transform</xsl:variable>
+  <xsl:param name="ns-prefix-prefix" select="'esp-'"/>
+  <xsl:param name="tei-ns" select="'http://www.tei-c.org/ns/1.0'"/>
+  <xsl:param name="teix-ns" select="'http://www.tei-c.org/ns/Examples'"/>
+  <xsl:variable name="xsl-ns">http://www.w3.org/1999/XSL/Transform</xsl:variable>
   
+
+  <d:doc>
+    <d:desc>Note on keys: should not really need the "[not(ancestor::teix:egXML)]"
+    predicate on DEPRECATEDs and CONSTRAINTs, as the elements matched (tei:* and
+    constraintSpec/constraint, respectively) should never be inside a &lt;teix:egXML>.</d:desc>
+  </d:doc>
   <xsl:key name="DECLARED_NSs" 
            match="sch:ns[ not( ancestor::teix:egXML ) ]"
            use="1"/>
@@ -137,7 +150,7 @@ of this software, even if advised of the possibility of such damage.
            use="1"/>
 
   <xsl:key name="CONSTRAINTs"
-           match="constraint[parent::constraintSpec[@scheme='isoschematron']]
+           match="constraint[ parent::constraintSpec[ @scheme = ('isoschematron','schematron') ] ]
                             [ not( ancestor::teix:egXML )]"
            use="1"/>
 
@@ -187,18 +200,21 @@ of this software, even if advised of the possibility of such damage.
             <xsl:value-of select="if ( @ns ) then @ns else ''"/>
           </xsl:when>
           <xsl:otherwise>
-            <xsl:value-of select="if (ancestor-or-self::*[@ns] ) then ancestor-or-self::*[@ns][1]/@ns else 'http://www.tei-c.org/ns/1.0'"/>
+            <xsl:value-of select="if ( ancestor-or-self::*[@ns] ) then ancestor-or-self::*[@ns][1]/@ns else $tei-ns"/>
           </xsl:otherwise>
         </xsl:choose>
       </xsl:variable>
       <xsl:attribute name="nsp">
         <xsl:choose>
           <xsl:when test="$nsu eq ''"/>
-          <xsl:when test="$nsu eq 'http://www.tei-c.org/ns/1.0'">tei:</xsl:when>
-          <xsl:when test="$nsu eq 'http://www.tei-c.org/ns/Examples'">teix:</xsl:when>
+          <xsl:when test="$nsu eq $tei-ns">tei:</xsl:when>
+          <xsl:when test="$nsu eq $teix-ns">teix:</xsl:when>
           <xsl:when test="ancestor-or-self::tei:schemaSpec//sch:ns[@uri eq $nsu]">
-            <!-- oops ... what *should* we do if there's more than 1? Just taking the first seems lame, but -->
-            <!-- I can't think of what else we might do right now. -Syd, 2014-07-23 -->
+            <!--
+              Oops ... what *should* we do in following XPath if there's more than 1? Just taking
+              taking the first seems lame, but I can't think of what else we might do right now.
+                 —Syd, 2014-07-23
+            -->
             <xsl:value-of select="concat( ancestor-or-self::tei:schemaSpec//sch:ns[@uri eq $nsu][1]/@prefix, ':')"/>
           </xsl:when>
           <xsl:when test="namespace::* = $nsu">
@@ -248,11 +264,26 @@ of this software, even if advised of the possibility of such damage.
       <xsl:call-template name="blockComment">
         <xsl:with-param name="content" select="'namespaces, implicit:'"/>
       </xsl:call-template>
-      <xsl:variable name="NSs" select="distinct-values( //tei:*[@nsu]/concat( @nsp, '␝', @nsu ) )"/>
-      <xsl:for-each select="$NSs[ not(. eq '␝')  and not(contains(.,$xslns)) ]">
+      <!-- Generate a sequence of all the prefix-URI pairs that we calculated in 1st pass, -->
+      <!-- separating each pair with a character we know will never occur inside (for easy -->
+      <!-- parsing later). -->
+      <xsl:variable name="allNSs" as="xs:string+">
+        <xsl:sequence select="( $decorated//tei:*[@nsu]/concat( @nsp, '␝', @nsu ) )"/>
+        <!-- if desired, other NSs can be added manually here -->
+      </xsl:variable>
+      <xsl:variable name="NSs" select="distinct-values( $allNSs )"/>
+      <!-- For each pair (except those that are empty or are the XLS namespace) ... -->
+      <xsl:for-each select="$NSs[ not(. eq '␝')  and  not( contains( ., $xsl-ns ) ) ]">
         <xsl:sort/>
-        <ns prefix="{substring-before( .,':␝')}" uri="{substring-after( .,'␝')}"/>
-      </xsl:for-each>      
+        <!-- ... parse out the prefix and the URI (using that never-occurs character) -->
+        <xsl:variable name="nsp" select="substring-before( .,':␝')"/>
+        <xsl:variable name="nsu" select="substring-after( .,'␝')"/>
+        <!-- Unless this same namespace was already output as "declared" ... -->
+        <xsl:if test="not( $decorated/key('DECLARED_NSs',1)[ @prefix eq $nsp  and  @uri eq $nsu ] )">
+          <!-- ... generate and output a Schematron declaration for it -->
+          <ns prefix="{$nsp}" uri="{$nsu}"/>
+        </xsl:if>
+      </xsl:for-each>
       
       <xsl:if test="key('KEYs',1)">
         <xsl:call-template name="blockComment">
@@ -300,7 +331,7 @@ of this software, even if advised of the possibility of such damage.
                   <xsl:apply-templates select="node()"/>
                 </pattern>
               </xsl:when>
-              <xsl:when test="sch:assert | sch:report | sch:extends ">
+              <xsl:when test="sch:assert | sch:report | sch:extends">
                 <!-- IF there is no <pattern> nor <rule> child, but there is a child that -->
                 <!-- requires being wrapped in a rule, create both <rule> and <pattern> -->
                 <!-- wrappers for them, making HERE the context. -->
@@ -311,7 +342,7 @@ of this software, even if advised of the possibility of such damage.
                 </pattern>
               </xsl:when>
               <xsl:otherwise>
-                <!-- IF there is neither a <pattern> nor a <rule>, nor an child that would -->
+                <!-- IF there is neither a <pattern> nor a <rule>, nor a child that would -->
                 <!-- require being wrapped in those, just copy over whatever we have -->
                 <xsl:apply-templates select="node()"/>
               </xsl:otherwise>
@@ -342,7 +373,8 @@ of this software, even if advised of the possibility of such damage.
             <pattern>
               <rule context="{tei:generate-context(.)}">
                 <report test="@{concat($nsp,@ident)}" role="nonfatal">
-                   <xsl:value-of select="$amsg1"/> @<xsl:value-of select="@ident"/> of the <xsl:value-of select="$gi"/> element <xsl:value-of select="$msg2"/> <xsl:value-of select="@validUntil"/>.
+                   <xsl:value-of select="$amsg1"/> @<xsl:value-of select="@ident"/> of the <xsl:value-of
+                     select="concat( if ($ginsp ne 'tei:') then $ginsp else '', $gi )"/> element <xsl:value-of select="$msg2"/> <xsl:value-of select="@validUntil"/>.
                 </report>
               </rule>
             </pattern>
@@ -388,36 +420,34 @@ of this software, even if advised of the possibility of such damage.
               </rule>
             </pattern>
           </xsl:when>
+          <xsl:when test="self::macroSpec">
+            <pattern>
+              <rule context="tei:dataRef|rng:ref">
+                <report test="concat(normalize-space(@key), normalize-space(@name)) eq '{@ident}'" role="nonfatal">WARNING: reference to deprecated macro — '<xsl:value-of select="@ident"/>' <xsl:value-of select="$msg2"/> <xsl:value-of select="@validUntil"/>.</report>
+              </rule>
+            </pattern>
+          </xsl:when>
         </xsl:choose>
       </xsl:for-each>
 
-      <xsl:apply-templates select="//paramList"/>
+      <xsl:if test="$decorated//paramList">
+        <xsl:call-template name="blockComment">
+          <xsl:with-param name="content">parameter lists:</xsl:with-param>
+        </xsl:call-template>
+        <xsl:apply-templates select="$decorated//paramList"/>
+      </xsl:if>
+      
+      <xsl:if test="$decorated//sqf:fixes">
+        <xsl:call-template name="blockComment">
+          <xsl:with-param name="content">schematron quick fixes:</xsl:with-param>
+        </xsl:call-template>
+        <xsl:apply-templates select="$decorated//sqf:fixes" mode="copy"/>
+      </xsl:if>
 
     </schema>
   </xsl:template>
   
-  <xsl:template match="sch:rule" mode="wrap-in-pattern">
-    <xsl:param name="patID"/>
-    <pattern id="{$patID}">
-      <xsl:apply-templates select="." mode="copy"/>
-    </pattern>
-  </xsl:template>
-
-  <xsl:template match="sch:assert | sch:report" mode="wrap-in-rule">
-    <xsl:param name="patID"/>
-    <pattern id="{$patID}">
-      <rule>
-        <xsl:apply-templates select="@*"/>
-        <xsl:attribute name="context" select="tei:generate-context(.)"/>
-        <xsl:copy>
-          <xsl:apply-templates select="@*|node()"/>
-        </xsl:copy>
-        <xsl:apply-templates select="following-sibling::sch:assert|following-sibling::sch:report"/>
-      </rule>
-    </pattern>
-  </xsl:template>
-  
-  <xsl:template match="sch:rule[parent::tei:constraint]">
+  <xsl:template match="tei:constraint/sch:rule">
     <rule>
       <xsl:apply-templates select="@*"/>
       <xsl:if test="not(@context)">
@@ -433,13 +463,15 @@ of this software, even if advised of the possibility of such damage.
     <xsl:copy/>
   </xsl:template>
   
-  <xsl:template match="sch:*|xsl:key">
+  <xsl:template match="sch:*|xsl:*">
     <xsl:element name="{local-name()}" namespace="{namespace-uri(.)}">
       <xsl:apply-templates select="@*|node()"/>
     </xsl:element>
   </xsl:template>
 
   <xsl:template match="sch:key|sch:ns"/>
+  
+  <xsl:template match="sqf:*"/>
 
   <xsl:template name="blockComment">
     <xsl:param name="content"/>
@@ -470,7 +502,7 @@ of this software, even if advised of the possibility of such damage.
             <xsl:value-of select="ancestor::attDef/@nsp"/>
             <xsl:value-of select="ancestor::attDef/@ident"/>
           </xsl:variable>
-          <xsl:message>WARNING: constraint for <xsl:value-of select="$me"/> of the <xsl:value-of select="ancestor::classSpec/@ident"/> class does not have a context=. Resulting rule is applied to *all* occurences of <xsl:value-of select="$me"/>.</xsl:message>
+          <xsl:message>INFO: constraint for <xsl:value-of select="$me"/> of the <xsl:value-of select="ancestor::classSpec/@ident"/> class does not have a context=. Resulting rule is applied to *all* occurences of <xsl:value-of select="$me"/>.</xsl:message>
           <xsl:value-of select="$me"/>
         </xsl:when>
         <xsl:when test="ancestor::attDef[ancestor::elementSpec]">
@@ -484,7 +516,7 @@ of this software, even if advised of the possibility of such damage.
           <!-- this is WRONG: need to run around and get the -->
           <!-- members of the class, and for each use its -->
           <!-- @nsp:@ident -->
-          <xsl:message>WARNING: constraint for <xsl:value-of select="ancestor::classSpec/@ident"/> class does not have a context=. Resulting rule is applied to *all* elements.</xsl:message>
+          <xsl:message>INFO: constraint for <xsl:value-of select="ancestor::classSpec/@ident"/> class does not have a context=. Resulting rule is applied to *all* elements.</xsl:message>
           <xsl:text>*</xsl:text>
         </xsl:when>
         <xsl:when test="ancestor::elementSpec">
@@ -505,18 +537,22 @@ of this software, even if advised of the possibility of such damage.
     <xsl:apply-templates/>
   </xsl:template>
 
-  <doc xmlns="http://www.oxygenxml.com/ns/doc/xsl">
+  <d:doc>
     <desc>work out unique ID for generated Schematron</desc>
-  </doc>
+  </d:doc>
   <xsl:function name="tei:makePatternID" as="xs:string">
     <xsl:param name="context"/>
+    <xsl:variable name="scheme" select="$context/ancestor-or-self::constraintSpec/@scheme"/>
     <xsl:for-each select="$context">
       <xsl:variable name="num">
         <xsl:number level="any"/>
       </xsl:variable>
       <xsl:value-of
-        select="(../ancestor::*[@ident]/@ident,'constraint',../@ident,$num)"
-        separator="-"/>
+	  select="( $scheme,
+		   'constraint',
+		    ancestor-or-self::*[@ident]/@ident/translate( .,':',''),
+		    $num )"
+	  separator="-"/>
     </xsl:for-each>
   </xsl:function>
   

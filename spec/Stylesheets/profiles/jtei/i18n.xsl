@@ -15,7 +15,7 @@
   <xsl:variable name="i18n-lookup">
     <i18n>
       <entry xml:id="abstract-label">
-        <text xml:lang="de">Kurzfassung</text>
+        <text xml:lang="de">Zusammenfassung</text>
         <text xml:lang="en">Abstract</text>
         <text xml:lang="es">Resumen</text>
         <text xml:lang="fr">Résumé</text>
@@ -50,23 +50,68 @@
         <text xml:lang="nl">Sleutelbegrippen</text>
         <text xml:lang="pt">Palavras Chaves</text>
       </entry>
+      <entry xml:id="appendixes-label">
+        <text xml:lang="de">Anhänge</text>
+        <text xml:lang="en">Appendixes</text>
+        <text xml:lang="es">Apéndices</text>
+        <text xml:lang="fr">Annexes</text>
+        <text xml:lang="it">Appendices</text>        
+        <text xml:lang="nl">Appendices</text>
+        <text xml:lang="pt">Apêndices</text>
+      </entry>
       <entry xml:id="appendix-label">
         <text xml:lang="de">Anhang</text>
-        <text xml:lang="en">Appendixes</text>
+        <text xml:lang="en">Appendix</text>
         <text xml:lang="es">Apéndice</text>
-        <text xml:lang="fr">Annexes</text>
+        <text xml:lang="fr">Annexe</text>
         <text xml:lang="it">Appendice</text>        
         <text xml:lang="nl">Appendix</text>
         <text xml:lang="pt">Apêndice</text>
       </entry>
-      <entry xml:id="acknowledgements-label">
+      <entry xml:id="authorNotes-label">
         <text xml:lang="de">Anmerkungen des Autors</text>
-        <text xml:lang="en">Author's Note</text>
+        <text xml:lang="en">Author's Notes</text>
         <text xml:lang="es">Notas del Autor</text>
         <text xml:lang="fr">Note de l'Auteur</text>
         <text xml:lang="it">Note dell'Autore</text>        
         <text xml:lang="nl">Noot van de Auteur</text>        
         <text xml:lang="pt">Notas do Autor</text>
+      </entry>
+      <entry xml:id="editorNotes-label">
+        <text xml:lang="de">Anmerkungen des Editors</text>
+        <text xml:lang="en">Editor's Notes</text>
+        <text xml:lang="es">Notas del Editor</text>
+        <text xml:lang="fr">Note de l'Éditeur</text>
+        <text xml:lang="it">Note dell'Editore</text>        
+        <text xml:lang="nl">Noot van de Editeur</text>        
+        <text xml:lang="pt">Notas do Editor</text>
+      </entry>
+      <entry xml:id="corrections-label">
+        <text xml:lang="de">Errata</text>
+        <text xml:lang="en">Errata</text>
+        <text xml:lang="es">Errata</text>
+        <text xml:lang="fr">Errata</text>
+        <text xml:lang="it">Errata</text>        
+        <text xml:lang="nl">Errata</text>        
+        <text xml:lang="pt">Errata</text>
+      </entry>
+      <entry xml:id="dedication-label">
+        <text xml:lang="de">Widmung</text>
+        <text xml:lang="en">Dedication</text>
+        <text xml:lang="es">Dedicación</text>
+        <text xml:lang="fr">Dédicace</text>
+        <text xml:lang="it">Dedizione</text>        
+        <text xml:lang="nl">Opdracht</text>        
+        <text xml:lang="pt">Dedicação</text>
+      </entry>
+      <entry xml:id="acknowledgements-label">
+        <text xml:lang="de">Anerkennung</text>
+        <text xml:lang="en">Acknowledgements</text>
+        <text xml:lang="es">Reconocimiento</text>
+        <text xml:lang="fr">Remerciements</text>
+        <text xml:lang="it">Ringraziamenti</text>        
+        <text xml:lang="nl">Dankwoord</text>        
+        <text xml:lang="pt">Reconhecimento</text>
       </entry>
       <entry xml:id="notes-label">
         <text xml:lang="de">Anmerkungen</text>
@@ -131,6 +176,15 @@
         <text xml:lang="it" pl="esempi">esempio</text>
         <text xml:lang="nl" pl="voorbeelden">voorbeeld</text>
         <text xml:lang="pt">exemplo</text>
+      </entry>
+      <entry xml:id="note-label">
+        <text xml:lang="de" pl="Anmerkungen">Anmerkung</text>
+        <text xml:lang="en">note</text>
+        <text xml:lang="es">nota</text>
+        <text xml:lang="fr">note</text>
+        <text xml:lang="it" pl="note">nota</text>
+        <text xml:lang="nl" pl="noten">note</text>
+        <text xml:lang="pt">notas</text>
       </entry>
     </i18n>
   </xsl:variable>

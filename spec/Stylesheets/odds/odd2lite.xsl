@@ -311,9 +311,16 @@ of this software, even if advised of the possibility of such damage.
 <xsl:apply-templates mode="verbatim" select="$content/*/*"/>
     </eg>
   </xsl:template>
-  <xsl:template match="tei:remarks/tei:p">
-      <xsl:apply-templates/>
-      <xsl:if test="preceding-sibling::tei:p"><lb/></xsl:if>
+  <xsl:template name="PMOut">
+    <xsl:param name="content"/>
+    <xsl:param name="element">pre</xsl:param>
+    <eg xml:space="preserve">
+<xsl:apply-templates mode="verbatim" select="$content"/>
+    </eg>
+  </xsl:template>
+  <xsl:template match="tei:remarks/tei:p | tei:remarks/tei:ab">
+      <xsl:copy><xsl:apply-templates/></xsl:copy>
+      <!--<xsl:if test="preceding-sibling::tei:p"><lb/></xsl:if>-->
   </xsl:template>
   <xsl:template match="tei:exemplum/tei:p">
       <xsl:apply-templates/>
@@ -507,7 +514,7 @@ of this software, even if advised of the possibility of such damage.
                       <xsl:value-of select="@ident"/>
                     </ref>
                   </hi>:
-                  <xsl:sequence select="tei:makeDescription(.,true())"/>
+                  <xsl:sequence select="tei:makeDescription(., true(), true())"/>
                 </cell>
               </row>
             </xsl:for-each>
@@ -572,6 +579,13 @@ of this software, even if advised of the possibility of such damage.
 
   <xsl:template match="tei:gloss" mode="inLanguage">
       <seg>
+        <!--  MDH 2018-04-29: working on ticket 138. Add flag if translation is out of date.   -->
+        <xsl:variable name="transDate" select="@versionDate"/>
+        <xsl:if test="preceding-sibling::tei:gloss[@xml:lang = 'en'][@versionDate gt $transDate]
+          or following-sibling::tei:gloss[@xml:lang = 'en'][@versionDate gt $transDate]">
+          <xsl:attribute name="rend" select="'outOfDateTranslation'"/>
+        </xsl:if>
+        
          <xsl:copy-of select="@xml:lang"/>
          <xsl:value-of select="."/>
       </seg>
@@ -579,6 +593,13 @@ of this software, even if advised of the possibility of such damage.
 
   <xsl:template match="tei:desc" mode="inLanguage">
     <seg>
+      <!--  MDH 2018-04-29: working on ticket 138. Add flag if translation is out of date.   -->
+      <xsl:variable name="transDate" select="@versionDate"/>
+      <xsl:if test="preceding-sibling::tei:desc[@xml:lang = 'en'][@versionDate gt $transDate]
+        or following-sibling::tei:desc[@xml:lang = 'en'][@versionDate gt $transDate]">
+        <xsl:attribute name="rend" select="'outOfDateTranslation'"/>
+      </xsl:if>
+     
       <xsl:copy-of select="@xml:lang"/>
       <xsl:apply-templates/>
     </seg>

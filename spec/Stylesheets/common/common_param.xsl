@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet 
-  xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<xsl:stylesheet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		xmlns:sch="http://purl.oclc.org/dsdl/schematron"
 		xmlns:m="http://www.w3.org/1998/Math/MathML"
 		xmlns:tei="http://www.tei-c.org/ns/1.0"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl"
 		xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-		xmlns:html="http://www.w3.org/1999/xhtml"
 		    exclude-result-prefixes="#all"
  version="2.0">
   <doc xmlns="http://www.oxygenxml.com/ns/doc/xsl" scope="stylesheet" type="stylesheet">
@@ -137,12 +136,16 @@ of this software, even if advised of the possibility of such damage.
   <doc xmlns="http://www.oxygenxml.com/ns/doc/xsl" class="links" type="string">
     <desc>Institution or project name</desc>
   </doc>
-  <xsl:param name="institution">(unknown project)</xsl:param>
+  <xsl:param name="institution" select="(
+    /*/teiHeader/fileDesc/publicationStmt/distributor[1],
+    /*/teiHeader/fileDesc/publicationStmt/publisher[1],
+    /*/teiHeader/fileDesc/publicationStmt/authority[1],
+    '')[1]" as="xs:string"/>
 
   <doc xmlns="http://www.oxygenxml.com/ns/doc/xsl" class="links" type="anyURI">
     <desc>Institution link</desc>
   </doc>
-  <xsl:param name="parentURL"></xsl:param>
+  <xsl:param name="parentURL"/>
 
   <doc xmlns="http://www.oxygenxml.com/ns/doc/xsl" class="links" type="string">
     <desc>Name of overall institution</desc>
@@ -152,7 +155,7 @@ of this software, even if advised of the possibility of such damage.
   <doc xmlns="http://www.oxygenxml.com/ns/doc/xsl" class="links" type="anyURI">
     <desc>Link to search application</desc>
   </doc>
-  <xsl:param name="searchURL"></xsl:param>
+  <xsl:param name="searchURL"/>
 
   <doc xmlns="http://www.oxygenxml.com/ns/doc/xsl" class="misc" type="anyURI">
     <desc>The home page for these stylesheets</desc>
@@ -325,6 +328,11 @@ of this software, even if advised of the possibility of such damage.
   </doc>
   <xsl:param name="biblioStyle"></xsl:param>
 
+  <xd:doc class="layout" type="string">
+    <xd:desc>The initial part of a the URI of a DOI resolution service</xd:desc>
+  </xd:doc>
+  <xsl:param name="DOIResolver" select="'http://dx.doi.org/'"/>
+  
   <doc xmlns="http://www.oxygenxml.com/ns/doc/xsl" class="layout" type="string">
     <desc>Default spacing between paragraphs</desc>
   </doc>
@@ -334,41 +342,13 @@ of this software, even if advised of the possibility of such damage.
      a heading</desc>
   </doc>
   <xsl:template name="sectionHeadHook"/>
-  
-  
   <!-- Addition by Martin Holmes 2012-07-15 for ticket http://purl.org/tei/fr/3511134     -->
   <doc xmlns="http://www.oxygenxml.com/ns/doc/xsl" class="hook">
     <desc>[common] Hook where actions can be inserted when processing an 
     attDef Used in Guidelines output to create an anchor/link pilcrow.</desc>
   </doc>
-  <doc xmlns="http://www.oxygenxml.com/ns/doc/xsl">
-    <desc>Template for the EHRI EAD guidelines.</desc>
-  </doc>
   <xsl:template name="attDefHook">
     <xsl:param name="attName"/>
-    <xsl:variable name="linkId" select="concat('ead_att.', translate($attName, ':', '-'))"/>
-    <xsl:choose>
-      <xsl:when test="string-length($attName) gt 0">
-        <span class="bookmarklink">
-          <a class="bookmarklink" id="{$linkId}" href="#{$linkId}">
-            <xsl:attribute name="title">
-              <xsl:text>link to this attribute </xsl:text>
-            </xsl:attribute>
-            <span class="invisible">
-              <xsl:text> </xsl:text>
-              <xsl:value-of select="$attName"/>
-            </span>
-            <span class="pilcrow">
-              <xsl:text>¶</xsl:text>
-            </span>
-          </a>
-        </span>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:comment>No linking pilcrow inserted: attname not provided.</xsl:comment>
-      </xsl:otherwise>
-    </xsl:choose>
-    
   </xsl:template>
 
   <xsl:param name="langAttributeName">xml:lang</xsl:param>

@@ -7,7 +7,7 @@ BINDIR=../bin
 SAXONOPT=useFixedDate=true
 SAXON=java -Djava.awt.headless=true -jar ../lib/saxon9he.jar
 DOTDOTSAXON=java -Djava.awt.headless=true -jar ../../lib/saxon9he.jar
-JING=java -Djava.awt.headless=true -jar lib/jing-20120724.0.0.jar
+JING=java -Djava.awt.headless=true -jar ../lib/lib/jing-20120724.0.0.jar
 OXY=/usr/share/oxygen
 SCRIPTS=teitobibtex \
 	teitodocbook \
@@ -29,7 +29,7 @@ SCHEMASCRIPTS=teitornc \
 	teitoxsd \
 	teitodtd
 
-default: test.rng test-to-html test-p4top5 test-oddity test-scripts test-namespaces test-from-html test-latex test-fo test-to-docx test-from-docx test-xlsx test-rdf test-text test-odt  test-markdown test-cocoa test-epub
+default: test.rng test-to-html test-p4top5 test-oddity test-scripts test-namespaces test-from-html test-latex test-fo test-to-docx test-from-docx test-xlsx test-rdf test-text test-odt test-markdown test-cocoa test-epub
 
 test.rng:
 	$(BINDIR)/teitorelaxng --odd test.odd test.rng
@@ -115,10 +115,12 @@ test-to-html: css
 	if [ $(REGENERATING) -ne 1 ]; \
 		then diff  test27.html expected-results/test27.html; fi
 	rm -rf files
+#MDH 2017-01-01: Originally this file was output as index.html and then diffed against expected-results/test28.html,
+#but this was confusing.
 	$(SAXON) test28.xml ../html/html.xsl splitLevel=0  STDOUT=false $(SAXONOPT)
-	xmllint --format index.html > x ; mv x index.html
+	xmllint --format index.html > x ; mv x test28.html
 	if [ $(REGENERATING) -ne 1 ]; \
-		then diff  index.html expected-results/test28.html; fi
+		then diff  test28.html expected-results/test28.html; fi
 	$(SAXON) test31.xml ../html/html.xsl cssFile="" cssInlineFiles=../tei.css $(SAXONOPT)  | xmllint --format - > test31.html
 	if [ $(REGENERATING) -ne 1 ]; \
 		then diff  test31.html expected-results/test31.html; fi
@@ -213,26 +215,28 @@ test-fo:
 	if [ $(REGENERATING) -ne 1 ]; \
 		then diff  test24.fo expected-results/test24.fo; fi
 	$(SAXON) -o:test25.fo test25.xml ../fo/fo.xsl $(SAXONOPT)
+	$(JING) fo.xsd test25.fo
 	if [ $(REGENERATING) -ne 1 ]; \
 		then diff  test25.fo expected-results/test25.fo; fi
 	$(SAXON) test27.xml ../fo/fo.xsl $(SAXONOPT) | xmllint --format - > test27.fo
+	$(JING) fo.xsd test27.fo
 	if [ $(REGENERATING) -ne 1 ]; \
 		then diff  test27.fo expected-results/test27.fo; fi
 
-test-epub:
+test-epub: css
 	@echo BUILD: testing epub
 	$(BINDIR)/teitoepub3  test.xml test.epub
-	java -Djava.awt.headless=true -jar epubcheck3.jar test.epub
+	java -Djava.awt.headless=true -jar ../lib/epubcheck3.jar test.epub
 	$(BINDIR)/teitoepub  test.xml test.epub
-	java -Djava.awt.headless=true -jar epubcheck3.jar  test.epub
+	java -Djava.awt.headless=true -jar ../lib/epubcheck3.jar  test.epub
 	unzip -t test.epub > test.epub.listing
 	if [ $(REGENERATING) -ne 1 ]; \
-		then diff  test.epub.listing expected-results/test.epub.listing; fi
+		then bash -c 'diff  <(sort test.epub.listing) <(sort expected-results/test.epub.listing)'; fi
 	rm test.epub.listing
 	$(BINDIR)/teitoepub  --fileperpage test.xml test-pages.epub
 	unzip -t test-pages.epub > test.epub.listing2
 	if [ $(REGENERATING) -ne 1 ]; \
-		then diff  test.epub.listing2 expected-results/test.epub.listing2; fi
+		then bash -c 'diff  <(sort test.epub.listing2) <(sort expected-results/test.epub.listing2)'; fi
 	rm test.epub.listing2
 
 test-rdf:
@@ -257,13 +261,13 @@ test-odt:   test.rng
 	(cd ..; $(MAKE) names)
 	@echo BUILD: testing odt
 	$(BINDIR)/teitoodt test.xml
-	unzip -t test.xml.odt > test.xml.odt.listing
+	unzip -t test.xml.odt | sort > test.xml.odt.listing
 	unzip -o -q test.xml.odt content.xml
 	xmllint --format content.xml > content.xml.odt.listing
 	if [ $(REGENERATING) -ne 1 ]; \
-		then diff  test.xml.odt.listing expected-results/test.xml.odt.listing; fi
+		then bash -c 'diff  <(sort test.xml.odt.listing) <(sort expected-results/test.xml.odt.listing)'; fi
 	if [ $(REGENERATING) -ne 1 ]; \
-		then diff  content.xml.odt.listing expected-results/content.xml.odt.listing; fi
+		then bash -c 'diff  <(sort content.xml.odt.listing) <(sort expected-results/content.xml.odt.listing)'; fi
 	$(BINDIR)/odttotei test7.odt test7.xml
 	$(JING) test.rng test7.xml
 	if [ $(REGENERATING) -ne 1 ]; \
@@ -299,6 +303,10 @@ test-from-docx: test.rng
 	xmllint --format temp.xml | perl cleanup.pl > test39.xml  && rm temp.xml
 	if [ $(REGENERATING) -ne 1 ]; \
 		then diff  test39.xml expected-results/test39.xml; fi
+	$(BINDIR)/docxtotei hyperlinktest.docx temp.xml
+	xmllint --format temp.xml | perl cleanup.pl > hyperlinktest.xml  && rm temp.xml
+	if [ $(REGENERATING) -ne 1 ]; \
+		then diff  hyperlinktest.xml expected-results/hyperlinktest.xml; fi
 	$(BINDIR)/docxtotei --profile=transcription test-rtf2tei.docx temp.xml
 	xmllint --format temp.xml | perl cleanup.pl > test-rtf2tei.xml  && rm temp.xml
 	if [ $(REGENERATING) -ne 1 ]; \
@@ -373,13 +381,11 @@ test-oddity: css
 	$(BINDIR)/teitodtd  $(FLAG) oddbyexample.odd  oddbyexample.dtd
 	$(JING) -c oddbyexample.rnc bare/test2.xml
 	$(JING) oddbyexample.xsd bare/test2.xml
-	# BUG: no longer works because app part of model.global, therefore content
-	# model of text is nondeterministic.
-	#xmllint --noout --dtdvalid oddbyexample.dtd bare/test2.xml
+	xmllint --noout --dtdvalid oddbyexample.dtd bare/test2.xml
 	$(JING) -c oddbyexample.rnc bare/test.xml
 	$(JING) oddbyexample.xsd bare/test.xml
-	#xmllint --noout --dtdvalid oddbyexample.dtd bare/test.xml
-	$(SAXON) -s:testdrama.odd -xsl:../odds/odd2odd.xsl -o:testdrama.compiled.xml 
+	xmllint --noout --dtdvalid oddbyexample.dtd bare/test.xml
+	$(SAXON) -s:testdrama.odd -xsl:../odds/odd2odd.xsl -o:testdrama.compiled.xml
 	perl -p -i -e 's+ xml:base=".*testdrama.odd"++' testdrama.compiled.xml
 	perl -i -pe 'BEGIN{undef $$/;} s/<\?TEIVERSION[^?]+\?>//smg' testdrama.compiled.xml
 	if [ $(REGENERATING) -ne 1 ]; \
@@ -396,6 +402,24 @@ test-oddity: css
 		then diff  test30.rnc expected-results/test30.rnc; fi
 	if [ $(REGENERATING) -ne 1 ]; \
 		then diff  test30.dtd expected-results/test30.dtd; fi
+# MDH 2017-01-07: THE FOLLOWING LINES WILL integrate LB's new pure ODD 
+# master test to replace originals, BUT ONLY WHEN THINGS ARE WORKING PROPERLY.
+# Generate DTD from ODD.
+#	$(BINDIR)/teitodtd $(FLAG) testODD.odd testODD.dtd
+# Generate RNC from the same file.
+#	$(BINDIR)/teitornc $(FLAG) testODD.odd testODD.rnc
+# Trim all sorts of piffle out of the DTD and RNC before we compare them with the expected results.
+#	perl -p -i -e 's/generated from ODD source .*//' testODD.dtd
+#	perl -i -pe 'BEGIN{undef $$/;} s/<!--\nDTD[^>]*-->\n//smg' testODD.dtd
+#	perl -p -i -e 's/generated from ODD source .*//' testODD.rnc
+#	perl -i -pe 'BEGIN{undef $$/;} s/# ?Schema[^#]+#[^#]+#[^#]+#[^#]+#\n//smg' testODD.rnc
+# diff against expected results.
+#	if [ $(REGENERATING) -ne 1 ]; \
+#		then diff  testODD.dtd expected-results/testODD.dtd; fi
+#	if [ $(REGENERATING) -ne 1 ]; \
+#		then diff  testODD.rnc expected-results/testODD.rnc; fi
+# NOTE: THERE SHOULD BE VALIDATION OF AN INSTANCE FILE AGAINST THE DTD HERE.	
+# OLD ORIGINAL CODE STILL BEING USED FOR THE MOMENT.
 	$(BINDIR)/teitodtd $(FLAG) test-pure.odd test-pure.dtd
 	$(BINDIR)/teitornc $(FLAG) test-pure.odd test-pure.rnc
 	xmllint --noout --dtdvalid test-pure.dtd test-pure.xml
@@ -456,7 +480,7 @@ test-namespaces:
 	if [ $(REGENERATING) -ne 1 ]; \
 		then diff  test33.rnc expected-results/test33.rnc; fi
 	$(SAXON) test33.odd ../odds/odd2json.xsl > test33.json
-	perl -p -i -e 's/"date":"\d+-\d+\-\d+T\d+:\d+:\d+Z",//' test33.json
+	perl -p -i -e 's/"date" : "\d+-\d+\-\d+T\d+:\d+:\d+Z",//' test33.json
 	if [ $(REGENERATING) -ne 1 ]; \
 		then diff  test33.json expected-results/test33.json; fi
 	$(BINDIR)/teitornc test34.odd test34.rnc
@@ -465,12 +489,12 @@ test-namespaces:
 	if [ $(REGENERATING) -ne 1 ]; \
 		then diff  test34.rnc expected-results/test34.rnc; fi
 	$(SAXON) test34.odd ../odds/odd2json.xsl > test34.json
-	perl -p -i -e 's/"date":"\d+-\d+\-\d+T\d+:\d+:\d+Z",//' test34.json
+	perl -p -i -e 's/"date" : "\d+-\d+\-\d+T\d+:\d+:\d+Z",//' test34.json
 	if [ $(REGENERATING) -ne 1 ]; \
 		then diff  test34.json expected-results/test34.json; fi
 	$(SAXON) test34.odd ../odds/odd2odd.xsl > test34.combined.odd
 	$(SAXON) test34.combined.odd ../odds/odd2json.xsl > test34.combined.json
-	perl -p -i -e 's/"date":"\d+-\d+\-\d+T\d+:\d+:\d+Z",//' test34.combined.json
+	perl -p -i -e 's/"date" : "\d+-\d+\-\d+T\d+:\d+:\d+Z",//' test34.combined.json
 	if [ $(REGENERATING) -ne 1 ]; \
 		then diff  test34.combined.json expected-results/test34.combined.json; fi
 	$(BINDIR)/teitohtml --odd --summaryDoc test34.odd test34.odd.html
@@ -484,9 +508,9 @@ test-namespaces:
 		then diff  test35.rnc expected-results/test35.rnc; fi
 
 test-scripts:
-	for i in $(SCRIPTS); do $(BINDIR)/$$i maria.xml $$i.result && rm $$i.result; done
+	for i in $(SCRIPTS); do $(BINDIR)/$$i $(FLAGS) maria.xml $$i.result && rm $$i.result; done
 	$(BINDIR)/teitoodd test16.odd temp.odd
-	for i in $(SCHEMASCRIPTS) ; do $(BINDIR)/$$i temp.odd $$i.result && rm $$i.result; done
+	for i in $(SCHEMASCRIPTS) ; do $(BINDIR)/$$i $(FLAGS) temp.odd $$i.result && rm $$i.result; done
 	rm temp.odd
 
 test-pureant:
@@ -509,8 +533,8 @@ test-pureant:
 
 test-oxgarage:
 	@echo BUILD: testing oxgarage
-	curl -s -F upload=@test.odd  -o test.rng http://oxgarage.oucs.ox.ac.uk:8080/ege-webservice/Conversions/ODD%3Atext%3Axml/ODDC%3Atext%3Axml/relaxng%3Aapplication%3Axml-relaxng
-	curl -s -F upload=@test.odd  -o test.zip http://oxgarage.oucs.ox.ac.uk:8080/ege-webservice/Conversions/ODD%3Atext%3Axml/ODDC%3Atext%3Axml/xsd%3Aapplication%3Axml-xsd/
+	curl -s -F upload=@test.odd  -o test.rng http://oxgarage.tei-c.org/ege-webservice/Conversions/ODD%3Atext%3Axml/ODDC%3Atext%3Axml/relaxng%3Aapplication%3Axml-relaxng
+	curl -s -F upload=@test.odd  -o test.zip http://oxgarage.tei-c.org/ege-webservice/Conversions/ODD%3Atext%3Axml/ODDC%3Atext%3Axml/xsd%3Aapplication%3Axml-xsd/
 
 test-oxgarage-tei:
 	@echo BUILD: testing oxgarage-tei
@@ -529,8 +553,8 @@ clean:
 	rm -f test*.rnc test*.json test*.rnc test*.combined.odd test*listing* test*.tei test*.rng test*.html5 test*.processedodd *.isosch
 	rm -f oddbyexample.* index*div*html
 	rm -f testdrama.compiled.xml
-	rm -f test5.odt test7.xml test18.xml test19.xml test-index.xml test7.zip test11.xml test9.docx test9.odt content.xml.odt.listing content.xml.odt test.xml.docx.core test7.docx
-	rm -f A54031.xml dcr.result test-rtf2tei.xml test29.xml
+	rm -f test5.odt test7.xml test18.xml test19.xml test-index.xml test7.zip test11.xml test11a.xml test9.docx test9.odt content.xml.odt.listing content.xml.odt test.xml.docx.core test7.docx hyperlinktest.xml
+	rm -f A54031.xml dcr.result test-rtf2tei.xml test29.xml dcr.tmp xml.tmp
 	rm -f xml.result
 	rm -rf charts/ embeddings/ media/ _rels/ \[Content_Types\].xml
 	rm -rf temp-dir-for-ant Pictures OEBPS META-INF mimetype files
@@ -539,8 +563,8 @@ clean:
 	rm -f cocoatest*.xml
 
 oddtree:
-	saxon /usr/share/xml/tei/odd/p5subset.xml odd-to-tree.xsl  > oddtree.xml
-	teitohtml --profile=oxford oddtree.xml oddtree.html
+	$(SAXON) -s:http://www.tei-c.org/release/xml/tei/odd/p5subset.xml -xsl:../tools/odd-to-tree.xsl -o:oddtree.xml
+	../bin/teitohtml --profile=oxford oddtree.xml oddtree.html
 
 regenerate:
 	mkdir new-expected-results
