@@ -58,7 +58,7 @@
                   <term key="OAI-PMH" source="standard_list" type="standard"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref target="ZUEGLA6W" type="code"/>
+                  <ref source="zotero" target="ZUEGLA6W" type="code"/>
                </linkGrp>
             </event>
          </listEvent>
