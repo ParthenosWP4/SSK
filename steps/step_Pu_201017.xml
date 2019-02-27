@@ -38,7 +38,7 @@
       <body>
          <listEvent>
             <event type="researchStep">
-               <head xml:lang="en">Publish</head>
+               <head xml:lang="en">Publish the results</head>
                <desc type="definition" xml:lang="en">Publish the results of the artwork's multispectral
       imaging analysis.</desc>
                <desc type="term" xml:lang="en">
@@ -53,7 +53,7 @@
                        type="website">
                      <term key="POLYGNOSIS" type="service"/>
                   </ref>
-                  <ref subtype="service" target="H793RGGY " type="website">
+                  <ref source="zotero" subtype="service" target="H793RGGY " type="website">
                      <term key="Hal" type="service"/>
                   </ref>
                </linkGrp>
