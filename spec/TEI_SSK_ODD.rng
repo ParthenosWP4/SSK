@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2019-02-26T17:08:39Z. .
+Schema generated from ODD source 2019-02-27T16:43:44Z. .
 TEI Edition: Version 3.3.0. Last updated on
 	31st January 2018, revision f4d8439
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.3.0/
@@ -134,7 +134,7 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.3.0/
             </choice>
          </zeroOrMore>
       </element>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e70346-constraint">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e70347-constraint">
          <rule context="tei:content">
             <report test="descendant::*[not(namespace-uri(.) =               ('http://relaxng.org/ns/structure/1.0', 'http://www.tei-c.org/ns/1.0'))]">content descendants must be in the
               namespaces
@@ -162,7 +162,7 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.3.0/
             </choice>
          </zeroOrMore>
       </element>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e70671-constraint">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e70672-constraint">
          <rule context="tei:constraint">
             <report test="descendant::*[not(namespace-uri(.) =               ('http://purl.oclc.org/dsdl/schematron', 'http://www.tei-c.org/ns/1.0'))]">constraint descendants must be in the
               namespaces
@@ -190,7 +190,7 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.3.0/
             </choice>
          </zeroOrMore>
       </element>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e71580-constraint">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e71581-constraint">
          <rule context="tei:datatype">
             <report test="descendant::*[not(namespace-uri(.) =               ('http://relaxng.org/ns/structure/1.0', 'http://www.tei-c.org/ns/1.0'))]">datatype descendants must be in the
               namespaces
@@ -3734,6 +3734,9 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
             <choice>
                <text/>
                <optional>
+                  <ref name="lb"/>
+               </optional>
+               <optional>
                   <ref name="list"/>
                </optional>
                <optional>
@@ -3747,9 +3750,6 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
                </optional>
                <optional>
                   <ref name="term"/>
-               </optional>
-               <optional>
-                  <ref name="lb"/>
                </optional>
             </choice>
          </zeroOrMore>
@@ -3963,6 +3963,9 @@ Suggested values include: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] for
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(description) contains a brief description of the object documented by its parent element, typically a documentation element or an entity. [22.4.1. Description of Components]</a:documentation>
          <zeroOrMore>
             <choice>
+               <optional>
+                  <ref name="lb"/>
+               </optional>
                <optional>
                   <ref name="p"/>
                </optional>
