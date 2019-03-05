@@ -66,14 +66,9 @@
                   <term type="activity" source="http://tadirah.dariah.eu/" key="annotating"/>
                </desc>
                <linkGrp type="generalResources">
-                  <ref type="software" source="zotero" target="MN5XVQ82"><!-- TreeTagger -->
-                     <term type="software" key="TreeTagger"/>
-                  </ref>
-                  <ref type="software" source="zotero" target="AB2FM77V"><!-- Stanford NLP Software -->
-                     <term type="software" key="StanfordNLP"/>
-                     <term type="activity" key="tokenize"/>
-                  </ref>
-               </linkGrp>
+                  <ref type="software" source="zotero" target="MN5XVQ82"/><!-- TreeTagger -->
+                  <ref type="software" source="zotero" target="AB2FM77V"/><!-- Stanford NLP Software -->
+            </linkGrp>
             </event>
          </listEvent>
       </body>
