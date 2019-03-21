@@ -16,4 +16,3 @@ doc/junk.rst
 doc/docs
 **/.DS_Store
 dataProcessing/__pycache__
-test
