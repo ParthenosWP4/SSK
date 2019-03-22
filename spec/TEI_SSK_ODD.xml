@@ -458,6 +458,11 @@
                   <valItem ident="projectResources"/>
                 </valList>
               </attDef>
+              <attDef ident="xml:base" usage="req" mode="change">
+                <valList type="semi" mode="replace">
+                  <valItem ident="https://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"></valItem>
+                </valList>
+              </attDef>
             </attList>
           </elementSpec>
 

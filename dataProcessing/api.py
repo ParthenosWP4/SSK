@@ -14,7 +14,7 @@ ssk = schSSK()
 
 url = "http://ssk.paris.inria.fr:8080/ssk_services-0.0.1/api/scenarios?id="
 scenarios = ssk.get_files("../scenarios")
-folder = "../API/scenariosExport/"
+folder = "../API/scenariosExport2/"
 ssk.create_directory(folder)
 for scenario in scenarios:
     id = str(scenario)[13:-4]
@@ -24,7 +24,7 @@ for scenario in scenarios:
         f.write(r.content)
 
 source = '-s:'+folder
-outFolder = "../API/print/"
+outFolder = "../API/print2/"
 ssk.create_directory(outFolder)
 out = '-o:'+ outFolder
 tei2print = subprocess.run(['saxon', source, '-xsl:../API/scenario2print.xsl', out])
