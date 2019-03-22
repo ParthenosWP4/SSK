@@ -66,7 +66,7 @@
                         source="http://tadirah.dariah.eu/"
                         key="http://tadirah.dariah.eu/vocab/index.php?tema=22#x26;/annotating"/>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="schema" source="zotero" target="JH4RHXIX"/>
                   <ref type="specification" source="zotero" target="97VDSZVB">
                      <term type="standards" source="standard_list" key="EDM"/>
@@ -99,12 +99,12 @@
                   </ref>
                   <ref type="report" source="zotero" target="JQA2HGXG"/>
                </linkGrp>
-               <linkGrp type="projectResources"
+               <linkGrp type="projectResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                         source="CARARE"
                         corresp="http://www.carare.eu/">
                   <ref type="webpage" target="RQMMKPTG"/>
                </linkGrp>
-               <linkGrp type="projectResources"
+               <linkGrp type="projectResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                         source="3D-ICONS"
                         corresp="http://3dicons-project.eu">
                   <ref type="webpage" target="XY49BQNJ"/>

@@ -58,7 +58,7 @@
                   <term key="OAI-PMH" source="standard_list" type="standard"/>
                   <term key="publishing" source="http://tadirah.dariah.eu/" type="activity"/>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="35LQP6YP" type="code">
                      <term key="content analysis" source="tadirah" type="activity"/>
                   </ref>

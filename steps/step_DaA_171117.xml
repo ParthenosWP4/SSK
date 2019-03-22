@@ -57,7 +57,7 @@
                </desc>
                <linkGrp corresp="http://bequali.fr/fr/"
                         source="BeQuali"
-                        type="projectResources">
+                        type="projectResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="SM4GIA8J" type="webpage"/>
                </linkGrp>
             </event>

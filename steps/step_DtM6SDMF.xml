@@ -64,7 +64,7 @@
                   <term type="standard" source="standard_list" target="ASCII"/>
                   <term type="standard" source="standard_list" target="CSV"/>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="spec" source="zotero" target="9325XIHG"/>
                   <ref type="spec" source="zotero" target="HX7KGKY3"/>
                </linkGrp>

@@ -55,7 +55,7 @@
               other environmental conditions that can potentially affect the measurements are
               reported such as levels of temperature or relative humidity.</p>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="paper" source="zotero" target="CTNH7TPZ"/>
                   <ref type="paper" source="zotero" target="LERDFNGM"/>
                </linkGrp>

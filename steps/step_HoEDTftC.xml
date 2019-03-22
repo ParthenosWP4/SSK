@@ -62,7 +62,7 @@
                   <term key="TEI" source="ssk" type="standard"/>
                   <term key="Schematron" source="ssk" type="standard"/>
                </desc>
-               <linkGrp type="generalResources"><!-- Ressources: schema for the evaluation of how close a TEI text is to the DTABf -->
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"><!-- Ressources: schema for the evaluation of how close a TEI text is to the DTABf -->
                   <ref source="zotero" target="4BWPP9WT" type="specification">
                      <term key="Converting" source="http://tadirah..eu/" type="activity"/>
                   	OxGarage

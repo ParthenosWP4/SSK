@@ -47,7 +47,7 @@
                         source="http://tadirah.dariah.eu/"
                         type="activity"/>
                </desc>
-               <linkGrp type="generalResources"><!--  <ref type="book" subtype="methodology" source="zotero" target="8M7XC7AD"> -->
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"><!--  <ref type="book" subtype="methodology" source="zotero" target="8M7XC7AD"> -->
                   <ref source="zotero"
                        subtype="standard"
                        target="8M7XC7AD"
@@ -59,13 +59,13 @@
                        subtype="standard"
                        target="CIWQJSBR"
                        type="report">
-                     <term key="Multispectral Imaging in Reflectance                         and Photo-induced Luminescence                         modes"
+                     <term key="Multispectral Imaging in Reflectance and Photo-induced Luminescence modes"
                            type="standard"/>
                   </ref>
                </linkGrp>
                <linkGrp corresp="https://cordis.europa.eu/project/rcn/92569/factsheet/en/"
                         source="CHARISMA"
-                        type="projectResources">
+                        type="projectResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref target="AVQTPABS" type="webpage"/>
                </linkGrp>
             </event>

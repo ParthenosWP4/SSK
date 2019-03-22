@@ -43,7 +43,7 @@
             <term key="hOCR" source="ssk" type="standard"/>
             <term key="ALTO-XML" source="ssk" type="standard"/>
           </desc>
-          <linkGrp type="generalResources">
+          <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
             <ref source="zotero" target="CJTI9S5P" type="code"/>
             <ref source="zotero" target="FASX3E7M" type="code"/>
             <ref source="zotero" target="SZTQJUWS" type="code"/>

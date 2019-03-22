@@ -57,7 +57,7 @@
                   <term type="standard" source="standard_list" key="LAF"/>
                   <term type="activity" source="http://tadirah.dariah.eu/" key="annotating"/>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="software" source="zotero" target="RX7BRGK8"><!-- Stanford Named Entity Recognizer (NER) -->
                      <term type="software" key="Stanford NER"/>
                   </ref>

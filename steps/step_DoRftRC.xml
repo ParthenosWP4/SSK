@@ -66,7 +66,7 @@
                   <term key="TEI" source="ssk" type="standard"/>
                   <term key="Schematron" source="ssk" type="standard"/>
                </desc>
-               <linkGrp type="generalResources"><!-- Ressources: DTAoX, DTABf-TR, DTABf-Vorlagedatei -->
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"><!-- Ressources: DTAoX, DTABf-TR, DTABf-Vorlagedatei -->
                   <ref source="zotero"
                        target="558UTLGY"
                        type="specification">

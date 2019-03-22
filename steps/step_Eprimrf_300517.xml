@@ -49,7 +49,7 @@
                   <term key="Schematron" source="standard_list" type="standard"/>
                   <term key="Modeling" source="tadirah" type="activity"/>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="code_script" source="zotero" target="MUEUJK6J"/>
                   <ref source="zotero" target="7THSVQ9K" type="spec">
                      <term key="Schematron" source="standard_list" type="standard"/>
@@ -72,7 +72,7 @@
                </linkGrp>
                <linkGrp corresp="http://ehri-project.eu"
                         source="EHRI"
-                        type="projectResources">
+                        type="projectResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="9SKJK8BF" type="code">
                      <term key="Schematron" source="standard_list" type="standard"/>
                      <term key="EAD" source="standard_list" type="standard"/>

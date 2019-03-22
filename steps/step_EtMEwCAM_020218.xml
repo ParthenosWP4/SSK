@@ -55,7 +55,7 @@
                         source="http://tadirah.dariah.eu/"
                         type="activity"/>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="3FSG8F5I" type="software">
                      <term key="Sibelius" type="software"/>
                   </ref>
@@ -74,12 +74,12 @@
                </linkGrp>
                <linkGrp corresp="https://ricercar.gesualdo-online.cesr.univ-tours.fr/"
                         source="Gesualdo Online"
-                        type="projectResources">
+                        type="projectResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref target="FGKUISHK" type="database"/>
                </linkGrp>
                <linkGrp corresp="http://digitalduchemin.org/"
                         source="The Lost Voices Project"
-                        type="projectResources">
+                        type="projectResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref target="F8MVTEMT" type="database"/>
                </linkGrp>
             </event>

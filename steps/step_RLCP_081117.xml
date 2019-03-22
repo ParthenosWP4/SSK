@@ -46,7 +46,7 @@
                         source="http://tadirah.dariah.eu/"
                         type="activity"/>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero"
                        subtype="book"
                        target="PM5P3JDB"
@@ -62,7 +62,7 @@
                </linkGrp>
                <linkGrp corresp="http://www.cost.eu/COST_Actions/fps/G7"
                         source="Artwork conservation by Laser"
-                        type="projectResources">
+                        type="projectResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref target="C94KPIQG" type="webpage"/>
                </linkGrp>
             </event>

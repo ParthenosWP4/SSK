@@ -49,7 +49,7 @@
             under examination using a minimum laser power. The laser power can be progressively
             increased as well as the integration time / average of scans can be optimised as needed
             to obtain a good spectrum.</desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="paper" source="zotero" target="W39BNU8K"/>
                </linkGrp>
             </event>

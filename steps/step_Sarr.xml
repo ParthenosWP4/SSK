@@ -43,7 +43,7 @@
                <desc type="terms" xml:lang="en">
                   <term key="Gathering" source="http://tadirah.dariah.eu/" type="activity"/>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="DQTQDNPS" type="code"/>
                   <ref source="zotero" target="QQ3SKSNP" type="code"/>
                   <ref source="zotero" target="TWBUXXJN" type="code"/>

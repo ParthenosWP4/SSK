@@ -63,7 +63,7 @@
                <desc xml:lang="en" type="terms">
                   <term type="activity" source="TaDiRAH" key="Publishing"/>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="software" source="zotero" target="XAXD7Z22"/>
                   <ref type="report" source="zotero" target="JQA2HGXG"/>
                   <ref type="software" source="zotero" target="7J6J9IZH"/>

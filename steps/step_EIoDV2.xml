@@ -56,7 +56,7 @@
                         type="activity"/>
                   <term key="OPAC" source="standard_list" type="standard"/>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="D4ZDU8RS" type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>

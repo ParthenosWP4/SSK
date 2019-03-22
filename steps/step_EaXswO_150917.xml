@@ -52,7 +52,7 @@
                         type="activity">modeling</term>
                   <!--<term type="policy" source="WP3Wizard" key="CD"/>-->
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="paper" source="zotero" target="Z5SQUJPA"/>
                   <ref source="zotero" target="ZABRV5VD" type="spec">
                      <term key="TEI" source="standard_list" type="standard"/>

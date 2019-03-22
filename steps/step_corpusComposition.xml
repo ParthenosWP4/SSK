@@ -62,7 +62,7 @@
                   <term type="standard" source="standard_list" key="TEI"/>
                   <term type="activity" source="http://tadirah.dariah.eu/" key="designing">Designing</term>
                </desc>
-               <linkGrp type="generalResources"><!-- VLO, which subtype to take? -->
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"><!-- VLO, which subtype to take? -->
                   <ref type="resource" source="zotero" target="8BD6FDKR">
                      <term type="standard" source="standard_list" key="Metadata"/>
                   </ref>

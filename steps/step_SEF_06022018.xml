@@ -44,7 +44,7 @@
                   <term key="Images" source="TaDiRAH" type="object"/>
                   <term key="Data" source="TaDiRAH" type="object"/>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="SFKU6E2E" type="report"/>
                </linkGrp>
             </event>

@@ -59,7 +59,7 @@
                      </list>
                   </p>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="spec" source="zotero" target="FCKKBJ8X"/>
                   <ref type="spec" source="zotero" target="2PAJ6NGT"/>
                </linkGrp>

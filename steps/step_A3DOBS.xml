@@ -77,7 +77,7 @@
                   <term type="standard" source="standard" key="FLS"/>
                   <term type="standard" source="standard" key="FWS"/>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="report" source="zotero" target="JQA2HGXG"/>
                   <ref type="report" source="zotero" target="VCC9IDXV"/>
                </linkGrp>

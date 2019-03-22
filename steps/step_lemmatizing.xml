@@ -66,7 +66,7 @@
                   <term type="standard" source="standard_list" key="LAF"/>
                   <term type="activity" source="http://tadirah.dariah.eu/" key="annotating"/>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="software" source="zotero" target="MN5XVQ82"/><!-- TreeTagger -->
                   <ref type="software" source="zotero" target="AB2FM77V"/><!-- Stanford NLP Software -->
                </linkGrp>

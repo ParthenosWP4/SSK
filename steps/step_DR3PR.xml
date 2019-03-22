@@ -49,7 +49,7 @@
                <desc xml:lang="en" type="terms">
                   <term type="activity" source="tadriah" key="Publishing"/>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="service" source="zotero" target="TXK2S5FC"/>
                </linkGrp>
             </event>

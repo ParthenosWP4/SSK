@@ -56,7 +56,7 @@
                   <term type="standard" key="Apache FOP"/>
                   <term type="standard" key="InDesign Markup Language"/>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="H9NB3WI2" type="specification"/>
                   <ref source="zotero" target="PZPN9Y2F" type="tool"/>
                   <ref source="zotero" target="AF3ABSVQ" type="tool"/>

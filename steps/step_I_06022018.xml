@@ -50,7 +50,7 @@
                   <term key="Scanning" source="TaDiRAH" type="technique"/>
                   <term key="Imaging" source="TaDiRAH" type="activity"/>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="UR7IKVIU" type="tutorial"/>
                </linkGrp>
             </event>

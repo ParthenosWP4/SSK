@@ -48,7 +48,7 @@
                         source="http://tadirah.dariah.eu/"
                         type="activity"/>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero"
                        subtype="article"
                        target="D2WE387F"
@@ -64,7 +64,7 @@
                </linkGrp>
                <linkGrp corresp="https://modern.kikirpa.be/"
                         source="Modern and Contemporary Art in the laboratory"
-                        type="projectResources">
+                        type="projectResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref target="N3N6HFP7" type="webpage"/>
                </linkGrp>
             </event>

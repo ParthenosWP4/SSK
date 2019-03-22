@@ -58,7 +58,7 @@
                   <term type="standard" source="standard_list" key="TEI"/>
                   <term type="activity" source="http://tadirah.dariah.eu/" key="conversion">Conversion</term>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="spec" source="zotero" target="ZABRV5VD">
                      <term type="standard" source="standard_list" key="TEI"/>
                   </ref>

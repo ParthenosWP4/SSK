@@ -67,7 +67,7 @@
                         source="http://tadirah.dariah.eu/"
                         key="http://tadirah.dariah.eu/vocab/index.php?tema=41#x26;/preservation"/>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="specification" source="zotero" target="DS2U4E9U">
                      <term type="standards" source="standard_list" key="PLY"/>
                   </ref>

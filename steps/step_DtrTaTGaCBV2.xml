@@ -54,7 +54,7 @@
                   <term key="XML" source="standard_list" type="standard"/>
                   <term key="TEI" source="standard_list" type="standard"/>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="JEF4GFGT" type="code"/>
                   <ref source="zotero" target="KJLKJT69" type="code"/>
                </linkGrp>

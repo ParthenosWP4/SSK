@@ -61,7 +61,7 @@
                   <term key="XML" source="ssk" type="standard"/>
                   <term key="CMDI" source="ssk" type="standard"/>
                </desc>
-               <linkGrp type="generalResources"><!-- Ressources: Metadata web form, XSLT, CMDI -->
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"><!-- Ressources: Metadata web form, XSLT, CMDI -->
                   <ref source="zotero" target="T7672NJ8" type="specification">
                      <term key="TEI" source="ssk" type="standard"/>
                   	DTABf documentation</ref>
@@ -77,7 +77,7 @@
                			DTABf-based CMDI profile
                		</ref>
                </linkGrp>
-               <linkGrp type="projectResources">
+               <linkGrp type="projectResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">>
                   <ref source="zotero" target="8BD6FDKR" type="website">
                      <term key="XML" source="ssk" type="standard"/>
                      <term key="Metadata" source="http://tadirah.dariah.eu/" type="object"/>

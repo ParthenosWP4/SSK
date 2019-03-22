@@ -45,7 +45,7 @@
             of analysis.</p>
                   <p>Possible source of error: Diffuse reflection results from a combined process including reflection, refraction and diffraction of the incident radiation due to interactions with particles of the sample. Diffuse reflection spectra appear to be similar to transmission spectra derived from poorly prepared  KBr disks.</p>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="paper" source="zotero" target="4W7QUMZF"/>
                </linkGrp>
             </event>

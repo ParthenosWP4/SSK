@@ -43,7 +43,7 @@
                   <term type="activity" source="http://tadirah.dariah.eu/" key="Analysis"/>
                   <term type="standard" source="standard_list" key="XML"/>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="code" source="zotero" target="REPS374P"/>
                </linkGrp>
             </event>

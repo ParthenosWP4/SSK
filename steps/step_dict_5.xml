@@ -50,7 +50,7 @@
                <desc type="term" xml:lang="en">
                   <term key="Modeling" source="TaDiRAH" type="activity"/>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="ZE34VR34" type="specification"/>
                   <ref source="zotero" target="DLFKEFKC" type="service"/>
                </linkGrp>

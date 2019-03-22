@@ -47,7 +47,7 @@
                <desc type="definition" xml:lang="en">Recording of the Raman spectra taken on
             representative sites on the CH object. First evaluation of the spectrum (assessement of
             Raman peaks or fluoresence emission).</desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="paper" source="zotero" target="56MF9RKI"/>
                </linkGrp>
             </event>

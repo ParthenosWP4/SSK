@@ -52,7 +52,7 @@
                <desc xml:lang="en" type="terms">
                   <term type="activity" source="tadriah" key="Annotating"/>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="paper" source="zotero" target="3EJUM3DI"/>
                   <ref type="report" source="zotero" target="NPHC485H"/>
                   <ref type="spec" source="zotero" target="ZJ7ZSJWT"/>

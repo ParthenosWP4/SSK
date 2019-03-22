@@ -54,7 +54,7 @@
                         source="http://tadirah.dariah.eu/"
                         type="activity"/>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="Y3MSWHBA" type="tutorial"/>
                   <ref source="zotero" target="DAQWR4BJ" type="tutorial"/>
                   <ref source="zotero" target="T4U6MW6B" type="tutorial"/>

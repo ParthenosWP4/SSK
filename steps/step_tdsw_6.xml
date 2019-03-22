@@ -56,7 +56,7 @@
                   <term key="TEI" source="standard_list" type="standard"/>
                   <term key="gathering" source="http://tadirah.dariah.eu/" type="activity"/>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="6ZFUTU53" type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>

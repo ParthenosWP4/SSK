@@ -57,7 +57,7 @@
                   <term key="theorizing" source="http://tadirah.dariah.eu/" type="activity"/>
                   <!--<term key="CD" source="WP3Wizard" type="policies"/>-->
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="A8ESQDLF" type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>

@@ -47,7 +47,7 @@
                <desc type="definition" xml:lang="en">In this step the Raman shift wavenumber and the
             relative intensity of the observed peaks in the Raman spectrum are identified and
             documented. The relative intensity can be expressed as weak, moderate or strong.</desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="tool" source="zotero" target="4W7QUMZF"/>
                   <ref type="tool" source="zotero" target="DQMPUT7X"/>
                   <ref type="service" source="zotero" target="US2HB3DN"/>

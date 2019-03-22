@@ -54,7 +54,7 @@
                         source="http://tadirah.dariah.eu/"
                         type="activity"/>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero"
                        subtype="report"
                        target="CIWQJSBR"
@@ -65,7 +65,7 @@
                </linkGrp>
                <linkGrp corresp="https://cordis.europa.eu/project/rcn/92569/factsheet/en/"
                         source="CHARISMA"
-                        type="projectResources">
+                        type="projectResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref target="AVQTPABS" type="webpage"/>
                </linkGrp>
             </event>

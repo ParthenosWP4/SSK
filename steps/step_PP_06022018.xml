@@ -44,7 +44,7 @@
                   <term key="Tools" source="TaDiRAH" type="object"/>
                   <term key="Software" source="TaDiRAH" type="object"/>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="86W2ZDME" type="report"/>
                </linkGrp>
             </event>

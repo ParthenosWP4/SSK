@@ -51,7 +51,7 @@
                         source="http://tadirah.dariah.eu/"
                         type="activity"/>
                </desc>
-               <linkGrp type="generalResources"><!-- <ref type="schema" subtype="standard" source="zotero" target="">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"><!-- <ref type="schema" subtype="standard" source="zotero" target="">
                             <term type="standard" source="standard_list" key="TEI"/>
                         </ref> -->
                   <ref source="zotero"

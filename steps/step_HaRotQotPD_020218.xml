@@ -57,14 +57,14 @@
                         source="http://tadirah.dariah.eu/"
                         type="activity"/>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" subtype="tool" target="U9RU3G53" type="webpage">
                      <term key="Neuma Quality Dashboard" type="tool"/>
                   </ref>
                </linkGrp>
                <linkGrp corresp="https://gioqoso.irisa.fr/"
                         source="GioQoso"
-                        type="projectResources">
+                        type="projectResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref target="6WRG74YN" type="webpage"/>
                </linkGrp>
             </event>

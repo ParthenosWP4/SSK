@@ -67,7 +67,7 @@
                         source="http://tadirah.dariah.eu/"
                         key="http://tadirah.dariah.eu/vocab/index.php?tema=38#x26;/archiving"/>
                </desc>
-               <linkGrp type="projectResources"
+               <linkGrp type="projectResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                         source="CINES"
                         corresp="https://www.cines.fr/">
                   <ref type="webpage" target="GTKRM6WS"/>

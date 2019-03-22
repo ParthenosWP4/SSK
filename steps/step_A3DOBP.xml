@@ -86,7 +86,7 @@
                   <term type="standards" source="standard_list" key="BMP"/>
                   <term type="activity" source="TaDiRAH" key="Imaging"/>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="specification" source="zotero" target="Q4X9D4BE"/>
                   <ref type="schema" source="zotero" target="GHCATCKH"/>
                   <ref type="code" source="zotero" target="XRZPJFHZ"/>

@@ -53,7 +53,7 @@
                   <term type="activity" source="http://tadirah.dariah.eu/" key="publishing"/>
                   <!--<term type="policies" source="WP3Wizard" key="CD"/>-->
                </desc>
-               <linkGrp type="generalResources"><!-- FAIR principles -->
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"><!-- FAIR principles -->
                   <ref type="spec" source="zotero" target="ZJ7ZSJWT"><!--<term type="standard" source="policy" key="FAIR"/>--></ref>
                </linkGrp>
             </event>

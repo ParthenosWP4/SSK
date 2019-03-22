@@ -59,7 +59,7 @@
                   <term key="CMDI" source="ssk" type="standard"/>
                   <term key="TCF" source="ssk" type="standard"/>
                </desc>
-               <linkGrp type="generalResources"><!-- further ressources: conversion DTABf to CMDI, DTABf CMDI profile, paper Geyken et al. 2018 -->
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"><!-- further ressources: conversion DTABf to CMDI, DTABf CMDI profile, paper Geyken et al. 2018 -->
                   <ref source="zotero" target="8BD6FDKR" type="service">VLO</ref>
                   <ref source="zotero" target="HNU9RXFC" type="service">WebLicht</ref>
                   <ref source="zotero" target="A5NVUWZB" type="service">
@@ -79,7 +79,7 @@
                      <term key="TCF" source="ssk" type="standard"/>
                   	TCF documentation</ref>
                </linkGrp>
-               <linkGrp type="projectResources"
+               <linkGrp type="projectResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                         source="DTA"
                         target="http://www.deutschestextarchiv.de">
                   <ref source="zotero" target="AGAAKQ2D" type="website">

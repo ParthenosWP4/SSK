@@ -48,7 +48,7 @@
                         source="http://tadirah.dariah.eu/"
                         type="activity"/>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="5UIZH29M" type="service">
                      <term key="ODT" source="standard_list" type="standard"/>
                   </ref>

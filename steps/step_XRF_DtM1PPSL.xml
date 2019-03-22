@@ -40,7 +40,7 @@
                <desc type="definition" xml:lang="en">A protocol for safe application (for the user and
             the object damage protection) is necessary to ensure safe operating procedures to avoid
             human exposure to X-ray radiation</desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="paper" source="zotero" target="W39BNU8K"/>
                   <ref type="paper" source="zotero" target="NHB3KIQS"/>
                   <ref type="paper" source="zotero" target="ASKEGJ63"/>

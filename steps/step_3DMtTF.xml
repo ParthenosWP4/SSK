@@ -74,7 +74,7 @@
                   <term type="standard" source="standard_list" key="COLLADA"/>
                   <term type="activity" source="TaDiRAH" key="Modeling"/>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="specification" source="zotero" target="J72224CX"/>
                   <ref type="specification" source="zotero" target="69HQKNPC"/>
                   <ref type="specification" source="zotero" target="Q4X9D4BE"/>

@@ -46,7 +46,7 @@
                         source="http://tadirah.dariah.eu/"
                         key="Discovering"/>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="code" source="zotero" target="REPS374P"/>
                </linkGrp>
             </event>

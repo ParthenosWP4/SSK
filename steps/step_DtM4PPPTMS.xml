@@ -61,7 +61,7 @@
                   <term type="standard" source="ssk" key="SPC"/>
                   <term type="standard" source="ssk" key="JCAMP-DX"/>
                </desc>
-               <linkGrp type="generalResources">
+               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="paper" source="zotero" target="56MF9RKI"/>
                </linkGrp>
             </event>
