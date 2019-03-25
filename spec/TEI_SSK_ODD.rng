@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2019-03-22T10:56:47Z. .
+Schema generated from ODD source 2019-03-22T15:25:29Z. .
 TEI Edition: Version 3.3.0. Last updated on
 	31st January 2018, revision f4d8439
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.3.0/
@@ -134,7 +134,7 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.3.0/
             </choice>
          </zeroOrMore>
       </element>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e70384-constraint">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e70393-constraint">
          <rule context="tei:content">
             <report test="descendant::*[not(namespace-uri(.) =               ('http://relaxng.org/ns/structure/1.0', 'http://www.tei-c.org/ns/1.0'))]">content descendants must be in the
               namespaces
@@ -162,7 +162,7 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.3.0/
             </choice>
          </zeroOrMore>
       </element>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e70709-constraint">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e70718-constraint">
          <rule context="tei:constraint">
             <report test="descendant::*[not(namespace-uri(.) =               ('http://purl.oclc.org/dsdl/schematron', 'http://www.tei-c.org/ns/1.0'))]">constraint descendants must be in the
               namespaces
@@ -190,7 +190,7 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.3.0/
             </choice>
          </zeroOrMore>
       </element>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e71618-constraint">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e71627-constraint">
          <rule context="tei:datatype">
             <report test="descendant::*[not(namespace-uri(.) =               ('http://relaxng.org/ns/structure/1.0', 'http://www.tei-c.org/ns/1.0'))]">datatype descendants must be in the
               namespaces
@@ -4727,7 +4727,7 @@ Suggested values include: 1] zotero; 2] github</a:documentation>
          </optional>
          <attribute name="type">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-Suggested values include: 1] linkDesc (link for the &lt;desc&gt; element) ; 2] spec (Specification) ; 3] report (Report) ; 4] blog (Blog) ; 5] code (Scripts and code) ; 6] paper (Scholarly paper) ; 7] library (Computing library) ; 8] database (Database) ; 9] tutorial (Tutorial) ; 10] tool (Computing tool, software) ; 11] service (Curating of hosting service) ; 12] bibliography (Bibliography) </a:documentation>
+Suggested values include: 1] linkDesc (link for the &lt;desc&gt; element) ; 2] spec (Specification) ; 3] report (Report) ; 4] blog (Blog) ; 5] code (Scripts and code) ; 6] paper (Scholarly paper) ; 7] library (Computing library) ; 8] database (Database) ; 9] tutorial (Tutorial) ; 10] tool (Computing tool, software) ; 11] service (Curating of hosting service) ; 12] bibliography (Bibliography) ; 13] community (Community) </a:documentation>
             <choice>
                <value>linkDesc</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(link for the &lt;desc&gt; element) </a:documentation>
@@ -4753,6 +4753,8 @@ Suggested values include: 1] linkDesc (link for the &lt;desc&gt; element) ; 2] s
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Curating of hosting service) </a:documentation>
                <value>bibliography</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Bibliography) </a:documentation>
+               <value>community</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Community) </a:documentation>
                <data type="token">
                   <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
                </data>
