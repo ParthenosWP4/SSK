@@ -912,5 +912,15 @@
        "standard_desc_esp": "",
        "standard_desc_ita": "",
        "standard_link": "http://kba.cloud/hocr-spec/1.2/"
+},
+{
+       "standard_abbr_name": "Short Name",
+       "standard_complete_name": "Complete Name",
+       "standard_desc_eng": "Description in English (around 400 characters)",
+       "standard_desc_fr": "",
+       "standard_desc_deu": "",
+       "standard_desc_esp": "",
+       "standard_desc_ita": "",
+       "standard_link": "Link towards the reference of the standard (website, ISO page, etc.)"
 }
 ]
