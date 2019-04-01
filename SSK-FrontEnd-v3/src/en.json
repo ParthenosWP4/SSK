@@ -78,6 +78,9 @@
       }
     }
   },
+  "EXPLORE_PAGE":{
+    "TITLE":"Explore scenarios, steps or resources"
+  },
   "FOOTER":{
     "disclaimer":"The SSK has been developped as part of the PARTHENOS project, within the WP4 on standardization.",
     "about":{
