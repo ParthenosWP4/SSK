@@ -1,0 +1,115 @@
+{
+   "MENU": {
+    "HOME": "HOME",
+    "EXPLORE":{
+      "CONTENT": "EXPLORE",
+      "SUB_MENU": {
+        "browseScenario":"Find a scenario",
+        "browseStep": "Find a step",
+        "browseResource": "Find a resource"
+      }
+    },
+    "CONTRIBUTE" :{
+        "CONTENT" : "CONTRIBUTE",
+       "SUB_MENU":{
+         "AddNewScenario": "Create a new scenario",
+         "AddStandard": "Add a standard",
+         "checkGithub": "Check our GitHub"
+      }
+   },
+   "LEARNMORE":{
+     "CONTENT": "LEARN MORE",
+     "SUB_MENU":{
+       "vocabularies": "Vocabularies",
+       "SUB_MENU":{
+         "disciplines":"Disciplines",
+         "standards": "Standards",
+         "activities": "Research activities",
+         "techniques":"Research techniques",
+         "objects":"Research objects"
+       },
+       "documentation": "Documentation",
+       "projectTeam" : "Project team"
+     }
+   },
+   "PARTHENOS" : "PARTHENOS",
+   "LOGIN": {
+     "CONTENT" : "Log in",
+     "SUB_MENU":{
+       "en":"English",
+       "fr":"French",
+       "it": "Italian",
+       "de": "German"
+     }
+   }
+  },
+  "HOME":{
+    "tab1":{
+      "TITLE":"Standardization Survival Kit",
+      "DESC":"A collection of research use case scenarios illustrating best practices in Digital Humanities and Heritage research",
+      "SUB_MENU":{
+        "browseScenarios":"Browse scenarios",
+        "addScenario":"Add a new scenario",
+        "about":"About a SSK"
+      }
+    },
+    "tab2":{
+      "TITLE":"Browse scenarios, follow the steps",
+      "DESC":"Guidelines and tools are easier to understand and use when presented through examples. The SSK provides a variety of standardized resources in a meaningful context.\rThe research scenarios brought together here will help you identify the most useful material to carry out your research project, step by step."
+    },
+    "tab3":{
+      "TITLE":"Contribute to the SSK and help build a community",
+      "DESC":"Bringing together researchers from different backgrounds, the SSK is a place to discuss and devise best practice processes in various fields of interest within the Arts & Humanities.",
+      "SUB_MENU":{
+        "sub1":"Create new scenarios from scratch or by combining existing steps from different scenarios",
+        "sub2":"Publish and share your scenarios with your peers",
+        "sub3":"Ensure a better visibility and reliability of your research methodologies",
+        "checkGitHub":"Check our GitHub!"
+      }
+    },
+    "tab4":{
+      "TITLE":"Increase efficiency, interoperability and sustainability by using standards",
+      "DESC":"Incorporating standards in all the steps of your research process will make it last longer, easier to update, improve and share. Standards are non legally binding documents produced by an organisation ensuring:",
+      "SUB_MENU":{
+        "sub1":"Consensus",
+        "sub2":"Openness",
+        "sub3":"Maintenance",
+        "sub4": "Are standards new to you ? Check this first : <a href=\"http://training.parthenos-project.eu/sample-page/intro-to-ri/interoperability/what-are-standards/\">\"What are standards ? Training suite\"</a>."
+      }
+    }
+  },
+  "FOOTER":{
+    "disclaimer":"The SSK has been developped as part of the PARTHENOS project, within the WP4 on standardization.",
+    "about":{
+      "CONTENT":"About us",
+      "SUB_MENU":{
+        "team":"Team",
+        "parthenos": "Parthenos",
+        "contact":"Contact"
+      }
+    },
+    "explore":{
+      "CONTENT":"Explore",
+      "SUB_MENU":{
+        "scenarios":"Scenarios",
+        "steps": "Steps",
+        "resources":"Resources"
+      }
+    },
+    "contribute":{
+      "CONTENT":"Contribute",
+      "SUB_MENU":{
+        "signin":"Sign In",
+        "github":"SSK on GitHub"
+      }
+    },
+    "legal":{
+      "CONTENT":"Legal",
+      "SUB_MENU":{
+        "privacy":"Privacy Policy",
+        "licensing":"Licensing & Citing"
+      }
+    },
+    "license":"Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 International license CC BY"
+  }
+}
