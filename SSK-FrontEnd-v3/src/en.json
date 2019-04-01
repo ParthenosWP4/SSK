@@ -153,6 +153,8 @@
         }
       }
     },
+   "USER":{},
+   "CONTRIBUTE":{},
     "404":{
       "CONTENT":"Page not found."
     },
