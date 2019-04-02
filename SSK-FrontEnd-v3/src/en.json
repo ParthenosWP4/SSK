@@ -93,6 +93,8 @@
       "SUB_MENU":{
         "minute":"a minute ago",
         "minutes":"minutes ago",
+        "hour":"an hour ago",
+        "hours":"hours ago",
         "day":"a day ago",
         "days":"days ago",
         "month":"a month ago",
@@ -123,7 +125,7 @@
       "TEAM":{
         "romary":{
           "NAME":"Laurent Romary",
-          "TASK":"Project Team Manager",
+          "TASK":"Project Team Leaders",
           "BIO": "Directeur de Recherche at Inria (France), within the team ALMAnaCH, and former director general of DARIAH (2014-2018). He carries out research on the modelling of semi-structured documents, with a specific emphasis on texts and linguistic resources. He has been active in standardisation activities within ISO committee TC 37 and the Text Encoding Initiative. He has also been working since many years on the advancement of open access."
         },
         "riondet":{
