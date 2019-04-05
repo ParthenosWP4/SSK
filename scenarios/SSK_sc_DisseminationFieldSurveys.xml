@@ -62,7 +62,7 @@
           <figDesc/>
         </figure>
         <listEvent>
-          <event ref="step_OtICoP_171117" type="researchStep" xml:id="s1"/>
+          <event ref="step_OtICoP_171117" type="researchStep"  xml:id="s1"/>
           <event ref="step_CaC_171117" type="researchStep" xml:id="s2"/>
           <event ref="step_SaD_171117" type="researchStep" xml:id="s3"/>
           <event ref="step_A_171117" type="researchStep" xml:id="s4"/>
