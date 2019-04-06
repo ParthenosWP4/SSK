@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0"
-     type="researchScenario"
-     xml:id="SSK_sc_DisseminationFieldSurveys">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario"
+  xml:id="SSK_sc_DisseminationFieldSurveys">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -60,11 +59,12 @@
             </desc>
             <figure type="image">
                <head/>
-               <graphic url="https://upload.wikimedia.org/wikipedia/commons/c/cb/Bronis%C5%82aw_Malinowski_among_Trobriand_tribe_3.jpg"/>
+               <graphic
+            url="https://upload.wikimedia.org/wikipedia/commons/c/cb/Bronis%C5%82aw_Malinowski_among_Trobriand_tribe_3.jpg"/>
                <figDesc/>
             </figure>
             <listEvent>
-               <event ref="step_OtICoP_171117" type="researchStep" xml:id="s1"/>
+               <event ref="step_OtICoP_171117" type="researchStep"  xml:id="s1"/>
                <event ref="step_CaC_171117" type="researchStep" xml:id="s2"/>
                <event ref="step_SaD_171117" type="researchStep" xml:id="s3"/>
                <event ref="step_A_171117" type="researchStep" xml:id="s4"/>

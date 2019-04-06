@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0"
-     xml:id="SSK_sc_production3DObjectsScenario"
-     type="researchScenario">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="SSK_sc_production3DObjectsScenario"
+  type="researchScenario">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -66,7 +65,9 @@
           better comprehension of the case studies. The 3D object is also a powerfull mean to bring
           out new hypotheses of research. In some cases, producing an "accurate" virtual version of
           cultural heritage site is a mean of preserving it. Those best practices and methods are
-          detailed in the <ref type="report" target="https://hal.archives-ouvertes.fr/hal-01683842">3D-SHS consortium white paper</ref>published in 2017, and in the <ref target="https://hal.inria.fr/PARTHENOS/hal-01526713" type="report">Parthenos White
+          detailed in the <ref type="report" target="https://hal.archives-ouvertes.fr/hal-01683842"
+            >3D-SHS consortium white paper</ref>published in 2017, and in the <ref
+            target="https://hal.inria.fr/PARTHENOS/hal-01526713" type="report">Parthenos White
             Paper</ref> "Digital 3D Objects in Art and Humanities: challenges of creation,
           interoperability and preservation"</desc>
             <desc xml:lang="en" type="terms">
@@ -81,7 +82,8 @@
             </desc>
             <figure type="image">
                <head/>
-               <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/scenario3D.jpg"/>
+               <graphic
+            url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/scenario3D.jpg"/>
                <figDesc/>
             </figure>
             <listEvent>
