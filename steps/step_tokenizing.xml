@@ -8,19 +8,23 @@
          <titleStmt>
             <title>Step \"Tokenizing\"</title>
             <author>
-               <persName>Matej Ďurčo</persName>
+               <forename>Matej</forename>
+               <surname>Ďurčo</surname>
                <affiliation>OEAW-ACDH</affiliation>
             </author>
             <author>
-               <persName>Tom Gheldof</persName>
+               <forename>Tom</forename>
+               <surname>Gheldof</surname>
                <affiliation>KU Leuven, DARIAH-BE</affiliation>
             </author>
             <author>
-               <persName>Hannes Pirker</persName>
+               <forename>Hannes</forename>
+               <surname>Pirker</surname>
                <affiliation>OEAW-ACDH</affiliation>
             </author>
             <author>
-               <persName>Gerlinde Schneider</persName>
+               <forename>Gerlinde</forename>
+               <surname>Schneider</surname>
                <affiliation>ZIM-ACDH</affiliation>
             </author>
             <sponsor>DARIAH-EU</sponsor>
@@ -69,7 +73,8 @@
                   <term type="standard" source="standard_list" key="LAF"/>
                   <term type="activity" source="http://tadirah.dariah.eu/" key="annotating"/>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="software" source="zotero" target="K3LB6TK5"><!-- Unitok tokenizer tool  -->
                      <term type="software" key="Unitok"/>
                   </ref>

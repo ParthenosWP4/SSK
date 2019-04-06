@@ -8,15 +8,18 @@
          <titleStmt>
             <title>step "Describe the measurement. 1. Pre-processing/ safe limits"</title>
             <author>
-               <persName>Sophia Sotiropoulou</persName>
+               <forename>Sophia</forename>
+               <surname>Sotiropoulou</surname>
                <affiliation>IESL-FORTH</affiliation>
             </author>
             <author>
-               <persName>Panayiotis Siozos</persName>
+               <forename>Panayiotis</forename>
+               <surname>Siozos</surname>
                <affiliation>IESL-FORTH</affiliation>
             </author>
             <author>
-               <persName>Demetrios Anglos</persName>
+               <forename>Demetrios</forename>
+               <surname>Anglos</surname>
                <affiliation>IESL-FORTH</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -55,7 +58,8 @@
               examination. The laser-degraded area may also give rise to a Raman spectrum which can
               be incorrectly attributed as a different material.</p>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="paper" source="zotero" target="W39BNU8K"/>
                   <ref type="paper" source="zotero" target="NHB3KIQS"/>
                   <ref type="paper" source="zotero" target="ASKEGJ63"/>

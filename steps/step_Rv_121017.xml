@@ -8,7 +8,8 @@
          <titleStmt>
             <title>Step "Recode variables"</title>
             <author>
-               <persName>Emilie Kraikamp</persName>
+               <forename>Emilie</forename>
+               <surname>Kraikamp</surname>
                <affiliation>DANS</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -46,7 +47,8 @@
                         source="http://tadirah.dariah.eu/"
                         type="activity"/>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero"
                        subtype="standard"
                        target="S6AKYT7L"
@@ -59,18 +61,23 @@
                        type="webpage">
                      <term key="HISCO" source="standard_list" type="standard"/>
                   </ref>
-                  <ref source="zotero" subtype="standard" target="Y9J5QM7B" type="webpage">
+                  <ref source="zotero"
+                       subtype="standard"
+                       target="Y9J5QM7B"
+                       type="webpage">
                      <term key="ISCO" source="standard_list" type="standard"/>
                   </ref>
                </linkGrp>
                <linkGrp corresp="http://historyofwork.iisg.nl/"
                         source="History of Work Information System"
-                        type="projectResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+                        type="projectResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="BBR32UYM" type="webpage"/>
                </linkGrp>
                <linkGrp corresp="http://www.hisma.org/HISMA/HISCAM.html"
                         source="HISCAM"
-                        type="projectResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+                        type="projectResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="WYXSPBCA" type="webpage"/>
                </linkGrp>
             </event>

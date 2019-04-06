@@ -9,15 +9,18 @@
             <title>step "Describe the method. 2. Operational environmental and safety conditions for the
           measurement"</title>
             <author>
-               <persName>Sophia Sotiropoulou</persName>
+               <forename>Sophia</forename>
+               <surname>Sotiropoulou</surname>
                <affiliation>IESL-FORTH</affiliation>
             </author>
             <author>
-               <persName>Panayiotis Siozos</persName>
+               <forename>Panayiotis</forename>
+               <surname>Siozos</surname>
                <affiliation>IESL-FORTH</affiliation>
             </author>
             <author>
-               <persName>Demetrios Anglos</persName>
+               <forename>Demetrios</forename>
+               <surname>Anglos</surname>
                <affiliation>IESL-FORTH</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -55,7 +58,8 @@
               other environmental conditions that can potentially affect the measurements are
               reported such as levels of temperature or relative humidity.</p>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="paper" source="zotero" target="CTNH7TPZ"/>
                   <ref type="paper" source="zotero" target="LERDFNGM"/>
                </linkGrp>

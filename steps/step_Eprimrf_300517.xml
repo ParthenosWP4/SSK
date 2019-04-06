@@ -8,7 +8,8 @@
          <titleStmt>
             <title>Step "Express projects requirements in machine-readable format"</title>
             <author>
-               <persName>Charles Riondet</persName>
+               <forename>Charles</forename>
+               <surname>Riondet</surname>
                <affiliation>Inria</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -49,7 +50,8 @@
                   <term key="Schematron" source="standard_list" type="standard"/>
                   <term key="Modeling" source="tadirah" type="activity"/>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="code_script" source="zotero" target="MUEUJK6J"/>
                   <ref source="zotero" target="7THSVQ9K" type="spec">
                      <term key="Schematron" source="standard_list" type="standard"/>
@@ -72,7 +74,8 @@
                </linkGrp>
                <linkGrp corresp="http://ehri-project.eu"
                         source="EHRI"
-                        type="projectResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+                        type="projectResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="9SKJK8BF" type="code">
                      <term key="Schematron" source="standard_list" type="standard"/>
                      <term key="EAD" source="standard_list" type="standard"/>

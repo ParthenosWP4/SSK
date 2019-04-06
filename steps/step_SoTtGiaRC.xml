@@ -8,7 +8,8 @@
          <titleStmt>
             <title>step_SoTtGiaRC.xml</title>
             <author>
-               <persName>Haaf Susanne</persName>
+              <forename>Susanne</forename>
+              <surname>Haaf</surname>
                <affiliation>Berlin-Brandenburg Academy of Sciences and Humanities</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -54,7 +55,8 @@
                   <term key="Metadata" source="http://tadirah.dariah.eu/" type="object"/>
                   <term key="Images" source="http://tadirah.dariah.eu/" type="object"/>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"><!-- add: KVK, VDs, ZVDD -->
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"><!-- add: KVK, VDs, ZVDD -->
                   <ref source="zotero" target="8BD6FDKR" type="website">
                      <term key="Browsing" source="http://tadirah.dariah.eu/" type="technique"/>
                      <term key="Searching" source="http://tadirah.dariah.eu/" type="technique"/>

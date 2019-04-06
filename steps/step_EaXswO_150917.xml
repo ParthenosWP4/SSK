@@ -8,7 +8,8 @@
          <titleStmt>
             <title>Step "Express an XML schema with ODD"</title>
             <author>
-               <persName>Charles Riondet</persName>
+               <forename>Charles</forename>
+               <surname>Riondet</surname>
                <affiliation>Inria</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -52,7 +53,8 @@
                         type="activity">modeling</term>
                   <!--<term type="policy" source="WP3Wizard" key="CD"/>-->
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="paper" source="zotero" target="Z5SQUJPA"/>
                   <ref source="zotero" target="ZABRV5VD" type="spec">
                      <term key="TEI" source="standard_list" type="standard"/>

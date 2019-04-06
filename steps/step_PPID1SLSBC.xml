@@ -9,15 +9,18 @@
             <title>step "Post process and interpret the data. 1: Stray light substraction / Baseline
           correction."</title>
             <author>
-               <persName>Sophia Sotiropoulou</persName>
+               <forename>Sophia</forename>
+               <surname>Sotiropoulou</surname>
                <affiliation>IESL-FORTH</affiliation>
             </author>
             <author>
-               <persName>Panayiotis Siozos</persName>
+               <forename>Panayiotis</forename>
+               <surname>Siozos</surname>
                <affiliation>IESL-FORTH</affiliation>
             </author>
             <author>
-               <persName>Demetrios Anglos</persName>
+               <forename>Demetrios</forename>
+               <surname>Anglos</surname>
                <affiliation>IESL-FORTH</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -59,7 +62,8 @@
                      </list>
                   </p>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="spec" source="zotero" target="FCKKBJ8X"/>
                   <ref type="spec" source="zotero" target="2PAJ6NGT"/>
                </linkGrp>

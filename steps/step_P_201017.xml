@@ -8,11 +8,13 @@
          <titleStmt>
             <title>Step "Preparation"</title>
             <author>
-               <persName>Panayotis Siozos</persName>
+               <forename>Panayotis</forename>
+               <surname>Siozos</surname>
                <affiliation>IESL-FORTH</affiliation>
             </author>
             <author>
-               <persName>Demetrios Anglos</persName>
+               <forename>Demetrios</forename>
+               <surname>Anglos</surname>
                <affiliation>IESL-FORTH</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -47,7 +49,8 @@
                         source="http://tadirah.dariah.eu/"
                         type="activity"/>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"><!--  <ref type="book" subtype="methodology" source="zotero" target="8M7XC7AD"> -->
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"><!--  <ref type="book" subtype="methodology" source="zotero" target="8M7XC7AD"> -->
                   <ref source="zotero"
                        subtype="standard"
                        target="8M7XC7AD"
@@ -65,7 +68,8 @@
                </linkGrp>
                <linkGrp corresp="https://cordis.europa.eu/project/rcn/92569/factsheet/en/"
                         source="CHARISMA"
-                        type="projectResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+                        type="projectResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref target="AVQTPABS" type="webpage"/>
                </linkGrp>
             </event>

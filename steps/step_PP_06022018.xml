@@ -8,7 +8,8 @@
          <titleStmt>
             <title>Step "Assess legal issues"</title>
             <author>
-               <persName>Frank Uiterwaal</persName>
+               <forename>Frank</forename>
+               <surname>Uiterwaal</surname>
                <affiliation>NIOD-KNAW</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -44,7 +45,8 @@
                   <term key="Tools" source="TaDiRAH" type="object"/>
                   <term key="Software" source="TaDiRAH" type="object"/>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="86W2ZDME" type="report"/>
                </linkGrp>
             </event>

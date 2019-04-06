@@ -1,99 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario" xml:id="id_0_test">
-  <teiHeader>
-    <fileDesc>
-      <titleStmt>
-        <title>Test Scenario</title>
-        <author>
-          <persName>Charles Riondet</persName>
-          <affiliation>Inria</affiliation>
-        </author>
-        <author>
-          <persName>Lionel Tadjou</persName>
-          <affiliation>Inria</affiliation>
-        </author>
-        <sponsor>PARTHENOS</sponsor>
-      </titleStmt>
-      <publicationStmt>
-        <authority>Parthenos</authority>
-        <availability>
-          <licence target="http://creativecommons.org/licenses/by/4.0/">
-            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchScenario"
+     xml:id="id_0_test">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Test Scenario</title>
+            <author>
+               <forename>Charles</forename>
+               <surname>Riondet</surname>
+               <affiliation>Inria</affiliation>
+            </author>
+            <author>
+               <forename>Lionel</forename>
+               <surname>Tadjou</surname>
+               <affiliation>Inria</affiliation>
+            </author>
+            <sponsor>PARTHENOS</sponsor>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
               document.</p>
-          </licence>
-        </availability>
-      </publicationStmt>
-      <sourceDesc>
-        <p>Created from scratch</p>
-      </sourceDesc>
-    </fileDesc>
-    <revisionDesc>
-      <change>V2 on <date when="2018-02-21">21/02/2018</date>, edited by Maurizio Sanesi and Roberta
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change>V2 on <date when="2018-02-21">21/02/2018</date>, edited by Maurizio Sanesi and Roberta
         Giacomi, SISMEL: formal updates on title, description, links and resources.</change>
-    </revisionDesc>
-  </teiHeader>
-  <text>
-    <body>
-      <div type="scenario">
-        <head type="scenarioTitle" xml:lang="en">Test Scenario</head>
-        <desc type="definition" xml:lang="en">
-          <p>TEI ODD can be used to document data models external to the TEI environment. Several
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div type="scenario">
+            <head type="scenarioTitle" xml:lang="en">Test Scenario</head>
+            <desc type="definition" xml:lang="en">
+               <p>TEI ODD can be used to document data models external to the TEI environment. Several
             projects working with archival standards (in particular EAD) use it as well. PARTHENOS
             created and maintain an instance of the EAD specification in ODD, that can be used to
             create project oriented customizations. <list>
-              <item>
-                <list>
-                  <item>Item 1 is a list</item>
-                  <item>Item 2 de la 2e liste</item>
-                </list>
-              </item>
-              <item>Item 2</item>
-            </list>
-          </p>
-          <p>A second paragraph with a <ref type="linkDesc" target="http://google.cz">link pointing
+                     <item>
+                        <list>
+                           <item>Item 1 is a list</item>
+                           <item>Item 2 de la 2e liste</item>
+                        </list>
+                     </item>
+                     <item>Item 2</item>
+                  </list>
+               </p>
+               <p>A second paragraph with a <ref type="linkDesc" target="http://google.cz">link pointing
               to google in Czech</ref>.
           </p>
-        </desc>
-        <desc type="terms" xml:lang="en">
-          <term source="aureHAL" type="discipline">Library and information sciences</term>
-          <term source="aureHAL" type="discipline">Cultural heritage and museology</term>
-          <term key="Catalogs" source="nemo" type="object"/>
-          <term key="Encoding" source="tadirah" type="technique"/>
-          <term key="Mapping" source="tadirah" type="technique"/>
-        </desc>
-        <figure type="image">
-          <head/>
-          <graphic
-            url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/SSK-schemCust.jpg"/>
-        </figure>
-        <listEvent>
-          <event ref="SSK_sc_digitization" type="researchScenario" subtype="preliminary"/>
-          <event ref="step_EaXswO_150917" type="researchStep" xml:id="s1" mode="change">
-            <desc xml:lang="en" type="terms">
-              <term source="standardList" type="standard" key="CIDOC-CRM" mode="add"/>
-              <term source="standardList" type="standard" key="LIDO" mode="delete"/>
             </desc>
-            <linkGrp type="generalResources">
-              <ref type="code" source="zotero" target="9SKJDJKS" mode="add"/>
-              <ref type="code" source="zotero" target="SS93B7B8" mode="delete"/>
-            </linkGrp>
-            <linkGrp type="projectResources" source="CODATA" corresp="http://www.codata.org/">
-              <ref type="code" source="zotero" target="PJ88VREG" mode="add"/>
-              <ref type="code" source="zotero" target="QQT6NQA6" mode="delete"/>
-            </linkGrp>
-            <linkGrp type="projectResources" source="EHRI" corresp="http://www.ehri-project.eu">
-              <ref type="code" source="zotero" target="2PCNPUUG" mode="add"/>
-              <ref type="code" source="zotero" target="XPDZH8WZ" mode="delete"/>
-            </linkGrp>
-          </event>
-          <event ref="step_EtMEwCAM_020218" type="researchStep" xml:id="s2"/>
-          <event ref="step_SDtatRfCV2" type="researchStep" xml:id="s3"/>
-          <event ref="step_StWowtSiC" type="researchStep" xml:id="s4"/>
-          <event ref="step_Sapditnf_300517" type="researchStep" xml:id="s5"/>
-          <event ref="SSK_sc_mei" type="researchScenario" subtype="followUp"/>
-        </listEvent>
-      </div>
-    </body>
-  </text>
+            <desc type="terms" xml:lang="en">
+               <term source="aureHAL" type="discipline">Library and information sciences</term>
+               <term source="aureHAL" type="discipline">Cultural heritage and museology</term>
+               <term key="Catalogs" source="nemo" type="object"/>
+               <term key="Encoding" source="tadirah" type="technique"/>
+               <term key="Mapping" source="tadirah" type="technique"/>
+            </desc>
+            <figure type="image">
+               <head/>
+               <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/SSK-schemCust.jpg"/>
+            </figure>
+            <listEvent>
+               <event ref="SSK_sc_digitization"
+                      type="researchScenario"
+                      subtype="preliminary"/>
+               <event ref="step_EaXswO_150917"
+                      type="researchStep"
+                      xml:id="s1"
+                      mode="change">
+                  <desc xml:lang="en" type="terms">
+                     <term source="standardList"
+                           type="standard"
+                           key="CIDOC-CRM"
+                           mode="add"/>
+                     <term source="standardList" type="standard" key="LIDO" mode="delete"/>
+                  </desc>
+                  <linkGrp type="generalResources">
+                     <ref type="code" source="zotero" target="9SKJDJKS" mode="add"/>
+                     <ref type="code" source="zotero" target="SS93B7B8" mode="delete"/>
+                  </linkGrp>
+                  <linkGrp type="projectResources"
+                           source="CODATA"
+                           corresp="http://www.codata.org/">
+                     <ref type="code" source="zotero" target="PJ88VREG" mode="add"/>
+                     <ref type="code" source="zotero" target="QQT6NQA6" mode="delete"/>
+                  </linkGrp>
+                  <linkGrp type="projectResources"
+                           source="EHRI"
+                           corresp="http://www.ehri-project.eu">
+                     <ref type="code" source="zotero" target="2PCNPUUG" mode="add"/>
+                     <ref type="code" source="zotero" target="XPDZH8WZ" mode="delete"/>
+                  </linkGrp>
+               </event>
+               <event ref="step_EtMEwCAM_020218" type="researchStep" xml:id="s2"/>
+               <event ref="step_SDtatRfCV2" type="researchStep" xml:id="s3"/>
+               <event ref="step_StWowtSiC" type="researchStep" xml:id="s4"/>
+               <event ref="step_Sapditnf_300517" type="researchStep" xml:id="s5"/>
+               <event ref="SSK_sc_mei" type="researchScenario" subtype="followUp"/>
+            </listEvent>
+         </div>
+      </body>
+   </text>
 </TEI>

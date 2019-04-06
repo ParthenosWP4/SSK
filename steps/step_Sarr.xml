@@ -9,11 +9,13 @@
          <titleStmt>
             <title>step_SaRR.xml</title>
             <author>
-               <persName>Maurizio Sanesi</persName>
+               <forename>Maurizio</forename>
+               <surname>Sanesi</surname>
                <affiliation>SISMEL</affiliation>
             </author>
             <author>
-               <persName>Roberta Giacomi</persName>
+               <forename>Roberta</forename>
+               <surname>Giacomi</surname>
                <affiliation>SISMEL</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -43,7 +45,8 @@
                <desc type="terms" xml:lang="en">
                   <term key="Gathering" source="http://tadirah.dariah.eu/" type="activity"/>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="DQTQDNPS" type="code"/>
                   <ref source="zotero" target="QQ3SKSNP" type="code"/>
                   <ref source="zotero" target="TWBUXXJN" type="code"/>

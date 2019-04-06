@@ -8,7 +8,8 @@
          <titleStmt>
             <title>Step "Choose format</title>
             <author>
-               <persName>Frank Uiterwaal</persName>
+               <forename>Frank</forename>
+               <surname>Uiterwaal</surname>
                <affiliation>NIOD-KNAW</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -41,12 +42,14 @@
                <desc type="term" xml:lang="en">
                   <term key="meta-assessing" source="TaDiRAH" type="activity"/>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="ZQVB6CIP" type="Report"/>
                </linkGrp>
                <linkGrp corresp="http://www.codata.org/"
                         source="CODATA"
-                        type="projectResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+                        type="projectResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="G4UPDPG3" type="Report"/>
                </linkGrp>
             </event>

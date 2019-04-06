@@ -8,11 +8,13 @@
          <titleStmt><!-- Title of the tei document, not title of the scenario -->
             <title>Digitization scenario</title>
             <author>
-               <persName>Frank Uiterwaal</persName>
+               <forename>Frank</forename>
+               <surname>Uiterwaal</surname>
                <affiliation>NIOD-KNAW</affiliation>
             </author>
             <author>
-               <persName>Reinier de Valk</persName>
+               <forename>Reinier</forename>
+               <surname>de Valk</surname>
                <affiliation>DANS-KNAW</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -30,7 +32,7 @@
             <p>This Google doc:
      https://docs.google.com/document/d/1K_JSaML4bjXPNs83JB00UVnO8OpniwJiX4UkYeifCAw/edit#.</p>
          </sourceDesc>
-      </fileDesc> 
+      </fileDesc>
       <revisionDesc>
          <change><!-- Only for major changes: addition of an author, of a step, etc. --></change>
       </revisionDesc>

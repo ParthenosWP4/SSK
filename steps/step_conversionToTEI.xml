@@ -8,15 +8,18 @@
          <titleStmt>
             <title>Description of the "Conversion to TEI" step</title>
             <author>
-               <persName>Klaus Illmayer</persName>
+               <forename>Klaus</forename>
+               <surname>Illmayer</surname>
                <affiliation>OEAW-ACDH</affiliation>
             </author>
             <author>
-               <persName>Susanne Haaf</persName>
+               <forename>Susanne</forename>
+               <surname>Haaf</surname>
                <affiliation>BBAW</affiliation>
             </author>
             <author>
-               <persName>Piotr Bański</persName>
+               <forename>Piotr</forename>
+               <surname>Bański</surname>
                <affiliation>IDS Mannheim, CLARIN</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -58,7 +61,8 @@
                   <term type="standard" source="standard_list" key="TEI"/>
                   <term type="activity" source="http://tadirah.dariah.eu/" key="conversion">Conversion</term>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="spec" source="zotero" target="ZABRV5VD">
                      <term type="standard" source="standard_list" key="TEI"/>
                   </ref>

@@ -9,15 +9,18 @@
             <title>step "Describe the measurement. 3. Pre- processing / preliminary tests - Measurement
           setup"</title>
             <author>
-               <persName>Sophia Sotiropoulou</persName>
+               <forename>Sophia</forename>
+               <surname>Sotiropoulou</surname>
                <affiliation>IESL-FORTH</affiliation>
             </author>
             <author>
-               <persName>Panayiotis Siozos</persName>
+               <forename>Panayiotis</forename>
+               <surname>Siozos</surname>
                <affiliation>IESL-FORTH</affiliation>
             </author>
             <author>
-               <persName>Demetrios Anglos</persName>
+               <forename>Demetrios</forename>
+               <surname>Anglos</surname>
                <affiliation>IESL-FORTH</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -49,7 +52,8 @@
             under examination using a minimum laser power. The laser power can be progressively
             increased as well as the integration time / average of scans can be optimised as needed
             to obtain a good spectrum.</desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="paper" source="zotero" target="W39BNU8K"/>
                </linkGrp>
             </event>

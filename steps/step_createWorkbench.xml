@@ -8,15 +8,18 @@
          <titleStmt>
             <title>Description of the "Create Workbench" step</title>
             <author>
-               <persName>Piotr Bański</persName>
+               <forename>Piotr</forename>
+               <surname>Bański</surname>
                <affiliation>IDS Mannheim, CLARIN</affiliation>
             </author>
             <author>
-               <persName>Susanne Haaf</persName>
+               <forename>Susanne</forename>
+               <surname>Haaf</surname>
                <affiliation>BBAW</affiliation>
             </author>
             <author>
-               <persName>Klaus Illmayer</persName>
+               <forename>Klaus</forename>
+               <surname>Illmayer</surname>
                <affiliation>OEAW-ACDH</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>

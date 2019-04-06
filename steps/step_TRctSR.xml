@@ -10,11 +10,13 @@
             <title>step_TRctSR.xml</title>
             <sponsor>PARTHENOS</sponsor>
             <author>
-               <persName>Maurizio Sanesi</persName>
+               <forename>Maurizio</forename>
+               <surname>Sanesi</surname>
                <affiliation>SISMEL</affiliation>
             </author>
             <author>
-               <persName>Roberta Giacomi</persName>
+               <forename>Roberta</forename>
+               <surname>Giacomi</surname>
                <affiliation>SISMEL</affiliation>
             </author>
          </titleStmt>
@@ -44,7 +46,8 @@
                <desc xml:lang="en" type="terms">
                   <term type="activity" source="http://tadirah.dariah.eu/" key="Organizing"/>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="code" source="zotero" target="REPS374P"/>
                </linkGrp>
             </event>

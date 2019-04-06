@@ -8,11 +8,13 @@
          <titleStmt>
             <title>Step "Prepare report"</title>
             <author>
-               <persName>Panayotis Siozos</persName>
+               <forename>Panayotis</forename>
+               <surname>Siozos</surname>
                <affiliation>IESL-FORTH</affiliation>
             </author>
             <author>
-               <persName>Demetrios Anglos</persName>
+               <forename>Demetrios</forename>
+               <surname>Anglos</surname>
                <affiliation>IESL-FORTH</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -46,7 +48,8 @@
                         source="http://tadirah.dariah.eu/"
                         type="activity"/>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero"
                        subtype="tool"
                        target="4W7QUMZF"

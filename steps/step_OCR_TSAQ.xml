@@ -1,88 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_OCR_TSAQ">
-  <teiHeader>
-    <fileDesc>
-      <titleStmt>
-        <title>step "Test on a subset and assess quality"</title>
-        <author>
-          <persName>Saranya Balasubramanian</persName>
-          <affiliation>OEAW-ACDH</affiliation>
-        </author>
-        <author>
-          <persName>Peter Catrie</persName>
-          <affiliation>Koninklijke Bibliotheek van België</affiliation>
-        </author>
-        <author>
-          <persName>Dario Kampkaspar</persName>
-          <affiliation>OEAW-ACDH</affiliation>
-        </author>
-        <author>
-          <persName>Tomasz Parkoła</persName>
-          <affiliation> Poznańskie Centrum Superkomputerowo-Sieciowe, Poznań</affiliation>
-        </author>
-        <author>
-          <persName>Charles Riondet</persName>
-          <affiliation>Inria</affiliation>
-        </author>
-        <author>
-          <persName>Pavel Stranak</persName>
-          <affiliation>Institute of Formal and Applied Linguistics, Charles University</affiliation>
-        </author>
-        <author>
-          <persName>Daniel Schopper</persName>
-          <affiliation>OEAW-ACDH</affiliation>
-        </author>
-        <sponsor/>
-      </titleStmt>
-      <publicationStmt>
-        <authority/>
-        <availability>
-          <licence target="http://creativecommons.org/licenses/by/4.0/">
-            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_OCR_TSAQ">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>step "Test on a subset and assess quality"</title>
+            <author>
+               <forename>Saranya</forename>
+               <surname>Balasubramanian</surname>
+               <affiliation>OEAW-ACDH</affiliation>
+            </author>
+            <author>
+               <forename>Peter</forename>
+               <surname>Catrie</surname>
+               <affiliation>Koninklijke Bibliotheek van België</affiliation>
+            </author>
+            <author>
+               <forename>Dario</forename>
+               <surname>Kampkaspar</surname>
+               <affiliation>OEAW-ACDH</affiliation>
+            </author>
+            <author>
+               <forename>Tomasz</forename>
+               <surname>Parkoła</surname>
+               <affiliation> Poznańskie Centrum Superkomputerowo-Sieciowe, Poznań</affiliation>
+            </author>
+            <author>
+               <forename>Charles</forename>
+               <surname>Riondet</surname>
+               <affiliation>Inria</affiliation>
+            </author>
+            <author>
+               <forename>Pavel</forename>
+               <surname>Stranak</surname>
+               <affiliation>Institute of Formal and Applied Linguistics, Charles University</affiliation>
+            </author>
+            <author>
+               <forename>Daniel</forename>
+               <surname>Schopper</surname>
+               <affiliation>OEAW-ACDH</affiliation>
+            </author>
+            <sponsor/>
+         </titleStmt>
+         <publicationStmt>
+            <authority/>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
               document.</p>
-          </licence>
-        </availability>
-      </publicationStmt>
-      <sourceDesc>
-        <p>Created from scratch</p>
-      </sourceDesc>
-    </fileDesc>
-    <revisionDesc>
-      <change/>
-    </revisionDesc>
-  </teiHeader>
-  <text>
-    <body>
-      <listEvent>
-        <event type="researchStep">
-          <head type="stepTitle" xml:lang="en">Test on a subset and assess quality</head>
-          <desc xml:lang="en" type="definition"><p>The first step to take is the definition of a
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head type="stepTitle" xml:lang="en">Test on a subset and assess quality</head>
+               <desc xml:lang="en" type="definition">
+                  <p>The first step to take is the definition of a
               target accuracy. <list>
-                <item>Clean printed text: WER 70% is a minimum (can be 60% for a search
+                        <item>Clean printed text: WER 70% is a minimum (can be 60% for a search
                   engine)</item>
-                <item>HTR of badly printed: The acceptable WER may be less. Then again, it depends
+                        <item>HTR of badly printed: The acceptable WER may be less. Then again, it depends
                   on the outcomes.</item>
-              </list></p>
-            <p>To test the accuracy of the model, two metrics are available: Character Error rate
+                     </list>
+                  </p>
+                  <p>To test the accuracy of the model, two metrics are available: Character Error rate
               (CER) and Word Error rate (WER). WER is more important because it defines the
               readability of the text. It is also important to assess the quality of the layout
               recognition.</p>
-          </desc>
-          <desc xml:lang="en" type="terms">
-            <term key="Structural analysis" source="Tadirah" type="activity"/>
-          </desc>
-          <desc xml:lang="en" type="terms">
-            <term type="standard" source="ssk" key="ISO 28590:2017"></term>
-          </desc>
-          <linkGrp type="generalResources"
-            xml:base="www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-            <ref type="spec" source="zotero" target="46KDRJGK"/>
-            <ref type="tutorial" source="zotero" target="TNK9BG7F"/>
-            <ref type="report" source="zotero" target="VNAZQWCV"/>
-          </linkGrp>
-        </event>
-      </listEvent>
-    </body>
-  </text>
+               </desc>
+               <desc xml:lang="en" type="terms">
+                  <term key="Structural analysis" source="Tadirah" type="activity"/>
+               </desc>
+               <desc xml:lang="en" type="terms">
+                  <term type="standard" source="ssk" key="ISO 28590:2017"/>
+               </desc>
+               <linkGrp type="generalResources"
+                        xml:base="www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+                  <ref type="spec" source="zotero" target="46KDRJGK"/>
+                  <ref type="tutorial" source="zotero" target="TNK9BG7F"/>
+                  <ref type="report" source="zotero" target="VNAZQWCV"/>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

@@ -8,27 +8,33 @@
          <titleStmt>
             <title>Step "Acquisition of 3D object (by photogrammetry)"</title>
             <author>
-               <persName>Hélène Gautier</persName>
+               <forename>Hélène</forename>
+               <surname>Gautier</surname>
                <affiliation>Huma-Num/CNRS</affiliation>
             </author>
             <author>
-               <persName>Adeline Joffres</persName>
+               <forename>Adeline</forename>
+               <surname>Joffres</surname>
                <affiliation>Huma-Num/CNRS</affiliation>
             </author>
             <author>
-               <persName>Paulin Ribbe</persName>
+               <forename>Paulin</forename>
+               <surname>Ribbe</surname>
                <affiliation>Huma-Num/CNRS</affiliation>
             </author>
             <author>
-               <persName>Mehdi Chayani</persName>
+               <forename>Mehdi</forename>
+               <surname>Chayani</surname>
                <affiliation>3D-SHS Huma-Num's consortium</affiliation>
             </author>
             <author>
-               <persName>Xavier Granier</persName>
+               <forename>Xavier</forename>
+               <surname>Granier</surname>
                <affiliation>3D-SHS Huma-Num's consortium</affiliation>
             </author>
             <author>
-               <persName>Sarah Tournon-Valiente</persName>
+               <forename>Sarah</forename>
+               <surname>Tournon-Valiente</surname>
                <affiliation>3D-SHS Huma-Num's consortium</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -86,7 +92,8 @@
                   <term type="standards" source="standard_list" key="BMP"/>
                   <term type="activity" source="TaDiRAH" key="Imaging"/>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="specification" source="zotero" target="Q4X9D4BE"/>
                   <ref type="schema" source="zotero" target="GHCATCKH"/>
                   <ref type="code" source="zotero" target="XRZPJFHZ"/>

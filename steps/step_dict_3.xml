@@ -8,15 +8,18 @@
          <titleStmt>
             <title>Step "Setting up the editing environment"</title>
             <author>
-               <persName>Karlheinz Mörth</persName>
+               <forename>Karlheinz</forename>
+               <surname>Mörth</surname>
                <affiliation>OEAW-ACDH</affiliation>
             </author>
             <author>
-               <persName>Charles Riondet</persName>
+               <forename>Charles</forename>
+               <surname>Riondet</surname>
                <affiliation>Inria</affiliation>
             </author>
             <author>
-               <persName>Lionel Tadjou</persName>
+               <forename>Lionel</forename>
+               <surname>Tadjou</surname>
                <affiliation>Inria</affiliation>
             </author>
             <sponsor>Dariah</sponsor>
@@ -50,7 +53,8 @@
                <desc type="term" xml:lang="en">
                   <term key="Modeling" source="TaDiRAH" type="activity"/>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="KIRW2HCI" type="specification"/>
                   <ref source="zotero" target="U2654R3W" type="tool"/>
                   <ref source="zotero" target="L6M9Q4T5" type="tool"/>

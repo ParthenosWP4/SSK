@@ -8,11 +8,13 @@
          <titleStmt>
             <title>Step "Anonymize"</title>
             <author>
-               <persName>Hélène Gautier</persName>
+               <forename>Hélène</forename>
+               <surname>Gautier</surname>
                <affiliation>Huma-Num/CNRS</affiliation>
             </author>
             <author>
-               <persName>Marie Puren</persName>
+               <forename>Marie</forename>
+               <surname>Puren</surname>
                <affiliation>INRIA</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -54,7 +56,8 @@
                         source="http://tadirah.dariah.eu/"
                         type="activity"/>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="Y3MSWHBA" type="tutorial"/>
                   <ref source="zotero" target="DAQWR4BJ" type="tutorial"/>
                   <ref source="zotero" target="T4U6MW6B" type="tutorial"/>

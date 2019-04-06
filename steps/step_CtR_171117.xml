@@ -8,11 +8,13 @@
          <titleStmt>
             <title>Step "Contextualize the research"</title>
             <author>
-               <persName>Hélène Gautier</persName>
+               <forename>Hélène</forename>
+               <surname>Gautier</surname>
                <affiliation>Huma-Num/CNRS</affiliation>
             </author>
             <author>
-               <persName>Marie Puren</persName>
+               <forename>Marie</forename>
+               <surname>Puren</surname>
                <affiliation>INRIA</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>

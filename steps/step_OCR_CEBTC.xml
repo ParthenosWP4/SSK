@@ -1,57 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_OCR_CEBTC">
-  <teiHeader>
-    <fileDesc>
-      <titleStmt>
-        <title>ssk_scn_4</title>
-        <sponsor>PARTHENOS</sponsor>
-        <author>
-          <persName>Saranya Balasubramanian</persName>
-          <affiliation>ÖAW</affiliation>
-        </author>
-      </titleStmt>
-      <publicationStmt>
-        <authority/>
-        <availability>
-          <licence target="http://creativecommons.org/licenses/by/4.0/">
-            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_OCR_CEBTC">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>ssk_scn_4</title>
+            <sponsor>PARTHENOS</sponsor>
+            <author>
+               <forename>Saranya</forename>
+               <surname>Balasubramanian</surname>
+               <affiliation>ÖAW</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority/>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
               document.</p>
-          </licence>
-        </availability>
-      </publicationStmt>
-      <sourceDesc>
-        <p>Created from scratch</p>
-      </sourceDesc>
-    </fileDesc>
-    <revisionDesc>
-      <change/>
-    </revisionDesc>
-  </teiHeader>
-  <text>
-    <body>
-      <listEvent>
-        <event type="researchStep">
-          <!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
-          <head type="stepTitle" xml:lang="en">Choose engine based on the type of the content</head>
-          <desc type="definition" xml:lang="en">If you choose a classic commercial OCR engine like
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep"><!-- It is possible to translate the prose, by duplicating the elements head, desc or term, and adding xml:lang attribute -->
+               <head type="stepTitle" xml:lang="en">Choose engine based on the type of the content</head>
+               <desc type="definition" xml:lang="en">If you choose a classic commercial OCR engine like
             ABBYY FineReader, the customization would be limited. Others tools allow for more
             options (training a model for instance). It may be interesting also to use separate
             tools to perform different steps of the recognition process (Layout and character
             recognition)...</desc>
-          <desc type="terms" xml:lang="en">
-            <term key="hOCR" source="ssk" type="standard"/>
-            <term key="ALTO-XML" source="ssk" type="standard"/>
-          </desc>
-          <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-            <ref source="zotero" target="CJTI9S5P" type="code"/>
-            <ref source="zotero" target="FASX3E7M" type="code"/>
-            <ref source="zotero" target="SZTQJUWS" type="code"/>
-            <ref source="zotero" target="ZGMBFD8G" type="code"/>
-            <ref source="zotero" target="MAQDBVPI" type="code"/>
-          </linkGrp>
-        </event>
-      </listEvent>
-    </body>
-  </text>
+               <desc type="terms" xml:lang="en">
+                  <term key="hOCR" source="ssk" type="standard"/>
+                  <term key="ALTO-XML" source="ssk" type="standard"/>
+               </desc>
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+                  <ref source="zotero" target="CJTI9S5P" type="code"/>
+                  <ref source="zotero" target="FASX3E7M" type="code"/>
+                  <ref source="zotero" target="SZTQJUWS" type="code"/>
+                  <ref source="zotero" target="ZGMBFD8G" type="code"/>
+                  <ref source="zotero" target="MAQDBVPI" type="code"/>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

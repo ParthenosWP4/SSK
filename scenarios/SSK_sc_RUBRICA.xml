@@ -1,66 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI 
-      xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario" xml:id="SSK_sc_RUBRICA">
-      <teiHeader>
-            <fileDesc>
-		    <sponsor>PARTHENOS</sponsor>
-		    <titleStmt>
-                        <title>Aggregate together different datasets to obtain a single reference resource</title>
-                        <author>
-                              <persName>Maurizio Sanesi</persName>
-                              <affiliation>SISMEL</affiliation>
-                        </author>
-                        <author>
-                              <persName>Roberta Giacomi</persName>
-                              <affiliation>SISMEL</affiliation>
-                        </author>
-						 <author>
-						 <persName>Emiliano Degl'Innocenti</persName>
-                              <affiliation>CNR-OVI</affiliation>
-                        </author>
-                  </titleStmt>
-                  <publicationStmt>
-                        <authority>Parthenos</authority>
-                        <availability>
-                              <licence target="http://creativecommons.org/licenses/by/4.0/">
-                                    <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this document.</p>
-                              </licence>
-                        </availability>
-                  </publicationStmt>
-                  <sourceDesc>
-                        <p>Created from scratch</p>
-                  </sourceDesc>
-            </fileDesc>
-            <revisionDesc>
-            </revisionDesc>
-      </teiHeader>
-      <text>
-            <body>
-                  <div type="scenario">
-                        <head xml:lang="en" type="scenarioTitle">Aggregate together different datasets to obtain a single reference resource</head>
-                        <desc type="definition" xml:lang="en">A researcher has to confront two or more reference resources dataset, in order to find useful material and to satisfy his research question circumscribing and isolating a certain topic of interest.
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchScenario"
+     xml:id="SSK_sc_RUBRICA">
+   <teiHeader>
+      <fileDesc>
+         <sponsor>PARTHENOS</sponsor>
+         <titleStmt>
+            <title>Aggregate together different datasets to obtain a single reference resource</title>
+            <author>
+               <forename>Maurizio</forename>
+               <surname>Sanesi</surname>
+               <affiliation>SISMEL</affiliation>
+            </author>
+            <author>
+               <forename>Roberta</forename>
+               <surname>Giacomi</surname>
+               <affiliation>SISMEL</affiliation>
+            </author>
+            <author>
+               <forename>Emiliano</forename>
+               <surname>Degl'Innocenti</surname>
+               <affiliation>CNR-OVI</affiliation>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Parthenos</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this document.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc/>
+   </teiHeader>
+   <text>
+      <body>
+         <div type="scenario">
+            <head xml:lang="en" type="scenarioTitle">Aggregate together different datasets to obtain a single reference resource</head>
+            <desc type="definition" xml:lang="en">A researcher has to confront two or more reference resources dataset, in order to find useful material and to satisfy his research question circumscribing and isolating a certain topic of interest.
 						Therefore, he uses PARTHENOS specialized services (Resource Discovery Service, RUBRICA), as a support for his research needs. </desc>
-                        <desc xml:lang="en" type="terms">
-                              <term source="parthenos" type="discipline" key="history">History</term>
-                              <term type="objects" key="metadata" source="tadirah"/>
-                        </desc>
-                        <figure type="image">
-                              <head/>
-                              <graphic url="https://upload.wikimedia.org/wikipedia/commons/5/54/Cistercian_monks_at_work_-_UL_Cambridge_Ms_Mm.5.31.jpg"/>
-                              <figDesc/>
-                        </figure>
-                        <listEvent>
-                              <event xml:id="s1" type="researchStep" ref="step_ARnaD"/>
-                              <event xml:id="s2" type="researchStep" ref="step_StRR"/>
-                              <event xml:id="s3" type="researchStep" ref="step_Trcstr"/>
-                              <event xml:id="s4" type="researchStep" ref="step_ItPp"/>
-                              <event xml:id="s5" type="researchStep" ref="step_UoRttPV"/>
-                              <event xml:id="s6" type="researchStep" ref="step_Trcttu"/>
-                              <event xml:id="s7" type="researchStep" ref="step_DsrfitIw"/>
-
-                        </listEvent>
-                  </div>
-            </body>
-      </text>
+            <desc xml:lang="en" type="terms">
+               <term source="parthenos" type="discipline" key="history">History</term>
+               <term type="objects" key="metadata" source="tadirah"/>
+            </desc>
+            <figure type="image">
+               <head/>
+               <graphic url="https://upload.wikimedia.org/wikipedia/commons/5/54/Cistercian_monks_at_work_-_UL_Cambridge_Ms_Mm.5.31.jpg"/>
+               <figDesc/>
+            </figure>
+            <listEvent>
+               <event xml:id="s1" type="researchStep" ref="step_ARnaD"/>
+               <event xml:id="s2" type="researchStep" ref="step_StRR"/>
+               <event xml:id="s3" type="researchStep" ref="step_Trcstr"/>
+               <event xml:id="s4" type="researchStep" ref="step_ItPp"/>
+               <event xml:id="s5" type="researchStep" ref="step_UoRttPV"/>
+               <event xml:id="s6" type="researchStep" ref="step_Trcttu"/>
+               <event xml:id="s7" type="researchStep" ref="step_DsrfitIw"/>
+            </listEvent>
+         </div>
+      </body>
+   </text>
 </TEI>

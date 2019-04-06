@@ -9,19 +9,23 @@
             <title>step_AtuotEitSP.xml</title>
             <sponsor>PARTHENOS</sponsor>
             <author>
-               <persName>Maurizio Sanesi</persName>
+               <forename>Maurizio</forename>
+               <surname>Sanesi</surname>
                <affiliation>SISMEL</affiliation>
             </author>
             <author>
-               <persName>Karolien Verbrugge</persName>
+               <forename>Karolien</forename>
+               <surname>Verbrugge</surname>
                <affiliation>NIOD</affiliation>
             </author>
             <author>
-               <persName>Claus Spiecker</persName>
+               <forename>Claus</forename>
+               <surname>Spiecker</surname>
                <affiliation>FHP</affiliation>
             </author>
             <author>
-               <persName>Roberta Giacomi</persName>
+               <forename>Roberta</forename>
+               <surname>Giacomi</surname>
                <affiliation>SISMEL</affiliation>
             </author>
          </titleStmt>
@@ -57,13 +61,12 @@
                   <term key="theorizing" source="http://tadirah.dariah.eu/" type="activity"/>
                   <!--<term key="CD" source="WP3Wizard" type="policies"/>-->
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="A8ESQDLF" type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
-                  <ref source="zotero"
-                       target="V5WXVD5C"
-                       type="code">
+                  <ref source="zotero" target="V5WXVD5C" type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
                   <ref source="zotero" target="SNFR7WZG" type="code">

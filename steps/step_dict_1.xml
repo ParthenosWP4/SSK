@@ -8,15 +8,18 @@
          <titleStmt>
             <title>Step "Build the model of the dictionary"</title>
             <author>
-               <persName>Karlheinz Mörth</persName>
+               <forename>Karlheinz</forename>
+               <surname>Mörth</surname>
                <affiliation>OEAW-ACDH</affiliation>
             </author>
             <author>
-               <persName>Charles Riondet</persName>
+               <forename>Charles</forename>
+               <surname>Riondet</surname>
                <affiliation>Inria</affiliation>
             </author>
             <author>
-               <persName>Lionel Tadjou</persName>
+               <forename>Lionel</forename>
+               <surname>Tadjou</surname>
                <affiliation>Inria</affiliation>
             </author>
             <sponsor>Dariah</sponsor>
@@ -57,7 +60,8 @@
                <desc type="term" xml:lang="en">
                   <term key="Modeling" source="TaDiRAH" type="activity"/>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="H6M4KL6H" type="specification"/>
                   <ref type="website" source="zotero" target="CHEQTDE9"/>
                   <ref type="documentation" source="zotero" target="VE2C5SZW"/>

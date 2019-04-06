@@ -8,11 +8,13 @@
          <titleStmt>
             <title>Standarizing Laser Induced Breakdown Spectrocopy analysis of glasses</title>
             <author>
-               <persName>Marta Castillejo</persName>
+               <forename>Marta</forename>
+               <surname>Castillejo</surname>
                <affiliation>CSIC</affiliation>
             </author>
             <author>
-               <persName>Mikel Sanz</persName>
+               <forename>Mikel</forename>
+               <surname>Sanz</surname>
                <affiliation>CSIC</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -45,8 +47,10 @@
      sample preparation, microscopic resolution and in-situ characterization proper to the
      technique.</desc>
             <desc type="terms" xml:lang="en">
-              <term key="Art and art history" source="aurehal" type="discipline">Art and art history</term>
-              <term key="Cultural heritage and museology" source="aurehal" type="discipline">Cultural heritage and museology</term>
+               <term key="Art and art history" source="aurehal" type="discipline">Art and art history</term>
+               <term key="Cultural heritage and museology"
+                     source="aurehal"
+                     type="discipline">Cultural heritage and museology</term>
                <term key="Research results" source="tadirah" type="objects"/>
                <term key="Standards" source="tadirah" type="objects"/>
                <term key="Technology preservation" source="tadirah" type="techniques"/>

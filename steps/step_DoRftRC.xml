@@ -8,7 +8,8 @@
          <titleStmt>
             <title>step_DoRftRC.xml</title>
             <author>
-               <persName>Haaf Susanne</persName>
+              <forename>Susanne</forename>
+              <surname>Haaf</surname>
                <affiliation>Berlin-Brandenburg Academy of Sciences and Humanities</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -66,10 +67,9 @@
                   <term key="TEI" source="ssk" type="standard"/>
                   <term key="Schematron" source="ssk" type="standard"/>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"><!-- Ressources: DTAoX, DTABf-TR, DTABf-Vorlagedatei -->
-                  <ref source="zotero"
-                       target="558UTLGY"
-                       type="specification">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"><!-- Ressources: DTAoX, DTABf-TR, DTABf-Vorlagedatei -->
+                  <ref source="zotero" target="558UTLGY" type="specification">
                      <term type="standard" source="ssk" key="TEI"/>
                      <term type="standard" source="ssk" key="Schematron"/>
                      <term key="Annotating" source="http://tadirah.dariah.eu/" type="activity"/>

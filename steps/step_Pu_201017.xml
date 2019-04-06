@@ -8,11 +8,13 @@
          <titleStmt>
             <title>Step "Publish"</title>
             <author>
-               <persName>Panayotis Siozos</persName>
+               <forename>Panayotis</forename>
+               <surname>Siozos</surname>
                <affiliation>IESL-FORTH</affiliation>
             </author>
             <author>
-               <persName>Demetrios Anglos</persName>
+               <forename>Demetrios</forename>
+               <surname>Anglos</surname>
                <affiliation>IESL-FORTH</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -46,14 +48,18 @@
                         source="http://tadirah.dariah.eu/"
                         type="activity"/>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero"
                        subtype="service"
                        target="TZX5QSR7"
                        type="website">
                      <term key="POLYGNOSIS" type="service"/>
                   </ref>
-                  <ref source="zotero" subtype="service" target="H793RGGY " type="website">
+                  <ref source="zotero"
+                       subtype="service"
+                       target="H793RGGY "
+                       type="website">
                      <term key="Hal" type="service"/>
                   </ref>
                </linkGrp>

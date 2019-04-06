@@ -1,77 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_OCR_POCROSF">
-  <teiHeader>
-    <fileDesc>
-      <titleStmt>
-        <title>step "Produce OCR output in standardized format"</title>
-        <author>
-          <persName>Saranya Balasubramanian</persName>
-          <affiliation>OEAW-ACDH</affiliation>
-        </author>
-        <author>
-          <persName>Peter Catrie</persName>
-          <affiliation>Koninklijke Bibliotheek van België</affiliation>
-        </author>
-        <author>
-          <persName>Dario Kampkaspar</persName>
-          <affiliation>OEAW-ACDH</affiliation>
-        </author>
-        <author>
-          <persName>Tomasz Parkoła</persName>
-          <affiliation> Poznańskie Centrum Superkomputerowo-Sieciowe, Poznań</affiliation>
-        </author>
-        <author>
-          <persName>Charles Riondet</persName>
-          <affiliation>Inria</affiliation>
-        </author>
-        <author>
-          <persName>Pavel Stranak</persName>
-          <affiliation>Institute of Formal and Applied Linguistics, Charles University</affiliation>
-        </author>
-        <author>
-          <persName>Daniel Schopper</persName>
-          <affiliation>OEAW-ACDH</affiliation>
-        </author>
-        <sponsor/>
-      </titleStmt>
-      <publicationStmt>
-        <authority/>
-        <availability>
-          <licence target="http://creativecommons.org/licenses/by/4.0/">
-            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_OCR_POCROSF">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>step "Produce OCR output in standardized format"</title>
+            <author>
+               <forename>Saranya</forename>
+               <surname>Balasubramanian</surname>
+               <affiliation>OEAW-ACDH</affiliation>
+            </author>
+            <author>
+               <forename>Peter</forename>
+               <surname>Catrie</surname>
+               <affiliation>Koninklijke Bibliotheek van België</affiliation>
+            </author>
+            <author>
+               <forename>Dario</forename>
+               <surname>Kampkaspar</surname>
+               <affiliation>OEAW-ACDH</affiliation>
+            </author>
+            <author>
+               <forename>Tomasz</forename>
+               <surname>Parkoła</surname>
+               <affiliation> Poznańskie Centrum Superkomputerowo-Sieciowe, Poznań</affiliation>
+            </author>
+            <author>
+               <forename>Charles</forename>
+               <surname>Riondet</surname>
+               <affiliation>Inria</affiliation>
+            </author>
+            <author>
+               <forename>Pavel</forename>
+               <surname>Stranak</surname>
+               <affiliation>Institute of Formal and Applied Linguistics, Charles University</affiliation>
+            </author>
+            <author>
+               <forename>Daniel</forename>
+               <surname>Schopper</surname>
+               <affiliation>OEAW-ACDH</affiliation>
+            </author>
+            <sponsor/>
+         </titleStmt>
+         <publicationStmt>
+            <authority/>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
               document.</p>
-          </licence>
-        </availability>
-      </publicationStmt>
-      <sourceDesc>
-        <p>Created from scratch</p>
-      </sourceDesc>
-    </fileDesc>
-    <revisionDesc>
-      <change/>
-    </revisionDesc>
-  </teiHeader>
-  <text>
-    <body>
-      <listEvent>
-        <event type="researchStep">
-          <head type="stepTitle" xml:lang="en">Produce OCR output in standardized format</head>
-          <desc xml:lang="en" type="definition">Differents data formats for OCR outputs. The most
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head type="stepTitle" xml:lang="en">Produce OCR output in standardized format</head>
+               <desc xml:lang="en" type="definition">Differents data formats for OCR outputs. The most
             common formats are ALTO, hOCR and PAGE. All these formats are expressed in XML, so they
             are easily convertible to one another.</desc>
-          <desc xml:lang="en" type="terms">
-            <term type="standard" source="ssk" key="METS"/>
-            <term key="ALTO-XML" source="ssk" type="standard"/>
-            <term key="PÄGE XML" source="ssk" type="standard"/>
-            <term key="hOCR" source="ssk" type="standard"/>
-          </desc>
-          <linkGrp type="generalResources" xml:base="www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-            <ref type="tool" source="zotero" target="D9AB5DP6"/>
-            <ref type="code" source="zotero" target="FFL5CPCK"/>
-          </linkGrp>
-        </event>
-      </listEvent>
-    </body>
-  </text>
+               <desc xml:lang="en" type="terms">
+                  <term type="standard" source="ssk" key="METS"/>
+                  <term key="ALTO-XML" source="ssk" type="standard"/>
+                  <term key="PÄGE XML" source="ssk" type="standard"/>
+                  <term key="hOCR" source="ssk" type="standard"/>
+               </desc>
+               <linkGrp type="generalResources"
+                        xml:base="www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+                  <ref type="tool" source="zotero" target="D9AB5DP6"/>
+                  <ref type="code" source="zotero" target="FFL5CPCK"/>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

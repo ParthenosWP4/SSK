@@ -8,7 +8,8 @@
          <titleStmt>
             <title>Step "Store edited files"</title>
             <author>
-               <persName>Frank Uiterwaal</persName>
+               <forename>Frank</forename>
+               <surname>Uiterwaal</surname>
                <affiliation>NIOD-KNAW</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -44,7 +45,8 @@
                   <term key="Images" source="TaDiRAH" type="object"/>
                   <term key="Data" source="TaDiRAH" type="object"/>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="SFKU6E2E" type="report"/>
                </linkGrp>
             </event>

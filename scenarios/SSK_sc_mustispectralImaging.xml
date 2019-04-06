@@ -10,11 +10,13 @@
          <titleStmt>
             <title>Multispectral imaging for the in-situ characterization of painted works of art</title>
             <author>
-               <persName>Panayotis Siozos</persName>
+               <forename>Panayotis</forename>
+               <surname>Siozos</surname>
                <affiliation>IESL-FORTH</affiliation>
             </author>
             <author>
-               <persName>Demetrios Anglos</persName>
+               <forename>Demetrios</forename>
+               <surname>Anglos</surname>
                <affiliation>IESL-FORTH</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>

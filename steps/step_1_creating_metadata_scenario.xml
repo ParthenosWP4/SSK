@@ -8,7 +8,8 @@
          <titleStmt>
             <title>Step "Select Data (or existing Metadata) to be transformed in Metadata"</title>
             <author>
-               <persName>Antonio Davide Madonna</persName>
+               <forename>Antonio Davide</forename>
+               <surname>Madonna</surname>
                <affiliation>MIBACT-ICCU</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -44,7 +45,8 @@
                         source="http://tadirah.dariah.eu/"
                         type="activity"/>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero"
                        subtype="standard"
                        target="2A578PYX"

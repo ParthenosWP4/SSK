@@ -8,15 +8,18 @@
          <titleStmt>
             <title>Step "Have a reflexion on the quality of the produced data."</title>
             <author>
-               <persName>Vincent Besson</persName>
+               <forename>Vincent</forename>
+               <surname>Besson</surname>
                <affiliation>CNRS</affiliation>
             </author>
             <author>
-               <persName>Adeline Joffres</persName>
+               <forename>Adeline</forename>
+               <surname>Joffres</surname>
                <affiliation>CNRS</affiliation>
             </author>
             <author>
-               <persName>Hélène Gautier</persName>
+               <forename>Hélène</forename>
+               <surname>Gautier</surname>
                <affiliation>CNRS</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -57,14 +60,16 @@
                         source="http://tadirah.dariah.eu/"
                         type="activity"/>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" subtype="tool" target="U9RU3G53" type="webpage">
                      <term key="Neuma Quality Dashboard" type="tool"/>
                   </ref>
                </linkGrp>
                <linkGrp corresp="https://gioqoso.irisa.fr/"
                         source="GioQoso"
-                        type="projectResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+                        type="projectResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref target="6WRG74YN" type="webpage"/>
                </linkGrp>
             </event>

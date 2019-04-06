@@ -8,7 +8,8 @@
          <titleStmt>
             <title>Step "Applying a license"</title>
             <author>
-               <persName>Antonio Davide Madonna</persName>
+               <forename>Antonio Davide</forename>
+               <surname>Madonna</surname>
                <affiliation>MIBACT-ICCU</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -40,7 +41,8 @@
                <desc type="term" xml:lang="en">
                   <term key="Publishing" source="Tadirah" type="activity"/>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero"
                        subtype="standard"
                        target="V9IKZP7D"

@@ -8,15 +8,18 @@
          <titleStmt>
             <title>Prosopography research</title>
             <author>
-               <persName>Maurizio Sanesi</persName>
+               <forename>Maurizio</forename>
+               <surname>Sanesi</surname>
                <affiliation>SISMEL</affiliation>
             </author>
             <author>
-               <persName>Roberta Giacomi</persName>
+               <forename>Roberta</forename>
+               <surname>Giacomi</surname>
                <affiliation>SISMEL</affiliation>
             </author>
             <author>
-               <persName>Emiliano Degl'Innocenti</persName>
+               <forename>Emiliano</forename>
+               <surname>Degl'Innocenti</surname>
                <affiliation>CNR-OVI</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -52,7 +55,7 @@
             <desc type="terms" xml:lang="en">
                <term key="History" source="aurehal" type="discipline">History</term>
                <term key="Metadata" source="tadirah" type="object"/>
-              <term key="Persons" source="tadirah" type="object"/>
+               <term key="Persons" source="tadirah" type="object"/>
                <!--<term key="Dictionaries" source="nemo" type="object"/>-->
             </desc>
             <figure type="image">

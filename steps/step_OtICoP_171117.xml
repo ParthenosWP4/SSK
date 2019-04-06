@@ -8,11 +8,13 @@
          <titleStmt>
             <title>Step "Obtain the informed consent of participants"</title>
             <author>
-               <persName>Hélène Gautier</persName>
+               <forename>Hélène</forename>
+               <surname>Gautier</surname>
                <affiliation>Huma-Num/CNRS</affiliation>
             </author>
             <author>
-               <persName>Marie Puren</persName>
+               <forename>Marie</forename>
+               <surname>Puren</surname>
                <affiliation>INRIA</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -49,7 +51,8 @@
                         source="http://tadirah.dariah.eu/"
                         type="activity"/>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="Z4AU7AWG" type="tutorial"/>
                   <ref source="zotero" target="VZQP2M6G" type="tutorial"/>
                </linkGrp>

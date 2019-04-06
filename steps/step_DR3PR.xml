@@ -8,15 +8,18 @@
          <titleStmt>
             <title>step "Disseminate the results. 3. Publish the results"</title>
             <author>
-               <persName>Sophia Sotiropoulou</persName>
+               <forename>Sophia</forename>
+               <surname>Sotiropoulou</surname>
                <affiliation>IESL-FORTH</affiliation>
             </author>
             <author>
-               <persName>Panayiotis Siozos</persName>
+               <forename>Panayiotis</forename>
+               <surname>Siozos</surname>
                <affiliation>IESL-FORTH</affiliation>
             </author>
             <author>
-               <persName>Demetrios Anglos</persName>
+               <forename>Demetrios</forename>
+               <surname>Anglos</surname>
                <affiliation>IESL-FORTH</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -49,7 +52,8 @@
                <desc xml:lang="en" type="terms">
                   <term type="activity" source="tadriah" key="Publishing"/>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="service" source="zotero" target="TXK2S5FC"/>
                </linkGrp>
             </event>

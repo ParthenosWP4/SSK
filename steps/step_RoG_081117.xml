@@ -8,11 +8,13 @@
          <titleStmt>
             <title>Step "Research on glasses"</title>
             <author>
-               <persName>Marta Castillejo</persName>
+               <forename>Marta</forename>
+               <surname>Castillejo</surname>
                <affiliation>CSIC</affiliation>
             </author>
             <author>
-               <persName>Mikel Sanz</persName>
+               <forename>Mikel</forename>
+               <surname>Sanz</surname>
                <affiliation>CSIC</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -47,7 +49,8 @@
                         source="http://tadirah.dariah.eu/"
                         type="activity"/>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero"
                        subtype="article"
                        target="FM2AR8N3"

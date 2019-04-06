@@ -8,7 +8,8 @@
          <titleStmt>
             <title>Step "Quality checking"</title>
             <author>
-               <persName>Antonio Davide Madonna</persName>
+               <forename>Antonio Davide</forename>
+               <surname>Madonna</surname>
                <affiliation>MIBACT-ICCU</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -43,7 +44,8 @@
                         type="activity"/>
                   <!-- I'm not sure this term works. It can be used in a broader sense, but please check. -->
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero"
                        subtype="standard"
                        target="B8F6BM3X"

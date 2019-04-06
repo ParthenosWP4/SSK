@@ -8,7 +8,8 @@
          <titleStmt>
             <title>step_PotC.xml</title>
             <author>
-               <persName>Haaf Susanne</persName>
+              <forename>Susanne</forename>
+              <surname>Haaf</surname>
                <affiliation>Berlin-Brandenburg Academy of Sciences and Humanities</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -59,7 +60,8 @@
                   <term key="CMDI" source="ssk" type="standard"/>
                   <term key="TCF" source="ssk" type="standard"/>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"><!-- further ressources: conversion DTABf to CMDI, DTABf CMDI profile, paper Geyken et al. 2018 -->
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"><!-- further ressources: conversion DTABf to CMDI, DTABf CMDI profile, paper Geyken et al. 2018 -->
                   <ref source="zotero" target="8BD6FDKR" type="service">VLO</ref>
                   <ref source="zotero" target="HNU9RXFC" type="service">WebLicht</ref>
                   <ref source="zotero" target="A5NVUWZB" type="service">
@@ -79,9 +81,10 @@
                      <term key="TCF" source="ssk" type="standard"/>
                   	TCF documentation</ref>
                </linkGrp>
-               <linkGrp type="projectResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="projectResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                         source="DTA"
-                        target="http://www.deutschestextarchiv.de">
+                        target="http://www.deutschestextarchiv.de"&gt;
                   <ref source="zotero" target="AGAAKQ2D" type="website">
                      <term key="TEI" source="ssk" type="standard"/>
             			Deutsches Textarchiv (DTA)</ref>

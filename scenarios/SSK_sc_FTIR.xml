@@ -1,40 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario" xml:id="SSK_sc_pXRF">
-  <teiHeader>
-    <fileDesc>
-      <titleStmt>
-        <title>scenario "In situ FTIR Analysis for the characterisation of materials on
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchScenario"
+     xml:id="SSK_sc_pXRF">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>scenario "In situ FTIR Analysis for the characterisation of materials on
           archaeological or cultural heritage objects"</title>
-        <author>
-          <persName>Barbara Salvadori</persName>
-          <affiliation>CNR-ICVBC</affiliation>
-        </author>
-        <sponsor>PARTHENOS</sponsor>
-      </titleStmt>
-      <publicationStmt>
-        <authority/>
-        <availability>
-          <licence target="http://creativecommons.org/licenses/by/4.0/">
-            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+            <author>
+               <forename>Barbara</forename>
+               <surname>Salvadori</surname>
+               <affiliation>CNR-ICVBC</affiliation>
+            </author>
+            <sponsor>PARTHENOS</sponsor>
+         </titleStmt>
+         <publicationStmt>
+            <authority/>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
               document.</p>
-          </licence>
-        </availability>
-      </publicationStmt>
-      <sourceDesc>
-        <p>Created from spreadsheet</p>
-      </sourceDesc>
-    </fileDesc>
-    <revisionDesc>
-      <change/>
-    </revisionDesc>
-  </teiHeader>
-  <text>
-    <body>
-      <div type="researchScenario">
-        <head type="scenarioTitle" xml:lang="en">In situ FTIR Analysis for the characterisation of
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from spreadsheet</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div type="researchScenario">
+            <head type="scenarioTitle" xml:lang="en">In situ FTIR Analysis for the characterisation of
           materials on archaeological or cultural heritage objects</head>
-        <desc type="definition" xml:lang="en">FTIR spectroscopy is a widely used technique for
+            <desc type="definition" xml:lang="en">FTIR spectroscopy is a widely used technique for
           examining various types of cultural heritage objects, with significant contributions in
           studies concerning chemical characterization of materials, both organic (binding media,
           varnishes, adhesives, coatings, consolidants, etc.) and inorganic (pigments, corrosion
@@ -51,45 +54,46 @@
           spectroscopy very successful in the field of cultural heritage. The current scenario
           presents a methodology for FTIR analysis directly on cultural heritage objects (no
           sampling).</desc>
-        <desc xml:lang="en" type="terms">
-          <term type="discipline" source="aurehal" key="History"/>
-          <term source="aurehal" type="discipline" key="Art and art history">Art and art
+            <desc xml:lang="en" type="terms">
+               <term type="discipline" source="aurehal" key="History"/>
+               <term source="aurehal" type="discipline" key="Art and art history">Art and art
             history</term>
-          <term source="aurehal" type="discipline" key="Cultural heritage and museology">Cultural
+               <term source="aurehal"
+                     type="discipline"
+                     key="Cultural heritage and museology">Cultural
             heritage and museology</term>
-          <term type="object" source="tadirah" key="Artifacts"/>
-          <term type="object" source="tadirah" key="Data"/>
-          <term key="Scanning" source="tadirah" type="techniques"/>
-        </desc>
-        <figure type="image">
-          <head/>
-          <graphic
-            url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/FTIR_2.jpg"/>
-          <figDesc/>
-        </figure>
-        <listEvent>
-          <event xml:id="s1" type="researchStep" ref="step_DtA"/>
-          <event xml:id="s2" type="researchStep" ref="step_DtP"/>
-          <event xml:id="s3" type="researchStep" ref="step_FTIR_DtM1U"/>
-          <event xml:id="s4" type="researchStep" ref="step_FTIR_DtM3ES"/>
-          <event xml:id="s5" type="researchStep" ref="step_FTIR_DtM4MRRA"/>
-          <event xml:id="s6" type="researchStep" ref="step_FTIR_DtM2PPSAMSRI"/>
-          <event xml:id="s7" type="researchStep" ref="step_FTIR_DtM3PPPTMS"/>
-          <event xml:id="s8" type="researchStep" ref="step_FTIR_DtM4MSASDMF"/>
-          <event xml:id="s9" type="researchStep" ref="step_FTIR_PPID1BCKKT"/>
-          <event xml:id="s10" type="researchStep" ref="step_FTIR_PSBA"/>
-          <event xml:id="s11" type="researchStep" ref="step_FTIR_MI"/>
-          <event xml:id="s12" type="researchStep" ref="step_DR1DMSPS"/>
-          <event xml:id="s13" type="researchStep" ref="step_DR2PR"/>
-          <!--<event xml:id="s13" type="researchStep" ref="step_DR2PR" mode="change">
+               <term type="object" source="tadirah" key="Artifacts"/>
+               <term type="object" source="tadirah" key="Data"/>
+               <term key="Scanning" source="tadirah" type="techniques"/>
+            </desc>
+            <figure type="image">
+               <head/>
+               <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/FTIR_2.jpg"/>
+               <figDesc/>
+            </figure>
+            <listEvent>
+               <event xml:id="s1" type="researchStep" ref="step_DtA"/>
+               <event xml:id="s2" type="researchStep" ref="step_DtP"/>
+               <event xml:id="s3" type="researchStep" ref="step_FTIR_DtM1U"/>
+               <event xml:id="s4" type="researchStep" ref="step_FTIR_DtM3ES"/>
+               <event xml:id="s5" type="researchStep" ref="step_FTIR_DtM4MRRA"/>
+               <event xml:id="s6" type="researchStep" ref="step_FTIR_DtM2PPSAMSRI"/>
+               <event xml:id="s7" type="researchStep" ref="step_FTIR_DtM3PPPTMS"/>
+               <event xml:id="s8" type="researchStep" ref="step_FTIR_DtM4MSASDMF"/>
+               <event xml:id="s9" type="researchStep" ref="step_FTIR_PPID1BCKKT"/>
+               <event xml:id="s10" type="researchStep" ref="step_FTIR_PSBA"/>
+               <event xml:id="s11" type="researchStep" ref="step_FTIR_MI"/>
+               <event xml:id="s12" type="researchStep" ref="step_DR1DMSPS"/>
+               <event xml:id="s13" type="researchStep" ref="step_DR2PR"/>
+               <!--<event xml:id="s13" type="researchStep" ref="step_DR2PR" mode="change">
             <linkGrp type="generalResources" xml:base="www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
               <ref type="tool" source="zotero" target="4W7QUMZF" mode="add"/>
               <ref type="service" source="zotero" target="TZX5QSR7" mode="add"/>
             </linkGrp>
           </event>-->
-          <event xml:id="s14" type="researchStep" ref="step_DR3PR"/>
-        </listEvent>
-      </div>
-    </body>
-  </text>
+               <event xml:id="s14" type="researchStep" ref="step_DR3PR"/>
+            </listEvent>
+         </div>
+      </body>
+   </text>
 </TEI>

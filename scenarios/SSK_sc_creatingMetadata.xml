@@ -8,7 +8,8 @@
          <titleStmt><!-- Title of the tei document, not title of the scenario -->
             <title>Creation of Metadata scenario</title>
             <author>
-               <persName>Antonio Davide Madonna</persName>
+               <forename>Antonio Davide</forename>
+               <surname> Madonna</surname>
                <affiliation>MIBACT-ICCU</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>

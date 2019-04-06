@@ -8,7 +8,8 @@
          <titleStmt>
             <title>Step "Test for reliability of the scales"</title>
             <author>
-               <persName>Emilie Kraikamp</persName>
+               <forename>Emilie</forename>
+               <surname>Kraikamp</surname>
                <affiliation>DANS</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -42,7 +43,8 @@
                         source="http://tadirah.dariah.eu/"
                         type="activity"/>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero"
                        subtype="tool"
                        target="QP9WMGDS"

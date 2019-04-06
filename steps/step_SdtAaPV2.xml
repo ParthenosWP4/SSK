@@ -10,19 +10,23 @@
             <title>step_SdtAaP_V2.xml</title>
             <sponsor>PARTHENOS</sponsor>
             <author>
-               <persName>Maurizio Sanesi</persName>
+               <forename>Maurizio</forename>
+               <surname>Sanesi</surname>
                <affiliation>SISMEL</affiliation>
             </author>
             <author>
-               <persName>Karolien Verbrugge</persName>
+               <forename>Karolien</forename>
+               <surname>Verbrugge</surname>
                <affiliation>NIOD</affiliation>
             </author>
             <author>
-               <persName>Claus Spiecker</persName>
+               <forename>Claus</forename>
+               <surname>Spiecker</surname>
                <affiliation>FHP</affiliation>
             </author>
             <author>
-               <persName>Roberta Giacomi</persName>
+               <forename>Roberta</forename>
+               <surname>Giacomi</surname>
                <affiliation>SISMEL</affiliation>
             </author>
          </titleStmt>
@@ -56,7 +60,8 @@
                   <term key="TEI" source="standard_list" type="standard"/>
                   <term key="CIDOC-CRM" source="standard_list" type="standard"/>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="TXK2S5FC" type="code"/>
                </linkGrp>
             </event>

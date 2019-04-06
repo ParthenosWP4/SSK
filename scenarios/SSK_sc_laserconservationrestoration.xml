@@ -8,11 +8,13 @@
          <titleStmt>
             <title>"Documenting application of lasers in conservation/restoration" Scenario</title>
             <author>
-               <persName>Marta Castillejo</persName>
+               <forename>Marta</forename>
+               <surname>Castillejo</surname>
                <affiliation>CSIC</affiliation>
             </author>
             <author>
-               <persName>Mikel Sanz</persName>
+               <forename>Mikel</forename>
+               <surname>Sanz</surname>
                <affiliation>CSIC</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>

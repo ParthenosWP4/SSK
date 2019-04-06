@@ -1,85 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario" xml:id="SSK_sc_scholarsStandardsV2">
-  <teiHeader>
-    <fileDesc>
-      <titleStmt>
-        <title>Research standards for scholars</title>
-        <author>
-          <persName>Maurizio Sanesi</persName>
-          <affiliation>SISMEL</affiliation>
-        </author>
-        <author>
-          <persName>Roberta Giacomi</persName>
-          <affiliation>SISMEL</affiliation>
-        </author>
-        <author>
-          <persName>Emiliano Degl'Innocenti</persName>
-          <affiliation>CNR-OVI</affiliation>
-        </author>
-        <author>
-          <persName>Claus Spiecker</persName>
-          <affiliation>FHP</affiliation>
-        </author>
-        <author>
-          <persName>Karolien Verbrugge</persName>
-          <affiliation>NIOD</affiliation>
-        </author>
-        <sponsor>PARTHENOS</sponsor>
-      </titleStmt>
-      <publicationStmt>
-        <authority/>
-        <availability>
-          <licence target="http://creativecommons.org/licenses/by/4.0/">
-            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchScenario"
+     xml:id="SSK_sc_scholarsStandardsV2">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Research standards for scholars</title>
+            <author>
+               <forename>Maurizio</forename>
+               <surname>Sanesi</surname>
+               <affiliation>SISMEL</affiliation>
+            </author>
+            <author>
+               <forename>Roberta</forename>
+               <surname>Giacomi</surname>
+               <affiliation>SISMEL</affiliation>
+            </author>
+            <author>
+               <forename>Emiliano</forename>
+               <surname>Degl'Innocenti</surname>
+               <affiliation>CNR-OVI</affiliation>
+            </author>
+            <author>
+               <forename>Claus</forename>
+               <surname>Spiecker</surname>
+               <affiliation>FHP</affiliation>
+            </author>
+            <author>
+               <forename>Karolien</forename>
+               <surname>Verbrugge</surname>
+               <affiliation>NIOD</affiliation>
+            </author>
+            <sponsor>PARTHENOS</sponsor>
+         </titleStmt>
+         <publicationStmt>
+            <authority/>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
               document.</p>
-          </licence>
-        </availability>
-      </publicationStmt>
-      <sourceDesc>
-        <p>Created from scratch</p>
-      </sourceDesc>
-    </fileDesc>
-    <revisionDesc>
-      <change>V2 on <date when="2018-02-21">February 21st 2018</date>, edited by Maurizio Sanesi and
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change>V2 on <date when="2018-02-21">February 21st 2018</date>, edited by Maurizio Sanesi and
         Roberta Giacomi, SISMEL: formal updates on title, description, links and resources.</change>
-    </revisionDesc>
-  </teiHeader>
-  <text>
-    <body>
-      <div type="scenario">
-        <head type="scenarioTitle" xml:lang="en">Research standards for scholars</head>
-        <desc type="definition" xml:lang="en">In medieval studies, it is often needed to define in
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div type="scenario">
+            <head type="scenarioTitle" xml:lang="en">Research standards for scholars</head>
+            <desc type="definition" xml:lang="en">In medieval studies, it is often needed to define in
           an unambiguous way information like person names (i.e.: authors), titles of works and
           documents identifiers (i.e.: shelfmarks). In fact, information can frequently be
           ambiguous: there are several cases of homonimy; an author can have more than one
           appellation known; the title of a work can have different forms, and also shelfmarks may
           have different structures. The quantity of material involved in the research and the time
           employed to perform it may vary depending on the subject of the research itself.</desc>
-        <desc type="terms" xml:lang="en">
-          <term key="History" source="aurehal" type="discipline">History</term>
-          <term key="Metadata" source="tadirah" type="objects"/>
-          <term key="Bibliographic Listings" source="tadirah" type="objects"/>
-          <term key="Persons" source="tadirah" type="objects"/>
-        </desc>
-        <figure type="image">
-          <head/>
-          <graphic url="https://c1.staticflickr.com/1/107/306564541_5249a67f89_b.jpg"/>
-          <figDesc/>
-        </figure>
-        <listEvent>
-          <event ref="step_DtrTaTGaCBV2" type="researchStep" xml:id="s1"/>
-          <event ref="step_SDtatRfCV2" type="researchStep" xml:id="s2"/>
-          <event ref="step_CaSARDCooCwDwbsV2" type="researchStep" xml:id="s3"/>
-          <event ref="step_atGPaLRV2" type="researchStep" xml:id="s4"/>
-          <event ref="step_CSatSRV2" type="researchStep" xml:id="s5"/>
-          <event ref="step_AoSV2" type="researchStep" xml:id="s6"/>
-          <event ref="step_StRV2" type="researchStep" xml:id="s7"/>
-          <event ref="step_ItDV2" type="researchStep" xml:id="s8"/>
-          <event ref="step_SdtAaPV2" type="researchStep" xml:id="s9"/>
-          <event ref="step_EttrLPaAV2" type="researchStep" xml:id="s10"/>
-        </listEvent>
-      </div>
-    </body>
-  </text>
+            <desc type="terms" xml:lang="en">
+               <term key="History" source="aurehal" type="discipline">History</term>
+               <term key="Metadata" source="tadirah" type="objects"/>
+               <term key="Bibliographic Listings" source="tadirah" type="objects"/>
+               <term key="Persons" source="tadirah" type="objects"/>
+            </desc>
+            <figure type="image">
+               <head/>
+               <graphic url="https://c1.staticflickr.com/1/107/306564541_5249a67f89_b.jpg"/>
+               <figDesc/>
+            </figure>
+            <listEvent>
+               <event ref="step_DtrTaTGaCBV2" type="researchStep" xml:id="s1"/>
+               <event ref="step_SDtatRfCV2" type="researchStep" xml:id="s2"/>
+               <event ref="step_CaSARDCooCwDwbsV2" type="researchStep" xml:id="s3"/>
+               <event ref="step_atGPaLRV2" type="researchStep" xml:id="s4"/>
+               <event ref="step_CSatSRV2" type="researchStep" xml:id="s5"/>
+               <event ref="step_AoSV2" type="researchStep" xml:id="s6"/>
+               <event ref="step_StRV2" type="researchStep" xml:id="s7"/>
+               <event ref="step_ItDV2" type="researchStep" xml:id="s8"/>
+               <event ref="step_SdtAaPV2" type="researchStep" xml:id="s9"/>
+               <event ref="step_EttrLPaAV2" type="researchStep" xml:id="s10"/>
+            </listEvent>
+         </div>
+      </body>
+   </text>
 </TEI>

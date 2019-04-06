@@ -8,7 +8,8 @@
          <titleStmt><!-- Title of the tei document, not title of the scenario -->
             <title>Digitization scenario</title>
             <author>
-               <persName>Frank Uiterwaal</persName>
+               <forename>Frank</forename>
+               <surname>Uiterwaal</surname>
                <affiliation>NIOD-KNAW</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>

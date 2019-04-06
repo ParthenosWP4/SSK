@@ -8,19 +8,23 @@
          <titleStmt>
             <title>step_CaeEotSW.xml</title>
             <author>
-               <persName>Maurizio Sanesi</persName>
+               <forename>Maurizio</forename>
+               <surname>Sanesi</surname>
                <affiliation>SISMEL</affiliation>
             </author>
             <author>
-               <persName>Karolien Verbrugge</persName>
+               <forename>Karolien</forename>
+               <surname>Verbrugge</surname>
                <affiliation>NIOD</affiliation>
             </author>
             <author>
-               <persName>Claus Spiecker</persName>
+               <forename>Claus</forename>
+               <surname>Spiecker</surname>
                <affiliation>FHP</affiliation>
             </author>
             <author>
-               <persName>Roberta Giacomi</persName>
+               <forename>Roberta</forename>
+               <surname>Giacomi</surname>
                <affiliation>SISMEL</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -56,18 +60,15 @@
                   <term key="gathering" source="http://tadirah.dariah.eu/" type="activity"/>
                   <!--<term key="CD" source="WP3Wizard" type="policies"/>-->
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="6ZFUTU53" type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
-                  <ref source="zotero"
-                       target="Q4W9D8YV"
-                       type="code">
+                  <ref source="zotero" target="Q4W9D8YV" type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
-                  <ref source="zotero"
-                       target="CK74XUJB"
-                       type="code">
+                  <ref source="zotero" target="CK74XUJB" type="code">
                      <term key="discovering" source="tadirah" type="activity"/>
                   </ref>
                   <ref source="zotero" target="KJLKJT69" type="code">

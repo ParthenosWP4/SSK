@@ -1,92 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_OCR_LA">
-  <teiHeader>
-    <fileDesc>
-      <titleStmt>
-        <title>step "Create manual transcriptions"</title>
-        <author>
-          <persName>Saranya Balasubramanian</persName>
-          <affiliation>OEAW-ACDH</affiliation>
-        </author>
-        <author>
-          <persName>Peter Catrie</persName>
-          <affiliation>Koninklijke Bibliotheek van België</affiliation>
-        </author>
-        <author>
-          <persName>Dario Kampkaspar</persName>
-          <affiliation>OEAW-ACDH</affiliation>
-        </author>
-        <author>
-          <persName>Tomasz Parkoła</persName>
-          <affiliation> Poznańskie Centrum Superkomputerowo-Sieciowe, Poznań</affiliation>
-        </author>
-        <author>
-          <persName>Charles Riondet</persName>
-          <affiliation>Inria</affiliation>
-        </author>
-        <author>
-          <persName>Pavel Stranak</persName>
-          <affiliation>Institute of Formal and Applied Linguistics, Charles University</affiliation>
-        </author>
-        <author>
-          <persName>Daniel Schopper</persName>
-          <affiliation>OEAW-ACDH</affiliation>
-        </author>
-        <sponsor/>
-      </titleStmt>
-      <publicationStmt>
-        <authority/>
-        <availability>
-          <licence target="http://creativecommons.org/licenses/by/4.0/">
-            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="researchStep"
+     xml:id="step_OCR_LA">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>step "Create manual transcriptions"</title>
+            <author>
+               <forename>Saranya</forename>
+               <surname>Balasubramanian</surname>
+               <affiliation>OEAW-ACDH</affiliation>
+            </author>
+            <author>
+               <forename>Peter</forename>
+               <surname>Catrie</surname>
+               <affiliation>Koninklijke Bibliotheek van België</affiliation>
+            </author>
+            <author>
+               <forename>Dario</forename>
+               <surname>Kampkaspar</surname>
+               <affiliation>OEAW-ACDH</affiliation>
+            </author>
+            <author>
+               <forename>Tomasz</forename>
+               <surname>Parkoła</surname>
+               <affiliation> Poznańskie Centrum Superkomputerowo-Sieciowe, Poznań</affiliation>
+            </author>
+            <author>
+               <forename>Charles</forename>
+               <surname>Riondet</surname>
+               <affiliation>Inria</affiliation>
+            </author>
+            <author>
+               <forename>Pavel</forename>
+               <surname>Stranak</surname>
+               <affiliation>Institute of Formal and Applied Linguistics, Charles University</affiliation>
+            </author>
+            <author>
+               <forename>Daniel</forename>
+               <surname>Schopper</surname>
+               <affiliation>OEAW-ACDH</affiliation>
+            </author>
+            <sponsor/>
+         </titleStmt>
+         <publicationStmt>
+            <authority/>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/">
+                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
               document.</p>
-          </licence>
-        </availability>
-      </publicationStmt>
-      <sourceDesc>
-        <p>Created from scratch</p>
-      </sourceDesc>
-    </fileDesc>
-    <revisionDesc>
-      <change/>
-    </revisionDesc>
-  </teiHeader>
-  <text>
-    <body>
-      <listEvent>
-        <event type="researchStep">
-          <head type="stepTitle" xml:lang="en">Create manual transcriptions</head>
-          <desc type="definition" xml:lang="en"><p>In case all existing engine give poor results or
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created from scratch</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head type="stepTitle" xml:lang="en">Create manual transcriptions</head>
+               <desc type="definition" xml:lang="en">
+                  <p>In case all existing engine give poor results or
               if the desired textual representation is very specific, one has to create his/her own
               training model or adapt an existing one. For this, one needs a number of manually
               transcribed pages: the larger part is used as the training set for an OCR/HTR engine;
               a smaller one is used to evaluate the result of the trained model.</p>
-            <p>Such transcriptions can be obtained by several ways: It can be produced internally by
+                  <p>Such transcriptions can be obtained by several ways: It can be produced internally by
               the project, it could be outsourced to a contractor, or it could be produced by
               volunteers. </p>
-            <p>Caveats: <list>
-                <item>Take care of the character encoding </item>
-                <item>It can be good practice to test 2 engines and merge models (but be careful at
+                  <p>Caveats: <list>
+                        <item>Take care of the character encoding </item>
+                        <item>It can be good practice to test 2 engines and merge models (but be careful at
                   the overfitting problem).</item>
-                <item> Printed material: No need of a lot of training data (random 5 to 10
+                        <item> Printed material: No need of a lot of training data (random 5 to 10
                   pages)</item>
-              </list></p></desc>
-          <desc xml:lang="en" type="terms">
-            <term key="Structural analysis" source="Tadirah" type="activity"/>
-          </desc>
-          <linkGrp type="generalResources"
-            xml:base="www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-            <ref type="blog" source="zotero" target="65P89WFY"/>
-            <ref type="tool" source="zotero" target="AXUG7M5U"/>
-            <ref type="tool" source="zotero" target="84QS7VAH"/>
-            <ref type="spec" source="zotero" target="G2424957"/>
-            <ref type="tool" source="zotero" target="UDT4IKHJ"/>
-            <ref type="service" source="zotero" target="PFSA54IM"/>
-            <ref type="service" source="zotero" target="SIWRJ5U8"/>
-          </linkGrp>
-        </event>
-      </listEvent>
-    </body>
-  </text>
+                     </list>
+                  </p>
+               </desc>
+               <desc xml:lang="en" type="terms">
+                  <term key="Structural analysis" source="Tadirah" type="activity"/>
+               </desc>
+               <linkGrp type="generalResources"
+                        xml:base="www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+                  <ref type="blog" source="zotero" target="65P89WFY"/>
+                  <ref type="tool" source="zotero" target="AXUG7M5U"/>
+                  <ref type="tool" source="zotero" target="84QS7VAH"/>
+                  <ref type="spec" source="zotero" target="G2424957"/>
+                  <ref type="tool" source="zotero" target="UDT4IKHJ"/>
+                  <ref type="service" source="zotero" target="PFSA54IM"/>
+                  <ref type="service" source="zotero" target="SIWRJ5U8"/>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
 </TEI>

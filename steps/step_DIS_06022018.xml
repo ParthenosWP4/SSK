@@ -8,11 +8,13 @@
          <titleStmt>
             <title>Step "Define imaging specifications"</title>
             <author>
-               <persName>Frank Uiterwaal</persName>
+               <forename>Frank</forename>
+               <surname>Uiterwaal</surname>
                <affiliation>NIOD-KNAW</affiliation>
             </author>
             <author>
-               <persName>Tomasz Parkoła</persName>
+               <forename>Tomasz</forename>
+               <surname>Parkoła</surname>
                <affiliation> Poznańskie Centrum Superkomputerowo-Sieciowe, Poznań</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -48,7 +50,8 @@
                   <term key="Scanning" source="TaDiRAH" type="technique"/>
                   <term key="Imaging" source="TaDiRAH" type="activity"/>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="TFPF76UC" type="Report"/>
                   <ref source="zotero" target="6P5YQT83" type="report"/>
                   <ref source="zotero" target="PS7GDIM4" type="report"/>

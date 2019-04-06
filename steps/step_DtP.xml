@@ -8,15 +8,18 @@
          <titleStmt>
             <title>step "Describe the project"</title>
             <author>
-               <persName>Sophia Sotiropoulou</persName>
+               <forename>Sophia</forename>
+               <surname>Sotiropoulou</surname>
                <affiliation>IESL-FORTH</affiliation>
             </author>
             <author>
-               <persName>Panayiotis Siozos</persName>
+               <forename>Panayiotis</forename>
+               <surname>Siozos</surname>
                <affiliation>IESL-FORTH</affiliation>
             </author>
             <author>
-               <persName>Demetrios Anglos</persName>
+               <forename>Demetrios</forename>
+               <surname>Anglos</surname>
                <affiliation>IESL-FORTH</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -73,7 +76,8 @@
                   <term key="CIDOC-CRM" source="standard_list" type="standard"/>
                   <term key="CIDOC-CRMsci" source="standard_list" type="standard"/>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="tutorial" source="zotero" target="PPBE9G8U"/>
                   <ref type="documentation" source="zotero" target="5FHQ64PA"/>
                   <ref type="documentation" source="zotero" target="H7E6FFMP"/>

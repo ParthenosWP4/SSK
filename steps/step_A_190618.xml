@@ -8,31 +8,38 @@
          <titleStmt>
             <title>Step "Archive"</title>
             <author>
-               <persName>Sarah Tournon-Valiente</persName>
+               <forename>Sarah</forename>
+               <surname>Tournon-Valiente</surname>
                <affiliation>3D-SHS Huma-Num's consortium</affiliation>
             </author>
             <author>
-               <persName>Mehdi Chayani</persName>
+               <forename>Mehdi</forename>
+               <surname>Chayani</surname>
                <affiliation>3D-SHS Huma-Num's consortium</affiliation>
             </author>
             <author>
-               <persName>Valentin Grimaud</persName>
+               <forename>Valentin</forename>
+               <surname>Grimaud</surname>
                <affiliation>3D-SHS Huma-Num's consortium</affiliation>
             </author>
             <author>
-               <persName>Xavier Granier</persName>
+               <forename>Xavier</forename>
+               <surname>Granier</surname>
                <affiliation>3D-SHS Huma-Num's consortium</affiliation>
             </author>
             <author>
-               <persName>Hélène Gautier</persName>
+               <forename>Hélène</forename>
+               <surname>Gautier</surname>
                <affiliation>Huma-Num/CNRS</affiliation>
             </author>
             <author>
-               <persName>Adeline Joffres</persName>
+               <forename>Adeline</forename>
+               <surname>Joffres</surname>
                <affiliation>Huma-Num/CNRS</affiliation>
             </author>
             <author>
-               <persName>Paulin Ribbe</persName>
+               <forename>Paulin</forename>
+               <surname>Ribbe</surname>
                <affiliation>Huma-Num/CNRS</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -67,9 +74,10 @@
                         source="http://tadirah.dariah.eu/"
                         key="http://tadirah.dariah.eu/vocab/index.php?tema=38#x26;/archiving"/>
                </desc>
-               <linkGrp type="projectResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="projectResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                         source="CINES"
-                        corresp="https://www.cines.fr/">
+                        corresp="https://www.cines.fr/"&gt;
                   <ref type="webpage" target="GTKRM6WS"/>
                </linkGrp>
             </event>

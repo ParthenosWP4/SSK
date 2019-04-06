@@ -8,11 +8,13 @@
          <titleStmt>
             <title>Step "Keep access to the report"</title>
             <author>
-               <persName>Marta Castillejo</persName>
+               <forename>Marta</forename>
+               <surname>Castillejo</surname>
                <affiliation>CSIC</affiliation>
             </author>
             <author>
-               <persName>Mikel Sanz</persName>
+               <forename>Mikel</forename>
+               <surname>Sanz</surname>
                <affiliation>CSIC</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -43,7 +45,8 @@
                <desc type="terms" xml:lang="en">
                   <term key="Archiving" source="tadirah" type="activity"/>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero"
                        subtype="website"
                        target="TXK2S5FC"

@@ -8,11 +8,13 @@
          <titleStmt>
             <title>Step "Select and digitize"</title>
             <author>
-               <persName>Hélène Gautier</persName>
+               <forename>Hélène</forename>
+               <surname>Gautier</surname>
                <affiliation>Huma-Num/CNRS</affiliation>
             </author>
             <author>
-               <persName>Marie Puren</persName>
+               <forename>Marie</forename>
+               <surname>Puren</surname>
                <affiliation>INRIA</affiliation>
             </author>
             <sponsor>PARTHENOS</sponsor>
@@ -53,7 +55,8 @@
                         source="http://tadirah.dariah.eu/"
                         type="activity"/>
                </desc>
-               <linkGrp type="generalResources" xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="IHKLZ4WH" type="tutorial"/>
                   <ref source="zotero" target="XL3PBJSK" type="software">
                      <term key="JPYLYZER" type="software"/>
