@@ -1,9 +1,9 @@
 This website is published by:
 
-Inria de Paris
-2 rue Simone Iff
-CS 42112
-75589 Paris Cedex 12
+Inria de Paris  
+2 rue Simone Iff  
+CS 42112  
+75589 Paris Cedex 12  
 Tél. : (+33) 01 80 49 40 00
 
 This website contains links to third party websites (“external links”). The respective site operator is liable for the content of such websites.
