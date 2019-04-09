@@ -1,4 +1,4 @@
-Terms of use
+# Terms of use
 
 1. Browsing & reading the SSK
 
