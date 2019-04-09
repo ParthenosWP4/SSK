@@ -14,7 +14,7 @@ Except where otherwise noted, content on this site is licensed under a Creative 
 The full version of the license can be found at the following address
 https://creativecommons.org/licenses/by/4.0/legalcode. Reproduction is authorized, provided the source is acknowledged, save where otherwise stated. Where prior permission must be obtained for the reproduction or use of textual and multimedia information (sound, images, software etc.) such permission shall cancel the above mentioned general permission.
 
-Privacy and Data
+# Privacy and Data
 
 All content published on the SSK must comply with the provisions of Intellectual Property rules and legislation.
 If the publication has several authors, the contributor must obtain consent from all authors.
@@ -25,7 +25,7 @@ If you chose to send us information it will be used for the purpose described. W
 
 If you wish to access, edit or delete your personal data please contact us using one of these methods.
 
-Information collected automatically
+# Information collected automatically
 
 This website uses cookies. To understand how the SSK uses cookies, please visit the dedicated page.
 To enrich our website content, The SSK  may embed video content from other social media websites such as YouTube, Flickr and Twitter. As a result, when you visit a page with content embedded, you may be presented with cookies from these websites. The SSK has no control or liability over these cookies set, so you should check the relevant third party’s cookie policy for more information.
