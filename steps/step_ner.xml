@@ -63,7 +63,7 @@
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref type="software" source="zotero" target="RX7BRGK8"><!-- Stanford Named Entity Recognizer (NER) -->
+                  <ref type="tool" source="zotero" target="RX7BRGK8"><!-- Stanford Named Entity Recognizer (NER) -->
                      <term type="software" key="Stanford NER"/>
                   </ref>
                </linkGrp>

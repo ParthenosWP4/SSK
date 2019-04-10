@@ -75,7 +75,7 @@
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref type="software" source="zotero" target="K3LB6TK5"><!-- Unitok tokenizer tool  -->
+                  <ref type="tool" source="zotero" target="K3LB6TK5"><!-- Unitok tokenizer tool  -->
                      <term type="software" key="Unitok"/>
                   </ref>
                </linkGrp>

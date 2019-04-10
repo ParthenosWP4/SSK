@@ -68,7 +68,7 @@
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref type="software" source="zotero" target="PDEZULGR"><!-- WebLicht main page -->
+                  <ref type="tool" source="zotero" target="PDEZULGR"><!-- WebLicht main page -->
                      <term type="software" key="WebLicht"/>
                   </ref>
                   <ref type="documentation" source="zotero" target="HNU9RXFC"><!-- WebLicht documentation -->
@@ -80,26 +80,26 @@
                   <ref type="documentation" source="zotero" target="HNU9RXFC"><!-- WebLicht documentation -->
                      <term type="software" key="WebLicht"/>
                   </ref>
-                  <ref type="software" source="zotero" target="7HN4C98S"><!-- WebAnno -->
+                  <ref type="tool" source="zotero" target="7HN4C98S"><!-- WebAnno -->
                      <term type="software" key="WebAnno"/>
                   </ref>
-                  <ref type="software" source="zotero" target="IA92LHEW"><!-- OpenNLP -->
+                  <ref type="tool" source="zotero" target="IA92LHEW"><!-- OpenNLP -->
                      <term type="software" key="OpenNLP"/>
                   </ref>
-                  <ref type="software" source="zotero" target="AB2FM77V"><!-- Stanford NLP Software -->
+                  <ref type="tool" source="zotero" target="AB2FM77V"><!-- Stanford NLP Software -->
                      <term type="software" key="StanfordNLP"/>
                      <term type="activity" key="tokenize"/>
                   </ref>
-                  <ref type="software" source="zotero" target="MN5XVQ82"><!-- TreeTagger -->
+                  <ref type="tool" source="zotero" target="MN5XVQ82"><!-- TreeTagger -->
                      <term type="software" key="TreeTagger"/>
                   </ref>
-                  <ref type="software" source="zotero" target="W95ELYYT"><!-- Apache Stanbol -->
+                  <ref type="tool" source="zotero" target="W95ELYYT"><!-- Apache Stanbol -->
                      <term type="software" key="Apache Stanbol"/>
                   </ref>
-                  <ref type="software" source="zotero" target="V44YQVT3"><!-- Babelfy -->
+                  <ref type="tool" source="zotero" target="V44YQVT3"><!-- Babelfy -->
                      <term type="software" key="Babelfy"/>
                   </ref>
-                  <ref type="software" source="zotero" target="A5NVUWZB"><!-- TEI-TCF encoder/decoder -->
+                  <ref type="tool" source="zotero" target="A5NVUWZB"><!-- TEI-TCF encoder/decoder -->
                      <term type="software" key="TEI-TCF encoder+decoder"/>
                   </ref>
                </linkGrp>

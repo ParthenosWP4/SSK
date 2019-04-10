@@ -67,16 +67,16 @@
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref type="software" source="zotero" target="QWC72FYG"><!-- German tagset -->
+                  <ref type="tool" source="zotero" target="QWC72FYG"><!-- German tagset -->
                      <term type="standards" key="tagset"/>
                   </ref>
-                  <ref type="software" source="zotero" target="WU7J6X5E"><!-- Universal dependencies -->
+                  <ref type="tool" source="zotero" target="WU7J6X5E"><!-- Universal dependencies -->
                      <term type="standards" key="tagset"/>
                   </ref>
-                  <ref type="software" source="zotero" target="78U8XZ2L"><!-- OLiA ontologies -->
+                  <ref type="tool" source="zotero" target="78U8XZ2L"><!-- OLiA ontologies -->
                      <term type="standards" key="tagset"/>
                   </ref>
-                  <ref type="software" source="zotero" target="MN5XVQ82"><!-- TreeTagger -->
+                  <ref type="tool" source="zotero" target="MN5XVQ82"><!-- TreeTagger -->
                      <term type="software" key="TreeTagger"/>
                   </ref>
                </linkGrp>

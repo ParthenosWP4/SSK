@@ -58,7 +58,7 @@
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref source="zotero" target="3FSG8F5I" type="software">
+                  <ref source="zotero" target="3FSG8F5I" type="tool">
                      <term key="Sibelius" type="software"/>
                   </ref>
                   <ref source="zotero"

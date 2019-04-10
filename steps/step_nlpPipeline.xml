@@ -62,19 +62,19 @@
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref type="software" source="zotero" target="PDEZULGR"><!-- WebLicht main page -->
+                  <ref type="tool" source="zotero" target="PDEZULGR"><!-- WebLicht main page -->
                      <term type="software" key="WebLicht"/>
                   </ref>
                   <ref type="documentation" source="zotero" target="HNU9RXFC"><!-- WebLicht documentation -->
                      <term type="software" key="WebLicht"/>
                   </ref>
-                  <ref type="software" source="zotero" target="DGP8ELW7"><!--NLTK book  -->
+                  <ref type="tool" source="zotero" target="DGP8ELW7"><!--NLTK book  -->
                      <term type="software" key="nltk"/>
                   </ref>
-                  <ref type="software" source="zotero" target="IA92LHEW"><!-- OpenNLP -->
+                  <ref type="tool" source="zotero" target="IA92LHEW"><!-- OpenNLP -->
                      <term type="software" key="OpenNLP"/>
                   </ref>
-                  <ref type="software" source="zotero" target="AB2FM77V"><!-- Stanford NLP Software -->
+                  <ref type="tool" source="zotero" target="AB2FM77V"><!-- Stanford NLP Software -->
                      <term type="software" key="StanfordNLP"/>
                      <term type="activity" key="tokenize"/>
                   </ref>

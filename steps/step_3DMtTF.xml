@@ -87,14 +87,14 @@
                   <ref type="specification" source="zotero" target="Q4X9D4BE"/>
                   <ref type="schema" source="zotero" target="GHCATCKH"/>
                   <ref type="code" source="zotero" target="XRZPJFHZ"/>
-                  <ref type="software" source="zotero" target="5VFZT97E"/>
+                  <ref type="tool" source="zotero" target="5VFZT97E"/>
                   <ref type="tutorial" source="zotero" target="CNRNDTHT"/>
-                  <ref type="software" source="zotero" target="7AJRIVK2"/>
-                  <ref type="software" source="zotero" target="STRB2DF6"/>
+                  <ref type="tool" source="zotero" target="7AJRIVK2"/>
+                  <ref type="tool" source="zotero" target="STRB2DF6"/>
                   <ref type="tutorial" source="zotero" target="KFMG7ZCJ"/>
                   <ref type="documentation" source="zotero" target="PVBAFNXD"/>
                   <ref type="tutorial" source="zotero" target="APJZFC4T"/>
-                  <ref type="software" source="zotero" target="S8F3BTAK"/>
+                  <ref type="tool" source="zotero" target="S8F3BTAK"/>
                </linkGrp>
             </event>
          </listEvent>

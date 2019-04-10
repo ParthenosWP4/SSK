@@ -71,25 +71,25 @@
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref type="software" source="zotero" target="XAXD7Z22"/>
+                  <ref type="tool" source="zotero" target="XAXD7Z22"/>
                   <ref type="report" source="zotero" target="JQA2HGXG"/>
-                  <ref type="software" source="zotero" target="7J6J9IZH"/>
+                  <ref type="tool" source="zotero" target="7J6J9IZH"/>
                   <ref type="schema" source="zotero" target="GHCATCKH"/>
                   <ref type="code" source="zotero" target="98CMING2"/>
                   <ref type="documentation" source="zotero" target="KZN9DQ6Q"/>
-                  <ref type="software" source="zotero" target="U4TTVKXP"/>
+                  <ref type="tool" source="zotero" target="U4TTVKXP"/>
                   <ref type="code" source="zotero" target="9BF6VQVC"/>
-                  <ref type="software" source="zotero" target="5PSV9FWV"/>
+                  <ref type="tool" source="zotero" target="5PSV9FWV"/>
                   <ref type="tutorial" source="zotero" target="KNVRK8JQ"/>
-                  <ref type="software" source="zotero" target="SG86ZG5J"/>
+                  <ref type="tool" source="zotero" target="SG86ZG5J"/>
                   <ref type="code" source="zotero" target="R379NADX"/>
                   <ref type="tutorial" source="zotero" target="7R4HUMWW"/>
-                  <ref type="software" source="zotero" target="F7KKR7AC"/>
+                  <ref type="tool" source="zotero" target="F7KKR7AC"/>
                   <ref type="tutorial" source="zotero" target="ZU2I66ZC"/>
                   <ref type="documentation" source="zotero" target="CJN4JFQZ"/>
                   <ref type="tutorial" source="zotero" target="7WNAUFET"/>
                   <ref type="documentation" source="zotero" target="K3PHQ886"/>
-                  <ref type="software" source="zotero" target="JFGFXQAW"/>
+                  <ref type="tool" source="zotero" target="JFGFXQAW"/>
                </linkGrp>
             </event>
          </listEvent>

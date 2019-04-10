@@ -67,10 +67,10 @@
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref type="software" source="zotero" target="7HN4C98S"><!-- WebAnno -->
+                  <ref type="tool" source="zotero" target="7HN4C98S"><!-- WebAnno -->
                      <term type="software" key="WebAnno"/>
                   </ref>
-                  <ref type="software" source="zotero" target="WP9W6AM2"><!-- tokenEditor@ACDH -->
+                  <ref type="tool" source="zotero" target="WP9W6AM2"><!-- tokenEditor@ACDH -->
                      <term type="software" key="tokeneditor"/>
                      <term type="activity" key="annotation"/>
                   </ref>

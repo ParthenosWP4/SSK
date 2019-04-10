@@ -58,7 +58,7 @@
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="IHKLZ4WH" type="tutorial"/>
-                  <ref source="zotero" target="XL3PBJSK" type="software">
+                  <ref source="zotero" target="XL3PBJSK" type="tool">
                      <term key="JPYLYZER" type="software"/>
                   </ref>
                   <ref source="zotero" target="RTEB2B2G" type="service"/>
