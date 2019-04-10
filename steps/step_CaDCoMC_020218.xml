@@ -71,9 +71,8 @@
                      <term key="Sibelius" type="software"/>
                   </ref>
                   <ref source="zotero"
-                       subtype="standard"
                        target="983UF5N4"
-                       type="documentation">
+                       type="spec">
                      <term key="MEI" source="standard_list" type="standard"/>
                   </ref>
                   <ref source="zotero"
@@ -82,8 +81,8 @@
                        type="schema">
                      <term key="MEI" source="standard_list" type="standard"/>
                   </ref>
-                  <ref source="zotero" target="B9DPXFQJ" type="documentation"/>
-                  <ref source="zotero" target="8BI9QW2M" type="documentation"/>
+                  <ref source="zotero" target="B9DPXFQJ" type="tool"/>
+                  <ref source="zotero" target="8BI9QW2M" type="tool"/>
                   <ref source="zotero" target="TIFHEC4R" type="tutorial"/>
                </linkGrp>
             </event>

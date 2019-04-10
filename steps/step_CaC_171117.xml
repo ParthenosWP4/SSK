@@ -60,10 +60,10 @@
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref source="zotero" target="XPDZH8WZ" type="official_documentation">
+                  <ref source="zotero" target="XPDZH8WZ" type="spec">
                      <term key="EAD" type="official_documentation"/>
                   </ref>
-                  <ref source="zotero" target="2Z29AVQV" type="official_documentation">
+                  <ref source="zotero" target="2Z29AVQV" type="spec">
                      <term key="EAD" type="standard"/>
                   </ref>
                </linkGrp>

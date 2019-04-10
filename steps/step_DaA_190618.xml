@@ -79,8 +79,8 @@
                   <ref type="specification" source="zotero" target="97VDSZVB">
                      <term type="standards" source="standard_list" key="EDM"/>
                   </ref>
-                  <ref type="documentation" source="zotero" target="G3ADKTMA"/>
-                  <ref type="documentation" source="zotero" target="NP8RA6PN">
+                  <ref type="tool" source="zotero" target="G3ADKTMA"/>
+                  <ref type="spec" source="zotero" target="NP8RA6PN">
                      <term type="standards" source="standard_list" key="CIDOC-CRM"/>
                   </ref>
                   <ref type="specification" source="zotero" target="5FHQ64PA">
@@ -93,10 +93,10 @@
                   <ref type="schema" source="zotero" target="FTCDGHB2">
                      <term type="standards" source="standard_list" key="LIDO"/>
                   </ref>
-                  <ref type="documentation" source="zotero" target="CQ4VK4MZ">
+                  <ref type="spec" source="zotero" target="CQ4VK4MZ">
                      <term type="standards" source="standard_list" key="METS"/>
                   </ref>
-                  <ref type="documentation" source="zotero" target="G23PVP4B">
+                  <ref type="spec" source="zotero" target="G23PVP4B">
                      <term type="standards" source="standard_list" key="METS"/>
                   </ref>
                   <ref type="schema" source="zotero" target="IE7HE58F">

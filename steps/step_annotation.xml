@@ -71,13 +71,10 @@
                   <ref type="tool" source="zotero" target="PDEZULGR"><!-- WebLicht main page -->
                      <term type="software" key="WebLicht"/>
                   </ref>
-                  <ref type="documentation" source="zotero" target="HNU9RXFC"><!-- WebLicht documentation -->
+                  <ref type="tool" source="zotero" target="HNU9RXFC"><!-- WebLicht documentation -->
                      <term type="software" key="WebLicht"/>
                   </ref>
                   <ref type="standard" source="zotero" target="IHWJQT9N"><!-- WebLicht TCF format -->
-                     <term type="software" key="WebLicht"/>
-                  </ref>
-                  <ref type="documentation" source="zotero" target="HNU9RXFC"><!-- WebLicht documentation -->
                      <term type="software" key="WebLicht"/>
                   </ref>
                   <ref type="tool" source="zotero" target="7HN4C98S"><!-- WebAnno -->

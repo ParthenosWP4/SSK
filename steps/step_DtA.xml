@@ -75,10 +75,10 @@
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="tutorial" source="zotero" target="PPBE9G8U"/>
-                  <ref type="documentation" source="zotero" target="5FHQ64PA"/>
-                  <ref type="documentation" source="zotero" target="6A3YJDRQ"/>
-                  <ref type="documentation" source="zotero" target="H7E6FFMP"/>
-                  <ref type="documentation" source="zotero" target="Q7ZV9XLK"/>
+                  <ref type="spec" source="zotero" target="5FHQ64PA"/>
+                  <ref type="spec" source="zotero" target="6A3YJDRQ"/>
+                  <ref type="spec" source="zotero" target="H7E6FFMP"/>
+                  <ref type="spec" source="zotero" target="Q7ZV9XLK"/>
                </linkGrp>
             </event>
          </listEvent>

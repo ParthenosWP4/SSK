@@ -50,21 +50,13 @@
                   <ref source="zotero"
                        subtype="standard"
                        target="2A578PYX"
-                       type="specification">
-                     <term key="Metadata" source="standard_list" type="standard"/>
-                  </ref>
+                       type="specification"/>
                   <ref source="zotero"
-                       subtype="standard"
                        target="JXWHSBPE"
-                       type="documentation">
-                     <term key="Metadata" source="standard_list" type="standard"/>
-                  </ref>
+                       type="paper"/>
                   <ref source="zotero"
-                       subtype="standard"
                        target="V2T2YJLL"
-                       type="documentation">
-                     <term key="Metadata" source="standard_list" type="standard"/>
-                  </ref>
+                       type="tutorial"/>
                </linkGrp>
             </event>
          </listEvent>

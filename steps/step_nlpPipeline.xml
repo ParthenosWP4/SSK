@@ -65,9 +65,7 @@
                   <ref type="tool" source="zotero" target="PDEZULGR"><!-- WebLicht main page -->
                      <term type="software" key="WebLicht"/>
                   </ref>
-                  <ref type="documentation" source="zotero" target="HNU9RXFC"><!-- WebLicht documentation -->
-                     <term type="software" key="WebLicht"/>
-                  </ref>
+                  <ref type="tool" source="zotero" target="HNU9RXFC"/>
                   <ref type="tool" source="zotero" target="DGP8ELW7"><!--NLTK book  -->
                      <term type="software" key="nltk"/>
                   </ref>
