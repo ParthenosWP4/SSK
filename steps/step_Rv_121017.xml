@@ -41,44 +41,42 @@
       for occupations in the 19th and 20th century, and for contemporary occupations by using the
       HISCO occupational coding scheme</desc>
                <desc type="term" xml:lang="en">
-                  <term key="HISCO" source="standard_list" type="standard"/>
-                  <term key="ISCO" source="standard_list" type="standard"/>
+                  <term key="HISCO" source="standard" type="standard"/>
+                  <term key="ISCO" source="standard" type="standard"/>
                   <term key="http://tadirah.dariah.eu/vocab/index.php?tema=34&amp;/contextualizing"
                         source="http://tadirah.dariah.eu/"
                         type="activity"/>
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref source="zotero"
-                       subtype="standard"
+                  <ref source="zotero"                       
                        target="S6AKYT7L"
                        type="spec">
-                     <term key="HISCO" source="standard_list" type="standard"/>
+                     <term key="HISCO" source="standard" type="standard"/>
                   </ref>
                   <ref source="zotero"
-                       subtype="standard"
                        target="MDBMD762"
-                       type="webpage">
-                     <term key="HISCO" source="standard_list" type="standard"/>
+                       type="database">
+                     <term key="HISCO" source="standard" type="standard"/>
                   </ref>
                   <ref source="zotero"
                        subtype="standard"
                        target="Y9J5QM7B"
-                       type="webpage">
-                     <term key="ISCO" source="standard_list" type="standard"/>
+                       type="spec">
+                     <term key="ISCO" source="standard" type="standard"/>
                   </ref>
                </linkGrp>
                <linkGrp corresp="http://historyofwork.iisg.nl/"
                         source="History of Work Information System"
                         type="projectResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref source="zotero" target="BBR32UYM" type="webpage"/>
+                  <ref source="zotero" target="BBR32UYM" type="database"/>
                </linkGrp>
                <linkGrp corresp="http://www.hisma.org/HISMA/HISCAM.html"
                         source="HISCAM"
                         type="projectResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref source="zotero" target="WYXSPBCA" type="webpage"/>
+                  <ref source="zotero" target="WYXSPBCA" type="database"/>
                </linkGrp>
             </event>
          </listEvent>

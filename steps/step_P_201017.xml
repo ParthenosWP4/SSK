@@ -1,79 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0"
-     type="researchStep"
-     xml:id="step_P_201017">
-   <teiHeader>
-      <fileDesc>
-         <titleStmt>
-            <title>Step "Preparation"</title>
-            <author>
-               <forename>Panayotis</forename>
-               <surname>Siozos</surname>
-               <affiliation>IESL-FORTH</affiliation>
-            </author>
-            <author>
-               <forename>Demetrios</forename>
-               <surname>Anglos</surname>
-               <affiliation>IESL-FORTH</affiliation>
-            </author>
-            <sponsor>PARTHENOS</sponsor>
-         </titleStmt>
-         <publicationStmt>
-            <authority/>
-            <availability>
-               <licence target="http://creativecommons.org/licenses/by/4.0/">
-                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
-       document.</p>
-               </licence>
-            </availability>
-         </publicationStmt>
-         <sourceDesc>
-            <p>Created from an Excel sheet by Marie Puren</p>
-         </sourceDesc>
-      </fileDesc>
-      <revisionDesc>
-         <change/>
-      </revisionDesc>
-   </teiHeader>
-   <text>
-      <body>
-         <listEvent>
-            <event type="researchStep">
-               <head xml:lang="en">Preparation</head>
-               <desc type="definition" xml:lang="en">The preparation procedure consists of the steps for
-      effective image recording. These steps are: a) Positioning the object/artwork, b) positioning
-      the calibration targets and c) positioning the camera and illumination sources.</desc>
-               <desc type="term" xml:lang="en">
-                  <term key="http://tadirah.dariah.eu/vocab/index.php?tema=11&amp;/gathering"
-                        source="http://tadirah.dariah.eu/"
-                        type="activity"/>
-               </desc>
-               <linkGrp type="generalResources"
-                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"><!--  <ref type="book" subtype="methodology" source="zotero" target="8M7XC7AD"> -->
-                  <ref source="zotero"
-                       subtype="standard"
-                       target="8M7XC7AD"
-                       type="book">
-                     <term key="Digital Photography and Conservation Documentation"
-                           type="standard"/>
-                  </ref>
-                  <ref source="zotero"
-                       subtype="standard"
-                       target="CIWQJSBR"
-                       type="report">
-                     <term key="Multispectral Imaging in Reflectance and Photo-induced Luminescence modes"
-                           type="standard"/>
-                  </ref>
-               </linkGrp>
-               <linkGrp corresp="https://cordis.europa.eu/project/rcn/92569/factsheet/en/"
-                        source="CHARISMA"
-                        type="projectResources"
-                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref target="AVQTPABS" type="webpage"/>
-               </linkGrp>
-            </event>
-         </listEvent>
-      </body>
-   </text>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_P_201017">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Step "Preparation"</title>
+        <author>
+          <forename>Panayotis</forename>
+          <surname>Siozos</surname>
+          <affiliation>IESL-FORTH</affiliation>
+        </author>
+        <author>
+          <forename>Demetrios</forename>
+          <surname>Anglos</surname>
+          <affiliation>IESL-FORTH</affiliation>
+        </author>
+        <sponsor>PARTHENOS</sponsor>
+      </titleStmt>
+      <publicationStmt>
+        <authority/>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0/">
+            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+              document.</p>
+          </licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Created from an Excel sheet by Marie Puren</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change/>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listEvent>
+        <event type="researchStep">
+          <head xml:lang="en">Preparation</head>
+          <desc type="definition" xml:lang="en">The preparation procedure consists of the steps for
+            effective image recording. These steps are: a) Positioning the object/artwork, b)
+            positioning the calibration targets and c) positioning the camera and illumination
+            sources.</desc>
+          <desc type="term" xml:lang="en">
+            <term key="http://tadirah.dariah.eu/vocab/index.php?tema=11&amp;/gathering"
+              source="http://tadirah.dariah.eu/" type="activity"/>
+          </desc>
+          <linkGrp type="generalResources"
+            xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+            <ref source="zotero" target="8M7XC7AD" type="book"> </ref>
+            <ref source="zotero" target="CIWQJSBR" type="report"> </ref>
+          </linkGrp>
+        </event>
+      </listEvent>
+    </body>
+  </text>
 </TEI>

@@ -536,6 +536,10 @@
                     <gloss xml:lang="en">Community</gloss>
                     <gloss xml:lang="fr">Communauté</gloss>
                   </valItem>
+                  <valItem ident="book">
+                    <gloss xml:lang="en">Book</gloss>
+                    <gloss xml:lang="fr">Ouvrage</gloss>
+                  </valItem>
                 </valList>
               </attDef>
               <attDef ident="source" mode="change">

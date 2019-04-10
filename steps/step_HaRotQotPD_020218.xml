@@ -62,7 +62,7 @@
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref source="zotero" subtype="tool" target="U9RU3G53" type="webpage">
+                  <ref source="zotero" target="U9RU3G53" type="tool">
                      <term key="Neuma Quality Dashboard" type="tool"/>
                   </ref>
                </linkGrp>
@@ -70,7 +70,7 @@
                         source="GioQoso"
                         type="projectResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref target="6WRG74YN" type="webpage"/>
+                  <ref target="6WRG74YN" type="spec"/>
                </linkGrp>
             </event>
          </listEvent>

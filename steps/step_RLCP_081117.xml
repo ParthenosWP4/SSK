@@ -51,13 +51,11 @@
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero"
-                       subtype="book"
                        target="PM5P3JDB"
                        type="tutorial">
                      <term key="Laser cleaning" type="tutorial"/>
                   </ref>
                   <ref source="zotero"
-                       subtype="article"
                        target="9796G3AB"
                        type="tutorial">
                      <term key="Laser cleaning" type="tutorial"/>
@@ -67,7 +65,7 @@
                         source="Artwork conservation by Laser"
                         type="projectResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref target="C94KPIQG" type="webpage"/>
+                  <ref target="C94KPIQG" type="guidelines"/>
                </linkGrp>
             </event>
          </listEvent>

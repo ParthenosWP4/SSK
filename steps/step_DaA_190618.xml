@@ -108,16 +108,16 @@
                   <ref type="report" source="zotero" target="JQA2HGXG"/>
                </linkGrp>
                <linkGrp type="projectResources"
-                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"
                         source="CARARE"
-                        corresp="http://www.carare.eu/"&gt;
-                  <ref type="webpage" target="RQMMKPTG"/>
+                        corresp="http://www.carare.eu/">
+                 <ref type="spec" target="JH4RHXIX"/>
                </linkGrp>
                <linkGrp type="projectResources"
-                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"
                         source="3D-ICONS"
-                        corresp="http://3dicons-project.eu"&gt;
-                  <ref type="webpage" target="XY49BQNJ"/>
+                        corresp="http://3dicons-project.eu">
+                  <ref type="spec" target="XY49BQNJ"/>
                </linkGrp>
             </event>
          </listEvent>

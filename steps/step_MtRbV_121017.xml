@@ -1,83 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0"
-     type="researchStep"
-     xml:id="step_MtRbV_121017">
-   <teiHeader>
-      <fileDesc>
-         <titleStmt>
-            <title>Step "Model the relationship between variables"</title>
-            <author>
-               <forename>Emilie</forename>
-               <surname>Kraikamp</surname>
-               <affiliation>DANS</affiliation>
-            </author>
-            <sponsor>PARTHENOS</sponsor>
-         </titleStmt>
-         <publicationStmt>
-            <authority/>
-            <availability>
-               <licence target="http://creativecommons.org/licenses/by/4.0/">
-                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
-       document.</p>
-               </licence>
-            </availability>
-         </publicationStmt>
-         <sourceDesc>
-            <p>Created from scratch</p>
-         </sourceDesc>
-      </fileDesc>
-      <revisionDesc>
-         <change/>
-      </revisionDesc>
-   </teiHeader>
-   <text>
-      <body>
-         <listEvent>
-            <event type="researchStep">
-               <head xml:lang="en">Model the relationship between variables</head>
-               <head xml:lang="fr"/>
-               <desc type="definition" xml:lang="en">Perform Structural Equation Modelling (SEM)</desc>
-               <desc type="term" xml:lang="en">
-                  <term key="http://tadirah.dariah.eu/vocab/index.php?tema=30&amp;/structural-analysis"
-                        source="http://tadirah.dariah.eu/"
-                        type="activity"/>
-               </desc>
-               <linkGrp type="generalResources"
-                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref source="zotero"
-                       subtype="tool"
-                       target="QP9WMGDS"
-                       type="tutorial">
-                     <term key="R" type="tool"/>
-                  </ref>
-                  <ref source="zotero"
-                       subtype="tool"
-                       target="VAAKZ6JI"
-                       type="bibliography">
-                     <term key="R" type="tool"/>
-                  </ref>
-                  <ref source="zotero" subtype="tool" target="PENH8EZE" type="journal">
-                     <term key="R" type="tool"/>
-                  </ref>
-                  <ref source="zotero" subtype="tool" target="S5BQ68HQ" type="code">
-                     <term key="JASP" type="tool"/>
-                  </ref>
-                  <ref source="zotero"
-                       subtype="tool"
-                       target="P3WVDB2Z"
-                       type="tutorial">
-                     <term key="PSPP" type="tool"/>
-                  </ref>
-                  <ref source="zotero" subtype="tool" target="2PCNPUUG" type="webpage">
-                     <term key="STATA" type="tool"/>
-                  </ref>
-                  <ref source="zotero" subtype="tool" target="3BIQ5K3W" type="webpage">
-                     <term key="SPSS_Amos" type="tool"/>
-                  </ref>
-               </linkGrp>
-            </event>
-         </listEvent>
-      </body>
-   </text>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_MtRbV_121017">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Step "Model the relationship between variables"</title>
+        <author>
+          <forename>Emilie</forename>
+          <surname>Kraikamp</surname>
+          <affiliation>DANS</affiliation>
+        </author>
+        <sponsor>PARTHENOS</sponsor>
+      </titleStmt>
+      <publicationStmt>
+        <authority/>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0/">
+            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+              document.</p>
+          </licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Created from scratch</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change/>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listEvent>
+        <event type="researchStep">
+          <head xml:lang="en">Model the relationship between variables</head>
+          <head xml:lang="fr"/>
+          <desc type="definition" xml:lang="en">Perform Structural Equation Modelling (SEM)</desc>
+          <desc type="term" xml:lang="en">
+            <term key="http://tadirah.dariah.eu/vocab/index.php?tema=30&amp;/structural-analysis"
+              source="http://tadirah.dariah.eu/" type="activity"/>
+          </desc>
+          <linkGrp type="generalResources"
+            xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+            <ref source="zotero" target="QP9WMGDS" type="tutorial"/>
+            <ref source="zotero" target="VAAKZ6JI" type="bibliography"/>
+            <ref source="zotero" target="PENH8EZE" type="paper"/>
+            <ref source="zotero" target="S5BQ68HQ" type="code"/>
+            <ref source="zotero" target="P3WVDB2Z" type="tutorial"/>
+            <ref source="zotero" target="2PCNPUUG" type="tool"/>
+            <ref source="zotero" target="3BIQ5K3W" type="tool"/>
+          </linkGrp>
+        </event>
+      </listEvent>
+    </body>
+  </text>
 </TEI>

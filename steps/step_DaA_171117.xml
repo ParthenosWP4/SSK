@@ -61,7 +61,7 @@
                         source="BeQuali"
                         type="projectResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref source="zotero" target="SM4GIA8J" type="webpage"/>
+                  <ref source="zotero" target="SM4GIA8J" type="database"/>
                </linkGrp>
             </event>
          </listEvent>

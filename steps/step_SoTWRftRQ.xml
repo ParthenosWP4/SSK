@@ -52,7 +52,6 @@
                   <term key="Text Bearing Objects"
                         source="http://tadirah.dariah.eu/"
                         type="object"/>
-                  <term key="Books" source="NEMO" type="object"/>
                </desc>
             </event>
          </listEvent>

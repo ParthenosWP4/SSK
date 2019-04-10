@@ -58,7 +58,7 @@
                        type="bibliography">
                      <term key="R" type="tool"/>
                   </ref>
-                  <ref source="zotero" subtype="tool" target="PENH8EZE" type="journal">
+                  <ref source="zotero" subtype="tool" target="PENH8EZE" type="paper">
                      <term key="R" type="tool"/>
                   </ref>
                   <ref source="zotero" subtype="tool" target="S5BQ68HQ" type="code">
@@ -70,10 +70,10 @@
                        type="tutorial">
                      <term key="PSPP" type="tool"/>
                   </ref>
-                  <ref source="zotero" subtype="tool" target="2PCNPUUG" type="webpage">
+                 <ref source="zotero" target="2PCNPUUG" type="tool">
                      <term key="STATA" type="tool"/>
                   </ref>
-                  <ref source="zotero" subtype="tool" target="I828B5GI" type="webpage">
+                 <ref source="zotero" target="I828B5GI" type="tool">
                      <term key="SPSS" type="tool"/>
                   </ref>
                </linkGrp>

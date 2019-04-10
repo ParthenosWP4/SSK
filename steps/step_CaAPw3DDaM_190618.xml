@@ -81,10 +81,10 @@
                   <ref type="software" source="zotero" target="P2M6IPXW"/>
                </linkGrp>
                <linkGrp type="projectResources"
-                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"
                         source="CINES"
-                        corresp="https://www.cines.fr/"&gt;
-                  <ref type="webpage" target="GTKRM6WS"/>
+                        corresp="https://www.cines.fr/">
+                  <ref type="service" target="GTKRM6WS"/>
                </linkGrp>
             </event>
          </listEvent>
