@@ -50,7 +50,7 @@
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref source="zotero" subtype="tool" target="4W7QUMZF" type="article">
+                  <ref source="zotero" subtype="tool" target="4W7QUMZF" type="paper">
                      <term key="MOVIDA" type="tool"/>
                   </ref>
                   <ref source="zotero"

@@ -50,9 +50,9 @@
                </desc>
                <linkGrp type="generalResources"
                         xml:base="https://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref type="article" source="zotero" target="3E3JVGRH"/>
-                  <ref type="article" source="zotero" target="3I8DG4VQ"/>
-                  <ref type="article" source="zotero" target="3CUKUNQL"/>
+                  <ref type="paper" source="zotero" target="3E3JVGRH"/>
+                  <ref type="paper" source="zotero" target="3I8DG4VQ"/>
+                  <ref type="paper" source="zotero" target="3CUKUNQL"/>
                </linkGrp>
             </event>
          </listEvent>

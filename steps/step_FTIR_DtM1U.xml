@@ -52,10 +52,10 @@
                </desc>
                <linkGrp type="generalResources"
                         xml:base="https://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref type="article" source="zotero" target="XDZDF3UD"/>
-                  <ref type="article" source="zotero" target="IKWTUCI8"/>
-                  <ref type="article" source="zotero" target="4RX2JGIS"/>
-                  <ref type="article" source="zotero" target="45NFDS6W"/>
+                  <ref type="paper" source="zotero" target="XDZDF3UD"/>
+                  <ref type="paper" source="zotero" target="IKWTUCI8"/>
+                  <ref type="paper" source="zotero" target="4RX2JGIS"/>
+                  <ref type="paper" source="zotero" target="45NFDS6W"/>
                </linkGrp>
             </event>
          </listEvent>

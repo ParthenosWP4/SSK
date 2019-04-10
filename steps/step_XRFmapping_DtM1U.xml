@@ -49,9 +49,9 @@
                </desc>
                <linkGrp type="generalResources"
                         xml:base="https://www.zotero.org/groups/368112/parthenos_wp2/items/itemKey/">
-                  <ref type="article" source="zotero" target="WKAJUKFD"/>
-                  <ref type="article" source="zotero" target="ZUDX68X2"/>
-                  <ref type="article" source="zotero" target="CLQU8VH9"/>
+                  <ref type="paper" source="zotero" target="WKAJUKFD"/>
+                  <ref type="paper" source="zotero" target="ZUDX68X2"/>
+                  <ref type="paper" source="zotero" target="CLQU8VH9"/>
                </linkGrp>
             </event>
          </listEvent>
