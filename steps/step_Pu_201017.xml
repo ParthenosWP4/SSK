@@ -51,16 +51,14 @@
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero"
-                       subtype="service"
+                       
                        target="TZX5QSR7"
-                       type="website">
-                     <term key="POLYGNOSIS" type="service"/>
+                       type="service">
                   </ref>
                   <ref source="zotero"
-                       subtype="service"
+                       
                        target="H793RGGY "
-                       type="website">
-                     <term key="Hal" type="service"/>
+                       type="service">
                   </ref>
                </linkGrp>
             </event>

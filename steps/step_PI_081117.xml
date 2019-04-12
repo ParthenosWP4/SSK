@@ -54,31 +54,31 @@
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero"
-                       subtype="library"
+                       
                        target="HBESBCV2"
                        type="paper">
                      <term key="Raman Spectroscopy" type="library"/>
                   </ref>
                   <ref source="zotero"
-                       subtype="database"
+                       
                        target="BBJZZKB3"
-                       type="website">
+                       type="database">
                      <term key="IBeA" type="database"/>
                   </ref>
                   <ref source="zotero"
-                       subtype="database"
+                       
                        target="C9HGUF6H"
-                       type="website">
+                       type="database">
                      <term key="RRUFF" type="database"/>
                   </ref>
                   <ref source="zotero"
-                       subtype="library"
+                       
                        target="TXUVH8U3"
                        type="paper">
                      <term key="Raman Spectroscopy" type="library"/>
                   </ref>
                   <ref source="zotero"
-                       subtype="library"
+                       
                        target="43Z8M7H4"
                        type="paper">
                      <term key="Raman Spectroscopy" type="library"/>

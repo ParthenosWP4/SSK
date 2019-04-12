@@ -50,14 +50,13 @@
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref source="zotero" subtype="tool" target="4W7QUMZF" type="paper">
+                  <ref source="zotero"  target="4W7QUMZF" type="paper">
                      <term key="MOVIDA" type="tool"/>
                   </ref>
                   <ref source="zotero"
-                       subtype="service"
+                       
                        target="US2HB3DN"
-                       type="website">
-                     <term key="DIAGNOSIS" type="service"/>
+                       type="service">
                   </ref>
                </linkGrp>
             </event>

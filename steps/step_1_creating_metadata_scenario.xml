@@ -48,7 +48,7 @@
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero"
-                       subtype="standard"
+                       
                        target="2A578PYX"
                        type="specification"/>
                   <ref source="zotero"

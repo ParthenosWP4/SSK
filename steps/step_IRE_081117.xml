@@ -51,13 +51,13 @@
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero"
-                       subtype="website"
+                       
                        target="JDUB296N"
                        type="database">
                      <term key="NIST Atomic Spectra Database" type="database"/>
                   </ref>
                   <ref source="zotero"
-                       subtype="website"
+                       
                        target="ZG6IKTA5"
                        type="database">
                      <term key="Atomic Spectral Line" type="database"/>

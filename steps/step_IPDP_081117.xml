@@ -56,13 +56,13 @@
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero"
-                       subtype="article"
+                       
                        target="W39BNU8K"
                        type="tutorial">
                      <term key="Raman spectroscopy" type="technique"/>
                   </ref>
                   <ref source="zotero"
-                       subtype="article"
+                       
                        target="CVI5TJZV"
                        type="tutorial">
                      <term type="technique"/>

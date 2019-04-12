@@ -77,19 +77,19 @@
                      <term key="METS" source="standard" type="standard"/>
                   </ref>
                   <ref source="zotero"
-                       subtype="standard"
+                       
                        target="G23PVP4B"
                        type="spec">
                      <term key="METS" source="standard" type="standard"/>
                   </ref>
                   <ref source="zotero"
-                       subtype="standard"
+                       
                        target="CQ4VK4MZ"
                        type="spec">
                      <term key="METS" source="standard_list" type="standard"/>
                   </ref>
                   <ref source="zotero"
-                       subtype="standard"
+                       
                        target="9HWG6835"
                        type="spec">
                      <term key="DC" source="standard_list" type="standard"/>
@@ -100,19 +100,19 @@
                      <term key="DC" source="standard_list" type="standard"/>
                   </ref>
                   <ref source="zotero"
-                       subtype="standard"
+                       
                        target="PEAH9HAQ"
                        type="spec">
                      <term key="DC" source="standard_list" type="standard"/>
                   </ref>
                   <ref source="zotero"
-                       subtype="standard"
+                       
                        target="CNPB6HA6"
                        type="spec">
                      <term key="DC" source="standard_list" type="standard"/>
                   </ref>
                   <ref source="zotero"
-                       subtype="standard"
+                       
                        target="VKU5HQMF"
                        type="tutorial">
                      <term key="DC" source="standard_list" type="standard"/>

@@ -75,7 +75,7 @@
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref type="schema" source="zotero" target="JH4RHXIX"/>
+                  <ref type="spec" source="zotero" target="JH4RHXIX"/>
                   <ref type="specification" source="zotero" target="97VDSZVB">
                      <term type="standards" source="standard_list" key="EDM"/>
                   </ref>
@@ -90,7 +90,7 @@
                   <ref type="specification" source="zotero" target="J4NI2T8D">
                      <term type="standards" source="standard_list" key="LIDO"/>
                   </ref>
-                  <ref type="schema" source="zotero" target="FTCDGHB2">
+                  <ref type="spec" source="zotero" target="FTCDGHB2">
                      <term type="standards" source="standard_list" key="LIDO"/>
                   </ref>
                   <ref type="spec" source="zotero" target="CQ4VK4MZ">
@@ -99,7 +99,7 @@
                   <ref type="spec" source="zotero" target="G23PVP4B">
                      <term type="standards" source="standard_list" key="METS"/>
                   </ref>
-                  <ref type="schema" source="zotero" target="IE7HE58F">
+                  <ref type="spec" source="zotero" target="IE7HE58F">
                      <term type="standards" source="standard_list" key="METS"/>
                   </ref>
                   <ref type="tutorial" source="zotero" target="JZETVVTF">

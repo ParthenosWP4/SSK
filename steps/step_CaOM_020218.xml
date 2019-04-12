@@ -64,35 +64,35 @@
                      <term key="Omeka" type="software"/>
                   </ref>
                   <ref source="zotero"
-                       subtype="software"
+                       
                        target="VWVP5NB3"
                        type="tutorial"/>
                   <ref source="zotero"
-                       subtype="standard"
+                       
                        target="9HWG6835"
                        type="spec">
                      <term key="DC" source="standard_list" type="standard"/>
                   </ref>
                   <ref source="zotero"
-                       subtype="standard"
+                       
                        target="7RRWQ6MS"
                        type="tutorial">
                      <term key="DC" source="standard_list" type="standard"/>
                   </ref>
                   <ref source="zotero"
-                       subtype="standard"
+                       
                        target="PEAH9HAQ"
                        type="spec">
                      <term key="DC" source="standard_list" type="standard"/>
                   </ref>
                   <ref source="zotero"
-                       subtype="standard"
+                       
                        target="CNPB6HA6"
-                       type="schema">
+                       type="spec">
                      <term key="DC" source="standard_list" type="standard"/>
                   </ref>
                   <ref source="zotero"
-                       subtype="standard"
+                       
                        target="VKU5HQMF"
                        type="tutorial">
                      <term key="DC" source="standard_list" type="standard"/>

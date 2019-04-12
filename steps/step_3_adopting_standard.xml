@@ -46,19 +46,19 @@
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero"
-                       subtype="standard"
+                       
                        target="B8F6BM3X"
                        type="spec">
                      <term key="Metadata" source="standard_list" type="standard"/>
                   </ref>
                   <ref source="zotero"
-                       subtype="standard"
+                       
                        target="7XIJBGW5"
                        type="spec">
                      <term key="Metadata" source="standard_list" type="standard"/>
                   </ref>
                   <ref source="zotero"
-                       subtype="standard"
+                       
                        target="SAPVSH8D"
                        type="spec">
                      <term key="Metadata" source="standard_list" type="standard"/>

@@ -95,7 +95,7 @@
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="specification" source="zotero" target="Q4X9D4BE"/>
-                  <ref type="schema" source="zotero" target="GHCATCKH"/>
+                  <ref type="spec" source="zotero" target="GHCATCKH"/>
                   <ref type="code" source="zotero" target="XRZPJFHZ"/>
                   <ref type="report" source="zotero" target="JQA2HGXG"/>
                   <ref type="tool" source="zotero" target="C9RF5CWS"/>

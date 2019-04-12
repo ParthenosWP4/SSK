@@ -52,11 +52,11 @@
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref source="zotero" subtype="tool" target="H23RCNAH" type="website">
+                  <ref source="zotero"  target="H23RCNAH" type="tool">
                      <term key="GIMP" type="tool"/>
                   </ref>
                   <ref source="zotero"
-                       subtype="standard"
+                       
                        target="SA323STT"
                        type="ISO_standard">
                      <term key="TIFF/EP (ISO 12234-2)" type="standard"/>

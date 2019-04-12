@@ -50,7 +50,7 @@
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero"
-                       subtype="website"
+                       
                        target="TXK2S5FC"
                        type="service">
                      <term key="Hal" type="service"/>

@@ -65,24 +65,19 @@
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"><!-- Ressources: Metadata web form, XSLT, CMDI -->
                   <ref source="zotero" target="T7672NJ8" type="specification">
-                     <term key="TEI" source="ssk" type="standard"/>
-                  	DTABf documentation</ref>
+                     <term key="TEI" source="ssk" type="standard"/></ref>
                   <ref source="zotero" target="558UTLGY" type="specification">
-                     <term key="TEI" source="ssk" type="standard"/>
-                  	Formal specification of the DTABf: ODDs, schemas, Schematron
-       Constraints</ref>
+                     <term key="TEI" source="ssk" type="standard"/></ref>
                   <ref source="zotero" target="VF3A7QRI" type="specification">
                      <term key="XML" source="ssk" type="standard"/>
                      <term key="Metadata" source="http://tadirah.dariah.eu/" type="object"/>
-               			DTABf-based CMDI profile
                		</ref>
                </linkGrp>
                <linkGrp type="projectResources"
-                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">&gt;
-                  <ref source="zotero" target="8BD6FDKR" type="website">
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+                  <ref source="zotero" target="8BD6FDKR" type="database">
                      <term key="XML" source="ssk" type="standard"/>
-                     <term key="Metadata" source="http://tadirah.dariah.eu/" type="object"/>
-            	 		Virtual Language Observatory (VLO)</ref>
+                     <term key="Metadata" source="http://tadirah.dariah.eu/" type="object"/></ref>
                </linkGrp>
             </event>
          </listEvent>

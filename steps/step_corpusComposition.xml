@@ -72,7 +72,7 @@
                   </ref>
                   <!-- CMDI -->
                   <ref type="standard"
-                       subtype="standard"
+                       
                        source="zotero"
                        target="BNFTBS5W">
                      <term type="standard" source="standard_list" key="CMDI"/>

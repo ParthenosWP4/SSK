@@ -58,7 +58,7 @@
                             <term type="standard" source="standard_list" key="TEI"/>
                         </ref> -->
                   <ref source="zotero"
-                       subtype="standard"
+                       
                        target="MGAJZAUQ"
                        type="tutorial">
                      <term key="TEI" source="standard_list" type="standard"/>

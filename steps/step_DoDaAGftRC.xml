@@ -80,7 +80,6 @@
                      <term key="Transcription"
                            source="http://tadirah.dariah.eu/"
                            type="activity"/>
-                  	DTA 'Base Format' (DTABf)
                   </ref>
                   <ref source="zotero" target="558UTLGY" type="spec">
                      <term type="standard" source="ssk" key="TEI"/>
@@ -89,23 +88,19 @@
                      <term key="Transcription"
                            source="http://tadirah.dariah.eu/"
                            type="activity"/>
-                  	Source files of the DTA 'Base Format' (DTABf) documentation and schema
                   </ref>
                   <ref source="zotero" target="DVKJRRVU" type="paper">
                      <term type="standard" source="ssk" key="TEI"/>
-                  	Haaf/Geyken/Wiegand (2015)
                   </ref>
                   <ref source="zotero" target="ZEZE3HV8" type="paper">
                      <term type="standard" source="ssk" key="TEI"/>
-                  	Haaf/Thomas (2017)</ref>
+                  </ref>
                   <ref source="zotero" target="8XCAEJXX" type="blog">
                      <term type="standard" source="ssk" key="TEI"/>
-                  	Haaf (2017)
                   </ref>
-                  <ref source="zotero" target="V6NJ5IBX" type="website">
+                  <ref source="zotero" target="V6NJ5IBX" type="spec">
                      <term type="standard">TEI</term>
                      <term key="Annotating" source="http://tadirah.dariah.eu/" type="activity"/>
-                  	TEI Customizations
                   </ref>
                </linkGrp>
             </event>

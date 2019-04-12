@@ -51,7 +51,7 @@
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero"
-                       subtype="tool"
+                       
                        target="HIQ57ED7"
                        type="tool">
                      <term key="COMSOL Multiphysics" type="software"/>

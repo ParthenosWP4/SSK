@@ -52,19 +52,19 @@
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero"
-                       subtype="tool"
+                       
                        target="4W7QUMZF"
                        type="tool"><!--<term type="tool" key="MOVIDA"/>--></ref>
                   <ref source="zotero"
-                       subtype="tool"
+                       
                        target="2NZPNEAN"
                        type="tool"><!--<term type="tool" key="GNU Octave"/>--></ref>
                   <ref source="zotero"
-                       subtype="website"
+                       
                        target="US2HB3DN"
                        type="service"><!--<term type="service" key="DIAGNOSIS"/>--></ref>
                   <ref source="zotero"
-                       subtype="tool"
+                       
                        target="S5TDK87K"
                        type="tool"><!--<term type="tool" key="Origin"/>--></ref>
                </linkGrp>

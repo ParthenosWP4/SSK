@@ -56,14 +56,14 @@
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero"
-                       subtype="article"
+                       
                        target="FCKKBJ8X"
                        type="tutorial">
                      <term key="SERDS" type="technique"/>
                      <term key="SSRS" type="technique"/>
                   </ref>
                   <ref source="zotero"
-                       subtype="article"
+                       
                        target="2PAJ6NGT"
                        type="tutorial">
                      <term key="Raman spectroscopy" type="methodology"/>

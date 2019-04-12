@@ -53,11 +53,11 @@
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero"
-                       subtype="standard"
+                       
                        target="QVUGK2B2"
                        type="spec"/>
                   <ref source="zotero"
-                       subtype="standard"
+                       
                        target="BEVAWMPX"
                        type="spec"/>
                </linkGrp>

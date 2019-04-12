@@ -72,13 +72,13 @@
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref source="zotero" subtype="tool" target="PXMVHWK8" type="code">
+                  <ref source="zotero"  target="PXMVHWK8" type="code">
                      <term key="MEIMassaging" type="tool"/>
                   </ref>
                   <ref source="zotero" target="CLD9LAMF" type="tool">
                      <term key="MeiView" type="tool"/>
                   </ref>
-                  <ref source="zotero" subtype="tool" target="25XE4RMY" type="code">
+                  <ref source="zotero"  target="25XE4RMY" type="code">
                      <term key="MEItoVexFlow" type="tool"/>
                   </ref>
                </linkGrp>

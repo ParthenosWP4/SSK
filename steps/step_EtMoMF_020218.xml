@@ -59,7 +59,7 @@
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="PAFCE6CF" type="tutorial"/>
                   <ref source="zotero" target="HA3HBEA6" type="tool"/>
-                  <ref source="zotero" subtype="tool" target="NBYQEYUX" type="code">
+                  <ref source="zotero"  target="NBYQEYUX" type="code">
                      <term key="MerMEId" type="tool"/>
                   </ref>
                </linkGrp>

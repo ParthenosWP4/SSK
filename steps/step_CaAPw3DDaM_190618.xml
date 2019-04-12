@@ -77,7 +77,7 @@
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref type="schema" source="zotero" target="GQ8J5PJT"/>
+                  <ref type="spec" source="zotero" target="GQ8J5PJT"/>
                   <ref type="tool" source="zotero" target="P2M6IPXW"/>
                </linkGrp>
                <linkGrp type="projectResources"

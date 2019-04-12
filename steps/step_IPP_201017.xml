@@ -52,10 +52,9 @@
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="NDT75L9A" type="library"/>
-                  <ref source="zotero" subtype="tool" target="H23RCNAH" type="website"/>
-                  <ref source="zotero" subtype="tool" target="AWRNIGUR" type="website"/>
-                  <ref source="zotero" subtype="tool" target="2NZPNEAN" type="website"/>
-                  <ref source="zotero" subtype="tool" target="2NZPNEAN" type="website"/>
+                  <ref source="zotero"  target="H23RCNAH" type="tool"/>
+                  <ref source="zotero"  target="AWRNIGUR" type="tool"/>
+                  <ref source="zotero"  target="2NZPNEAN" type="tool"/>
                </linkGrp>
             </event>
          </listEvent>

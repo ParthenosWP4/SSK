@@ -46,25 +46,25 @@
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero"
-                       subtype="tool"
+                       
                        target="QP9WMGDS"
                        type="tutorial">
                      <term key="R" type="tool"/>
                   </ref>
                   <ref source="zotero"
-                       subtype="tool"
+                       
                        target="VAAKZ6JI"
                        type="bibliography">
                      <term key="R" type="tool"/>
                   </ref>
-                  <ref source="zotero" subtype="tool" target="PENH8EZE" type="paper">
+                  <ref source="zotero"  target="PENH8EZE" type="paper">
                      <term key="R" type="tool"/>
                   </ref>
-                  <ref source="zotero" subtype="tool" target="S5BQ68HQ" type="code">
+                  <ref source="zotero"  target="S5BQ68HQ" type="code">
                      <term key="JASP" type="tool"/>
                   </ref>
                   <ref source="zotero"
-                       subtype="tool"
+                       
                        target="P3WVDB2Z"
                        type="tutorial">
                      <term key="PSPP" type="tool"/>

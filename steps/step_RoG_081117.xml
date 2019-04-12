@@ -52,13 +52,13 @@
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero"
-                       subtype="article"
+                       
                        target="FM2AR8N3"
                        type="tutorial">
                      <term key="LIBS" type="technique"/>
                   </ref>
                   <ref source="zotero"
-                       subtype="technique"
+                       
                        target="FM2AR8N3"
                        type="tutorial">
                      <term key="LIBS" type="technique"/>

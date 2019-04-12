@@ -57,21 +57,18 @@
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"><!-- add: KVK, VDs, ZVDD -->
-                  <ref source="zotero" target="8BD6FDKR" type="website">
+                  <ref source="zotero" target="8BD6FDKR" type="database">
                      <term key="Browsing" source="http://tadirah.dariah.eu/" type="technique"/>
                      <term key="Searching" source="http://tadirah.dariah.eu/" type="technique"/>
-                  	VLO
                   </ref>
                   <!-- add date -->
-                  <ref source="zotero" target="33XHNMST" type="website">
+                  <ref source="zotero" target="33XHNMST" type="database">
                      <term key="Browsing" source="http://tadirah.dariah.eu/" type="technique"/>
-                     <term key="Searching" source="http://tadirah.dariah.eu/" type="technique"/>
-                  	Europeana Collections</ref>
+                     <term key="Searching" source="http://tadirah.dariah.eu/" type="technique"/></ref>
                   <!-- add date -->
-                  <ref source="zotero" target="ZI8NZUC2" type="website">
+                  <ref source="zotero" target="ZI8NZUC2" type="database">
                      <term key="Browsing" source="http://tadirah.dariah.eu/" type="technique"/>
-                     <term key="Searching" source="http://tadirah.dariah.eu/" type="technique"/>
-                  	Deutsche Digitale Bibliothek (DDB; Digital Library of Germany)</ref>
+                     <term key="Searching" source="http://tadirah.dariah.eu/" type="technique"/></ref>
                   <!-- add date -->
                </linkGrp>
             </event>

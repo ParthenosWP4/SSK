@@ -51,13 +51,13 @@
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero"
-                       subtype="tool"
+                       
                        target="4W7QUMZF"
                        type="tool">
                      <term key="MOVIDA" type="tool"/>
                   </ref>
                   <ref source="zotero"
-                       subtype="website"
+                       
                        target="US2HB3DN"
                        type="service">
                      <term key="DIAGNOSIS" type="service"/>
