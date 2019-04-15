@@ -107,6 +107,7 @@ When we are talking about resources, we mean a standardized tool, service or doc
 task completion.
 
 They take the form of a digital object and have to be of one the following types:
+
 * Specification (normative document) of a standard (`spec`);
 * Technical reports (`report`);
 * Scholarly papers (`paper`);
