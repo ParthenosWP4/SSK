@@ -60,7 +60,7 @@
       <body>
          <listEvent>
             <event type="researchStep">
-               <head xml:lang="en">Acquisition of 3D object (by scanning)</head>
+               <head type="stepTitle" xml:lang="en">Acquisition of 3D object (by scanning)</head>
                <desc xml:lang="en" type="definition">The choice of an appropriate scanning
                         system depends on the object to digitize. The main parameter is of course
                         the size. The method will be different for a small artefact or for an

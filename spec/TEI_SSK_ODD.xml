@@ -486,9 +486,6 @@
                   <dataRef key="teidata.enumerated"/>
                 </datatype>
                 <valList type="semi" mode="replace">
-                  <valItem ident="linkDesc">
-                    <gloss xml:lang="en">link for the &lt;desc&gt; element</gloss>
-                  </valItem>
                   <valItem ident="spec">
                     <gloss xml:lang="en">Specification</gloss>
                     <gloss xml:lang="fr">Spécification</gloss>

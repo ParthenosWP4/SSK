@@ -2,90 +2,92 @@
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0"
-     type="researchScenario"
-     xml:id="SSK_sc_mustispectralImaging">
-   <teiHeader>
-      <fileDesc>
-         <titleStmt>
-            <title>Multispectral imaging for the in-situ characterization of painted works of art</title>
-            <author>
-               <forename>Panayotis</forename>
-               <surname>Siozos</surname>
-               <affiliation>IESL-FORTH</affiliation>
-            </author>
-            <author>
-               <forename>Demetrios</forename>
-               <surname>Anglos</surname>
-               <affiliation>IESL-FORTH</affiliation>
-            </author>
-            <author>
-              <forename>Kostas</forename>
-              <surname>Hatzigiannakis</surname>
-               <affiliation>IESL-FORTH</affiliation>
-            </author>
-            <sponsor>PARTHENOS</sponsor>
-         </titleStmt>
-         <publicationStmt>
-            <authority/>
-            <availability>
-               <licence target="http://creativecommons.org/licenses/by/4.0/">
-                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
-       document.</p>
-               </licence>
-            </availability>
-         </publicationStmt>
-         <sourceDesc>
-            <p>Created from an Excel sheet by Marie Puren</p>
-         </sourceDesc>
-      </fileDesc>
-      <revisionDesc>
-         <change/>
-      </revisionDesc>
-   </teiHeader>
-   <text>
-      <body>
-         <div type="scenario" xml:id="sc_multipsectralImaging">
-            <head type="scenarioTitle" xml:lang="en">Multispectral imaging for the in-situ characterization
-     of painted works of art</head>
-            <desc type="definition" xml:lang="en">Multispectral imaging is a commonly used technique that is
-     currently available to the scientist, conservator, archaeologist and art historian for the
-     non-invasive investigation of works of art. It has a relatively low cost, since inexpensive and
-     widely available equipment exists that provides qualitative, non-invasive, affordable and
-     portable tools for the spatial characterization of specific materials or types of materials.
-     Furthermore, extensive research has been undertaken to develop optimized methodologies for the
-     acquisition and processing of multispectral images as published in the literature but also in
-     the context of the CHARISMA project. The main objective of the scenario is to establish
-     standardized procedures for multispectral imaging analysis in order to accomplish qualitative
-     results during the study of artworks.</desc>
-            <desc type="terms" xml:lang="en">
-               <term source="aurehal" type="discipline">Art and art history</term>
-               <term source="aurehal" type="discipline">Cultural heritage and museology</term>
-               <term key="Artifacts" source="tadirah" type="objects"/>
-               <term key="Data" source="tadirah" type="objects"/>
-               <term key="Images" source="tadirah" type="objects"/>
-               <term key="Photography" source="tadirah" type="techniques"/>
-            </desc>
-            <figure type="image">
-               <head/>
-               <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/SSK-multispectral-photo1-1.jpg"/>
-               <figDesc/>
-            </figure>
-            <listEvent>
-               <event ref="step_RoA_201017" type="researchStep" xml:id="s1"/>
-               <event ref="step_MIS_201017" type="researchStep" xml:id="s2"/>
-               <event ref="step_P_201017" type="researchStep" xml:id="s3"/>
-               <event ref="step_IC1_201017" type="researchStep" xml:id="s4"/>
-               <event ref="step_IC2_201017" type="researchStep" xml:id="s5"/>
-               <event ref="step_IC3_201017" type="researchStep" xml:id="s6"/>
-               <event ref="step_IC4_201017" type="researchStep" xml:id="s7"/>
-               <event ref="step_IC5_201017" type="researchStep" xml:id="s8"/>
-               <event ref="step_IC6_201017" type="researchStep" xml:id="s9"/>
-               <event ref="step_IPP_201017" type="researchStep" xml:id="s10"/>
-               <event ref="step_PR_201017" type="researchStep" xml:id="s11"/>
-               <event ref="step_Pu_201017" type="researchStep" xml:id="s12"/>
-            </listEvent>
-         </div>
-      </body>
-   </text>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario"
+  xml:id="SSK_sc_mustispectralImaging">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>"Multispectral imaging for the in-situ characterization of painted works of art"
+          scenario</title>
+        <author>
+          <forename>Panayotis</forename>
+          <surname>Siozos</surname>
+          <affiliation>IESL-FORTH</affiliation>
+        </author>
+        <author>
+          <forename>Demetrios</forename>
+          <surname>Anglos</surname>
+          <affiliation>IESL-FORTH</affiliation>
+        </author>
+        <author>
+          <forename>Kostas</forename>
+          <surname>Hatzigiannakis</surname>
+          <affiliation>IESL-FORTH</affiliation>
+        </author>
+        <sponsor>PARTHENOS</sponsor>
+      </titleStmt>
+      <publicationStmt>
+        <authority/>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0/">
+            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+              document.</p>
+          </licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Created from an Excel sheet by Marie Puren</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change/>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div type="researchScenario" xml:id="sc_multispectralImaging">
+        <head type="scenarioTitle" xml:lang="en">Multispectral imaging for the in-situ
+          characterization of painted works of art</head>
+        <desc type="definition" xml:lang="en">Multispectral imaging is a commonly used technique
+          that is currently available to the scientist, conservator, archaeologist and art historian
+          for the non-invasive investigation of works of art. It has a relatively low cost, since
+          inexpensive and widely available equipment exists that provides qualitative, non-invasive,
+          affordable and portable tools for the spatial characterization of specific materials or
+          types of materials. Furthermore, extensive research has been undertaken to develop
+          optimized methodologies for the acquisition and processing of multispectral images as
+          published in the literature but also in the context of the CHARISMA project. The main
+          objective of the scenario is to establish standardized procedures for multispectral
+          imaging analysis in order to accomplish qualitative results during the study of
+          artworks.</desc>
+        <desc type="terms" xml:lang="en">
+          <term source="aurehal" type="discipline" key="Art and art history"/>
+          <term source="aurehal" type="discipline" key="Cultural heritage and museology"/>
+          <term key="Artifacts" source="tadirah" type="objects"/>
+          <term key="Data" source="tadirah" type="objects"/>
+          <term key="Images" source="tadirah" type="objects"/>
+          <term key="Photography" source="tadirah" type="techniques"/>
+        </desc>
+        <figure type="image">
+          <head/>
+          <graphic
+            url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/SSK-multispectral-photo1-1.jpg"/>
+          <figDesc/>
+        </figure>
+        <listEvent>
+          <event ref="step_RoA_201017" type="researchStep" xml:id="s1"/>
+          <event ref="step_MIS_201017" type="researchStep" xml:id="s2"/>
+          <event ref="step_P_201017" type="researchStep" xml:id="s3"/>
+          <event ref="step_IC1_201017" type="researchStep" xml:id="s4"/>
+          <event ref="step_IC2_201017" type="researchStep" xml:id="s5"/>
+          <event ref="step_IC3_201017" type="researchStep" xml:id="s6"/>
+          <event ref="step_IC4_201017" type="researchStep" xml:id="s7"/>
+          <event ref="step_IC5_201017" type="researchStep" xml:id="s8"/>
+          <event ref="step_IC6_201017" type="researchStep" xml:id="s9"/>
+          <event ref="step_IPP_201017" type="researchStep" xml:id="s10"/>
+          <event ref="step_PR_201017" type="researchStep" xml:id="s11"/>
+          <event ref="step_Pu_201017" type="researchStep" xml:id="s12"/>
+        </listEvent>
+      </div>
+    </body>
+  </text>
 </TEI>
