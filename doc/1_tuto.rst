@@ -123,6 +123,7 @@ They take the form of a digital object and have to be of one the following types
 * Specialised mailing list, forum, etc (`community`).
 
 The resources should be separated into several groups:
+
 * First, general resources like standard specifications
 * Second, project-related resources, i.e. how the standards are used in a real research project.
 
