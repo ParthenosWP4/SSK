@@ -13,7 +13,7 @@ node_js:
   - 10.0.0
 
 before_install:
-  - cd SSK-FrontEnd-v3
+  - cd SSK_Client
 
 before_script:
   - npm install
