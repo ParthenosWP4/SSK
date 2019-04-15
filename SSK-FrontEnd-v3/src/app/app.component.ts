@@ -41,12 +41,33 @@ export class AppComponent implements  OnInit, AfterViewInit {
                 + 'reflect the views of the European Commission.';
   endOfPageText = 'Except where otherwise noted, content on this site is licensed under a Creative ' +
                   'Commons Attribution 4.0 International license CC BY';
+
+  currentFlag = 'united-kingdom.svg';
+
+  flagItems: Array<any> = [ {'item' : 'italy.svg',
+                             'lang': 'Italian' ,
+                             'alt': 'italian-flag',
+                             'idx': '1'},
+                            {'item' : 'france.svg',
+                            'lang': 'French',
+                            'alt': 'french-flag',
+                            'idx': '2'},
+                            {'item' : 'germany.svg',
+                            'lang': 'German',
+                            'alt': 'german-flag',
+                            'idx': '3'},
+                            {'item' : 'united-kingdom.svg',
+                            'lang': 'English',
+                            'alt': 'uk-flag',
+                            'idx': '4'}];
+
   forImage = environment.forImage;
 
   constructor(private sskService: SskService, private router: Router, private location: Location,
               private elastiServ: ElastichsearchService, route: ActivatedRoute, private contentComp: ContentComponent, ) { }
 
   ngOnInit() {
+   
       this.sskService.checkBackEndAvailability();
       $('a.dropdown-item.dropdown-toggle').on('click', function(e) {
         const subMenu = $(this).next('div.dropdown-menu.in');
@@ -61,6 +82,9 @@ export class AppComponent implements  OnInit, AfterViewInit {
   redirect(link: string) {
     if (link.includes('github')) {
       window.open(link, '_blank');
+    } else if (link.includes('new_scenario')) {
+      console.log("sdsdsds");
+      this.router.navigate(['scenarios', 'new']);
     } else {
       this.router.navigate([link]);
     }
@@ -76,7 +100,13 @@ export class AppComponent implements  OnInit, AfterViewInit {
   }
 
   toGlossary(item: string) {
-    this.router.navigate([{ outlets: { target: null } }])
-           .then(() => this.router.navigate(['glossary', item]));
+    this.router.navigateByUrl('vocabularies/' + item);
+    /*this.router.navigate([{ outlets: { target: null } }])
+           .then(() => this.router.navigateByUrl(['vocabulary', item]));*/
+  }
+
+  clickFlag(flag: string) {
+    console.log(this);
+    this.currentFlag = flag;
   }
 }

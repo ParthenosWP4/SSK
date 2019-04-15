@@ -4,23 +4,33 @@
                         <div class=" picture-tag-container col-sm-12 col-lg-4 ">
                                 <div class=" row  scenarioImageTags">
                                         <span class="image-wrapper">
-                                                <img class=" img-fluid m-sm-2 picture" src={{scenarioElt?.image}} />
+                                                <img class=" img-fluid m-sm-2 mb-lg-0 picture"
+                                                        src={{scenarioElt?.image?.graphic?.url}} />
                                         </span>
+                                        <div *ngIf="scenarioElt?.image?.head || scenarioElt?.image?.figDesc"
+                                                class="ml-4 col ccByImg">
+                                                <span class="pull-right">{{scenarioElt?.image?.head}} -
+                                                        {{scenarioElt?.image?.figDesc}}</span>
+                                        </div>
+                                        <div class="col-12">
+                                                <span *ngFor=" let item of tagsLabel; let m = index">
+                                                        <span *ngIf="scenarioTags[changeTag(item)] !== undefined">
+                                                                <span class="tag my-1  mr-2 py-1" [ngClass]="elt?.type"
+                                                                        *ngFor=" let elt of scenarioTags[changeTag(item)]; let k = index"
+                                                                        tooltip="{{elt?.type +  '-'+ elt?.source  }}"
+                                                                        containerClass="tagClass">{{tagShow(elt)?.key}}</span>
+                                                        </span>
+                                                </span>
+                                        </div>
 
-                                        <ng-container *ngFor=" let item of tagsLabel; let m = index">
-                                                <p *ngIf="scenarioTags[changeTag(item)] !== undefined">
-                                                        <span class="tag my-1  mr-2 py-1" [ngClass]="elt?.type" *ngFor=" let elt of scenarioTags[changeTag(item)]; let k = index"
-                                                                tooltip="{{elt?.type +  '-'+ elt?.source  }}"
-                                                                containerClass="tagClass">{{tagShow(elt)?.key}}</span>
-                                        </ng-container>
                                 </div>
                         </div>
-                        <div class="row ml-lg-1 headScenario" >
+                        <div class="row ml-lg-1 headScenario">
                                 <div class="col-sm-12 title mt-3 stitle" [innerHtml]="scenarioTitle">
                                 </div>
                                 <div class="w-100"></div>
-                                <div  #authors class="col-sm-12 my-2 authors authors-container ">
-                                                <!--<span *ngFor="let author of scenarioElt?.author; let j=index" class="pop" data-container="body" data-toggle="popover" data-placement="right"  triggers="click"
+                                <div #authors class="col-sm-12 my-2 authors authors-container ">
+                                        <!--<span *ngFor="let author of scenarioElt?.author; let j=index" class="pop" data-container="body" data-toggle="popover" data-placement="right"  triggers="click"
                                                 [attr.data-content]='"<div class=\"row\"><div class=\"col-3\"><img  src= "+forImage + "/assets/images/usertooltip.svg class=\"pull-right img-fluid main\" ></div><div class=\"col author\">
                                                         "+author.persName+" <br> <span class=\"affiliation\">"+ author.affiliation+"</span></div></div>
                                                         </div>"'
@@ -31,18 +41,32 @@
                                 </div>
                                 <div class="w-100"></div>
                                 <!-- lien  vers github -->
-                                <div class="col-sm-12 col-md-12 col-lg-4 mt-1 icon-update-container">
-                                        <span (mouseout)="githubIcon = 'github-logo'" (mouseover)="githubIcon = 'github_hover'"
-                                                class=" mr-2" (click)="toGithub()" data-placement="bottom" tooltip="Check this scenario on Github" containerClass="tagSearchClass">
-                                                <img class="p-2" [src]="forImage + '/assets/images/'+ githubIcon + '.svg'" />
-                                        </span>
-                                        <span (mouseout)="quoteIcon = 'quote'" (mouseover)="quoteIcon='quote_hover'"  
-                                                class=" ml-3" data-placement="bottom" tooltip="Copy the reference of the scenario" containerClass="tagSearchClass">
-                                                <img class="p-2" [src]="forImage + '/assets/images/'+ quoteIcon + '.svg'" />
+                                <div #toolTip class="col-sm-12 col-md-12 col-lg-6 mt-1 icon-update-container "
+                                        *ngIf="scenarioTitle">
+                                        <span (mouseout)="githubIcon = 'github-logo'; shift=null" 
+                                                (mouseover)="mouseOver()" class=" scenarioTopIcon mr-2"
+                                                (click)="toGithub()" data-placement="right" 
+                                                tooltip="Check this scenario on Github" containerClass="tagSearchClass">
+                                                <img class="p-2"
+                                                        [src]="forImage + '/assets/images/'+ githubIcon + '.svg'" />
                                         </span>
 
+                                        <span (mouseout)="removeNotifTooltip(); quoteIcon = 'quote'; pop.hide()"
+                                                (mouseover)="quoteIcon='quote_hover'; pop.show()"
+                                                class="scenarioTopIcon ml-3" data-placement="right"
+                                                (click)="pop.hide(); copyCitation(pop);"
+                                                tooltip="Copy the reference of the scenario" #pop="bs-tooltip"
+                                                triggers="" id="citationTooltip" containerClass="tagSearchClass"
+                                                [ngClass]="shift">
+                                                <img class="p-2"
+                                                        [src]="forImage + '/assets/images/'+ quoteIcon + '.svg'" />
+                                        </span>
+
+
+
                                 </div>
-                                <div class=" col-sm-12 col-md-12  col-lg-5 align-text-bottom my-3 icon-update-container">
+                                <div
+                                        class=" col-sm-12 col-md-12  col-lg-4 align-text-bottom my-3 icon-update-container">
                                         <span *ngIf="scenarioElt?.lastUpdate" class="update-message">Last updated:
                                                 {{scenarioElt?.lastUpdate | amTimeAgo}}</span>
                                 </div>
@@ -51,17 +75,35 @@
                         </div>
                 </div>
         </div>
+        <!-- Preliminary scenarios -->
+        <div class="row m-md-3 m-lg-3" *ngIf="preliminaryScenarios?.length > 0">
+                <div class=" col-12 ml-3">
+                        <span class="m-lg-3"><img [src]="forImage + '/assets/images/' + preliminayScenarioIcon"></span>
+                        <span class="preliminary-title"> {{ preliminaryScenario }} </span>
+                </div>
+                <div class="preliminary-scenarios mx-5">
+                        <div class="row ">
+                                <div class="col-9 prem-elt" *ngFor="let scenario of preliminaryScenarios">
+                                        <app-scenario-card class="" [scenario]="scenario" [inScenario]='true'>
+                                        </app-scenario-card>
+                                </div>
+                        </div>
+                </div>
+        </div>
+
+
+
         <!--  steps protocol timeline-->
         <div class=" col-10 mx-auto text-center" *ngIf="spinnerSteps">
                 <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
         </div>
         <div *ngIf="!spinnerSteps">
-                <div class="row timeline-container mt-sm-5">
-                        <div id="timeline" class="ml-5">
+                <div class="row timeline-container mt-sm-5 ml-3">
+                        <div id="timeline" class="ml-4">
                                 <div class="timeline-item pb-5" *ngFor="let step of scenarioElt?.steps; let i = index ">
-                                        <div class="row step-content">
+                                        <div class="row step-content" >
                                                 <div class="col-1 ml-lg-5 mr-sm-5 mr-md-0 ml-sm-0">
-                                                        <div class="timeline-icon">
+                                                        <div #divs class="timeline-icon">
                                                                 {{ i+1}}
                                                         </div>
                                                 </div>
@@ -69,61 +111,71 @@
                                                         <div class="timeline-content mt-lg-2">
                                                                 <div class=" row">
                                                                         <span class="stepTitle">
-                                                                                {{step?.title}}
-                                                                                <a  target="_blank"[href] ="'https://github.com/ParthenosWP4/SSK/blob/master/steps/' + step?.GithubRef + '.xml'" class=" ml-2"  data-placement="bottom" tooltip="Check this step on Github" containerClass="tagSearchClass">
-                                                                                <img class="github-icon" [src]="forImage + '/assets/images/'+ githubIcon + '.svg'" /></a>
+                                                                                {{ createTitle(step)}}
+                                                                                <a target="_blank"
+                                                                                        [href]="'https://github.com/ParthenosWP4/SSK/blob/master/steps/' + step?.GithubRef + '.xml'"
+                                                                                        class=" ml-2"
+                                                                                        data-placement="bottom"
+                                                                                        tooltip="Check this step on Github"
+                                                                                        containerClass="tagSearchClass">
+                                                                                        <img class="github-icon"
+                                                                                                [src]="forImage + '/assets/images/'+ githubIcon + '.svg'" /></a>
                                                                         </span>
-                                                                        <!--<span *ngFor="let tag of step.TagList" class="{{tag.cssTag}} tag mt-3 mb-3"
-                                                                                tooltip="{{tag?.name}}" containerClass="tagClass">
-                                                                                {{tag.name}}-->
-
                                                                         <span class="mt-1">
-                                                                                <ng-container *ngFor=" let item of step?.metadata; let m = index">
-                                                                                        <!-- <p *ngIf="stepTags[changeTag(item)] !== undefined">
-                                                                                                <span>
-                                                                                                        {{item}}
-                                                                                                        
-                                                                                                </span>-->
-                                                                                        <span class="tag my-1  mr-2 py-1"
+                                                                                <ng-container
+                                                                                        *ngFor=" let item of (step?.metadata) ? step?.metadata : getMetaData(step) ; let m = index">
+                                                                                        <span class="tag my-2  mr-2 py-1"
                                                                                                 [ngClass]="((item?.type === undefined) || ((item?.type).indexOf('standard') !== -1) ) ? 'standard' : item?.type"
                                                                                                 tooltip="{{((item?.type === undefined) || ((item?.type).indexOf('standard') !== -1) ) ? 'standard' : item?.type + ' - Tadirah'}}"
                                                                                                 containerClass="tagClass">{{tagShow(item)?.key}}</span>
-                                                                                        <!-- <button type="button" class="btn btn-secondary disabled m-1" *ngFor=" let elt of stepTags[changeTag(item)]?.slice(0,2)" tooltip ="{{'Type: '  +elt?.type +  ' | Source : '+ elt?.source  }}">{{tagShow(elt)?.key}} </button>
-                                                                                                    <span  *ngIf = "stepTags[changeTag(item)]?.length > 2" class="collapsed text-center" data-toggle="collapse"  [attr.data-target]="'#tag' +m"  aria-expanded="false"> More ...</span>
-                                                                                                  </p>
-                                                                                                  <p *ngIf = "(stepTags[changeTag(item)] !== undefined) && stepTags[changeTag(item)]?.length > 2"  [attr.id]="'tag' + m" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                                                                                      <span class="tag my-1  mr-2 py-1" [ngClass] ="elt?.type"  *ngFor=" let elt of stepTags[changeTag(item)]?.slice(2, stepTags[changeTag(item)]?.length); let k = index"  tooltip="{{elt?.type +  '-'+ elt?.source  }}" containerClass="tagClass" >{{elt?.key}}</span>
-                                                                                                    <button *ngFor=" let elt of stepTags[changeTag(item)]?.slice(2, stepTags[changeTag(item)]?.length)"  tooltip ="{{'Type: '  +elt?.type +  ' | Source : '+ elt?.source  }}"  type="button"  class="btn btn-secondary  m-1" >{{elt?.key}}  {{elt?.abbr}}</button>
-                                                                                                  </p>-->
                                                                                 </ng-container>
                                                                         </span>
-
-
                                                                         <div class="w-100"></div>
-                                                                        <div class="stepDescription" [innerHTML]="step?.description"></div>
+                                                                        <div class="stepDescription"
+                                                                                [innerHTML]="step?.description"></div>
                                                                         <div class="w-100"></div>
-                                                                        <div class="row btnTimeline" *ngIf="step?.resources?.length > 0"
+                                                                        <div class="row btnTimeline"
+                                                                                *ngIf="step?.resources?.length > 0"
                                                                                 (click)="open(i+1, step)">
-                                                                                <img class="m-3" [src]="forImage + '/assets/images/books-stack.svg'" />
-                                                                                <span class="pt-4">{{resourceBtn}}</span>
+                                                                                <img class="m-3"
+                                                                                        [src]="forImage + '/assets/images/books-stack.svg'" />
+                                                                                <span
+                                                                                        class="pt-4">{{resourceBtn}}</span>
                                                                         </div>
-
-
                                                                 </div>
-
                                                         </div>
                                                 </div>
                                         </div>
-
                                 </div>
-
                         </div>
-
                 </div>
-                <div class="col-sm-12 col-md-12 nav-option my-5">
-                        <div class="col-12 d-flex justify-content-center">
-                                <a routerLink="/scenarios" class="btn btn-Back">Back to the scenarios</a>
+
+        </div>
+        <!-- FollowUp scenarios -->
+        <div class="row m-md-3 m-lg-3" *ngIf="followUpScenarios?.length > 0">
+                <div class=" col-12 ml-3">
+                        <span class="m-lg-3"><img [src]="forImage + '/assets/images/' + preliminayScenarioIcon"></span>
+                        <span class="preliminary-title"> {{ followUpScenario }} </span>
+                </div>
+                <div class="preliminary-scenarios mx-5">
+                        <div class="row ">
+                                <div class="col-8 prem-elt" *ngFor="let scenario of followUpScenarios">
+                                        <app-scenario-card class="" [scenario]="scenario" [inScenario]='true'>
+                                        </app-scenario-card>
+                                </div>
                         </div>
                 </div>
         </div>
+        <div class="col-sm-12 col-md-12 nav-option my-5">
+                <div class="col-12 d-flex justify-content-center">
+                        <a routerLink="/scenarios" class="btn btn-Back">Back to the scenarios</a>
+                </div>
+        </div>
+
+
+
+
 </div>
+
+
+

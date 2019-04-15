@@ -35,7 +35,7 @@ export class GlossaryComponent implements OnInit {
 
   ngOnInit() {
     this.ssKService.checkBackEndAvailability();
-    this.ssKService.setTitle('SSK - Glossary');
+    this.ssKService.setTitle('SSK - Vocabularies');
     this.urls = this.router.url.split('/');
     if (this.urls.length === 4) {
       this.ssKService.setGlossarylink(this.urls[this.urls.length - 2]);
@@ -47,7 +47,7 @@ export class GlossaryComponent implements OnInit {
 
   goTo(item: string) {
     this.ssKService.setGlossarylink(item);
-    this.router.navigate(['glossary', item]);
+    this.router.navigate(['vocabularies', item]);
   }
 
  getLink() {
@@ -59,7 +59,7 @@ export class GlossaryComponent implements OnInit {
  }
 
   changedHandler(item: string) {
-    this.router.navigate(['/', 'glossary', item]);
+    this.router.navigate(['/', 'vocabularies', item]);
   }
 
 

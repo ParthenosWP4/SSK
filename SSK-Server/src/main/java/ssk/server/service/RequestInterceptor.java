@@ -31,8 +31,8 @@ public class RequestInterceptor extends HandlerInterceptorAdapter {
 		logger.info("In preHandle we are Intercepting the Request");
 		logger.info("____________________________________________");
 		String requestURI = request.getRequestURI();
-		logger.info("Data collection on Github ....." + this.sskServ.handleData);
-		if (this.sskServ.handleData){
+		logger.info("Data collection on Github ....." + this.sskServ.isHandleData());
+		if (this.sskServ.isHandleData()){
 			logger.info("Data collection on Github .....");
 			response.setStatus(HttpStatus.SERVICE_UNAVAILABLE.value());
 			response.sendError(503, "Data collection on Github .....");

@@ -1,26 +1,4 @@
 
-<!--<div class="card " >
-  <div (click)="goToScenario(scenario?.id)">
-  <div class="card-header align-middle">
-   {{shortTitle?.content}}
-  </div>
-  <img class=" align-content-lg-center card-img-top img-fluid" src={{scenario?.image}} alt="">
-  <img *ngIf="defaultImage" class="  card-img-top img-fluid" src={{defaultImage}} alt="default image">
-
-  <p class="card-text m-2">{{shortDesc?.content}}</p>
-  <p>
-      <button *ngFor=" let elt of this.metadataPart1; let k = index"  tooltip ="{{'Type: '  +elt?.type +  ' / Source : '+ elt?.source  }}"  type="button"  class="btn btn-secondary tag m-1"  [placement]="(k == 0) ? 'right' : 'top'">{{elt?.key}}  {{elt?.abbr}}</button>
-  </p>
-  </div>
-  <div  *ngIf = "metadataPart2" >
-      <p class="collapsed text-center" data-toggle="collapse"  [attr.data-target]="'#' +scenario?.id"  aria-expanded="false" [attr.aria-controls]="'#' +scenario?.id">
-               <span>More tags</span>
-      </p>
-      <p  [attr.id]="scenario?.id" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
-        <button *ngFor=" let elt of this.metadataPart2; let j = index"  tooltip ="{{'Type: '  +elt?.type +  ' / Source : '+ elt?.source  }}"  type="button"  class="btn btn-secondary tag m-1"  [placement]="(j == 0) ? 'right' : 'top'">{{elt?.key}}  {{elt?.abbr}}</button>
-      </p>
-  </div>
-</div>-->
 <div class="card  mr-3 my-5  ">
         <div class="row ">
             <div class=" col">
@@ -30,7 +8,7 @@
           </div>
     <div class="row">
         <div class="col-lg-3 img" (click)="goToScenario(scenario?.id)">
-            <img class=" align-content-lg-center card-img-top  fit-image" src={{scenario?.image}} alt="">
+            <img class=" align-content-lg-center card-img-top  fit-image" src={{scenario?.image?.graphic?.url}} alt="">
             <img *ngIf="defaultImage" class=" card-img-top fit-image" src={{defaultImage}} alt="default image">
         </div>
         <div class="col-lg">
@@ -44,7 +22,7 @@
                             <ng-template  #authorPop >
                                  <div class="row" >
                                      <div class="col-3">
-                                            {{author.persName}}
+                                            {{author.forename }}  {{author.surname}}
                                      </div>
                                      <div class="col">
                                             {{author.affiliation}}
@@ -57,7 +35,7 @@
                             
                             <span >
                                 <span *ngIf = "j <= (scenario?.author?.length - 1) && j>0">,</span>
-                                {{author?.persName}}
+                                {{author.forename }}  {{author.surname}}
                             </span>
                           </div>
             </div>

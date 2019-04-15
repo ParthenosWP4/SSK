@@ -76,7 +76,7 @@ export class ElastichsearchService {
   }
 
   getScenarioDetails(scenarioId: string): Observable<any> {
-    this.setParams(['title', 'desc', 'image', 'scenario_metadata', 'author' ]);
+    this.setParams(['title', 'desc', 'image', 'scenario_metadata', 'author']);
     this.setOptions(this.params);
     return this.http.get(this.sskBackendEndpoint + 'scenario/' + scenarioId, this.options);
   }
@@ -261,9 +261,7 @@ export class ElastichsearchService {
             })).subscribe(
               (value) => { },
               (error) => { console.log(error); },
-              () => {
-                //this.getAllStandards();
-              });
+              () => { });
             break;
             case 'object':
             _.map(this.searchData['objects'], item => {
@@ -296,7 +294,8 @@ export class ElastichsearchService {
           }
         })).subscribe(
           (dat) => {
-            this.autoCompleteList =  _.concat(this.getActivitiesForCount(), this.getDisciplines(), this.getTechniques(), this.getObjects(), this.getStandards());
+            this.autoCompleteList =  _.concat(this.getActivitiesForCount(),
+            this.getDisciplines(), this.getTechniques(), this.getObjects(), this.getStandards());
              this.searchTags = new Bloodhound({
               datumTokenizer: Bloodhound.tokenizers.obj.whitespace('filter'),
               queryTokenizer: Bloodhound.tokenizers.whitespace,
@@ -339,6 +338,8 @@ export class ElastichsearchService {
         result => {
           result.id = elt._id;
           result.lastUpdate = elt._source.lastUpdate;
+          result.followUp = elt._source.followUp;
+          result.preliminary = elt._source.preliminary;
           this.detailsResult = result;
         },
         error => {  },
@@ -380,20 +381,59 @@ export class ElastichsearchService {
           (value) => {
             _.forEach(this.getSteps(), (step) => {
               step['metadata'] = this.addStepMetadata(step._id + step.position + 'Meta');
-            });
+              });
             this.getAllResources().then(
               (val) => {
-                _.forEach(this.getSteps(), (step) => {
+                Observable.of(_.forEach(this.getSteps(), (step) => {
                   step['resources'] = _.remove(_.clone(this.getResources()), item => {
-                    return item.parent === step._id;
+                    return _.includes(_.map(item.parents, 'id'), step['GithubRef']);
                   });
-                });
+                })).subscribe(
+                  (steps) => { },
+                  error => {},
+                  () => {
+                    _.forEach(this.getSteps(), (step) => {
+                      if (_.indexOf(step._id, '&') !== -1) {
+                        step =  this.setReferencedScenario(step);
+                      }
+                    });
+                  });
             });
           });
         resolve(this.getSteps());
       });
     });
   }
+
+
+  setReferencedScenario(stepParam) {
+    const stepID = stepParam.GithubRef.split('&');
+     if (stepID.length > 0) {
+       stepParam.GithubRef = stepID[0];
+       this.getBaseScenarions(stepID[0]).then(
+         (theStep: any) => {
+           stepParam.head = theStep.head;
+           stepParam.stepDesc = theStep.stepDesc;
+           stepParam.resources = _.uniqBy(_.concat(stepParam.resources, theStep.resources), '_id');
+         });
+         // Faut mettre à jour les ressources
+     }
+     return stepParam ;
+ }
+
+ getBaseScenarions(id: string) {
+  let stepRef: any;
+  return new Promise((resolve, reject) => {
+    Observable.of(_.filter(this.getSteps(), (item) => {
+      return item._id === id;
+    })[0]).subscribe(
+      (val) => {
+        stepRef = val;
+       },
+      (error) => {},
+      () => { resolve(stepRef); });
+  });
+}
 
 getGlossaryTerms() {
   let count = 0;
@@ -545,7 +585,7 @@ getAllStandards() {
 
   getScenarios() {
     const rems = _.remove(this.scenarios, function(n) {
-      return (n.id === 'SSK_sc_corpusModellingInTEI' ||  n.id === 'SSK_sc_RUBRICA');
+      return (n.id === 'SSK_sc_corpusModellingInTEI-minusDigitization');
     });
     return this.scenarios;
   }

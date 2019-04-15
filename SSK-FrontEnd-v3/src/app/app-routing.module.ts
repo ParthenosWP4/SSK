@@ -1,10 +1,6 @@
-import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
 import {HomeComponent} from './home/home.component';
 import {ScenariosComponent} from './scenarios/scenarios.component';
-import {ScenarioTemplateComponent} from './scenario-template/scenario-template.component';
-import {ScenarioCardComponent} from './scenario-card/scenario-card.component';
 import {NewScenarioComponent} from './contribute/new-scenario/new-scenario.component';
 import {ScenarioComponent} from './scenario/scenario.component';
 import {GlossaryComponent} from './glossary/glossary.component';
@@ -44,10 +40,31 @@ const routes: Routes = [
     text: 'Resources'
   }
   },
-  { path: 'scenarios/:id', component: ScenarioComponent,
+  { path: 'scenarios',
   data: {
-    breadcrumbs: 'Scenarios',
+    breadcrumbs: true,
+    text: 'Scenarios',
+  },
+  children: [
+    { path: ':id', component: ScenarioComponent,
+    resolve: {
+      content: GlossaryResolver
+    },
+      data: {
+        breadcrumbs: '{{content[content.length -1].text}}',
+      },
+      children: [
+        { path: ':stepId', component: ScenarioComponent,
+        resolve: {
+          content: GlossaryResolver
+        },
+          data: {
+            breadcrumbs: '{{content[content.length -1].stepId}}'
+          },
+        }
+      ]
   }
+  ]
 },
   { path: 'construction',  component: PageInContructionComponent },
   { path: 'contact',  component: ContactComponent },
@@ -66,11 +83,11 @@ const routes: Routes = [
   { path: 'user',  component: UserComponent },
   { path: 'scenarios/:id/:stepId', component: ScenarioComponent},
   {
-    path: 'glossary', component: GlossaryComponent,
+    path: 'vocabularies', component: GlossaryComponent,
     data: {
       // Uses static text (Glossary)
       breadcrumbs: true,
-      text: 'Glossary'
+      text: 'Vocabularies'
     },
   children: [
     { path: ':type', component: ContentComponent,

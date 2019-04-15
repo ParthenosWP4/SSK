@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+    <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<!-- Version V15, Décembre 2017 : Organisation en tête de chapîtres, reprise des intitulés (plus simple, harmonisation), changement de certaines propriétés d'éléments -->
+
+<TEI xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg"
+	xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0"
+	xmlns:rng="http://relaxng.org/ns/structure/1.0">
+
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title>
+					<idno type="title">Personnalisation ODD Corpus Oraux et Multimodaux</idno>
+					<bibl> CORLI et IRCOM </bibl>
+					<desc> L'objectif de cette personnalisation est de proposer un sous-ensemble
+						d'éléments TEI pour décrire le niveau minimal des métadonnées de Corpus
+						(niveau 0) défini au sein de CORLI </desc>
+				</title>
+				<principal>
+					<name type="org"> CORLI - IRCOM </name>
+					<name type="org"> Carole Etienne, Loic Liégeois, Christophe Parisse </name>
+				</principal>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>CORLI wiki</publisher>
+			</publicationStmt>
+			<sourceDesc>
+				<p>written from IRCOM and CORLI recommandations</p>
+			</sourceDesc>
+		</fileDesc>
+		<xenoData>
+			<rng:data>http://www.tei-c.org/ns/1.0</rng:data>
+		</xenoData>
+	</teiHeader>
+
+	<text>
+		<body>
+
+			<!-- explications de l'usage et exemples
+				on ne s'intéresse qu'aux elementSpec
+					les moduleRef ne sont pas utilisés pour l'instant: ils sont là pour les autres usages des ODD
+
+				elementSpec ident="nom du tag dans la TEI" corresp="tag optionel à utiliser si ident n'est pas unique"
+					desc: multilingue possible voir champ xml:lang
+					content: contenu du noeud y compris partie texte
+					attList: listes des attributs
+
+				dans content
+					sequence minOccurs maxOccurs (s'il y a plus d'un élément)
+						elementRef key="nom du tag dans la TEI" corresp="tag optionel à utiliser si ident n'est pas unique"
+						elementRef key=...
+					elementRef minOccurs maxOccurs (min et max sont optionels: omis s'ils valent 1)
+					textNode
+					dataRef : pour indiquer le format du noeud (à la place de textNode)
+						integer decimal NCName string duration anyURI data - si rien pas de contrôle de format exemple titre
+					valList : si le node ne peut prendre que certaines valeurs prédéfinies
+
+				dans attList
+					attDef ident="attribut-dans-TEI" rend="valeur par défaut de l'attribut dans les valeurs de la liste" usage="rec ou req"
+						desc (multilingue)
+						desc = nom de la rubrique pour les sections, les élements à saisir, pour les valList =bulle d'aide
+						datatype
+							dataRef : format de l'attribut
+						... ou sinon une liste de valeurs: si une seule pas de choix valeur obigatoire
+						valList ==> choix multiples type ascenseur
+							valItem ident="valeur-dans-TEI"
+								desc (multilingue) + rendition (champ aide optionel ? - emplacement à affiner)
+			-->
+
+			<egXML xmlns="http://www.tei-c.org/ns/Examples">
+				<!-- Un exemple avec tout dedans -->
+				<elementSpec ident="tag_TEI" module="header"
+					corresp="nom_pour_identification_unique">
+					<desc xml:lang="fr">... en français ... - partie affichée pour décrire
+						l'élément</desc>
+					<desc xml:lang="en">... en anglais ...</desc>
+					<content>
+						<sequence minOccurs="0" maxOccurs="unbounded">
+							<elementRef key="sous_tag_1"
+								corresp="autre_nom_pour_identification_unique"/>
+							<elementRef key="sous_tag_2"/>
+						</sequence>
+						<elementRef key="idno" corresp="handle" minOccurs="1" maxOccurs="unbounded"/>
+						<textNode/>
+						<dataRef name="NCName"/>
+					</content>
+					<attList>
+						<attDef ident="mimeType" usage="req" mode="change">
+							<valList >
+								<valItem ident="audio/wav" >
+									<desc xml:lang="fr">format wav</desc>
+									<desc xml:lang="en">wav format</desc>
+								</valItem>
+								<valItem ident="audio/mp3" >
+									<desc xml:lang="fr">format mp3</desc>
+									<desc xml:lang="en">mp3 format</desc>
+								</valItem>
+								<valItem ident="mimeType.video/mp4">
+									<desc xml:lang="fr">format mp4</desc>
+									<desc xml:lang="en">mp4 format</desc>
+								</valItem>
+								<valItem ident="mimeType.video/mov" >
+									<desc xml:lang="fr">format mov</desc>
+									<desc xml:lang="en">mov format</desc>
+								</valItem>
+								<valItem ident="mimeType.video/wmv" >
+									<desc xml:lang="fr">format wmv</desc>
+									<desc xml:lang="en">wmv format</desc>
+								</valItem>
+								<valItem ident="mimeType.video/avi" >
+									<desc xml:lang="fr">format avi</desc>
+									<desc xml:lang="en">avi format</desc>
+								</valItem>
+								<valItem ident="mimeType.video/ogg" >
+									<desc xml:lang="fr">format ogg</desc>
+									<desc xml:lang="en">ogg format</desc>
+								</valItem>
+								<valItem ident="other" >
+									<desc xml:lang="fr">autre format</desc>
+									<desc xml:lang="en">another format</desc>
+								</valItem>
+							</valList>
+						</attDef>
+						<attDef ident="dur-iso" usage="req" mode="change">
+							<desc xml:lang="fr">Durée du média : chaque media peut avoir une durée
+								différente</desc>
+							<desc xml:lang="en">media duration : each media could have a different
+								duration </desc>
+							<datatype>
+								<dataRef name="duration"/>
+							</datatype>
+						</attDef>
+					</attList>
+				</elementSpec>
+			</egXML>
+
+			<!-- definition de TEI_CORPO_METADATA-->
+			<schemaSpec ident="TEI_CORPO_METADATA" start="TEI" ns="http://www.tei-c.org/ns/1.0">
+				<!-- not used:  corresp="/TEI/profileDesc/particDesc /TEI/fileDesc/sourceDesc" -->
+				<!-- ajouter teiCorpus par la suite si collections -->
+
+				<!-- required modules -->
+				<moduleRef key="tei"/>
+				<!-- à compléter par : reg choice orig pour l'orthographe adapté -->
+				<moduleRef key="core"
+					include="title bibl desc name respStmt resp publisher pubPlace ref p media date "/>
+				<moduleRef key="header"
+					include="teiHeader fileDesc titleStmt idno principal publicationStmt availability licence sourceDesc profileDesc langUsage language
+					 encodingDesc appInfo application projectDesc classDecl taxonomy catDesc category"/>
+				<!-- à compléter par : body div text-->
+				<moduleRef key="textstructure" include="TEI text body div "/>
+				<!-- optional modules -->
+				<!-- à compléter par : u annotationBlock incident kinesic pause shift vocal-->
+				<moduleRef key="spoken"
+					include="recordingStmt recording transcriptionDesc annotationBlock u vocal kinesic incident pause"/>
+				<moduleRef key="namesdates"
+					include="persName surname listPerson person age occupation langKnowledge langKnown listPlace place country settlement district "/>
+				<moduleRef key="corpus"
+					include="activity textDesc channel constitution derivation domain factuality interaction preparedness purpose particDesc settingDesc setting"/>
+				<!-- à compléter par Christophe P -->
+				<moduleRef key="linking" include="anchor seg timeline when"/>
+				<moduleRef key="analysis" include=" w span spanGrp"/>
+				<!-- ajouter interp interpGrp-->
+				<moduleRef key="transcr"/>
+				<!-- utilisé ???-->
+
+				<!-- utilisation d'include -->
+				<classRef key="filedesc" source="filedesc.odd"/>
+				<classRef key="participants" source="partdesc.odd"/>
+				<classRef key="settingencoding" source="settingencodingdesc.odd"/>
+
+				<!-- structure generale TEI -->
+				<elementSpec ident="TEI" module="textstructure" mode="change">
+					<content>
+						<sequence minOccurs="1" maxOccurs="1">
+							<elementRef key="teiHeader"/>
+							<elementRef key="text"/>
+						</sequence>
+					</content>
+				</elementSpec>
+
+				<!-- structure generale teiHeader -->
+				<elementSpec ident="teiHeader" module="header" mode="change">
+					<content>
+						<sequence minOccurs="1" maxOccurs="1">
+							<elementRef key="fileDesc"/>
+							<elementRef key="profileDesc"/>
+							<elementRef key="encodingDesc"/>
+						</sequence>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="text">
+					<!--
+             unused element dont need to be defined
+             they will be ignored
+          -->
+					<content/>
+				</elementSpec>
+
+				<elementSpec ident="fileDesc" module="header">
+					<desc xml:lang="fr">Titre, citation, diffusion et données primaires ~ signal audio/vidéo</desc>
+					<desc xml:lang="en">Title, citation, diffusion and primary data ~ signal audio/video</desc>
+					<content>
+						<sequence minOccurs="1" maxOccurs="1">
+							<elementRef key="titleStmt"/>
+							<elementRef key="publicationStmt"/>
+							<elementRef key="sourceDesc"/>
+						</sequence>
+					</content>
+					<remarks style="element">
+						<p><ident>css-fileDesc</ident></p>
+					</remarks>
+				</elementSpec>
+
+				<elementSpec ident="profileDesc" module="header">
+					<desc xml:lang="fr">Catégorie, participants, contexte, langue</desc>
+					<desc xml:lang="en">Category, participants, setting, language</desc>
+					<content>
+						<sequence minOccurs="1" maxOccurs="1">
+							<elementRef key="textDesc"/>
+							<elementRef key="particDesc"/>
+							<elementRef key="settingDesc"/>
+<!--							<elementRef key="langUsage"/> dans settingDesc ??? -->
+						</sequence>
+					</content>
+					<remarks style="element">
+						<p><ident>css-profileDesc</ident></p>
+					</remarks>
+				</elementSpec>
+
+				<elementSpec ident="encodingDesc" module="header">
+					<desc xml:lang="fr">Logiciel, projet, annotations</desc>
+					<desc xml:lang="en">Software, project, annotations</desc>
+					<content>
+						<sequence minOccurs="0" maxOccurs="1">
+							<elementRef key="transcriptionDesc"/>
+							<elementRef key="projectDesc"/> <!-- à voir avec Loïc est-ce bien utile on a déjà une description courte dans title et une longue dans setting/activity -->
+							<elementRef key="appInfo"/>
+						</sequence>
+					</content>
+					<remarks style="element">
+						<p><ident>css-encodingDesc</ident></p>
+					</remarks>
+				</elementSpec>
+
+			</schemaSpec>
+		</body>
+	</text>
+</TEI>

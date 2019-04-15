@@ -30,12 +30,11 @@ export class HomeComponent implements OnInit {
   fourthTitle = 'Contribute to the SSK and help build a community';
   fourthDesc = 'Bringing together researchers from different backgrounds, the SSK is a place to discuss and devise best practice ' +
                 'processes in various fields of interest within the Arts & Humanities.';
-                
   forImage = environment.forImage;
   constructor(private router: Router, private sskService: SskService) { }
 
   ngOnInit() {
-    this.sskService.setTitle('Standardization Survival Kit: test');
+    this.sskService.setTitle('Standardization Survival Kit (SSK)');
   }
 
 

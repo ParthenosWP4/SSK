@@ -1,16 +1,16 @@
 
-<div class="card  mr-3 my-5 " *ngIf="scenario?.id">
+<div class="card  mr-3 my-5 ">
   <div class="title">
     {{step?.title}}
     <!-- Last updated: {{step?.lastUpdate | amTimeAgo}}-->
   </div>
-  <div class="row vdivide">
-    <div class="col ">
-      <a [href]="'#/scenarios/' + scenario?.id + '/1'">{{scenarioTitle}}</a>
+  <div class="row vdivide mb-2" *ngFor ="let item of step.parents">
+    <div class="col"  >
+      <a [href]="'#/scenarios/' + item?.id ">{{getScenarioTitle(item?.id)}}</a>
     </div>
     <div class="col mx-auto">
-      <a  class="btn btn-step" [href]="'#/scenarios/' + scenario?.id + '/' + step.position">
-        Step {{step?.position}}
+      <a  class="btn btn-step" [href]="'#/scenarios/' + item?.id  +'/'+ (item?.position + 1)">
+        Step {{item?.position + 1}}
       </a>
     </div>
   </div>

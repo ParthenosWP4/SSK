@@ -6,6 +6,6 @@
 export const environment = {
   production: false,
   //sskBackendEndpoint : 'http://localhost:9080/',
-  sskBackendEndpoint : 'http://ssk.huma-num.fr/ssk_services-0.0.1/',
+ sskBackendEndpoint : 'http://ssk.huma-num.fr/ssk_services-0.0.1/',
   forImage: ''
 };

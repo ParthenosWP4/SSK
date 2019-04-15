@@ -1,7 +1,9 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {GlossaryComponent} from '../glossary.component';
+import {Router} from '@angular/router';
 import * as _ from 'lodash';
 import {Location} from '@angular/common';
+import { McBreadcrumbsComponent} from 'ngx-breadcrumbs';
 @Component({
   selector: 'app-right-menu',
   templateUrl: './right-menu.component.html',
@@ -15,7 +17,7 @@ export class RightMenuComponent implements OnInit {
 
   menuItem: Array<string> = [];
 
-  constructor(private location: Location, private glossaryComponent: GlossaryComponent) { }
+  constructor(private location: Location, private glossaryComponent: GlossaryComponent, private router: Router) { }
 
   ngOnInit() {
     this.menuItem = _.clone(this.glossaryComponent.glossaryItems);
@@ -30,6 +32,8 @@ export class RightMenuComponent implements OnInit {
       return elt !== item;
     });
     this.itemChanged.emit(item);
-    this.location.replaceState('glossary/' + item);
+    //this.location.replaceState('glossary/' + item);
+   
+
   }
 }

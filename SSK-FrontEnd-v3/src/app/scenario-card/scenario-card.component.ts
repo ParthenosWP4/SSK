@@ -13,9 +13,10 @@ import { isDefined } from '@angular/compiler/src/util';
   templateUrl: './scenario-card.component.html',
   styleUrls: ['./scenario-card.component.scss']
 })
-export class ScenarioCardComponent implements OnInit,  AfterViewInit {
+export class ScenarioCardComponent implements OnInit {
 
   @Input() scenario: any;
+  @Input() inScenario: boolean;
   public title: any;
   public desc: any;
   public metadata: Array<any> = new Array();
@@ -30,23 +31,6 @@ export class ScenarioCardComponent implements OnInit,  AfterViewInit {
               private elasticServ: ElastichsearchService) { }
 
 
-  ngAfterViewInit() {
-   /* (<any>$('.pop')).popover({ trigger: 'manual' , html: true, animation: false})
-      .on('mouseenter', function () {
-          const _this = this;
-          (<any>$(this)).popover('show');
-          $('.popover').on('mouseleave', function () {
-            (<any>$(_this)).popover('hide');
-          });
-      }).on('mouseleave', function () {
-          const _this = this;
-          setTimeout(function () {
-              if (!$('.popover:hover').length) {
-                (<any>$(_this)).popover('hide');
-              }
-          }, 40);
-    });*/
-}
   ngOnInit() {
     if (this.scenario.title instanceof Array) {
       this.title = this.scenario.title[0];
@@ -60,11 +44,8 @@ export class ScenarioCardComponent implements OnInit,  AfterViewInit {
     }
 
     if (this.scenario.desc instanceof Array) {
-      this.desc = this.scenario.desc[0];
-    } else {
-      this.desc = this.scenario.desc;
+      this.desc = this.scenario.desc[0].content;
     }
-    this.desc = this.sskServices.updateText( this.desc, null);
 
     if (this.scenario.scenario_metadata.objects instanceof Array ) {
       this.metadata  =  this.metadata.concat(this.scenario.scenario_metadata.objects);
@@ -131,10 +112,11 @@ export class ScenarioCardComponent implements OnInit,  AfterViewInit {
 
 
   goToScenario(scenarioId: string) {
-    //if (scenarioId === 'SSK_sc_corpusModellingInTEI') {
-     // scenarioId = 'SSK_sc_corpusModellingInTEI-minusDigitization';
-    //}
-    this.router.navigate(['scenarios', scenarioId]);
+    if (this.inScenario === true) {
+      window.open('#/scenarios/' + scenarioId);
+    } else {
+      this.router.navigate(['scenarios', scenarioId]);
+    }
   }
 
   getInnerHTMLValue(text: string ) {

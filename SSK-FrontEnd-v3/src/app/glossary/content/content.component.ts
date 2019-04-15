@@ -1,11 +1,13 @@
-import {ElementRef, Renderer2, AfterViewInit, Component,  QueryList, ViewChildren, OnInit, Directive, Input} from '@angular/core';
-import {ActivatedRoute, Params, Router} from '@angular/router';
+import {ElementRef, Renderer2, AfterViewInit, Component,  QueryList, ViewChildren, OnInit, OnDestroy} from '@angular/core';
+import {ActivatedRoute, Router, NavigationStart, NavigationEnd, NavigationError} from '@angular/router';
 import {SskService} from '../../ssk.service';
 import {ElastichsearchService} from '../../elastichsearch.service';
 import * as _ from 'lodash';
 declare var $: any;
 import {DomSanitizer} from '@angular/platform-browser';
 import { ClipboardService } from 'ngx-clipboard';
+import {Location} from '@angular/common';
+import { Subscription } from 'rxjs/Subscription';
 
 
 @Component({
@@ -27,10 +29,12 @@ export class ContentComponent implements OnInit, AfterViewInit {
   current: string;
   type: string;
   questionElem: any;
+  navigationSubscription: Subscription;
 
   constructor(private  sskServ: SskService, private elastiServ: ElastichsearchService, private router: Router,
-    private renderer: Renderer2, private _clipboardService: ClipboardService) {
-    }
+    private renderer: Renderer2, private _clipboardService: ClipboardService, private location: Location) {
+  }
+
 
   ngOnInit() {
     this.urls = this.router.url.split('/');
@@ -57,8 +61,12 @@ export class ContentComponent implements OnInit, AfterViewInit {
       (value) => {
         this.data = value;
         this.spinner = false;
-      }
-    );
+       this.router.navigate(['vocabularies/' + item]);
+  });
+}
+
+  initialiseVocab() {
+   
   }
 
   trim(text: string) {
@@ -123,4 +131,5 @@ export class ContentComponent implements OnInit, AfterViewInit {
      const term = '<term key="' + eltKey + '" source="' + eltSource + '" type="' + eltType + '"/>';
     this._clipboardService.copyFromContent(term);
   }
+
 }

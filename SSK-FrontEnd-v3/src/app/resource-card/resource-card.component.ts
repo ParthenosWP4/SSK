@@ -19,13 +19,14 @@ export class ResourceCardComponent implements OnInit {
   icon: string;
   imgSrc = '';
 
+
   constructor(public sanitizer: DomSanitizer, private elasticServ: ElastichsearchService) { }
   ngOnInit() {
+    console.log(this.res)
     this.url =  String(this.res.url);
     if (this.url === '') {
       this.icon = 'open-book.svg';
     } else {
-      
       this.res.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.res.url);
       this.res.redirect = this.res.url.changingThisBreaksApplicationSecurity;
       if (this.res.creators !== undefined) {
@@ -38,20 +39,6 @@ export class ResourceCardComponent implements OnInit {
         this.icon = 'pdf.svg';
       } else {
         this.icon = 'webpage.svg';
-        /*this.elasticServ.testUrlForIframe(this.res.redirect).subscribe(
-          result => {console.log(result)},
-          err => {
-            console.log(err)
-            if (err.status === 0) {
-              this.icon = 'webpage.svg';
-            } else {
-              this.icon = 'webpage.svg';
-            }
-
-          },
-          () => {
-                console.log('Iframe matchineg')
-          });*/
       }
       if (this.res.abstract !== undefined) {
         this.res.abstract = this.res.abstract.replace(/\\n/g, '<br />');

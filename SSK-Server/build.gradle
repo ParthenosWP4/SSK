@@ -4,6 +4,7 @@ buildscript {
     }
     repositories {
         mavenCentral()
+        google()
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -40,20 +41,26 @@ sourceSets {
 
 dependencies{
 
-    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat:1.5.7.RELEASE'
+
+    compile 'org.springframework.boot:spring-boot-starter-tomcat:' + springBootVersion
+
+
+
 
     /*These two cannot be used either for deployment with an integrated tomcat nor for an external web server.*/
     if(onD4Science == true) {
-
-        providedRuntime 'org.slf4j:slf4j-api:1.7.25'
-        compile group: 'org.apache.tomcat', name: 'tomcat-util', version: '7.0.52'
+        compile 'org.slf4j:slf4j-api:1.7.25'
+        compile group: 'org.apache.tomcat', name: 'tomcat-util', version: '7.0.57'
     }
-    else{
-        compile group: 'org.springframework.boot', name: "spring-boot-starter", version: '1.5.7.RELEASE'
+   else{
+        compile group: 'org.springframework.boot', name: "spring-boot-starter", version: "${springBootVersion}"
         compile 'commons-logging:commons-logging:1.2'
     }
 
-    compile group: 'org.springframework.boot', name: "spring-boot-starter-web", version: '1.5.7.RELEASE'
+    compile group: 'org.springframework.boot', name: "spring-boot-starter-web", version: "${springBootVersion}"
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.1.1.RELEASE'
 
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-elasticsearch
     // compile group: 'org.springframework.boot', name: 'spring-boot-st arter-data-elasticsearch', version: '1.5.2.RELEASE'
@@ -74,13 +81,11 @@ dependencies{
     // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.8.7'
 
-    //compile 'com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.5.2'
 
     // https://mvnrepository.com/artifact/org.json/json
     compile group: 'org.json', name: 'json', version: '20160810'
 
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter
+
 
     // https://mvnrepository.com/artifact/org.w3c/dom
     compile group: 'org.w3c', name: 'dom', version: '2.3.0-jaxb-1.0.6'
@@ -89,13 +94,18 @@ dependencies{
     compile group: 'org.jsoup', name: 'jsoup', version: '1.10.2'
 
     // https://mvnrepository.com/artifact/org.slf4j/log4j-over-slf4j
-    //compile group: 'org.slf4j', name: 'log4j-over-slf4j', version: '1.7.25'
+    compile group: 'org.slf4j', name: 'log4j-over-slf4j', version: '1.7.25'
 
-    // https://mvnrepository.com/artifact/org.slf4j/jul-to-slf4j
-    //compile group: 'org.slf4j', name: 'jul-to-slf4j', version: '1.7.25'
+     compile group: 'ch.qos.logback', name: 'logback-classic'
+
+    // https://mvnrepository.com/artifact/dom4j/dom4j
+    compile group: 'dom4j', name: 'dom4j', version: '1.6.1'
+
+    // https://mvnrepository.com/artifact/jaxen/jaxen
+    compile group: 'jaxen', name: 'jaxen', version: '1.1.1'
 
 
-    //compile group: 'ch.qos.logback', name: 'logback-classic'
+
 
 }
 

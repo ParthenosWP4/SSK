@@ -4,7 +4,6 @@ package ssk.server.service;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.google.gson.stream.MalformedJsonException;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.slf4j.Logger;
@@ -12,7 +11,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -21,11 +19,9 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
-import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 @Service
 public class ElasticGetDataServices {
@@ -33,7 +29,7 @@ public class ElasticGetDataServices {
 	@Value("${all_step_query}")
 	private String allStepQuery;
 	
-	@Value("${scenario_desc_query}")
+	@Value("${new_scenario_desc_query}")
 	private String scenarioDescQuery;
 	
 	@Value("${scenario_image_query}")
@@ -178,19 +174,33 @@ public class ElasticGetDataServices {
 		
 	}
 	
-	public JsonElement getStandard(String standardAbbrName) {
+	/**
+	 * getStandardByabbrName() queries Elasticsearch to get Standard's bunch of information  by using his short name  as parameter
+	 * @param standardAbbrName
+	 * @return
+	 */
+	
+	public JsonElement getStandardByabbrName(String standardAbbrName) {
+		sskIndex = "ssk";
 		standardAbbrName = standardAbbrName.replaceAll("\"", "").replaceAll("\\\\n(\\s)+", " ");
 		JsonElement jsonResult = new JsonObject();
 		entity = new HttpEntity<>(standardQuery.replace("value", standardAbbrName), requestHeadersParams.getHeaders());
-		ResponseEntity<String> response = this.restTemplate.exchange( this.elasticServices.getElasticSearchPort() + "/" + sskIndex+ "/_doc/_search", HttpMethod.POST, entity, String.class);
-		if (response.getStatusCode().is2xxSuccessful()) {
-			jsonResult = this.sskServices.getParser().parse(response.getBody()).getAsJsonObject().getAsJsonObject("hits");
-			if(jsonResult.getAsJsonObject().get("total").toString().equals("0")){
-				jsonResult = null;
+		
+		try {
+			ResponseEntity<String> response = this.restTemplate.exchange(this.elasticServices.getElasticSearchPort() + "/" + sskIndex + "/_doc/_search", HttpMethod.POST, entity, String.class);
+			if (response.getStatusCode().is2xxSuccessful()) {
+				jsonResult = this.sskServices.getParser().parse(response.getBody()).getAsJsonObject().getAsJsonObject("hits");
+				if (jsonResult.getAsJsonObject().get("total").toString().equals("0")) {
+					logger.error( standardAbbrName +" not found!!!");
+					jsonResult = null;
+				} else {
+					jsonResult = jsonResult.getAsJsonObject().getAsJsonArray("hits");
+				}
 			}
-			else{
-				jsonResult = jsonResult.getAsJsonObject().getAsJsonArray("hits");
-			}
+		}
+		catch (HttpClientErrorException excep){
+			logger.error(excep.getClass().getCanonicalName() + " - " + excep.getMessage()+ "standard " + standardAbbrName +" not found!!!");
+			jsonResult = null;
 		}
 		return jsonResult;
 	}
@@ -222,18 +232,74 @@ public class ElasticGetDataServices {
 		return jsonResult;
 	}
 	
+	private void normalizeText(JsonElement content, HashMap<String, String > desc, String key){
+		String keyLang = "en";
+		if (content.getAsJsonObject().has("lang")) {
+			key = content.getAsJsonObject().get("lang").getAsString();
+		}
+		
+		if(content.isJsonObject()){
+			if(content.getAsJsonObject().has("part")){
+				desc.putIfAbsent(key,  desc.get(key) + content.getAsJsonObject().get("part").getAsString());
+			}
+			if(content.getAsJsonObject().has("list")){
+				//setList()
+				/*JsonElement list = content.getAsJsonObject().get("list").getAsJsonObject().get("item");
+				if(list.isJsonArray()){
+					for(JsonElement item: list.getAsJsonArray()){
+						if(item.getAsJsonObject().has("list")){
+							normalizeText(item.getAsJsonObject().get("list").getAsJsonObject(), desc, key);
+						}
+						else{
+							if (item.getAsJsonObject().has("content")) {
+								normalizeText(item.getAsJsonObject().get("content"), desc, key);
+							}
+						}
+					}
+				}
+				else {
+				
+				}*/
+			}
+			
+		}
+		else {
+			for(JsonElement item: content.getAsJsonArray()) {
+				if (item.getAsJsonObject().has("content")) {
+					normalizeText(item.getAsJsonObject().get("content"), desc, key);
+				}
+				
+				if(item.getAsJsonObject().has("p")){
+					JsonElement paragraph = item.getAsJsonObject().get("p");
+					if(paragraph.isJsonObject()){
+					
+					}
+					else{
+						for(JsonElement subPara: paragraph.getAsJsonArray()){
+							if(subPara.isJsonArray()){
+								for(JsonElement paragraphContent: subPara.getAsJsonArray()){
+									normalizeText(paragraphContent, desc, key );
+								}
+							}
+						}
+					}
+				}
+				
+			}
+		}
+	}
 	
 	
 	
 	private JsonElement queryDescription(String scenarioId) {
 		JsonElement jsonResult ;
 		JsonElement source ;
-		sskIndex = "ssk/_doc/_search?q=_id:"+ scenarioId;
+		sskIndex = "ssk/_doc/_search?q=_id:"+ scenarioId;sskIndex = "ssk/_doc/_search?q=_id:"+ scenarioId;
 		entity = new HttpEntity<>(scenarioDescQuery, requestHeadersParams.getHeaders());
 		ResponseEntity<String> response = this.restTemplate.exchange( this.elasticServices.getElasticSearchPort() + "/" + sskIndex, HttpMethod.POST, entity, String.class);
 		if (response.getStatusCode().is2xxSuccessful()) {
 			final JsonArray result = new JsonArray();
-			jsonResult = loadContentByKey((JSONObject) new JSONObject(response.getBody()).getJSONObject("hits").getJSONArray("hits").get(0), "desc") ;
+			jsonResult = loadContentByKey((JSONObject) new JSONObject(response.getBody()).getJSONObject("hits").getJSONArray("hits").get(0), "scenarioDesc") ;
 			//jsonResult = this.sskServices.normalizeContent(source);
 		} else {
 			jsonResult =  null;
@@ -251,7 +317,7 @@ public class ElasticGetDataServices {
 		entity = new HttpEntity<>(scenarioImageQuery, requestHeadersParams.getHeaders());
 		ResponseEntity<String> response = this.restTemplate.exchange( this.elasticServices.getElasticSearchPort() + "/" + sskIndex, HttpMethod.POST, entity, String.class);
 		if (response.getStatusCode().is2xxSuccessful()) {
-			jsonResult = loadContentByKey((JSONObject) new JSONObject(response.getBody()).getJSONObject("hits").getJSONArray("hits").get(0), "graphic") ;
+			jsonResult = loadContentByKey((JSONObject) new JSONObject(response.getBody()).getJSONObject("hits").getJSONArray("hits").get(0), "figure") ;
 		}
 		return  jsonResult;
 	}
@@ -263,22 +329,19 @@ public class ElasticGetDataServices {
 		switch (field.trim()){
 			case "title":
 				res = queryTitle(scenarioId);
-				break;
+			break;
 			case "desc":
 				res = queryDescription(scenarioId)	;
-				break;
+			break;
 			case "image":
 				res = queryImage(scenarioId)	;
-				break;
+			break;
 			case "author":
 				res = queryAuthors(scenarioId)	;
-				break;
-			case "lastUpdate":
-				res = queryAuthors(scenarioId)	;
-				break;
+			break;
 			case "scenario_metadata":
 				res = sskServices.getParser().parse( queryScenarioMetadata(scenarioId));
-				break;
+			break;
 		}
 		
 		return res;
@@ -287,16 +350,14 @@ public class ElasticGetDataServices {
 	
 	/**
 	 * <p>
-	 *     This funtion retrieves all documents by type (scenario, step, resource, etc..  ) from Elasticsearch
+	 *     This function retrieves all documents by type (scenario, step, resource, etc..  ) from Elasticsearch
 	 * </p>
 	 * @param documentType : type (scenario, step, resource, etc..  ) of document to retrieve
-	 * @return  a JsonElemet which is a list of specified type or null if the request on Elasticsearch returns 404 (not found)
+	 * @return  a JsonElement which is a list of specified type or null if the request on Elasticsearch returns 404 (not found)
 	 */
 	public JsonElement getAllResourcesByType(String documentType) {
 		JsonElement jsonResult = new JsonObject();
-		//requestHeadersParams.setHeaders();
 		sskIndex = "ssk/_doc/_search?q=type:" + documentType +"&size=1000";
-		//requestHeadersParams.setHeaders();
 		ResponseEntity<String> response = this.restTemplate.getForEntity( this.elasticServices.getElasticSearchPort() + "/" + sskIndex, String.class) ;
 		if (response.getStatusCode().is2xxSuccessful()) {
 			JsonObject param = sskServices.getParser().parse(response.getBody()).getAsJsonObject().get("hits").getAsJsonObject();
@@ -399,7 +460,6 @@ public class ElasticGetDataServices {
 			logger.warn(exception.getClass().getCanonicalName() + " - " + exception.getMessage()+ " - Request on Elasticsearch for " + identifier + " document's ID");
 			result =  null;
 		}
-		
 		 return result;
 	 }
 }

@@ -326,7 +326,7 @@ body{
   border: 1px solid $color-49;
   
 }
-.technique{
+.technique, .techniques{
   color: $color-50;
   border: 1px solid $color-50;
 }
@@ -343,6 +343,11 @@ body{
   color: $color-53;
   border: 1px solid $color-53;
 }
+.resource_type{
+  color: $color-6;
+  border: 2px solid $color-6;
+  font-weight: bold;
+}
 
 .tagClass{
   text-decoration-line: underline;
@@ -351,11 +356,22 @@ body{
   text-transform: capitalize;
 }
 
+.tagSearchClass2{
+  text-align: left !important;
+  font-family: $avenir_next_ul;
+  font-size: 0.7rem;
+  padding-top: 15px !important;
+}
+
 .tagSearchClass{
   text-align: left !important;
   font-family: $avenir_next_ul;
   font-size: 0.7rem;
 }
+
+  
+
+
 
 
 div.popover{

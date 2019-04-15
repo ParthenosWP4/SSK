@@ -13,7 +13,7 @@ export class TagDirectiveDirective {
     event.preventDefault();
     event.stopPropagation();
     const type = this.elementRef.nativeElement.getAttribute('class').split(' ')[4];
-    this.router.navigate(['glossary', (type === 'standard' || type === 'object' || type === 'technique' ||
+    this.router.navigate(['vocabularies', (type === 'standard' || type === 'object' || type === 'technique' ||
         type === 'discipline') ? type + 's' : 'activities', encodeURI(this.elementRef.nativeElement.innerText) ]);
   }
 

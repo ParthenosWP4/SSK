@@ -6,8 +6,6 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class RequestHeadersParams {
 	
@@ -24,8 +22,7 @@ public class RequestHeadersParams {
 	}
 	
 	
-	public HttpEntity<String> addDetectNoop(JsonElement content){
-		//content.getAsJsonObject().addProperty("detect_noop", false);
+	public HttpEntity<String> addContentToHeader(JsonElement content){
 		return new HttpEntity<String>(content.toString(), this.getHeaders());
 	}
 	

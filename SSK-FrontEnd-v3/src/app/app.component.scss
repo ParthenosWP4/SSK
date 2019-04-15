@@ -24,6 +24,40 @@
   border-left: solid white 1px;
 }
 
+.isDisabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+
+#dropdown-menu-flags.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: -6rem;
+    z-index: 1000;
+    float: left;
+    min-width: 8rem;
+    background-color: #000;
+
+}
+
+
+
+.dropdown-menu :hover *{
+    color : black ;
+
+}
+
+
+.lang-span-flag {
+   color:#FFF;
+}
+
+.dropdown-toggle-flag::after {
+    content: "";
+}
+
 
 
 //.dropdown-toggle:after { content: none } // this is to remove the carret inside a menu

@@ -10,14 +10,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.util.UriUtils;
 import ssk.server.service.ElasticGetDataServices;
 import ssk.server.service.ElasticServices;
 import ssk.server.service.SSKServices;
-
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
 
 @Controller
 @RequestMapping(value = "/_search")

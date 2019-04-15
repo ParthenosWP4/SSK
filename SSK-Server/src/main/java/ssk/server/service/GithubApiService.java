@@ -1,16 +1,16 @@
 package ssk.server.service;
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.google.gson.*;
-
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.*;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -113,6 +113,7 @@ public class GithubApiService {
         this.requestHeaders = new LinkedMultiValueMap<>();
         this.responseHeaders = new ArrayList<>();
         this.responseHeaders.add(MediaType.APPLICATION_JSON);
+        
         this.restTemplate = new RestTemplate();
         gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
     }
@@ -125,26 +126,28 @@ public class GithubApiService {
     }
     
     
-    /* Get SSK file content
-    * File can be scenario, step or relaxNg
-    * */
-    public String getGithubFileContent (String  type, String fileName) throws  HttpClientErrorException {
+    /**
+     * <p>
+     *     Get SSK file content
+     *     File can be scenario, step or relaxNg
+     * </p>
+     * @param folderToRequestIn
+     * @param fileName
+     * @return
+     * @throws HttpClientErrorException
+     */
+    public String getGithubFileContent (String  folderToRequestIn, String fileName) {
+        String result ;
         this.request = new HttpEntity<>(this.updateRequestHeaders("xml", null));
-        this.url  = "contents/";
-        switch (type){
-            case "scenario":
-                this.url += "scenarios/" + fileName;
-                break;
-            case "spec":
-                this.url += "spec/" + fileName;
-                break;
-            case "step" :
-                this.url += "steps/" + fileName;
-                break;
-            
-            default:
+        this.url  = "contents/" + folderToRequestIn + "/"+ fileName;
+        try{
+            result =  this.restTemplate.exchange(getGithubUrl() + this.url, HttpMethod.GET, this.request, String.class).getBody();
         }
-        return this.restTemplate.exchange(getGithubUrl() + this.url, HttpMethod.GET, this.request, String.class).getBody();
+        catch (HttpClientErrorException excep){
+            logger.warn(excep.getClass().getCanonicalName() + " - " + excep.getMessage()+ " - Request to get file content  for " + fileName + " on Github failed!!!");
+            result = null;
+        }
+       return result;
     }
     
     public JsonObject getRepositoryData(String repo, String type) throws UnsupportedEncodingException, HttpClientErrorException {

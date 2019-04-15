@@ -46,6 +46,7 @@ import { ModalResourcesComponent } from './scenario/modal-resources/modal-resour
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { TagDirectiveDirective } from './tag-directive.directive';
 import { ClipboardModule } from 'ngx-clipboard';
+import { ResourceTypePipe } from './resource-card/resource-type.pipe';
 
 /*export function dataProviderFactory(provider: ElastichsearchService) {
   return () => provider.loadData();
@@ -80,7 +81,8 @@ import { ClipboardModule } from 'ngx-clipboard';
     UserComponent,
     HighlightPipe,
     ModalResourcesComponent,
-    TagDirectiveDirective
+    TagDirectiveDirective,
+    ResourceTypePipe
   ],
   imports:
     [

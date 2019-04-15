@@ -23,12 +23,9 @@ import java.net.ConnectException;
 //import org.elasticsearch.client.Client;
 
 @Component
-public class InitData {
+public class DataInitialization {
 	
-	private static final Logger logger = LoggerFactory.getLogger(InitData.class);
-	
-	/*@Autowired
-	 private ElasticsearchOperations es;*/
+	private static final Logger logger = LoggerFactory.getLogger(DataInitialization.class);
 	
 	
 	@Autowired
@@ -59,7 +56,7 @@ public class InitData {
 	
 	boolean firstLaunch = false;
 	
-	public InitData(RequestHeadersParams requestHeadersParams){
+	public DataInitialization(RequestHeadersParams requestHeadersParams){
 		this.requestHeadersParams = requestHeadersParams;
 	}
 	
@@ -69,17 +66,24 @@ public class InitData {
 		getElasticSearchHealthAndRunIt();
 	}
 	
+	
+	/**
+	 * <p>
+	 *     This function is the entry point of the SSK.
+	 *     It tries to create the index into Elasticsearch that the application will needs to store contents converted from TEI to JSON
+	 * </p>
+	 * @return boolean
+	 */
+	
 	public boolean getElasticSearchHealthAndRunIt() {
 		boolean result = true;
 		new Thread(() -> {
 			try {
 				this.createIndex();
-				 this.sskServices.initializeData();
-				//this.setElasticForResearch();
+				this.sskServices.initializeData();
 			} catch (Exception e) {
 				e.printStackTrace();
-				logger.error(e.getMessage());
-				if(e.getMessage().contains("I/O error on HEAD request for \"" + elasticSearchPort+"/"+sskIndex+"\"")){
+				if(e.getMessage().contains("I/O error on HEAD request for \"" + elasticSearchPort + "/" +sskIndex + "\"")){
 					logger.error("Elasticsearch is not running, Please contact server administrator!!!");
 					int exitCode = SpringApplication.exit(context, new ExitCodeGenerator() {
 						@Override
@@ -94,20 +98,36 @@ public class InitData {
 		return result;
 	}
 	
+	/**
+	 * <P>
+	 *
+	 *     "step_tokenizing",
+	 "step_posTagging",
+	 "step_lemmatizing",
+	 "step_stemming",
+	 "step_ner",
+	 "step_manualAnnotation",
+	 "step_nlpPipeline"
+	 *     This function is in charged of creating the index (ssk) into elasticsearch when launching the Application for the first time
+	 * </P>
+	 * @throws ConnectException
+	 */
 	
 	
 	private void createIndex() throws ConnectException {
 		ResponseEntity<String> response;
 		try {
 			response = this.restTemplate.exchange(elasticSearchPort + "/" + sskIndex , HttpMethod.HEAD,null,  String.class);
+			logger.info((response.toString()));
+			this.restTemplate.exchange(elasticSearchPort + "/" + sskIndex , HttpMethod.DELETE, null,  String.class);
 		} catch (HttpClientErrorException hre){
 			logger.error(hre.getMessage());
 			logger.error("Index doesn't exist !!! We have to create it");
-			HttpEntity<String> entity  = new HttpEntity<>("{ \"settings\" : {\"number_of_shards\" : 2	}}", requestHeadersParams.getHeaders());
-			response = this.restTemplate.exchange(elasticSearchPort + "/" + sskIndex , HttpMethod.PUT,entity,  String.class);
-			if(response.getStatusCode().is2xxSuccessful()) {
-				logger.info("Successful creation of \"SSK\" index");
-			}
+		}
+		HttpEntity<String> entity  = new HttpEntity<>("{ \"settings\" : {\"number_of_shards\" : 2	}}", requestHeadersParams.getHeaders());
+		response = this.restTemplate.exchange(elasticSearchPort + "/" + sskIndex , HttpMethod.PUT,entity,  String.class);
+		if(response.getStatusCode().is2xxSuccessful()) {
+			logger.info("Successful creation of \"SSK\" index");
 		}
 	}
 	

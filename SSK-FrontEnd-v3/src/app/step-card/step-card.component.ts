@@ -26,9 +26,7 @@ export class StepCardComponent implements OnInit {
               private router: Router, private ref: ChangeDetectorRef) {}
 
   ngOnInit() {
-   
       this.setStepsInformations();
-  
     const urlTag: Array<any>  = _.remove(this.step.metadata, (tag) => {
         return this.sskService.isUrl(tag.key);
     });
@@ -50,42 +48,47 @@ export class StepCardComponent implements OnInit {
   }
 
   setStepsInformations() {
+    if (this.step.head instanceof Array) {
+      this.step.title = this.sskService.updateText(this.step.head[0], null);
+    } else if (this.step['head'] !== null) {
+      this.step.title = this.sskService.updateText(this.step.head, null);
+    }
+    if (this.step['stepDesc'] !== undefined) {
+      this.step.description  = this.step.stepDesc[0]['content'];
+    }
+    if (this.step.metadata === undefined) {
+      this.step.metadata = this.elasticServices.addStepMetadata(this.step._id + this.step.position + 'Meta');
+    }
+  }
+
+  getScenarioTitle(scenarioId: string) {
+    let scenaTitle: string;
     Observable.of(_.find(this.elasticServices.getScenarios(), (o)  => {
-      return  _.includes(_.map(this.step.parents, 'id'), o.id);
+      return   o.id === scenarioId;
     })).subscribe(
            (value) => {
              if (value !== undefined) {
-              this.scenario = value;
-              if (this.step.head instanceof Array) {
-                this.step.title = this.sskService.updateText(this.step.head[0], null);
+              if (value.title instanceof Array) {
+                scenaTitle = this.sskService.updateText(value.title[0], null);
               } else {
-                this.step.title = this.sskService.updateText(this.step.head, null);
-              }
-              if ( this.step.desc instanceof Array) {
-                this.step.description = this.sskService.updateText(this.step.desc[0], null);
-              } else {
-                  this.step.description = this.sskService.updateText(this.step.desc, null);
-              }
-              if (this.step.metadata === undefined) {
-                this.step.metadata = this.elasticServices.addStepMetadata(this.step._id + this.step.position + 'Meta');
-              }
-              if (this.scenario.title instanceof Array) {
-                this.scenarioTitle = this.sskService.updateText(this.scenario.title[0], null);
-              } else {
-                this.scenarioTitle = this.sskService.updateText(this.scenario.title, null);
+                scenaTitle = this.sskService.updateText(value.title, null);
               }
             }
           },
         (error) => { console.log(error); },
-        () => { });
+        () => {
+          
+        });
+        return scenaTitle;
   }
 
 
 
   toStep() {
-    this.router.navigate(['/', 'scenarios', this.scenario.id,  this.step.position]);
+    //this.router.navigate(['/', 'scenarios', this.scenario.id,  this.step.position]);
+    this.router.navigate(['/', 'scenarios', this.scenario.id]);
   }
-  
+
   tagShow(tag: any) {
     if (tag['abbr'] !== undefined ) {
       tag.key = tag.abbr;

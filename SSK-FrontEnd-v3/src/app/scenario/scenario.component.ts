@@ -1,15 +1,16 @@
-import {AfterViewInit, Component, OnInit, ViewChild, ChangeDetectorRef, Renderer2, ElementRef} from '@angular/core';
-import {Params, Router, ActivatedRoute } from '@angular/router';
-import {SskService} from '../ssk.service';
-import {Observable} from 'rxjs/Observable';
-import {ElastichsearchService} from '../elastichsearch.service';
+import { AfterViewInit, Component, OnInit, ViewChild, ChangeDetectorRef,QueryList, ViewChildren, Renderer2, ElementRef } from '@angular/core';
+import { Params, Router, ActivatedRoute } from '@angular/router';
+import { SskService } from '../ssk.service';
+import { Observable } from 'rxjs/Observable';
+import { ElastichsearchService } from '../elastichsearch.service';
 import * as _ from 'lodash';
-import {isArray, isUndefined, isObject} from 'util';
-import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
-import {environment} from '../../environments/environment';
-import {NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import {ModalResourcesComponent} from './modal-resources/modal-resources.component';
-import { IfObservable } from 'rxjs/observable/IfObservable';
+import { environment } from '../../environments/environment';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalResourcesComponent } from './modal-resources/modal-resources.component';
+import { ClipboardService } from 'ngx-clipboard';
+import * as moment from 'moment';
+import { MockNgModuleResolver } from '@angular/compiler/testing';
+
 @Component({
   selector: 'app-scenario',
   templateUrl: './scenario.component.html',
@@ -27,13 +28,13 @@ export class ScenarioComponent implements OnInit, AfterViewInit {
   scenarioId: string;
   title: string;
   timelineTranslate: any;
-  tagsLabel: any ;
+  tagsLabel: any;
   border: any = {};
   scenarioDetails = {};
   itemResult = {};
   move = '200px';
-  target: any ;
-  limit: number ;
+  target: any;
+  limit: number;
   scenarioDesc = '';
   scenarioTitle = '';
   stepDesc = '';
@@ -46,19 +47,29 @@ export class ScenarioComponent implements OnInit, AfterViewInit {
   spinner = true;
   spinnerSteps = true;
   forImage = environment.forImage;
-  quoteIcon = 'quote' ;
+  quoteIcon = 'quote';
   githubIcon = 'github-logo';
+  preliminaryScenarios: Array<any> = new Array();
+  followUpScenarios: Array<any> = new Array();
+  baseScenarios: Array<any> = new Array();
+  preliminaryScenario = 'Preliminary scenario(s)';
+  followUpScenario = 'Follow-up scenario(s)';
+  preliminayScenarioIcon = 'Exclamation_point.svg';
   resourceBtn = 'RESOURCES (specifications, papers, tutorials, etc.)';
+  copyRef = 'Copy the reference of the scenario';
+  shift = null;
 
- @ViewChild('authors') public authors: ElementRef;
+  @ViewChild('authors') public authors: ElementRef;
+  @ViewChild('toolTip') public toAddtooltip: ElementRef;
+  @ViewChildren('divs') stpesList: QueryList<ElementRef>;
 
   constructor(
+    private _clipboardService: ClipboardService,
     private sskService: SskService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private elasticServices: ElastichsearchService,
     private renderer: Renderer2,
-    private elementRef: ElementRef,
     private modalService: NgbModal,
     private cdr: ChangeDetectorRef) {
     this.tagsLabel = this.elasticServices.getTags();
@@ -67,7 +78,7 @@ export class ScenarioComponent implements OnInit, AfterViewInit {
     this.selectedStep = {};
     this.border.class = 'col-2';
     this.border.border = '1px dashed #979797';
-    this.scenarioElt =  new Object();
+    this.scenarioElt = new Object();
   }
 
 
@@ -79,62 +90,86 @@ export class ScenarioComponent implements OnInit, AfterViewInit {
     Observable.of(this.activatedRoute.params
       .subscribe((params: Params) => {
         this.scenarioId = params['id'];
-        this.selectedStep.id = params['stepId'] ;
-        this.idSelectedStep = this.selectedStep.id;
+        if ( this.activatedRoute.children.length > 0)  {
+          this.activatedRoute.children[0].params.subscribe(
+            (chilParams: Params) => {
+              this.selectedStep.id = chilParams['stepId'];
+              this.idSelectedStep = this.selectedStep.id;
+            }
+          );
+        }
       }
       )).subscribe(
-        (val) => {this.initializeScenarioElt(); },
+        (val) => { this.initializeScenarioElt(); },
         (error) => console.log(error),
         () => { });
   }
 
-  ngAfterViewInit() {}
+  ngAfterViewInit() {
+    this.stpesList.changes.subscribe(
+      result => {
+        result.forEach((element) => {
+          if (element.nativeElement.innerText === this.selectedStep.id ) {
+            element.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' , });
+          }
+        });
+      },
+      error => { console.log(error); },
+      () => {
+    });
+  }
 
   initializeScenarioElt() {
     this.sskService.checkBackEndAvailability();
     if (this.elasticServices.getScenarios().length === 0) {
       this.elasticServices.countItems('scenarios').subscribe(
-          result => {
-            this.itemResult = result;
-            this.elasticServices.setScenarioNumber(result['total']);
-            this.elasticServices.setScenariosID(result['scenarios']);
-          },
-          err => {
-            this.router.navigate(['errorpage']);
-          },
-          () =>  {
-            this.elasticServices.getScenariosID().forEach((obj)  => {
-              this.elasticServices.getScenarioDetails(obj._id).subscribe(
-                detailsResult => {
-                   detailsResult.id = obj._id;
-                   detailsResult.lastUpdate = obj._source.lastUpdate;
-                   this.scenarioDetails = detailsResult;
-                  },
-                error => {},
-                () =>  {
-                  this.elasticServices.addScenario(this.scenarioDetails);
-                  if (this.scenarioDetails['id'] === this.scenarioId) {
-                    this.scenarioElt = this.scenarioDetails;
-                    if (typeof(this.scenarioElt.author.length) === 'undefined') {
-                      const tem = new Array<any>(); tem.push(this.scenarioElt.author);
-                      this.scenarioElt.author = tem;
-                    }
-                    Observable.of(this.scenarioElt.author).subscribe(
-                      (value) => {
-                        this.setAuthors();
-                      }
-                    );
-                    this.setCurrentScenario();
+        result => {
+          this.itemResult = result;
+          this.elasticServices.setScenarioNumber(result['total']);
+          this.elasticServices.setScenariosID(result['scenarios']);
+        },
+        err => {
+          this.router.navigate(['errorpage']);
+        },
+        () => {
+          this.elasticServices.getScenariosID().forEach((obj) => {
+            this.elasticServices.getScenarioDetails(obj._id).subscribe(
+              detailsResult => {
+                detailsResult.id = obj._id;
+                detailsResult.lastUpdate = obj._source.lastUpdate;
+                detailsResult.followUp = obj._source.followUp;
+                detailsResult.preliminary = obj._source.preliminary;
+                this.scenarioDetails = detailsResult;
+              },
+              error => { },
+              () => {
+                this.elasticServices.addScenario(this.scenarioDetails);
+                if (this.scenarioDetails['id'] === this.scenarioId) {
+                  this.scenarioElt = this.scenarioDetails;
+                  if (typeof (this.scenarioElt.author.length) === 'undefined') {
+                    const tem = new Array<any>(); tem.push(this.scenarioElt.author);
+                    this.scenarioElt.author = tem;
                   }
+                  Observable.of(this.scenarioElt.author).subscribe(
+                    (value) => {
+                      this.setAuthors();
+                      this.setCurrentScenario();
+                    }
+                  );
                 }
-                );
-            });
-          }
-        );
+              }
+            );
+          });
+        }
+      );
     } else {
       this.scenarioElt = _.find(this.elasticServices.getScenarios(), item => {
         return item.id === this.scenarioId;
       });
+      if (typeof (this.scenarioElt.author.length) === 'undefined') {
+        const tem = new Array<any>(); tem.push(this.scenarioElt.author);
+        this.scenarioElt.author = tem;
+      }
       Observable.of(this.scenarioElt.author).subscribe(
         (value) => {
           this.setAuthors();
@@ -147,143 +182,124 @@ export class ScenarioComponent implements OnInit, AfterViewInit {
 
   setCurrentScenario() {
     this.scenarioTitle = this.sskService.updateText(((this.scenarioElt.title instanceof Array) ?
-    this.scenarioElt.title[0] : this.scenarioElt.title), null);
-    this.scenarioElt.descrip = (this.scenarioElt.desc instanceof Array) ? this.scenarioElt.desc[0] : this.scenarioElt.desc;
-    this.scenarioDesc = this.sskService.updateText(this.scenarioElt.descrip, null);
+      this.scenarioElt.title[0] : this.scenarioElt.title), null);
+    // this.scenarioElt.descrip = this.scenarioElt.scenarioDesc[0];
+    // this.scenarioDesc = this.sskService.updateText(this.scenarioElt.descrip, null);
+    this.scenarioDesc = this.scenarioElt.desc[0].content;
     this.setMetadata('scenario');
     this.setScenarioSteps();
     this.sskService.setTitle('SSK - ' + this.scenarioTitle);
+    Observable.of(_.filter(_.clone(this.elasticServices.getScenarios()), (item) => {
+      return (_.indexOf(_.map(this.scenarioElt.followUp, 'ref'), item.id) !== -1);
+    })).subscribe(
+      (value) => {
+        this.followUpScenarios  = value;
+        Observable.of(_.filter(_.clone(this.elasticServices.getScenarios()), (item) => {
+          return (_.indexOf(_.map(this.scenarioElt.preliminary, 'ref'), item.id) !== -1);
+        })).subscribe(
+          (va) => {
+            this.preliminaryScenarios = va; },
+          (error) => { console.log(error); },
+          () => {
+          });
+        },
+      (error) => { console.log(error); },
+      () => { });
   }
 
   setScenarioSteps() {
-       if (this.elasticServices.getSteps() === undefined) {
-        this.elasticServices.getAllSteps().then(
-          (value) => {
-            this.scenarioElt.steps = _.sortBy(_.filter(this.elasticServices.getSteps(), (item) => {
-              return (_.indexOf(_.map(item.parents, 'id'), this.scenarioId) !== -1);
-            }), [ 'position']);
-            this.updateSteps();
-            this.spinnerSteps = false;
-             this.cdr.detectChanges();
-          });
-       } else {
-         this.scenarioElt.steps = _.sortBy(_.filter(this.elasticServices.getSteps(), (item) => {
-          return (_.indexOf(_.map(item.parents, 'id'), this.scenarioId) !== -1);
-        }), [ 'position']);
-        this.updateSteps();
-        this.spinnerSteps = false;
-       }
- }
-
- updateSteps() {
-  const steps = [];
-  _.forEach(this.scenarioElt.steps, (step)  => {
-    if (step.parents.length > 1) {
-        _.forEach(step.parents, (item)  => {
-          if (item.id === this.scenarioId) {
-            let newStep: any = _.clone(step);
-            newStep.position = item['position'];
-            newStep = this.updateContent(newStep);
-            steps.push(newStep);
-          }
+    if (this.elasticServices.getSteps() === undefined) {
+      this.elasticServices.getAllSteps().then(
+        (value) => {
+          this.updateSteps(_.filter(value, (item) => {
+            return (_.indexOf(_.map(item['parents'], 'id'), this.scenarioId) !== -1);
+          })).then(
+            (steps1) => {
+              this.scenarioElt.steps = steps1;
+            }
+          );
+          this.spinnerSteps = false;
+          this.cdr.detectChanges();
         });
     } else {
-      step.position = step.parents[0].position;
-      step = this.updateContent(step);
-      steps.push(step);
-    }
-  });
-  this.scenarioElt.steps = _.orderBy(steps, 'position', 'asc');
- }
-
-  tagExist(tag: string, type: string  ) {
-    if ( type === 'scenario' && !isUndefined(this.scenarioElt.scenario_metadata)) {
-      this.scenarioElt.scenario_metadata = _.groupBy(_.flatMap(_.map(this.scenarioElt.scenario_metadata)), 'type');
-    }
-    if ( tag === 'standards') { return false ; }
-     if (type === 'scenario' && !isUndefined(this.scenarioElt.scenario_metadata) &&
-       !isUndefined(this.scenarioElt.scenario_metadata[this.changeTag(tag)])) {
-      return this.scenarioElt.scenario_metadata[this.changeTag(tag)] ; }
-     if (type === 'step' && this.selectedStep.metadata &&
-       !isUndefined(this.selectedStep.metadata[this.changeTag(tag)])) { return this.selectedStep.metadata[this.changeTag(tag)] ; }
-      return false;
-  }
-
-
-  setStepMetadata() {
-    let temp: any;
-    Observable.of(_.groupBy(this.elasticServices.getStepsMetadata(),  (item) => {
-      return item._id ===  this.selectedStep._id + this.selectedStep.position + 'Meta';
-    }).true).subscribe(
-      (value) => { temp = value;  },
-      (error) => { console.log(error); },
-      () => {
-        if ( temp != null && temp[0] != null && !isUndefined(temp[0]._source)) {
-          this.selectedStep.metadata = _.groupBy(_.flatMap(_.map(temp[0]._source)), 'type');
-            this.setMetadata('step');
-            if (!isUndefined(temp[0]._source.standard)) {
-              this.selectedStep.metadata.standards = temp[0]._source.standard;
-            }
-            if (!isUndefined(temp[0]._source.standards)) {
-              this.selectedStep.metadata.standards = temp[0]._source.standards;
-            }
-            this.selectedStep.metadata.standards =  _.uniqWith(this.selectedStep.metadata.standards, _.isEqual);
-          }
-      });
-  }
-
-  setResources() {
-    let resources: any;
-    this.spinner = true;
-    Observable.of(_.groupBy(this.elasticServices.getResources(), (item) => {
-      return item.parent === this.selectedStep._id;
-     }).true).subscribe(
-      (value) => { resources = value;  },
-      (error) => { console.log(error); },
-      () => {
-        this.selectedStep.projects = _.groupBy(resources, (item) => {
-          return item.category === 'project';
-        }).true;
-        this.selectedStep.generals = _.groupBy(resources, (item) => {
-          return item.category === 'general';
-        }).true;
-        if (this.selectedStep.generals || this.selectedStep.project) {
-          this.spinner = false;
+      this.updateSteps(_.filter(this.elasticServices.getSteps(), (item) => {
+        return (_.indexOf(_.map(item.parents, 'id'), this.scenarioId) !== -1);
+      })).then(
+        (steps2) => {
+          this.scenarioElt.steps = steps2;
         }
-        this.spinner = false;
-      });
+      );
+      this.spinnerSteps = false;
+    }
+  }
+
+  updateSteps(stepsIn: any) {
+    const steps = [];
+    this.baseScenarios = _.remove(stepsIn, (item) => {
+            return item.position === -1;
+    });
+    return new Promise((resolve, reject) => {
+      Observable.of(_.forEach(stepsIn, (step) => {
+        if (step.parents.length > 1) {
+          _.forEach(step.parents, (item) => {
+            if (item.id === this.scenarioId &&  item.position !== -1) {
+              let newStep: any = step;
+              newStep.position = item['position'];
+              newStep = this.updateContent(newStep);
+              steps.push(_.clone(newStep));
+            }
+          });
+        } else {
+          step.position = step.parents[0].position;
+          step = this.updateContent(step);
+          steps.push(step);
+        }
+      })).subscribe(
+        (value) => { },
+        (error) => { console.log(error); },
+        () => {
+          resolve(_.orderBy(steps, 'position', 'asc'));
+        });
+    });
+  }
+
+  createTitle(step: any) {
+    if (step.title !== undefined) {
+      return step.title;
+    } else {
+      step  = this.updateContent(step);
+      return step.title;
+    }
   }
 
 
   tagShow(tag: any) {
-    if (tag.abbr !== undefined ) {
+    if (tag.abbr !== undefined) {
       tag.key = tag.abbr;
     }
-    if ( this.sskService.isUrl(tag.key)) {
-      tag.url  = tag.key;
+    if (this.sskService.isUrl(tag.key)) {
+      tag.url = tag.key;
       tag.key = tag.url.substr(tag.url.lastIndexOf('/') + 1, tag.url.length);
       const otherKey = tag.key.split('=');
       if (otherKey.length > 0) {
         tag.key = otherKey[otherKey.length - 1];
       }
     }
-      return tag;
-    }
+    return tag;
+  }
 
 
   updateContent(step: any) {
     this.spinner = true;
-    if (step.head instanceof Array) {
+    if (step.head !== null && step.head instanceof Array) {
       step.title = this.sskService.updateText(step.head[0], null);
-    } else {
+    } else  if (step.head !== null && step['head'] !== undefined) {
       step.title = this.sskService.updateText(step.head, null);
     }
-    if ( step.desc instanceof Array) {
-      step.description = this.sskService.updateText(step.desc[0], 'step');
-    } else {
-      step.description = this.sskService.updateText(step.desc, 'step');
+    if (step.stepDesc instanceof Array) {
+      step.description = step.stepDesc[0].content;
     }
-   return step;
+    return step;
   }
 
 
@@ -291,34 +307,8 @@ export class ScenarioComponent implements OnInit, AfterViewInit {
     return text.replace(/\\n/g, '');
   }
 
-  cleanAndOpen( text: string ) {
+  cleanAndOpen(text: string) {
     window.open((text.indexOf('://') === -1) ? 'http://' + text.replace(/\\n/g, '') : text.replace(/\\n/g, ''), '_blank');
-  }
-
-  updateText(desc: any, type: string) {
-    let text = '';
-    if ( desc['content'] && isArray(desc['content'])) {
-      _.forEach(desc['content'], (part) => {
-        if (typeof part === 'object') {
-          if (part['ref']) {
-            text += this.setLink(part['ref']);
-          }
-          if (part['list']) {
-            const list = part['list'];
-            text += this.setList(list['item']);
-          }
-        } else {
-          text += part + ' ';
-        }
-      });
-    } else {
-      text = desc['content'];
-    }
-    if ( type === 'scenario') {
-      this.scenarioDesc = text;
-    } else {
-      this.stepDesc = text;
-    }
   }
 
   setLink(part: object) {
@@ -328,7 +318,7 @@ export class ScenarioComponent implements OnInit, AfterViewInit {
   setList(part: object) {
     let list = '<ul>';
     _.forEach(part, (item) => {
-        list += '<li>' + item + '</li>';
+      list += '<li>' + item + '</li>';
     });
     list += '</ul>';
     return list;
@@ -339,22 +329,22 @@ export class ScenarioComponent implements OnInit, AfterViewInit {
     switch (tag) {
       case 'activities':
         result = 'activity';
-      break;
+        break;
       case 'techniques':
       case 'technique':
         result = 'technique';
-      break;
+        break;
       case 'disciplines':
       case 'discipline':
         result = 'discipline';
-      break;
+        break;
       case 'standards':
         result = 'standards';
-      break;
+        break;
       case 'objects':
       case 'object':
         result = 'object';
-      break;
+        break;
     }
     return result;
   }
@@ -364,14 +354,14 @@ export class ScenarioComponent implements OnInit, AfterViewInit {
   }
 
   setMetadata(type: string) {
-    const tags: any  = {};
+    const tags: any = {};
     let metadata: any = {};
     if (type === 'scenario') {
       metadata = this.scenarioElt.scenario_metadata;
       this.scenarioTags = metadata;
     } else {
       metadata = this.selectedStep.metadata;
-      this.stepTags = metadata ;
+      this.stepTags = metadata;
     }
     this.elasticServices.getTags().forEach(tag => {
       switch (tag) {
@@ -385,7 +375,7 @@ export class ScenarioComponent implements OnInit, AfterViewInit {
         case 'disciplines':
         case 'discipline':
           tags.discipline = metadata.discipline;
-        break;
+          break;
         case 'standards':
         case 'standard':
           break;
@@ -405,40 +395,90 @@ export class ScenarioComponent implements OnInit, AfterViewInit {
   }
 
   setAuthors() {
-    console.log(this.scenarioElt)
-     let i = 0;
-    this.scenarioElt.author.forEach( (elt) => {
+    let i = 0;
+    this.scenarioElt.author.forEach((elt) => {
       const authorSpan: HTMLElement = document.createElement('span');
-      const comma = ( ++i < this.scenarioElt.author.length ) ? ',  ' : ' ';
+      const comma = (++i < this.scenarioElt.author.length) ? ',  ' : ' ';
       this.renderer.addClass(authorSpan, 'pop');
-      this.renderer.setProperty(authorSpan, 'innerHTML', elt.persName + comma );
-       this.renderer.setAttribute(authorSpan, 'data-container', 'body');
-       this.renderer.setAttribute(authorSpan, 'data-toggle', 'popover');
-       this.renderer.setAttribute(authorSpan, 'data-placement', 'right');
-       this.renderer.setAttribute(authorSpan, 'data-content', `<div class="row"><div class="col-3">
+      this.renderer.setProperty(authorSpan, 'innerHTML', elt.forename + ' ' + elt.surname +  ' ' + comma);
+      this.renderer.setAttribute(authorSpan, 'data-container', 'body');
+      this.renderer.setAttribute(authorSpan, 'data-toggle', 'popover');
+      this.renderer.setAttribute(authorSpan, 'data-placement', 'right');
+      this.renderer.setAttribute(authorSpan, 'data-content', `<div class="row"><div class="col-3">
        <img  src= ` + this.forImage + `'/assets/images/usertooltip.svg'"
-         class="pull-right img-fluid main" ></div><div class="col author">` + elt.persName +
-       `<br> <span class="affiliation">` + elt.affiliation + `</span></div></div> </div>`);
-       this.renderer.appendChild(this.authors.nativeElement, authorSpan);
+         class="pull-right img-fluid main" ></div><div class="col author">` + elt.forename + ' ' + elt.surname +
+        `<br> <span class="affiliation">` + elt.affiliation + `</span></div></div> </div>`);
+      this.renderer.appendChild(this.authors.nativeElement, authorSpan);
     });
-    (<any>$('.pop')).popover({ trigger: 'manual' , html: true, animation: false})
-       .on('mouseenter', function () {
-           const _this = this;
-           (<any>$(this)).popover('show');
-           $('.popover').on('mouseleave', function () {
-             (<any>$(_this)).popover('hide');
-           });
-       }).on('mouseleave', function () {
-           const _this = this;
-           setTimeout(function () {
-               if (!$('.popover:hover').length) {
-                 (<any>$(_this)).popover('hide');
-               }
-           }, 40);
-     });
+    (<any>$('.pop')).popover({ trigger: 'manual', html: true, animation: false })
+      .on('mouseenter', function () {
+        const _this = this;
+        (<any>$(this)).popover('show');
+        $('.popover').on('mouseleave', function () {
+          (<any>$(_this)).popover('hide');
+        });
+      }).on('mouseleave', function () {
+        const _this = this;
+        setTimeout(function () {
+          if (!$('.popover:hover').length) {
+            (<any>$(_this)).popover('hide');
+          }
+        }, 40);
+      });
   }
   toGithub() {
     window.open('https://github.com/ParthenosWP4/SSK/blob/master/scenarios/' + this.scenarioId + '.xml', '_blank');
   }
+
+  getMetaData(step) {
+    return step.metadata;
+  }
+
+  getPreliminaryScenarios() {
+    return this.preliminaryScenarios;
+  }
+
+  copyCitation(pop: any) {
+    let i = 0;
+    this.copyRef = '';
+    let citation = '';
+    this.scenarioElt.author.forEach((elt) => {
+      if (i++ === 0) {
+        citation +=  elt.surname + ' ' + elt.forename + ', ';
+      } else {
+        citation +=  elt.forename + ' ' + elt.surname + ', ';
+      }
+    });
+     citation += '\'' + this.scenarioTitle + '\',  The Standardization Survival Kit (SSK), '
+     + ((this.scenarioElt.lastUpdate !== null ) ? moment(this.scenarioElt.lastUpdate).format('YYYY') : '')
+     + ' \n<' +  window.location.origin + this.router.url + '> [accessed ' + moment(new Date()).format('DD MMMM YYYY') + ']';
+    this._clipboardService.copyFromContent(citation);
+
+
+    const citationTooltip: HTMLElement  = document.createElement('bs-tooltip-container');
+      this.renderer.setAttribute(citationTooltip, 'role', 'tooltip');
+      this.renderer.setAttribute(citationTooltip, 'id', 'NotifTooltip');
+      this.renderer.setAttribute(citationTooltip, 'class', 'tooltip in tooltip-right bs-tooltip-right right infoToolTip show');
+      this.renderer.setAttribute(citationTooltip, 'style', 'top: -2px; left:155px');
+
+      const div: HTMLElement  = document.createElement('div');
+      this.renderer.setAttribute(div, 'class', 'tooltip-inner');
+      const text = this.renderer.createText ('The citation has been copied to the clipboard');
+      this.renderer.appendChild(div, text);
+      this.renderer.appendChild(citationTooltip, div);
+      this.renderer.appendChild(this.toAddtooltip.nativeElement, citationTooltip);
+
 }
 
+  removeNotifTooltip() {
+    const elt: HTMLElement =  document.getElementById('NotifTooltip');
+    if ( elt !== null ) {
+      this.renderer.removeChild(this.toAddtooltip.nativeElement, elt);
+  }
+}
+
+  mouseOver() {
+    this.githubIcon = 'github_hover';
+     this.shift = 'shift';
+  }
+}

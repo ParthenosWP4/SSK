@@ -24,7 +24,7 @@
 
 
 .home-second{
-  background-color :$color-45;
+  background-color: $color-45;
   color: $color-40;
   .title{
     font-size: 2em;
@@ -70,7 +70,7 @@
 }
 .home-third{
   color: $color-40 !important;
-  background-color: $color-41;
+  background-color :$color-45;
   img{
     width: inherit;
   }
@@ -87,7 +87,8 @@
 }
 
 .home-fourth{
-  background-color: $color-45;
+  background-color: $color-41;
+ 
   color: $color-40 !important;
   font-family: $roboto-regular;
   img{

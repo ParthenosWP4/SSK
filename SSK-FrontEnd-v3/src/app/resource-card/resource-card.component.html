@@ -1,18 +1,14 @@
 <div class="item d-flex mr-3 my-3" [ngStyle]="{'border-bottom': border.border}">
-<div class="col mb-3  ">
-<!--<<span  *ngIf="res?.type" class="badge badge-pill badge-secondary">{{res?.type}}</span>-->
+  <div class="col mb-3">
+      <span *ngIf="res?.resType !== ''" class="tag my-1 mr-2 py-1 resource_type"> {{res?.resType | resourceType}}</span>
+     
+    <span class="title my-2" (click)="open()" [ngStyle]="{'cursor': setCursor()}"> {{res?.title}}</span>
+    <span class="desc" [innerHTML]="res?.abstract"></span>
 
-<span class="title my-2"  (click)="open()" [ngStyle]="{'cursor': setCursor()}"> {{res?.title}}</span>
-  <span class="desc" [innerHTML]= "res?.abstract"></span>
-  
-  <div class="author my-3" *ngIf="res?.creators"><ins class="">Author(s):</ins>    {{res?.creators.replace('[','').replace(']','')}}</div>
-  <div (click)="open()" class=" my-3" *ngIf="res?.redirect"><ins class="">URL :</ins>    <span class="url" >{{res?.redirect}}</span></div>
-  <div *ngIf="res?.period " class="date  mt-3"><ins class="">Date:</ins>   {{res?.period }}</div>
-  <!--<div *ngIf="res?.period " class="date  mt-3"><ins class="">Date:</ins>   {{res?.period |  amParse:'DD.MM.YYYY HH:mm:ss' }}</div>
-  <div *ngIf="res?.period && res?.period?.length <= 6 && res?.period?.length >= 4" class="date  mt-3"><ins class="">Date:</ins>   {{res?.period | amDateFormat:'YYYY' }}</div>
-  <div *ngIf="res?.period && res?.period?.length > 6 && res?.period?.length < 11 " class="date  mt-3"><ins class="">Date:</ins>   {{res?.period | amUtc  | amDateFormat:'MM/YYYY' }}</div>
-  <div *ngIf="res?.period && res?.period?.length < 12 && res?.period?.length >= 11 " class="date  mt-3"><ins class="">Date:</ins>   {{res?.period | amUtc  | amDateFormat:'MM/YYYY' }}</div>
-  <div *ngIf="res?.period && res?.period?.length > 11" class="date  mt-3"><ins class="">Date:</ins>   {{res?.period |  amParse:'YYYY.MM.DD HH:mm:ss' | amDateFormat:'DD/MM/YYYY' }}</div>-->
-  
-</div>
+    <div class="author my-3" *ngIf="res?.creators"><ins class="">Author(s):</ins>
+      {{res?.creators.replace('[','').replace(']','')}}</div>
+    <div (click)="open()" class=" my-3" *ngIf="res?.redirect"><ins class="">URL :</ins> <span
+        class="url">{{res?.redirect}}</span></div>
+    <div *ngIf="res?.period " class="date  mt-3"><ins class="">Date:</ins> {{res?.period }}</div>
+  </div>
 </div>
