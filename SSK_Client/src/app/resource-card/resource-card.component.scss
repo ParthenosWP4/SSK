@@ -1,0 +1,77 @@
+@import '../../partials/variables';
+
+.card {
+  box-shadow: none !important;
+  border: none !important;
+  border-radius: unset !important;
+  
+  border-bottom: none;
+  font-size: $twenty;
+}
+.badge{
+  border-radius: .55rem !important;
+  background-color: $color-29 !important;
+  margin: .25em .4em;
+  color: $color-3;
+  font-size: 14px !important;
+  display: table-cell !important;;
+}
+.author{
+  display: inherit;
+
+}
+.title{
+  color: $color-12;
+  display: inherit;
+  font-size: 1.4rem;
+}
+.date{
+  font-size: 1rem;
+}
+.item{
+  font-family: $roboto-regular !important;
+  //cursor: pointer;
+  .col-1{
+    padding: 0;
+  }
+
+  .desc{
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+
+/* Without this class/container, the scaled iframes maintain
+   their massive (pre-scaled) dimensions */
+.preview {
+  //width: 110px; height: 110px;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+}
+
+/* iframes are initially set large enough to get a good view
+   of the contained page. They are then scaled down to one-
+   tenth their original size */
+.preview iframe {
+  width: 500%; height: 500%;
+  -webkit-transform: scale(.2); -webkit-transform-origin: 0 0;
+  -moz-transform: scale(.2); -moz-transform-origin: 0 0;
+  -ms-transform: scale(.2); -ms-transform-origin: 0 0;
+  -o-transform: scale(.2); -o-transform-origin: 0 0;
+  transform: scale(.2); transform-origin: 0 0;
+}
+
+/* Prevents the user from interacting with the iframe page */
+.preview:after,
+.preview::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%; height: 100%;
+  top: 0; left: 0;
+}

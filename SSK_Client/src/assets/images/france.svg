@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>france</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home-+-navigation" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-Copy" transform="translate(-1033.000000, -132.000000)" fill-rule="nonzero">
+            <g id="france" transform="translate(1033.000000, 132.000000)">
+                <path d="M4.56520847,0 C2.04390905,0 0,1.95875 0,4.375 L0,15.625 C0,18.04125 2.04390905,20 4.56520847,20 L6.95652174,20 L6.95652174,0 L4.56520847,0 Z" id="Shape" fill="#41479B"></path>
+                <polygon id="Shape" fill="#F5F5F5" points="6.95652174 0 6.95652174 0 6.95652174 20 6.95652174 20 13.9130435 20 13.9130435 0"></polygon>
+                <path d="M15.4347915,0 L13.0434783,0 L13.0434783,0 L13.0434783,20 L13.0434783,20 L15.4347915,20 C17.9560909,20 20,18.04125 20,15.625 L20,4.375 C20,1.95875 17.9560909,0 15.4347915,0 Z" id="Shape" fill="#FF4B55"></path>
+            </g>
+        </g>
+    </g>
+</svg>

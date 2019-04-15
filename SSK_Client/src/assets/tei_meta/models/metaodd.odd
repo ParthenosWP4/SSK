@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Editeur de ODD pour TEIMETA</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Meta ODD pour créer d'autres ODD</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Créé par Christophe Parisse</p>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+         <schemaSpec ident="TEIMETA" ns="http://www.tei-c.org/ns/1.0" start="TEI">
+            
+            <!-- structure generale TEI -->
+            <elementSpec ident="TEI" module="teimeta" mode="change">
+               <content>
+                  <elementRef key="text" minOccurs="1" maxOccurs="1" />
+               </content>
+            </elementSpec>
+            
+            <!-- structure generale text -->
+            <elementSpec ident="text" module="teimeta" mode="change">
+               <content>
+                  <elementRef key="body" minOccurs="1" maxOccurs="1" />
+               </content>
+            </elementSpec>
+            
+            <!-- structure generale body -->
+            <elementSpec ident="body" module="teimeta" mode="change">
+               <content>
+                  <elementRef key="schemaSpec" minOccurs="1" maxOccurs="1" />
+               </content>
+            </elementSpec>
+            
+            <!-- string point schemaSpec -->
+            <elementSpec ident="schemaSpec" module="teimeta" mode="change">
+               <desc>schemaSpec: Starting information of the schema. The attribute start is necessary and contains the name of the root element
+               of the XML file to be edited. All other elements will be described using the elementSpec structure. One elementSpec, which
+               corresponds to the name of the root, is necessary in the ODD.</desc>
+               <content>
+                  <elementRef key="altIdent" minOccurs="0" maxOccurs="unbounded" />
+                  <elementRef key="elementSpec" minOccurs="0" maxOccurs="unbounded" />
+               </content>
+               <attList>
+                  <attDef ident="ident" usage="req">
+                     <desc>Ident: obligatory - Name of the ODD.</desc>
+                     <datatype>
+                        <dataRef name="string"/>
+                     </datatype>
+                  </attDef>
+                  <attDef ident="start" usage="req">
+                     <desc>Start: obligatory - starting element of the node tree. An elementSpec with this name must be defined.</desc>
+                     <datatype>
+                        <dataRef name="string"/>
+                     </datatype>
+                  </attDef>
+                  <attDef ident="ns" usage="opt">
+                     <desc>Namespace: optional, to be used if the target XML is not a TEI file.</desc>
+                     <datatype>
+                        <dataRef name="string"/>
+                     </datatype>
+                  </attDef>
+                  <attDef ident="corresp" usage="opt">
+                     <desc>Corresp: optional.</desc>
+                     <datatype>
+                        <dataRef name="string"/>
+                     </datatype>
+                  </attDef>
+                  <attDef ident="rend" usage="opt">
+                     <desc>Rend: optional. This gives the name of a css file used for presenting the data.</desc>
+                     <datatype>
+                        <dataRef name="url"/>
+                     </datatype>
+                  </attDef>
+               </attList>
+            </elementSpec>
+
+            <elementSpec ident="altIdent" module="teimeta" mode="change" usage="opt">
+               <desc>altIdent: List all the elements that can be inserted as attributes to the header of the file (the head node).
+               They are made of a type (the name of the attribute) and a content (the text of the attribute).</desc>
+               <content>
+                  <desc>Content of the attribute in the root node.</desc>
+                  <textNode />
+               </content>
+               <attList>
+                  <attDef ident="type">
+                     <desc>Name of the attribute in the root node.</desc>
+                     <datatype>
+                        <dataRef name="string"/>
+                     </datatype>
+                  </attDef>
+               </attList>
+            </elementSpec>
+            
+            <!-- main nodes : elementSpec -->
+            <elementSpec ident="elementSpec" module="teimeta" mode="change" usage="opt">
+               <desc>elementSpec: each elementSpec describes a node in the XML file. The organisation of the node is 
+               described in the content part. The content makes it possible to point to other nodes. Attribute can be described.
+               Description of the nodes are optional but highly recommended.</desc>
+               <content>
+                  <elementRef key="desc" minOccurs="0" maxOccurs="unbounded" />
+                  <elementRef key="content" minOccurs="0" maxOccurs="1" />
+                  <elementRef key="attList" minOccurs="0" maxOccurs="1" />
+                  <elementRef key="remarks" minOccurs="0" maxOccurs="1" />
+               </content>
+               <attList>
+                  <attDef ident="ident" usage="req">
+                     <desc>Identifier: the name of node.</desc>
+                     <datatype>
+                        <dataRef name="string"/>
+                     </datatype>
+                  </attDef>
+                  <attDef ident="usage" usage="opt">
+                     <desc>Usage: required, optional, recommended</desc>
+                     <valList type="closed">
+                        <valItem ident="req">
+                        <desc>required</desc>
+                        </valItem>
+                        <valItem ident="opt">
+                        <desc>optional</desc>
+                        </valItem>
+                        <valItem ident="rec">
+                        <desc>recommended</desc>
+                        </valItem>
+                     </valList>
+                  </attDef>
+                  <attDef ident="mode" usage="opt">
+                     <desc>Mode: optional not yet used</desc>
+                     <datatype>
+                        <dataRef name="string"/>
+                     </datatype>
+                  </attDef>
+                  <attDef ident="corresp" usage="opt">
+                     <desc>Corresp: optional. The complements the identifier of the node to differentiate
+                     between node with the same names but different functions within an XML file.</desc>
+                     <datatype>
+                        <dataRef name="string"/>
+                     </datatype>
+                  </attDef>
+               </attList>
+            </elementSpec>
+            
+            <elementSpec ident="desc" module="teimeta" mode="change" usage="opt">
+               <desc>desc: Description of nodes: use as many information possible when describing nodes.</desc>
+               <content>
+                  <textNode />
+               </content>
+               <attList>
+                  <attDef ident="xml:lang">
+                     <desc>Language</desc>
+                     <datatype>
+                        <dataRef name="languagecode"/>
+                     </datatype>
+                  </attDef>
+               </attList>
+            </elementSpec>
+            
+            <elementSpec ident="content" module="teimeta" mode="change" usage="opt">
+               <desc>content: Content of a node. elementRef and sequence describe the descendants of the node.
+               They permit to describe the node tree. Warning: They are parallel. There correspond to a
+               choice between various types of descendants. If more that one descendant exists, it is 
+               necessary to use the sequence structure to describe this. Single descendant correspond to
+               a single elementRef.
+               The text part of the node is described by either textNode or dataRef.
+               textNode alone creates a simple text node.
+               Use the more complex dataRef structure to describe a text element that has
+               a controlled format such a list, openlist, url, languagecode, number, date, ... 
+               </desc>
+               <content>
+                  <elementRef key="elementRef" minOccurs="0" maxOccurs="unbounded" />
+                  <elementRef key="sequence" minOccurs="0" maxOccurs="unbounded" />
+                  <elementRef key="textNode" minOccurs="0" maxOccurs="1" />
+                  <elementRef key="dataRef" minOccurs="0" maxOccurs="1" />
+               </content>
+            </elementSpec>
+            
+            <elementSpec ident="sequence" module="teimeta" mode="change" usage="opt">
+            <desc>Sequence: the "sequence" element allows to group together several nodes. Each element of a
+            sequence point to an elementRef as described below.</desc>
+               <content>
+                  <elementRef key="elementRef" minOccurs="2" maxOccurs="unbounded" />
+               </content>
+               <attList>
+                  <attDef ident="minOccurs" usage="opt">
+                     <desc>Minimum number of occurrences: 0, 1, or 2</desc>
+                     <datatype>
+                        <dataRef name="list"/>
+                        <valList type="closed">
+                            <valItem ident="0"/>
+                            <valItem ident="1"/>
+                            <valItem ident="2"/>
+                        </valList>
+                     </datatype>
+                  </attDef>
+                  <attDef ident="maxOccurs" usage="opt">
+                     <desc>Maximum number of occurrences: 1, 2, or unbounded</desc>
+                     <datatype>
+                        <dataRef name="list"/>
+                        <valList type="closed">
+                            <valItem ident="1"/>
+                            <valItem ident="2"/>
+                            <valItem ident="unbounded"/>
+                        </valList>
+                     </datatype>
+                  </attDef>
+               </attList>
+            </elementSpec>
+            
+            <elementSpec ident="elementRef" module="teimeta" mode="change" usage="opt">
+               <desc>elementRef: Pointer to an elementSpec. This indicates the descendant of a node is the node pointed to
+               by elementRef.</desc>
+               <attList>
+                  <attDef ident="key">
+                     <desc>Id pointer</desc>
+                     <datatype>
+                        <dataRef name="string"/>
+                     </datatype>
+                  </attDef>
+                  <attDef ident="corresp" usage="opt">
+                     <desc>Corresp pointer</desc>
+                     <datatype>
+                        <dataRef name="string"/>
+                     </datatype>
+                  </attDef>
+                  <attDef ident="minOccurs" usage="opt">
+                     <desc>Minimum number of occurrences: 0, 1, or 2</desc>
+                     <datatype>
+                        <dataRef name="list"/>
+                        <valList type="closed">
+                            <valItem ident="0"/>
+                            <valItem ident="1"/>
+                            <valItem ident="2"/>
+                        </valList>
+                     </datatype>
+                  </attDef>
+                  <attDef ident="maxOccurs" usage="opt">
+                     <desc>Maximum number of occurrences: 1, 2, or unbounded</desc>
+                     <datatype>
+                        <dataRef name="list"/>
+                        <valList type="closed">
+                            <valItem ident="1"/>
+                            <valItem ident="2"/>
+                            <valItem ident="unbounded"/>
+                        </valList>
+                     </datatype>
+                  </attDef>
+               </attList>
+            </elementSpec>
+            
+            <!-- attList -->
+            <elementSpec ident="attList" module="teimeta" mode="change" usage="opt">
+               <desc>List of attributes</desc>
+               <content>
+                  <elementRef key="attDef" minOccurs="0" maxOccurs="unbounded" />
+               </content>
+            </elementSpec>
+            
+            <!-- attDef -->
+            <elementSpec ident="attDef" module="teimeta" mode="change">
+               <desc>Definition of an attribute</desc>
+               <content>
+                  <elementRef key="desc" minOccurs="0" maxOccurs="unbounded" />
+                  <elementRef key="datatype" minOccurs="0" maxOccurs="1" />
+                  <elementRef key="valList" minOccurs="0" maxOccurs="1" />
+                  <elementRef key="remarks" minOccurs="0" maxOccurs="2" />
+               </content>
+               <attList>
+                  <attDef ident="ident">
+                     <desc>ID</desc>
+                     <datatype>
+                        <dataRef name="string"/>
+                     </datatype>
+                  </attDef>
+                  <attDef ident="usage" usage="opt">
+                     <desc>Usage: required, optional, recommended</desc>
+                     <valList type="closed">
+                        <valItem ident="req">
+                        <desc>required</desc>
+                        </valItem>
+                        <valItem ident="opt">
+                        <desc>optional</desc>
+                        </valItem>
+                        <valItem ident="rec">
+                        <desc>recommended</desc>
+                        </valItem>
+                     </valList>
+                  </attDef>
+                  <attDef ident="mode" usage="opt">
+                     <desc>Mode</desc>
+                     <datatype>
+                        <dataRef name="string"/>
+                     </datatype>
+                  </attDef>
+                  <attDef ident="rend" usage="opt">
+                     <desc>Rend</desc>
+                     <datatype>
+                        <dataRef name="string"/>
+                     </datatype>
+                  </attDef>
+                  <attDef ident="rendition" usage="opt">
+                     <desc>Rendition</desc>
+                     <datatype>
+                        <dataRef name="string"/>
+                     </datatype>
+                  </attDef>
+               </attList>
+            </elementSpec>
+            
+            <!-- datatype -->
+            <elementSpec ident="datatype" module="teimeta" mode="change" usage="opt">
+               <content>
+                  <elementRef key="dataRef" minOccurs="1" maxOccurs="1" />
+               </content>
+            </elementSpec>
+            
+            <!-- dataRef -->
+            <elementSpec ident="dataRef" module="teimeta" mode="change" usage="opt">
+               <desc>Type of content</desc>
+               <content>
+                  <elementRef key="valList" minOccurs="0" maxOccurs="1" />
+               </content>
+               <attList>
+                  <attDef ident="name">
+                     <valList type="closed" mode="replace">
+                        <valItem ident="string">
+                           <desc>Any string</desc>
+                        </valItem>
+                        <valItem ident="number">
+                           <desc>Number</desc>
+                        </valItem>
+                        <valItem ident="duration">
+                           <desc>Duration</desc>
+                        </valItem>
+                        <valItem ident="date">
+                           <desc>Date</desc>
+                        </valItem>
+                        <valItem ident="month">
+                           <desc>month</desc>
+                        </valItem>
+                        <valItem ident="multiline">
+                           <desc>Multiline</desc>
+                        </valItem>
+                        <valItem ident="url">
+                           <desc>URL</desc>
+                        </valItem>
+                        <valItem ident="anyURI">
+                           <desc>any URI</desc>
+                        </valItem>
+                        <valItem ident="languagecode">
+                           <desc>Code for language</desc>
+                        </valItem>
+                        <valItem ident="countrycode">
+                           <desc>Code for country</desc>
+                        </valItem>
+                        <valItem ident="list">
+                           <desc>Closed list</desc>
+                        </valItem>
+                        <valItem ident="openlist">
+                           <desc>Open list (new element accepted)</desc>
+                        </valItem>
+                     </valList>
+                  </attDef>
+               </attList>
+            </elementSpec>
+            
+            <!-- valList -->
+            <elementSpec ident="valList" module="teimeta" mode="change" usage="opt">
+               <desc>List of values</desc>
+               <content>
+                  <elementRef key="valItem" minOccurs="1" maxOccurs="unbounded" />
+               </content>
+               <attList>
+                  <attDef ident="type">
+                     <desc>Type</desc>
+                     <datatype>
+                        <dataRef name="string"/>
+                     </datatype>
+                  </attDef>
+                  <attDef ident="mode">
+                     <desc>Mode</desc>
+                     <datatype>
+                        <dataRef name="string"/>
+                     </datatype>
+                  </attDef>
+               </attList>
+            </elementSpec>
+            
+            <!-- valItem -->
+            <elementSpec ident="valItem" module="teimeta" mode="change">
+               <desc>Description of value</desc>
+               <content>
+                  <elementRef key="desc" minOccurs="0" maxOccurs="unbounded" />
+               </content>
+               <attList>
+                  <attDef ident="ident">
+                     <desc>ID</desc>
+                     <datatype>
+                        <dataRef name="string"/>
+                     </datatype>
+                  </attDef>
+               </attList>
+            </elementSpec>
+            
+            <!-- textNode -->
+            <elementSpec ident="textNode" module="teimeta" mode="change" usage="opt">
+               <desc>Text node</desc>
+            </elementSpec>
+            
+            <!-- remarks -->
+            <elementSpec ident="remarks" module="teimeta" mode="change" usage="opt">
+               <desc>remarks: Information about css presentation.</desc>
+               <content>
+                  <elementRef key="ab" minOccurs="0" maxOccurs="unbounded" />
+                  <elementRef key="p" minOccurs="0" maxOccurs="unbounded" />
+               </content>
+               <attList>
+                  <attDef ident="style" usage="opt">
+                     <desc>Indicate if the remarks target the content part of the node or the node itself.</desc>
+                     <valList type="closed">
+                        <valItem ident="element">
+                        <desc>remarks is applied to the element</desc>
+                        </valItem>
+                        <valItem ident="content">
+                        <desc>remarks is applied to the content</desc>
+                        </valItem>
+                     </valList>
+                  </attDef>
+               </attList>
+            </elementSpec>
+            
+            <!-- ab -->
+            <elementSpec ident="ab" module="teimeta" mode="change" usage="opt">
+               <desc>Raw CSS value to be applied directly to an element or a content.</desc>
+               <content>
+                  <textNode />
+               </content>
+            </elementSpec>
+            
+            <!-- p -->
+            <elementSpec ident="p" module="teimeta" mode="change" usage="opt">
+               <content>
+                  <elementRef key="item" minOccurs="0" maxOccurs="1" />
+                  <elementRef key="note" minOccurs="0" maxOccurs="1" />
+               </content>
+            </elementSpec>
+            
+            <!-- item -->
+            <elementSpec ident="item" module="teimeta" mode="change" usage="opt">
+               <desc>Identifier within a CSS file</desc>
+               <content>
+                  <textNode />
+               </content>
+            </elementSpec>
+            
+            <!-- note -->
+            <elementSpec ident="note" module="teimeta" mode="change" usage="opt">
+               <desc>Name + content to create a CSS value</desc>
+               <content>
+                  <textNode />
+               </content>
+               <attList>
+                  <attDef ident="type">
+                     <desc>ID</desc>
+                     <datatype>
+                        <dataRef name="string"/>
+                     </datatype>
+                  </attDef>
+               </attList>
+            </elementSpec>
+            
+         </schemaSpec>
+      </body>
+  </text>
+</TEI>

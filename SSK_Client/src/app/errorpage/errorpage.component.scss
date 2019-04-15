@@ -1,0 +1,80 @@
+
+@import '../../partials/variables';
+
+.background{
+  background-color: $color-33;
+}
+
+.bulletMsg{
+  border: 1px solid red;
+
+}
+
+.alienLeft{
+  border: 1px solid green;
+}
+
+.alienRight{
+  border: 1px solid goldenrod;
+}
+
+.ovale {
+  background-color: $color-35;
+  width: 80%;
+  height: 200px;
+  border-radius: 50%;
+  color: $color-27;
+  font-size: .9em;
+  font-family: $animeace2_ital;
+  text-align: center;
+  padding: 3rem 2rem;
+  span { text-align: center; padding-top: 14%; }
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: $adventure;
+  font-size: 1.5rem;
+}
+
+.text-center {
+  img{
+    width: 40%;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .ovale{
+    width: 100%;
+    line-height: 1 !important;
+}
+  .text-center {
+    img{
+      width: 100%;
+    }
+  }
+  .part-text{
+    padding-top: 1rem
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { 
+
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { 
+
+ }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { 
+  .error-page{
+    top: -10rem;
+  }
+}

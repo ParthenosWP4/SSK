@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title>
+					<idno type="title">Personnalisation ODD Corpus Oraux et Multimodaux
+					- Edition des informations sur les participants</idno>
+					<bibl> CORLI et IRCOM </bibl>
+					<desc> L'objectif de cette personnalisation est de proposer un sous-ensemble
+						d'éléments TEI pour décrire le niveau minimal des métadonnées de Corpus
+						(niveau 0) défini au sein de CORLI </desc>
+				</title>
+				<principal>
+					<name type="org"> CORLI - IRCOM </name>
+					<name type="org"> Carole Etienne, Loic Liégeois, Christophe Parisse </name>
+				</principal>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>CORLI wiki</publisher>
+			</publicationStmt>
+			<sourceDesc>
+				<p>written from IRCOM and CORLI recommandations</p>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+
+	<text>
+		<body>
+			<!-- definition de TEI_CORPO_METADATA-->
+			<schemaSpec ident="TEI_CORPO_METADATA_PARTDESC" start="TEI" ns="http://www.tei-c.org/ns/1.0">
+				<!-- structure generale TEI -->
+				<elementSpec ident="TEI" module="textstructure" mode="change">
+					<content>
+						<elementRef key="teiHeader"/>
+					</content>
+				</elementSpec>
+
+				<!-- structure generale teiHeader -->
+				<elementSpec ident="teiHeader" module="header" mode="change">
+					<content>
+						<elementRef key="profileDesc"/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="profileDesc" module="header">
+					<desc xml:lang="fr">Catégorie, participants, contexte, langue</desc>
+					<desc xml:lang="en">Category, participants, setting, language</desc>
+					<content>
+						<sequence minOccurs="1" maxOccurs="1">
+							<elementRef key="textDesc"/>
+							<elementRef key="particDesc"/>
+						</sequence>
+					</content>
+				</elementSpec>
+
+				<!-- textDesc : catégorisation du document oral-->
+				<!-- attention il y a aussi un module additionnel setting ==> détail de la situation, artefact, plan,   ...-->
+				<elementSpec ident="textDesc" module="corpus" mode="change" n="1">
+					<desc xml:lang="fr">Type de données orales</desc>
+					<desc xml:lang="en">Setting</desc>
+					<content>
+						<sequence minOccurs="1" maxOccurs="1">
+							<elementRef key="channel"/>
+							<elementRef key="constitution"/>
+							<elementRef key="derivation"/>
+							<elementRef key="domain"/>
+							<!--  factuality obligatoire-->
+							<elementRef key="factuality"/>
+							<!--  interaction obligatoire, le type est inapplicable, le nb de locuteurs actif (active) et passifs (passive) sera intéressant pour un niveau 1 ou 2 ?  -->
+							<elementRef key="interaction"/>
+							<!--  niveau de préparation si entretien=consignes -->
+							<elementRef key="preparedness"/>
+							<!--  sujet, théme -->
+							<elementRef key="purpose"/>
+						</sequence>
+					</content>
+					<remarks style="element">
+						<p><ident>css-textDesc</ident></p>
+					</remarks>
+				</elementSpec>
+
+				<elementSpec ident="channel" module="corpus">
+					<desc xml:lang="fr">Canal de l'interaction : radio/tv/téléphone/présence/visio</desc>
+					<desc xml:lang="en">Canal : radio/tv/phone/presence/visio</desc>
+					<attList>
+						<attDef ident="mode" usage="req" mode="change" rend="s" >
+							<valList>
+								<valItem ident="s"/>
+							</valList>
+							<!-- mode="s"= default value qui signifie spoken -->
+						</attDef>
+						<attDef ident="subtype" usage="req" mode="change" rend="mode.face_to_face">
+
+							<valList>
+								<!-- pas de choix autre volontairement -->
+								<valItem ident="mode.face_to_face">
+									<desc xml:lang="fr">tous les locuteurs sont présents</desc>
+									<desc xml:lang="en">all speakers are in the same setting</desc>
+								</valItem>
+								<valItem ident="mode.radio">
+									<desc xml:lang="fr">à la radio</desc>
+									<desc xml:lang="en">on radio</desc>
+								</valItem>
+								<valItem ident="mode.tv">
+									<desc xml:lang="fr">à la télévisison</desc>
+									<desc xml:lang="en">on tv</desc>
+								</valItem>
+								<valItem ident="mode.telephone">
+									<desc xml:lang="fr">au téléphone</desc>
+									<desc xml:lang="en">over the telephone</desc>
+								</valItem>
+								<valItem ident="mode.visioconference">
+									<desc xml:lang="fr">en visioconférence</desc>
+									<desc xml:lang="en">video conference</desc>
+								</valItem>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="constitution" module="corpus">
+					<desc xml:lang="fr">Ressource liée</desc>
+					<desc xml:lang="en">Linked resource</desc>
+					<attList>
+						<attDef ident="type" usage="req" mode="change" rend="constitution.single">
+
+							<valList>
+								<valItem ident="constitution.single">
+									<desc xml:lang="fr">ressource autonome</desc>
+									<desc xml:lang="en">autonomous resource</desc>
+								</valItem>
+								<valItem ident="constitution.composite">
+									<desc xml:lang="fr">ressource liée à une autre ou sous-partie</desc>
+									<desc xml:lang="en">linked resource or subset</desc>
+								</valItem>
+								<valItem ident="constitution.frags">
+									<desc xml:lang="fr">extrait</desc>
+									<desc xml:lang="en">excerpt</desc>
+								</valItem>
+								<valItem ident="constitution.unknown">
+									<desc xml:lang="fr">donnée inconnue</desc>
+									<desc xml:lang="en">unknown data</desc>
+								</valItem>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="derivation" module="corpus">
+					<desc xml:lang="fr">original ou adaptation d'une autre ressource(révision,traduction...)</desc>
+					<desc xml:lang="en">original/revision/translation</desc>
+					<attList>
+						<!--  dans TEI-CORPO choisir 1=original, dans la TEI 6 options possibles
+	  							1] orignal; 2] revision; 3] translation; ==> les autres non applicables 4] abridgment; 5] plagiarism; 6] traditional -->
+						<attDef ident="type" usage="req" mode="change" rend="derivation.original">
+							<!-- TODO rend pour valeur par default -->
+							<valList>
+								<!-- valeurs figées en TEI P5 -->
+								<valItem ident="derivation.original">
+									<desc xml:lang="fr">ressource d'origine</desc>
+									<desc xml:lang="en">original resource</desc>
+								</valItem>
+								<valItem ident="derivation.revision">
+									<desc xml:lang="fr">révision d'une autre ressource</desc>
+									<desc xml:lang="en">release of another resource</desc>
+								</valItem>
+								<valItem ident="derivation.translation">
+									<desc xml:lang="fr">traduction d'une ressource</desc>
+									<desc xml:lang="en">translation of another resource</desc>
+								</valItem>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="domain" module="corpus">
+					<desc xml:lang="fr">Domaine privé ou professionnel</desc>
+					<desc xml:lang="en">Private or professionnal setting</desc>
+					<attList>
+						<attDef ident="nature_type" usage="req" mode="change" >
+							<valList>
+								<valItem ident="nature_type.professional">
+									<desc xml:lang="fr">professionnel - au moins un locuteur est en situation professionnelle</desc>
+									<desc xml:lang="en">professional - at least one speaker in professional setting</desc>
+								</valItem>
+								<valItem ident="nature_type.private">
+									<desc xml:lang="fr">privé: tous les locuteurs sont en situation	privée</desc>
+									<desc xml:lang="en">private : all speakers on private setting</desc>
+								</valItem>
+
+								<valItem ident="nature_type.unknown">
+									<desc xml:lang="fr">domaine inconnu</desc>
+									<desc xml:lang="en">unknown domain</desc>
+								</valItem>
+							</valList>
+						</attDef>
+						<attDef ident="nature" usage="req" mode="change">
+							<desc xml:lang="fr">Genre interactionnel</desc>
+							<desc xml:lang="en">Nature, Type of situation</desc>
+							<valList>
+								<valItem ident="nature.interview">
+									<desc xml:lang="fr">entretien</desc>
+									<desc xml:lang="en">interview</desc>
+								</valItem>
+								<valItem ident="nature.consultation">
+									<desc xml:lang="fr">consultation</desc>
+									<desc xml:lang="en">appointment</desc>
+								</valItem>
+								<valItem ident="nature.meeting">
+									<desc xml:lang="fr">réunion</desc>
+									<desc xml:lang="en">meeting</desc>
+								</valItem>
+								<valItem ident="nature.lessons">
+									<desc xml:lang="fr">cours</desc>
+									<desc xml:lang="en">lesson</desc>
+								</valItem>
+								<valItem ident="nature.speech">
+									<desc xml:lang="fr">discours</desc>
+									<desc xml:lang="en">speech</desc>
+								</valItem>
+								<valItem ident="nature.presentation">
+									<desc xml:lang="fr">présentation</desc>
+									<desc xml:lang="en">presentation</desc>
+								</valItem>
+								<valItem ident="nature.narration">
+									<desc xml:lang="fr">récit</desc>
+									<desc xml:lang="en">story</desc>
+								</valItem>
+								<valItem ident="nature.transaction">
+									<desc xml:lang="fr">transaction</desc>
+									<desc xml:lang="en">transaction</desc>
+								</valItem>
+								<valItem ident="nature.tabletalk">
+									<desc xml:lang="fr">repas</desc>
+									<desc xml:lang="en">tabletalk</desc>
+								</valItem>
+								<valItem ident="nature.talk">
+									<desc xml:lang="fr">conversation</desc>
+									<desc xml:lang="en">talk</desc>
+								</valItem>
+								<valItem ident="nature.activity">
+									<desc xml:lang="fr">les locuteurs sont engagés dans une activité
+										: jeu vidéo, montage de meuble, visite, tâche, ...</desc>
+									<desc xml:lang="en">speakers are implied in an activity : video
+										game, furniture assembly, visit, task ...</desc>
+								</valItem>
+								<valItem ident="unknown">
+									<desc xml:lang="fr">nature inconnue</desc>
+									<desc xml:lang="en">unknown type</desc>
+								</valItem>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<!--  factuality obligatoire-->
+				<elementSpec ident="factuality" module="corpus"/>
+
+				<!--  interaction obligatoire, le type est inapplicable, le nb de locuteurs actif (active) et passifs (passive) sera intéressant pour un niveau 1 ou 2 ?   -->
+				<elementSpec ident="interaction" module="corpus">
+					<desc xml:lang="fr">Nombre de locuteurs : au total, actifs et passifs</desc>
+					<desc xml:lang="en">Number of speakers : total, active and passive speakers</desc>
+					<attList>
+						<attDef ident="type" usage="req" mode="change" rend="inapplicable"/>
+						<attDef ident="active" usage="req" mode="change" rend="n"/>
+						<attDef ident="passive" usage="req" mode="change" rend="n"/>
+					</attList>
+				</elementSpec>
+
+				<!--  niveau de préparation si entretien=consignes -->
+				<elementSpec ident="preparedness" module="corpus">
+					<desc xml:lang="fr">Consignes, instructions</desc>
+					<desc xml:lang="en">Constraints given to speaker</desc>
+					<attList>
+						<attDef ident="ana" usage="req" mode="change">
+							<valList>
+								<valItem ident="instruction.prepared">
+									<desc xml:lang="fr">conférence/cours/discours/presentation</desc>
+									<desc xml:lang="en">conference/lesson/discourse/presentation</desc>
+								</valItem>
+								<valItem ident="instruction.read">
+									<desc xml:lang="fr">lecture, lecture de mots</desc>
+									<desc xml:lang="en">reading, reading words</desc>
+								</valItem>
+								<valItem ident="instruction.instruction">
+									<desc xml:lang="fr">thème initial/ordre du jour/consigne donnée
+										aux locuteurs sur le contenu ou les modalités de
+										l'échange</desc>
+									<desc xml:lang="en">initial theme/instructions given to speakers on content or setting modalities</desc>
+								</valItem>
+								<valItem ident="instruction.spontaneous">
+									<desc xml:lang="fr">spontané</desc>
+									<desc xml:lang="en">spontaneous</desc>
+								</valItem>
+				                <valItem ident="instruction.noinstruction">
+									<desc xml:lang="fr">sans consignes</desc>
+									<desc xml:lang="en">no instruction</desc>
+								</valItem>
+								<valItem ident="unknown">
+									<desc xml:lang="fr">consignes inconnues</desc>
+									<desc xml:lang="en">unknown level of instruction</desc>
+								</valItem>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<!--  sujet, théme -->
+				<elementSpec ident="purpose" module="corpus">
+					<desc xml:lang="fr">Contexte</desc>
+					<desc xml:lang="en">Context</desc>
+					<attList>
+						<attDef ident="ana" usage="req" mode="change">
+							<valList>
+								<valItem ident="context.educational">
+									<desc xml:lang="fr">scolaire</desc>
+									<desc xml:lang="en">education</desc>
+								</valItem>
+								<valItem ident="context.academic">
+									<desc xml:lang="fr">académique</desc>
+									<desc xml:lang="en">academic</desc>
+								</valItem>
+								<valItem ident="context.commercial">
+									<desc xml:lang="fr">commercial</desc>
+									<desc xml:lang="en">commercial</desc>
+								</valItem>
+								<valItem ident="context.medical">
+									<desc xml:lang="fr">médical</desc>
+									<desc xml:lang="en">medical</desc>
+								</valItem>
+								<valItem ident="context.political">
+									<desc xml:lang="fr">politique</desc>
+									<desc xml:lang="en">political</desc>
+								</valItem>
+								<valItem ident="context.associative">
+									<desc xml:lang="fr">associatif</desc>
+									<desc xml:lang="en">associative</desc>
+								</valItem>
+								<valItem ident="context.religious">
+									<desc xml:lang="fr">religieux</desc>
+									<desc xml:lang="en">religious</desc>
+								</valItem>
+								<valItem ident="context.sports">
+									<desc xml:lang="fr">sportif</desc>
+									<desc xml:lang="en">sports</desc>
+								</valItem>
+								<valItem ident="context.family">
+									<desc xml:lang="fr">familial</desc>
+									<desc xml:lang="en">family</desc>
+								</valItem>
+								<valItem ident="context.friendly">
+									<desc xml:lang="fr">amical</desc>
+									<desc xml:lang="en">friendly</desc>
+								</valItem>
+								<valItem ident="unknown">
+									<desc xml:lang="fr">inconnu</desc>
+									<desc xml:lang="en">unknown</desc>
+								</valItem>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<!-- particDesc : speakers ==> Christophe le fait pour vérif -->
+				<elementSpec ident="particDesc" module="corpus" mode="change" n="1">
+					<desc xml:lang="fr">Locuteurs</desc>
+					<desc xml:lang="en">Speakers </desc>
+					<content>
+						<elementRef key="listPerson" minOccurs="1" maxOccurs="1"/>
+					</content>
+					<remarks style="element">
+						<p><ident>css-particDesc</ident></p>
+					</remarks>
+				</elementSpec>
+
+				<elementSpec ident="listPerson" module="namesdates">
+					<content>
+						<elementRef key="person" minOccurs="1" maxOccurs="unbounded"/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="person" module="namesdates">
+					<desc xml:lang="fr">Locuteur</desc>
+					<desc xml:lang="en">Speaker</desc>
+					<content>
+						<sequence minOccurs="0" maxOccurs="unbounded">
+							<elementRef key="persName"/>
+							<elementRef key="age"/>
+							<elementRef key="altGrp"/>
+							<elementRef key="occupation"/>
+							<elementRef key="socecStatus"/>
+							<elementRef key="education"/>
+						</sequence>
+						<elementRef key="langKnowledge" minOccurs="0" maxOccurs="unbounded"/>
+						<elementRef key="note" minOccurs="0" maxOccurs="unbounded"/>
+					</content>
+					<attList>
+						<attDef ident="xml:id" usage="rec" rendition="id unique" mode="change">
+							<desc xml:lang="fr">Identidiant unique du locuteur</desc>
+							<desc xml:lang="en">Unique ID of locuteur</desc>
+							<datatype>
+								<dataRef name="string"/>
+							</datatype>
+						</attDef>
+						<attDef ident="sex" usage="req" mode="change">
+							<desc xml:lang="fr">Sexe</desc>
+							<desc xml:lang="en">Gender</desc>
+							<valList >
+								<valItem ident="1">
+								<desc xml:lang="fr">masculin</desc>
+								<desc xml:lang="en">male</desc>
+								</valItem>
+								<valItem ident="2">
+								<desc xml:lang="fr">féminin</desc>
+								<desc xml:lang="en">female</desc>
+								</valItem>
+								<valItem ident="9">
+									<desc xml:lang="fr">inconnu (voix au téléphone, foule, locuteur générique
+										élève/public/...)</desc>
+									<desc xml:lang="en">unknown (voice over the phone, crowd, global speaker 
+										student/audience/...)</desc>
+								</valItem>
+							</valList>
+						</attDef>
+						<attDef ident="source" usage="rec" rendition="source" mode="change">
+							<desc xml:lang="fr">URL Locuteur</desc>
+							<desc xml:lang="en">Speaker URL</desc>
+							<datatype>
+								<dataRef name="anyURI"/>
+							</datatype>
+						</attDef>
+						<attDef ident="role" usage="rec" rendition="role" mode="change">
+							<desc xml:lang="fr">Rôle</desc>
+							<desc xml:lang="en">Role</desc>
+							<datatype>
+								<dataRef name="openlist"/>
+							</datatype>
+							<valList>
+								<valItem ident="role.target_child">
+									<desc xml:lang="fr">enfant sujet de l'étude</desc>
+									<desc xml:lang="en">child study subject</desc>
+								</valItem>
+								<valItem ident="role.target_adult">
+									<desc xml:lang="fr">adulte sujet de l'étude</desc>
+									<desc xml:lang="en">adult study subject</desc>
+								</valItem>
+								<valItem ident="role.child">
+									<desc xml:lang="fr">enfant</desc>
+									<desc xml:lang="en">child</desc>
+								</valItem>
+								<valItem ident="role.adult">
+									<desc xml:lang="fr">adulte</desc>
+									<desc xml:lang="en">adult</desc>
+								</valItem>
+								<valItem ident="role.observer">
+									<desc xml:lang="fr">observateur</desc>
+									<desc xml:lang="en">observer</desc>
+								</valItem>
+								<valItem ident="role.mother">
+									<desc xml:lang="fr">mère</desc>
+									<desc xml:lang="en">mother</desc>
+								</valItem>
+								<valItem ident="role.father">
+									<desc xml:lang="fr">père</desc>
+									<desc xml:lang="en">father</desc>
+								</valItem>
+								<valItem ident="role.unidentified">
+									<desc xml:lang="fr">inconnu</desc>
+									<desc xml:lang="en">unknown</desc>
+								</valItem>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="persName" module="namesdates">
+					<desc xml:lang="fr">Nom du locuteur</desc>
+					<desc xml:lang="en">Speaker's name</desc>
+					<content>
+						<textNode/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="socecStatus" module="namesdates">
+					<desc xml:lang="fr">Indice socio-économique</desc>
+					<desc xml:lang="en">Socio-economic Status</desc>
+					<content>
+						<textNode/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="education" module="namesdates">
+					<desc xml:lang="fr">Niveau de scolarité</desc>
+					<desc xml:lang="en">Education level</desc>
+					<content>
+						<textNode/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="altGrp" module="core">
+					<content>
+						<elementRef key="alt" minOccurs="1" maxOccurs="unbounded"/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="alt" module="core">
+					<desc xml:lang="fr">Pseudonyme (dans la transcritpion)</desc>
+					<desc xml:lang="en">Pseudonym (in transcript)</desc>
+					<attList>
+						<attDef ident="type">
+							<desc>Type</desc>
+							<datatype>
+								<dataRef name="string"/>
+							</datatype>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="note" module="core">
+					<desc xml:lang="fr">Information supplémentaire</desc>
+					<desc xml:lang="en">Additional Information</desc>
+					<content>
+						<textNode/>
+					</content>
+					<attList>
+						<attDef ident="type">
+							<desc xml:lang="fr">Type</desc>
+							<desc xml:lang="en">Type</desc>
+							<datatype>
+								<dataRef name="string"/>
+							</datatype>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="age" module="namesdates" rend="age.adult">
+					<desc xml:lang="fr">Tranche d'âge</desc>
+					<desc xml:lang="en">Age Interval</desc>
+					<content>
+						<valList>
+							<valItem ident="age.adult">
+								<desc xml:lang="fr">de 21 à 60 ans</desc>
+								<desc xml:lang="en">from 21 to 60</desc>
+							</valItem>
+							<valItem ident="age.infant">
+								<desc xml:lang="fr">moins de 1 an</desc>
+								<desc xml:lang="en">less than 1</desc>
+							</valItem>
+							<valItem ident="age.youngchild">
+								<desc xml:lang="fr">de 1 à 2 ans</desc>
+								<desc xml:lang="en">from 1 to 2</desc>
+							</valItem>
+							<valItem ident="age.middlechild">
+								<desc xml:lang="fr">de 3 à 5 ans</desc>
+								<desc xml:lang="en">from 3 to 5</desc>
+							</valItem>
+							<valItem ident="age.oldchild">
+								<desc xml:lang="fr">de 6 à 15 ans</desc>
+								<desc xml:lang="en">from 6 to 15</desc>
+							</valItem>
+							<valItem ident="age.youth">
+								<desc xml:lang="fr">de 16 à 20 ans</desc>
+								<desc xml:lang="en">from 16 to 20</desc>
+							</valItem>
+							<valItem ident="age.senior">
+								<desc xml:lang="fr">plus de 61 ans</desc>
+								<desc xml:lang="en">up to 61</desc>
+							</valItem>
+							<valItem ident="age.unknown">
+								<desc xml:lang="fr">âge inconnu</desc>
+								<desc xml:lang="en">unknown age</desc>
+							</valItem>
+						</valList>
+					</content>
+					<attList>
+						<attDef ident="value" usage="req" mode="change">
+							<datatype>
+								<dataRef name="number"/>
+							</datatype>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="occupation" module="namesdates" rend="occupation.professional_activity">
+					<desc xml:lang="fr">Situation</desc>
+					<desc xml:lang="en">Occupation</desc>
+					<attList>
+						<attDef ident="ana" usage="req" mode="change">
+							<valList>
+
+								<valItem ident="occupation.before_school">
+									<desc xml:lang="fr">avant la scolarisation</desc>
+									<desc xml:lang="en">before school</desc>
+								</valItem>
+								<valItem ident="occupation.at_school">
+									<desc xml:lang="fr">en scolarité</desc>
+									<desc xml:lang="en">scholar</desc>
+								</valItem>
+								<valItem ident="occupation.professional_activity">
+									<desc xml:lang="fr">en activite</desc>
+									<desc xml:lang="en">active</desc>
+								</valItem>
+								<valItem ident="occupation.retirement">
+									<desc xml:lang="fr">retraite</desc>
+									<desc xml:lang="en">retirement</desc>
+								</valItem>
+								<valItem ident="occupation.without_job">
+									<desc xml:lang="fr">sans emploi (chômage, H/F au foyer) </desc>
+									<desc xml:lang="en">without job (unemployed, at home) </desc>
+								</valItem>
+								<valItem ident="occupation.unknown">
+									<desc xml:lang="fr">inconnue</desc>
+									<desc xml:lang="en">unknown</desc>
+								</valItem>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="langKnowledge" module="namesdates">
+					<content>
+						<elementRef key="langKnown" minOccurs="1" maxOccurs="unbounded"/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="langKnown" module="namesdates">
+					<desc xml:lang="fr">Langue des locuteurs</desc>
+					<desc xml:lang="en">Speaker's language</desc>
+					<attList>
+						<!-- slangue par défaut français, pour le moment inutile car liste des codes iso non reportée-->
+						<attDef ident="tag" usage="req"
+							rendition="code iso des langues, cf langUsage pour l'enregistrement"
+							mode="change" rend="français">
+							<desc xml:lang="fr">Code Iso</desc>
+							<desc xml:lang="en">Iso code</desc>
+							<datatype>
+								<dataRef name="languagecode"/>
+							</datatype>
+						</attDef>
+						<attDef ident="level" usage="req" mode="change" rend="language.first">
+							<valList>
+								<valItem ident="language.first">
+									<desc xml:lang="fr">maternelle</desc>
+									<desc xml:lang="en">first language</desc>
+								</valItem>
+								<valItem ident="language.second">
+									<desc xml:lang="fr">langue seconde</desc>
+									<desc xml:lang="en">second language</desc>
+								</valItem>
+								<valItem ident="language.unknown">
+									<desc xml:lang="fr">inconnue</desc>
+									<desc xml:lang="en">unknown</desc>
+								</valItem>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+			</schemaSpec>
+		</body>
+	</text>
+</TEI>

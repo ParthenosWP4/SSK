@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="/Applications/Oxygen XML Editor/frameworks/tei/xml/tei/custom/schema/relaxng/tei_odds.rnc" type="application/relax-ng-compact-syntax"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title>SSK scenario spec for form creation with TEIMETA</title>
+				<author>
+					<name>Charles Riondet</name>
+				</author>
+			</titleStmt>
+			<publicationStmt>
+				<p/>
+			</publicationStmt>
+			<notesStmt>
+				<note type="ns">http://www.example.org/ns/nonTEI</note>
+			</notesStmt>
+			<sourceDesc>
+				<p>Adapted from
+					https://github.com/christopheparisse/teimeta/blob/master/models/ODD_Meta_niveau0_V17.odd</p>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+	<text>
+		<body>
+			<schemaSpec ident="TEI_SSK" start="TEI" ns="http://www.tei-c.org/ns/1.0">
+
+				<moduleRef key="core"
+					include="abbr addrLine address analytic author bibl biblScope biblStruct date desc editor email expan graphic head imprint item label lb list media meeting monogr name p postBox postCode pubPlace publisher ref resp respStmt series street term"/>
+				<moduleRef key="tei"/>
+				<moduleRef key="header"/>
+				<moduleRef key="textstructure"/>
+				<moduleRef key="namesdates"/>
+				<moduleRef key="linking"/>
+				<moduleRef key="tagdocs"/>
+				<moduleRef key="figures"/>
+
+				<!-- root TEI -->
+				<elementSpec ident="TEI" module="textstructure">
+					<content>
+						<sequence minOccurs="1" maxOccurs="1">
+							<elementRef key="teiHeader"/>
+							<elementRef key="text"/>
+						</sequence>
+					</content>
+					<attList>
+						<attDef ident="type" usage="req" n="auto">
+						  <desc>type of TEI file (scenario or step)</desc>
+							<defaultVal>researchScenario</defaultVal>
+						</attDef>
+					  <attDef ident="xml:id" usage="req" n="auto">
+					    <desc>ID of TEI file</desc>
+							<datatype>
+								<dataRef key="anyURI"/>
+							</datatype>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<!-- teiHeader -->
+				<elementSpec ident="teiHeader" module="header" mode="change">
+					<content>
+						<sequence minOccurs="1" maxOccurs="1">
+							<elementRef key="fileDesc"/>
+						</sequence>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="fileDesc" module="header">
+					<content>
+						<sequence minOccurs="1" maxOccurs="1">
+							<elementRef key="titleStmt"/>
+							<elementRef key="publicationStmt"/>
+						</sequence>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="titleStmt" module="header" mode="change" n="1">
+					<content>
+						<elementRef key="title" minOccurs="1" maxOccurs="1"/>
+						<elementRef key="author" minOccurs="1" maxOccurs="unbounded"/>
+						<elementRef key="sponsor" minOccurs="0" maxOccurs="unbounded"/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="author">
+					<desc>Authors</desc>
+					<content>
+						<elementRef key="persName"/>
+						<elementRef key="affiliation"/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="affiliation">
+					<desc>Author's affiliation</desc>
+					<content>
+						<textNode/>
+					</content>
+				</elementSpec>
+				
+				<elementSpec ident="sponsor">
+					<desc>Sponsor</desc>
+					<content>
+						<textNode/>
+					</content>
+				</elementSpec>
+
+				<!-- Title of the TEI file automatically generated -->
+				<elementSpec ident="title" module="core" mode="change" n="auto">
+					<desc>Title of the document (should be automatically generated)</desc>
+					<content>
+						<textNode/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="publicationStmt" module="header" mode="change">
+					<content>
+						<elementRef key="authority"/>
+						<elementRef key="availability" minOccurs="1" maxOccurs="1"/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="availability" module="header">
+					<content>
+						<elementRef key="licence" minOccurs="1" maxOccurs="unbounded"/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="licence" module="header">
+					<desc xml:lang="fr">License</desc>
+					<desc xml:lang="fr">Licence</desc>
+					<content>
+						<elementRef key="p" minOccurs="1" maxOccurs="1"/>
+					</content>
+					<attList>
+						<attDef ident="target">
+							<datatype>
+								<dataRef key="anyURI"/>
+							</datatype>
+							<!-- The value of the desc elements should be copied in the <p> -->
+							<valList>
+								<valItem ident="http://creativecommons.org/licenses/by/4.0/">
+									<desc>The Creative Commons Attribution 4.0 Unported (CC BY 4.0)
+										Licence applies to this document.</desc>
+								</valItem>
+								<valItem ident="https://creativecommons.org/publicdomain/zero/1.0/">
+									<desc>No copyright</desc>
+								</valItem>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="authority">
+					<desc>Context (if the step is the result of a project's work, put the name of the project here).</desc>
+					<content>
+						<textNode/>
+					</content>
+				</elementSpec>
+
+				<!--<elementSpec ident="sourceDesc" module="header" mode="change" n="1">
+					<content>
+						<elementRef key="p" minOccurs="1" maxOccurs="1"/>
+					</content>
+				</elementSpec>-->
+
+				<!--<elementSpec ident="revisionDesc">
+					<desc>Revision history</desc>
+					<content>
+						<elementRef key="change"/>
+					</content>
+				</elementSpec>
+				
+ 				<elementSpec ident="change"/>-->
+
+				<!--<elementSpec ident="encodingDesc">
+					<desc>Information about the zotero libraries used (internal information)</desc>
+					
+					Code to be added to all files at 
+					<encodingDesc>
+						<listPrefixDef>
+							<prefixDef ident="wp2" matchPattern="(.*?)" replacementPattern="groups/368112">
+								<p>The prefix wp2 needs to be used before resources taken from the <ref target="https://www.zotero.org/groups/368112/parthenos_wp2" type="url">Parthenos WP2 Zotero
+									Library</ref> .</p>
+								<p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a colon
+									":". Ex: target="wp2:JHSD76DS"</p>
+							</prefixDef>
+							<prefixDef ident="wp3" matchPattern="(.*?)" replacementPattern="groups/520841">
+								<p>The prefix wp3 needs to be used before resources taken from the <ref target="https://www.zotero.org/groups/520841/parthenos_wp3" type="url">Parthenos WP3 Zotero
+									Library</ref> .</p>
+								<p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a colon
+									":". Ex: target="wp2:JHSD76DS"</p>
+							</prefixDef>
+							<prefixDef ident="wp4" matchPattern="(.*?)" replacementPattern="groups/427927">
+								<p>The prefix wp4 needs to be used before resources taken from the <ref target="https://www.zotero.org/groups/427927/parthenos_wp4" type="url">Parthenos WP4 Zotero
+									Library</ref> .</p>
+								<p>In the <att>target</att> attribute, the prefix in separated by the Zotero ID by a colon
+									":". Ex: target="wp2:JHSD76DS"</p>
+							</prefixDef>
+						</listPrefixDef>
+					</encodingDesc>
+				</elementSpec>-->
+
+
+				<!--Step description-->
+				<elementSpec ident="text" module="textstructure">
+					<content>
+						<sequence>
+							<elementRef key="body"/>
+						</sequence>
+					</content>
+				</elementSpec>
+
+
+				<elementSpec ident="body" module="textstructure">
+					<content>
+						<elementRef key="div"/>
+					</content>
+				</elementSpec>
+			  
+			  <elementSpec ident="div" module="textstructure">
+			    <content>
+			      <sequence>
+			        <elementRef key="head" minOccurs="1" maxOccurs="unbounded"/>
+			        <elementRef key="desc" corresp="definition" minOccurs="1"
+			          maxOccurs="unbounded"/>
+			        <elementRef key="desc" corresp="terms" minOccurs="1"
+			          maxOccurs="unbounded"/>
+			        <elementRef key="listEvent"/>
+			        <!--<elementRef key="param" minOccurs="0" maxOccurs="unbounded"/>-->
+			      </sequence>
+			    </content>
+			  </elementSpec>
+
+				<!-- Only for step files -->
+				<elementSpec ident="listEvent">
+				  <desc>Steps of the scenario</desc>
+				  <content>
+						<elementRef key="event" minOccurs="1" maxOccurs="unbounded"/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="event">
+					<desc>Step</desc>
+					<attList>
+						<attDef ident="type" n="auto">
+							<defaultVal>researchStep</defaultVal>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="head">
+					<desc>Title of the scenario</desc>
+					<content>
+						<textNode/>
+					</content>
+					<attList>
+						<attDef ident="xml:lang" usage="req" mode="change">
+							<desc>language</desc>
+							<datatype>
+								<dataRef key="teidata.language"/>
+							</datatype>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="desc" corresp="definition">
+					<desc>Description of the scenario</desc>
+					<content>
+					  <!-- ADD THE RESTRICTED ELEMENTS -->
+					  <textNode/>
+					</content>
+					<attList>
+						<attDef ident="type" usage="req" mode="change" n="auto">
+							<desc>Type: should be "definition" by default</desc>
+							<defaultVal>definition</defaultVal>
+						</attDef>
+						<!-- @xml:lang is required -->
+						<attDef ident="xml:lang" usage="req" mode="change">
+							<desc>language</desc>
+							<datatype>
+								<dataRef key="teidata.language"/>
+							</datatype>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="desc" corresp="terms">
+					<content>
+						<elementRef key="term" corresp="activity" minOccurs="1" maxOccurs="1"/>
+						<elementRef key="term" corresp="techniques" minOccurs="0" maxOccurs="4"/>
+						<elementRef key="term" corresp="objects" minOccurs="0" maxOccurs="4"/>
+						<elementRef key="term" corresp="standard" minOccurs="0" maxOccurs="4"/>
+					</content>
+					<attList>
+						<attDef ident="type" usage="req" mode="change" n="auto">
+							<desc>Type. Should be "terms" by default</desc>
+							<defaultVal>terms</defaultVal>
+						</attDef>
+						<!-- @xml:lang is required -->
+						<attDef ident="xml:lang" usage="req" mode="change">
+							<desc>language</desc>
+							<datatype>
+								<dataRef key="teidata.language"/>
+							</datatype>
+						</attDef>
+					</attList>
+				</elementSpec>
+				
+				<!--Disciplines list-->
+				<elementSpec ident="term" corresp="disciplines">
+					<desc>Disciplines cover all the domains from the Humanities, Social Sciences and
+						Heritage science. Scenarios may apply to one or more disciplines.
+					</desc>
+					<attList>
+						<attDef ident="key">
+							<desc>The term itself</desc>
+							<datatype>
+								<dataRef name="anyURI"/>
+							</datatype>
+							<valList>
+								<valItem ident="Archaeology and Prehistory"/>
+								<valItem ident="Architecture, space management"/>
+								<valItem ident="Art and art history"/>
+								<valItem ident="Biological anthropology"/>
+								<valItem ident="Classical studies"/>
+								<valItem ident="Communication sciences"/>
+								<valItem ident="Cultural heritage and museology"/>
+								<valItem ident="Demography"/>
+								<valItem ident="Economies and finances"/>
+								<valItem ident="Education"/>
+								<valItem ident="Environmental studies"/>
+								<valItem ident="Gender studies"/>
+								<valItem ident="Geography"/>
+								<valItem ident="History"/>
+								<valItem ident="History, Philosophy and Sociology of Sciences"/>
+								<valItem ident="Law"/>
+								<valItem ident="Linguistics"/>
+								<valItem ident="Literature"/>
+								<valItem ident="Management"/>
+								<valItem ident="Methods and statistics"/>
+								<valItem ident="Musicology and performing arts"/>
+								<valItem ident="Philosophy"/>
+								<valItem ident="Political science"/>
+								<valItem ident="Psychology"/>
+								<valItem ident="Religions"/>
+								<valItem ident="Social Anthropology and ethnology"/>
+								<valItem ident="Sociology "/>
+							</valList>
+						</attDef>
+						<attDef ident="source">
+							<desc>The thesaurus used</desc>
+							<datatype>
+								<dataRef name="anyURI"/>
+							</datatype>
+							<defaultVal>AureHal</defaultVal>
+						</attDef>
+						<attDef ident="type">
+							<desc>The type of the term</desc>
+							<datatype>
+								<dataRef name="anyURI"/>
+							</datatype>
+							<defaultVal>discipline</defaultVal>
+						</attDef>
+					</attList>
+				</elementSpec>
+				
+				<!--Object list-->
+				<elementSpec ident="term" corresp="objects">
+					<desc>Research objects are the different types of data produced, studied or
+						manipulated in a scenario. Scenarios may apply to one or more research
+						objects. 
+					</desc>
+					<attList>
+						<attDef ident="key">
+							<desc>The term itself</desc>
+							<datatype>
+								<dataRef name="anyURI"/>
+							</datatype>
+							<valList>
+								<valItem ident="Artifacts"/>
+								<valItem ident="Bibliographic Listings"/>
+								<valItem ident="Code"/>
+								<valItem ident="Computers"/>
+								<valItem ident="Curricula"/>
+								<valItem ident="Digital Humanities"/>
+								<valItem ident="Data"/>
+								<valItem ident="File"/>
+								<valItem ident="Images"/>
+								<valItem ident="Images (3D)"/>
+								<valItem ident="Infrastructure"/>
+								<valItem ident="Interaction"/>
+								<valItem ident="Language"/>
+								<valItem ident="Link"/>
+								<valItem ident="Literature"/>
+								<valItem ident="Manuscript"/>
+								<valItem ident="Map"/>
+								<valItem ident="Metadata"/>
+								<valItem ident="Methods"/>
+								<valItem ident="Multimedia"/>
+								<valItem ident="Multimodal"/>
+								<valItem ident="Named Entities"/>
+								<valItem ident="Persons"/>
+								<valItem ident="Projects"/>
+								<valItem ident="Research"/>
+								<valItem ident="Research Process"/>
+								<valItem ident="Research Results"/>
+								<valItem ident="Sheet Music"/>
+								<valItem ident="Software"/>
+								<valItem ident="Sound"/>
+								<valItem ident="Standards"/>
+								<valItem ident="Text"/>
+								<valItem ident="Text Bearing Objects"/>
+								<valItem ident="Tools"/>
+								<valItem ident="Video"/>
+								<valItem ident="VREs"/>
+							</valList>
+						</attDef>
+						<attDef ident="source">
+							<desc>The thesaurus used</desc>
+							<datatype>
+								<dataRef name="anyURI"/>
+							</datatype>
+							<defaultVal>TaDiRAH</defaultVal>
+						</attDef>
+						<attDef ident="type">
+							<desc>The type of the term</desc>
+							<datatype>
+								<dataRef name="anyURI"/>
+							</datatype>
+							<defaultVal>object</defaultVal>
+						</attDef>
+					</attList>
+				</elementSpec>
+				
+				<!--Technique's list-->
+				<elementSpec ident="term" corresp="techniques">
+					<desc>Research techniques are the general processes and methods used in a
+						scenario. Scenarios may use one or more research techniques.</desc>
+					<attList>
+						<attDef ident="key">
+							<desc>The term itself</desc>
+							<datatype>
+								<dataRef name="anyURI"/>
+							</datatype>
+							<valList>
+								<valItem ident="Bit Stream Preservation"/>
+								<valItem ident="Brainstorming"/>
+								<valItem ident="Browsing"/>
+								<valItem ident="Cluster Analysis"/>
+								<valItem ident="Collocation Analysis"/>
+								<valItem ident="Commenting"/>
+								<valItem ident="Concordancing"/>
+								<valItem ident="Debugging"/>
+								<valItem ident="Distance Measures"/>
+								<valItem ident="Durable Persistent Media"/>
+								<valItem ident="Emulation"/>
+								<valItem ident="Encoding"/>
+								<valItem ident="Gamification"/>
+								<valItem ident="Georeferencing"/>
+								<valItem ident="Information Retrieval"/>
+								<valItem ident="Linked Open Data"/>
+								<valItem ident="Machine Learning"/>
+								<valItem ident="Mapping"/>
+								<valItem ident="Migration"/>
+								<valItem ident="Named Entity Recognition"/>
+								<valItem ident="Open Archival Information Systems"/>
+								<valItem ident="Pattern Recognition"/>
+								<valItem ident="Photography"/>
+								<valItem ident="POS-Tagging"/>
+								<valItem ident="Preservation Metadata"/>
+								<valItem ident="Principal Component Analysis"/>
+								<valItem ident="Replication"/>
+								<valItem ident="Scanning"/>
+								<valItem ident="Searching"/>
+								<valItem ident="Sentiment Analysis"/>
+								<valItem ident="Sequence Alignment"/>
+								<valItem ident="Technology Preservation"/>
+								<valItem ident="Topic Modeling"/>
+								<valItem ident="Versioning"/>
+								<valItem ident="Web Crawling"/>
+								<valItem ident="Text Mining "/>
+							</valList>
+						</attDef>
+						<attDef ident="source">
+							<desc>The thesaurus used</desc>
+							<datatype>
+								<dataRef name="anyURI"/>
+							</datatype>
+							<defaultVal>TaDiRAH</defaultVal>
+						</attDef>
+						<attDef ident="type">
+							<desc>The type of the term</desc>
+							<datatype>
+								<dataRef name="anyURI"/>
+							</datatype>
+							<defaultVal>technique</defaultVal>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="term" corresp="activity">
+					<attList>
+						<attDef ident="key">
+							<desc>Activity</desc>
+							<valList>
+								<valItem ident="Conversion"/>
+								<valItem ident="Data Recognition"/>
+								<valItem ident="Discovering"/>
+								<valItem ident="Gathering"/>
+								<valItem ident="Imaging"/>
+								<valItem ident="Recording"/>
+								<valItem ident="Transcription"/>
+								<valItem ident="Designing"/>
+								<valItem ident="Programming"/>
+								<valItem ident="Translation"/>
+								<valItem ident="Web development"/>
+								<valItem ident="Writing"/>
+								<valItem ident="Annotating"/>
+								<valItem ident="Cleanup"/>
+								<valItem ident="Editing"/>
+								<valItem ident="Content Analysis"/>
+								<valItem ident="Network Analysis"/>
+								<valItem ident="Relational Analysis"/>
+								<valItem ident="Spatial Analysis"/>
+								<valItem ident="Structural Analysis"/>
+								<valItem ident="Stylistic Analysis"/>
+								<valItem ident="Visualization"/>
+								<valItem ident="Contextualizing"/>
+								<valItem ident="Modeling"/>
+								<valItem ident="Theorizing"/>
+								<valItem ident="Archiving"/>
+								<valItem ident="Identifying"/>
+								<valItem ident="Organizing"/>
+								<valItem ident="Preservation"/>								
+								<valItem ident="Collaboration"/>
+								<valItem ident="Commenting"/>
+								<valItem ident="Communicating"/>
+								<valItem ident="Crowdsourcing"/>
+								<valItem ident="Publishing"/>
+								<valItem ident="Sharing"/>								
+								<valItem ident="Assessing"/>
+								<valItem ident="Community Building"/>
+								<valItem ident="Give Overview"/>
+								<valItem ident="Project Management"/>
+								<valItem ident="Teaching / Learning"/>
+							</valList>
+						</attDef>
+						<attDef ident="source">
+							<defaultVal>tadirah</defaultVal>
+						</attDef>
+						<attDef ident="type">
+							<defaultVal>activity</defaultVal>
+						</attDef>
+					</attList>
+				</elementSpec>
+				
+				<elementSpec ident="term" corresp="standard">
+					<desc>Standard Term</desc>
+					<attList>
+						<attDef ident="type" rend="standard" n="auto">
+							<desc>Type should be "standard" by default</desc>
+						</attDef>
+						<attDef ident="source">
+							<desc>Source shoud be "ssk" by default</desc>
+							<defaultVal>ssk</defaultVal>
+						</attDef>
+						<attDef ident="key">
+							<desc>Abbreviated name of the standard</desc>
+							<valList type="semi">
+								<valItem ident="XML"/>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+<!--				
+				<elementSpec ident="desc" corresp="resourceDesc">
+					<desc>Describe the resource</desc>
+					<content>
+						<alternate minOccurs="0" maxOccurs="unbounded">
+							<textNode/>
+							<elementRef key="list" minOccurs="0"/>
+							<elementRef key="ref" corresp="descRef" minOccurs="0"/>
+							<elementRef key="abbr" minOccurs="0"/>
+							<elementRef key="expan" minOccurs="0"/>
+						</alternate>
+					</content>
+				</elementSpec>-->
+
+				<!-- generic elements-->
+
+
+				<elementSpec ident="persName" module="namesdates">
+					<desc xml:lang="en">Author's name</desc>
+					<content>
+						<textNode/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="p" module="core">
+					<content>
+						<textNode/>
+					</content>
+				</elementSpec>
+
+			</schemaSpec>
+		</body>
+	</text>
+</TEI>

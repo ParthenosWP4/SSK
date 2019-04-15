@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title>
+					<idno type="title">Personnalisation ODD Corpus Oraux et Multimodaux
+					- Edition des informations sur les participants</idno>
+					<bibl> CORLI et IRCOM </bibl>
+					<desc> L'objectif de cette personnalisation est de proposer un sous-ensemble
+						d'éléments TEI pour décrire le niveau minimal des métadonnées de Corpus
+						(niveau 0) défini au sein de CORLI </desc>
+				</title>
+				<principal>
+					<name type="org"> CORLI - IRCOM </name>
+					<name type="org"> Carole Etienne, Loic Liégeois, Christophe Parisse </name>
+				</principal>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>CORLI wiki</publisher>
+			</publicationStmt>
+			<sourceDesc>
+				<p>written from IRCOM and CORLI recommandations</p>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+
+	<text>
+		<body>
+			<!-- definition de TEI_CORPO_METADATA-->
+			<schemaSpec ident="TEI_CORPO_METADATA" start="TEI" ns="http://www.tei-c.org/ns/1.0">
+
+				<!-- structure generale TEI -->
+				<elementSpec ident="TEI" module="textstructure" mode="change">
+					<content>
+						<elementRef key="teiHeader" minOccurs="1" maxOccurs="1"/>
+					</content>
+				</elementSpec>
+
+				<!-- structure generale teiHeader -->
+				<elementSpec ident="teiHeader" module="header" mode="change">
+					<content>
+						<sequence minOccurs="1" maxOccurs="1">
+							<elementRef key="profileDesc"/>
+							<elementRef key="encodingDesc"/>
+						</sequence>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="profileDesc" module="header">
+					<desc xml:lang="fr">Catégorie, participants, contexte, langue</desc>
+					<desc xml:lang="en">Category, participants, setting, language</desc>
+					<content>
+						<elementRef key="settingDesc" minOccurs="1" maxOccurs="1"/>
+					</content>
+					<remarks style="element">
+						<p><ident>css-profileDesc</ident></p>
+					</remarks>
+				</elementSpec>
+
+				<elementSpec ident="encodingDesc" module="header">
+					<desc xml:lang="fr">Logiciel, projet, annotations</desc>
+					<desc xml:lang="en">Software, project, annotations</desc>
+					<content>
+						<sequence minOccurs="0" maxOccurs="1">
+							<elementRef key="transcriptionDesc"/>
+							<elementRef key="projectDesc"/> <!-- à voir avec Loïc est-ce bien utile on a déjà une description courte dans title et une longue dans setting/activity -->
+							<elementRef key="appInfo"/>
+						</sequence>
+					</content>
+					<remarks style="element">
+						<p><ident>css-encodingDesc</ident></p>
+					</remarks>
+				</elementSpec>
+
+				<!-- settingDesc : recording et medias-->
+				<elementSpec ident="settingDesc" module="corpus" mode="change" n="1">
+					<desc xml:lang="fr">Session enregistrée : lieu, langue,date</desc>
+					<desc xml:lang="en">Setting: place, language,date</desc>
+
+					<content>
+						<sequence minOccurs="1" maxOccurs="1">
+							<elementRef key="listPlace"/>
+							<elementRef key="setting"/>
+							<!-- langUsage : langue de l'enregistrement, plusieurs possibles avec % d'utilisation-->
+							<elementRef key="langUsage"/>
+						</sequence>
+					</content>
+					<remarks style="element">
+						<p><ident>css-settingDesc</ident></p>
+					</remarks>
+				</elementSpec>
+
+				<elementSpec ident="listPlace" module="namesdates">
+					<content>
+						<elementRef key="place" minOccurs="1" maxOccurs="unbounded"/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="place" module="namesdates">
+					<desc xml:lang="fr">Lieu</desc>
+					<desc xml:lang="en">Place</desc>
+					<content>
+						<sequence minOccurs="1" maxOccurs="1">
+							<elementRef key="placeName"/>
+							<elementRef key="country"/>
+						</sequence>
+						<elementRef key="settlement" minOccurs="0" maxOccurs="unbounded"/>
+						<elementRef key="district" minOccurs="0" maxOccurs="unbounded"/>
+						<!-- TODO : plusieurs desc ??? desc:  piece, exemple changement de lieu avec micro cravate -->
+						<elementRef key="desc" minOccurs="0" maxOccurs="unbounded"/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="placeName" module="namesdates">
+					<desc xml:lang="fr">Lieu</desc>
+					<desc xml:lang="en">Place</desc>
+					<content>
+						<textNode/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="country" module="namesdates">
+					<desc xml:lang="fr">Pays</desc>
+					<desc xml:lang="en">Country</desc>
+					<attList>
+						<!-- attribut ref= norme iso ISO 3366-1 => Indiquer le pays de recueil , donnée minimale en général connue, fr par défaut -->
+						<attDef ident="name" usage="req" mode="change" rend="fr">
+							<datatype>
+								<dataRef name="countrycode"/>
+							</datatype>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="district" module="namesdates">
+					<desc xml:lang="fr">Région</desc>
+					<desc xml:lang="en">District</desc>
+					<attList>
+						<attDef ident="name" usage="rec" mode="change"/>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="settlement" module="namesdates">
+					<desc xml:lang="fr">Ville</desc>
+					<desc xml:lang="en">Town</desc>
+					<attList>
+						<!-- ref= norme TGN ? Indiquer la ville, village de recueil : référentiel Getty Thesaurus of Geographic Name / code UNECE des Nations Unies plus fin que le code postal-->
+						<attDef ident="ref" usage="req" mode="change"/>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="setting" module="corpus">
+					<desc xml:lang="fr">Session enregistrée : description, date, environnement, langue</desc>
+					<desc xml:lang="en">Setting : description, date, setting, language</desc>
+					<content>
+						<elementRef key="date" minOccurs="0" maxOccurs="unbounded"/>
+						<!-- description de la situation ==> attention aux redondances ==> description déjà dans title -->
+						<elementRef key="activity" minOccurs="0" maxOccurs="unbounded"/>
+						<textNode/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="activity" module="namesdates">
+					<desc xml:lang="fr">Description de la session enregistrée</desc>
+					<desc xml:lang="en">Setting description</desc>
+					<content>
+						<textNode/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="p" module="core">
+					<desc xml:lang="fr">Description courte</desc>
+					<desc xml:lang="en">Short description</desc>
+					<content>
+						<textNode/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="date" module="core">
+					<desc xml:lang="fr">Intervalle (depuis/jusqu'à) ou date exacte</desc>
+					<desc xml:lang="en">Interval (from/to) or exact date</desc>
+					<!-- ds le modèle normalement contrainte soit when soit before/after
+					-->
+					<content>
+						<textNode/>
+					</content>
+					<attList>
+						<attDef ident="notBefore-iso" usage="opt" mode="change">
+							<desc xml:lang="fr">Depuis</desc>
+							<desc xml:lang="en">Not before</desc>
+							<datatype>
+								<dataRef name="date"/>
+							</datatype>
+						</attDef>
+						<attDef ident="notAfter-iso" usage="opt" mode="change">
+							<desc xml:lang="fr">Jusqu'à</desc>
+							<desc xml:lang="en">Not after</desc>
+							<datatype>
+								<dataRef name="date"/>
+							</datatype>
+						</attDef>
+						<attDef ident="when-iso" usage="opt" mode="change">
+							<desc xml:lang="fr">Date exacte</desc>
+							<desc xml:lang="en">Exact date</desc>
+							<datatype>
+								<dataRef name="date"/>
+							</datatype>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<!-- langUsage : langue de l'enregistrement, plusieurs possibles avec % d'utilisation-->
+				<elementSpec ident="langUsage" module="header" mode="change" n="1">
+					<desc xml:lang="fr">Langue(s) parlée dans la session (si plusieurs, alors pourcentage d'utilisation)</desc>
+					<desc xml:lang="en">Recording language(s), a percentage if several languages</desc>
+					<content>
+						<elementRef key="language" minOccurs="1" maxOccurs="unbounded"/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="language" module="header">
+					<desc xml:lang="fr">Langue(s) de la situation, si plusieurs, alors pourcentage d'utilisation</desc>
+					<desc xml:lang="en">Situation language(s), a percentage if several languages</desc>
+					<attList>
+						<!-- code iso RFC 3066"-->
+						<attDef ident="usage" usage="req" mode="change" rend="100"/>
+						<attDef ident="ident" usage="req" mode="change" rend="fr">
+							<datatype>
+								<dataRef name="languagecode"/>
+							</datatype>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="appInfo" module="header" mode="change" n="1">
+					<desc xml:lang="fr"> Convertisseur TEI : TEI_CORPO ou un autre convertisseur</desc>
+					<desc xml:lang="en">TEI conversion : TEI_CORPO or another tool</desc>
+					<content>
+						<sequence minOccurs="0" maxOccurs="unbounded">
+							<elementRef key="application"/>
+							<!-- desc:  complément sur les options/choix/logiciels "maison"-->
+							<elementRef key="desc"/>
+						</sequence>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="application" module="header">
+					<desc xml:lang="fr">Convertisseur TEI</desc>
+					<desc xml:lang="en">Conversion tool TEI</desc>
+					<attList>
+						<attDef ident="ident" usage="rec" mode="change"/>
+						<!-- seulement recommandé pas obligatoire sinon on aura n'importe quoi -->
+						<attDef ident="ana" usage="req" mode="change">
+							<valList>
+								<valItem ident="conversion_tool.teiCorpo" >
+									<desc xml:lang="fr">convertisseur teicorpo d'Ortolang</desc>
+									<desc xml:lang="en">teicorpo converter</desc>
+								</valItem>
+								<valItem ident="conversion_tool.other" >
+									<desc xml:lang="fr">autre convertisseur</desc>
+									<desc xml:lang="en">another converter</desc>
+								</valItem>
+								<valItem ident="conversion_tool.unknown" >
+									<desc xml:lang="fr">convertisseur inconnu</desc>
+									<desc xml:lang="en">unknown converter</desc>
+								</valItem>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="projectDesc" module="header" mode="change" n="1">
+					<desc xml:lang="fr">Description étendue du projet</desc>
+					<desc xml:lang="en">Extended project description </desc>
+					<content>
+						<elementRef key="p" minOccurs="1" maxOccurs="unbounded"/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="transcriptionDesc" module="header" mode="change" n="1">
+					<desc xml:lang="fr">Annotations : type d'annotation, logiciel d'annotation, convention, anonymisation</desc>
+					<desc xml:lang="en">Annotations : type of annotation, annotation software, convention, anonymization</desc>
+					<content>
+						<elementRef key="desc" corresp="transcription" minOccurs="1"
+							maxOccurs="unbounded"/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="desc" corresp="transcription" module="core">
+					<desc xml:lang="fr">Annotations : type d'annotation, logiciel d'annotation, convention, anonymisation</desc>
+					<desc xml:lang="en">Type of annotation, transciption software, transcription convention, transcription anonymisation </desc>
+					<attList>
+						<attDef ident="type" usage="req" mode="change">
+							<valList>
+								<valItem ident="transcription.annotation" >
+									<desc xml:lang="fr">nature(s) des annotations</desc>
+									<desc xml:lang="en">type(s) of annotations</desc>
+								</valItem>
+								<valItem ident="transcription.transcript_convention">
+									<desc xml:lang="fr">convention de transcription</desc>
+									<desc xml:lang="en">convention of transcription</desc>
+								</valItem>
+								<valItem ident="transcription.annotation_software" >
+									<desc xml:lang="fr">logiciel de transcription</desc>
+									<desc xml:lang="en">transcription software</desc>
+								</valItem>
+								<valItem ident="transcription.anonymization_transcription" >
+									<desc xml:lang="fr">anonymisation de la transcription</desc>
+									<desc xml:lang="en">transcription anonymization</desc>
+								</valItem>
+							</valList>
+						</attDef>
+						<attDef ident="ana" usage="req" mode="change">
+							<datatype>
+								<dataRef name="openlist"/>
+							</datatype>
+							<valList>
+								<valItem ident="annotation.orthographic">
+									<desc xml:lang="fr">orthographique</desc>
+									<desc xml:lang="en">orthographic</desc>
+								</valItem>
+								<valItem ident="annotation.prosodical">
+									<desc xml:lang="fr">prosodique</desc>
+									<desc xml:lang="en">prosodic</desc>
+								</valItem>
+								<valItem ident="annotation.syntactic">
+									<desc xml:lang="fr">syntaxique</desc>
+									<desc xml:lang="en">syntactic</desc>
+								</valItem>
+								<valItem ident="annotation.interactional">
+									<desc xml:lang="fr">interaction</desc>
+									<desc xml:lang="en">interaction</desc>
+								</valItem>
+								<valItem ident="annotation.phonological">
+									<desc xml:lang="fr">phonologique</desc>
+									<desc xml:lang="en">phonological</desc>
+								</valItem>
+								<valItem ident="annotation.translation">
+									<desc xml:lang="fr">traduction</desc>
+									<desc xml:lang="en">translation</desc>
+								</valItem>
+								<valItem ident="annotation.gesture">
+									<desc xml:lang="fr">geste</desc>
+									<desc xml:lang="en">gesture</desc>
+								</valItem>
+								<valItem ident="annotation.gaze">
+									<desc xml:lang="fr">regard</desc>
+									<desc xml:lang="en">gaze</desc>
+								</valItem>
+								<valItem ident="annotation.unknown">
+									<desc xml:lang="fr">inconnu</desc>
+									<desc xml:lang="en">unknown</desc>
+								</valItem>
+								<valItem ident="annotation_software.transcriber" >
+									<desc xml:lang="fr">transcriber</desc>
+									<desc xml:lang="en">transcriber</desc>
+								</valItem>
+								<valItem ident="annotation_software.praat" >
+									<desc xml:lang="fr">praat</desc>
+									<desc xml:lang="en">praat</desc>
+								</valItem>
+								<valItem ident="annotation_software.elan">
+									<desc xml:lang="fr">elan</desc>
+									<desc xml:lang="en">elan</desc>
+								</valItem>
+								<valItem ident="annotation_software.exmaralda" >
+									<desc xml:lang="fr">exmaralda</desc>
+									<desc xml:lang="en">exmaralda</desc>
+								</valItem>
+								<valItem ident="annotation_software.anvil" >
+									<desc xml:lang="fr">anvil</desc>
+									<desc xml:lang="en">anvil</desc>
+								</valItem>
+								<valItem ident="annotation_software.ilex" >
+									<desc xml:lang="fr">ilex</desc>
+									<desc xml:lang="en">ilex</desc>
+								</valItem>
+								<valItem ident="annotation_software.phon" >
+									<desc xml:lang="fr">phon</desc>
+									<desc xml:lang="en">phon</desc>
+								</valItem>
+								<valItem ident="annotation_software.transana" >
+									<desc xml:lang="fr">transana</desc>
+									<desc xml:lang="en">transana</desc>
+								</valItem>
+								<valItem ident="annotation_software.unknown" >
+									<desc xml:lang="fr">inconnu</desc>
+									<desc xml:lang="en">unknown</desc>
+								</valItem>
+
+								<valItem ident="anonymization_transcription.anonymization" >
+									<desc xml:lang="fr">transcription anonymisée</desc>
+									<desc xml:lang="en">anonymized transcription</desc>
+								</valItem>
+								<valItem ident="anonymization_transcription.no_anonymization" >
+									<desc xml:lang="fr">transcription non anonymisée</desc>
+									<desc xml:lang="en">no anonymized transcription</desc>
+								</valItem>
+								<valItem ident="anonymization_transcription.unknown">
+									<desc xml:lang="fr">anonymisation inconnue</desc>
+									<desc xml:lang="en">unknown level of anonymyzation</desc>
+								</valItem>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="desc" module="core">
+					<desc xml:lang="fr">Description courte</desc>
+					<desc xml:lang="en">Short Description</desc>
+					<content>
+						<textNode/>
+						<dataRef name="multiline"/>
+					</content>
+				</elementSpec>
+
+			</schemaSpec>
+		</body>
+	</text>
+</TEI>
