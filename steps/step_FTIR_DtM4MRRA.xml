@@ -45,7 +45,7 @@
             resolution/accuracy are documented"</desc>
                <desc type="terms" xml:lang="en">
                   <term type="activity" source="tadirah" key="designing"/>
-                  <term type="standard" source="standard_list" key="CIDOC-CRMsci"/>
+                  <term type="standard" source="ssk" key="CIDOC-CRMsci"/>
                </desc>
             </event>
          </listEvent>

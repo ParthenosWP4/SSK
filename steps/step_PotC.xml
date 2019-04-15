@@ -67,14 +67,14 @@
                   <ref source="zotero" target="A5NVUWZB" type="service">
                      <term key="TEI" source="ssk" type="standard"/>
                      <term key="TCF" source="ssk" type="standard"/></ref>
-                  <ref source="zotero" target="ZJ7ZSJWT" type="specification">
+                  <ref source="zotero" target="ZJ7ZSJWT" type="spec">
                      <term key="Sharing" source="http://tadirah.dariah.eu/" type="activity"/>
                      <term key="Preservation"
                            source="http://tadirah.dariah.eu/"
                            type="activity"/></ref>
-                  <ref source="zotero" target="BNFTBS5W" type="specification">
+                  <ref source="zotero" target="BNFTBS5W" type="spec">
                      <term key="CMDI" source="ssk" type="standard"/></ref>
-                  <ref source="zotero" target="IHWJQT9N" type="specification">
+                  <ref source="zotero" target="IHWJQT9N" type="spec">
                      <term key="TCF" source="ssk" type="standard"/></ref>
                </linkGrp>
                <linkGrp type="projectResources"

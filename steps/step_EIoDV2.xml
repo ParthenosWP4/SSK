@@ -58,7 +58,7 @@
                   <term key="Structural Analysis"
                         source="http://tadirah.dariah.eu/"
                         type="activity"/>
-                  <term key="OPAC" source="standard_list" type="standard"/>
+                  <term key="OPAC" source="ssk" type="standard"/>
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">

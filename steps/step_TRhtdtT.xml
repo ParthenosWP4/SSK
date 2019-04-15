@@ -43,8 +43,8 @@
                <desc type="definition" xml:lang="en">The researcher has to download the tool usage manual to become familiar with the parameters required for its operation, and with the operation of the tool itself.</desc>
                <desc xml:lang="en" type="terms">
                   <term type="activity" source="http://tadirah.dariah.eu/" key="Analysis"/>
-                  <term type="standard" source="standard_list" key="XML"/>
-                  <term type="standard" source="standard_list" key="RDFS"/>
+                  <term type="standard" source="ssk" key="XML"/>
+                  <term type="standard" source="ssk" key="RDFS"/>
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">

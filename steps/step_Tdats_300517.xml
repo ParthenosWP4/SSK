@@ -40,9 +40,9 @@
             with the new schema to make sure that the behaviour of the added rules is
             appropriate.</desc>
                <desc type="terms" xml:lang="en">
-                  <term key="XML" source="standard_list" type="standard"/>
-                  <term key="TEI" source="standard_list" type="standard"/>
-                  <term key="EAD" source="standard_list" type="standard"/>
+                  <term key="XML" source="ssk" type="standard"/>
+                  <term key="TEI" source="ssk" type="standard"/>
+                  <term key="EAD" source="ssk" type="standard"/>
                   <term key="Assessing" source="tadirah" type="activity"/>
                </desc>
             </event>

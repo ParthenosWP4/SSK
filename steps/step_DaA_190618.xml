@@ -76,34 +76,34 @@
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="spec" source="zotero" target="JH4RHXIX"/>
-                  <ref type="specification" source="zotero" target="97VDSZVB">
-                     <term type="standards" source="standard_list" key="EDM"/>
+                  <ref type="spec" source="zotero" target="97VDSZVB">
+                     <term type="standards" source="ssk" key="EDM"/>
                   </ref>
                   <ref type="tool" source="zotero" target="G3ADKTMA"/>
                   <ref type="spec" source="zotero" target="NP8RA6PN">
-                     <term type="standards" source="standard_list" key="CIDOC-CRM"/>
+                     <term type="standards" source="ssk" key="CIDOC-CRM"/>
                   </ref>
-                  <ref type="specification" source="zotero" target="5FHQ64PA">
-                     <term type="standards" source="standard_list" key="CIDOC-CRM"/>
+                  <ref type="spec" source="zotero" target="5FHQ64PA">
+                     <term type="standards" source="ssk" key="CIDOC-CRM"/>
                   </ref>
-                  <ref type="specification" source="zotero" target="7R6QMZ97"/>
-                  <ref type="specification" source="zotero" target="J4NI2T8D">
-                     <term type="standards" source="standard_list" key="LIDO"/>
+                  <ref type="spec" source="zotero" target="7R6QMZ97"/>
+                  <ref type="spec" source="zotero" target="J4NI2T8D">
+                     <term type="standards" source="ssk" key="LIDO"/>
                   </ref>
                   <ref type="spec" source="zotero" target="FTCDGHB2">
-                     <term type="standards" source="standard_list" key="LIDO"/>
+                     <term type="standards" source="ssk" key="LIDO"/>
                   </ref>
                   <ref type="spec" source="zotero" target="CQ4VK4MZ">
-                     <term type="standards" source="standard_list" key="METS"/>
+                     <term type="standards" source="ssk" key="METS"/>
                   </ref>
                   <ref type="spec" source="zotero" target="G23PVP4B">
-                     <term type="standards" source="standard_list" key="METS"/>
+                     <term type="standards" source="ssk" key="METS"/>
                   </ref>
                   <ref type="spec" source="zotero" target="IE7HE58F">
-                     <term type="standards" source="standard_list" key="METS"/>
+                     <term type="standards" source="ssk" key="METS"/>
                   </ref>
                   <ref type="tutorial" source="zotero" target="JZETVVTF">
-                     <term type="standards" source="standard_list" key="METS"/>
+                     <term type="standards" source="ssk" key="METS"/>
                   </ref>
                   <ref type="report" source="zotero" target="JQA2HGXG"/>
                </linkGrp>
@@ -111,13 +111,13 @@
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"
                         source="CARARE"
                         corresp="http://www.carare.eu/">
-                 <ref type="spec" target="JH4RHXIX"/>
+                 <ref source="zotero" type="spec" target="JH4RHXIX"/>
                </linkGrp>
                <linkGrp type="projectResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"
                         source="3D-ICONS"
                         corresp="http://3dicons-project.eu">
-                  <ref type="spec" target="XY49BQNJ"/>
+                 <ref type="spec" source="zotero" target="XY49BQNJ"/>
                </linkGrp>
             </event>
          </listEvent>

@@ -43,7 +43,7 @@
                <desc type="definition" xml:lang="en">In the PARTHENOS platform, through the semantic alignment performed through the BBT, it will be possible for the user, thanks to the RDS, to discover other useful datasets.</desc>
                <desc xml:lang="en" type="terms">
                   <term type="activity" source="http://tadirah.dariah.eu/" key="Analysis"/>
-                  <term type="standard" source="standard_list" key="XML"/>
+                  <term type="standard" source="ssk" key="XML"/>
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">

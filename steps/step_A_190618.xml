@@ -78,7 +78,7 @@
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"
                         source="CINES"
                         corresp="https://www.cines.fr/">
-                  <ref type="service" target="GTKRM6WS"/>
+                  <ref type="service" source="zotero" target="GTKRM6WS"/>
                </linkGrp>
             </event>
          </listEvent>

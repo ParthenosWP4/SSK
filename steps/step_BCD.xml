@@ -55,8 +55,8 @@
                <desc type="definition" xml:lang="en">The collected data needs to be packaged in one location
       for a better use</desc>
                <desc type="terms" xml:lang="en">
-                  <term key="XML" source="standard_list" type="standard"/>
-                  <term key="TEI" source="standard_list" type="standard"/>
+                  <term key="XML" source="ssk" type="standard"/>
+                  <term key="TEI" source="ssk" type="standard"/>
                   <term key="storage" source="http://tadirah.dariah.eu/" type="activity"/>
                   <!--<term key="CD" source="WP3Wizard" type="policies"/>-->
                </desc>

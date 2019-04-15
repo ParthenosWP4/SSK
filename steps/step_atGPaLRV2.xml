@@ -61,8 +61,8 @@
                         source="http://tadirah.dariah.eu/"
                         type="activity"
                         mode="add"/>
-                  <term key="XML" source="standard_list" type="standard" mode="add"/>
-                  <term key="TEI" source="standard_list" type="standard" mode="add"/>
+                  <term key="XML" source="ssk" type="standard" mode="add"/>
+                  <term key="TEI" source="ssk" type="standard" mode="add"/>
                   <!--<term key="CD" source="WP3Wizard" type="policies"/>-->
                </desc>
                <linkGrp type="generalResources"

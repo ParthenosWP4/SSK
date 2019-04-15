@@ -65,11 +65,11 @@
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"><!-- Ressources: schema for the evaluation of how close a TEI text is to the DTABf -->
-                  <ref source="zotero" target="4BWPP9WT" type="specification">
+                  <ref source="zotero" target="4BWPP9WT" type="spec">
                      <term key="Converting" source="http://tadirah..eu/" type="activity"/>
                   	OxGarage
                   </ref>
-                  <ref source="zotero" target="T7672NJ8" type="specification">
+                  <ref source="zotero" target="T7672NJ8" type="spec">
                      <term type="standard" source="ssk" key="TEI"/>
                      <term type="standard" source="ssk" key="Schematron"/>
                      <term key="Annotating" source="http://tadirah.dariah.eu/" type="activity"/>

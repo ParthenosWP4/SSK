@@ -45,8 +45,8 @@
                <desc type="definition" xml:lang="en">The researcher must enter the required and correct parameters to perform the search (the application provides indications to help the user).</desc>
                <desc xml:lang="en" type="terms">
                   <term type="activity" source="http://tadirah.dariah.eu/" key="Analysis"/>
-                  <term type="standard" source="standard_list" key="XML"/>
-                  <term type="standard" source="standard_list" key="RDFS"/>
+                  <term type="standard" source="ssk" key="XML"/>
+                  <term type="standard" source="ssk" key="RDFS"/>
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">

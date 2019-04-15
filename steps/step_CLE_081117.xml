@@ -51,10 +51,8 @@
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero"
-                       subtype="library_(computing)"
                        target="NDT75L9A"
                        type="code">
-                     <term key="libvips" type="library_(computing)"/>
                   </ref>
                </linkGrp>
             </event>

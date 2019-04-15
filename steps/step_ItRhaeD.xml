@@ -43,7 +43,7 @@
                <desc type="definition" xml:lang="en">If the researcher has an external dataset compatible with RUBRICA, he must enter it in his Personal Workspace of D4science to be able to consult it with RUBRICA.</desc>
                <desc xml:lang="en" type="terms">
                   <term type="activity" source="http://tadirah.dariah.eu/" key="Organizing"/>
-                  <term type="standard" source="standard_list" key="XML"/>
+                  <term type="standard" source="ssk" key="XML"/>
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">

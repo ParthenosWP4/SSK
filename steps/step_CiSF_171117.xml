@@ -53,20 +53,20 @@
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="5UIZH29M" type="service">
-                     <term key="ODT" source="standard_list" type="standard"/>
+                     <term key="ODT" source="ssk" type="standard"/>
                   </ref>
                   <ref source="zotero" target="5UIZH29M" type="service">
-                     <term key="PDF" source="standard_list" type="standard"/>
+                     <term key="PDF" source="ssk" type="standard"/>
                   </ref>
                   <ref source="zotero" target="5UIZH29M" type="service"/>
                   <ref source="zotero" target="5UIZH29M" type="service">
-                     <term key="XML" source="standard_list" type="standard"/>
+                     <term key="XML" source="ssk" type="standard"/>
                   </ref>
                   <ref source="zotero" target="5UIZH29M" type="service">
-                     <term key="JPEG" source="standard_list" type="standard"/>
+                     <term key="JPEG" source="ssk" type="standard"/>
                   </ref>
                   <ref source="zotero" target="5UIZH29M" type="service">
-                     <term key="MPEG-4" source="standard_list" type="standard"/>
+                     <term key="MPEG-4" source="ssk" type="standard"/>
                   </ref>
                </linkGrp>
             </event>

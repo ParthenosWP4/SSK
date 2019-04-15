@@ -49,9 +49,9 @@
                   <term key="Collaboration"
                         source="http://tadirah.dariah.eu/"
                         type="activity"/>
-                  <term key="XML" source="standard_list" type="standard"/>
-                  <term key="CIDOC-CRM" source="standard_list" type="standard"/>
-                  <term key="OAI-PMH" source="standard_list" type="standard"/>
+                  <term key="XML" source="ssk" type="standard"/>
+                  <term key="CIDOC-CRM" source="ssk" type="standard"/>
+                  <term key="OAI-PMH" source="ssk" type="standard"/>
                </desc>
             </event>
          </listEvent>

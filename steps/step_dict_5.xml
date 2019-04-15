@@ -55,7 +55,7 @@
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref source="zotero" target="ZE34VR34" type="specification"/>
+                  <ref source="zotero" target="ZE34VR34" type="spec"/>
                   <ref source="zotero" target="DLFKEFKC" type="service"/>
                </linkGrp>
             </event>

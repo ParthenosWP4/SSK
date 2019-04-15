@@ -64,8 +64,8 @@
                </desc>
                <desc xml:lang="en" type="terms">
                   <term type="activity" source="tadirah" key="annotation"/>
-                  <term type="standard" source="standard_list" target="ASCII"/>
-                  <term type="standard" source="standard_list" target="CSV"/>
+                  <term type="standard" source="ssk" target="ASCII"/>
+                  <term type="standard" source="ssk" target="CSV"/>
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">

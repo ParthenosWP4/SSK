@@ -77,45 +77,39 @@
                      <term key="METS" source="standard" type="standard"/>
                   </ref>
                   <ref source="zotero"
-                       
                        target="G23PVP4B"
                        type="spec">
                      <term key="METS" source="standard" type="standard"/>
                   </ref>
                   <ref source="zotero"
-                       
                        target="CQ4VK4MZ"
                        type="spec">
-                     <term key="METS" source="standard_list" type="standard"/>
+                     <term key="METS" source="ssk" type="standard"/>
                   </ref>
                   <ref source="zotero"
-                       
                        target="9HWG6835"
                        type="spec">
-                     <term key="DC" source="standard_list" type="standard"/>
+                     <term key="DC" source="ssk" type="standard"/>
                   </ref>
                   <ref source="zotero"
                        target="7RRWQ6MS"
                        type="tutorial">
-                     <term key="DC" source="standard_list" type="standard"/>
+                     <term key="DC" source="ssk" type="standard"/>
                   </ref>
-                  <ref source="zotero"
-                       
+                  <ref source="zotero"                       
                        target="PEAH9HAQ"
                        type="spec">
-                     <term key="DC" source="standard_list" type="standard"/>
+                     <term key="DC" source="ssk" type="standard"/>
                   </ref>
                   <ref source="zotero"
-                       
                        target="CNPB6HA6"
                        type="spec">
-                     <term key="DC" source="standard_list" type="standard"/>
+                     <term key="DC" source="ssk" type="standard"/>
                   </ref>
                   <ref source="zotero"
-                       
                        target="VKU5HQMF"
                        type="tutorial">
-                     <term key="DC" source="standard_list" type="standard"/>
+                     <term key="DC" source="ssk" type="standard"/>
                   </ref>
                </linkGrp>
             </event>

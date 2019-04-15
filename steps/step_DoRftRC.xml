@@ -69,7 +69,7 @@
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"><!-- Ressources: DTAoX, DTABf-TR, DTABf-Vorlagedatei -->
-                  <ref source="zotero" target="558UTLGY" type="specification">
+                  <ref source="zotero" target="558UTLGY" type="spec">
                      <term type="standard" source="ssk" key="TEI"/>
                      <term type="standard" source="ssk" key="Schematron"/>
                      <term key="Annotating" source="http://tadirah.dariah.eu/" type="activity"/>
@@ -78,7 +78,7 @@
                            type="activity"/>
                   	Formal specification of the DTABf: ODDs, schemas, Schematron
        Constraints</ref>
-                  <ref source="zotero" target="T7672NJ8" type="specification">
+                  <ref source="zotero" target="T7672NJ8" type="spec">
                      <term type="standard" source="ssk" key="TEI"/>
                      <term type="standard" source="ssk" key="Schematron"/>
                      <term key="Annotating" source="http://tadirah.dariah.eu/" type="activity"/>

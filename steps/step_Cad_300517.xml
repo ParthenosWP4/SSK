@@ -45,9 +45,9 @@
       les présenter clairement. ODD vous permet de générer une telle documentation dans différents
       formats (HTML, PDF, Docx, etc.)</desc>
                <desc type="terms" xml:lang="en">
-                  <term key="XML" source="standard_list" type="standard"/>
-                  <term key="TEI" source="standard_list" type="standard"/>
-                  <term key="EAD" source="standard_list" type="standard"/>
+                  <term key="XML" source="ssk" type="standard"/>
+                  <term key="TEI" source="ssk" type="standard"/>
+                  <term key="EAD" source="ssk" type="standard"/>
                   <term key="Annotating" source="tadirah" type="activity"/>
                </desc>
                <linkGrp type="generalResources"
@@ -67,9 +67,9 @@
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="XDZWRCUG" type="spec"/>
                   <ref source="zotero" target="FY8U9JME" type="report">
-                     <term key="Schematron" source="standard_list" type="standard"/>
-                     <term key="EAD" source="standard_list" type="standard"/>
-                     <term key="TEI" source="standard_list" type="standard"/>
+                     <term key="Schematron" source="ssk" type="standard"/>
+                     <term key="EAD" source="ssk" type="standard"/>
+                     <term key="TEI" source="ssk" type="standard"/>
                   </ref>
                </linkGrp>
             </event>

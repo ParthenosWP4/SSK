@@ -61,21 +61,21 @@
                         for corpus composition is the determination of a general tagset which the
                         annotation should follow, i.e. the content of the markup planned.</desc>
                <desc xml:lang="en" type="terms">
-                  <term type="standard" source="standard_list" key="XML"/>
-                  <term type="standard" source="standard_list" key="TEI"/>
+                  <term type="standard" source="ssk" key="XML"/>
+                  <term type="standard" source="ssk" key="TEI"/>
                   <term type="activity" source="http://tadirah.dariah.eu/" key="designing">Designing</term>
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"><!-- VLO, which subtype to take? -->
                   <ref type="resource" source="zotero" target="8BD6FDKR">
-                     <term type="standard" source="standard_list" key="Metadata"/>
+                     <term type="standard" source="ssk" key="Metadata"/>
                   </ref>
                   <!-- CMDI -->
                   <ref type="standard"
                        
                        source="zotero"
                        target="BNFTBS5W">
-                     <term type="standard" source="standard_list" key="CMDI"/>
+                     <term type="standard" source="ssk" key="CMDI"/>
                   </ref>
                </linkGrp>
             </event>

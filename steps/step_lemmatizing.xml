@@ -64,10 +64,10 @@
                         are not able to cover all words of a language you have to expect cases where
                         the lemmatization will miss out. </desc>
                <desc xml:lang="en" type="terms">
-                  <term type="standard" source="standard_list" key="XML"/>
-                  <term type="standard" source="standard_list" key="TEI"/>
-                  <term type="standard" source="standard_list" key="TCF"/>
-                  <term type="standard" source="standard_list" key="LAF"/>
+                  <term type="standard" source="ssk" key="XML"/>
+                  <term type="standard" source="ssk" key="TEI"/>
+                  <term type="standard" source="ssk" key="TCF"/>
+                  <term type="standard" source="ssk" key="LAF"/>
                   <term type="activity" source="http://tadirah.dariah.eu/" key="annotating"/>
                </desc>
                <linkGrp type="generalResources"

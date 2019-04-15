@@ -45,9 +45,9 @@
       de spécification XML-TEI qui permet de personnaliser la TEI P5, suivant les principes de la
       programmation littéraire. Tout schéma XML peut être décrit avec ODD.</desc>
                <desc type="terms" xml:lang="en">
-                  <term key="XML" source="standard_list" type="standard"/>
-                  <term key="TEI" source="standard_list" type="standard"/>
-                  <term key="EAD" source="standard_list" type="standard"/>
+                  <term key="XML" source="ssk" type="standard"/>
+                  <term key="TEI" source="ssk" type="standard"/>
+                  <term key="EAD" source="ssk" type="standard"/>
                   <term key="http://tadirah.dariah.eu/vocab/index.php?tema=35&amp;/modeling"
                         source="http://tadirah.dariah.eu/"
                         type="activity">modeling</term>
@@ -57,35 +57,35 @@
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref type="paper" source="zotero" target="Z5SQUJPA"/>
                   <ref source="zotero" target="ZABRV5VD" type="spec">
-                     <term key="TEI" source="standard_list" type="standard"/>
+                     <term key="TEI" source="ssk" type="standard"/>
                   </ref>
                   <ref source="zotero" target="SS93B7B8" type="spec">
-                     <term key="TEI" source="standard_list" type="standard"/>
+                     <term key="TEI" source="ssk" type="standard"/>
                   </ref>
                   <ref source="zotero" target="ZE34VR34" type="spec">
-                     <term key="TEI" source="standard_list" type="standard"/>
+                     <term key="TEI" source="ssk" type="standard"/>
                   </ref>
                   <ref source="zotero" target="UBE86XKI" type="tutorial">
-                     <term key="TEI" source="standard_list" type="standard"/>
+                     <term key="TEI" source="ssk" type="standard"/>
                   </ref>
                   <ref source="zotero" target="QQT6NQA6" type="tutorial">
-                     <term key="TEI" source="standard_list" type="standard"/>
+                     <term key="TEI" source="ssk" type="standard"/>
                   </ref>
                   <ref source="zotero" target="IE9EQ2QK" type="tutorial">
-                     <term key="TEI" source="standard_list" type="standard"/>
+                     <term key="TEI" source="ssk" type="standard"/>
                   </ref>
                   <ref source="zotero" target="69CGH77A" type="tutorial">
-                     <term key="TEI" source="standard_list" type="standard"/>
+                     <term key="TEI" source="ssk" type="standard"/>
                   </ref>
                   <ref source="zotero" target="XPDZH8WZ" type="spec">
-                     <term key="EAD" source="standard_list" type="standard"/>
+                     <term key="EAD" source="ssk" type="standard"/>
                   </ref>
                   <ref source="zotero" target="2Z29AVQV" type="spec">
-                     <term key="EAD" source="standard_list" type="standard"/>
+                     <term key="EAD" source="ssk" type="standard"/>
                   </ref>
                   <ref source="zotero" target="9SKJK8BF" type="spec">
-                     <term key="EAD" source="standard_list" type="standard"/>
-                     <term key="TEI" source="standard_list" type="standard"/>
+                     <term key="EAD" source="ssk" type="standard"/>
+                     <term key="TEI" source="ssk" type="standard"/>
                   </ref>
                </linkGrp>
             </event>

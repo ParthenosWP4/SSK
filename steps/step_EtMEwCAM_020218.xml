@@ -67,13 +67,13 @@
                        
                        target="983UF5N4"
                        type="spec">
-                     <term key="MEI" source="standard_list" type="standard"/>
+                     <term key="MEI" source="ssk" type="standard"/>
                   </ref>
                   <ref source="zotero"
                        
                        target="US7FCT9X"
                        type="spec">
-                     <term key="MEI" source="standard_list" type="standard"/>
+                     <term key="MEI" source="ssk" type="standard"/>
                   </ref>
                </linkGrp>
                <linkGrp corresp="https://ricercar.gesualdo-online.cesr.univ-tours.fr/"

@@ -64,11 +64,11 @@
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"><!-- Ressources: Metadata web form, XSLT, CMDI -->
-                  <ref source="zotero" target="T7672NJ8" type="specification">
+                  <ref source="zotero" target="T7672NJ8" type="spec">
                      <term key="TEI" source="ssk" type="standard"/></ref>
-                  <ref source="zotero" target="558UTLGY" type="specification">
+                  <ref source="zotero" target="558UTLGY" type="spec">
                      <term key="TEI" source="ssk" type="standard"/></ref>
-                  <ref source="zotero" target="VF3A7QRI" type="specification">
+                  <ref source="zotero" target="VF3A7QRI" type="spec">
                      <term key="XML" source="ssk" type="standard"/>
                      <term key="Metadata" source="http://tadirah.dariah.eu/" type="object"/>
                		</ref>

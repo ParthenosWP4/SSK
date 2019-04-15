@@ -61,7 +61,7 @@
                        
                        target="MGAJZAUQ"
                        type="tutorial">
-                     <term key="TEI" source="standard_list" type="standard"/>
+                     <term key="TEI" source="ssk" type="standard"/>
                   </ref>
                </linkGrp>
             </event>

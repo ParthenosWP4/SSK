@@ -44,8 +44,8 @@
 			 and it is integrated in the project services</desc>
                <desc xml:lang="en" type="terms">
                   <term type="activity" source="http://tadirah.dariah.eu/" key="Analysis"/>
-                  <term type="standard" source="standard_list" key="XML"/>
-                  <term type="standard" source="standard_list" key="RDFS"/>
+                  <term type="standard" source="ssk" key="XML"/>
+                  <term type="standard" source="ssk" key="RDFS"/>
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">

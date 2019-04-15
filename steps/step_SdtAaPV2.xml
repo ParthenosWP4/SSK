@@ -57,8 +57,8 @@
       specific application profiles</desc>
                <desc type="terms" xml:lang="en">
                   <term key="sharing" source="http://tadirah.dariah.eu/" type="activity"/>
-                  <term key="TEI" source="standard_list" type="standard"/>
-                  <term key="CIDOC-CRM" source="standard_list" type="standard"/>
+                  <term key="TEI" source="ssk" type="standard"/>
+                  <term key="CIDOC-CRM" source="ssk" type="standard"/>
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">

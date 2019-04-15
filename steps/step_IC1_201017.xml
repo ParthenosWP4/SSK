@@ -50,23 +50,20 @@
       photography and record the reflected light in the visible region (400-700 nm) from a subject
       when this is illuminated with visible light.</desc>
                <desc type="term" xml:lang="en">
-                  <term key="TIFF/EP (ISO 12234-2)" source="standard_list" type="standard"/>
+                  <term key="TIFF/EP (ISO 12234-2)" source="ssk" type="standard"/>
                   <term key="http://tadirah.dariah.eu/vocab/index.php?tema=12&amp;/imaging"
                         source="http://tadirah.dariah.eu/"
                         type="activity"/>
                </desc>
-               <linkGrp type="generalResources"
-                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref source="zotero"  target="H23RCNAH" type="tool">
-                     <term key="GIMP" type="tool"/>
-                  </ref>
-                  <ref source="zotero"
-                       
-                       target="SA323STT"
-                       type="ISO_standard">
-                     <term key="TIFF/EP (ISO 12234-2)" type="standard"/>
-                  </ref>
-               </linkGrp>
+              <linkGrp type="generalResources"
+                xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+                <ref source="zotero"  target="H23RCNAH" type="tool"/>
+                <ref source="zotero"
+                  target="SA323STT"
+                  type="spec">
+                  <term key="TIFF/EP (ISO 12234-2)" type="standard" source="ssk"/>
+                </ref>
+              </linkGrp>
             </event>
          </listEvent>
       </body>

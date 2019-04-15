@@ -51,8 +51,8 @@
                         corpus. This can be done by just bundling the data into one repository,
                         either a file directory or a Github repository.</desc>
                <desc xml:lang="en" type="terms">
-                  <term type="standard" source="standard_list" key="XML"/>
-                  <term type="standard" source="standard_list" key="TEI"/>
+                  <term type="standard" source="ssk" key="XML"/>
+                  <term type="standard" source="ssk" key="TEI"/>
                   <term type="activity" source="http://tadirah.dariah.eu/" key="organizing">Organizing</term>
                </desc>
                <!-- todo: include github / other repos like zenodo <linkGrp type="generalResources">

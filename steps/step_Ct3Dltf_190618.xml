@@ -76,11 +76,11 @@
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref type="specification" source="zotero" target="DS2U4E9U">
-                     <term type="standards" source="standard_list" key="PLY"/>
+                  <ref type="spec" source="zotero" target="DS2U4E9U">
+                     <term type="standards" source="ssk" key="PLY"/>
                   </ref>
-                  <ref type="specification" source="zotero" target="Q4X9D4BE">
-                     <term type="standards" source="standard_list" key="COLLADA"/>
+                  <ref type="spec" source="zotero" target="Q4X9D4BE">
+                     <term type="standards" source="ssk" key="COLLADA"/>
                   </ref>
                   <ref type="spec" source="zotero" target="GHCATCKH"/>
                   <ref type="spec" source="zotero" target="69HQKNPC"/>

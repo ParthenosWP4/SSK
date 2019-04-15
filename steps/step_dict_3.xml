@@ -55,7 +55,7 @@
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref source="zotero" target="KIRW2HCI" type="specification"/>
+                  <ref source="zotero" target="KIRW2HCI" type="spec"/>
                   <ref source="zotero" target="U2654R3W" type="tool"/>
                   <ref source="zotero" target="L6M9Q4T5" type="tool"/>
                   <ref source="zotero" target="PZPN9Y2F" type="tool"/>

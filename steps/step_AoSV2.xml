@@ -56,8 +56,8 @@
       assessed and checked, in order to see if they are working</desc>
                <desc type="terms" xml:lang="en">
                   <term key="gathering" source="http://tadirah.dariah.eu/" type="activity"/>
-                  <term key="XML" source="standard_list" type="standard"/>
-                  <term key="TEI" source="standard_list" type="standard"/>
+                  <term key="XML" source="ssk" type="standard"/>
+                  <term key="TEI" source="ssk" type="standard"/>
                </desc>
             </event>
          </listEvent>

@@ -44,32 +44,32 @@
             projet, la meilleure façon est d'intégrer les règles de sshematron dans la spécification
             du Schema.</desc>
                <desc type="terms" xml:lang="en">
-                  <term key="XML" source="standard_list" type="standard"/>
-                  <term key="TEI" source="standard_list" type="standard"/>
-                  <term key="EAD" source="standard_list" type="standard"/>
-                  <term key="Schematron" source="standard_list" type="standard"/>
+                  <term key="XML" source="ssk" type="standard"/>
+                  <term key="TEI" source="ssk" type="standard"/>
+                  <term key="EAD" source="ssk" type="standard"/>
+                  <term key="Schematron" source="ssk" type="standard"/>
                   <term key="Modeling" source="tadirah" type="activity"/>
                </desc>
                <linkGrp type="generalResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref type="code_script" source="zotero" target="MUEUJK6J"/>
+                  <ref type="code" source="zotero" target="MUEUJK6J"/>
                   <ref source="zotero" target="7THSVQ9K" type="spec">
-                     <term key="Schematron" source="standard_list" type="standard"/>
+                     <term key="Schematron" source="ssk" type="standard"/>
                   </ref>
                   <ref source="zotero" target="E2C8BNVH" type="report">
-                     <term key="Schematron" source="standard_list" type="standard"/>
+                     <term key="Schematron" source="ssk" type="standard"/>
                   </ref>
                   <ref source="zotero" target="ZT3MRZJ6" type="spec">
-                     <term key="Schematron" source="standard_list" type="standard"/>
+                     <term key="Schematron" source="ssk" type="standard"/>
                   </ref>
                   <ref source="zotero" target="87B9E4AX" type="spec">
-                     <term key="Schematron" source="standard_list" type="standard"/>
+                     <term key="Schematron" source="ssk" type="standard"/>
                   </ref>
                   <ref source="zotero" target="54DUV6MG" type="spec">
-                     <term key="TEI" source="standard_list" type="standard"/>
+                     <term key="TEI" source="ssk" type="standard"/>
                   </ref>
-                  <ref target="87B9E4AX" type="spec">
-                     <term key="Schematron" source="standard_list" type="standard"/>
+                  <ref target="87B9E4AX" source="zotero" type="spec">
+                     <term key="Schematron" source="ssk" type="standard"/>
                   </ref>
                </linkGrp>
                <linkGrp corresp="http://ehri-project.eu"
@@ -77,19 +77,19 @@
                         type="projectResources"
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="9SKJK8BF" type="code">
-                     <term key="Schematron" source="standard_list" type="standard"/>
-                     <term key="EAD" source="standard_list" type="standard"/>
-                     <term key="TEI" source="standard_list" type="standard"/>
+                     <term key="Schematron" source="ssk" type="standard"/>
+                     <term key="EAD" source="ssk" type="standard"/>
+                     <term key="TEI" source="ssk" type="standard"/>
                   </ref>
                   <ref type="paper" source="zotero" target="7KB8PI78"/>
                   <ref type="paper" source="zotero" target="UXEAGIZ8"/>
                   <ref source="zotero" target="J3JH54VE" type="tutorial">
-                     <term key="Schematron" source="standard_list" type="standard"/>
+                     <term key="Schematron" source="ssk" type="standard"/>
                   </ref>
                   <ref source="zotero" target="FY8U9JME" type="report">
-                     <term key="Schematron" source="standard_list" type="standard"/>
-                     <term key="EAD" source="standard_list" type="standard"/>
-                     <term key="TEI" source="standard_list" type="standard"/>
+                     <term key="Schematron" source="ssk" type="standard"/>
+                     <term key="EAD" source="ssk" type="standard"/>
+                     <term key="TEI" source="ssk" type="standard"/>
                   </ref>
                </linkGrp>
             </event>

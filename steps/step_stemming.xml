@@ -63,10 +63,10 @@
                         used in the context of information retrieval and by search engines because
                         it allows for generalizations on related words.</desc>
                <desc xml:lang="en" type="terms">
-                  <term type="standard" source="standard_list" key="XML"/>
-                  <term type="standard" source="standard_list" key="TEI"/>
-                  <term type="standard" source="standard_list" key="TCF"/>
-                  <term type="standard" source="standard_list" key="LAF"/>
+                  <term type="standard" source="ssk" key="XML"/>
+                  <term type="standard" source="ssk" key="TEI"/>
+                  <term type="standard" source="ssk" key="TCF"/>
+                  <term type="standard" source="ssk" key="LAF"/>
                   <term type="activity" source="http://tadirah.dariah.eu/" key="annotating"/>
                </desc>
                <linkGrp type="generalResources"

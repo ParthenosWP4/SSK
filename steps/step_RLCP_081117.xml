@@ -1,74 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0"
-     type="researchStep"
-     xml:id="step_RLCP_081117">
-   <teiHeader>
-      <fileDesc>
-         <titleStmt>
-            <title>Step "Research laser cleaning parameters"</title>
-            <author>
-               <forename>Marta</forename>
-               <surname>Castillejo</surname>
-               <affiliation>CSIC</affiliation>
-            </author>
-            <author>
-               <forename>Mikel</forename>
-               <surname>Sanz</surname>
-               <affiliation>CSIC</affiliation>
-            </author>
-            <sponsor>PARTHENOS</sponsor>
-         </titleStmt>
-         <publicationStmt>
-            <authority/>
-            <availability>
-               <licence target="http://creativecommons.org/licenses/by/4.0/">
-                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
-       document.</p>
-               </licence>
-            </availability>
-         </publicationStmt>
-         <sourceDesc>
-            <p>Created from an Excel sheet by Marie Puren</p>
-         </sourceDesc>
-      </fileDesc>
-      <revisionDesc>
-         <change/>
-      </revisionDesc>
-   </teiHeader>
-   <text>
-      <body>
-         <listEvent>
-            <event type="researchStep">
-               <head xml:lang="en">Research laser cleaning parameters</head>
-               <desc type="definition" xml:lang="en">Selecting info for specific analytical studies of the
-      use of laser in conservation.</desc>
-               <desc type="term" xml:lang="en">
-                  <term key="http://tadirah.dariah.eu/vocab/index.php?tema=11&amp;/gathering"
-                        source="http://tadirah.dariah.eu/"
-                        type="activity"/>
-               </desc>
-               <linkGrp type="generalResources"
-                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref source="zotero"
-                       target="PM5P3JDB"
-                       type="tutorial">
-                     <term key="Laser cleaning" type="tutorial"/>
-                  </ref>
-                  <ref source="zotero"
-                       target="9796G3AB"
-                       type="tutorial">
-                     <term key="Laser cleaning" type="tutorial"/>
-                  </ref>
-               </linkGrp>
-               <linkGrp corresp="http://www.cost.eu/COST_Actions/fps/G7"
-                        source="Artwork conservation by Laser"
-                        type="projectResources"
-                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref target="C94KPIQG" type="guidelines"/>
-               </linkGrp>
-            </event>
-         </listEvent>
-      </body>
-   </text>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_RLCP_081117">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Step "Research laser cleaning parameters"</title>
+        <author>
+          <forename>Marta</forename>
+          <surname>Castillejo</surname>
+          <affiliation>CSIC</affiliation>
+        </author>
+        <author>
+          <forename>Mikel</forename>
+          <surname>Sanz</surname>
+          <affiliation>CSIC</affiliation>
+        </author>
+        <sponsor>PARTHENOS</sponsor>
+      </titleStmt>
+      <publicationStmt>
+        <authority/>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0/">
+            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+              document.</p>
+          </licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Created from an Excel sheet by Marie Puren</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change/>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listEvent>
+        <event type="researchStep">
+          <head xml:lang="en">Research laser cleaning parameters</head>
+          <desc type="definition" xml:lang="en">Selecting info for specific analytical studies of
+            the use of laser in conservation.</desc>
+          <desc type="term" xml:lang="en">
+            <term key="http://tadirah.dariah.eu/vocab/index.php?tema=11&amp;/gathering"
+              source="http://tadirah.dariah.eu/" type="activity"/>
+          </desc>
+          <linkGrp type="generalResources"
+            xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+            <ref source="zotero" target="PM5P3JDB" type="tutorial"/>
+            <ref source="zotero" target="9796G3AB" type="tutorial"/>
+          </linkGrp>
+          <linkGrp corresp="http://www.cost.eu/COST_Actions/fps/G7"
+            source="Artwork conservation by Laser" type="projectResources"
+            xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+            <ref target="C94KPIQG" type="spec" source="zotero"/>
+          </linkGrp>
+        </event>
+      </listEvent>
+    </body>
+  </text>
 </TEI>

@@ -45,7 +45,7 @@
       other analytical techniques employed in the characterization of the same glass object or other
       glasses.</desc>
                <desc type="term" xml:lang="en">
-                  <term key="LIBS" source="standard_list" type="standard"/>
+                  <term key="LIBS" source="ssk" type="standard"/>
                   <term key="http://tadirah.dariah.eu/vocab/index.php?tema=34&amp;/contextualizing"
                         source="http://tadirah.dariah.eu/"
                         type="activity"/>

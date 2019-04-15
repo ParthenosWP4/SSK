@@ -1,73 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0"
-     type="researchStep"
-     xml:id="step_Pu_201017">
-   <teiHeader>
-      <fileDesc>
-         <titleStmt>
-            <title>Step "Publish"</title>
-            <author>
-               <forename>Panayotis</forename>
-               <surname>Siozos</surname>
-               <affiliation>IESL-FORTH</affiliation>
-            </author>
-            <author>
-               <forename>Demetrios</forename>
-               <surname>Anglos</surname>
-               <affiliation>IESL-FORTH</affiliation>
-            </author>
-               <author>
-              <forename>Kostas</forename>
-              <surname>Hatzigiannakis</surname>
-               <affiliation>IESL-FORTH</affiliation>
-            </author>
-            <sponsor>PARTHENOS</sponsor>
-         </titleStmt>
-         <publicationStmt>
-            <authority/>
-            <availability>
-               <licence target="http://creativecommons.org/licenses/by/4.0/">
-                  <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
-       document.</p>
-               </licence>
-            </availability>
-         </publicationStmt>
-         <sourceDesc>
-            <p>Created from an Excel sheet by Marie Puren</p>
-         </sourceDesc>
-      </fileDesc>
-      <revisionDesc>
-         <change/>
-      </revisionDesc>
-   </teiHeader>
-   <text>
-      <body>
-         <listEvent>
-            <event type="researchStep">
-               <head xml:lang="en">Publish the results</head>
-               <desc type="definition" xml:lang="en">Publish the results of the artwork's multispectral
-      imaging analysis.</desc>
-               <desc type="term" xml:lang="en">
-                  <term key="http://tadirah.dariah.eu/vocab/index.php?tema=47&amp;/publishing"
-                        source="http://tadirah.dariah.eu/"
-                        type="activity"/>
-               </desc>
-               <linkGrp type="generalResources"
-                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-                  <ref source="zotero"
-                       
-                       target="TZX5QSR7"
-                       type="service">
-                  </ref>
-                  <ref source="zotero"
-                       
-                       target="H793RGGY "
-                       type="service">
-                  </ref>
-               </linkGrp>
-            </event>
-         </listEvent>
-      </body>
-   </text>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep" xml:id="step_Pu_201017">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Step "Publish"</title>
+        <author>
+          <forename>Panayotis</forename>
+          <surname>Siozos</surname>
+          <affiliation>IESL-FORTH</affiliation>
+        </author>
+        <author>
+          <forename>Demetrios</forename>
+          <surname>Anglos</surname>
+          <affiliation>IESL-FORTH</affiliation>
+        </author>
+        <author>
+          <forename>Kostas</forename>
+          <surname>Hatzigiannakis</surname>
+          <affiliation>IESL-FORTH</affiliation>
+        </author>
+        <sponsor>PARTHENOS</sponsor>
+      </titleStmt>
+      <publicationStmt>
+        <authority/>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0/">
+            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+              document.</p>
+          </licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Created from an Excel sheet by Marie Puren</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change/>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listEvent>
+        <event type="researchStep">
+          <head xml:lang="en">Publish the results</head>
+          <desc type="definition" xml:lang="en">Publish the results of the artwork's multispectral
+            imaging analysis.</desc>
+          <desc type="term" xml:lang="en">
+            <term key="http://tadirah.dariah.eu/vocab/index.php?tema=47&amp;/publishing"
+              source="http://tadirah.dariah.eu/" type="activity"/>
+          </desc>
+          <linkGrp type="generalResources"
+            xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+            <ref source="zotero" target="TZX5QSR7" type="service"/>
+            <ref source="zotero" target="H793RGGY " type="service"/>
+          </linkGrp>
+        </event>
+      </listEvent>
+    </body>
+  </text>
 </TEI>

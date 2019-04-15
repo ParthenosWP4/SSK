@@ -59,7 +59,7 @@
                         xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
                   <ref source="zotero" target="MN5XVQ82" type="tool"/>
                   <ref source="zotero" target="2EYDEL5T" type="paper"/>
-                  <ref type="corpus" source="zotero" target="WWSFBBB6"/>
+                  <ref type="database" source="zotero" target="WWSFBBB6"/>
                </linkGrp>
             </event>
          </listEvent>
