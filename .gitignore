@@ -4,4 +4,6 @@
 /elasticsearch-6.2.4
 /war-files
 /SSK-FrontEnd-v3/.history
+/SSK_Client/node_modules
+/SSK_Client/.history
 .DS_Store
