@@ -1,0 +1,200 @@
+{
+   "MENU": {
+    "HOME": "ACCUEIL",
+    "EXPLORE":{
+      "CONTENT": "EXPLORER",
+      "SUB_MENU": {
+        "browseScenario":"Rechercher un scénario",
+        "browseStep": "Rechercher une étape",
+        "browseResource": "Rechercher une ressource"
+      }
+    },
+    "CONTRIBUTE" :{
+        "CONTENT" : "CONTRIBUER",
+       "SUB_MENU":{
+         "AddNewScenario": "Créer un nouveau scénario",
+         "AddStandard": "Ajouter un standard",
+         "checkGithub": "Consulter le dépôt GitHub"
+      }
+   },
+   "LEARNMORE":{
+     "CONTENT": "EN SAVOIR PLUS",
+     "SUB_MENU":{
+       "vocabularies": "Vocabulaires",
+       "SUB_MENU":{
+         "disciplines":"Disciplines",
+         "standards": "Standards",
+         "activities": "Activités de recherche",
+         "techniques":"Techniques de recherche",
+         "objects":"Objets de recherche"
+       },
+       "documentation": "Documentation",
+       "projectTeam" : "Le projet"
+     }
+   },
+   "PARTHENOS" : "PARTHENOS",
+   "LOGIN": {
+     "CONTENT" : "Connexion",
+     "SUB_MENU":{
+       "en":"Anglais",
+       "fr":"Français",
+       "it": "Italien",
+       "de": "Allemand"
+     }
+   }
+  },
+  "HOME":{
+    "tab1":{
+      "TITLE":"Standardization Survival Kit",
+      "DESC":"Une collection de scénarios de recherche pour illustrer les meilleurs pratiques pour les Humanités numériques les Sciences du Patrimoine",
+      "SUB_MENU":{
+        "browseScenarios":"Explorer les scénarios",
+        "addScenario":"Ajouter un nouveau scénario",
+        "about":"À propos du SSK"
+      }
+    },
+    "tab2":{
+      "TITLE":"Explorez les scénarios, suivez les étapes",
+      "DESC":"Outils et recommandations sont plus faciles à comprendre au travers d'exemples. Le SSK présente une grande diversité de ressources normalisées, de la façon la plus compréhensible possible.\rLes scénarios de recherche rassemblés ici permettent d'identifier les ressources utiles pour mener à bien un projet de recherche, étape par étape."
+    },
+    "tab3":{
+      "TITLE":"Contribuez au SSK, créez des communités",
+      "DESC":"Rassemblant des chercheurs d'horizons différents, le SSK est un lieu de discussion sur les bonnes pratiques de recherche pour les Sciences humaines et sociales.",
+      "SUB_MENU":{
+        "sub1":"Créez de nouveaux scénarios de A à Z ou en combinant des étapes existantes de différents scénarios",
+        "sub2":"Publiez et partagez vos scénarios avec vos pairs",
+        "sub3":"Donez une meilleure visibilité et fiabilité à vos méthodes de recherche",
+        "checkGitHub":"Consultez notre GitHub !"
+      }
+    },
+    "tab4":{
+      "TITLE":"Gagnez en efficacité, interopérabilité et durabilité grâce aux standards",
+      "DESC":"Incorporer des standards à toutes les étapes de votre processus de recherche le rend plus durable, plus facile à maintenir, améliorer et partager. Les standards sont des documents non contraignants produits pas une organisation qui assure:",
+      "SUB_MENU":{
+        "sub1":"Consensus",
+        "sub2":"Ouverture",
+        "sub3":"Maintenance",
+        "sub4": "Besoin de mieux connaître les standards? : <a href=\"http://training.parthenos-project.eu/sample-page/intro-to-ri/interoperability/what-are-standards/\">\"What are standards ? Training suite\"</a>."
+      }
+    }
+  },
+  "EXPLORE_PAGE":{
+    "TITLE":"Explorez scénarios, étapes et ressources",
+    "breadCrumb_Scenarios":"Scénarios",
+    "breadCrumb_Steps":"Étapes",
+    "breadCrumb_Resources":"Ressources",
+    "search":"Recherche",
+    "scenarios": "Scénarios",
+    "steps":"Étapes",
+    "resources":"Ressources",
+    "readMore":"Lire la description",
+    "lastUpdate":{
+      "TITLE":"Dernière mise à jour",
+      "SUB_MENU":{
+        "minute":"moins d'une minute",
+        "minutes":"minutes",
+        "day":"moins d'un jour",
+        "days":"jours",
+        "hour":"moins d'une heure",
+        "hours": "heures",
+        "month":"un mois",
+        "months":"mois",
+        "year":"un an",
+        "years":"ans"
+    }
+    },
+    "TAGS":{
+      "TITLE":"Triez par",
+      "disciplines":"Disciplines",
+      "objects":"Objets",
+      "techniques":"Techniques",
+      "activities":"Activités",
+      "standards":"Standards"
+    }
+    },
+    "PROJECT_TEAM":{
+      "breadcrumb":"Le projet",
+      "tab1":{
+        "TITLE":"PARTHENOS",
+        "DESC":"PARTHENOS signifie “Pooling Activities, Resources and Tools for Heritage E-research Networking, Optimization and Synergies”. L'objectif de cette infrastructure de recherche est de renforcer la cohésion de la recherche, dans des domaines variés des Sciences humaines, en particulier la linguistique, les sciences du patroimoine, l'histoire et l'archéologie, ainsi que des structures de recherche, tels que ARIADNE (archéologie), CLARIN (langage) and DARIAH (sciences humaines), membres de PARTHENOS.\rAu sein de l'infrastructure PARTHENOS, le Work Package 4 (WP4) soutient l'adoption et la maintenance de standards gérés par des intiatives internationales et qui répondent aux besoins des communautés présentes dans PARTHENOS. Ces standards concernent tous les aspects de l'activité numérique, des objets individuels, des documents et des collections."
+      },
+      "tab2":{
+        "TITLE":"Le Standardization Survival Kit",
+        "DESC": "Le Standardization Survival Kit a été développé depuis 2016 par les <a href=\"http://www.parthenos-project.eu/consortium\">membres du WP4 PARTHENOS</a> (PIN, CLARIN, KNAW, CNR, CSIC, FORTH, OEAW, MIBACT-ICCU, SISMEL, Académie d'Athènes, FH Potsdam, Huma-Num, Inria), sous la direction d'Inria (équipe ALMAnaCH)."
+      },
+      "TEAM":{
+        "romary":{
+          "NAME":"Laurent Romary",
+          "TASK":"Responsable de projet",
+          "BIO": "Directeur de Recherche Inria (France), membre de l'équipe ALMAnaCH, et ancien directeur général de DARIAH (2014-2018). Il conduit des recherches sur la modélisation de documents semi-structurés, en partculier les textes et les ressources linguistiques. Il est impliqué dans des activités de standardisation au sein du comité ISO TC 37 et de la Text Encoding Initiative. Il travaille également depuis de longues années sur la promotion de l'accès ouvert."
+        },
+        "riondet":{
+          "NAME":"Charles Riondet",
+          "TASK":"Gestion de projet, modélisation de données",
+          "BIO": "Docteur en histoire, archiviste. Membre de l'équipe ALMAnaCH, ingénieur de recherches en Humanités numériques. Spécialiste des standards et des métadonnées, avec un focus sur la standardisation de données textuelles (XML-TEI), les métadonnées archivistiques (EAD, EAC-CPF) et les flux de travail."
+        },
+        "puren":{
+          "NAME":"Marie Puren",
+          "TASK":"Gestion de projet, modélisation de données",
+          "BIO": "Chercheur post-doctoral en Histoire Numérique au Laboratoire de recherche historique Rhône-Alpes (LARHRA), et chercheur associé à la Bibliothèque nationale de France. Elle est titulaire d'un doctorat en Histoire à la Sorbonne, et chargé de cours en Humanités numériques à l'École Nationale des Chartes et à l'Université de Versailles - Saint Quentin. Elle est également responsable de la verison française du site The Programming Historian." 
+        },
+        "seillier":{
+          "NAME":"Dorian Seillier",
+          "TASK":"Designer UX",
+          "BIO": "Master en histoire médiévale et en architecture de l'information à l'ENS de Lyon. Membre de l'équipe Team ALMAnaCH à Inria Paris, en tant que designer UX et architecte de l'information." 
+        },
+        "tadjou":{
+          "NAME":"Lionel Tadjou",
+          "TASK":"Développeur en chef",
+          "BIO": "Titulaire d'un Master en informatique spécialisé dans le développement logiciel. Il est actuellement ingénieur de recherche à Inria Paris, membre de l'équipe ALMAnaCH, où il travaille commme développeur en chef." 
+        },
+        "biabiany":{
+          "NAME":"Damien Biabiany",
+          "TASK":"Developer",
+          "BIO": "Étudiant à la Coding Factory By Itescia, développeur à Inria Paris en apprentissage. Membre de l'équipe ALMAnaCH depuis décembre 2018, et chargé du développement Front-end du SSK et de l'interface de contribution." 
+        }
+      }
+    },
+   "USER":{},
+   "CONTRIBUTE":{},
+    "404":{
+      "CONTENT":"Page introuvable."
+    },
+    "WIP":{
+      "CONTENT":"En développement"
+    },
+  "FOOTER":{
+    "disclaimer":"Le SSK a été développe dans le cadre du projet PARTHENOS, au sein du WP4 sur la standardization.",
+    "about":{
+      "CONTENT":"À propos",
+      "SUB_MENU":{
+        "team":"Le Projet",
+        "parthenos": "Parthenos",
+        "contact":"Contact"
+      }
+    },
+    "explore":{
+      "CONTENT":"Explorer",
+      "SUB_MENU":{
+        "scenarios":"Scénarios",
+        "steps": "Étapes",
+        "resources":"Ressources"
+      }
+    },
+    "contribute":{
+      "CONTENT":"Contribuez",
+      "SUB_MENU":{
+        "signin":"Se connecter",
+        "github":"Le SSK sur GitHub"
+      }
+    },
+    "legal":{
+      "CONTENT":"Legal",
+      "SUB_MENU":{
+        "privacy":"Privacy Policy",
+        "licensing":"Licensing & Citing"
+      }
+    },
+    "license":"Sauf mention contraire, tout le contenu de ce site est disponible sous la license Creative Commons Attribution 4.0 International CC BY"
+  }
+}
