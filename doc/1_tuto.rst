@@ -106,8 +106,20 @@ Identifying state of the art references is a prerequisite before actually add th
 When we are talking about resources, we mean a standardized tool, service or document helpful for the
 task completion.
 
-They take the form of a digital object : a webpage, a
-journal article referenced in an online catalog or an archive, a code repository, a blog, etc.
+They take the form of a digital object and have to be of one the following types:
+* Specification (normative document) of a standard (`spec`);
+* Technical reports (`report`);
+* Scholarly papers (`paper`);
+* A single scholarly monograph (`book`);
+* Lists of bibliographic references (`bibliography`);
+* Scripts and code samples (`code`);
+* Computing libraries (`library`);
+* Collection of structured data (`database`);
+* Computing tool, software (`tool`);
+* Curating or hosting service (`service`)
+* Tutorials or guidelines (`tutorial`);
+* Blog posts (`blog`);
+* Specialised mailing list, forum, etc (`community`).
 
 The resources should be separated into several groups:
 * First, general resources like standard specifications

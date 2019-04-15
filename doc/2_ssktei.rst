@@ -385,6 +385,7 @@ The attributes for ``<ref>`` are ``type``, ``source`` and ``target``.
   * `tool`: Computing tool, software;
   * `service`: Curating or hosting service.
   * `community`: Specialised mailing list, forum, etc.
+  * `book`: A single scholarly monograph.
 
 * The ``source`` attribute in ``<ref>`` records that the ``target`` refers to a zotero ID. The value of ``source`` is most of the time `zotero`
 * The ``target`` attribute specifies the destination of the reference, i.e. the ID of the Zotero record. This ID is last part of the URL of the Zotero online record:
