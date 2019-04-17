@@ -1,8 +1,6 @@
 import {AfterViewInit, Component, Input, OnInit, Pipe, PipeTransform} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
 import {ElastichsearchService} from '../elastichsearch.service';
-import {isObject, isUndefined} from 'util';
-import {SskService} from '../ssk.service';
 
 
 

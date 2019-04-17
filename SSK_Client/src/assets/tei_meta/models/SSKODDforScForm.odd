@@ -182,8 +182,8 @@
 			          maxOccurs="unbounded"/>
 			        <elementRef key="desc" corresp="terms" minOccurs="1"
 			          maxOccurs="unbounded"/>
-			        <!-- <elementRef key="listEvent"/>
-			       <elementRef key="param" minOccurs="0" maxOccurs="unbounded"/>-->
+			        <elementRef key="listEvent"/>
+			        <!--<elementRef key="param" minOccurs="0" maxOccurs="unbounded"/>-->
 			      </sequence>
 			    </content>
 			  </elementSpec>
@@ -245,7 +245,6 @@
 					<content>
 						<elementRef key="term" corresp="activity" minOccurs="1" maxOccurs="1"/>
 						<elementRef key="term" corresp="techniques" minOccurs="0" maxOccurs="4"/>
-						<elementRef key="term" corresp="disciplines" minOccurs="0" maxOccurs="4"/>
 						<elementRef key="term" corresp="objects" minOccurs="0" maxOccurs="4"/>
 						<elementRef key="term" corresp="standard" minOccurs="0" maxOccurs="4"/>
 					</content>
@@ -512,7 +511,7 @@
 					</attList>
 				</elementSpec>
 				
-				<!--<elementSpec ident="term" corresp="standard">
+				<elementSpec ident="term" corresp="standard">
 					<desc>Standard Term</desc>
 					<attList>
 						<attDef ident="type" rend="standard" n="auto">
@@ -529,7 +528,7 @@
 							</valList>
 						</attDef>
 					</attList>
-				</elementSpec>-->
+				</elementSpec>
 
 <!--				
 				<elementSpec ident="desc" corresp="resourceDesc">

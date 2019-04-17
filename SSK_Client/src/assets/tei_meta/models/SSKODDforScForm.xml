@@ -4,7 +4,7 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>SSK steps spec for form creation with TEIMETA</title>
+        <title>SSK scenario spec for form creation with TEIMETA</title>
         <author>
           <name>Charles Riondet</name>
         </author>
@@ -45,13 +45,14 @@
           </content>
           <attList>
             <attDef ident="type" usage="req" n="auto">
-              <defaultVal>researchStep</defaultVal>
+              <defaultVal>researchScenario</defaultVal>
             </attDef>
-            <!--<attDef ident="xml:id" usage="req" n="auto">
-              <datatype>
-                <dataRef key="anyURI"/>
-              </datatype>
-            </attDef>-->
+            <!-- <attDef ident="xml:id" usage="req" n="auto">
+					    <desc>ID of TEI file</desc>
+							<datatype>
+								<dataRef key="anyURI"/>
+							</datatype>
+						</attDef>-->
           </attList>
         </elementSpec>
 
@@ -75,7 +76,6 @@
 
         <elementSpec ident="titleStmt" module="header" mode="change" n="1">
           <content>
-            <elementRef key="title" minOccurs="1" maxOccurs="1"/>
             <elementRef key="author" minOccurs="1" maxOccurs="unbounded"/>
             <elementRef key="sponsor" minOccurs="0" maxOccurs="unbounded"/>
           </content>
@@ -89,14 +89,14 @@
             <elementRef key="affiliation"/>
           </content>
         </elementSpec>
-        
+
         <elementSpec ident="forename">
           <desc>Author's forename</desc>
           <content>
             <textNode/>
           </content>
         </elementSpec>
-        
+
         <elementSpec ident="surname">
           <desc>Author's surname</desc>
           <content>
@@ -119,12 +119,12 @@
         </elementSpec>
 
         <!-- Title of the TEI file automatically generated -->
-<!--        <elementSpec ident="title" module="core" mode="change" n="auto">
-          <desc>Title of the document (should be automatically generated)</desc>
-          <content>
-            <textNode/>
-          </content>
-        </elementSpec>-->
+        <!--<elementSpec ident="title" module="core" mode="change" n="auto">
+					<desc>Title of the document (should be automatically generated)</desc>
+					<content>
+						<textNode/>
+					</content>
+				</elementSpec>-->
 
         <elementSpec ident="publicationStmt" module="header" mode="change">
           <content>
@@ -165,14 +165,14 @@
         </elementSpec>
 
         <elementSpec ident="authority">
-          <desc>Context (if the step is the result of a project's work, put the name of the project
+          <desc>Context (if the scenario is the result of a project's work, put the name of the project
             here).</desc>
           <content>
             <textNode/>
           </content>
         </elementSpec>
 
-        <!--Step description-->
+        <!--Scenario description-->
         <elementSpec ident="text" module="textstructure">
           <content>
             <sequence>
@@ -184,43 +184,28 @@
 
         <elementSpec ident="body" module="textstructure">
           <content>
-            <elementRef key="listEvent"/>
+            <elementRef key="div"/>
           </content>
         </elementSpec>
 
-        <!-- Only for step files -->
-        <elementSpec ident="listEvent">
+        <elementSpec ident="div" module="textstructure">
           <content>
-            <elementRef key="event" minOccurs="1" maxOccurs="1"/>
-          </content>
-        </elementSpec>
-
-        <elementSpec ident="event">
-          <desc>Description of the step</desc>
-          <content>
-            <sequence>
-              <elementRef key="head" minOccurs="1" maxOccurs="unbounded"/>
+              <elementRef key="head" corresp="scenarioTitle" minOccurs="1" maxOccurs="unbounded"/>
               <elementRef key="desc" corresp="definition" minOccurs="1" maxOccurs="unbounded"/>
-              <elementRef key="desc" corresp="terms" minOccurs="1" maxOccurs="unbounded"/>
-              <elementRef key="linkGrp" corresp="generalResources" minOccurs="0" maxOccurs="1"/>
-              <elementRef key="linkGrp" corresp="projectResources" minOccurs="0" maxOccurs="unbounded"/>
-            </sequence>
+              <elementRef key="desc" corresp="terms" minOccurs="1" maxOccurs="1"/>
           </content>
-          <attList>
-            <attDef ident="type" n="auto">
-              <defaultVal>researchStep</defaultVal>
-            </attDef>
-          </attList>
         </elementSpec>
 
-        <elementSpec ident="head">
-          <desc>Title of the step</desc>
+        
+
+        <elementSpec ident="head" corresp="scenarioTitle">
+          <desc>Title of the scenario</desc>
           <content>
             <textNode/>
           </content>
           <attList>
             <attDef ident="type" usage="req" n="auto">
-              <defaultVal>stepTitle</defaultVal>
+              <defaultVal>scenarioTitle</defaultVal>
             </attDef>
             <attDef ident="xml:lang" usage="req" mode="change">
               <desc>language</desc>
@@ -232,7 +217,7 @@
         </elementSpec>
 
         <elementSpec ident="desc" corresp="definition">
-          <desc>Description of the step</desc>
+          <desc>Description of the scenario</desc>
           <content>
             <textNode/>
           </content>
@@ -252,10 +237,9 @@
 
         <elementSpec ident="desc" corresp="terms">
           <content>
-            <elementRef key="term" corresp="activity" minOccurs="1" maxOccurs="1"/>
             <elementRef key="term" corresp="techniques" minOccurs="0" maxOccurs="4"/>
+            <elementRef key="term" corresp="disciplines" minOccurs="0" maxOccurs="4"/>
             <elementRef key="term" corresp="objects" minOccurs="0" maxOccurs="4"/>
-            <elementRef key="term" corresp="standard" minOccurs="0" maxOccurs="4"/>
           </content>
           <attList>
             <attDef ident="type" usage="req" mode="change" n="auto">
@@ -272,58 +256,59 @@
           </attList>
         </elementSpec>
 
-        <elementSpec ident="term" corresp="activity">
+        <!--Disciplines list-->
+        <elementSpec ident="term" corresp="disciplines">
+          <desc>Disciplines cover all the domains from the Humanities, Social Sciences and Heritage
+            science. Scenarios may apply to one or more disciplines. </desc>
           <attList>
             <attDef ident="key">
-              <desc>Activity</desc>
+              <desc>The term itself</desc>
+              <datatype>
+                <dataRef name="anyURI"/>
+              </datatype>
               <valList>
-                <valItem ident="Conversion"/>
-                <valItem ident="Data Recognition"/>
-                <valItem ident="Discovering"/>
-                <valItem ident="Gathering"/>
-                <valItem ident="Imaging"/>
-                <valItem ident="Recording"/>
-                <valItem ident="Transcription"/>
-                <valItem ident="Designing"/>
-                <valItem ident="Programming"/>
-                <valItem ident="Translation"/>
-                <valItem ident="Web development"/>
-                <valItem ident="Writing"/>
-                <valItem ident="Annotating"/>
-                <valItem ident="Cleanup"/>
-                <valItem ident="Editing"/>
-                <valItem ident="Content Analysis"/>
-                <valItem ident="Network Analysis"/>
-                <valItem ident="Relational Analysis"/>
-                <valItem ident="Spatial Analysis"/>
-                <valItem ident="Structural Analysis"/>
-                <valItem ident="Stylistic Analysis"/>
-                <valItem ident="Visualization"/>
-                <valItem ident="Contextualizing"/>
-                <valItem ident="Modeling"/>
-                <valItem ident="Theorizing"/>
-                <valItem ident="Archiving"/>
-                <valItem ident="Identifying"/>
-                <valItem ident="Organizing"/>
-                <valItem ident="Preservation"/>
-                <valItem ident="Collaboration"/>
-                <valItem ident="Commenting"/>
-                <valItem ident="Communicating"/>
-                <valItem ident="Crowdsourcing"/>
-                <valItem ident="Publishing"/>
-                <valItem ident="Sharing"/>
-                <valItem ident="Assessing"/>
-                <valItem ident="Community Building"/>
-                <valItem ident="Give Overview"/>
-                <valItem ident="Project Management"/>
-                <valItem ident="Teaching / Learning"/>
+                <valItem ident="Archaeology and Prehistory"/>
+                <valItem ident="Architecture, space management"/>
+                <valItem ident="Art and art history"/>
+                <valItem ident="Biological anthropology"/>
+                <valItem ident="Classical studies"/>
+                <valItem ident="Communication sciences"/>
+                <valItem ident="Cultural heritage and museology"/>
+                <valItem ident="Demography"/>
+                <valItem ident="Economies and finances"/>
+                <valItem ident="Education"/>
+                <valItem ident="Environmental studies"/>
+                <valItem ident="Gender studies"/>
+                <valItem ident="Geography"/>
+                <valItem ident="History"/>
+                <valItem ident="History, Philosophy and Sociology of Sciences"/>
+                <valItem ident="Law"/>
+                <valItem ident="Linguistics"/>
+                <valItem ident="Literature"/>
+                <valItem ident="Management"/>
+                <valItem ident="Methods and statistics"/>
+                <valItem ident="Musicology and performing arts"/>
+                <valItem ident="Philosophy"/>
+                <valItem ident="Political science"/>
+                <valItem ident="Psychology"/>
+                <valItem ident="Religions"/>
+                <valItem ident="Social Anthropology and ethnology"/>
+                <valItem ident="Sociology "/>
               </valList>
             </attDef>
             <attDef ident="source">
-              <defaultVal>tadirah</defaultVal>
+              <desc>The thesaurus used</desc>
+              <datatype>
+                <dataRef name="anyURI"/>
+              </datatype>
+              <defaultVal>AureHal</defaultVal>
             </attDef>
             <attDef ident="type">
-              <defaultVal>activity</defaultVal>
+              <desc>The type of the term</desc>
+              <datatype>
+                <dataRef name="anyURI"/>
+              </datatype>
+              <defaultVal>discipline</defaultVal>
             </attDef>
           </attList>
         </elementSpec>
@@ -460,7 +445,8 @@
           </attList>
         </elementSpec>
 
-        <elementSpec ident="term" corresp="standard">
+
+       <!-- <elementSpec ident="term" corresp="standard">
           <desc>Standard Term</desc>
           <attList>
             <attDef ident="type" rend="standard" n="auto">
@@ -477,135 +463,12 @@
               </valList>
             </attDef>
           </attList>
-        </elementSpec>
-
-        <elementSpec ident="linkGrp" corresp="generalResources">
-          <desc>General Resources</desc>
-          <content>
-            <elementRef key="ref" minOccurs="0" maxOccurs="unbounded"/>
-          </content>
-          <attList>
-            <attDef ident="type">
-              <desc>Type: should be "generalResources" by default</desc>
-              <defaultVal>generalResources</defaultVal>
-            </attDef>
-          </attList>
-        </elementSpec>
-
-        <elementSpec ident="linkGrp" corresp="projectResources">
-          <desc>Specific resources in the context of a project.</desc>
-          <content>
-            <elementRef key="ref" minOccurs="0" maxOccurs="unbounded"/>
-          </content>
-          <attList>
-            <attDef ident="type">
-              <desc>Type: should be "projectResources" by default</desc>
-              <defaultVal>projectResources</defaultVal>
-            </attDef>
-            <attDef ident="source">
-              <desc>Name of the project</desc>
-              <datatype>
-                <dataRef name="anyURI"/>
-              </datatype>
-            </attDef>
-            <attDef ident="corresp">
-              <desc>Link to the project page</desc>
-              <datatype>
-                <dataRef name="anyURI"/>
-              </datatype>
-            </attDef>
-          </attList>
-        </elementSpec>
-
-
-        <elementSpec ident="ref">
-          <desc>Resource</desc>
-          <!--					<content>
-						<elementRef key="desc" corresp="resourceDesc"/>
-					</content>-->
-          <attList>
-            <attDef ident="type">
-              <desc>Resource Type</desc>
-              <valList type="semi" mode="replace">
-                <valItem ident="spec">
-                  <gloss xml:lang="en">Specification</gloss>
-                  <gloss xml:lang="fr">Spécification</gloss>
-                </valItem>
-                <valItem ident="report">
-                  <gloss xml:lang="en">Report</gloss>
-                  <gloss xml:lang="fr">Rapport</gloss>
-                </valItem>
-                <valItem ident="blog">
-                  <gloss xml:lang="en">Blog</gloss>
-                  <gloss xml:lang="fr">Article de blog</gloss>
-                </valItem>
-                <valItem ident="code">
-                  <gloss xml:lang="en">Scripts and code</gloss>
-                  <gloss xml:lang="fr">Scripts et code</gloss>
-                </valItem>
-                <valItem ident="paper">
-                  <gloss xml:lang="en">Scholarly paper</gloss>
-                  <gloss xml:lang="fr">publication scientifique</gloss>
-                </valItem>
-                <valItem ident="library">
-                  <gloss xml:lang="en">Computing library</gloss>
-                </valItem>
-                <valItem ident="database">
-                  <gloss xml:lang="en">Database</gloss>
-                  <gloss xml:lang="fr">Base de données</gloss>
-                </valItem>
-                <valItem ident="tutorial">
-                  <gloss xml:lang="en">Tutorial</gloss>
-                  <gloss xml:lang="fr">Tutoriel</gloss>
-                </valItem>
-                <valItem ident="tool">
-                  <gloss xml:lang="en">Computing tool, software</gloss>
-                  <gloss xml:lang="fr">Logiciel, outil computationnel</gloss>
-                </valItem>
-                <valItem ident="service">
-                  <gloss xml:lang="en">Curating of hosting service</gloss>
-                  <gloss xml:lang="fr">Offre de service de curation ou d'hébergement</gloss>
-                </valItem>
-                <valItem ident="bibliography">
-                  <gloss xml:lang="en">Bibliography</gloss>
-                  <gloss xml:lang="fr">Bibliographie</gloss>
-                </valItem>
-                <valItem ident="community">
-                  <gloss xml:lang="en">Community</gloss>
-                  <gloss xml:lang="fr">Communauté</gloss>
-                </valItem>
-                <valItem ident="book">
-                  <gloss xml:lang="en">Book</gloss>
-                  <gloss xml:lang="fr">Ouvrage</gloss>
-                </valItem>
-              </valList>
-            </attDef>
-            <attDef ident="source">
-              <desc>Source of the resource</desc>
-              <defaultVal>zotero</defaultVal>
-              <valList type="semi">
-                <valItem ident="zotero"/>
-              </valList>
-            </attDef>
-            <attDef ident="target" usage="req" mode="change">
-              <desc xml:lang="fr">Lien vers la ressource : zotero ID or URL</desc>
-              <desc xml:lang="en">Zotero ID or URL</desc>
-              <datatype>
-                <dataRef name="anyURI"/>
-              </datatype>
-            </attDef>
-          </attList>
-        </elementSpec>
+        </elementSpec>-->
 
         <!-- generic elements-->
 
 
-        <elementSpec ident="persName" module="namesdates">
-          <desc xml:lang="en">Author's name</desc>
-          <content>
-            <textNode/>
-          </content>
-        </elementSpec>
+        
 
         <elementSpec ident="p" module="core">
           <content>
