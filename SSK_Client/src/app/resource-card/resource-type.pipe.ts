@@ -10,6 +10,7 @@ export class ResourceTypePipe implements PipeTransform {
     {
       'ident': 'spec',
       'ident2': 'specification',
+      'ident3': 'schema',
       'gloss.en': 'Specification',
       'gloss.fr': 'Spécification'
     },

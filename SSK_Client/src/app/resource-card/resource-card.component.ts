@@ -20,7 +20,6 @@ export class ResourceCardComponent implements OnInit {
 
   constructor(public sanitizer: DomSanitizer, private elasticServ: ElastichsearchService) { }
   ngOnInit() {
-    console.log(this.res)
     this.url =  String(this.res.url);
     if (this.url === '') {
       this.icon = 'open-book.svg';
