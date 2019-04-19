@@ -30,7 +30,8 @@
           "../node_modules/bootstrap/dist/js/bootstrap.min.js",
           "../node_modules/fuse-js-latest/dist/fuse.js",
           "../node_modules/typeahead.js/dist/typeahead.bundle.min.js",
-          "../node_modules/typeahead.js/dist/bloodhound.min.js"
+          "../node_modules/typeahead.js/dist/bloodhound.min.js",
+          "../src/assets/tei_meta/teiMeta.js"
         ],
         "environmentSource": "environments/environment.ts",
         "environments": {

@@ -181,6 +181,7 @@
     exports.init = init;
     // in case the document is already rendered
     if (document.readyState != 'loading'){
+        console.log("2222222")
         init();
     }
     else if (document.addEventListener){
@@ -453,7 +454,7 @@
                         var js = JSON.parse(ls);
                         if (!js.version || js.version !== teimeta.teiData.version) {
                             //console.log('ancienne version de localstorage');
-                            emptyFile();
+                            //emptyFile();
                             return;
                         }
                         var lcss = localStorage.getItem("previousCSS");
@@ -468,7 +469,7 @@
                         });
                     }
                     else {
-                        emptyFile();
+                       // emptyFile();
                     }
                 }
                 catch (error) {
@@ -628,8 +629,6 @@
     ;
     function emptyFile() {
         var dt = document.getElementById('teidata');
-        
-        
         if (dt !== null ) {
             console.log(dt) 
             dt['innerHTML'] = ''; // Lionel change
@@ -19852,37 +19851,37 @@
     /* 41 */
     /***/ (function(module, exports, __webpack_require__) {
     
-    module.exports = __webpack_require__.p + "fonts/fontawesome-webfont.eot";
+    module.exports = __webpack_require__.p + "assets/tei_meta/fonts/fontawesome-webfont.eot";
     
     /***/ }),
     /* 42 */
     /***/ (function(module, exports, __webpack_require__) {
     
-    module.exports = __webpack_require__.p + "fonts/fontawesome-webfont.eot";
+    module.exports = __webpack_require__.p + "assets/tei_meta/fonts/fontawesome-webfont.eot";
     
     /***/ }),
     /* 43 */
     /***/ (function(module, exports, __webpack_require__) {
     
-    module.exports = __webpack_require__.p + "fonts/fontawesome-webfont.woff2";
+    module.exports = __webpack_require__.p + "assets/tei_meta/fonts/fontawesome-webfont.woff2";
     
     /***/ }),
     /* 44 */
     /***/ (function(module, exports, __webpack_require__) {
     
-    module.exports = __webpack_require__.p + "fonts/fontawesome-webfont.woff";
+    module.exports = __webpack_require__.p + "assets/tei_meta/fonts/fontawesome-webfont.woff";
     
     /***/ }),
     /* 45 */
     /***/ (function(module, exports, __webpack_require__) {
     
-    module.exports = __webpack_require__.p + "fonts/fontawesome-webfont.ttf";
+    module.exports = __webpack_require__.p + "assets/tei_meta/fonts/fontawesome-webfont.ttf";
     
     /***/ }),
     /* 46 */
     /***/ (function(module, exports, __webpack_require__) {
     
-    module.exports = __webpack_require__.p + "fonts/fontawesome-webfont.svg";
+    module.exports = __webpack_require__.p + "assets/tei_meta/fonts/fontawesome-webfont.svg";
     
     /***/ }),
     /* 47 */

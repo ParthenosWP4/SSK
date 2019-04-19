@@ -145,10 +145,6 @@
 					</content>
 				</elementSpec>
 
-<<<<<<< HEAD
-				
-=======
->>>>>>> 29ffc6c8c9c6dd2826f99ca9508d047f9e3dd439
 				<elementSpec ident="text" module="textstructure">
 					<content>
 						<sequence>
@@ -170,37 +166,11 @@
 			          maxOccurs="unbounded"/>
 			        <elementRef key="desc" corresp="terms" minOccurs="1"
 			          maxOccurs="unbounded"/>
-<<<<<<< HEAD
-			        <!-- <elementRef key="listEvent"/>
-			       <elementRef key="param" minOccurs="0" maxOccurs="unbounded"/>-->
-			      </sequence>
-			    </content>
-			  </elementSpec>
-
-				<!-- Only for step files 
-				<elementSpec ident="listEvent">
-				  <desc>Steps of the scenario</desc>
-				  <content>
-						<elementRef key="event" minOccurs="1" maxOccurs="unbounded"/>
-					</content>
-				</elementSpec>
-
-				<elementSpec ident="event">
-					<desc>Step</desc>
-					<attList>
-						<attDef ident="type" n="auto">
-							<defaultVal>researchStep</defaultVal>
-						</attDef>
-					</attList>
-				</elementSpec>-->
-
-=======
 			        <elementRef key="figure" corresp="image" minOccurs="1" maxOccurs="1"/>
 			        <!-- No listEvent-->
 			    </content>
 			  </elementSpec>
 
->>>>>>> 29ffc6c8c9c6dd2826f99ca9508d047f9e3dd439
 				<elementSpec ident="head">
 					<desc>Title of the scenario</desc>
 					<content>
@@ -251,7 +221,6 @@
 					<content>
 					  <elementRef key="term" corresp="disciplines" minOccurs="0" maxOccurs="4"/>
 						<elementRef key="term" corresp="techniques" minOccurs="0" maxOccurs="4"/>
-						<elementRef key="term" corresp="disciplines" minOccurs="0" maxOccurs="4"/>
 						<elementRef key="term" corresp="objects" minOccurs="0" maxOccurs="4"/>
 						<elementRef key="term" corresp="standard" minOccurs="0" maxOccurs="4"/>
 					</content>
@@ -407,13 +376,8 @@
 					</attList>
 				</elementSpec>
 				
-<<<<<<< HEAD
-				<!--<elementSpec ident="term" corresp="standard">
-					<desc>Standard Term</desc>
-=======
 				<elementSpec ident="term" corresp="standard">
 					<desc>Standards used</desc>
->>>>>>> 29ffc6c8c9c6dd2826f99ca9508d047f9e3dd439
 					<attList>
 						<attDef ident="key">
 							<datatype>
@@ -421,9 +385,6 @@
 							</datatype>
 						</attDef>
 					</attList>
-<<<<<<< HEAD
-				</elementSpec>-->
-=======
 				</elementSpec>
 			  
 			  <elementSpec ident="figure" corresp="image" module="figures">
@@ -459,7 +420,6 @@
 			      <textNode/>
 			    </content>
 			  </elementSpec>
->>>>>>> 29ffc6c8c9c6dd2826f99ca9508d047f9e3dd439
 
 			  <elementSpec ident="forename" module="namesdates">
 			    <desc xml:lang="en">Author's forename</desc>
