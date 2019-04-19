@@ -2,7 +2,7 @@
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0"
      type="researchScenario"
-     xml:id="SSK_sc_pXRF">
+     xml:id="SSK_sc_FTIR">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -69,7 +69,12 @@
             <figure type="image">
                <head/>
                <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/FTIR_2.jpg"/>
-               <figDesc/>
+               <figDesc>
+                 <author/>
+                 <availability>
+                   <licence>CC-BY</licence>
+                 </availability>
+               </figDesc>
             </figure>
             <listEvent>
                <event xml:id="s1" type="researchStep" ref="step_DtA"/>

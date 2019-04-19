@@ -3,16 +3,13 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title> </title>
+            <title>Standardization Survival Kit controlled vocabularies</title>
          </titleStmt>
          <publicationStmt>
-            <p>Maintenance and further development of NeMO is carried out by DCU within DARIAH-GR
-               and contributes to DARIAH-EU. This TEI instance was created for the PARTHENOS
-               project</p>
+           <p>First gathered by Charles Riondet on May  2018</p>
          </publicationStmt>
          <sourceDesc>
-            <p>Manually converted in TEI from the NEMO website: 
-                  http://nemo.dcu.gr/index.php?p=navigate#"</p>
+            <p/>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -107,8 +104,6 @@
                   </item>
                </list>
             </div>
-
-
             <div>
                <head>Creation</head>
                <desc>Creating things generally refers to the activity of producing born-digital
@@ -525,147 +520,6 @@
                <item><term>Sociology</term></item>
                <item><term>Methods and statistics</term></item>
             </list>
-         </div>
-         <div xml:id="nemo">
-            <head xml:lang="en">NEMO taxonomy on Information Resource Types</head>
-            <desc/>
-            <div>
-               <head>Books</head>
-               <desc/>
-               <list>
-                  <item><term>Abstracts/summaries</term></item>
-                  <item><term>Bibliographies</term></item>
-                  <item><term>Calendars</term></item>
-                  <item><term>Catalogs</term></item>
-                  <item><term>Comics/graphic novels</term></item>
-                  <item><term>Dictionaries</term></item>
-                  <item><term>Directories</term></item>
-                  <item><term>Discographies</term></item>
-                  <item><term>Encyclopedias</term></item>
-                  <item><term>Filmographies</term></item>
-                  <item><term>Handbooks</term></item>
-                  <item><term>Indexes</term></item>
-                  <item><term>Law reports and digests</term></item>
-                  <item><term>Legal articles</term></item>
-                  <item><term>Legal cases and case notes</term></item>
-                  <item><term>Legislation</term></item>
-                  <item><term>Offprints</term></item>
-                  <item><term>Patent document</term></item>
-                  <item><term>Programmed texts</term></item>
-                  <item><term>Reviews</term></item>
-                  <item><term>Standards/specifications</term></item>
-                  <item><term>Statistics</term></item>
-                  <item><term>Surveys of literature in a subject area</term></item>
-                  <item><term>Technical reports</term></item>
-                  <item><term>Theses</term></item>
-                  <item><term>Treaties</term></item>
-                  <item><term>Yearbooks</term></item>
-               </list>
-            </div>
-            <div>
-               <head>Computer Files</head>
-               <desc/>
-               <list>
-                  <item><term>Bibliographic data</term></item>
-                  <item><term>Combination</term></item>
-                  <item><term>Computer program</term></item>
-                  <item><term>Document</term></item>
-                  <item><term>Font</term></item>
-                  <item><term>Game</term></item>
-                  <item><term>Interactive multimedia</term></item>
-                  <item><term>Numeric data</term></item>
-                  <item><term>Online system or service</term></item>
-                  <item><term>Representational</term></item>
-                  <item><term>Sound</term></item>
-               </list>
-            </div>
-            <div>
-               <head>Continuing Resources </head>
-               <list>
-                  <item><term>Abstracts/summaries</term></item>
-                  <item><term>Bibliographies</term></item>
-                  <item><term>Biography</term></item>
-                  <item><term>Calendars</term></item>
-                  <item><term>Catalogs</term></item>
-                  <item><term>Comics/graphic novels</term></item>
-                  <item><term>Dictionaries</term></item>
-                  <item><term>Directories</term></item>
-                  <item><term>Discographies</term></item>
-                  <item><term>Encyclopedias</term></item>
-                  <item><term>Filmographies</term></item>
-                  <item><term>Handbooks</term></item>
-                  <item><term>Indexes</term></item>
-                  <item><term>Law reports and digests</term></item>
-                  <item><term>Legal articles</term></item>
-                  <item><term>Legal cases and case notes</term></item>
-                  <item><term>Legislation</term></item>
-                  <item><term>Programmed texts</term></item>
-                  <item><term>Reviews</term></item>
-                  <item><term>Standards/specifications</term></item>
-                  <item><term>Statistics</term></item>
-                  <item><term>Surveys of literature in a subject area </term></item>
-                  <item><term>Technical reports</term></item>
-                  <item><term>Theses</term></item>
-                  <item><term>Treaties</term></item>
-                  <item><term>Yearbooks</term></item>
-               </list>
-            </div>
-            <div>
-               <head>Maps </head>
-               <list>
-                  <item><term>Atlas</term></item>
-                  <item><term>Bound as part of another work</term></item>
-                  <item><term>Globe</term></item>
-                  <item><term>Map serial</term></item>
-                  <item><term>Map series</term></item>
-                  <item><term>Separate supplement to another work</term></item>
-                  <item><term>Single map</term></item>
-               </list>
-            </div>
-            <div>
-               <head>Mixed Materials</head>
-            </div>
-            <div>
-               <head>Music </head>
-               <list>
-                  <item><term>Accompaniment reduced for keyboard</term></item>
-                  <item><term>Chorus score</term></item>
-                  <item><term>Close score</term></item>
-                  <item><term>Condensed score</term></item>
-                  <item><term>Condensed score or piano-conductor score</term></item>
-                  <item><term>Full score</term></item>
-                  <item><term>Full score, miniature or study size</term></item>
-                  <item><term>Multiple score formats</term></item>
-                  <item><term>Performer-conductor part</term></item>
-                  <item><term>Score</term></item>
-                  <item><term>Vocal score</term></item>
-                  <item><term>Voice score with accompaniment omitted</term></item>
-               </list>
-            </div>
-            <div>
-               <head>Visual Materials </head>
-               <list>
-                  <item><term>Art original</term></item>
-                  <item><term>Art reproduction</term></item>
-                  <item><term>Chart</term></item>
-                  <item><term>Diorama</term></item>
-                  <item><term>Filmstrip</term></item>
-                  <item><term>Flash card</term></item>
-                  <item><term>Game</term></item>
-                  <item><term>Graphic</term></item>
-                  <item><term>Kit</term></item>
-                  <item><term>Microscope slide</term></item>
-                  <item><term>Model</term></item>
-                  <item><term>Motion picture</term></item>
-                  <item><term>Picture</term></item>
-                  <item><term>Realia</term></item>
-                  <item><term>Slide</term></item>
-                  <item><term>Technical drawing</term></item>
-                  <item><term>Toy</term></item>
-                  <item><term>Transparency</term></item>
-                  <item><term>Videorecording</term></item>
-               </list>
-            </div>
          </div>
       </body>
    </text>

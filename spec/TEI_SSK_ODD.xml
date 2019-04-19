@@ -202,12 +202,9 @@
                 </sch:rule>
               </constraint>
             </constraintSpec>
-          </elementSpec>
-
-          <elementSpec ident="availability" mode="change">
             <constraintSpec ident="licenceReq" scheme="schematron">
               <constraint>
-                <sch:rule context="tei:availability">
+                <sch:rule context="tei:publicationStmt/tei:availability">
                   <sch:assert test="tei:licence/@target and tei:licence/tei:p" role="error">A
                     licence should be applied to all scenarios and steps. The declaration of the
                     licence chosen in made by a clear sentence in natural language (in a p element)
@@ -217,13 +214,12 @@
             </constraintSpec>
             <constraintSpec ident="CClicence" scheme="schematron">
               <constraint>
-                <sch:rule context="tei:availability/tei:licence">
+                <sch:rule context="tei:publicationStmt/tei:availability/tei:licence">
                   <sch:assert
-                    test="@target = 'http://creativecommons.org/licenses/by/4.0/' or @target = 'http://creativecommons.org/publicdomain/zero/1.0/'"
-                    role="error"> The licences of the scenarios and steps should be CC-BY 4.0 or CC0
-                    1.0 Don't forget to put the link towards the licence reference text in the
+                    test="@target = 'http://creativecommons.org/licenses/by/4.0/'"
+                    role="error"> The licences of the scenarios and steps should be CC-BY 4.0. Don't forget to put the link towards the licence reference text in the
                     @target attribute. The current value of "<sch:name path="@target"/>" is
-                      "<sch:value-of select="@target"/>"</sch:assert>
+                    "<sch:value-of select="@target"/>"</sch:assert>
                 </sch:rule>
               </constraint>
             </constraintSpec>
@@ -337,11 +333,6 @@
           </elementSpec>
 
           <elementSpec ident="head" mode="change">
-            <classes mode="change">
-              <!--2017-07-17: <head> is now member of the class att.combinable, i.e., can have @mode for attribute. In the SSK,
-                        it is used when a scenario uses a step, but want to add additional information, or change it -->
-              <memberOf key="att.combinable"/>
-            </classes>
             <constraintSpec ident="headShort" scheme="schematron">
               <constraint>
                 <sch:rule context="tei:head[parent::div or parent::event]">
@@ -460,7 +451,8 @@
               </attDef>
               <attDef ident="xml:base" usage="req" mode="change">
                 <valList type="semi" mode="replace">
-                  <valItem ident="https://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"></valItem>
+                  <valItem ident="https://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"
+                  />
                 </valList>
               </attDef>
             </attList>
@@ -473,10 +465,9 @@
             <constraintSpec ident="zotero" scheme="schematron">
               <constraint>
                 <sch:rule context="tei:ref[@source = 'zotero'][parent::tei:linkGrp]">
-                  <sch:assert
-                    test="matches(@target, '(wp2|wp3|wp4):[A-Z0-9]{8}') or matches(@target, '[A-Z0-9]{8}')"
-                    role="warning">The reference of a Zotero record is made with the Zotero item key
-                    (8 capitals or digits)</sch:assert>
+                  <sch:assert test="matches(@target, '[A-Z0-9]{8}')" role="warning">The reference
+                    of a Zotero record is made with the Zotero item key (8 capitals or
+                    digits)</sch:assert>
                 </sch:rule>
               </constraint>
             </constraintSpec>
@@ -749,7 +740,7 @@
                 <sch:rule context="tei:desc[@type = 'terms']/tei:term">
                   <sch:assert test="@source" role="error">The attribute source is important to
                     specifiy which vocabulary was used. The main ones are "tadirah", aurehal,
-                    "standard".</sch:assert>
+                    "ssk".</sch:assert>
                 </sch:rule>
               </constraint>
             </constraintSpec>
@@ -796,6 +787,15 @@
               </constraint>
             </constraintSpec>
           </elementSpec>
+
+          <elementSpec ident="figDesc" mode="change">
+            <content>
+              <elementRef key="author" minOccurs="1" maxOccurs="1"/>
+              <elementRef key="availability" minOccurs="1" maxOccurs="1"/>
+            </content>
+          </elementSpec>
+
+
         </schemaSpec>
       </div>
     </back>

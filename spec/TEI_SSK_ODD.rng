@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2019-04-15T10:04:17Z. .
+Schema generated from ODD source 2019-04-19T09:21:06Z. .
 TEI Edition: Version 3.3.0. Last updated on
 	31st January 2018, revision f4d8439
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.3.0/
@@ -134,7 +134,7 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.3.0/
             </choice>
          </zeroOrMore>
       </element>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e70396-constraint">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e70399-constraint">
          <rule context="tei:content">
             <report test="descendant::*[not(namespace-uri(.) =               ('http://relaxng.org/ns/structure/1.0', 'http://www.tei-c.org/ns/1.0'))]">content descendants must be in the
               namespaces
@@ -162,7 +162,7 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.3.0/
             </choice>
          </zeroOrMore>
       </element>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e70721-constraint">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e70724-constraint">
          <rule context="tei:constraint">
             <report test="descendant::*[not(namespace-uri(.) =               ('http://purl.oclc.org/dsdl/schematron', 'http://www.tei-c.org/ns/1.0'))]">constraint descendants must be in the
               namespaces
@@ -190,7 +190,7 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.3.0/
             </choice>
          </zeroOrMore>
       </element>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e71630-constraint">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e71633-constraint">
          <rule context="tei:datatype">
             <report test="descendant::*[not(namespace-uri(.) =               ('http://relaxng.org/ns/structure/1.0', 'http://www.tei-c.org/ns/1.0'))]">datatype descendants must be in the
               namespaces
@@ -4144,7 +4144,7 @@ Suggested values include: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] for
                       context="tei:desc[@type = 'terms']/tei:term">
                   <sch:assert test="@source" role="error">The attribute source is important to
                     specifiy which vocabulary was used. The main ones are "tadirah", aurehal,
-                    "standard".</sch:assert>
+                    "ssk".</sch:assert>
                 </sch:rule>
          </pattern>
          <ref name="att.combinable.attributes"/>
@@ -4673,9 +4673,9 @@ attributes @target and @cRef may be supplied on <name/>.</report>
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       context="tei:ref[@source = 'zotero'][parent::tei:linkGrp]">
-                  <sch:assert test="matches(@target, '(wp2|wp3|wp4):[A-Z0-9]{8}') or matches(@target, '[A-Z0-9]{8}')"
-                           role="warning">The reference of a Zotero record is made with the Zotero item key
-                    (8 capitals or digits)</sch:assert>
+                  <sch:assert test="matches(@target, '[A-Z0-9]{8}')" role="warning">The reference
+                    of a Zotero record is made with the Zotero item key (8 capitals or
+                    digits)</sch:assert>
                 </sch:rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
@@ -4960,7 +4960,6 @@ Suggested values include: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syl
                     element type value is '<sch:value-of select="."/>'</sch:assert>
                 </sch:rule>
          </pattern>
-         <ref name="att.combinable.attributes"/>
          <ref name="att.global.attributes"/>
          <ref name="att.typed.attribute.subtype"/>
          <ref name="att.placement.attributes"/>
@@ -6163,6 +6162,32 @@ Sample values include: 1] index; 2] toc; 3] figlist; 4] tablist</a:documentation
                     scenario has been carried out.</sch:assert>
                 </sch:rule>
          </pattern>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  id="TEI_SSK-publicationStmt-licenceReq-constraint-rule-37">
+            <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
+                      xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                      xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                      context="tei:publicationStmt/tei:availability">
+                  <sch:assert test="tei:licence/@target and tei:licence/tei:p" role="error">A
+                    licence should be applied to all scenarios and steps. The declaration of the
+                    licence chosen in made by a clear sentence in natural language (in a p element)
+                    and a link towards the licence (with the attribute @target).</sch:assert>
+                </sch:rule>
+         </pattern>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  id="TEI_SSK-publicationStmt-CClicence-constraint-rule-38">
+            <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
+                      xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                      xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                      context="tei:publicationStmt/tei:availability/tei:licence">
+                  <sch:assert test="@target = 'http://creativecommons.org/licenses/by/4.0/'"
+                           role="error"> The licences of the scenarios and steps should be CC-BY 4.0. Don't forget to put the link towards the licence reference text in the
+                    @target attribute. The current value of "<sch:name path="@target"/>" is
+                    "<sch:value-of select="@target"/>"</sch:assert>
+                </sch:rule>
+         </pattern>
          <ref name="att.global.attributes"/>
          <empty/>
       </element>
@@ -6234,33 +6259,6 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
                <ref name="model.pLike"/>
             </choice>
          </oneOrMore>
-         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="TEI_SSK-availability-licenceReq-constraint-rule-37">
-            <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                      xmlns="http://www.tei-c.org/ns/1.0"
-                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                      context="tei:availability">
-                  <sch:assert test="tei:licence/@target and tei:licence/tei:p" role="error">A
-                    licence should be applied to all scenarios and steps. The declaration of the
-                    licence chosen in made by a clear sentence in natural language (in a p element)
-                    and a link towards the licence (with the attribute @target).</sch:assert>
-                </sch:rule>
-         </pattern>
-         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="TEI_SSK-availability-CClicence-constraint-rule-38">
-            <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                      xmlns="http://www.tei-c.org/ns/1.0"
-                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                      context="tei:availability/tei:licence">
-                  <sch:assert test="@target = 'http://creativecommons.org/licenses/by/4.0/' or @target = 'http://creativecommons.org/publicdomain/zero/1.0/'"
-                           role="error"> The licences of the scenarios and steps should be CC-BY 4.0 or CC0
-                    1.0 Don't forget to put the link towards the licence reference text in the
-                    @target attribute. The current value of "<sch:name path="@target"/>" is
-                      "<sch:value-of select="@target"/>"</sch:assert>
-                </sch:rule>
-         </pattern>
          <ref name="att.global.attributes"/>
          <ref name="att.declarable.attributes"/>
          <optional>
@@ -13150,7 +13148,8 @@ Suggested values include: 1] schematron (ISO Schematron) </a:documentation>
    <define name="figDesc">
       <element name="figDesc">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(description of figure) contains a brief prose description of the appearance or content of a graphic figure, for use when documenting an image without displaying it. [14.4. Specific Elements for Graphic Images]</a:documentation>
-         <ref name="macro.limitedContent"/>
+         <ref name="author"/>
+         <ref name="availability"/>
          <ref name="att.global.attributes"/>
          <empty/>
       </element>
