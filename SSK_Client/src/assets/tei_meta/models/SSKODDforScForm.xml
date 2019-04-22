@@ -8,6 +8,9 @@
         <author>
           <name>Charles Riondet</name>
         </author>
+        <author>
+          <name>Lionel Tadjou</name>
+        </author>
       </titleStmt>
       <publicationStmt>
         <p/>
@@ -36,24 +39,25 @@
         <moduleRef key="figures"/>
 
         <!-- root TEI -->
-        <elementSpec ident="TEI" module="textstructure">
+        <elementSpec ident="TEI" module="textstructure" mode="change">
           <content>
             <sequence minOccurs="1" maxOccurs="1">
               <elementRef key="teiHeader"/>
               <elementRef key="text"/>
             </sequence>
           </content>
-          <attList>
-            <attDef ident="type" usage="req" n="auto">
-              <defaultVal>researchScenario</defaultVal>
-            </attDef>
-            <!-- <attDef ident="xml:id" usage="req" n="auto">
+          <!--	<attList>
+						<attDef ident="type" usage="req" n="auto">
+						  <desc>type of TEI file (scenario or step)</desc>
+							<defaultVal>researchScenario</defaultVal>
+						</attDef>
+					  <attDef ident="xml:id" usage="req" n="auto">
 					    <desc>ID of TEI file</desc>
 							<datatype>
 								<dataRef key="anyURI"/>
 							</datatype>
-						</attDef>-->
-          </attList>
+						</attDef>
+					</attList>-->
         </elementSpec>
 
         <!-- teiHeader -->
@@ -90,20 +94,6 @@
           </content>
         </elementSpec>
 
-        <elementSpec ident="forename">
-          <desc>Author's forename</desc>
-          <content>
-            <textNode/>
-          </content>
-        </elementSpec>
-
-        <elementSpec ident="surname">
-          <desc>Author's surname</desc>
-          <content>
-            <textNode/>
-          </content>
-        </elementSpec>
-
         <elementSpec ident="affiliation">
           <desc>Author's affiliation</desc>
           <content>
@@ -118,14 +108,6 @@
           </content>
         </elementSpec>
 
-        <!-- Title of the TEI file automatically generated -->
-        <!--<elementSpec ident="title" module="core" mode="change" n="auto">
-					<desc>Title of the document (should be automatically generated)</desc>
-					<content>
-						<textNode/>
-					</content>
-				</elementSpec>-->
-
         <elementSpec ident="publicationStmt" module="header" mode="change">
           <content>
             <elementRef key="authority"/>
@@ -135,21 +117,15 @@
 
         <elementSpec ident="availability" module="header">
           <content>
-            <elementRef key="licence" minOccurs="1" maxOccurs="unbounded"/>
+            <elementRef key="licence" minOccurs="1" maxOccurs="1"/>
           </content>
         </elementSpec>
 
         <elementSpec ident="licence" module="header">
-          <desc xml:lang="fr">License</desc>
+          <desc xml:lang="en">License</desc>
           <desc xml:lang="fr">Licence</desc>
-          <content>
-            <elementRef key="p" minOccurs="1" maxOccurs="1"/>
-          </content>
           <attList>
             <attDef ident="target">
-              <datatype>
-                <dataRef key="anyURI"/>
-              </datatype>
               <!-- The value of the desc elements should be copied in the <p> -->
               <valList>
                 <valItem ident="http://creativecommons.org/licenses/by/4.0/">
@@ -157,7 +133,7 @@
                     this document.</desc>
                 </valItem>
                 <valItem ident="https://creativecommons.org/publicdomain/zero/1.0/">
-                  <desc>No copyright</desc>
+                  <desc>No Copyright</desc>
                 </valItem>
               </valList>
             </attDef>
@@ -165,14 +141,13 @@
         </elementSpec>
 
         <elementSpec ident="authority">
-          <desc>Context (if the scenario is the result of a project's work, put the name of the project
-            here).</desc>
+          <desc>Context (if the scenarios is the result of a project's work, put the name of the
+            project here).</desc>
           <content>
             <textNode/>
           </content>
         </elementSpec>
 
-        <!--Scenario description-->
         <elementSpec ident="text" module="textstructure">
           <content>
             <sequence>
@@ -180,7 +155,6 @@
             </sequence>
           </content>
         </elementSpec>
-
 
         <elementSpec ident="body" module="textstructure">
           <content>
@@ -190,28 +164,42 @@
 
         <elementSpec ident="div" module="textstructure">
           <content>
-              <elementRef key="head" corresp="scenarioTitle" minOccurs="1" maxOccurs="unbounded"/>
-              <elementRef key="desc" corresp="definition" minOccurs="1" maxOccurs="unbounded"/>
-              <elementRef key="desc" corresp="terms" minOccurs="1" maxOccurs="1"/>
+            <elementRef key="head" minOccurs="1" maxOccurs="unbounded"/>
+            <elementRef key="desc" corresp="definition" minOccurs="1" maxOccurs="unbounded"/>
+            <elementRef key="desc" corresp="terms" minOccurs="1" maxOccurs="unbounded"/>
+            <elementRef key="figure" corresp="image" minOccurs="1" maxOccurs="1"/>
+            <!-- No listEvent-->
           </content>
         </elementSpec>
 
-        
-
-        <elementSpec ident="head" corresp="scenarioTitle">
+        <elementSpec ident="head">
           <desc>Title of the scenario</desc>
           <content>
             <textNode/>
           </content>
           <attList>
-            <attDef ident="type" usage="req" n="auto">
-              <defaultVal>scenarioTitle</defaultVal>
-            </attDef>
             <attDef ident="xml:lang" usage="req" mode="change">
               <desc>language</desc>
               <datatype>
                 <dataRef key="teidata.language"/>
               </datatype>
+              <valList>
+                <valItem ident="en">
+                  <gloss>English</gloss>
+                </valItem>
+                <valItem ident="fr">
+                  <gloss>Français</gloss>
+                </valItem>
+                <valItem ident="de">
+                  <gloss>Deutsch</gloss>
+                </valItem>
+                <valItem ident="it">
+                  <gloss>Italiano</gloss>
+                </valItem>
+                <valItem ident="es">
+                  <gloss>Español</gloss>
+                </valItem>
+              </valList>
             </attDef>
           </attList>
         </elementSpec>
@@ -222,38 +210,41 @@
             <textNode/>
           </content>
           <attList>
-            <attDef ident="type" usage="req" mode="change" n="auto">
-              <defaultVal>definition</defaultVal>
-            </attDef>
             <!-- @xml:lang is required -->
             <attDef ident="xml:lang" usage="req" mode="change">
               <desc>language</desc>
               <datatype>
                 <dataRef key="teidata.language"/>
               </datatype>
+              <valList>
+                <valItem ident="en">
+                  <gloss>English</gloss>
+                </valItem>
+                <valItem ident="fr">
+                  <gloss>Français</gloss>
+                </valItem>
+                <valItem ident="de">
+                  <gloss>Deutsch</gloss>
+                </valItem>
+                <valItem ident="it">
+                  <gloss>Italiano</gloss>
+                </valItem>
+                <valItem ident="es">
+                  <gloss>Español</gloss>
+                </valItem>
+              </valList>
             </attDef>
           </attList>
         </elementSpec>
 
         <elementSpec ident="desc" corresp="terms">
+          <desc>Descriptive terms</desc>
           <content>
-            <elementRef key="term" corresp="techniques" minOccurs="0" maxOccurs="4"/>
             <elementRef key="term" corresp="disciplines" minOccurs="0" maxOccurs="4"/>
+            <elementRef key="term" corresp="techniques" minOccurs="0" maxOccurs="4"/>
             <elementRef key="term" corresp="objects" minOccurs="0" maxOccurs="4"/>
+            <elementRef key="term" corresp="standard" minOccurs="0" maxOccurs="4"/>
           </content>
-          <attList>
-            <attDef ident="type" usage="req" mode="change" n="auto">
-              <desc>Type. Should be "terms" by default</desc>
-              <defaultVal>terms</defaultVal>
-            </attDef>
-            <!-- @xml:lang is required -->
-            <attDef ident="xml:lang" usage="req" mode="change">
-              <desc>language</desc>
-              <datatype>
-                <dataRef key="teidata.language"/>
-              </datatype>
-            </attDef>
-          </attList>
         </elementSpec>
 
         <!--Disciplines list-->
@@ -262,7 +253,7 @@
             science. Scenarios may apply to one or more disciplines. </desc>
           <attList>
             <attDef ident="key">
-              <desc>The term itself</desc>
+              <desc>Discipline</desc>
               <datatype>
                 <dataRef name="anyURI"/>
               </datatype>
@@ -296,20 +287,6 @@
                 <valItem ident="Sociology "/>
               </valList>
             </attDef>
-            <attDef ident="source">
-              <desc>The thesaurus used</desc>
-              <datatype>
-                <dataRef name="anyURI"/>
-              </datatype>
-              <defaultVal>AureHal</defaultVal>
-            </attDef>
-            <attDef ident="type">
-              <desc>The type of the term</desc>
-              <datatype>
-                <dataRef name="anyURI"/>
-              </datatype>
-              <defaultVal>discipline</defaultVal>
-            </attDef>
           </attList>
         </elementSpec>
 
@@ -319,7 +296,7 @@
             a scenario. Scenarios may apply to one or more research objects. </desc>
           <attList>
             <attDef ident="key">
-              <desc>The term itself</desc>
+              <desc>Object</desc>
               <datatype>
                 <dataRef name="anyURI"/>
               </datatype>
@@ -362,20 +339,6 @@
                 <valItem ident="VREs"/>
               </valList>
             </attDef>
-            <attDef ident="source">
-              <desc>The thesaurus used</desc>
-              <datatype>
-                <dataRef name="anyURI"/>
-              </datatype>
-              <defaultVal>TaDiRAH</defaultVal>
-            </attDef>
-            <attDef ident="type">
-              <desc>The type of the term</desc>
-              <datatype>
-                <dataRef name="anyURI"/>
-              </datatype>
-              <defaultVal>object</defaultVal>
-            </attDef>
           </attList>
         </elementSpec>
 
@@ -385,7 +348,7 @@
             Scenarios may use one or more research techniques.</desc>
           <attList>
             <attDef ident="key">
-              <desc>The term itself</desc>
+              <desc>Technique</desc>
               <datatype>
                 <dataRef name="anyURI"/>
               </datatype>
@@ -428,54 +391,75 @@
                 <valItem ident="Text Mining "/>
               </valList>
             </attDef>
-            <attDef ident="source">
-              <desc>The thesaurus used</desc>
+          </attList>
+        </elementSpec>
+
+        <elementSpec ident="term" corresp="standard">
+          <desc>Standards used</desc>
+          <attList>
+            <attDef ident="key">
               <datatype>
                 <dataRef name="anyURI"/>
               </datatype>
-              <defaultVal>TaDiRAH</defaultVal>
-            </attDef>
-            <attDef ident="type">
-              <desc>The type of the term</desc>
-              <datatype>
-                <dataRef name="anyURI"/>
-              </datatype>
-              <defaultVal>technique</defaultVal>
             </attDef>
           </attList>
         </elementSpec>
 
+        <elementSpec ident="figure" corresp="image" module="figures">
+          <desc>Scenario illustration</desc>
+          <content>
+            <elementRef key="head" corresp="image" minOccurs="1" maxOccurs="1"/>
+            <elementRef key="graphic" minOccurs="1" maxOccurs="1"/>
+            <elementRef key="figDesc" minOccurs="1" maxOccurs="1"/>
+          </content>
+        </elementSpec>
 
-       <!-- <elementSpec ident="term" corresp="standard">
-          <desc>Standard Term</desc>
-          <attList>
-            <attDef ident="type" rend="standard" n="auto">
-              <desc>Type should be "standard" by default</desc>
-            </attDef>
-            <attDef ident="source">
-              <desc>Source shoud be "ssk" by default</desc>
-              <defaultVal>ssk</defaultVal>
-            </attDef>
-            <attDef ident="key">
-              <desc>Abbreviated name of the standard</desc>
-              <valList type="semi">
-                <valItem ident="XML"/>
-              </valList>
-            </attDef>
-          </attList>
-        </elementSpec>-->
-
-        <!-- generic elements-->
-
-
-        
-
-        <elementSpec ident="p" module="core">
+        <elementSpec ident="head" corresp="image">
+          <desc>Image title</desc>
           <content>
             <textNode/>
           </content>
         </elementSpec>
 
+        <elementSpec ident="graphic" module="figures">
+          <desc>illustration URL</desc>
+          <attList>
+            <attDef ident="url">
+              <datatype>
+                <dataRef name="anyURI"/>
+              </datatype>
+            </attDef>
+          </attList>
+        </elementSpec>
+
+        <elementSpec ident="figDesc" module="figures">
+          <desc>Image licence</desc>
+          <content>
+            <elementRef key="author" corresp="imgAuthor" minOccurs="1" maxOccurs="1"/>
+            <elementRef key="availability" minOccurs="1" maxOccurs="1"/>
+          </content>
+        </elementSpec>
+
+        <elementSpec ident="forename" module="namesdates">
+          <desc xml:lang="en">Author's forename</desc>
+          <content>
+            <textNode/>
+          </content>
+        </elementSpec>
+        <elementSpec ident="surname" module="namesdates">
+          <desc xml:lang="en">Author's surname</desc>
+          <content>
+            <textNode/>
+          </content>
+        </elementSpec>
+
+        <elementSpec ident="author" corresp="imgAuthor">
+          <desc>Image author</desc>
+          <content>
+            <textNode/>
+          </content>
+        </elementSpec>
+        
       </schemaSpec>
     </body>
   </text>
