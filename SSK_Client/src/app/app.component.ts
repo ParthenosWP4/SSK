@@ -62,12 +62,12 @@ export class AppComponent implements  OnInit, AfterViewInit {
                             'idx': '4'}];
 
   forImage = environment.forImage;
+  userIsLogin =  false;
 
   constructor(private sskService: SskService, private router: Router, private location: Location,
               private elastiServ: ElastichsearchService, route: ActivatedRoute, private contentComp: ContentComponent, ) { }
 
   ngOnInit() {
-   
       this.sskService.checkBackEndAvailability();
       $('a.dropdown-item.dropdown-toggle').on('click', function(e) {
         const subMenu = $(this).next('div.dropdown-menu.in');
@@ -83,7 +83,6 @@ export class AppComponent implements  OnInit, AfterViewInit {
     if (link.includes('github')) {
       window.open(link, '_blank');
     } else if (link.includes('new_scenario')) {
-      console.log("sdsdsds");
       this.router.navigate(['scenarios', 'new']);
     } else {
       this.router.navigate([link]);
@@ -106,7 +105,6 @@ export class AppComponent implements  OnInit, AfterViewInit {
   }
 
   clickFlag(flag: string) {
-    console.log(this);
     this.currentFlag = flag;
   }
 }

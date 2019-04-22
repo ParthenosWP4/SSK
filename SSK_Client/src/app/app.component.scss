@@ -14,6 +14,9 @@
   background-color: $color-3
 }
 
+.btn.btn-black.active{
+  cursor: pointer;
+}
 
 .btn-black{
   background-color:#000;
@@ -22,11 +25,30 @@
 
 .flag{
   border-left: solid white 1px;
+  padding:  .5rem .5rem !important
+}
+
+.flagWithUserLogin{
+  border-radius: .5rem !important;
+  border: none;
+  margin-left: .2rem !important;
+}
+.fa-bell.fa-2x{
+  font-size: 2.3rem;
+}
+.avatar{
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .isDisabled {
   cursor: not-allowed;
   opacity: 0.5;
+}
+.in_img_login{
+  background-color: $color-54;
+ 
 }
 
 

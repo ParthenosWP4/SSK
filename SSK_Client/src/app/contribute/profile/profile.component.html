@@ -1,0 +1,107 @@
+<div  class="row data-account">
+    <div class="col-lg-2 my-lg-5  offset-2 text-center">
+        <div class ="  mx-auto">
+            <img [src]="profilePicture" class="picture-profile">
+            <div >
+                <span  class="editImg">Edit picture</span>
+                <img class="align-middle  smallest mx-lg-2" [src]="editIcon2"> 
+            </div>
+           
+  
+        </div>
+        
+    </div>
+    
+    <div class="col-lg-7 my-lg-5 profile-head-right">
+        <div id ="name" class="mb-2">
+            <span class="align-middle mr-2"> Charles Riondet</span>
+            <img class="align-middle" [src]="editIcon"> 
+        </div>
+        <div class="w-100"></div>
+        <div id ="affiliation">
+            <span class="align-middle mr-2">OEAW-ACDH</span>
+            <img class="align-middle" [src]="editIcon2"> 
+        </div>
+        <div class="w-100"></div>
+        <div id ="orcid-account-address" class="my-lg-3">
+           <img class="align-middle" [src]="orcidIcon"> 
+            <span class="mx-2 vcenter">https://orcid.org/0000-0001-5420-9596</span>
+            <img class="align-middle small" [src]="editIcon"> 
+
+        </div>
+        <div class="w-100"></div>
+        <div id ="orcid-account-address" class="">
+            <img class="align-middle " [src]="emailIcon">
+            <span class="mx-2 vcenter">Charles.Riondet@inria.fr</span>
+            <img class="align-middle small" [src]="editIcon"> 
+        </div>
+        <div class="w-100 "></div>
+        <div class="add-data mt-lg-5">
+                <a class="add-button mr-4 p-lg-2"> 
+                    <img class="mx-lg-2" [src]="addCircleIcon">
+                    <span class="align-middle">ADD A SCENARIO </span>
+                </a>
+                <a class="add-button mr-4 p-lg-2">  
+                    <img class="mx-lg-2" [src]="addCircleIcon">
+                    <span class="align-middle"> ADD A STEP </span>
+                </a>
+                <a class="add-button p-lg-2">                 
+                    <img class="align-middle mx-lg-2" [src]="addCircleIcon">
+                   <span class="vcenter align-middle"> ADD A RESOURCE </span>
+                </a>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row nav-row ">
+
+    <div class="col-md-9 pl-5 pt-5 tab-container">
+        <ul class="nav nav-pills mb-3 ml-5 pl-0" id="pills-tab" role="tablist">
+                <li class="nav-item offset-5">
+                    <a class="nav-link active" id="pills-publication-tab" data-toggle="pill" href="#pills-publication" role="tab" aria-controls="pills-publication" aria-selected="true">Publications()</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-draft-tab" data-toggle="pill" href="#pills-draft" role="tab" aria-controls="pills-draft" aria-selected="false">Draft()</a>
+                </li>
+        </ul>
+
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade active show" id="pills-publication" role="tabpanel" aria-labelledby="pills-publication-tab">
+                    <div class="row pt-5">
+                            <div class="col-md-3 publication-text">
+                                    <p>{{ textPublication1 }}</p>
+                                    <p>{{ textPublication2 }}</p>
+                                    <p>{{ textPublication3 }}</p>
+                                  
+                            </div>
+                            <!--                             
+                            <div class="col-md-8 prem-elt" *ngFor="let scenario of publicationScenarios">
+                                    <app-scenario-card class="" [scenario]="scenario" [inScenario]= 'true'></app-scenario-card>
+                            </div>   
+                            -->
+                    </div>
+
+                     
+            </div>
+            <div class="tab-pane fade" id="pills-draft" role="tabpanel" aria-labelledby="pills-draft-tab">
+                <div class="row pt-5">
+                        <div class="col-md-3">
+                                <p>{{ textDraft1 }}</p>
+                                <p>{{ textDraft2 }}</p>
+                                <p>{{ textDraft3 }}</p>
+                        </div>
+                        <div class="col-md-8">
+                            <p>Scenarios</p>
+                            <p>Steps</p>
+                        </div>
+                </div>
+            </div>
+
+            
+         </div>
+
+     </div>
+     
+</div>

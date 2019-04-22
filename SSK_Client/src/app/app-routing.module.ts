@@ -15,6 +15,7 @@ import { PolicyComponent } from './infos/policy/policy.component';
 import { LicenseCitationComponent } from './infos/license-citation/license-citation.component';
 import { UserComponent } from './contribute/user/user.component';
 import { DocumentationComponent } from './infos/documentation/documentation.component';
+import { ProfileComponent } from './contribute/profile/profile.component';
 
 
 const routes: Routes = [
@@ -81,6 +82,7 @@ const routes: Routes = [
   { path: 'policy',  component: PolicyComponent },
   { path: 'license',  component: LicenseCitationComponent },
   { path: 'user',  component: UserComponent },
+  { path: 'user/:userid',  component: ProfileComponent },
   { path: 'scenarios/:id/:stepId', component: ScenarioComponent},
   {
     path: 'vocabularies', component: GlossaryComponent,

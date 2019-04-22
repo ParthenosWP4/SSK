@@ -1,0 +1,134 @@
+
+.logo{
+    text-align: center;
+}
+
+.container{
+    background: linear-gradient(135deg, #EEEEEE 0%, #90CCE6 100%);
+
+}
+
+
+
+.btn-primary {
+    color: #fff;
+    background-color: #0275d8;
+    border-color: #0275d8;
+    width: 100%;
+}
+
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.hr-or-login {
+    display: flex;
+  }
+
+.hr-line{
+    width: 22%;
+    position: relative;
+    margin: 11px;
+    border-bottom: 3px solid #3E6477;
+  }
+
+label{
+      width: 100%;
+  }
+
+.sign-in-button{
+    background-color: #63B9D8;
+}
+
+.orcid-button{
+    background-color: #A7CC46;
+}
+
+.github-button{
+    background-color: #24292D;
+}
+
+.github-button, .orcid-button, .sign-in-button{
+    border-radius: 25px;
+}
+
+.underlined-link{
+    text-decoration:underline;
+}
+
+.or-login-with {
+    font-family: "Avenir Next";      
+    color: #3E6477;        
+}
+
+.github-icon, .orcid-icon {
+    width:30px;
+}
+
+
+.github-text-button, .orcid-text-button{
+    padding-right: 4.5rem !important;
+}
+.password-icon {
+    width:30px;
+}
+
+.email-icon {
+    width:30px;
+}
+.btn-lg, .btn-group-lg > .btn {
+    height: 3.25rem;
+}
+
+.input-group{
+    height: 50px;
+}
+
+.transparent {
+    background-color: white;
+    width:50px;
+}
+
+.left-border-none {
+    border-left: none !important;
+    
+}
+
+.error-message{
+    color:red;
+}
+
+.btn-primary{
+    border-color: transparent !important;
+}
+
+.form-control {
+    background-clip: inherit;
+    border-width: inherit;
+}
+
+
+.input-group-addon{
+    border: 0px;
+}
+
+.underlined-link {
+    color: black;
+    font-size: small;
+}
+
+
+.no-account-text{
+    color: #3E6477;   
+}
+
+svg{
+    width: 13rem;
+}
+
+.btn-lg, .btn-group-lg > .btn {
+    padding: 0.75rem; 
+}

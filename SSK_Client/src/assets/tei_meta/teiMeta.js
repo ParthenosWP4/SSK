@@ -140,7 +140,7 @@
         }
         if (e.which === 78 && (e.ctrlKey === true || e.metaKey === true)) { // ctrl N
             e.preventDefault();
-            events.newXml('new'); // checked changes
+           // events.newXml('new'); // checked changes
         }
     }
     function init() {
@@ -176,16 +176,14 @@
         });
         common.setLanguage(teimeta.teiData.params.language, false);
         // load previous data
-        events.newXml('previous');
+       // events.newXml('previous');
     }
     exports.init = init;
     // in case the document is already rendered
     if (document.readyState != 'loading'){
-        console.log("2222222")
         init();
     }
     else if (document.addEventListener){
-        console.log("zfsdfsdfsdfsd")
         document.addEventListener('DOMContentLoaded', init);
     }
        
@@ -358,12 +356,15 @@
             }
         }
         if (teimeta.teiData.dataOdd) {
-            common.askUserModalForOdd(teimeta.teiData.oddName, true, openChooseOdd);
+           common.askUserModalForOdd(teimeta.teiData.oddName, true, openChooseOdd);
         }
         else {
-            common.askUserModalForOdd('', false, openChooseOdd);
+           common.askUserModalForOdd('', false, openChooseOdd);
         }
     }
+
+    exports.findOdd = findOdd; //Added by Lionel
+
     function cleanCss() {
         teimeta.teiData.cssName = "";
         teimeta.teiData.dataCss = "";
@@ -390,8 +391,10 @@
             //console.log(edit.values);
         }
         teimeta.teiData.fileName = name ? name : msg.msg('newfile');
-        var el = document.getElementById('filename');
+       // /*Commeted by Lionel 
+        var el = document.getElementById('filename'); 
         el.innerHTML = msg.msg('file') + teimeta.teiData.fileName;
+        //*/
         // test if cssfile is needed
         if (teimeta.teiData.dataOdd && teimeta.teiData.dataOdd.cssfile) {
             testCss(teimeta.teiData.dataOdd.cssfile, finishIt);
@@ -399,6 +402,7 @@
         else
             finishIt();
     }
+    exports.finishOpenXml = finishOpenXml; // Added by Lionel
     function testCss(cssname, fun) {
         function afterOpenCssFile(err, cssname, displayname, cssdata, unused1, unused2) {
             if (!err) {
@@ -17329,6 +17333,10 @@
         window['teimeta'].saveAsLocal = events.saveAsLocal;
         window['teimeta'].dumpHtml = events.dumpHtml;
         window['teimeta'].emptyFile = events.emptyFile;
+        window['teimeta'].initXml = events.initXml; //Added by Lionel
+        window['teimeta'].finishOpenXml = events.finishOpenXml; //Added by Lionel
+        window['teimeta'].findOdd = events.findOdd; //Added by Lionel
+        window['teimeta'].oddLoadUrl = events.oddLoadUrl; //Added by Lionel
     }
     exports.init = init;
     function saveFileLocal(type, name, data) {
@@ -17392,7 +17400,6 @@
             teimeta.readTextFile("./assets/tei_meta/models/models.json", function (err, data) {
                 if (!err) {
                     var ds = data.toString();
-                   
                     try {
                         var js = JSON.parse(ds);
                         for (var i = 0; i < js.length; i++) {
@@ -17427,8 +17434,10 @@
         } 
     }
     exports.oddpredefs = oddpredefs;
+
+
     function askUserModalForOdd(previousname, loaded, fun) {
-        function afteroddpredefs(predefs) {
+       function afteroddpredefs(predefs) {
             var askoddInfo = msg.msg('askoddInfo');
             var askoddCurrent = msg.msg('askoddCurrent');
             var askoddLocalOdd = msg.msg('askoddLocalOdd');
@@ -17475,8 +17484,9 @@
             }).afterClose(function (modal, event) {
                 fun(event.detail);
             }).show();
-        }
-        oddpredefs(afteroddpredefs);
+       }
+       oddpredefs(afteroddpredefs);
+      // callback(oddprefdefined);
     }
     exports.askUserModalForOdd = askUserModalForOdd;
     

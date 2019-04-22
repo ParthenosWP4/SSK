@@ -1,0 +1,91 @@
+@import '../../../partials/variables';
+
+
+.data-account, .add-data {
+    background-color:#F4F4F4
+}
+
+.nav-row {
+    background-color: #FFFFFF;
+    border:1px #E0E0E0 solid;
+}
+
+#name {
+    color: #4A4A4A;
+    font-family: "Avenir Next";	
+    font-size: 24px;	
+    font-weight: 500;	
+    line-height: 33px;
+}
+
+#affiliation{
+    font-weight: 300;
+    color: #9B9B9B;
+    font-family: "Avenir Next";	
+    font-size: 20px;	
+    line-height: 27px;
+}
+
+#orcid-account-address{
+    color: #4A4A4A;	
+    font-family: "Avenir Next";	
+    font-size: 12px;	
+}
+
+.small{
+    height: 1rem;
+}
+.smallest{
+    height: .7rem;
+}
+
+.picture-profile{
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+}
+.editImg{
+    font-size: 14px;
+    font-family: "Avenir Next";	
+    color: #4A4A4A;	
+}
+
+
+
+a:not([href]):not([tabindex]) {
+    color: white;
+    text-decoration: none;
+}
+.add-button {
+    border-width: 0rem;
+    cursor: pointer;
+    height: 48px;	
+    width: 195px;	
+    border-radius: 6px;	
+    background-color: #63B9D8;
+    color: white;
+    font-family: "Avenir Next";	
+    font-size: 16px;	
+    font-weight: 600;	
+    letter-spacing: -0.03px;	
+    line-height: 22px;
+}
+
+
+.circle-icon {
+    border-radius:50%;
+    border: 1px solid white;
+    color: white;
+}
+
+.tab-container {
+    height: 2000px;
+}
+
+.publication-text {
+    height: 100%;
+}
+
+.profile-head-right{
+    margin-left: 5rem;
+}

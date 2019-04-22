@@ -60,12 +60,19 @@
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <div class="btn-group " data-toggle="buttons" role="navigation">
-        <label class="btn btn-black active">
+        <label class="btn btn-black active" *ngIf="!userIsLogin">
           <i class="ic ssk-login" aria-hidden="true"></i>&nbsp;<a routerLink="/user" class="log-in">Log in</a>
         </label>
         <span></span>
         <div class="btn-group">
-          <button type="button" class="btn btn-black flag dropdown-toggle-flag dropdown-toggle-split"
+           
+            <i *ngIf="userIsLogin" class="fa fa-bell fa-2x" aria-hidden="true"></i>
+
+            <div _ngcontent-c2="" class="mx-lg-4 d-flex  mx-auto " *ngIf="userIsLogin">
+                <img [src]= "forImage + '/assets/images/construction.jpg'" class="align-self-center avatar mx-auto " />
+            </div>
+
+          <button type="button" class="btn btn-black flag dropdown-toggle-flag dropdown-toggle-split " [ngClass]="(userIsLogin) ? flagWithUserLogin: ''"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span><img id="default-flag" [src]="forImage + '/assets/images/' + currentFlag" alt="england-flag"></span>
           </button>

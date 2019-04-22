@@ -4,7 +4,6 @@ import {SskService} from '../../ssk.service';
 import {ElastichsearchService} from '../../elastichsearch.service';
 import * as _ from 'lodash';
 declare var $: any;
-import {DomSanitizer} from '@angular/platform-browser';
 import { ClipboardService } from 'ngx-clipboard';
 import {Location} from '@angular/common';
 import { Subscription } from 'rxjs/Subscription';
@@ -30,6 +29,7 @@ export class ContentComponent implements OnInit, AfterViewInit {
   type: string;
   questionElem: any;
   navigationSubscription: Subscription;
+
 
   constructor(private  sskServ: SskService, private elastiServ: ElastichsearchService, private router: Router,
     private renderer: Renderer2, private _clipboardService: ClipboardService, private location: Location) {
