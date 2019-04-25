@@ -13,8 +13,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular-devkit/core": "0.0.29",
-    "@angular-devkit/schematics": "^0.6.8",
+    "@angular-devkit/core": "^7.3.8",
     "@angular/animations": "^5.0.0",
     "@angular/common": "^5.0.0",
     "@angular/compiler": "^5.0.0",
@@ -95,8 +94,6 @@
     "tslint": "~5.7.0",
     "typescript": "^2.9.2",
     "uglifyjs-webpack-plugin": "^1.1.5",
-    "url-loader": "^0.6.2",
-    "webpack": "~3.10.0",
-    "webpack-dev-server": "~2.9.3"
+    "url-loader": "^0.6.2"
   }
 }

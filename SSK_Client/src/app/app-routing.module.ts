@@ -16,6 +16,7 @@ import { LicenseCitationComponent } from './infos/license-citation/license-citat
 import { UserComponent } from './contribute/user/user.component';
 import { DocumentationComponent } from './infos/documentation/documentation.component';
 import { ProfileComponent } from './contribute/profile/profile.component';
+import { CreateAccountComponent } from './contribute/create-account/create-account.component';
 
 
 const routes: Routes = [
@@ -69,7 +70,12 @@ const routes: Routes = [
 },
   { path: 'construction',  component: PageInContructionComponent },
   { path: 'contact',  component: ContactComponent },
-  { path: 'new-scenario',  component: NewScenarioComponent },
+  { path: 'new-scenario',  component: NewScenarioComponent,
+  data: {
+    breadcrumbs: true,
+    text: 'Create New Scenario'
+  }
+},
   { path: 'add-standard',  component: AddStandardComponent },
   { path: 'team',  component: TeamComponent,
     data: {
@@ -81,7 +87,8 @@ const routes: Routes = [
   { path: 'documentation',  component: DocumentationComponent },
   { path: 'policy',  component: PolicyComponent },
   { path: 'license',  component: LicenseCitationComponent },
-  { path: 'user',  component: UserComponent },
+  { path: 'user/login',  component: UserComponent },
+  { path: 'user/create-account',  component: CreateAccountComponent },
   { path: 'user/:userid',  component: ProfileComponent },
   { path: 'scenarios/:id/:stepId', component: ScenarioComponent},
   {

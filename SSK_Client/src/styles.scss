@@ -418,6 +418,31 @@ div.popover{
   
 }
 
+.nav-tabs .nav-link{
+  border-left: none !important;
+  border-right: none !important;
+  border-top: none !important;
+  border-radius: unset !important;
+  font-family: $raleway-regular !important;
+  color:$color-24 !important;
+ cursor: pointer;
+}
+
+a.nav-link.pull-left.active{
+  border-bottom: 5px solid $color-47 !important;
+  background-color: transparent !important;
+  color: $color-47 !important;
+  font-weight: bold;
+}
+
+
+
+ul li a:hover{
+  border-bottom: 5px solid $color-47 !important;
+  color: $color-47 !important;
+  font-weight: bold;
+}
+
 @media (max-width: 576px) {
   .part-text{
     padding-top: 1rem;

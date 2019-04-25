@@ -1,7 +1,7 @@
 {
     "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
     "project": {
-      "name": "SSK_Client"
+      "name": "ssk-front-end"
     },
     "apps": [
       {
@@ -30,8 +30,7 @@
           "../node_modules/bootstrap/dist/js/bootstrap.min.js",
           "../node_modules/fuse-js-latest/dist/fuse.js",
           "../node_modules/typeahead.js/dist/typeahead.bundle.min.js",
-          "../node_modules/typeahead.js/dist/bloodhound.min.js",
-          "../src/assets/tei_meta/teiMeta.js"
+          "../node_modules/typeahead.js/dist/bloodhound.min.js"
         ],
         "environmentSource": "environments/environment.ts",
         "environments": {

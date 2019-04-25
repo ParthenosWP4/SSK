@@ -13,9 +13,6 @@ import {NgbTypeaheadConfig} from '@ng-bootstrap/ng-bootstrap';
 import {Subject} from 'rxjs/Subject';
 import 'rxjs/add/operator/delay';
 import * as Bloodhound from 'bloodhound-js';
-import { CodegenComponentFactoryResolver } from '@angular/core/src/linker/component_factory_resolver';
-
-
 declare const $;
 
 

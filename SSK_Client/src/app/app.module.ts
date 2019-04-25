@@ -48,6 +48,10 @@ import { TagDirectiveDirective } from './tag-directive.directive';
 import { ClipboardModule } from 'ngx-clipboard';
 import { ResourceTypePipe } from './resource-card/resource-type.pipe';
 import { ProfileComponent } from './contribute/profile/profile.component';
+import { CreateAccountComponent } from './contribute/create-account/create-account.component';
+import {GithubService} from './github.service';
+
+
 
 /*export function dataProviderFactory(provider: ElastichsearchService) {
   return () => provider.loadData();
@@ -84,7 +88,8 @@ import { ProfileComponent } from './contribute/profile/profile.component';
     ModalResourcesComponent,
     TagDirectiveDirective,
     ResourceTypePipe,
-    ProfileComponent
+    ProfileComponent,
+    CreateAccountComponent
   ],
   imports:
     [
@@ -109,6 +114,7 @@ import { ProfileComponent } from './contribute/profile/profile.component';
     CUSTOM_ELEMENTS_SCHEMA
   ],
   providers: [NgbActiveModal, appRoutingProviders, SafeHtmlPipe, ElastichsearchService, SskService, GlossaryResolver, HighlightPipe,
+    GithubService,
     //{ provide: APP_INITIALIZER, useFactory: dataProviderFactory, deps: [ElastichsearchService], multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true}
     ],

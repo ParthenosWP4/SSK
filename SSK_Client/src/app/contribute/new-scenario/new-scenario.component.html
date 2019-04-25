@@ -1,8 +1,86 @@
+<div class="row home">
+  <div class="col-lg-12">
+    <div class="mt-lg-5   mr-lg-4">
+      <ul class="nav nav-tabs mx-lg-5" role="tablist">
+        <li *ngFor=" let item  of tabList; let i=index" class="nav-item ">
+          <a class="nav-link pull-left" [ngClass]="(item.tab == active) ? 'active':''" data-toggle="tab"
+            [attr.data-target]="'#'+ item.tab + '-tab'" (click)="toggle(item)">
+            {{i+1}}.{{item.text}}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
+
+<!---------------------------------------------------------------------------->
+<div class="home row">
+
+  <div class="col-lg-12 ">
+    <div class="tab-content  mx-5 tab">
+      <div class="tab-pane" id="terms-tab" [ngClass]="(active === 'terms') ? 'active':''">
+        <!-- create an account  or sign in to (contribute component  1step )-->
+
+        <div  *ngIf='!showTermsCdtions'>
+          <div class="pt-5 text-center contributeTerms">
+            <p> {{ contributeTerms }} <span class="termsCdtionsLink" (click)="showTermsCdtions = true">terms and conditions of use.</span></p>
+          </div>
   
-    <div id="bottomall">
-    <div id="info">
-      <div class="infofiles d-none" id="filename">TEI: </div>
+          <div class="pt-5 text-center contributeTerms">
+            <button class="btn btn-primary submit-button my-5 sign-button" value="" (click)="open('signIn')">SIGN IN</button>
+            <button class="btn btn-primary submit-button ml-5 my-5 create-account-button" (click)="open('create')"
+              value="">CREATE ACCOUNT</button>
+          </div>
+          <div class="col-md-5 pt-4 pb-5 px-0 text-center exploring-scenarios">
+            But no need of an account
+            <a [routerLink]="['/scenarios']">to start exploring available scenarios</a>
+            and adopt the best practices!
+          </div>
+        </div>
+        
+         <!-- terms conditions pill content  one page   3rd step -->
+         <div class="fade show active" *ngIf='showTermsCdtions'>
+          <div class="row pt-4 terms-conditions-container">
+                <div *ngFor="let data of termsOfUseData" class="col-lg-10 pt-2 ml-5 ">
+                    <h2 class="ml-4">{{ data.title }}</h2>
+                    <p *ngFor="let txt of data.textsList" class="ml-4 pt-3 terms-of-use-text">
+                        {{ txt }}
+                    </p>
+
+                </div>
+                <div class="col-lg-10 pt-2 ml-5">
+                    <h2 class="ml-4">4. Licensing</h2>
+                    <p class="ml-4 pt-3 terms-of-use-text">
+                        The licence applicable to all the data published on the platform 
+                        (titles and descriptions of the scenarios and steps)
+                        is the Creative Commons Attribution (CC-BY), available here:
+                        <a href='https://creativecommons.org/licenses/by/4.0/legalcode.'>
+                            https://creativecommons.org/licenses/by/4.0/legalcode.
+                        </a>
+                    </p>
+                </div>
+             
+                <div class="col-lg-12 pt-3 pb-5 text-center">
+                    <input (click)= 'createAccount()' class="btn btn-primary submit-button my-lg-5 p-3 agree-continue-button" type="submit" value="AGREE &amp; CONTINUE">
+                </div>
+          </div>
     </div>
-    <div id="teidata"></div>
+
+      </div>
+      <div class="tab-pane " id="scenario-tab" [ngClass]="(active === 'scenario') ? 'active':''">
+       <!---------------------------------------------------------------------------->
+<div id="bottomall">
+  <div id="info">
+    <div class="infofiles d-none" id="filename">TEI: </div>
+  </div>
+  <div id="teidata"></div>
+</div>
+      </div>
+
+      <div class="tab-pane  " id="steps-tab" [ngClass]="(active === 'steps') ? 'active':''">
+
+      </div>
     </div>
+  </div>
+</div>

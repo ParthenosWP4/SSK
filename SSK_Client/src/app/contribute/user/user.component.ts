@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {SskService} from '../../ssk.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {environment} from '../../../environments/environment';
 import {Router} from '@angular/router';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { PlatformLocation } from '@angular/common';
 
 @Component({
   selector: 'app-user',
@@ -11,6 +13,7 @@ import {Router} from '@angular/router';
 })
 export class UserComponent implements OnInit {
 
+  @Input() goToProfile;
   forImage = environment.forImage;
   githubIcon   = this.forImage + '/assets/images/github_hover.svg';
   orcidIcon    = this.forImage + '/assets/images/icon-orcid.svg';
@@ -22,7 +25,11 @@ export class UserComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
   
-  constructor(private sskServ: SskService, private formBuilder: FormBuilder, private router: Router) { }
+  constructor(public activeModal: NgbActiveModal, private sskServ: SskService, private formBuilder: FormBuilder,
+    private router: Router, private location: PlatformLocation) {
+    this.location.onPopState(() => this.activeModal.close());
+  }
+
 
   ngOnInit() {
     this.sskServ.setTitle(this.title);
@@ -47,7 +54,17 @@ export class UserComponent implements OnInit {
       }else if (this.registerForm.value.email !== 'ssk.contact@inria.fr' && this.registerForm.value.password !== 'tork&mork') {
         return ;
       }
-      this.router.navigate(['user', 'defaultUser']);
+      if (!this.goToProfile) {
+        this.router.navigate(['user', 'defaultUser']);
+      } else {
+        this.activeModal.dismiss();
+        this.sskServ.changeNav('scenario');
+        this.router.navigate(['new-scenario']);
+      }
+  }
+
+  close() {
+    this.activeModal.dismiss();
   }
 
 }

@@ -7,8 +7,7 @@ import {Observable} from 'rxjs/Observable';
 import {Title} from '@angular/platform-browser';
 import {HttpClient, HttpResponse} from '@angular/common/http';
 import {Router} from '@angular/router';
-import { ScenarioComponent } from './scenario/scenario.component';
-import { CompileMetadataResolver } from '@angular/compiler';
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class SskService {
@@ -43,8 +42,15 @@ export class SskService {
 
   glossaryLink: string ;
 
+  private _navItemSource = new BehaviorSubject<string>('');
+  navItem$ = this._navItemSource.asObservable();
+
   constructor(private router: Router, private elasticService: ElastichsearchService,
               private http: HttpClient, private titleService: Title) {
+  }
+
+  changeNav(item) {
+    this._navItemSource.next(item);
   }
 
   initializeScenariosID() {
