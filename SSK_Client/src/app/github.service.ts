@@ -12,10 +12,9 @@ export class GithubService {
 
 
 
-AUTHORIZATION_TOKEN = 'token d9d4ac10e58e0ec7b1f0408b63795af68a617416';
+
 headers = new Headers();
 clientWithAuth = new Octokit({
-  auth: 'token d9d4ac10e58e0ec7b1f0408b63795af68a617416'
 });
   constructor(private http: Http) {
     //this.githubRepo = gh.getRepository()
