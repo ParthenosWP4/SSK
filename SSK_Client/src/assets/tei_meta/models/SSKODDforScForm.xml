@@ -258,6 +258,7 @@
                 <dataRef name="anyURI"/>
               </datatype>
               <valList>
+                <valItem ident=""/>
                 <valItem ident="Archaeology and Prehistory"/>
                 <valItem ident="Architecture, space management"/>
                 <valItem ident="Art and art history"/>
@@ -301,6 +302,7 @@
                 <dataRef name="anyURI"/>
               </datatype>
               <valList>
+                <valItem ident=""/>
                 <valItem ident="Artifacts"/>
                 <valItem ident="Bibliographic Listings"/>
                 <valItem ident="Code"/>
@@ -353,6 +355,7 @@
                 <dataRef name="anyURI"/>
               </datatype>
               <valList>
+                <valItem ident=""/>
                 <valItem ident="Bit Stream Preservation"/>
                 <valItem ident="Brainstorming"/>
                 <valItem ident="Browsing"/>
