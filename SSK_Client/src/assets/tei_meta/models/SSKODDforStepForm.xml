@@ -426,7 +426,7 @@
 								<dataRef name="anyURI"/>
 							</datatype>
 						</attDef>
-						<attDef ident="corresp">
+						<attDef ident="url">
 							<desc>Link to the project page</desc>
 							<datatype>
 								<dataRef name="anyURI"/>
