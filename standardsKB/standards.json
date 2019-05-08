@@ -914,5 +914,3 @@
        "standard_link": "http://kba.cloud/hocr-spec/1.2/"
 }
 ]
-
-{"standard_abbr_name":"TEST","standard_complete_name":"Test Es Standard Test","standard_link":"http://ssk.huma-num.fr/","standard_desc_eng":"<span style=\"color: rgb(3, 47, 98); font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; white-space: pre;\">Description in English (around 400 characters)</span>","standard_desc_fr":"<span style=\"color: rgb(3, 47, 98); font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; white-space: pre;\">Description in French (around 400 characters)</span>","standard_resources":["http://ssk.huma-num.fr/","https://ssk.readthedocs.io/en/latest/"]}
