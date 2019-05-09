@@ -694,6 +694,13 @@
         localStorage.setItem("previousXMLName", teimeta.teiData.fileName);
     }
     exports.saveStorage = saveStorage;
+
+    function generateTEI() {
+        var ed = teimeta.generateXml();
+       return ed;
+    }
+    exports.generateTEI = generateTEI;
+   
     ;
     function saveit(name, fun) {
         var ed = teimeta.generateXml();
@@ -1042,7 +1049,6 @@
      * @return {string} - xml content edited by teimeta library
      */
     function generateXml() {
-        console.log(exports.teiData)
         return generate.generateTEI(exports.teiData);
     }
     exports.generateXml = generateXml;
@@ -17337,6 +17343,7 @@
         window['teimeta'].finishOpenXml = events.finishOpenXml; //Added by Lionel
         window['teimeta'].findOdd = events.findOdd; //Added by Lionel
         window['teimeta'].oddLoadUrl = events.oddLoadUrl; //Added by Lionel
+        window['teimeta'].generateTEI = events.generateTEI; //Added by Lionel
     }
     exports.init = init;
     function saveFileLocal(type, name, data) {

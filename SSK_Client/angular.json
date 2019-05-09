@@ -35,7 +35,9 @@
               "node_modules/typeahead.js/dist/typeahead.bundle.min.js",
               "node_modules/typeahead.js/dist/bloodhound.min.js",
               "src/assets/tei_meta/teiMeta.js",
-              "./src/assets/js/octokit-rest.js"
+              "./src/assets/js/octokit-rest.js",
+              "node_modules/zotero-translation-client/src/main.js",
+              "node_modules/xml-formatter/browser/xml-formatter.js"
             ]
           },
           "configurations": {

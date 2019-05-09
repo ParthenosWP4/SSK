@@ -51,7 +51,7 @@ export class UserComponent implements OnInit {
       // stop here if form is invalid
       if (this.registerForm.invalid) {
           return;
-      }else if (this.registerForm.value.email !== 'ssk.contact@inria.fr' && this.registerForm.value.password !== 'tork&mork') {
+      }else if (this.registerForm.value.email !== 'ssk.@inria.fr' && this.registerForm.value.password !== 'tork&mork') {
         return ;
       }
       if (!this.goToProfile) {

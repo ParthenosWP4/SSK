@@ -20,14 +20,20 @@ export class RequestInterceptor implements HttpInterceptor {
              }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    console.log(request)
     this.sskServ.setStatusError(undefined);
-    request = request.clone({
-      setHeaders: {
-        observe : 'response',
-        'Content-Type': 'application/json; charset=UTF-8',
-        Accept: 'application/json; charset=UTF-8'
-      }
-    });
+    if( request.url.indexOf('zotero') !== -1) {
+
+    } else {
+      request = request.clone({
+        setHeaders: {
+          observe : 'response',
+          'Content-Type': 'application/json; charset=UTF-8',
+          Accept: 'application/json; charset=UTF-8'
+        }
+      });
+    }
+    
     return next.handle(request).do((event: HttpEvent<any>) => {
       if (event instanceof HttpResponse) {
 

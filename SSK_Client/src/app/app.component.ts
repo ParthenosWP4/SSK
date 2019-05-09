@@ -9,6 +9,7 @@ import {Location} from '@angular/common';
 import { ElastichsearchService } from './elastichsearch.service';
 import { ContentComponent } from './glossary/content/content.component';
 import {environment} from '../environments/environment';
+declare const $;
 
 @Component({
   providers: [ ContentComponent ],

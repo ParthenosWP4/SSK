@@ -1,0 +1,13 @@
+<div class="my-lg-5">
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Resource's link</label>
+    <input type="text" class="form-control" name="link"  [(ngModel)]="link" aria-describedby="emailHelp" placeholder="Enter the link">
+    <small id="emailHelp" class="form-text text-muted">Enter the resource's link and submit to Zotero with the button below.</small>
+  </div>
+  <button type="button" class="btn btn-primary" (click)="getMeta(link)"> GET RESOURCE METADATA </button>
+</form>
+<pre id=resDiv></pre>
+<button  *ngIf= "itemKey" type="button" class="btn btn-primary" (click)="sentToZotero()"> SUBMIT RESOURCE TO ZOTERO</button>
+<h4 *ngIf= "result" class="text-center my-lg-3  mx-lg-5 py-lg-3 text-white"  [ngClass]="(itemKey === null)?' bg-danger': 'bg-success'" >{{result}}</h4>
+</div>

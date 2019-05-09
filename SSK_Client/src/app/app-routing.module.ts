@@ -17,6 +17,7 @@ import { UserComponent } from './contribute/user/user.component';
 import { DocumentationComponent } from './infos/documentation/documentation.component';
 import { ProfileComponent } from './contribute/profile/profile.component';
 import { CreateAccountComponent } from './contribute/create-account/create-account.component';
+import { AddResourceComponent } from './contribute/add-resource/add-resource.component';
 
 
 const routes: Routes = [
@@ -91,6 +92,7 @@ const routes: Routes = [
   { path: 'user/create-account',  component: CreateAccountComponent },
   { path: 'user/:userid',  component: ProfileComponent },
   { path: 'scenarios/:id/:stepId', component: ScenarioComponent},
+  { path: 'add-resource', component: AddResourceComponent},
   {
     path: 'vocabularies', component: GlossaryComponent,
     data: {

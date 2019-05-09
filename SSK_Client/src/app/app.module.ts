@@ -50,6 +50,9 @@ import { ResourceTypePipe } from './resource-card/resource-type.pipe';
 import { ProfileComponent } from './contribute/profile/profile.component';
 import { CreateAccountComponent } from './contribute/create-account/create-account.component';
 import {GithubService} from './github.service';
+import { AddResourceComponent } from './contribute/add-resource/add-resource.component';
+import { AddTagComponent } from './contribute/add-standard/add-tag/add-tag.component';
+import { NgxEditorModule } from 'ngx-editor';
 
 
 
@@ -89,7 +92,9 @@ import {GithubService} from './github.service';
     TagDirectiveDirective,
     ResourceTypePipe,
     ProfileComponent,
-    CreateAccountComponent
+    CreateAccountComponent,
+    AddResourceComponent,
+    AddTagComponent
   ],
   imports:
     [
@@ -108,7 +113,8 @@ import {GithubService} from './github.service';
       MomentModule,
       ReactiveFormsModule,
       NgbModule.forRoot(),
-      ClipboardModule
+      ClipboardModule,
+      NgxEditorModule
     ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

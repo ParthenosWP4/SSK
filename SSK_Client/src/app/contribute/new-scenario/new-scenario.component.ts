@@ -3,10 +3,11 @@ import { SskService } from '../../ssk.service';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { UserComponent} from '../user/user.component';
-import { CreateAccountComponent} from '../create-account/create-account.component';
-import {Subscription} from 'rxjs/Subscription';
+import { UserComponent } from '../user/user.component';
+import { CreateAccountComponent } from '../create-account/create-account.component';
+import { Subscription } from 'rxjs/Subscription';
 import { GithubService } from '../../github.service';
+
 
 
 
@@ -16,9 +17,10 @@ import { GithubService } from '../../github.service';
   styleUrls: ['./new-scenario.component.scss']
 })
 export class NewScenarioComponent implements OnInit, AfterViewInit {
+
   forImage = environment.forImage;
   scenarioUrl = this.forImage + 'assets/tei_meta/models/SSKODDforScForm.xml';
-  stepUrl = '../../../assets/tei_meta/models/SSKODDforStepForm.xml';
+  stepUrl = this.forImage + 'assets/tei_meta/models/SSKODDforStepForm.xml';
   teiMeta: any;
   title = 'Create a new scenario';
   tabList: Array<any> = [
@@ -70,22 +72,27 @@ export class NewScenarioComponent implements OnInit, AfterViewInit {
               whether registered or not.`]
     }
   ];
-  showTermsCdtions = false;
+  showTermsCdtions: any = false;
   currentTab = 'terms';
+  scenarioPushError = false;
+  stepNunber = 1;
+  scenarioElt: any;
+  setpsDiv: any;
+  alreadyPrevious = 0;
 
 
   contributeTerms = 'To contribute to the SSK, you need an account and to sign our';
 
   constructor(private sskServ: SskService, private _httpClient: HttpClient, private modalService: NgbModal,
     private githubService: GithubService) {
-      this.subscription = this.sskServ.navItem$
-       .subscribe(item => this.active = item);
+    this.subscription = this.sskServ.navItem$
+      .subscribe(item => this.active = item);
 
   }
 
   ngOnInit() {
-    
-       this.sskServ.changeNav('scenario');
+    this.currentTab = 'scenario';
+    this.sskServ.changeNav('scenario');
     this.sskServ.setTitle(this.title);
     this.title = this.sskServ.getTitle();
   }
@@ -98,8 +105,8 @@ export class NewScenarioComponent implements OnInit, AfterViewInit {
         val2 => {
           this.getScenario().then(
             val => {
-              this.teiMeta.oddLoadUrl(this.scenarioUrl, 'scenarioUrl', this.teiMeta.finishOpenXml)
-                ;
+              this.setpsDiv = document.getElementById('stepsDiv') as HTMLElement;
+              this.teiMeta.oddLoadUrl(this.scenarioUrl, 'scenario', this.teiMeta.finishOpenXml);
             });
         });
   }
@@ -117,7 +124,6 @@ export class NewScenarioComponent implements OnInit, AfterViewInit {
 
   open(type: string) {
     if (type === 'signIn') {
-      this.githubService.createFile('my content');
       this.currentTab = 'scenario';
       const modalRef = this.modalService.open(UserComponent);
       modalRef.componentInstance.goToProfile = true;
@@ -132,6 +138,112 @@ export class NewScenarioComponent implements OnInit, AfterViewInit {
   createAccount() {
     const modalRef = this.modalService.open(CreateAccountComponent);
     modalRef.componentInstance.alreadyAgreeTerms = false;
+  }
+
+  saveTEIScenatio() {
+    this.scenarioPushError = false;
+    if (this.active === 'steps') {
+      let stepElt = document.querySelector('#teidata') as HTMLElement;
+      if ((this.stepNunber + this.alreadyPrevious) > 1) {
+        if (this.alreadyPrevious === 0) {
+          stepElt.classList.add('step-' + this.stepNunber++);
+          stepElt.removeAttribute('id');
+          stepElt.classList.add('d-none');
+          const newStep = document.createElement('div');
+          newStep.setAttribute('id', 'teidata');
+          this.setpsDiv.appendChild(newStep);
+          this.teiMeta.oddLoadUrl(this.stepUrl, 'steps', this.teiMeta.finishOpenXml);
+        } else {
+          this.alreadyPrevious--;
+          stepElt.removeAttribute('id');
+          stepElt.classList.add('d-none');
+          stepElt = document.querySelector('div.d-none.step-' + ++this.stepNunber) as HTMLElement;
+          stepElt.classList.remove('d-none');
+          stepElt.setAttribute('id', 'teidata');
+        }
+
+      } else {
+        stepElt.classList.add('step-' + this.stepNunber++);
+        stepElt.removeAttribute('id');
+        stepElt.classList.add('d-none');
+        const newStep = document.createElement('div');
+        newStep.setAttribute('id', 'teidata');
+        this.setpsDiv.appendChild(newStep);
+        this.teiMeta.oddLoadUrl(this.stepUrl, 'steps', this.teiMeta.finishOpenXml);
+      }
+    } else {
+      this.githubService.createFile(this.teiMeta.generateTEI(), '' ).then(
+        val => {
+          if (val['sha'] !== undefined) {
+            console.log(val);
+            
+            this.active = 'steps';
+            this.currentTab = 'steps';
+            this.sskServ.changeNav('steps');
+            this.getScenario().then(
+              value => {
+                this.scenarioElt = document.querySelector('.scenarioTEI') as HTMLElement;
+                this.scenarioElt.removeAttribute('id');
+                if (this.alreadyPrevious !== 0) {
+                  this.alreadyPrevious--;
+                  let stepElt: any;
+                  stepElt = document.querySelector('.step-' + this.stepNunber) as HTMLElement;
+                  stepElt.setAttribute('id', 'teidata');
+                } else {
+                  this.teiMeta.oddLoadUrl(this.stepUrl, 'steps', this.teiMeta.finishOpenXml);
+                }
+              });
+          } else {
+            this.scenarioPushError = !val;  //Casting Object ot String to boolean
+          }
+        }
+      );
+    }
+  }
+
+
+  toogleTab(type: string) {
+    if (type === 'scenario') {
+      this.active = 'scenario';
+      this.currentTab = 'scenario';
+      const currentStep = document.querySelector('#teidat') as HTMLElement;
+      currentStep.removeAttribute('id');
+      this.scenarioElt = document.querySelector('.scenarioTEI') as HTMLElement;
+      this.scenarioElt.setAttribute('id', 'teidata');
+    }
+
+    if (type === 'steps') {
+      this.active = 'steps';
+      this.currentTab = 'steps';
+      this.scenarioElt = document.querySelector('.scenarioTEI') as HTMLElement;
+      this.scenarioElt.removeAttribute('id');
+      this.teiMeta.oddLoadUrl(this.stepUrl, 'steps', this.teiMeta.finishOpenXml);
+    }
+  }
+
+  previous() {
+    this.alreadyPrevious++;
+    let stepElt: any;
+    if (this.currentTab === 'steps') {
+      if (this.stepNunber > 1) {
+        stepElt = document.getElementById('teidata') as HTMLElement;
+        stepElt.classList.add('step-' + this.stepNunber);
+        stepElt.removeAttribute('id');
+        stepElt.classList.add('d-none');
+        stepElt = document.querySelector('div.d-none.step-' + (--this.stepNunber)) as HTMLElement;
+        stepElt.classList.remove('d-none');
+        stepElt.setAttribute('id', 'teidata');
+      } else {
+        this.currentTab = 'scenario';
+        this.active = 'scenario';
+        stepElt = document.getElementById('teidata') as HTMLElement;
+        stepElt.classList.add('step-' + this.stepNunber);
+        stepElt.removeAttribute('id');
+        stepElt = document.querySelector('.scenarioTEI') as HTMLElement;
+        stepElt.setAttribute('id', 'teimeta');
+      }
+    }
+
   }
 
 }

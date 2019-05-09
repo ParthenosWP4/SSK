@@ -7,9 +7,7 @@ import {isUndefined} from 'util';
 import {environment} from '../environments/environment';
 import {HttpClient} from '@angular/common/http';
 import * as Bloodhound from 'bloodhound-js';
-import { t } from '@angular/core/src/render3';
-import { CollapseModule } from 'ngx-bootstrap';
-declare const $;
+declare var $: any;
 
 @Injectable()
 export class ElastichsearchService {

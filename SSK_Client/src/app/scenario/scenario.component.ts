@@ -9,7 +9,6 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalResourcesComponent } from './modal-resources/modal-resources.component';
 import { ClipboardService } from 'ngx-clipboard';
 import * as moment from 'moment';
-import { MockNgModuleResolver } from '@angular/compiler/testing';
 
 @Component({
   selector: 'app-scenario',
