@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="assets/tei_meta/models/SSKODDforScForm.xml">
     <teiHeader>
         <fileDesc>
             <titleStmt>
                 <author>
                     <forename>
-                        Proven�al
+                        ProvenÃ§al
                     </forename>
                     <surname>
                         Le Gaulois
@@ -65,7 +64,7 @@
                     </figDesc>
                 </figure>
                 <desc corresp="terms"/>
-            </div>
+            <listevent xmlns="http://www.w3.org/1999/xhtml"><event ref="SSK_st_1557428772237" xml:id="s1" type="researchStep"></event><event ref="SSK_st_1557428819085" xml:id="s2" type="researchStep"></event></listevent></div>
             <listEvent>
                 <event>
                     <head xml:lang="en">
