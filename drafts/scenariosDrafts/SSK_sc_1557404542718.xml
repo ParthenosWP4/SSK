@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="assets/tei_meta/models/SSKODDforScForm.xml">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="assets/tei_meta/models/SSKODDforStepForm.xml">
     <teiHeader>
         <fileDesc>
             <titleStmt>
@@ -48,6 +48,19 @@
                     </figDesc>
                 </figure>
             </div>
+            <listEvent>
+                <event>
+                    <head xml:lang="en">
+                    </head>
+                    <desc xml:lang="en" corresp="definition">
+                    </desc>
+                    <desc corresp="terms">
+                        <term key="" corresp="activity"/>
+                    </desc>
+                    <linkGrp corresp="generalResources"/>
+                    <linkGrp source="" url="" corresp="projectResources"/>
+                </event>
+            </listEvent>
         </body>
     </text>
 </TEI>
