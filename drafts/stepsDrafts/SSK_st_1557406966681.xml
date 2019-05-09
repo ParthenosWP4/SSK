@@ -5,10 +5,10 @@
             <titleStmt>
                 <author>
                     <forename>
-                        LIONEL
+                        LIONEL 1
                     </forename>
                     <surname>
-                        TAD
+                        TAD 2
                     </surname>
                     <affiliation>
                     </affiliation>
@@ -51,7 +51,7 @@
             <listEvent>
                 <event>
                     <head xml:lang="en">
-                        step 1
+                        step3
                     </head>
                     <desc xml:lang="en" corresp="definition">
                     </desc>
