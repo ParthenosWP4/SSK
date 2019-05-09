@@ -250,6 +250,7 @@
 								<dataRef name="anyURI"/>
 							</datatype>
 							<valList>
+							  <valItem ident=""/>
 								<valItem ident="Artifacts"/>
 								<valItem ident="Bibliographic Listings"/>
 								<valItem ident="Code"/>
@@ -302,6 +303,7 @@
 								<dataRef name="anyURI"/>
 							</datatype>
 							<valList>
+							  <valItem ident=""/>
 								<valItem ident="Bit Stream Preservation"/>
 								<valItem ident="Brainstorming"/>
 								<valItem ident="Browsing"/>
@@ -348,6 +350,7 @@
 						<attDef ident="key">
 							<desc>Activity</desc>
 							<valList>
+							  <valItem ident=""/>
 								<valItem ident="Conversion"/>
 								<valItem ident="Data Recognition"/>
 								<valItem ident="Discovering"/>
@@ -423,7 +426,7 @@
 								<dataRef name="anyURI"/>
 							</datatype>
 						</attDef>
-						<attDef ident="corresp">
+						<attDef ident="url">
 							<desc>Link to the project page</desc>
 							<datatype>
 								<dataRef name="anyURI"/>
