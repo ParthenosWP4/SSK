@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="assets/tei_meta/models/SSKODDforStepForm.xml">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <author>
+                    <forename>
+                        Stamatis
+                    </forename>
+                    <surname>
+                        Bouses
+                    </surname>
+                    <affiliation>
+                        Democritus University of Thrace
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                        Vicky
+                    </forename>
+                    <surname>
+                        Liakopoulou
+                    </surname>
+                    <affiliation>
+                        AUEB
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                        Isidora
+                    </forename>
+                    <surname>
+                        Despotidou
+                    </surname>
+                    <affiliation>
+                        AUEB
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                        Antonia
+                    </forename>
+                    <surname>
+                        Despotidou
+                    </surname>
+                    <affiliation>
+                        NKUA
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                    </forename>
+                    <surname>
+                    </surname>
+                    <affiliation>
+                    </affiliation>
+                </author>
+                <sponsor>
+                </sponsor>
+            </titleStmt>
+            <publicationStmt>
+                <authority>
+                </authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+                </availability>
+            </publicationStmt>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div>
+                <head xml:lang="en">
+                    Data recognition and annotation of  manuscripts  and papyri
+                </head>
+                <desc xml:lang="en" corresp="definition">
+                    The object is to create digital facsimiles of papyri and manuscripts  in a way to extract discrete, machine-readable units from them, such as plain text.
+                </desc>
+                <desc corresp="terms">
+                    <term key="Classical studies" corresp="disciplines"/>
+                    <term key="Cultural heritage and museology" corresp="disciplines"/>
+                    <term key="History" corresp="disciplines"/>
+                    <term key="Commenting" corresp="techniques"/>
+                    <term key="Machine Learning" corresp="techniques"/>
+                    <term key="Encoding" corresp="techniques"/>
+                    <term key="Artifacts" corresp="objects"/>
+                    <term key="Images" corresp="objects"/>
+                    <term key="Manuscript" corresp="objects"/>
+                    <term key="Metadata" corresp="objects"/>
+                    <term key="Data" corresp="objects"/>
+                    <term key="Text" corresp="objects"/>
+                    <term key="Digital Humanities" corresp="objects"/>
+                    <term key="Language" corresp="objects"/>
+                    <term key="Tools" corresp="objects"/>
+                    <term key="ALTO-XML," corresp="standard"/>
+                    <term key="CSV" corresp="standard"/>
+                    <term key="hOCR" corresp="standard"/>
+                    <term key="TIFF" corresp="standard"/>
+                    <term key="PNG" corresp="standard"/>
+                </desc>
+                <figure corresp="image">
+                    <head corresp="image">
+                    </head>
+                    <graphic url=""/>
+                    <figDesc>
+                        <author corresp="imgAuthor">
+                        </author>
+                        <availability>
+                            <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+                        </availability>
+                    </figDesc>
+                </figure>
+            </div>
+            <listEvent>
+                <event>
+                    <head xml:lang="en">
+                        Image Processing
+                    </head>
+                    <desc xml:lang="en" corresp="definition">
+                        Image procession through image manipulation programs such as GIMP or Photoshop.
+                    </desc>
+                    <desc corresp="terms">
+                        <term key="Cleanup" corresp="activity"/>
+                        <term key="Photography" corresp="techniques"/>
+                        <term key="Manuscript" corresp="objects"/>
+                        <term key="Artifacts" corresp="objects"/>
+                        <term key="TIFF" corresp="standard"/>
+                        <term key="PNG" corresp="standard"/>
+                    </desc>
+                    <desc corresp="terms">
+                        <term key="" corresp="activity"/>
+                    </desc>
+                    <desc corresp="terms">
+                        <term key="" corresp="activity"/>
+                    </desc>
+                    <linkGrp corresp="generalResources"/>
+                    <linkGrp source="" url="" corresp="projectResources">
+                        <ref type="" target="https://www.photoshoptutorials.ws/"/>
+                    </linkGrp>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>
