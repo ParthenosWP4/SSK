@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="assets/tei_meta/models/SSKODDforStepForm.xml">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <author>
+                    <forename>
+                        Petros
+                    </forename>
+                    <surname>
+                        Kosmas
+                    </surname>
+                    <affiliation>
+                        University of Ioannina
+                    </affiliation>
+                </author>
+                <sponsor>
+                    University of Athens
+                </sponsor>
+                <author>
+                    <forename>
+                        Mimika
+                    </forename>
+                    <surname>
+                        Kriga
+                    </surname>
+                    <affiliation>
+                        University of Athens
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                        Chrissoula
+                    </forename>
+                    <surname>
+                        Vassilopoulou
+                    </surname>
+                    <affiliation>
+                        Panteion University
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                    </forename>
+                    <surname>
+                    </surname>
+                    <affiliation>
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                    </forename>
+                    <surname>
+                    </surname>
+                    <affiliation>
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                    </forename>
+                    <surname>
+                    </surname>
+                    <affiliation>
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                    </forename>
+                    <surname>
+                    </surname>
+                    <affiliation>
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                    </forename>
+                    <surname>
+                    </surname>
+                    <affiliation>
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                    </forename>
+                    <surname>
+                    </surname>
+                    <affiliation>
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                    </forename>
+                    <surname>
+                    </surname>
+                    <affiliation>
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                    </forename>
+                    <surname>
+                    </surname>
+                    <affiliation>
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                    </forename>
+                    <surname>
+                    </surname>
+                    <affiliation>
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                    </forename>
+                    <surname>
+                    </surname>
+                    <affiliation>
+                    </affiliation>
+                </author>
+                <sponsor>
+                    University of Ioannina
+                </sponsor>
+            </titleStmt>
+            <publicationStmt>
+                <authority>
+                </authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+                </availability>
+            </publicationStmt>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div>
+                <head xml:lang="en">
+                    Hellenistic Melos
+                </head>
+                <desc xml:lang="en" corresp="definition">
+                    Hellenistic finds from excavations in Melos
+                </desc>
+                <desc corresp="terms">
+                    <term key="Archaeology and Prehistory" corresp="disciplines"/>
+                    <term key="History" corresp="disciplines"/>
+                    <term key="Classical studies" corresp="disciplines"/>
+                    <term key="Searching" corresp="techniques"/>
+                    <term key="Georeferencing" corresp="techniques"/>
+                    <term key="Scanning" corresp="techniques"/>
+                    <term key="Photography" corresp="techniques"/>
+                    <term key="Web Crawling" corresp="techniques"/>
+                    <term key="Text Mining " corresp="techniques"/>
+                    <term key="Bibliographic Listings" corresp="objects"/>
+                    <term key="Artifacts" corresp="objects"/>
+                    <term key="Digital Humanities" corresp="objects"/>
+                    <term key="Data" corresp="objects"/>
+                    <term key="File" corresp="objects"/>
+                    <term key="Images" corresp="objects"/>
+                    <term key="Images (3D)" corresp="objects"/>
+                    <term key="Research" corresp="objects"/>
+                    <term key="Video" corresp="objects"/>
+                    <term key="Dublin Core" corresp="standard"/>
+                    <term key="LIDO" corresp="standard"/>
+                    <term key="XML" corresp="standard"/>
+                    <term key="CSV" corresp="standard"/>
+                </desc>
+                <figure corresp="image">
+                    <head corresp="image">
+                    </head>
+                    <graphic url=""/>
+                    <figDesc>
+                        <author corresp="imgAuthor">
+                        </author>
+                        <availability>
+                            <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+                        </availability>
+                    </figDesc>
+                </figure>
+            </div>
+            <listEvent>
+                <event>
+                    <head xml:lang="en">
+                        Hellenistic pottery from Melos
+                    </head>
+                    <desc xml:lang="en" corresp="definition">
+                    </desc>
+                    <desc corresp="terms">
+                        <term key="Archiving" corresp="activity"/>
+                        <term key="Browsing" corresp="techniques"/>
+                        <term key="Artifacts" corresp="objects"/>
+                        <term key="XML" corresp="standard"/>
+                    </desc>
+                    <linkGrp corresp="generalResources"/>
+                    <linkGrp source="Melos in Hellenistic Period" url="https://www.google.com" corresp="projectResources"/>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>
