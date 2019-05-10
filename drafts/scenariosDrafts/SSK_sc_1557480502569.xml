@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="assets/tei_meta/models/SSKODDforScForm.xml">
     <teiHeader>
         <fileDesc>
@@ -53,7 +52,7 @@
                         </availability>
                     </figDesc>
                 </figure>
-            </div>
+            <listevent xmlns="http://www.w3.org/1999/xhtml"><event ref="SSK_st_1557480695830" xml:id="s1" type="researchStep"></event><event ref="SSK_st_1557480709052" xml:id="s2" type="researchStep"></event><event ref="SSK_st_1557480710889" xml:id="s3" type="researchStep"></event><event ref="SSK_st_1557480761882" xml:id="s4" type="researchStep"></event><event ref="SSK_st_1557480809136" xml:id="s5" type="researchStep"></event><event ref="SSK_st_1557480828436" xml:id="s6" type="researchStep"></event><event ref="SSK_st_1557480829717" xml:id="s7" type="researchStep"></event><event ref="SSK_st_1557480830878" xml:id="s8" type="researchStep"></event><event ref="SSK_st_1557480838019" xml:id="s9" type="researchStep"></event><event ref="SSK_st_1557480893868" xml:id="s10" type="researchStep"></event><event ref="SSK_st_1557481108842" xml:id="s11" type="researchStep"></event><event ref="SSK_st_1557481218590" xml:id="s12" type="researchStep"></event><event ref="SSK_st_1557481926613" xml:id="s13" type="researchStep"></event><event ref="SSK_st_1557481951320" xml:id="s14" type="researchStep"></event></listevent></div>
         </body>
     </text>
 </TEI>
