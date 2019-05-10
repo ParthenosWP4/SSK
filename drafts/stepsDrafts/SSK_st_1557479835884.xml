@@ -46,7 +46,7 @@
                         3d skeletal analysis
                     </desc>
                     <desc corresp="terms">
-                        <term key="Imaging" corresp="activity"/>
+                        <term key="Images (3D)" corresp="activity"/>
                         <term key="Scanning" corresp="techniques"/>
                         <term key="Images (3D)" corresp="objects"/>
                     </desc>
