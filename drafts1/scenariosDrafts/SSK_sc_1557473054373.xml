@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="assets/tei_meta/models/SSKODDforStepForm.xml">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <author>
+                    <forename>
+                    </forename>
+                    <surname>
+                    </surname>
+                    <affiliation>
+                    </affiliation>
+                </author>
+                <sponsor>
+                </sponsor>
+            </titleStmt>
+            <publicationStmt>
+                <authority>
+                </authority>
+                <availability/>
+            </publicationStmt>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div>
+                <head xml:lang="en">
+                </head>
+                <desc xml:lang="en" corresp="definition">
+                </desc>
+                <desc corresp="terms"/>
+                <figure corresp="image">
+                    <head corresp="image">
+                    </head>
+                    <figDesc>
+                        <author corresp="imgAuthor">
+                        </author>
+                        <availability/>
+                    </figDesc>
+                </figure>
+            </div>
+            <listEvent>
+                <event>
+                    <head xml:lang="en">
+                    </head>
+                    <desc xml:lang="en" corresp="definition">
+                    </desc>
+                    <desc corresp="terms"/>
+                    <linkGrp corresp="generalResources"/>
+                    <linkGrp source="" url="" corresp="projectResources"/>
+                    <linkGrp source="" url="" corresp="projectResources"/>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>

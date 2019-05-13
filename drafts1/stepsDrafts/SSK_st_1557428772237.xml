@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="assets/tei_meta/models/SSKODDforStepForm.xml">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <author>
+                    <forename>
+                        Provençal
+                    </forename>
+                    <surname>
+                        Le Gaulois
+                    </surname>
+                    <affiliation>
+                        Table Ronde
+                    </affiliation>
+                </author>
+                <sponsor>
+                </sponsor>
+                <author>
+                    <forename>
+                        Karadoc
+                    </forename>
+                    <surname>
+                        de Vannes
+                    </surname>
+                    <affiliation>
+                        Table Ronde
+                    </affiliation>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <authority>
+                </authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+                </availability>
+            </publicationStmt>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div>
+                <head xml:lang="fr">
+                    Les semi croustillants
+                </head>
+                <desc xml:lang="fr" corresp="definition">
+                    On en a gros
+                </desc>
+                <desc corresp="terms">
+                    <term key="Architecture, space management" corresp="disciplines"/>
+                    <term key="Education" corresp="disciplines"/>
+                    <term key="Gamification" corresp="techniques"/>
+                    <term key="Persons" corresp="objects"/>
+                </desc>
+                <figure corresp="image">
+                    <head corresp="image">
+                    </head>
+                    <graphic url=""/>
+                    <figDesc>
+                        <author corresp="imgAuthor">
+                        </author>
+                        <availability>
+                            <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+                        </availability>
+                    </figDesc>
+                </figure>
+                <desc corresp="terms"/>
+            </div>
+            <listEvent>
+                <event>
+                    <head xml:lang="fr">
+                        Se battre avec un fenouil
+                    </head>
+                    <desc xml:lang="en" corresp="definition">
+                        Prendre la partie sporadique pour taper avec la partie redondante
+                    </desc>
+                    <desc corresp="terms">
+                        <term key="Modeling" corresp="activity"/>
+                    </desc>
+                    <linkGrp corresp="generalResources"/>
+                    <linkGrp source="" url="" corresp="projectResources"/>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>
