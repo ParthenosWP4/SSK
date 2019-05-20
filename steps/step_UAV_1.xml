@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>"Preliminary survey of the site (and its surroundings): Where to fly
+            and what to avoid." step</title>
+           <author>
+             <forename>Alessio</forename>
+             <surname>Calantropio</surname>
+             <affiliation>Politecnico di Torino - Department of Architecture and Design</affiliation>
+           </author>
+           <author>
+             <forename>Gabriella</forename>
+             <surname>Carpentiero</surname>
+             <affiliation>MIBAC - Soprintendenza Archeologia Belle Arti e Paesaggio del
+               Molise</affiliation>
+           </author>
+           <author>
+             <forename>Lorenzo</forename>
+             <surname>Teppati Losè</surname>
+             <affiliation>Politecnico di Torino - Department of Architecture and Design</affiliation>
+           </author>
+           <sponsor>PARTHENOS</sponsor>
+         </titleStmt>
+         <publicationStmt>
+            <authority/>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p/>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head type="stepTitle" xml:lang="en">Preliminary survey of the site (and its surroundings): Where to fly
+            and what to avoid.</head>
+               <desc type="definition" xml:lang="en">A preliminary survey is required, in order to
+            understand the site and its surroundings. Due to flight regulament constrains it is
+            important to check with local and national authorities if it is possible to fly drones
+            over the area, and obtain the necessary permits (this may require some times, from weeks
+            up to months, depending from country to country). It is also important to check for near
+            natural or artificial obstacles that will influence the design of the drone's
+            path.</desc>
+               <desc type="terms" xml:lang="en">
+                  <term key="Discovering" source="TaDiRAH" type="activity"/>
+               </desc>
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+                  <ref type="report" target="G9M44G3R"/>
+               </linkGrp>
+            </event>
+         </listEvent>
+      </body>
+   </text>
+</TEI>

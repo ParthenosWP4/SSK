@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>"UAV data acquisition and management for multitemporal surveys of archaeological
+          sites." scenario</title>
+        <author>
+          <forename>Alessio</forename>
+          <surname>Calantropio</surname>
+          <affiliation>Politecnico di Torino - Department of Architecture and Design</affiliation>
+        </author>
+        <author>
+          <forename>Gabriella</forename>
+          <surname>Carpentiero</surname>
+          <affiliation>MIBAC - Soprintendenza Archeologia Belle Arti e Paesaggio del
+            Molise</affiliation>
+        </author>
+        <author>
+          <forename>Lorenzo</forename>
+          <surname>Teppati Losè</surname>
+          <affiliation>Politecnico di Torino - Department of Architecture and Design</affiliation>
+        </author>
+        <sponsor>PARTHENOS</sponsor>
+      </titleStmt>
+      <publicationStmt>
+        <authority/>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p/>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change/>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div type="researchScenario">
+        <head type="scenarioTitle" xml:lang="en">UAV data acquisition and management for
+          multitemporal surveys of archaeological sites.</head>
+        <desc type="definition" xml:lang="en">Aerial photogrammetry is a powerful technique that can
+          be used for recording and analyzing excavation phases of archaeological sites. Based on
+          the authors experience, there are some strategies that can speed up the data acquisition,
+          processing and analysis steps. This works aims to underline best practices and lesson
+          learned in the scenario of UAV data acquisition and management for multitemporal surveys
+          of archaeological sites with a photogrammetric approach.</desc>
+        <desc type="terms" xml:lang="en">
+          <term key="Archaeology and Prehistory" source="aureHAL" type="discipline"/>
+          <term key="Georeferencing" source="TaDiRAH" type="technique"/>
+          <term key="Images (3D)" source="TaDiRAH" type="object"/>
+        </desc>
+        <figure>
+          <head>UAV</head>
+          <graphic url="https://github.com/ParthenosWP4/SSK/blob/master/img/UAVimg.jpg"/>
+          <figDesc>
+            <author type="imgAuthor">SSK</author>
+            <availability type="imgLicence">
+              <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+            </availability>
+          </figDesc>
+        </figure>
+      </div>
+    </body>
+  </text>
+</TEI>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>"Data analysis: How to use the generated 3D model for study the site.." step</title>
+        <author>
+          <forename>Alessio</forename>
+          <surname>Calantropio</surname>
+          <affiliation>Politecnico di Torino - Department of Architecture and Design</affiliation>
+        </author>
+        <author>
+          <forename>Gabriella</forename>
+          <surname>Carpentiero</surname>
+          <affiliation>MIBAC - Soprintendenza Archeologia Belle Arti e Paesaggio del
+            Molise</affiliation>
+        </author>
+        <author>
+          <forename>Lorenzo</forename>
+          <surname>Teppati Losè</surname>
+          <affiliation>Politecnico di Torino - Department of Architecture and Design</affiliation>
+        </author>
+        <sponsor>PARTHENOS</sponsor>
+      </titleStmt>
+      <publicationStmt>
+        <authority/>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p/>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change/>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listEvent>
+        <event type="researchStep">
+          <head type="stepTitle" xml:lang="en">Data analysis: How to use the generated 3D model for
+            study the site</head>
+          <desc type="definition" xml:lang="en"><p>In this step it is possible to perform the
+              desired analysis, depending on the aim of the research to carry out. This is an
+              illustrative and not limiting list of the possible analysis to perform: <list>
+                <item>Cloud to Cloud (C2C) comparison</item>
+                <item>Radiometric analysis (color change of the surfaces)</item>
+                <item>DSM for surface comparison</item>
+                <item>Soil volume excavated</item>
+                <item>Visual interpretation</item>
+                <item>GCP e CP analysis</item>
+              </list>
+            </p>
+            <p> Software to use: <list>
+                <item>Cloud Compare</item>
+                <item>3D Reshaper</item>
+              </list>
+            </p>
+          </desc>
+          <desc type="terms" xml:lang="en">
+            <term key="Spatial Analysis" source="Tadirah" type="activity"/>
+            <term key="OBJ" source="ssk" type="standard"/>
+            <term key="PLY" source="ssk" type="standard"/>
+            <term key="TIFF" source="ssk" type="standard"/>
+          </desc>
+          <linkGrp type="generalResources"
+            xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+            <ref type="paper" target="QS3FIN8J"/>
+            <ref type="tool" target="9M24UQEJ"/>
+            <ref type="tool" target="PMES8DJW"/>
+          </linkGrp>
+        </event>
+      </listEvent>
+    </body>
+  </text>
+</TEI>

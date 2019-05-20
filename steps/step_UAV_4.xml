@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>"Data processing: Create a 3D model of the site using the acquired images."
+          step</title>
+        <author>
+          <forename>Alessio</forename>
+          <surname>Calantropio</surname>
+          <affiliation>Politecnico di Torino - Department of Architecture and Design</affiliation>
+        </author>
+        <author>
+          <forename>Gabriella</forename>
+          <surname>Carpentiero</surname>
+          <affiliation>MIBAC - Soprintendenza Archeologia Belle Arti e Paesaggio del
+            Molise</affiliation>
+        </author>
+        <author>
+          <forename>Lorenzo</forename>
+          <surname>Teppati Losè</surname>
+          <affiliation>Politecnico di Torino - Department of Architecture and Design</affiliation>
+        </author>
+        <sponsor>PARTHENOS</sponsor>
+      </titleStmt>
+      <publicationStmt>
+        <authority/>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p/>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change/>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listEvent>
+        <event type="researchStep">
+          <head type="stepTitle" xml:lang="en">Data processing: Create a 3D model of the site using
+            the acquired images</head>
+          <desc type="definition" xml:lang="en"><p>This step is related to the surveyed object and
+              to the software used for processing the data. Usually it is possible to refer to a
+              traditional photogrammetric workflow: <list>
+                <item>Data loading</item>
+                <item>Tie points extraction (Sparse point cloud)</item>
+                <item>Camera Calibration</item>
+                <item>Relative orientation</item>
+                <item>Absolute orientation (using georef. data)</item>
+                <item>Densification (Dense point cloud)</item>
+                <item>Meshing (Triangulated mesh)</item>
+                <item>Texturing</item>
+                <item>DSM generation</item>
+                <item>3D model exporting</item>
+              </list>
+            </p>
+            <p>Software to use: <list>
+                <item>Photogrammetric suite (MicMac, AgiSoft Metashape, Pix4D Mapper, etc.)</item>
+              </list></p>
+          </desc>
+          <desc type="terms" xml:lang="en">
+            <term key="Modeling" source="Tadirah" type="activity"/>
+            <term key="PLY" source="ssk" type="standard"/>
+            <term key="PNG" source="ssk" type="standard"/>
+            <term key="JPEG" source="ssk" type="standard"/>
+            <term key="TIFF" source="ssk" type="standard"/>
+          </desc>
+          <linkGrp type="generalResources"
+            xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+            <ref type="tool" target="C9RF5CWS"/>
+            <ref type="tool" target="YMBX2XM2"/>
+            <ref type="tool" target="Q48UGPVN"/>
+          </linkGrp>
+        </event>
+      </listEvent>
+    </body>
+  </text>
+</TEI>

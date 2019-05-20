@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>"Georeferencing the surveyed data: Using a GNSS receiver for precise positioning of
+          Ground Control Points." step</title>
+        <author>
+          <forename>Alessio</forename>
+          <surname>Calantropio</surname>
+          <affiliation>Politecnico di Torino - Department of Architecture and Design</affiliation>
+        </author>
+        <author>
+          <forename>Gabriella</forename>
+          <surname>Carpentiero</surname>
+          <affiliation>MIBAC - Soprintendenza Archeologia Belle Arti e Paesaggio del
+            Molise</affiliation>
+        </author>
+        <author>
+          <forename>Lorenzo</forename>
+          <surname>Teppati Losè</surname>
+          <affiliation>Politecnico di Torino - Department of Architecture and Design</affiliation>
+        </author>
+        <sponsor>PARTHENOS</sponsor>
+      </titleStmt>
+      <publicationStmt>
+        <authority/>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p/>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change/>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listEvent>
+        <event type="researchStep">
+          <head type="stepTitle" xml:lang="en">Georeferencing the surveyed data: Using a GNSS
+            receiver for precise positioning of Ground Control Points</head>
+          <desc type="definition" xml:lang="en"><p>Using well materialized Ground Control Points (GCPs)
+            and using the same set in all the performed flights will require the use of topographic
+            instruments only for the first acquisition, as once measured, the GCPs will be re-used
+            for the subsequents flights. It is important to underline the importance of acquiring a
+            trustworthy set of GCPs to be used for all the surveys, instead of measuring new GCPs
+            every time. It is more important, in fact, not to acquire the most accurate GNSS data,
+            but to use the most precise set of GCPs, assuming for (at least locally) the validity of
+            the first data acquired, cause repeating measures over time may lead to non extremely
+            precise co-registration of the generated models.</p>
+            <p>Instruments required:
+              <list>
+                <item>Total station</item>
+                <item>D-GNSS antenna</item>
+              </list>
+            </p>
+            <p>Action to perform:
+              <list>
+                <item>Defining and measuring a topographic network</item>
+                  <item>Materialization of the topographical vertices</item>
+                  <item>Materialization of the control points</item>
+                  <item>Ground control points displacement around and inside the site</item>
+                  <item>Natural points selection and digitization for future surveys</item>
+                  <item>Control points measurement and recording (via Total station or GNSS receiver)</item>
+              </list>
+            </p>
+            <p>Softwares to use:
+            <list>
+              <item>Topographic network compensation (e.g. MicroSurvey StarNet)</item>
+            </list>
+          </p></desc>
+          <desc type="terms" xml:lang="en">
+            <term key="Data Recognition" source="Tadirah" type="activity"/>
+            <term key="" source="ssk" type="standard"/>
+          </desc>
+          <linkGrp type="generalResources"
+            xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+            <ref type="tool" target="DSDTVKTA"/>
+            <ref type="report" target="BWZJUXZL"/>
+          </linkGrp>
+        </event>
+      </listEvent>
+    </body>
+  </text>
+</TEI>
