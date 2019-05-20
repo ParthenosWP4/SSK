@@ -1,77 +1,67 @@
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="assets/tei_meta/models/SSKODDforScForm.xml">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <author>
-                    <forename>
-                        Petros
-                    </forename>
-                    <surname>
-                        Kosmas
-                    </surname>
-                    <affiliation>
-                        University of Ioannina
-                    </affiliation>
-                </author>
-                <sponsor>
-                    Starbucks
-                </sponsor>
-            </titleStmt>
-            <publicationStmt>
-                <authority>
-                </authority>
-                <availability>
-                    <licence target="http://creativecommons.org/licenses/by/4.0/"/>
-                </availability>
-            </publicationStmt>
-        </fileDesc>
-    </teiHeader>
-    <text>
-        <body>
-            <div>
-                <head xml:lang="en">
-                    Hellenistic Melos
-                </head>
-                <desc xml:lang="en" corresp="definition">
-                    Hellenistic finds from excavations in Melos
-                </desc>
-                <desc corresp="terms">
-                    <term key="Archaeology and Prehistory" corresp="disciplines"/>
-                    <term key="History" corresp="disciplines"/>
-                    <term key="Classical studies" corresp="disciplines"/>
-                    <term key="Searching" corresp="techniques"/>
-                    <term key="Georeferencing" corresp="techniques"/>
-                    <term key="Scanning" corresp="techniques"/>
-                    <term key="Photography" corresp="techniques"/>
-                    <term key="Web Crawling" corresp="techniques"/>
-                    <term key="Text Mining " corresp="techniques"/>
-                    <term key="Bibliographic Listings" corresp="objects"/>
-                    <term key="Artifacts" corresp="objects"/>
-                    <term key="Digital Humanities" corresp="objects"/>
-                    <term key="Data" corresp="objects"/>
-                    <term key="File" corresp="objects"/>
-                    <term key="Images" corresp="objects"/>
-                    <term key="Images (3D)" corresp="objects"/>
-                    <term key="Research" corresp="objects"/>
-                    <term key="Video" corresp="objects"/>
-                    <term key="Dublin Core" corresp="standard"/>
-                    <term key="LIDO" corresp="standard"/>
-                    <term key="XML" corresp="standard"/>
-                    <term key="CSV" corresp="standard"/>
-                </desc>
-                <figure corresp="image">
-                    <head corresp="image">
-                    </head>
-                    <graphic url=""/>
-                    <figDesc>
-                        <author corresp="imgAuthor">
-                        </author>
-                        <availability>
-                            <licence target="http://creativecommons.org/licenses/by/4.0/"/>
-                        </availability>
-                    </figDesc>
-                </figure>
-            <listevent xmlns="http://www.w3.org/1999/xhtml"><event ref="SSK_st_1557480563792" xml:id="s1" type="researchStep"></event><event ref="SSK_st_1557480586046" xml:id="s2" type="researchStep"></event><event ref="SSK_st_1557480812903" xml:id="s3" type="researchStep"></event></listevent></div>
-        </body>
-    </text>
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <author>
+          <forename> Petros </forename>
+          <surname> Kosmas </surname>
+          <affiliation> University of Ioannina </affiliation>
+        </author>
+        <sponsor> Starbucks </sponsor>
+      </titleStmt>
+      <publicationStmt>
+        <authority> </authority>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+        </availability>
+      </publicationStmt>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div>
+        <head xml:lang="en"> Hellenistic Melos </head>
+        <desc xml:lang="en" corresp="definition"> Hellenistic finds from excavations in Melos </desc>
+        <desc corresp="terms">
+          <term key="Archaeology and Prehistory" corresp="disciplines"/>
+          <term key="History" corresp="disciplines"/>
+          <term key="Classical studies" corresp="disciplines"/>
+          <term key="Searching" corresp="techniques"/>
+          <term key="Georeferencing" corresp="techniques"/>
+          <term key="Scanning" corresp="techniques"/>
+          <term key="Photography" corresp="techniques"/>
+          <term key="Web Crawling" corresp="techniques"/>
+          <term key="Text Mining " corresp="techniques"/>
+          <term key="Bibliographic Listings" corresp="objects"/>
+          <term key="Artifacts" corresp="objects"/>
+          <term key="Digital Humanities" corresp="objects"/>
+          <term key="Data" corresp="objects"/>
+          <term key="File" corresp="objects"/>
+          <term key="Images" corresp="objects"/>
+          <term key="Images (3D)" corresp="objects"/>
+          <term key="Research" corresp="objects"/>
+          <term key="Video" corresp="objects"/>
+          <term key="Dublin Core" corresp="standard"/>
+          <term key="LIDO" corresp="standard"/>
+          <term key="XML" corresp="standard"/>
+          <term key="CSV" corresp="standard"/>
+        </desc>
+        <figure corresp="image">
+          <head corresp="image"> </head>
+          <graphic url=""/>
+          <figDesc>
+            <author corresp="imgAuthor"> </author>
+            <availability>
+              <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+            </availability>
+          </figDesc>
+        </figure>
+        <listevent xmlns="http://www.w3.org/1999/xhtml">
+          <event ref="SSK_st_1557480563792" xml:id="s1" type="researchStep"/>
+          <event ref="SSK_st_1557480586046" xml:id="s2" type="researchStep"/>
+          <event ref="SSK_st_1557480812903" xml:id="s3" type="researchStep"/>
+        </listevent>
+      </div>
+    </body>
+  </text>
 </TEI>

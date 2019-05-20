@@ -1,58 +1,62 @@
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="assets/tei_meta/models/SSKODDforScForm.xml">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <author>
-                    <forename>
-                        Vourvachaki, Stavridi 
-                    </forename>
-                    <surname>
-                        Karmen, Maria
-                    </surname>
-                    <affiliation>
-                        AUEB
-                    </affiliation>
-                </author>
-                <sponsor>
-                </sponsor>
-            </titleStmt>
-            <publicationStmt>
-                <authority>
-                </authority>
-                <availability>
-                    <licence target="http://creativecommons.org/licenses/by/4.0/"/>
-                </availability>
-            </publicationStmt>
-        </fileDesc>
-    </teiHeader>
-    <text>
-        <body>
-            <div>
-                <head xml:lang="en">
-                    Graffiti Slogan Corpus Creation
-                </head>
-                <desc xml:lang="en" corresp="definition">
-                    Information extraction from images with graffiti slogans and labeling annotation
-                </desc>
-                <desc corresp="terms">
-                    <term key="Cultural heritage and museology" corresp="disciplines"/>
-                    <term key="Information Retrieval" corresp="techniques"/>
-                    <term key="Digital Humanities" corresp="objects"/>
-                    <term key="JSON, CSV, JPEG, " corresp="standard"/>
-                </desc>
-                <figure corresp="image">
-                    <head corresp="image">
-                    </head>
-                    <graphic url="https://c8.alamy.com/comp/G2XCBM/no-justice-no-peace-no-justice-no-peace-sponti-graffiti-slogan-on-G2XCBM.jpg"/>
-                    <figDesc>
-                        <author corresp="imgAuthor">
-                        </author>
-                        <availability>
-                            <licence target="http://creativecommons.org/licenses/by/4.0/"/>
-                        </availability>
-                    </figDesc>
-                </figure>
-            <listevent xmlns="http://www.w3.org/1999/xhtml"><event ref="SSK_st_1557480695830" xml:id="s1" type="researchStep"></event><event ref="SSK_st_1557480709052" xml:id="s2" type="researchStep"></event><event ref="SSK_st_1557480710889" xml:id="s3" type="researchStep"></event><event ref="SSK_st_1557480761882" xml:id="s4" type="researchStep"></event><event ref="SSK_st_1557480809136" xml:id="s5" type="researchStep"></event><event ref="SSK_st_1557480828436" xml:id="s6" type="researchStep"></event><event ref="SSK_st_1557480829717" xml:id="s7" type="researchStep"></event><event ref="SSK_st_1557480830878" xml:id="s8" type="researchStep"></event><event ref="SSK_st_1557480838019" xml:id="s9" type="researchStep"></event><event ref="SSK_st_1557480893868" xml:id="s10" type="researchStep"></event><event ref="SSK_st_1557481108842" xml:id="s11" type="researchStep"></event><event ref="SSK_st_1557481218590" xml:id="s12" type="researchStep"></event><event ref="SSK_st_1557481926613" xml:id="s13" type="researchStep"></event><event ref="SSK_st_1557481951320" xml:id="s14" type="researchStep"></event></listevent></div>
-        </body>
-    </text>
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <author>
+          <forename> Vourvachaki, Stavridi </forename>
+          <surname> Karmen, Maria </surname>
+          <affiliation> AUEB </affiliation>
+        </author>
+        <sponsor> </sponsor>
+      </titleStmt>
+      <publicationStmt>
+        <authority> </authority>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+        </availability>
+      </publicationStmt>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div>
+        <head xml:lang="en"> Graffiti Slogan Corpus Creation </head>
+        <desc xml:lang="en" corresp="definition"> Information extraction from images with graffiti
+          slogans and labeling annotation </desc>
+        <desc corresp="terms">
+          <term key="Cultural heritage and museology" corresp="disciplines"/>
+          <term key="Information Retrieval" corresp="techniques"/>
+          <term key="Digital Humanities" corresp="objects"/>
+          <term key="JSON, CSV, JPEG, " corresp="standard"/>
+        </desc>
+        <figure corresp="image">
+          <head corresp="image"> </head>
+          <graphic
+            url="https://c8.alamy.com/comp/G2XCBM/no-justice-no-peace-no-justice-no-peace-sponti-graffiti-slogan-on-G2XCBM.jpg"/>
+          <figDesc>
+            <author corresp="imgAuthor"> </author>
+            <availability>
+              <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+            </availability>
+          </figDesc>
+        </figure>
+        <listevent xmlns="http://www.w3.org/1999/xhtml">
+          <event ref="SSK_st_1557480695830" xml:id="s1" type="researchStep"/>
+          <event ref="SSK_st_1557480709052" xml:id="s2" type="researchStep"/>
+          <event ref="SSK_st_1557480710889" xml:id="s3" type="researchStep"/>
+          <event ref="SSK_st_1557480761882" xml:id="s4" type="researchStep"/>
+          <event ref="SSK_st_1557480809136" xml:id="s5" type="researchStep"/>
+          <event ref="SSK_st_1557480828436" xml:id="s6" type="researchStep"/>
+          <event ref="SSK_st_1557480829717" xml:id="s7" type="researchStep"/>
+          <event ref="SSK_st_1557480830878" xml:id="s8" type="researchStep"/>
+          <event ref="SSK_st_1557480838019" xml:id="s9" type="researchStep"/>
+          <event ref="SSK_st_1557480893868" xml:id="s10" type="researchStep"/>
+          <event ref="SSK_st_1557481108842" xml:id="s11" type="researchStep"/>
+          <event ref="SSK_st_1557481218590" xml:id="s12" type="researchStep"/>
+          <event ref="SSK_st_1557481926613" xml:id="s13" type="researchStep"/>
+          <event ref="SSK_st_1557481951320" xml:id="s14" type="researchStep"/>
+        </listevent>
+      </div>
+    </body>
+  </text>
 </TEI>

@@ -1,65 +1,60 @@
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="assets/tei_meta/models/SSKODDforScForm.xml">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <author>
-                    <forename>
-                        Eleni
-                    </forename>
-                    <surname>
-                        Tziafa
-                    </surname>
-                    <affiliation>
-                        National and Kapodistrian University of Athens
-                    </affiliation>
-                </author>
-                <sponsor>
-                </sponsor>
-            </titleStmt>
-            <publicationStmt>
-                <authority>
-                    TARGET Project
-                </authority>
-                <availability>
-                    <licence target="http://creativecommons.org/licenses/by/4.0/"/>
-                </availability>
-            </publicationStmt>
-        </fileDesc>
-    </teiHeader>
-    <text>
-        <body>
-            <div>
-                <head xml:lang="en">
-                    TARGET: Building a translational Greek corpus
-                </head>
-                <desc xml:lang="en" corresp="definition">
-                    This scenario explains the steps to take to compile an annotated translational corpus in order to conduct linguistic and statistical analysis based on it. The first step is to collect written texts translated into Greek from a variety of source languages, European and non-European. The next step is to annotate the data and put the annotated corpus into a corpus query engine to query and analyze it based on its annotations. 
-                </desc>
-                <desc corresp="terms">
-                    <term key="Linguistics" corresp="disciplines"/>
-                    <term key="Text Mining " corresp="techniques"/>
-                    <term key="Language" corresp="objects"/>
-                    <term key="TEI" corresp="standard"/>
-                </desc>
-                <desc corresp="terms">
-                    <term key="Linguistics" corresp="disciplines"/>
-                    <term key="POS-Tagging" corresp="techniques"/>
-                    <term key="Text" corresp="objects"/>
-                    <term key="TEI" corresp="standard"/>
-                </desc>
-                <figure corresp="image">
-                    <head corresp="image">
-                    </head>
-                    <graphic url=""/>
-                    <figDesc>
-                        <author corresp="imgAuthor">
-                        </author>
-                        <availability>
-                            <licence target="http://creativecommons.org/licenses/by/4.0/"/>
-                        </availability>
-                    </figDesc>
-                </figure>
-            <listevent xmlns="http://www.w3.org/1999/xhtml"><event ref="SSK_st_1557481063218" xml:id="s1" type="researchStep"></event><event ref="SSK_st_1557481165158" xml:id="s2" type="researchStep"></event><event ref="SSK_st_1557481191650" xml:id="s3" type="researchStep"></event></listevent></div>
-        </body>
-    </text>
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <author>
+          <forename> Eleni </forename>
+          <surname> Tziafa </surname>
+          <affiliation> National and Kapodistrian University of Athens </affiliation>
+        </author>
+        <sponsor> </sponsor>
+      </titleStmt>
+      <publicationStmt>
+        <authority> TARGET Project </authority>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+        </availability>
+      </publicationStmt>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div>
+        <head xml:lang="en"> TARGET: Building a translational Greek corpus </head>
+        <desc xml:lang="en" corresp="definition"> This scenario explains the steps to take to
+          compile an annotated translational corpus in order to conduct linguistic and statistical
+          analysis based on it. The first step is to collect written texts translated into Greek
+          from a variety of source languages, European and non-European. The next step is to
+          annotate the data and put the annotated corpus into a corpus query engine to query and
+          analyze it based on its annotations. </desc>
+        <desc corresp="terms">
+          <term key="Linguistics" corresp="disciplines"/>
+          <term key="Text Mining " corresp="techniques"/>
+          <term key="Language" corresp="objects"/>
+          <term key="TEI" corresp="standard"/>
+        </desc>
+        <desc corresp="terms">
+          <term key="Linguistics" corresp="disciplines"/>
+          <term key="POS-Tagging" corresp="techniques"/>
+          <term key="Text" corresp="objects"/>
+          <term key="TEI" corresp="standard"/>
+        </desc>
+        <figure corresp="image">
+          <head corresp="image"> </head>
+          <graphic url=""/>
+          <figDesc>
+            <author corresp="imgAuthor"> </author>
+            <availability>
+              <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+            </availability>
+          </figDesc>
+        </figure>
+        <listevent xmlns="http://www.w3.org/1999/xhtml">
+          <event ref="SSK_st_1557481063218" xml:id="s1" type="researchStep"/>
+          <event ref="SSK_st_1557481165158" xml:id="s2" type="researchStep"/>
+          <event ref="SSK_st_1557481191650" xml:id="s3" type="researchStep"/>
+        </listevent>
+      </div>
+    </body>
+  </text>
 </TEI>

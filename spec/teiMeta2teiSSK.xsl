@@ -22,12 +22,12 @@
   
   <xsl:template match="tei:TEI">
     <xsl:choose>
-      <xsl:when test="/tei:TEI/@xml:base='SSKODDforScForm.xml'">
+      <xsl:when test="/tei:TEI/@xml:base='assets/tei_meta/models/SSKODDforScForm.xml'">
         <TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario">
         <xsl:apply-templates/>
         </TEI>
       </xsl:when>
-      <xsl:when test="/tei:TEI/@xml:base='SSKODDforStepForm.xml'">
+      <xsl:when test="/tei:TEI/@xml:base='assets/tei_meta/models/SSKODDforStepForm.xml'">
         <TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep"><xsl:apply-templates/>
         </TEI>
       </xsl:when>
