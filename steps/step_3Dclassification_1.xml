@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="step_3DV" type="researchStep">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Step "Visualisation"</title>
+        <author>
+          <forename>Eleonora</forename>
+          <surname>Grilli</surname>
+          <affiliation>3D Optical Metrology (3DOM) unit, Bruno Kessler Foundation (FBK), Department
+            of Architecture, University of Bologna</affiliation>
+        </author>
+        <author>
+          <forename>Imanol</forename>
+          <surname>Muñoz-Pandiella</surname>
+          <affiliation>ViRVIG Research Center—Universitat de Girona</affiliation>
+        </author>
+        <author>
+          <forename>Erica</forename>
+          <surname>Nocerico</surname>
+          <affiliation>Aix-Marseille Université, CNRS, ENSAM, Université De Toulon</affiliation>
+        </author>
+        <sponsor>PARTHENOS</sponsor>
+      </titleStmt>
+      <publicationStmt>
+        <authority/>
+        <date/>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0/">
+            <p>The Creative Commons Attribution 4.0 Unported (CC BY 4.0) Licence applies to this
+              document.</p>
+          </licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Created from scratch</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change/>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listEvent>
+        <event type="researchStep">
+          <head xml:lang="en">Optimization of the mesh</head>
+          <desc xml:lang="en" type="definition">To facilitate the step 3 it’s beneficial optimize
+            the 3D models (ply files) applying some tools (see link below) that allows to regularize
+            the triangles of the meshes and avoid topology errors.</desc>
+          <desc xml:lang="en" type="terms">
+            <term key="Editing" source="Tadirah" type="activity"/>
+            <term key="PLY" source="ssk" type="standard"/>
+          </desc>
+          <linkGrp type="generalResources"
+            xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+            <ref type="tool" source="zotero" target="ZKB8P5HG"/>
+          </linkGrp>
+        </event>
+      </listEvent>
+    </body>
+  </text>
+</TEI>

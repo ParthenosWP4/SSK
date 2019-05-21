@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario" xml:id="SSK_sc_3Dclassification">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>"Classification of 3D models: working from 2D to 3D" scenario</title>
+        <author>
+          <forename>Eleonora</forename>
+          <surname>Grilli</surname>
+          <affiliation>3D Optical Metrology (3DOM) unit, Bruno Kessler Foundation (FBK), Department
+            of Architecture, University of Bologna</affiliation>
+        </author>
+        <author>
+          <forename>Imanol</forename>
+          <surname>Muñoz-Pandiella</surname>
+          <affiliation>ViRVIG Research Center—Universitat de Girona</affiliation>
+        </author>
+        <author>
+          <forename>Erica</forename>
+          <surname>Nocerico</surname>
+          <affiliation>Aix-Marseille Université, CNRS, ENSAM, Université De Toulon</affiliation>
+        </author>
+        <sponsor>PARTHENOS</sponsor>
+      </titleStmt>
+      <publicationStmt>
+        <authority/>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p/>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change/>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div type="researchScenario">
+        <head type="scenarioTitle" xml:lang="en">Classification of 3D models: working from 2D to 3D</head>
+        <desc type="definition" xml:lang="en">The use of 3D models is nowadays widely diffused for
+          the documentation and dissemination of cultural and archaeological heritage. Nevertheless,
+          to provide useful 3D data, it is necessary to associate some semantic information that can
+          help operators to understand the heritage. This scenario aims at point out a pipeline to
+          manage various types of 3D survey data and associate them with heterogeneous information
+          and attributes to characterize and describe the surveyed object. </desc>
+        <desc type="terms" xml:lang="en">
+          <term key="Archaeology and Prehistory" source="AureHAL" type="discipline"/>
+          <term key="Architecture, space management" source="AureHAL" type="discipline"/>
+          <term key="Cultural heritage and museology" source="AureHAL" type="discipline"/>
+          <term key="Images" source="Tadirah" type="object"/>
+          <term key="Images (3D)" source="Tadirah" type="object"/>
+        </desc>
+        <figure>
+          <head>UAV</head>
+          <graphic url="https://github.com/ParthenosWP4/SSK/blob/master/img/3Dclassification.jpg"/>
+          <figDesc>
+            <!-- <author type="imgAuthor">SSK</author>
+            <availability type="imgLicence">
+              <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+            </availability>-->
+          </figDesc>
+        </figure>
+        <listEvent>
+          <event xml:id="s1" type="researchScenario" ref="SSK_sc_production3DObjectsScenario"></event>
+          <event xml:id="s2" type="researchStep" ref="step_3Dclassification_1"/>
+          <event xml:id="s3" type="researchStep" ref="step_3Dclassification_2"/>
+          <event xml:id="s4" type="researchStep" ref="step_3Dclassification_3"/>
+          <event xml:id="s5" type="researchStep" ref="step_3Dclassification_4"/>
+          <event xml:id="s6" type="researchStep" ref="step_3Dclassification_5"/>
+          <event xml:id="s7" type="researchScenario" ref="SSK_sc_Preservation3DObjects"/>
+        </listEvent>
+      </div>
+    </body>
+  </text>
+</TEI>
