@@ -70,11 +70,11 @@
           </desc>
           <linkGrp type="generalResources"
             xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-            <ref type="spec" target="DXDALGXG"/>
-            <ref type="journal" target="9S6FDQJZ"/>
-            <ref type="tool" target="UTJCWLBI"/>
-            <ref type="tool" target="PZV898DS"/>
-            <ref type="tool" target="LMIFBKMA"/>
+            <ref source="zotero" type="spec" target="DXDALGXG"/>
+            <ref source="zotero" type="journal" target="9S6FDQJZ"/>
+            <ref source="zotero" type="tool" target="UTJCWLBI"/>
+            <ref source="zotero" type="tool" target="PZV898DS"/>
+            <ref source="zotero" type="tool" target="LMIFBKMA"/>
           </linkGrp>
         </event>
       </listEvent>

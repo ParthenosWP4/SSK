@@ -80,8 +80,8 @@
           </desc>
           <linkGrp type="generalResources"
             xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-            <ref type="tool" target="DSDTVKTA"/>
-            <ref type="report" target="BWZJUXZL"/>
+            <ref source="zotero" type="tool" target="DSDTVKTA"/>
+            <ref source="zotero" type="report" target="BWZJUXZL"/>
           </linkGrp>
         </event>
       </listEvent>

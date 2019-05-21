@@ -72,9 +72,9 @@
           </desc>
           <linkGrp type="generalResources"
             xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-            <ref type="tool" target="C9RF5CWS"/>
-            <ref type="tool" target="YMBX2XM2"/>
-            <ref type="tool" target="Q48UGPVN"/>
+            <ref source="zotero" type="tool" target="C9RF5CWS"/>
+            <ref source="zotero" type="tool" target="YMBX2XM2"/>
+            <ref source="zotero" type="tool" target="Q48UGPVN"/>
           </linkGrp>
         </event>
       </listEvent>

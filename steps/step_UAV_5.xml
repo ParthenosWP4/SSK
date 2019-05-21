@@ -68,9 +68,9 @@
           </desc>
           <linkGrp type="generalResources"
             xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-            <ref type="paper" target="QS3FIN8J"/>
-            <ref type="tool" target="9M24UQEJ"/>
-            <ref type="tool" target="PMES8DJW"/>
+            <ref type="paper" source="zotero" target="QS3FIN8J"/>
+            <ref type="tool" source="zotero" target="9M24UQEJ"/>
+            <ref type="tool" source="zotero" target="PMES8DJW"/>
           </linkGrp>
         </event>
       </listEvent>
