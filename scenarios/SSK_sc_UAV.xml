@@ -58,10 +58,10 @@
           <head>UAV</head>
           <graphic url="https://github.com/ParthenosWP4/SSK/blob/master/img/UAVimg.jpg"/>
           <figDesc>
-            <author type="imgAuthor">SSK</author>
+           <!-- <author type="imgAuthor">SSK</author>
             <availability type="imgLicence">
               <licence target="http://creativecommons.org/licenses/by/4.0/"/>
-            </availability>
+            </availability>-->
           </figDesc>
         </figure>
         <listEvent>
