@@ -64,6 +64,13 @@
             </availability>
           </figDesc>
         </figure>
+        <listEvent>
+          <event xml:id="s1" type="researchStep" ref="step_UAV_1"/>
+          <event xml:id="s2" type="researchStep" ref="step_UAV_2"/>
+          <event xml:id="s3" type="researchStep" ref="step_UAV_3"/>
+          <event xml:id="s4" type="researchStep" ref="step_UAV_4"/>
+          <event xml:id="s5" type="researchStep" ref="step_UAV_5"/>
+        </listEvent>
       </div>
     </body>
   </text>
