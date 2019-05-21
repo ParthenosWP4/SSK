@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario">
+   <teiHeader xmlns="">
+      <fileDesc xmlns="http://www.tei-c.org/ns/1.0">
+         <titleStmt>
+            <title/>
+            <author>
+               <forename> Stamatis </forename>
+               <surname> Bouses </surname>
+               <affiliation> Democritus University of Thrace </affiliation>
+            </author>
+            <author>
+               <forename> Vicky </forename>
+               <surname> Liakopoulou </surname>
+               <affiliation> AUEB </affiliation>
+            </author>
+            <author>
+               <forename> Isidora </forename>
+               <surname> Despotidou </surname>
+               <affiliation> AUEB </affiliation>
+            </author>
+            <author>
+               <forename> Antonia </forename>
+               <surname> Despotidou </surname>
+               <affiliation> NKUA </affiliation>
+            </author>
+            <author>
+               <forename/>
+               <surname/>
+               <affiliation/>
+            </author>
+            <sponsor/>
+         </titleStmt>
+         <publicationStmt>
+            <authority/>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p/>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div type="researchScenario">
+            <head type="scenarioTitle" xml:lang="en"> Data recognition and annotation of manuscripts and papyri </head>
+            <desc type="definition" xml:lang="en"> The object is to create digital facsimiles of
+          papyri and manuscripts in a way to extract discrete, machine-readable units from them,
+          such as plain text. </desc>
+            <desc type="terms">
+               <term key="Classical studies" source="aureHAL" type="discipline"/>
+               <term key="Cultural heritage and museology"
+                     source="aureHAL"
+                     type="discipline"/>
+               <term key="History" source="aureHAL" type="discipline"/>
+               <term key="Commenting" source="TaDiRAH" type="technique"/>
+               <term key="Machine Learning" source="TaDiRAH" type="technique"/>
+               <term key="Encoding" source="TaDiRAH" type="technique"/>
+               <term key="Artifacts" source="TaDiRAH" type="object"/>
+               <term key="Images" source="TaDiRAH" type="object"/>
+               <term key="Manuscript" source="TaDiRAH" type="object"/>
+               <term key="Metadata" source="TaDiRAH" type="object"/>
+               <term key="Data" source="TaDiRAH" type="object"/>
+               <term key="Text" source="TaDiRAH" type="object"/>
+               <term key="Digital Humanities" source="TaDiRAH" type="object"/>
+               <term key="Language" source="TaDiRAH" type="object"/>
+               <term key="Tools" source="TaDiRAH" type="object"/>
+            </desc>
+            <figure>
+               <head/>
+               <graphic url=""/>
+               <figDesc>
+                  <author type="imgAuthor"/>
+                  <availability type="imgLicence">
+                     <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+                  </availability>
+               </figDesc>
+            </figure>
+         </div>
+      </body>
+   </text>
+</TEI>

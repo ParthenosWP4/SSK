@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
+   <teiHeader xmlns="">
+      <fileDesc xmlns="http://www.tei-c.org/ns/1.0">
+         <titleStmt>
+            <title/>
+            <author>
+               <forename>
+                        Eleni
+                    </forename>
+               <surname>
+                        Tziafa
+                    </surname>
+               <affiliation>
+                        National and Kapodistrian University of Athens
+                    </affiliation>
+            </author>
+            <sponsor/>
+         </titleStmt>
+         <publicationStmt>
+            <authority>
+                    TARGET Project
+                </authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p/>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div type="researchScenario">
+            <head type="scenarioTitle" xml:lang="en">
+                    TARGET: Building a translational Greek corpus
+                </head>
+            <desc type="definition" xml:lang="en">
+                    This scenario explains the steps to take to compile an annotated translational corpus in order to conduct linguistic and statistical analysis based on it. The first step is to collect written texts translated into Greek from a variety of source languages, European and non-European. The next step is to annotate the data and put the annotated corpus into a corpus query engine to query and analyze it based on its annotations. 
+                </desc>
+            <desc type="terms">
+               <term key="Linguistics" source="aureHAL" type="discipline"/>
+               <term key="Text Mining " source="TaDiRAH" type="technique"/>
+               <term key="Language" source="TaDiRAH" type="object"/>
+            </desc>
+            <desc type="terms">
+               <term key="Linguistics" source="aureHAL" type="discipline"/>
+               <term key="POS-Tagging" source="TaDiRAH" type="technique"/>
+               <term key="Text" source="TaDiRAH" type="object"/>
+            </desc>
+            <figure>
+               <head/>
+               <graphic url=""/>
+               <figDesc>
+                  <author type="imgAuthor"/>
+                  <availability type="imgLicence">
+                     <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+                  </availability>
+               </figDesc>
+            </figure>
+         </div>
+         <listEvent>
+            <event type="researchStep">
+               <head type="stepTitle" xml:lang="en">
+                        Collecting and tagging the text for the corpus
+                    </head>
+               <desc type="definition" xml:lang="en">
+                        The first step is to collect and adding meta-data to the texts that will conist the corpus
+                    </desc>
+               <desc type="terms">
+                  <term key="Gathering" source="TaDiRAH" type="activity"/>
+                  <term key="Searching" source="TaDiRAH" type="technique"/>
+                  <term key="Language" source="TaDiRAH" type="object"/>
+               </desc>
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"/>
+               <linkGrp type="projectResources"
+                        corresp=""
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"
+                        source="TARGET"/>
+            </event>
+         </listEvent>
+      </body>
+   </text>
+</TEI>

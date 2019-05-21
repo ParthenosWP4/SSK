@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
+   <teiHeader xmlns="">
+      <fileDesc xmlns="http://www.tei-c.org/ns/1.0">
+         <titleStmt>
+            <title/>
+            <author>
+               <forename>
+                        t
+                    </forename>
+               <surname>
+                        g
+                    </surname>
+               <affiliation/>
+            </author>
+            <author>
+               <forename>
+                        m
+                    </forename>
+               <surname>
+                        d
+                    </surname>
+               <affiliation/>
+            </author>
+            <sponsor>
+                    efc
+                </sponsor>
+         </titleStmt>
+         <publicationStmt>
+            <authority/>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p/>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div type="researchScenario">
+            <head type="scenarioTitle" xml:lang="en">
+                    digitization of photos
+                </head>
+            <desc type="definition" xml:lang="en">
+                    dig
+                </desc>
+            <desc type="terms">
+               <term key="History" source="aureHAL" type="discipline"/>
+               <term key="Migration" source="TaDiRAH" type="technique"/>
+               <term key="Images" source="TaDiRAH" type="object"/>
+            </desc>
+            <figure>
+               <head>
+                        smyrni
+                    </head>
+               <graphic url=""/>
+               <figDesc>
+                  <author type="imgAuthor">
+                            tg
+                        </author>
+                  <availability type="imgLicence">
+                     <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+                  </availability>
+               </figDesc>
+            </figure>
+         </div>
+         <listEvent>
+            <event type="researchStep">
+               <head type="stepTitle" xml:lang="en">
+                        digitization
+                    </head>
+               <desc type="definition" xml:lang="en">
+                        indexing
+                    </desc>
+               <desc type="terms">
+                  <term key="Archiving" source="TaDiRAH" type="activity"/>
+                  <term key="Scanning" source="TaDiRAH" type="technique"/>
+                  <term key="Images" source="TaDiRAH" type="object"/>
+               </desc>
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+                  <ref type="jpeg" target=""/>
+               </linkGrp>
+               <linkGrp type="projectResources"
+                        corresp=""
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"
+                        source="digitization"/>
+            </event>
+         </listEvent>
+      </body>
+   </text>
+</TEI>
