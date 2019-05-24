@@ -1,0 +1,95 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="assets/tei_meta/models/SSKODDforStepForm.xml">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <author>
+                    <forename>
+                        Boissat
+                    </forename>
+                    <surname>
+                        Romain
+                    </surname>
+                    <affiliation>
+                        MOM
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                        Champcourt
+                    </forename>
+                    <surname>
+                        Céline
+                    </surname>
+                    <affiliation>
+                        LAT
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                        Gautier
+                    </forename>
+                    <surname>
+                        Hélène
+                    </surname>
+                    <affiliation>
+                        Huma-Num
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                        Marlet
+                    </forename>
+                    <surname>
+                        Olivier
+                    </surname>
+                    <affiliation>
+                        LAT
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                        Puren
+                    </forename>
+                    <surname>
+                        Marie
+                    </surname>
+                    <affiliation>
+                        LARHRA
+                    </affiliation>
+                </author>
+                <sponsor>
+                    DARIAH
+                </sponsor>
+            </titleStmt>
+            <publicationStmt>
+                <authority>
+                    Consortium MASA
+                </authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+                </availability>
+            </publicationStmt>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listEvent>
+                <event>
+                    <head xml:lang="en">
+                        Identify concepts in the dataset
+                    </head>
+                    <desc xml:lang="en" corresp="definition">
+                        Formalize the data structure : 1/ Data dictionary: for consistency, make explicit the vocabulary used in the data set. 2/ Without reference to CIDOC, identify the high-level concepts that structure the dataset. Think about the relevance of the data to be stored (not necessarily useful to model everything) and make a selection. In order to achieve interoperability, it is not useful to map concepts that are specific to a dataset but to focus on concepts that are shared with other datasets in the discipline. The specificities of a dataset remain accessible and searchable directly in the online corpus of this dataset. 3/ Formalize a diagram linking the concepts together by specifying the relationships. 4/ Identify any metadata intrinsic to the dataset: for a database of an archaeological excavation, the information of the person responsible for the excavation, the name of the site itself, is not necessarily stored in the dataset itself.
+                    </desc>
+                    <desc corresp="terms">
+                        <term key="Modeling" corresp="activity"/>
+                    </desc>
+                    <linkGrp corresp="generalResources">
+                        <ref type="Software" target="http://dia-installer.de/index.html.fr"/>
+                    </linkGrp>
+                    <linkGrp source="" url="" corresp="projectResources"/>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>
