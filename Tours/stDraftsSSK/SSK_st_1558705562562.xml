@@ -1,0 +1,101 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="assets/tei_meta/models/SSKODDforStepForm.xml">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <author>
+                    <forename>
+                        Boissat
+                    </forename>
+                    <surname>
+                        Romain
+                    </surname>
+                    <affiliation>
+                        MOM
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                        Champcourt
+                    </forename>
+                    <surname>
+                        Céline
+                    </surname>
+                    <affiliation>
+                        LAT
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                        Gautier
+                    </forename>
+                    <surname>
+                        Hélène
+                    </surname>
+                    <affiliation>
+                        Huma-Num
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                        Marlet
+                    </forename>
+                    <surname>
+                        Olivier
+                    </surname>
+                    <affiliation>
+                        LAT
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                        Puren
+                    </forename>
+                    <surname>
+                        Marie
+                    </surname>
+                    <affiliation>
+                        LARHRA
+                    </affiliation>
+                </author>
+                <sponsor>
+                    DARIAH
+                </sponsor>
+            </titleStmt>
+            <publicationStmt>
+                <authority>
+                    Consortium MASA
+                </authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+                </availability>
+            </publicationStmt>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listEvent>
+                <event>
+                    <head xml:lang="en">
+                        Learning to use CIDOC-CRM
+                    </head>
+                    <desc xml:lang="en" corresp="definition">
+                        Several tools are available to understand the ontology of CIDOC CRM. A simple way is to load the RDF file or the OWL file from CIDOC into the Protégé free software in order to navigate through the ontology (and possibly its extensions) and read the definitions of each entity and property. It is also possible to use OntoME to load and explore the CIDOC ontology. A second possibility is to use the card game developed by George Bruseker and Anaïs Guillem (ICS-FORTH, Heraklion), both to understand and formalize in a playful way the interactions between entities and properties, and to start formalizing the mappings (only with the CRMbase, excluding extensions). The last solution is to consult the documentation of CIDOC and its extensions.
+                    </desc>
+                    <desc corresp="terms">
+                        <term key="Teaching / Learning" corresp="activity"/>
+                        <term key="CIDOC-CRM" corresp="standard"/>
+                    </desc>
+                    <linkGrp corresp="generalResources">
+                        <ref type="Software" target="https://protege.stanford.edu/"/>
+                        <ref type="Application" target="http://ontologies.dataforhistory.org/"/>
+                        <ref type="CIDOC Game" target="http://cidoc-crm-game.org"/>
+                        <ref type="Documentation" target="6A3YJDRQ"/>
+                        <ref type="Documentation" target="http://www.cidoc-crm.org/collaborations"/>
+                        <ref type="Documentation" target="http://cidoc-crm-game.org/sites/default/files/2018-11/2018-CAA%20Tuebingen_Learning%20through%20doing_OnlineGame.pdf"/>
+                    </linkGrp>
+                    <linkGrp source="" url="" corresp="projectResources"/>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>
