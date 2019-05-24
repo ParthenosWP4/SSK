@@ -1,0 +1,45 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="assets/tei_meta/models/SSKODDforStepForm.xml">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <author>
+                    <forename>
+                        LIONEL
+                    </forename>
+                    <surname>
+                        TADJOU
+                    </surname>
+                    <affiliation/>
+                </author>
+                <sponsor>
+                    Inria
+                </sponsor>
+            </titleStmt>
+            <publicationStmt>
+                <authority/>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+                </availability>
+            </publicationStmt>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div>
+                <head xml:lang="en"/>
+                <desc xml:lang="en" corresp="definition"/>
+                <desc corresp="terms"/>
+                <figure corresp="image">
+                    <head corresp="image"/>
+                    <graphic url=""/>
+                    <figDesc>
+                        <author corresp="imgAuthor"/>
+                        <availability>
+                            <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+                        </availability>
+                    </figDesc>
+                </figure>
+            </div>
+        </body>
+    </text>
+</TEI>
