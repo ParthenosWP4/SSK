@@ -1,0 +1,91 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="assets/tei_meta/models/SSKODDforStepForm.xml">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <author>
+                    <forename>
+                        Martina
+                    </forename>
+                    <surname>
+                        Trognitz
+                    </surname>
+                    <affiliation>
+                        OEAW-ACDH
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                        Émilie
+                    </forename>
+                    <surname>
+                        Saubestre
+                    </surname>
+                    <affiliation>
+                        FEETK
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                        Costas
+                    </forename>
+                    <surname>
+                        Papadopoulos
+                    </surname>
+                    <affiliation>
+                        Maastricht University
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                        Patrick
+                    </forename>
+                    <surname>
+                        McInerney
+                    </surname>
+                    <affiliation>
+                        Waterford Institute of Technology
+                    </affiliation>
+                </author>
+                <sponsor>
+                    PARTHENOS
+                </sponsor>
+            </titleStmt>
+            <publicationStmt>
+                <authority>
+                    "Methodologies, Tools and Challenges for 3D Use in Social Sciences and Humanities" workshop, Marseille, 25-27 February 2019
+                </authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+                </availability>
+            </publicationStmt>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listEvent>
+                <event>
+                    <head xml:lang="en">
+                        Convert to long term preservation formats
+                    </head>
+                    <desc xml:lang="en" corresp="definition">
+                        The main component of an RTI dataset are photographies, which should be kept in DNG or TIFF format. Additionally some software-dependent formats will have to be considered for archiving as well as the JPEG derivatives of the original images for processing. Resulting formats for RTI images were developed in 2001 by the Hewlett-Packard-Laboratories and further extended by Cultural Heritage Imaging (CHI).
+                    </desc>
+                    <desc corresp="terms">
+                        <term key="Imaging" corresp="activity"/>
+                        <term key="DNG" corresp="standard"/>
+                        <term key="TIFF" corresp="standard"/>
+                        <term key="JPEG" corresp="standard"/>
+                        <term key="XML" corresp="standard"/>
+                        <term key="XMP" corresp="standard"/>
+                    </desc>
+                    <linkGrp corresp="generalResources">
+                        <ref type="spec" target="BLZFJXS8"/>
+                        <ref type="spec" target="VPXD44E2"/>
+                        <ref type="tool" target="YE3KE6WY"/>
+                    </linkGrp>
+                    <linkGrp source="" url="" corresp="projectResources"/>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>
