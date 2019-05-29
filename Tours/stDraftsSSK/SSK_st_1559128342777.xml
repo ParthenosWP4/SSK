@@ -1,0 +1,86 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="assets/tei_meta/models/SSKODDforStepForm.xml">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <author>
+                    <forename>
+                        Martina
+                    </forename>
+                    <surname>
+                        Trognitz
+                    </surname>
+                    <affiliation>
+                        OEAW-ACDH
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                        Émilie
+                    </forename>
+                    <surname>
+                        Saubestre
+                    </surname>
+                    <affiliation>
+                        FEETK
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                        Costas
+                    </forename>
+                    <surname>
+                        Papadopoulos
+                    </surname>
+                    <affiliation>
+                        Maastricht University
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                        Patrick
+                    </forename>
+                    <surname>
+                        McInerney
+                    </surname>
+                    <affiliation>
+                        Waterford Institute of Technology
+                    </affiliation>
+                </author>
+                <sponsor>
+                    PARTHENOS
+                </sponsor>
+            </titleStmt>
+            <publicationStmt>
+                <authority>
+                    "Methodologies, Tools and Challenges for 3D Use in Social Sciences and Humanities" workshop, Marseille, 25-27 February 2019
+                </authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+                </availability>
+            </publicationStmt>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listEvent>
+                <event>
+                    <head xml:lang="en">
+                        Document image acquisition and processing
+                    </head>
+                    <desc xml:lang="en" corresp="definition">
+                        Already before archiving, during the actual acquisition of images for RTI, relevant metadata and documentation should be collected. This can be done with e.g. a dedicated tabular protocol or shooting log. Minimal information should include description of the capture method including specific settings, the hardware used, persons involved, and object information such as an inventory number. After image acquisition all processing steps should also be recorded in the shooting log in order to provide for replicability.
+                    </desc>
+                    <desc corresp="terms">
+                        <term key="Imaging" corresp="activity"/>
+                    </desc>
+                    <linkGrp corresp="generalResources">
+                        <ref type="tool" target="J5XDF5WM"/>
+                        <ref type="tutorial" target="448PIRZB"/>
+                        <ref type="tutorial" target="S6IH4VK9"/>
+                    </linkGrp>
+                    <linkGrp source="" url="" corresp="projectResources"/>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>
