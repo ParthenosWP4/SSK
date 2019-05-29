@@ -55,10 +55,10 @@
           <head/>
           <graphic url=""/>
           <figDesc>
-            <author type="imgAuthor"/>
+           <!-- <author type="imgAuthor"/>
             <availability type="imgLicence">
               <licence target="http://creativecommons.org/licenses/by/4.0/"/>
-            </availability>
+            </availability>-->
           </figDesc>
         </figure>
         <listEvent>

@@ -55,7 +55,7 @@
           <term key="Images (3D)" source="Tadirah" type="object"/>
         </desc>
         <figure>
-          <head>UAV</head>
+          <head>3D classification</head>
           <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/3Dclassification.jpg"/>
           <figDesc>
             <!-- <author type="imgAuthor">SSK</author>

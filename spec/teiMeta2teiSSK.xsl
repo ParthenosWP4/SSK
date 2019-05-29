@@ -34,7 +34,7 @@
     </xsl:choose>
   </xsl:template>
   
-  <xsl:template match="tei:teiHeader">
+  <xsl:template match="tei:teiHeader" xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
       <xsl:apply-templates/>
       <revisionDesc>
@@ -101,6 +101,7 @@
   <xsl:template match="tei:desc[@corresp='terms']" xmlns="http://www.tei-c.org/ns/1.0">
     <xsl:copy>
       <xsl:attribute name="type">terms</xsl:attribute>
+      <xsl:attribute name="xml:lang">en</xsl:attribute>
       <xsl:apply-templates select="@*|node()" />
     </xsl:copy>
   </xsl:template>
