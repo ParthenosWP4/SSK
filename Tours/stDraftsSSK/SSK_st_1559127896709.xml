@@ -1,0 +1,64 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="assets/tei_meta/models/SSKODDforStepForm.xml">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <author>
+                    <forename>
+                        Chiara
+                    </forename>
+                    <surname>
+                        Zuanni
+                    </surname>
+                    <affiliation>
+                        University of Graz
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                        Vincent
+                    </forename>
+                    <surname>
+                        Baillet
+                    </surname>
+                    <affiliation>
+                        University of Bordeaux-Montaigne
+                    </affiliation>
+                </author>
+                <sponsor>
+                    Parthenos
+                </sponsor>
+            </titleStmt>
+            <publicationStmt>
+                <authority/>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+                </availability>
+            </publicationStmt>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listEvent>
+                <event>
+                    <head xml:lang="en">
+                        Visualisation
+                    </head>
+                    <desc xml:lang="en" corresp="definition">
+                        Decide what the final user will be able to see of our work: i.e. formats, interactivity, access to metadata and sources, etc. Final outputs can include: images (that could be printed as well, which for a cultural heritage site is still important),  videos (depending on a budget),  interactive viewers (and which one),  virtual reality (what type of device will be supported) if sources will be made available and in what formats website to host all the material  Level of accuracy and details can be varied depending on: explicit annotations linking to sources resolution accessibility to documentation of the reconstruction process (technical metadata) context of the reconstruction (and possibility of updates)
+                    </desc>
+                    <desc corresp="terms">
+                        <term key="Visualization" corresp="activity"/>
+                        <term key="OBJ" corresp="standard"/>
+                        <term key="PLY" corresp="standard"/>
+                        <term key="JPEG" corresp="standard"/>
+                        <term key="PNG" corresp="standard"/>
+                    </desc>
+                    <linkGrp corresp="generalResources">
+                        <ref type="spec" target="https://github.com/micmacIGN/Documentation/raw/master/DocMicMac.pdf"/>
+                    </linkGrp>
+                    <linkGrp source="" url="" corresp="projectResources"/>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>
