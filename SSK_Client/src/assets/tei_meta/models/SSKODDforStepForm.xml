@@ -447,7 +447,7 @@
 						  <datatype>
 						    <dataRef name="anyURI"/>
 						  </datatype>
-						  <valList type="semi" mode="replace">
+						  <valList>
 						    <valItem ident="spec">
 						      <desc xml:lang="en">Specification</desc>
 						      <desc xml:lang="fr">Spécification</desc>
