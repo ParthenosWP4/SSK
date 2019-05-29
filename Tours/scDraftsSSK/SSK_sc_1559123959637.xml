@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="assets/tei_meta/models/SSKODDforScForm.xml">
     <teiHeader>
         <fileDesc>
@@ -69,7 +68,7 @@
                         </availability>
                     </figDesc>
                 </figure>
-            </div>
+            <listevent xmlns="http://www.w3.org/1999/xhtml"><event ref="SSK_st_1559123970367" xml:id="s1" type="researchStep"></event><event ref="SSK_st_1559124215211" xml:id="s2" type="researchStep"></event><event ref="SSK_st_1559127896709" xml:id="s3" type="researchStep"></event></listevent></div>
             <listEvent>
                 <event>
                     <head xml:lang="en">
