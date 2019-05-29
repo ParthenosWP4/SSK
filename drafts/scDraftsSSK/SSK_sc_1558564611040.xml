@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="assets/tei_meta/models/SSKODDforScForm.xml">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <author>
+                    <forename>
+                        LIONEL
+                    </forename>
+                    <surname>
+                        TADJOU
+                    </surname>
+                    <affiliation>
+                        Inria
+                    </affiliation>
+                </author>
+                <sponsor>
+                </sponsor>
+            </titleStmt>
+            <publicationStmt>
+                <authority>
+                </authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+                </availability>
+            </publicationStmt>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div>
+                <head xml:lang="en">
+                    Test title
+                </head>
+                <desc xml:lang="en" corresp="definition">
+                </desc>
+                <desc corresp="terms">
+                    <term key="Cergy" corresp="standard"/>
+                </desc>
+                <figure corresp="image">
+                    <head corresp="image">
+                    </head>
+                    <graphic url=""/>
+                    <figDesc>
+                        <author corresp="imgAuthor">
+                        </author>
+                        <availability>
+                            <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+                        </availability>
+                    </figDesc>
+                </figure>
+            </div>
+        </body>
+    </text>
+</TEI>

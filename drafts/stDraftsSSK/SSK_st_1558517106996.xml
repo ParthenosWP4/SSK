@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="assets/tei_meta/models/SSKODDforStepForm.xml">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <author>
+                    <forename>
+                        LIONEL
+                    </forename>
+                    <surname>
+                        TADJOU
+                    </surname>
+                    <affiliation>
+                        Inria
+                    </affiliation>
+                </author>
+                <sponsor>
+                    Inria
+                </sponsor>
+                <author>
+                    <forename>
+                    </forename>
+                    <surname>
+                    </surname>
+                    <affiliation>
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                    </forename>
+                    <surname>
+                    </surname>
+                    <affiliation>
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                    </forename>
+                    <surname>
+                    </surname>
+                    <affiliation>
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                    </forename>
+                    <surname>
+                    </surname>
+                    <affiliation>
+                    </affiliation>
+                </author>
+                <sponsor>
+                </sponsor>
+                <sponsor>
+                </sponsor>
+                <sponsor>
+                </sponsor>
+                <sponsor>
+                </sponsor>
+                <sponsor>
+                </sponsor>
+                <sponsor>
+                </sponsor>
+                <sponsor>
+                </sponsor>
+                <sponsor>
+                </sponsor>
+                <sponsor>
+                </sponsor>
+                <sponsor>
+                </sponsor>
+                <sponsor>
+                </sponsor>
+                <sponsor>
+                </sponsor>
+                <sponsor>
+                </sponsor>
+            </titleStmt>
+            <publicationStmt>
+                <authority>
+                </authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+                </availability>
+            </publicationStmt>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div>
+                <head xml:lang="en">
+                    Test title
+                </head>
+                <desc xml:lang="en" corresp="definition">
+                    Test desc
+                </desc>
+                <desc corresp="terms">
+                    <term key="TEI" corresp="standard"/>
+                </desc>
+                <figure corresp="image">
+                    <head corresp="image">
+                    </head>
+                    <graphic url=""/>
+                    <figDesc>
+                        <author corresp="imgAuthor">
+                        </author>
+                        <availability>
+                            <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+                        </availability>
+                    </figDesc>
+                </figure>
+            </div>
+            <listEvent>
+                <event>
+                    <head xml:lang="en">
+                        step 
+                    </head>
+                    <desc xml:lang="en" corresp="definition">
+                        Step 1 Desc
+                    </desc>
+                    <desc corresp="terms">
+                        <term key="" corresp="activity"/>
+                    </desc>
+                    <linkGrp corresp="generalResources"/>
+                    <linkGrp source="" url="" corresp="projectResources"/>
+                    <head xml:lang="en">
+                    </head>
+                    <head xml:lang="en">
+                    </head>
+                    <head xml:lang="en">
+                    </head>
+                    <head xml:lang="en">
+                    </head>
+                    <desc xml:lang="en" corresp="definition">
+                    </desc>
+                    <desc xml:lang="en" corresp="definition">
+                    </desc>
+                    <desc xml:lang="en" corresp="definition">
+                    </desc>
+                    <desc xml:lang="en" corresp="definition">
+                    </desc>
+                    <linkGrp corresp="generalResources"/>
+                    <linkGrp corresp="generalResources"/>
+                    <linkGrp corresp="generalResources"/>
+                    <linkGrp source="" url="" corresp="projectResources"/>
+                    <linkGrp source="" url="" corresp="projectResources"/>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>

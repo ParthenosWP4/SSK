@@ -1,0 +1,48 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="assets/tei_meta/models/SSKODDforStepForm.xml">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <author>
+                    <forename>
+                        lionel
+                    </forename>
+                    <surname>
+                        TADJOU
+                    </surname>
+                    <affiliation>
+                        INRIA
+                    </affiliation>
+                </author>
+                <sponsor/>
+            </titleStmt>
+            <publicationStmt>
+                <authority/>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+                </availability>
+            </publicationStmt>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listEvent>
+                <event>
+                    <head xml:lang="fr">
+                        Step 2
+                    </head>
+                    <desc xml:lang="en" corresp="definition">
+                        desc step 2
+                    </desc>
+                    <desc corresp="terms">
+                        <term key="Translation" corresp="activity"/>
+                        <term key="Encoding" corresp="techniques"/>
+                        <term key="VOT" corresp="standard"/>
+                        <term key="Digital Humanities" corresp="objects"/>
+                    </desc>
+                    <linkGrp corresp="generalResources"/>
+                    <linkGrp source="" url="" corresp="projectResources"/>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>

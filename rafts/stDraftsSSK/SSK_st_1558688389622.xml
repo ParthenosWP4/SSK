@@ -1,0 +1,51 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="assets/tei_meta/models/SSKODDforStepForm.xml">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <author>
+                    <forename>
+                        LIONEL
+                    </forename>
+                    <surname>
+                        TADJOU
+                    </surname>
+                    <affiliation>
+                        Inria
+                    </affiliation>
+                </author>
+                <sponsor/>
+            </titleStmt>
+            <publicationStmt>
+                <authority/>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+                </availability>
+            </publicationStmt>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listEvent>
+                <event>
+                    <head xml:lang="en">
+                        step 1
+                    </head>
+                    <desc xml:lang="en" corresp="definition">
+                        desc Spet 1
+                    </desc>
+                    <desc corresp="terms">
+                        <term key="Recording" corresp="activity"/>
+                        <term key="Collocation Analysis" corresp="techniques"/>
+                        <term key="Data" corresp="objects"/>
+                    </desc>
+                    <linkGrp corresp="generalResources">
+                        <ref type="sdcsdf" target="dsfsdfsdfsdf"/>
+                    </linkGrp>
+                    <linkGrp source="Poject test" url="xxxxx" corresp="projectResources">
+                        <ref type="dfsdfsdf" target="dsfsdgfsdfs"/>
+                    </linkGrp>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>

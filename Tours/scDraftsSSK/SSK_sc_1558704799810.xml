@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="assets/tei_meta/models/SSKODDforScForm.xml">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <author>
+                    <forename>
+                        Boissat
+                    </forename>
+                    <surname>
+                        Romain
+                    </surname>
+                    <affiliation>
+                        MOM
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                        Champcourt
+                    </forename>
+                    <surname>
+                        Céline
+                    </surname>
+                    <affiliation>
+                        LAT
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                        Gautier
+                    </forename>
+                    <surname>
+                        Hélène
+                    </surname>
+                    <affiliation>
+                        Huma-Num
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                        Marlet
+                    </forename>
+                    <surname>
+                        Olivier
+                    </surname>
+                    <affiliation>
+                        LAT
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                        Puren
+                    </forename>
+                    <surname>
+                        Marie
+                    </surname>
+                    <affiliation>
+                        LARHRA
+                    </affiliation>
+                </author>
+                <sponsor>
+                    DARIAH
+                </sponsor>
+            </titleStmt>
+            <publicationStmt>
+                <authority>
+                    Consortium MASA
+                </authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+                </availability>
+            </publicationStmt>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div>
+                <head xml:lang="en">
+                    Mapping archaeological data with CIDOC-CRM
+                </head>
+                <desc xml:lang="en" corresp="definition">
+                    Bring to the semantic web an online dataset from a relational database or XML file, from the preparation of the dataset to the production of an RDF file that can feed a triplestore, including mapping with CIDOC CRM.
+                </desc>
+                <desc corresp="terms">
+                    <term key="Archaeology and Prehistory" corresp="disciplines"/>
+                    <term key="Cultural heritage and museology" corresp="disciplines"/>
+                    <term key="Mapping" corresp="techniques"/>
+                    <term key="Data" corresp="objects"/>
+                    <term key="Metadata" corresp="objects"/>
+                    <term key="Methods" corresp="objects"/>
+                    <term key="Named Entities" corresp="objects"/>
+                    <term key="CIDOC CRM" corresp="standard"/>
+                </desc>
+                <figure corresp="image">
+                    <head corresp="image">
+                    </head>
+                    <graphic url=""/>
+                    <figDesc>
+                        <author corresp="imgAuthor">
+                        </author>
+                        <availability>
+                            <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+                        </availability>
+                    </figDesc>
+                </figure>
+            </div>
+        </body>
+    </text>
+</TEI>

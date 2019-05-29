@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="assets/tei_meta/models/SSKODDforScForm.xml">
+    
+    
+    <teiHeader>
+        
+        
+        <fileDesc>
+            
+            
+            <titleStmt>
+                
+                
+                <author>
+                    
+                    
+                    <forename>
+                        lionel
+                    </forename>
+                    
+                    
+                    <surname>
+                        TADJOU
+                    </surname>
+                    
+                    
+                    <affiliation>
+                        INRIA
+                    </affiliation>
+                    
+                
+                </author>
+                
+                
+                <sponsor>
+                </sponsor>
+                
+            
+            </titleStmt>
+            
+            
+            <publicationStmt>
+                
+                
+                <authority>
+                </authority>
+                
+                
+                <availability>
+                    
+                    
+                    <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+                    
+                
+                </availability>
+                
+            
+            </publicationStmt>
+            
+        
+        </fileDesc>
+        
+    
+    </teiHeader>
+    
+    
+    <text>
+        
+        
+        <body>
+            
+            
+            <div>
+                
+                
+                <head xml:lang="en">
+                    TEST
+                </head>
+                
+                
+                <head xml:lang="fr">
+                    TEST 2
+                </head>
+                
+                
+                <desc xml:lang="en" corresp="definition">
+                    DESC scénario
+                </desc>
+                
+                
+                <desc corresp="terms">
+                    
+                    
+                    <term key="Classical studies" corresp="disciplines"/>
+                    
+                    
+                    <term key="Biological anthropology" corresp="disciplines"/>
+                    
+                    
+                    <term key="Commenting" corresp="techniques"/>
+                    
+                    
+                    <term key="Curricula" corresp="objects"/>
+                    
+                    
+                    <term key="TEI" corresp="standard"/>
+                    
+                    
+                    <term key="XML" corresp="standard"/>
+                    
+                
+                </desc>
+                
+                
+                <figure corresp="image">
+                    
+                    
+                    <head corresp="image">
+                    </head>
+                    
+                    
+                    <graphic url=""/>
+                    
+                    
+                    <figDesc>
+                        
+                        
+                        <author corresp="imgAuthor">
+                        </author>
+                        
+                        
+                        <availability>
+                            
+                            
+                            <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+                            
+                        
+                        </availability>
+                        
+                    
+                    </figDesc>
+                    
+                
+                </figure>
+                
+            
+            </div>
+            
+        
+        </body>
+        
+    
+    </text>
+    
+
+</TEI>
