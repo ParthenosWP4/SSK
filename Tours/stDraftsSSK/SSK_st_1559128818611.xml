@@ -1,0 +1,84 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="assets/tei_meta/models/SSKODDforStepForm.xml">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <author>
+                    <forename>
+                        Martina
+                    </forename>
+                    <surname>
+                        Trognitz
+                    </surname>
+                    <affiliation>
+                        OEAW-ACDH
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                        Émilie
+                    </forename>
+                    <surname>
+                        Saubestre
+                    </surname>
+                    <affiliation>
+                        FEETK
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                        Costas
+                    </forename>
+                    <surname>
+                        Papadopoulos
+                    </surname>
+                    <affiliation>
+                        Maastricht University
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                        Patrick
+                    </forename>
+                    <surname>
+                        McInerney
+                    </surname>
+                    <affiliation>
+                        Waterford Institute of Technology
+                    </affiliation>
+                </author>
+                <sponsor>
+                    PARTHENOS
+                </sponsor>
+            </titleStmt>
+            <publicationStmt>
+                <authority>
+                    "Methodologies, Tools and Challenges for 3D Use in Social Sciences and Humanities" workshop, Marseille, 25-27 February 2019
+                </authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+                </availability>
+            </publicationStmt>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listEvent>
+                <event>
+                    <head xml:lang="en">
+                        Deposit at Archive
+                    </head>
+                    <desc xml:lang="en" corresp="definition">
+                            When everything is set and done, the dataset is ready to be deposited at the digital archive chosen in the initial step. Some archives also offer a dedicated online viewer for RTI files, which improves dissemination of the files.
+                    </desc>
+                    <desc corresp="terms">
+                        <term key="Archiving" corresp="activity"/>
+                    </desc>
+                    <linkGrp corresp="generalResources">
+                        <ref type="tool" target="QH8NR2D7"/>
+                    </linkGrp>
+                    <linkGrp source="" url="" corresp="projectResources"/>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>
