@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
+  <teiHeader>
+    <fileDesc xmlns="http://www.tei-c.org/ns/1.0">
+      <titleStmt>
+        <title/>
+        <author>
+          <forename> Chiara </forename>
+          <surname> Zuanni </surname>
+          <affiliation> University of Graz </affiliation>
+        </author>
+        <author>
+          <forename> Vincent </forename>
+          <surname> Baillet </surname>
+          <affiliation> University of Bordeaux-Montaigne </affiliation>
+        </author>
+        <sponsor> Parthenos </sponsor>
+      </titleStmt>
+      <publicationStmt>
+        <authority/>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p/>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change/>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listEvent>
+        <event type="researchStep">
+          <head type="stepTitle" xml:lang="en">Modelling</head>
+          <desc type="definition" xml:lang="en"> To convert and represent the information in a 3D
+            reconstruction. In doing the model, each step implies choices about the representation
+            and prioritisation of data in the sources. Consequently, it should be declared how this
+            data is used and it should be clear that different methods highlight different aspects,
+            responding to different research questions. Based on the aims and research questions,
+            decisions (and clear statements) are needed on: <list>
+              <item>the scale (1:1 is best)</item>
+              <item>the level of details (e.g. all architectural details or just the volume)</item>
+              <item>textures (procedural or mapping with a picture)</item>
+              <item>lighting and shading (atmospherical, internal/external, time of the day,
+                seasonality, etc.)</item>
+              <item>soundscapes (specific audio, e.g. winds, acoustic of the building)</item>
+              <item>annotations</item>
+              <item>links to original sources: how are they connected and how is possible to verify
+                the accuracy of the model</item>
+            </list>
+          </desc>
+          <desc type="terms">
+            <term key="Gathering" source="TaDiRAH" type="activity"/>
+          </desc>
+          <linkGrp type="generalResources"
+            xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"/>
+          <linkGrp type="projectResources" corresp=""
+            xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/" source=""/>
+        </event>
+      </listEvent>
+    </body>
+  </text>
+</TEI>

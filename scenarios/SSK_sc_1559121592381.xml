@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario">
+  <teiHeader>
+    <fileDesc xmlns="http://www.tei-c.org/ns/1.0">
+      <titleStmt>
+        <title/>
+        <author>
+          <forename> Martina </forename>
+          <surname> Trognitz </surname>
+          <affiliation> OEAW-ACDH </affiliation>
+        </author>
+        <author>
+          <forename> Emilie </forename>
+          <surname> Saubestre </surname>
+          <affiliation> FEETK </affiliation>
+        </author>
+        <author>
+          <forename> Costas </forename>
+          <surname> Papadopoulos </surname>
+          <affiliation> Maastricht University </affiliation>
+        </author>
+        <author>
+          <forename> Patrick </forename>
+          <surname> McInerney </surname>
+          <affiliation> Waterford Institute of Technology </affiliation>
+        </author>
+        <sponsor> PARTHENOS </sponsor>
+      </titleStmt>
+      <publicationStmt>
+        <authority> "Methodologies, Tools and Challenges for 3D Use in Social Sciences and
+          Humanities" workshop, Marseille, 25-27 February 2019 </authority>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p/>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change/>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div type="researchScenario">
+        <head type="scenarioTitle" xml:lang="en"> Archiving Reflectance Transformation Imaging
+          Datasets </head>
+        <desc type="definition" xml:lang="en"> Reflectance Transformation Imaging, a computational
+          photography method based on the principle of raking light, has been extensively used in
+          fields such as archaeology, museum studies, and art history to capture and enhance subtle
+          surface details. Low-angled and multidirectional light creates texture details and
+          enhances planar irregularities. There are two methods to capture RTI images: the Dome
+          Method and the Highlight RTI Method. In both methods, objects are photographed with a
+          single camera in a fixed position. The only element that changes in the process is the
+          position of light. In the Dome method the light position is known since lights are fixed.
+          In the highlight method the position of the light is captured by using reflective spheres
+          that are then used by a specialised software to create the RTI image. The images stack is
+          then computed into a polynomial texture map. In a dedicated viewer, the resulting file can
+          be viewed under individual light positions and different rendering algorithms. This
+          scenario focuses on the preparation of captured RTI data for archiving. The main component
+          of an RTI dataset is photographies. Additionally some software-dependent formats will have
+          to be considered for archiving. </desc>
+        <desc type="terms" xml:lang="en">
+          <term key="Archaeology and Prehistory" source="aureHAL" type="discipline"/>
+          <term key="Art and art history" source="aureHAL" type="discipline"/>
+          <term key="Photography" source="TaDiRAH" type="technique"/>
+          <term key="Images" source="TaDiRAH" type="object"/>
+          <term key="Images (3D)" source="TaDiRAH" type="object"/>
+        </desc>
+        <figure>
+          <head/>
+          <graphic
+            url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/RTIarchiving.png"/>
+          <figDesc>
+            <author type="imgAuthor"/>
+            <availability type="imgLicence">
+              <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+            </availability>
+          </figDesc>
+        </figure>
+        <listEvent>
+          <event type="researchStep" ref="SSK_st_1559122275842" xml:id="s1"/>
+          <event type="researchStep" ref="SSK_st_1559123391408" xml:id="s2"/>
+          <event type="researchStep" ref="SSK_st_1559123834634" xml:id="s3"/>
+          <event type="researchStep" ref="SSK_st_1559128342777" xml:id="s4"/>
+          <event type="researchStep" ref="SSK_st_1559128601125" xml:id="s5"/>
+          <event type="researchStep" ref="SSK_st_1559128751991" xml:id="s6"/>
+        </listEvent>
+      </div>
+    </body>
+  </text>
+</TEI>

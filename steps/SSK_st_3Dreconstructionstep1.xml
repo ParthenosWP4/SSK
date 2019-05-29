@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="SSK_st_3Dreconstructionstep1" type="researchStep">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title/>
+        <author>
+          <forename> Chiara </forename>
+          <surname> Zuanni </surname>
+          <affiliation> University of Graz </affiliation>
+        </author>
+        <author>
+          <forename> Vincent </forename>
+          <surname> Baillet </surname>
+          <affiliation> University of Bordeaux-Montaigne </affiliation>
+        </author>
+        <sponsor> Parthenos </sponsor>
+      </titleStmt>
+      <publicationStmt>
+        <authority/>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p/>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change/>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listEvent>
+        <event type="researchStep">
+          <head xml:lang="en"> Acquisition of sources </head>
+          <desc xml:lang="en" type="definition"> Depending on the type of object, a wide range of
+            sources need to be collated and analysed. These sources can include: <list>
+              <item>Fieldwork drawings (including old ones)</item>
+              <item>Iconographic sources (from books, prints, artworks, etc.)</item>
+              <item>Geographical data (surveys, maps, etc.)</item>
+              <item>Text sources (descriptions, etc.)</item>
+              <item>New photos</item>
+            </list> All the sources need to be digitised (in standard formats: e.g. JPEG for images;
+            PDFs for texts; CSV) and organised in a clear tree structure. </desc>
+          <desc type="terms" xml:lang="en">
+            <term key="Gathering" type="activity"/>
+            <term key="CSV" type="standard"/>
+            <term key="JPEG" type="standard"/>
+            <term key="TIFF" type="standard"/>
+            <term key="PNG" type="standard"/>
+            <term key="ASCII" type="standard"/>
+          </desc>
+        </event>
+      </listEvent>
+    </body>
+  </text>
+</TEI>

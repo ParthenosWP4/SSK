@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchScenario">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title/>
+        <author>
+          <forename> Chiara </forename>
+          <surname> Zuanni </surname>
+          <affiliation> University of Graz </affiliation>
+        </author>
+        <author>
+          <forename> Vincent </forename>
+          <surname> Baillet </surname>
+          <affiliation> University of Bordeaux-Montaigne </affiliation>
+        </author>
+        <sponsor> Parthenos </sponsor>
+      </titleStmt>
+      <publicationStmt>
+        <authority/>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p/>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change/>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div type="researchScenario">
+        <head type="scenarioTitle" xml:lang="en">Doing 3D reconstruction in archaeological context</head>
+        <desc type="definition" xml:lang="en"> 3D reconstructions have a long history in archaeology
+          and cultural heritage, although there are varying practices, data capture and processing
+          methods, tools, and visualisations. There are not clear ways of determining the accuracy
+          and precision of the reconstructions. Furthermore, scientifics and engagement purposes
+          inform different dissemination practices, and therefore pose different challenges to the
+          preservation of these outputs. </desc>
+        <desc type="terms" xml:lang="en">
+          <term key="Archaeology and Prehistory" source="aureHAL" type="discipline"/>
+          <term key="Architecture, space management" source="aureHAL" type="discipline"/>
+          <term key="Art and art history" source="aureHAL" type="discipline"/>
+          <term key="Scanning" source="TaDiRAH" type="technique"/>
+          <term key="Photography" source="TaDiRAH" type="technique"/>
+          <term key="Technology Preservation" source="TaDiRAH" type="technique"/>
+          <term key="Artifacts" source="TaDiRAH" type="object"/>
+          <term key="Images (3D)" source="TaDiRAH" type="object"/>
+        </desc>
+        <figure>
+          <head/>
+          <graphic url=""/>
+          <figDesc>
+            <author type="imgAuthor"/>
+            <availability type="imgLicence">
+              <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+            </availability>
+          </figDesc>
+        </figure>
+        <listEvent>
+          <event type="researchStep" ref="SSK_st_3Dreconstructionstep1" xml:id="s1"/>
+          <event type="researchStep" ref="SSK_st_1559123970367" xml:id="s2"/>
+          <event type="researchStep" ref="SSK_st_1559127896709" xml:id="s3"/>
+          <event type="researchStep" ref="SSK_st_1559124215211" xml:id="s4"/>
+        </listEvent>
+      </div>
+    </body>
+  </text>
+</TEI>

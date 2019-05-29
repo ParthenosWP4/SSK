@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
+  <teiHeader>
+    <fileDesc xmlns="http://www.tei-c.org/ns/1.0">
+      <titleStmt>
+        <title/>
+        <author>
+          <forename> Martina </forename>
+          <surname> Trognitz </surname>
+          <affiliation> OEAW-ACDH </affiliation>
+        </author>
+        <author>
+          <forename> Emilie </forename>
+          <surname> Saubestre </surname>
+          <affiliation> FEETK </affiliation>
+        </author>
+        <author>
+          <forename> Costas </forename>
+          <surname> Papadopoulos </surname>
+          <affiliation> Maastricht University </affiliation>
+        </author>
+        <author>
+          <forename> Patrick </forename>
+          <surname> McInerney </surname>
+          <affiliation> Waterford Institute of Technology </affiliation>
+        </author>
+        <sponsor> PARTHENOS </sponsor>
+      </titleStmt>
+      <publicationStmt>
+        <authority> "Methodologies, Tools and Challenges for 3D Use in Social Sciences and
+          Humanities" workshop, Marseille, 25-27 February 2019 </authority>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p/>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change/>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listEvent>
+        <event type="researchStep">
+          <head type="stepTitle" xml:lang="en"> Convert to long term preservation formats </head>
+          <desc type="definition" xml:lang="en"> The main component of an RTI dataset are
+            photographies, which should be kept in DNG or TIFF format. Additionally some
+            software-dependent formats will have to be considered for archiving as well as the JPEG
+            derivatives of the original images for processing. Resulting formats for RTI images were
+            developed in 2001 by the Hewlett-Packard-Laboratories and further extended by Cultural
+            Heritage Imaging (CHI). </desc>
+          <desc type="terms">
+            <term key="Imaging" source="TaDiRAH" type="activity"/>
+          </desc>
+          <linkGrp type="generalResources"
+            xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+            <ref type="spec" target="BLZFJXS8"/>
+            <ref type="spec" target="VPXD44E2"/>
+            <ref type="tool" target="YE3KE6WY"/>
+          </linkGrp>
+          <linkGrp type="projectResources" corresp=""
+            xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/" source=""/>
+        </event>
+      </listEvent>
+    </body>
+  </text>
+</TEI>

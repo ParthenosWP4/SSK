@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
+  <teiHeader>
+    <fileDesc xmlns="http://www.tei-c.org/ns/1.0">
+      <titleStmt>
+        <title/>
+        <author>
+          <forename> Chiara </forename>
+          <surname> Zuanni </surname>
+          <affiliation> University of Graz </affiliation>
+        </author>
+        <author>
+          <forename> Vincent </forename>
+          <surname> Baillet </surname>
+          <affiliation> University of Bordeaux-Montaigne </affiliation>
+        </author>
+        <sponsor> Parthenos </sponsor>
+      </titleStmt>
+      <publicationStmt>
+        <authority/>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p/>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change/>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listEvent>
+        <event type="researchStep">
+          <head type="stepTitle" xml:lang="en"> Visualisation </head>
+          <desc type="definition" xml:lang="en">
+            <p>Decide what the final user will be able to see of our work: i.e. formats,
+              interactivity, access to metadata and sources, etc. Final outputs can include: <list>
+                <item>images (that could be printed as well, which for a cultural heritage site is
+                  still important),</item>
+                <item>videos (depending on a budget), </item>
+                <item>interactive viewers (and which one),</item>
+                <item>virtual reality (what type of device will be supported)</item>
+                <item>if sources will be made available and in what formats</item>
+                <item>website to host all the material</item>
+              </list>
+            </p>
+            <p>Level of accuracy and details can be varied depending on: <list>
+                <item>explicit annotations linking to sources</item>
+                <item>resolution</item>
+                <item>accessibility to documentation of the reconstruction process (technical
+                  metadata)</item>
+                <item>context of the reconstruction (and possibility of updates)</item>
+              </list></p>
+          </desc>
+          <desc type="terms">
+            <term key="Visualization" source="TaDiRAH" type="activity"/>
+          </desc>
+          <linkGrp type="generalResources"
+            xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+            <ref type="spec"
+              target="https://github.com/micmacIGN/Documentation/raw/master/DocMicMac.pdf"/>
+          </linkGrp>
+          <linkGrp type="projectResources" corresp=""
+            xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/" source=""/>
+        </event>
+      </listEvent>
+    </body>
+  </text>
+</TEI>

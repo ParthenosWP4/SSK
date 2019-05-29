@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="researchStep">
+   <teiHeader xmlns="">
+      <fileDesc xmlns="http://www.tei-c.org/ns/1.0">
+         <titleStmt>
+            <title/>
+            <author>
+               <forename> Martina </forename>
+               <surname> Trognitz </surname>
+               <affiliation> OEAW-ACDH </affiliation>
+            </author>
+            <author>
+               <forename> Emilie </forename>
+               <surname> Saubestre </surname>
+               <affiliation> FEETK </affiliation>
+            </author>
+            <author>
+               <forename> Costas </forename>
+               <surname> Papadopoulos </surname>
+               <affiliation> Maastricht University </affiliation>
+            </author>
+            <author>
+               <forename> Patrick </forename>
+               <surname> McInerney </surname>
+               <affiliation> Waterford Institute of Technology </affiliation>
+            </author>
+            <sponsor> PARTHENOS </sponsor>
+         </titleStmt>
+         <publicationStmt>
+            <authority> "Methodologies, Tools and Challenges for 3D Use in Social Sciences and
+          Humanities" workshop, Marseille, 25-27 February 2019 </authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p/>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change/>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listEvent>
+            <event type="researchStep">
+               <head type="stepTitle" xml:lang="en"> Establish file naming conventions </head>
+               <desc type="definition" xml:lang="en"> Before the start of image acquisition a naming
+            plan for the folder structure as well as for the actual files should be established.
+            Ideally the file names only contain English alphanumeric characters, dash, and
+            underscore. Example from aLTAG 3D: archeologicalSiteNumber_yearDocumentation_siteName </desc>
+               <desc type="terms">
+                  <term key="Organizing" source="TaDiRAH" type="activity"/>
+               </desc>
+               <linkGrp type="generalResources"
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
+                  <ref type="tutorial" target="A6AXI8I6"/>
+               </linkGrp>
+               <linkGrp type="projectResources"
+                        corresp=""
+                        xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/"
+                        source=""/>
+            </event>
+         </listEvent>
+      </body>
+   </text>
+</TEI>
