@@ -1,0 +1,90 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="assets/tei_meta/models/SSKODDforStepForm.xml">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <author>
+                    <forename>
+                        Martina
+                    </forename>
+                    <surname>
+                        Trognitz
+                    </surname>
+                    <affiliation>
+                        OEAW-ACDH
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                        Émilie
+                    </forename>
+                    <surname>
+                        Saubestre
+                    </surname>
+                    <affiliation>
+                        FEETK
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                        Costas
+                    </forename>
+                    <surname>
+                        Papadopoulos
+                    </surname>
+                    <affiliation>
+                        Maastricht University
+                    </affiliation>
+                </author>
+                <author>
+                    <forename>
+                        Patrick
+                    </forename>
+                    <surname>
+                        McInerney
+                    </surname>
+                    <affiliation>
+                        Waterford Institute of Technology
+                    </affiliation>
+                </author>
+                <sponsor>
+                    PARTHENOS
+                </sponsor>
+            </titleStmt>
+            <publicationStmt>
+                <authority>
+                    "Methodologies, Tools and Challenges for 3D Use in Social Sciences and Humanities" workshop, Marseille, 25-27 February 2019
+                </authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+                </availability>
+            </publicationStmt>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listEvent>
+                <event>
+                    <head xml:lang="en">
+                        Compile additional Documentation
+                    </head>
+                    <desc xml:lang="en" corresp="definition">
+                        Any additional documentation or further files associated with the RTI project, should also be included in the project folder. For example further descriptions of the object, like e. g. the find place, the date, and associated researchers could be included in a separate spreadsheet or in an expanded shooting log. Reports, additional images or videos might also help in documenting the capture process.
+                    </desc>
+                    <desc corresp="terms">
+                        <term key="Imaging" corresp="activity"/>
+                        <term key="DNG" corresp="standard"/>
+                        <term key="TIFF" corresp="standard"/>
+                        <term key="JPEG" corresp="standard"/>
+                        <term key="XML" corresp="standard"/>
+                        <term key="XMP" corresp="standard"/>
+                    </desc>
+                    <linkGrp corresp="generalResources">
+                        <ref type="database" target="VISL9C9N"/>
+                        <ref type="database" target="BMH3WDIL"/>
+                    </linkGrp>
+                    <linkGrp source="" url="" corresp="projectResources"/>
+                </event>
+            </listEvent>
+        </body>
+    </text>
+</TEI>
