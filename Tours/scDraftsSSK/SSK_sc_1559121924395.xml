@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="assets/tei_meta/models/SSKODDforScForm.xml">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <author>
+                    <forename>
+                        Chiara
+                    </forename>
+                    <surname>
+                        Zuanni
+                    </surname>
+                    <affiliation>
+                        Vincent Baillet
+                    </affiliation>
+                </author>
+                <sponsor>
+                    PARTHENOS
+                </sponsor>
+            </titleStmt>
+            <publicationStmt>
+                <authority>
+                </authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+                </availability>
+            </publicationStmt>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div>
+                <head xml:lang="en">
+                    Doing 3D reconstruction in archaeological context
+                </head>
+                <desc xml:lang="en" corresp="definition">
+                    3D reconstructions have a long history in archaeology and cultural heritage, although there are varying practices, data capture and processing methods, tools, and visualisations. There are not clear ways of determining the accuracy and precision of the reconstructions. Furthermore, scientifics and engagement purposes inform different dissemination practices, and therefore pose different challenges to the preservation of these outputs.
+                </desc>
+                <desc corresp="terms">
+                    <term key="Archaeology and Prehistory" corresp="disciplines"/>
+                    <term key="Architecture, space management" corresp="disciplines"/>
+                    <term key="Art and art history" corresp="disciplines"/>
+                    <term key="Cultural heritage and museology" corresp="disciplines"/>
+                    <term key="Scanning" corresp="techniques"/>
+                    <term key="Photography" corresp="techniques"/>
+                    <term key="Technology Preservation" corresp="techniques"/>
+                    <term key="Artifacts" corresp="objects"/>
+                    <term key="Images (3D)" corresp="objects"/>
+                </desc>
+                <figure corresp="image">
+                    <head corresp="image">
+                    </head>
+                    <graphic url=""/>
+                    <figDesc>
+                        <author corresp="imgAuthor">
+                        </author>
+                        <availability>
+                            <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+                        </availability>
+                    </figDesc>
+                </figure>
+            </div>
+        </body>
+    </text>
+</TEI>
