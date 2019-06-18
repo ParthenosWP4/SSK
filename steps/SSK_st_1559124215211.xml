@@ -52,7 +52,7 @@
           </desc>
           <linkGrp type="generalResources"
             xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-            <ref type="spec" target="PTW2WNUI"/>
+            <ref source="zotero" type="spec" target="PTW2WNUI"/>
           </linkGrp>
         </event>
       </listEvent>
