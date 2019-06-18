@@ -61,8 +61,8 @@
           </desc>
           <linkGrp type="generalResources"
             xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/">
-            <ref type="spec"
-              target="https://github.com/micmacIGN/Documentation/raw/master/DocMicMac.pdf"/>
+            <ref source="zotero" type="spec"
+              target="PTW2WNUI"/>
           </linkGrp>
           <linkGrp type="projectResources" corresp=""
             xml:base="http://www.zotero.org/groups/427927/ssk-parthenos/items/itemKey/" source=""/>
