@@ -184,12 +184,8 @@ More details |angulardeployment|.
    :height: 3.34722in
 
 .. |image1| image:: img/overview2.png
-   :width: 6.27083in
-   :height: 3.34722in
  
- .. |image2| image:: ngversion.png
-   :width: 6.27083in
-   :height: 3.34722in
+.. |image2| image:: ngversion.png
 
 .. |angulardeployment| raw:: html
 
