@@ -124,7 +124,7 @@ As the SSK is based on three main parts, each of its modules (Elasticsearch, Fro
 1 - Install Elasticsearch
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The binary packages of Elasticsearch have only one dependency: Java. The oldest supported version is Java 8. To download and install Elasticsearch, use the commands that work with your system (deb for Debian/Ubuntu, rpm for Redhat/Centos/Fedora, mac for OS X, and win for Windows). Follow |installelasticsearch| for  more details.
+The binary packages of Elasticsearch have only one dependency: Java. The oldest supported version is Java 8. To download and install Elasticsearch, use the commands that work with your system (deb for Debian/Ubuntu, rpm for Redhat/Centos/Fedora, mac for OS X, and win for Windows). Follow |installelasticsearch| for  more details. After intalling Elastichsearch, run it with the **./elasticsearh** command from the **/bin**  installation forlder of Elasticsearch. and After that run this curl **curl -XPUT http://localhost:9200/ssk?pretty** to create SSK'index in Elasticsearch.
 
 2 - Deploy Back-End (Spring boot application)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -135,6 +135,10 @@ Spring Boot is a *convention over configuration* framework that allows us to set
 Opposite to standalone applications, Tomcat is also installed as a service that can manage multiple applications within the same application process, avoiding the need for a specific setup for each application.
 
 The SSK spring boot application use |gradle| as build automation system.
+
+2.1 - Run Back-End in Local
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 To build a Tomcat-deployable WAR application:
 
@@ -214,3 +218,4 @@ More details |angulardeployment|.
 .. |typescript| raw:: html
 
 	<a href="https://www.typescriptlang.org/" target="_blank">Typescript 2.9.2</a>
+	
