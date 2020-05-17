@@ -126,7 +126,18 @@ As the SSK is based on three main parts, each of its modules (Elasticsearch, Fro
 
 The binary packages of Elasticsearch have only one dependency: Java. The oldest supported version is Java 8. To download and install Elasticsearch, use the commands that work with your system (deb for Debian/Ubuntu, rpm for Redhat/Centos/Fedora, mac for OS X, and win for Windows). Follow |installelasticsearch| for  more details. After intalling Elastichsearch, run it with the **./elasticsearh** command from the **/bin**  installation forlder of Elasticsearch. and After that run this curl **curl -XPUT http://localhost:9200/ssk?pretty** to create SSK'index in Elasticsearch.
 
-2 - Deploy Back-End (Spring boot application)
+2 - Run SSK in Local
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+First be sure you have **gradle** installed on your computer, the actual version on wich the ssk is running on local computer is **4.1**. Clone the **dev** branch  on *https://github.com/ParthenosWP4/SSK* and you'll have many folder but the more updated version of the SSK are respectivly **SSK-Server** and **SSK_Client** for the Back-end ans the Front-end. 
+
+Open each part with your favorite IDE. *IntellJ IDEA* is good for Back-end and *VisualStudio code* for the Front-End. Use gradle to install dependencies and run the Back-end with your IDE. The server-side of the SSK will then be available as an API service for the Front-End.
+To run the Front-end part, insure to have the following configuarion on your computer for angular project by running ``ng  -version``.
+
+|image2|
+
+When all is ok, run **npm install** to install modules for the angular SSK Front-end, run the projet with ``ng serve`` and the application will be accessible through **http://localhost:4200/**.
+
+3 - Build and deploy SSK on a remotre server (Huma-num in this case) 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The Back-End is composed of two main elements : **Spring Boot** and **Tomcat** (Java Servlet Container).
 
@@ -136,45 +147,47 @@ Opposite to standalone applications, Tomcat is also installed as a service that 
 
 The SSK spring boot application use |gradle| as build automation system.
 
-2.1 - Run Back-End in Local
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+3.1 Build and deploy Back-End
 
-To build a Tomcat-deployable WAR application:
+To build a Tomcat-deployable WAR application for the Back-end part of the SSK, run the following gradle command ``gradle build -PonD4Science=false``.
 
-1. execute the ``gradle build`` command.
-2. The WAR file is generated at ``target/ssk_services.war`` (assuming the Gradle artifactId is ``ssk_services``).
+ The WAR will be generated in ``target/ssk_services.war`` (assuming the Gradle artifactId is ``ssk_services``).
 
-To have our WAR file deployed and running in Tomcat, we need to complete the following steps:
+To have our WAR file deployed on Huma-num Tomcat SSK virtual machine, we need to complete the following steps:
 
-1. |downloadApacheTomcat| and unpackage it into a tomcat folder
-2. Copy our WAR file from target/ssk_services.war to the tomcat/webapps/ folder
-3. From a terminal navigate to tomcat/bin folder and execute ``catalina.bat run`` (on Windows) and ``catalina.sh run`` (on Unix-based systems)
-4. Go to http://localhost:8080/ssk_services/ssk
+1. Firt you will to credentials from Huma-num to access the SSK virtual machine
+2. Copy our WAR file from target/ssk_services.war to the tomcat folder with a scp command like this : `` scp build/libs/ssk_services-0.0.1.war user_name@ssk.huma-num.fr:resource/tomcat/current/webapps``
+3. The default tomcat of SSK virtual machine is hot deployment means that the server part (war file) with be automatically deployed just at the of the scp copy. Otherwise you could follow |Humnum| for more informations on Huma-Num virtual Machine.
 
-This is how the SSK Back-End has been deployed on the |d4science| infrastructure, although Elasticsearch and the Tomcat server have been configured by the platform engineers.
+This is how the SSK Back-End has been deployed on the Huma-Num infrastructure. There is already a SSK'Elasticsearch server on Huma-Num.
 
 Source: |backdepoyment|
 
 
-3 - Front-End Deployment (Angular application)
+3.2 - Front-End Deployment (Angular application)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Build and deploy the Front-end of the SSK which is an Angular based application, requires |angularcli| to be installed on your computer.
 
 The steps to follow are:
 
-1. To build angular applications, execute the ``ng build``  command. This will generate files in the ``dist`` folder located at the root of the application folder.
-2. Copy everything within the output folder (dist/ by default) to a folder on the server.
-3. Configure the server to redirect requests for missing files to index.html
+1. To build angular applications, execute the ``ng build  --prod --base-href / --configuration=prod-huma-num``  command. This will generate files in the ``dist`` folder located at the root of the application folder.
+2. Copy the whole content of ``dist`` folder to a folder on the server with **scp** as follow : ``scp -r dist/* user_name@ssk.huma-num.fr:www/web_main``
+
 
 More details |angulardeployment|.
 
 
+   
 .. |image0| image:: img/techArch.png
    :width: 6.27083in
    :height: 3.34722in
 
 .. |image1| image:: img/overview2.png
+   :width: 6.27083in
+   :height: 3.34722in
+ 
+ .. |image2| image:: Capture d’écran 2020-05-17 à 12.44.55.png
    :width: 6.27083in
    :height: 3.34722in
 
@@ -219,3 +232,5 @@ More details |angulardeployment|.
 
 	<a href="https://www.typescriptlang.org/" target="_blank">Typescript 2.9.2</a>
 	
+.. |Humnum| raw:: html
+   <a href="https://documentation.huma-num.fr/content/25/71/fr/l%E2%80%99hebergement-de-sites-web-chez-huma_num.html" target="_blank">L’hébergement de sites web chez Huma-Num</a>
