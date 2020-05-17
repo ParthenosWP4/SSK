@@ -187,7 +187,7 @@ More details |angulardeployment|.
    :width: 6.27083in
    :height: 3.34722in
  
- .. |image2| image:: Capture d’écran 2020-05-17 à 12.44.55.png
+ .. |image2| image:: ngversion.png
    :width: 6.27083in
    :height: 3.34722in
 
