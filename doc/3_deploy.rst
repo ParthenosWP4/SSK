@@ -185,7 +185,7 @@ More details |angulardeployment|.
 
 .. |image1| image:: img/overview2.png
  
-.. |image2| image:: ngversion.png
+.. |image2| image:: img/ngversion.png
 
 .. |angulardeployment| raw:: html
 
