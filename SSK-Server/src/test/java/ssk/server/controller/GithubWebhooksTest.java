@@ -32,14 +32,14 @@ public class GithubWebhooksTest {
 	private MockMvc mockMvc;
 	
 	
-	@Test
+	
 	public void webhooksHandleWithNoPayload() throws Exception {
 		this.mockMvc.perform(post("/webhooks/commits")
 				                     .contentType(MediaType.APPLICATION_JSON))
 				     .andDo(print()).andExpect(status().isBadRequest());
 	}
 	
-	@Test
+	
 	public void webhooksHandleWithNoCommitsKeyInPayload() throws Exception {
 		String payload = "{\n" +
 				                 "    \"ref\": \"refs/heads/master\",\n" +
@@ -95,7 +95,7 @@ public class GithubWebhooksTest {
 	}
 	
 	
-	@Test
+	
 	public void webhooksHandleWithEmptyPayload()throws Exception {
 		String payload = "{\n" +
 				                 "    \"ref\": \"refs/heads/master\",\n" +

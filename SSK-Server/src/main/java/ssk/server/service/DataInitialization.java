@@ -1,6 +1,17 @@
 package ssk.server.service;
 
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.slf4j.Slf4j;
+import org.elasticsearch.action.admin.indices.create.CreateIndexRequest;
+import org.elasticsearch.action.admin.indices.create.CreateIndexResponse;
+import org.elasticsearch.action.admin.indices.get.GetIndexRequest;
+import org.elasticsearch.action.admin.indices.get.GetIndexResponse;
+import org.elasticsearch.action.admin.indices.open.OpenIndexRequest;
+import org.elasticsearch.client.RestClient;
+import org.elasticsearch.client.RestHighLevelClient;
+import org.elasticsearch.common.settings.Settings;
+import org.elasticsearch.common.xcontent.XContentType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,13 +27,20 @@ import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.PostConstruct;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.ConnectException;
+import java.util.List;
+import java.util.stream.Collectors;
 
 //import org.elasticsearch.ElasticsearchException;
 //import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
 //import org.elasticsearch.client.Client;
 
 @Component
+@Slf4j
 public class DataInitialization {
 	
 	private static final Logger logger = LoggerFactory.getLogger(DataInitialization.class);
@@ -56,8 +74,15 @@ public class DataInitialization {
 	
 	boolean firstLaunch = false;
 	
+	private RestHighLevelClient client;
+	
 	public DataInitialization(RequestHeadersParams requestHeadersParams){
 		this.requestHeadersParams = requestHeadersParams;
+	}
+	
+	@Autowired
+	public DataInitialization(RestHighLevelClient client) {
+		this.client = client;
 	}
 	
 	
@@ -79,8 +104,8 @@ public class DataInitialization {
 		boolean result = true;
 		new Thread(() -> {
 			try {
-				this.createIndex();
-				this.sskServices.initializeData();
+				//this.createIndex();
+				//this.sskServices.initializeData();
 			} catch (Exception e) {
 				e.printStackTrace();
 				if(e.getMessage().contains("I/O error on HEAD request for \"" + elasticSearchPort + "/" +sskIndex + "\"")){
@@ -115,6 +140,8 @@ public class DataInitialization {
 	
 	
 	private void createIndex() throws ConnectException {
+		
+		
 		ResponseEntity<String> response;
 		try {
 			response = this.restTemplate.exchange(elasticSearchPort + "/" + sskIndex , HttpMethod.HEAD,null,  String.class);
@@ -124,11 +151,43 @@ public class DataInitialization {
 			logger.error(hre.getMessage());
 			logger.error("Index doesn't exist !!! We have to create it");
 		}
+		
 		HttpEntity<String> entity  = new HttpEntity<>("{ \"settings\" : {\"number_of_shards\" : 2	}}", requestHeadersParams.getHeaders());
-		response = this.restTemplate.exchange(elasticSearchPort + "/" + sskIndex , HttpMethod.PUT,entity,  String.class);
+		response = this.restTemplate.exchange(elasticSearchPort + "/" + sskIndex , HttpMethod.PUT,null,  String.class);
 		if(response.getStatusCode().is2xxSuccessful()) {
 			logger.info("Successful creation of \"SSK\" index");
 		}
+		
+		try {
+		
+		InputStream inputStream = client.getLowLevelClient()
+				                          .performRequest("GET", "/_cat/indices?h=i")
+				                          .getEntity()
+				                          .getContent();
+		
+		List<String> indexes = new BufferedReader(new InputStreamReader(inputStream))
+				                       .lines()
+				                       .collect(Collectors.toList());
+			logger.info(indexes.toString());
+		if(!indexes.contains("ssk")){
+			CreateIndexRequest request = new CreateIndexRequest("ssk");
+			request.settings(Settings.builder()
+					                 .put("index.number_of_shards", 3)
+					                 .put("index.number_of_replicas", 2)
+			);
+			request.mapping("_doc",
+					"{}",
+					XContentType.JSON);
+			CreateIndexResponse createIndexResponse = client.indices().create(request);
+			logger.info(createIndexResponse.toString());
+		}
+		
+		
+		}
+		catch(IOException exc){
+			logger.info(exc.toString());
+		}
+		
 	}
 	
 	private void setElasticForResearch(){

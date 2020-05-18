@@ -1,7 +1,8 @@
 buildscript {
     ext {
-        springBootVersion = '1.5.7.RELEASE'
+        springBootVersion = '1.5.2.RELEASE'
     }
+
     repositories {
         mavenCentral()
         google()
@@ -20,6 +21,7 @@ war {
     baseName = 'ssk_services'
     version = '0.0.1'
 }
+
 
 
 
@@ -42,28 +44,37 @@ sourceSets {
 dependencies{
 
 
-    compile 'org.springframework.boot:spring-boot-starter-tomcat:' + springBootVersion
-
+    compile 'org.springframework.boot:spring-boot-starter-tomcat:'
 
 
 
     /*These two cannot be used either for deployment with an integrated tomcat nor for an external web server.*/
-    if(onD4Science == true) {
+    /*if(onD4Science == true) {
         compile 'org.slf4j:slf4j-api:1.7.25'
         compile group: 'org.apache.tomcat', name: 'tomcat-util', version: '7.0.57'
     }
-   else{
+   else{*/
         compile group: 'org.springframework.boot', name: "spring-boot-starter", version: "${springBootVersion}"
         compile 'commons-logging:commons-logging:1.2'
-    }
+   //}
 
     compile group: 'org.springframework.boot', name: "spring-boot-starter-web", version: "${springBootVersion}"
+
+    compile group: "org.springframework.boot", name: "spring-boot-starter-security", version: "${springBootVersion}"
+
+    compile group: "org.springframework.boot", name: "spring-boot-starter-data-jpa", version: "${springBootVersion}"
+
 
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
     testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.1.1.RELEASE'
 
-    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-elasticsearch
-    // compile group: 'org.springframework.boot', name: 'spring-boot-st arter-data-elasticsearch', version: '1.5.2.RELEASE'
+    // https://mvnrepository.com/artifact/org.springframework.data/spring-data-elasticsearch
+    //compile group: 'org.springframework.data', name: 'spring-data-elasticsearch', version: '3.1.5.RELEASE'
+
+    // https://mvnrepository.com/artifact/org.elasticsearch.client/elasticsearch-rest-high-level-client
+    compile group: 'org.elasticsearch.client', name: 'elasticsearch-rest-high-level-client', version: '6.2.4'
+
+
 
 
     // https://mvnrepository.com/artifact/net.java.dev.jna/jna
@@ -105,16 +116,59 @@ dependencies{
     compile group: 'jaxen', name: 'jaxen', version: '1.1.1'
 
 
+    //compile "io.jsonwebtoken:jjwt:0.9.0"
+
+
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    //providedCompile group: 'org.projectlombok', name: 'lombok', version: '1.18.6'
+    compileOnly 'org.projectlombok:lombok:1.18.8'
+
+
+    // https://mvnrepository.com/artifact/org.elasticsearch/elasticsearch
+    compile group: 'org.elasticsearch', name: 'elasticsearch', version: '6.2.4'
+
+    // https://mvnrepository.com/artifact/com.h2database/h2s
+    compile group: 'com.h2database', name: 'h2', version: '1.4.197'
+
+    // https://mvnrepository.com/artifact/org.keycloak/keycloak-spring-security-adapter
+    //compile group: 'org.keycloak', name: 'keycloak-spring-security-adapter', version: '4.8.3.Final'
+
+
+     // https://mvnrepository.com/artifact/org.keycloak/keycloak-spring-boot-starter
+     compile group: 'org.keycloak', name: 'keycloak-spring-boot-starter', version: '4.0.0.Final'
+
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-envers
+    compile group: 'org.hibernate', name: 'hibernate-envers', version: '5.2.10.Final'
+
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-core
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '5.2.3.Final'
+
+
+
+
+
 
 
 }
 
-if(onD4Science == true) {
+dependencyManagement {
+    imports {
+        mavenBom "org.keycloak.bom:keycloak-adapter-bom:6.0.1"
+    }
+}
+
+configurations.all {
+    exclude(group: 'org.hibernate', module: 'hibernate-entitymanager')
+}
+
+/*if(onD4Science == true) {
     configurations.all {
         exclude module: 'logback-classic'
         exclude module: 'log4j-over-slf4j'
     }
-}
+}*/
+
+
 
 
 task myJavadocs(type: Javadoc) {
