@@ -1,0 +1,148 @@
+.tag {
+    border-radius: 15px;
+    font-weight: 600;
+    letter-spacing: -0.59px;
+    background-color: #FFF;
+    font-family: "Avenir_Next";
+    font-size: 12px;
+    box-sizing: border-box;
+    margin-left: 0.5rem;
+    text-transform: capitalize;
+}
+
+button {
+    outline:0;
+}
+
+
+.bold-part {
+    font-weight: bold;
+    font-size: medium;
+}
+
+.activity, .activitie {
+    color: #83C43C;
+    border: 1px solid #83C43C;
+}
+
+.standards {
+    color: #FFAC23;
+    border: 1px solid #FFAC23;
+}
+
+.standards.active {
+    color: white;
+    background-color: #FFAC23;
+}
+
+.selected-standard {
+    border: none;
+    color: white;
+    background-color: #FFAC23;
+}
+
+
+.discipline {
+    color: #FF5E72;
+    border: 1px solid #FF5E72;
+}
+
+.discipline.active {
+    color: white;
+    background-color: #FF5E72;
+}
+
+
+.objects {
+    color: #65ABFD;
+    border: 1px solid #65ABFD;
+}
+
+.objects.active {
+    color: white;
+    background-color: #65ABFD;
+
+}
+
+.techniques {
+    color:#C185F6;
+    border: 1px solid #C185F6;
+}
+
+
+.techniques.active {
+    color: white;
+    background-color: #C185F6;
+}
+
+
+.activity.active {
+    color: white;
+    background-color: #83C43C;
+}
+
+
+h3 {
+    font-size: 1.1rem;
+}
+
+
+.hidden-select-option {
+
+    display: hidden;
+
+}
+
+.disabled-button {
+    opacity: .3;
+    cursor: not-allowed;
+}
+.list-group {
+    height: 200px;
+    overflow-y: auto;
+    color: #FFAC23;
+}
+
+.form-check-label {
+    width:100%;
+}
+
+
+#input_container {
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 1rem;
+    height: 46px;
+    box-shadow: 0px 0px 1px 3px rgba(100, 185, 216, 0.3);
+}
+
+.standard-research {
+    width:80%;
+    border-width: 0px;
+    outline-width: 0;
+}
+
+.list-group-item {
+    /* border-top: 0px solid rgba(0, 0, 0, 0.125); */
+    border-left: 0px solid rgba(0, 0, 0, 0.125);
+    border-right: 0px solid rgba(0, 0, 0, 0.125);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0;
+}
+
+.add-new-std-text{
+    font-family: "Avenir Next";	
+    font-size: 17px;
+    font-style: italic;
+}
+
+
+
+
+.research-icon{
+    position:absolute;
+    bottom:2px;
+    right:5px;
+    width:24px;
+    height:24px;
+}

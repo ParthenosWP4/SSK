@@ -1,0 +1,85 @@
+<div  *ngIf="inStep==false" class="UPCM-term" id="id39">
+  <div class="pt-3 UP-term-disciplines">
+  <p class="ml-2 mb-4">Select between 1 and 4 <span class="bold-part">disciplines</span></p>
+  <ng-container #disciplines *ngFor="let disc of disciplinesList" >
+    <button   class="tag my-1 mr-2 py-1 discipline" 
+           (click)="toggleClass(disc, 'id42')"
+           [ngClass]="{'active': disc.active}">{{ disc.term }}
+    </button>
+  </ng-container>
+  </div> 
+</div>
+
+<div  *ngIf="inStep==false" class="UPCM-term" id="id43">
+    <div class="pt-3 pb-5 UP-term-techniques">
+      <p class="ml-2 mb-4">Select between 1 and 4 <span class="bold-part">research techniques</span></p>
+      <ng-container #techniques *ngFor="let tech of techniquesList">
+        <button  class="tag my-1 mr-2 py-1 techniques" 
+                (click)="toggleClass(tech, 'id46')"
+                [ngClass]="{'active': tech.active}">{{ tech.term}}
+        </button>
+      </ng-container>
+    </div>
+  </div>
+
+<div *ngIf="inStep==false"  class="UPCM-term" id="id47">
+  <div class="pt-3 UP-term-objects">
+    <p class="ml-2 mb-4">Select between 1 and 4 <span class="bold-part">research objects</span></p>
+    <ng-container #objects *ngFor="let obj of objectsList">
+      <button  class="tag my-1 mr-2 py-1 objects" 
+              (click)="toggleClass(obj, 'id50')"
+              [ngClass]="{'active': obj.active}">{{ obj.term }}
+      </button>
+    </ng-container>
+  </div>
+</div> 
+
+<div *ngIf="inStep==true">
+    <div class="pt-3 UPCM-term" id="id40" >
+    
+        <p>Select 1 <span class="bold-part">research activity</span></p>
+        <div #activities *ngFor="let act  of activitiesList; let i=index" class='my-lg-2'>
+            <span class="" style="color:#83C43C;font-weight: 18px;" >{{ act.head }} <i class="fa fa-hand-o-right" aria-hidden="true"></i></span>
+
+            <!--<button *ngFor=" let item  of act.items; let j=index" class="tag activity ml-2" 
+              [ngClass]="{'active': item.active && item.term === activitySelected.name }" (click)="toggleClass(item, 'id39')" >{{ item.term }}</button> -->    
+              
+              <button *ngFor=" let item  of act.items; let j=index" class="tag activity ml-2" 
+              [ngClass]="{'active': item.term === activitySelected.name, 
+                          'disabled-button' : !item.term === activitySelected.name }" 
+                        (click)="toggleClass(item, 'id39')" >{{ item.term }}</button> 
+        </div>
+    </div>
+</div>
+
+<div  class="pt-3 pb-5" *ngIf="inStep===true">
+  <p class="mb-4">Select 0, 1 or more <span class="bold-part">standards</span></p>
+  <div class="row">
+      <div class="col-md-5">
+            
+          <div id="input_container" class="mb-2">
+              <input class="standard-research mt-2 ml-4" type="text"  [(ngModel)]="searchStandard" autocomplete="on" placeholder="Search a standard">
+              <img class="research-icon" alt="int_dot" class="searchImg" src="/assets/images/magnifier-tool.svg">             
+          </div>
+
+          <ul class="list-group">
+              <li class="list-group-item"  *ngFor="let stand of standardsList | filter: searchStandard" >
+                  <label  class="form-check-label">
+                      <input type="checkbox" class="form-check-input pull-right" (change)="change($event, stand)" value="{{ stand?.standard_abbr_name }}" 
+                      (click)="toggleClass(stand, 'id51')" [checked]="standardsArray.indexOf( stand?.standard_abbr_name ) > -1"> 
+                      {{ stand.standard_abbr_name }} 
+                      <!-- check if abbreviation name of the standard is in the list (condition with the abbr) -->
+                  </label>                
+              </li>
+          </ul>
+        </div> 
+
+      <div class="col">       
+              <div>
+                  <button *ngFor="let stand of standardsArray" class="tag my-1 mr-2 py-1 selected-standard UPI-term-standard-key" >  {{ stand }}</button>
+                  <p class="pl-2 mt-3 add-new-std-text">You can also add a  <span style="color:#69BCDA;"> new standard</span></p>
+              </div>     
+      </div>
+  </div>
+</div>
+

@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title>
+					<idno type="title">Personnalisation ODD Corpus Oraux et Multimodaux</idno>
+					<bibl> CORLI et IRCOM </bibl>
+					<desc> L'objectif de cette personnalisation est de proposer un sous-ensemble
+						d'éléments TEI pour décrire le niveau minimal des métadonnées de Corpus
+						(niveau 0) défini au sein de CORLI </desc>
+				</title>
+				<principal>
+					<name type="org"> CORLI - IRCOM </name>
+					<name type="org"> Carole Etienne, Loic Liégeois, Christophe Parisse </name>
+				</principal>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>CORLI wiki</publisher>
+			</publicationStmt>
+			<sourceDesc>
+				<p>written from IRCOM and CORLI recommandations</p>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+
+	<text>
+		<body>
+			<!-- definition de TEI_CORPO_METADATA-->
+			<schemaSpec ident="TEI_CORPO_METADATA" start="TEI" ns="http://www.tei-c.org/ns/1.0">
+				<!-- structure generale TEI -->
+				<elementSpec ident="TEI" module="textstructure" mode="change">
+					<content>
+						<elementRef key="teiHeader"/>
+					</content>
+				</elementSpec>
+
+				<!-- structure generale teiHeader -->
+				<elementSpec ident="teiHeader" module="header" mode="change">
+					<content>
+						<elementRef key="fileDesc"/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="fileDesc" module="header">
+					<desc xml:lang="fr">Titre, citation, diffusion et données primaires ~ signal audio/vidéo</desc>
+					<desc xml:lang="en">Title, citation, diffusion and primary data ~ signal audio/video</desc>
+					<content>
+						<sequence minOccurs="1" maxOccurs="1">
+							<elementRef key="titleStmt"/>
+							<elementRef key="publicationStmt"/>
+							<elementRef key="sourceDesc"/>
+						</sequence>
+					</content>
+					<remarks style="element">
+						<p><ident>css-fileDesc</ident></p>
+					</remarks>
+				</elementSpec>
+
+				<!-- titleStmt : un principal, de 0 à n respStmt (collecteur, transcripteur, collecteur, ...) -->
+				<elementSpec ident="titleStmt" module="header" mode="change" n="1">
+					<desc xml:lang="fr">La ressource: titre, description, citation, responsable, contributeurs</desc>
+					<desc xml:lang="en">Resource : Title, description, citation, responsible, contributors</desc>
+					<content>
+						<elementRef key="title" minOccurs="1" maxOccurs="1" />
+						<elementRef key="principal" minOccurs="1" maxOccurs="unbounded"/>
+						<elementRef key="respStmt" minOccurs="0" maxOccurs="unbounded" />
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="title" module="core" mode="change">
+					<desc xml:lang="fr"> Titre, description, citation</desc>
+					<desc xml:lang="en"> Title, description, citation</desc>
+					<content>
+						<elementRef key="idno" corresp="title" minOccurs="1" maxOccurs="1"/>
+						<elementRef key="desc" minOccurs="1" maxOccurs="1"/>
+						<elementRef key="bibl" minOccurs="1" maxOccurs="unbounded"/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="desc" module="core">
+					<desc xml:lang="fr">Description courte</desc>
+					<desc xml:lang="en">Short Description</desc>
+					<content>
+						<textNode/>
+						<dataRef name="multiline"/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="idno" corresp="title" module="header">
+					<desc xml:lang="fr">Titre de la ressource, nom d'usage </desc>
+					<desc xml:lang="en">Resource title, usual title</desc>
+					<content>
+						<textNode/>
+					</content>
+					<attList>
+						<attDef ident="type" usage="req" mode="change" rend="title">
+							<valList>
+								<valItem ident="title"/>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="bibl" module="core">
+					<desc xml:lang="fr">Citation(s) accompagnant la ressource: projet, équipe de recherche, référence bibliographique</desc>
+					<desc xml:lang="en">Citation(s) : project, research team, scientific reference</desc>
+					<content>
+						<textNode/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="principal" module="header">
+					<desc xml:lang="fr">Responsable de la ressource: organisme, laboratoire, projet, personne</desc>
+					<desc xml:lang="en">Responsible(s) of the ressource: organism, research lab, project, person</desc>
+					<content>
+						<elementRef key="name" minOccurs="1" maxOccurs="1"/>
+						<!-- default : alphanum -->
+						<dataRef name="NCName"/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="name" module="core">
+					<desc xml:lang="fr">Nom</desc>
+					<desc xml:lang="en">Name</desc>
+					<content>
+						<!-- default="alphanum" -->
+						<dataRef name="NCName"/>
+					</content>
+					<attList>
+						<attDef ident="type" usage="req" mode="change" rend="name.project">
+							<valList mode="replace">
+								<valItem ident="name.organism">
+									<desc rendition="texte aide laboratoire" xml:lang="fr"
+										>laboratoire ou institution</desc>
+									<desc rendition="help text on search lab" xml:lang="en">Research
+										laboratory or institution</desc>
+								</valItem>
+								<valItem ident="name.project">
+									<desc rendition="texte aide projet" xml:lang="fr">projet</desc>
+									<desc rendition="help texte on project" xml:lang="en"
+										>project</desc>
+								</valItem>
+								<valItem ident="name.person">
+									<desc rendition="texte aide personne" xml:lang="fr"
+										>personne</desc>
+									<desc rendition="help text on person" xml:lang="en"
+										>person</desc>
+								</valItem>
+								<valItem ident="name.other">
+									<desc xml:lang="fr">autre entité</desc>
+									<desc xml:lang="en">other entity</desc>
+								</valItem>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<!-- respStmt dans titleStmt -->
+				<elementSpec ident="respStmt" module="core">
+					<desc xml:lang="fr">Contributeurs </desc>
+					<desc xml:lang="en">Contributors</desc>
+					<content>
+						<sequence minOccurs="1" maxOccurs="unbounded">
+							<elementRef key="resp"/>
+							<elementRef key="name"/>
+						</sequence>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="resp" module="core">
+					<desc xml:lang="fr">Rôle, fonction</desc>
+					<desc xml:lang="en">Function</desc>
+					<content>
+						<valList mode="replace">
+							<valItem ident="resp.annotator">
+								<desc rendition="texte aide annotateur" xml:lang="fr">annotateur</desc>
+								<desc rendition="help text on annotator" xml:lang="en">annotator</desc>
+							</valItem>
+							<valItem ident="resp.compiler">
+								<desc rendition="texte aide coordinateur" xml:lang="fr">coordinateur</desc>
+								<desc rendition="help text on annotator" xml:lang="en">coordinator</desc>
+							</valItem>
+							<valItem ident="resp.interviewer">
+								<desc rendition="texte aide interviewer" xml:lang="fr">interviewer</desc>
+								<desc rendition="help text on interviewer" xml:lang="en">interviewer</desc>
+							</valItem>
+							<valItem ident="resp.recorder">
+								<desc rendition="texte aide collecteur" xml:lang="fr">collecteur</desc>
+								<desc rendition="help text on recorder" xml:lang="en">recorder</desc>
+							</valItem>
+							<valItem ident="resp.transcriber">
+								<desc rendition="texte aide transcripteur" xml:lang="fr">transcripteur</desc>
+								<desc rendition="help text on transcriber" xml:lang="en">transcriber</desc>
+							</valItem>
+							<valItem ident="resp.translator">
+								<desc rendition="texte aide traducteur" xml:lang="fr">traducteur</desc>
+								<desc rendition="help text on translator" xml:lang="en">translator</desc>
+							</valItem>
+							<valItem ident="resp.data_inputter">
+								<desc rendition="texte aide data_inputter" xml:lang="fr">vérificateur - normalisateur</desc>
+								<desc rendition="help text on data_inputter" xml:lang="en">data_inputter</desc>
+							</valItem>
+							<valItem ident="resp.OTHER">
+								<desc xml:lang="fr">autre rôle</desc>
+								<desc xml:lang="en">other role</desc>
+							</valItem>
+						</valList>
+					</content>
+				</elementSpec>
+
+				<!-- publicationStmt : au moins un , un handle et une licence
+	  				par defaut Creative Common CC BY-NC-SA 2.0 FR c'est à dire
+	  				"Attribution - Pas d’Utilisation Commerciale - Partage dans les Mêmes Conditions"-->
+				<elementSpec ident="publicationStmt" module="header" mode="change" n="1">
+					<desc xml:lang="fr">Diffusion : identifiant unique, diffusion, sites web, licence</desc>
+					<desc xml:lang="en">Distribution : handle, publisher, pubPlace, license</desc>
+					<content>
+						<elementRef key="publisher" minOccurs="1" maxOccurs="unbounded"/>
+						<elementRef key="pubPlace" minOccurs="0" maxOccurs="unbounded"/>
+						<!-- carole à vérifier avec Loïc : zero car je ne suis pas sure que chaque ressource aura un handle si elle n'est pas ds ortolang ou cocoon,
+	  					more:la même ressource peut avoir plusieurs handles si déposée sur plusieurs plateformes
+		  				pas de type car handle alphanum + certains caractères spéciaux ? -->
+						<elementRef key="idno" corresp="handle" minOccurs="0" maxOccurs="unbounded"/>
+						<elementRef key="availability" minOccurs="1" maxOccurs="unbounded"/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="availability" module="header">
+					<desc xml:lang="fr">Conditions de diffusion</desc>
+					<desc xml:lang="en">Conditions of distribution</desc>
+					<content>
+						<elementRef key="licence" minOccurs="1" maxOccurs="unbounded"/>
+					</content>
+					<attList>
+						<!-- value=restricted car une creative common telle qu'elle soit-->
+						<attDef ident="status" usage="req" mode="change" rend="restricted">
+							<valList>
+								<valItem ident="restricted"/>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="licence" module="header">
+					<desc xml:lang="fr">License de diffusion</desc>
+					<desc xml:lang="en">Distribution Licence</desc>
+					<content>
+						<textNode/>
+					</content>
+					<attList>
+						<attDef ident="type" usage="req" mode="change" rend="licence.type.BY_NC_SA">
+							<valList mode="replace">
+								<valItem ident="licence.type.BY_NC_SA">
+									<desc xml:lang="fr">Creative Common CC_BY_NC_SA : Attribution sans usage commercial et partage
+										suivant les mêmes modalités </desc>
+									<desc xml:lang="en">Creative Common CC_BY_NC_SA : Attribution and no Commercial use and share
+										in the same way</desc>
+								</valItem>
+								<valItem ident="licence.type.BY">
+									<desc xml:lang="fr">Creative Common CC_BY : Attribution</desc>
+									<desc xml:lang="en">Creative Common CC_BY : Attribution</desc>
+								</valItem>
+								<valItem ident="licence.type.BY_ND">
+									<desc xml:lang="fr">Creative Common CC_BY_ND : Attribution sans modification</desc>
+									<desc xml:lang="en">Creative Common CC_BY_ND : Attribution and no modification</desc>
+								</valItem>
+								<valItem ident="licence.type.BY_NC_ND">
+									<desc xml:lang="fr">Creative Common CC_BY_NC_NDY : Attribution sans usage commercial et sans
+										modification</desc>
+									<desc xml:lang="en">Creative Common CC_BY_NC_ND : Attribution and no commercial use and no
+										modification</desc>
+								</valItem>
+								<valItem ident="licence.type.BY_NC">
+									<desc xml:lang="fr">Creative Common CC_BY_NC : Attribution sans usage commercial</desc>
+									<desc xml:lang="en">Creative Common CC_BY_NC : Attribution and no commercial use</desc>
+								</valItem>
+
+								<valItem ident="licence.type.BY_SA">
+									<desc xml:lang="fr">Creative Common CC_BY_SA : Attribution et partage suivant les mêmes
+										modalités </desc>
+									<desc xml:lang="en">Creative Common CC_BY_SA : Attribution and share in the same way</desc>
+								</valItem>
+								<valItem ident="licence.type.OTHER">
+									<desc xml:lang="fr">autre license</desc>
+									<desc xml:lang="en">other licence</desc>
+								</valItem>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="publisher" module="core">
+					<desc xml:lang="fr">Projet, archive diffusant la ressource</desc>
+					<desc xml:lang="en">Project,archive including this resource</desc>
+					<content>
+						<textNode/>
+						<dataRef name="anyURI"/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="pubPlace" module="core">
+					<desc xml:lang="fr">Diffusion dans d'autres sites</desc>
+					<desc xml:lang="en">Other website for this resource</desc>
+					<content>
+						<elementRef key="ref" minOccurs="1" maxOccurs="unbounded"/>
+						<textNode/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="idno" corresp="handle" module="header">
+				<desc xml:lang="fr">Identifiant unique de la ressource</desc>
+				<desc xml:lang="en">Handle</desc>
+
+					<content>
+						<textNode/>
+					</content>
+					<attList>
+						<attDef ident="type" usage="req" mode="change" rend="idno.handle">
+							<valList>
+								<valItem ident="idno.handle">
+									<desc xml:lang="fr">handle</desc>
+									<desc xml:lang="en">handle</desc>
+								</valItem>
+								<valItem ident="idno.ISSN">
+									<desc xml:lang="fr">ISSN</desc>
+									<desc xml:lang="en">ISSN</desc>
+								</valItem>
+								<valItem ident="idno.ISBN">
+									<desc xml:lang="fr">ISBN</desc>
+									<desc xml:lang="en">ISBN</desc>
+									</valItem>
+								<valItem ident="idno.URI">
+									<desc xml:lang="fr">URI</desc>
+									<desc xml:lang="en">URI</desc>
+								</valItem>
+								<valItem ident="idno.DOI">
+									<desc xml:lang="fr">DOI</desc>
+									<desc xml:lang="en">DOI</desc>
+								</valItem>
+								<valItem ident="idno.ESTC">
+									<desc xml:lang="fr">ESTC</desc>
+									<desc xml:lang="en">ESTC</desc>
+								</valItem>
+								<valItem ident="idno.OCLC">
+									<desc xml:lang="fr">OCLC</desc>
+									<desc xml:lang="en">OCLC</desc>
+								</valItem>
+								<valItem ident="idno.library">
+									<desc xml:lang="fr">library</desc>
+									<desc xml:lang="en">library</desc>
+								</valItem>
+								<valItem ident="idno.OTHER">
+									<desc xml:lang="fr">autre identifiant</desc>
+									<desc xml:lang="en">other handle</desc>
+								</valItem>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="ref">
+					<desc xml:lang="fr">URL</desc>
+					<desc xml:lang="en">URL</desc>
+					<content>
+						<textNode/>
+					</content>
+					<attList>
+						<attDef ident="target" usage="req" mode="change">
+							<desc xml:lang="fr">Lien vers la ressource (URL)</desc>
+							<desc xml:lang="en">Resource target (URL)</desc>
+							<datatype>
+								<dataRef name="anyURI"/>
+							</datatype>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<!-- recordingStmt : recording et medias-->
+				<elementSpec ident="sourceDesc" module="header" mode="change" n="1">
+					<desc xml:lang="fr">Données primaires (signal)</desc>
+					<desc xml:lang="en">Primary data (recording)</desc>
+					<content>
+						<elementRef key="recordingStmt" minOccurs="1" maxOccurs="1"/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="recordingStmt" module="spoken">
+					<content>
+						<elementRef key="recording" minOccurs="1" maxOccurs="unbounded"/>
+					</content>
+
+					<!--  Des exemples  -->
+					<exemplum versionDate="2016-10-04" xml:lang="fr">
+						<egXML xmlns="http://www.tei-c.org/ns/Examples">
+							<sourceDesc>
+								<recordingStmt>
+									<recording>
+										<p> une balise media par enregistrement</p>
+										<media type="audio" mimeType="audio/wav" dur-iso="P36M"
+											url="xxx">
+											<p> un signal audio anonymisé</p>
+											<desc type="anonymisation" subtype="oui"/>
+											<desc type="qualite" subtype="peu_bruite"/>
+										</media>
+									</recording>
+									<recording>
+										<media type="video" mimeType="video/mp4" dur-iso="P36M"
+											url="xxx">
+											<p> un signal video anonymisé</p>
+											<desc type="anonymisation" subtype="oui"/>
+											<desc type="qualite" subtype="peu_bruite"/>
+										</media>
+									</recording>
+									<recording>
+										<media type="audio" mimeType="audio/wav" dur-iso="P36M"
+											url="xxx">
+											<p> un signal audio non anonymisé</p>
+											<desc type="anonymisation" subtype="non"/>
+											<desc type="qualite" subtype="peu_bruite"/>
+										</media>
+									</recording>
+								</recordingStmt>
+							</sourceDesc>
+						</egXML>
+					</exemplum>
+				</elementSpec>
+
+				<elementSpec ident="recording" module="spoken">
+					<desc xml:lang="fr">Session, Enregistrement : une même session peut correspondre plusieurs fichiers (qualité et/ou format différents)</desc>
+					<desc xml:lang="en">Recording : a same recording could have several files(in different quality or format) </desc>
+					<content>
+						<elementRef key="p" minOccurs="0" maxOccurs="1"/>
+						<elementRef key="media" minOccurs="1" maxOccurs="1"/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="media" module="spoken">
+					<desc xml:lang="fr">Média : chaque media peut avoir un type et une durée différente</desc>
+					<desc xml:lang="en">Media: each media could have a different type and a different duration </desc>
+					<content>
+						<sequence minOccurs="1" maxOccurs="1">
+							<elementRef key="desc" corresp="quality"/>
+							<elementRef key="desc" corresp="anonymization"/>
+						</sequence>
+					</content>
+					<attList>
+						<attDef ident="type" usage="req" mode="change">
+							<desc xml:lang="fr">audio/vidéo</desc>
+							<desc xml:lang="en">audio/video</desc>
+							<valList>
+								<valItem ident="quality.type.audio" >
+									<desc xml:lang="fr">signal audio</desc>
+									<desc xml:lang="en">audio signal</desc>
+								</valItem>
+								<valItem ident="quality.type.video" >
+									<desc xml:lang="fr">signal vidéo</desc>
+									<desc xml:lang="en">video signal</desc>
+								</valItem>
+								<valItem ident="quality.type.other" >
+									<desc xml:lang="fr">autre Signal</desc>
+									<desc xml:lang="en">other signal</desc>
+								</valItem>
+							</valList>
+						</attDef>
+						<attDef ident="mimeType" usage="req" mode="change">
+							<desc xml:lang="fr">format</desc>
+							<desc xml:lang="en">format</desc>
+							<valList>
+								<valItem ident="audio/wav" >
+									<desc xml:lang="fr">format wav</desc>
+									<desc xml:lang="en">wav format</desc>
+								</valItem>
+								<valItem ident="audio/mp3" >
+									<desc xml:lang="fr">format mp3</desc>
+									<desc xml:lang="en">mp3 format</desc>
+								</valItem>
+								<valItem ident="mimeType.video/mp4">
+									<desc xml:lang="fr">format mp4</desc>
+									<desc xml:lang="en">mp4 format</desc>
+								</valItem>
+								<valItem ident="mimeType.video/mov" >
+									<desc xml:lang="fr">format mov</desc>
+									<desc xml:lang="en">mov format</desc>
+								</valItem>
+								<valItem ident="mimeType.video/wmv" >
+									<desc xml:lang="fr">format wmv</desc>
+									<desc xml:lang="en">wmv format</desc>
+								</valItem>
+								<valItem ident="mimeType.video/avi" >
+									<desc xml:lang="fr">format avi</desc>
+									<desc xml:lang="en">avi format</desc>
+								</valItem>
+								<valItem ident="mimeType.video/ogg" >
+									<desc xml:lang="fr">format ogg</desc>
+									<desc xml:lang="en">ogg format</desc>
+								</valItem>
+								<valItem ident="other" >
+									<desc xml:lang="fr">autre format</desc>
+									<desc xml:lang="en">another format</desc>
+								</valItem>
+							</valList>
+						</attDef>
+						<attDef ident="dur-iso" usage="req" mode="change">
+							<desc xml:lang="fr">durée du média</desc>
+							<desc xml:lang="en">media duration</desc>
+							<datatype>
+								<dataRef name="duration"/>
+							</datatype>
+						</attDef>
+						<attDef ident="url" mode="change">
+							<desc xml:lang="fr">url du média</desc>
+							<desc xml:lang="en">media url</desc>
+							<datatype>
+								<dataRef name="anyURI"/>
+							</datatype>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="desc" corresp="quality">
+					<desc xml:lang="fr">Qualité</desc>
+					<desc xml:lang="en">Quality</desc>
+					<attList>
+						<attDef ident="type" usage="req" mode="change">
+							<valList>
+								<valItem ident="quality"/>
+							</valList>
+						</attDef>
+						<attDef ident="subtype" usage="req" mode="change">
+							<valList>
+								<valItem ident="quality.less_noisy">
+									<desc xml:lang="fr">moins de 5% de bruit </desc>
+									<desc xml:lang="en">less than 5% noisy </desc>
+								</valItem>
+								<valItem ident="quality.noisy">
+									<desc xml:lang="fr">plus de 5% de bruit</desc>
+									<desc xml:lang="en">more than 5% noisy </desc>
+								</valItem>
+								<valItem ident="quality.inaudible">
+									<desc xml:lang="fr">inaudible</desc>
+									<desc xml:lang="en">inaudible</desc>
+								</valItem>
+								<valItem ident="quality.soundproof_room">
+									<desc xml:lang="fr">chambre sourde</desc>
+									<desc xml:lang="en">soundproof</desc>
+								</valItem>
+								<valItem ident="quality.OTHER">
+									<desc xml:lang="fr">autre niveau de bruit</desc>
+									<desc xml:lang="en">other noisy level</desc>
+								</valItem>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="desc" corresp="anonymization">
+					<desc xml:lang="fr">Anonymisation</desc>
+					<desc xml:lang="en">Anonymization</desc>
+					<attList>
+						<attDef ident="type" usage="req" mode="change">
+							<valList>
+								<valItem ident="anonymization"/>
+							</valList>
+						</attDef>
+						<attDef ident="subtype" usage="req" mode="change">
+							<valList>
+								<valItem ident="anonymization">
+									<desc xml:lang="fr">anonymisée</desc>
+									<desc xml:lang="en">anonymized</desc>
+								</valItem>
+								<valItem ident="anonymization.no_anonymization">
+									<desc xml:lang="fr">non anonymisée</desc>
+									<desc xml:lang="en">no anonymization</desc>
+								</valItem>
+								<valItem ident="anonymization.partially_anonymized">
+									<desc xml:lang="fr">anonymisation partielle</desc>
+									<desc xml:lang="en">partially anonymized</desc>
+								</valItem>
+								<valItem ident="anonymization.OTHER">
+									<desc xml:lang="fr">autre niveau d'anonymisation</desc>
+									<desc xml:lang="en">other level of anonymization</desc>
+								</valItem>
+							</valList>
+						</attDef>
+					</attList>
+				</elementSpec>
+
+				<elementSpec ident="p" module="core">
+					<desc xml:lang="fr">Description courte</desc>
+					<desc xml:lang="en">Short description</desc>
+					<content>
+						<textNode/>
+					</content>
+				</elementSpec>
+
+			</schemaSpec>
+		</body>
+	</text>
+</TEI>

@@ -1,0 +1,284 @@
+<div id="info">
+    <div class="infofiles d-none" id="filename">TEI: </div>
+</div>
+
+<div id="teidata">
+
+    <div class="form-group row pb-0 ">
+        <div class="col-sm-10">
+            <label class="title-section" for="inputFirstname">Title of the scenario</label>
+            <span class="info-span">
+                <img class="exclamationIcon" src="../../../assets/images/Exclamation_point2.svg">
+            </span>
+            <span class="max-character-indication">max 100 characters</span>
+
+            <div>
+                <div class="nodeEdit">
+                    <input class="UPI-head-head" name="id29" id="id29" onchange="window.teimeta.setText(event, 'id29');"
+                        style="width: 73.75%;">
+
+                    <span>
+                        <img class="pl-4" width="50" height="30" src="../../../assets/images/icon-list-tick-green.svg">
+                    </span>
+                </div>
+                
+            </div>
+           
+        </div>
+
+        <!-- title input -->
+        <div class="input-group pl-3 col-sm-10 several-lang-title" id="title-lang-1">
+            <div class="edit-lang">
+                <span class="pl-5 pr-3 several-lang">you can edit the title in several languages</span>
+            </div>
+
+            <div class="input-group-append">
+                <div class="nodeEdit">
+                    <select class="listattr UPI-desc-definition-xml:lang" id="id35"
+                        onchange="window.teimeta.setText(event, 'id35');">
+                        <option value="en" selected="selected">en</option>
+                        <option value="fr">fr</option>
+                        <option value="de">de</option>
+                        <option value="it">it</option>
+                        <option value="es">es</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary add-button" type="button">+</button>
+            </div>
+
+        </div>
+    </div>
+    <!-- Author -->
+    <div class="form-group row">
+        <div class="col-sm-9 pb-2">
+            <span class="title-section">Author(s)</span>
+            <span class="info-span"><img class="exclamationIcon"
+                    src="../../../assets/images/Exclamation_point2.svg"></span>
+            <span class="ml-2 error-message-author">Required field missing</span>
+        </div>
+
+        <div class="form-group row author-example author-input ml-4" id="author1">
+            <!-- Firstname input -->
+            <div class="input-group col-sm-3">
+                <div class="input-group-prepend text-center">
+                    <span class="input-group-text" id="basic-addon1">
+                        <img src="../../../assets/images/user.svg">
+                    </span>
+                </div>
+
+                <div class="nodeEdit">
+                    <input class="UPI-surname-surname" name="id10" id="id10"
+                        onchange="window.teimeta.setText(event, 'id10');" placeholder="Surname">
+                    <span>
+                        <img class="pl-4" width="50" height="30" src="../../../assets/images/icon-list-tick-green.svg">
+                    </span>
+                </div>
+            </div>
+
+            <!-- Secondname -->
+            <div class="input-group col-sm-3">
+                <div class="input-group-prepend text-center">
+                    <span class="input-group-text" id="basic-addon1">
+                        <img src="../../../assets/images/user.svg">
+                    </span>
+                </div>
+                <div class="nodeEdit">
+                    <input class="UPI-forename-forename" name="id8" id="id8"
+                        onchange="window.teimeta.setText(event, 'id8');" placeholder="Forename">
+                    <span>
+                        <img class="pl-4" width="50" height="30" src="../../../assets/images/icon-list-tick-green.svg">
+                    </span>
+                </div>
+            </div>
+
+            <!-- Affiliation -->
+            <div class="input-group col-sm-3">
+                <div class="input-group-prepend text-center">
+                    <span class="input-group-text" id="basic-addon1">
+                        <img src="../../../assets/images/university.svg">
+                    </span>
+                </div>
+                <div class="nodeEdit">
+                    <input class="UPI-affiliation-affiliation" id="Affiliation" type="text" placeholder="Affiliation"
+                        name="id12" id="id12" onchange="window.teimeta.setText(event, 'id12');">
+                    <span>
+                        <img class="pl-4" width="50" height="30" src="../../../assets/images/icon-list-tick-green.svg">
+                    </span>
+                </div>
+            </div>
+
+
+            <div class="pl-3 pr-4">
+                <img class="delete-author" id="remove-1" src="../../../assets/images/garbage.svg">
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-9 pl-0 pb-3 add-component">
+        <span class="add-sign-circle">+</span>
+        <span>Add one</span>
+    </div>
+
+
+    <!-- description text editor -->
+    <div class="col-sm-9 pb-2">
+        <span class="title-section">Description</span>
+        <span class="info-span"><img class="exclamationIcon" src="../../../assets/images/Exclamation_point2.svg"></span>
+        <span class="max-character-indication">max 150 characters</span>
+    </div>
+
+    <div id="descriptionEditor-{{item}}" *ngFor="let item of items" class="row pl-4">
+        <div class="col-sm-7 px-0 nodeEdit" style="background-color: white;">
+            <app-ngx-editor [config]="editorConfig" id="ngxEditor-{{item}}" >
+            </app-ngx-editor>
+        </div>
+
+
+        <div class="pl-3 pr-4 col-sm-1" *ngIf="item !== 0">
+            <img id="removeDesc-{{item}}" [src]="garbageIcon" (click)="removeDescription( item )">
+        </div>
+
+        <div id="adding-description-section-{{item}}" class="input-group pl-3 pl-5 px-0 col-sm-10">
+            <div id="editLang-{{item}}" class="edit-lang">
+                <span class="pl-5 pr-3 several-lang">{{ DescriptionLangIndication }}</span>
+            </div>
+            <div class="nodeEdit">
+                <select class="listattr UPI-desc-definition-xml:lang select-lang-description" id="id45"
+                    onchange="window.teimeta.setText(event, 'id45');">
+                    <option value="en" selected="selected">en</option>
+                    <option value="fr">fr</option>
+                    <option value="de">de</option>
+                    <option value="it">it</option>
+                    <option value="es">es</option>
+                </select>
+            </div>
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary add-button" (click)="copyNgxEditor()" type="button">+</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row image-container pt-5">
+
+        <div class="col-md-5 image-upload-container">
+            <div class="col-sm-9 pb-2">
+                <span class="title-section">Image</span>
+                <span class="info-span"><img class="exclamationIcon"
+                        src="../../../assets/images/Exclamation_point2.svg"></span>
+            </div>
+            <!-- file drop -->
+            <div *ngIf="!files.length && reset==false" class="mt-1 ml-3 mb-5 rmpm dropzone upload1 UPI-graphic-url"
+                appDragDrop (files)="filesDropped($event)">
+                <div class="text-wrapper">
+                    <div class="centered upload-image-text pt-2">Upload image</div>
+                    <div class="centered pt-3">
+                        <img [src]='cameraPhotoIcon' class="cameraPhotoIcon">
+                    </div>
+                </div>
+            </div>
+
+            <!--droped image preview -->
+            <div *ngFor="let file of files" class="mt-5 ml-3 mb-5 UPI-graphic-url" appDragDrop
+                (files)="filesDropped($event)" onchange="window.teimeta.setText(event, 'id10');">
+                <img *ngIf="file" class="uploaded-image" [src]="file.url" width="300px" height="250px">
+            </div>
+        </div>
+
+        <div class="col-md-5 image-licensing-container">
+            <div class="col-sm-9 pb-2">
+                <span class="title-section">Image licensing</span>
+                <span class="info-span"><img class="exclamationIcon"
+                        src="../../../assets/images/Exclamation_point2.svg"></span>
+
+                <div class="form-check mt-3">
+                    <label class="form-check-label pl-0 mr-4" for="defaultCheck1">
+                        CC O
+                    </label>
+                    <input class="form-check-input UPI-licence-target" type="checkbox" value="CC 0" id="65"
+                        onchange="window.teimeta.setText(event, 'id65');">
+
+                    <label class="form-check-label mx-4" for="defaultCheck2">
+                        CC BY
+                    </label>
+                    <input class="form-check-input UPI-licence-target" type="checkbox" value="CC BY" id="67"
+                        onchange="window.teimeta.setText(event, 'id67');">
+
+                    <img class="pl-4" width="50" height="30" src="../../../assets/images/icon-list-tick-green.svg">
+
+                </div>
+
+                <!--  Title of the image and Author of the image -->
+
+                <div class="form-group mt-4">
+                    <label for="exampleFormControlInput1">Title of the image</label>
+                </div>
+                <div class="input-group col-sm-10 pl-0">
+
+                    <!-- title of the image input -->
+                    <div class="nodeEdit">
+                        <input class="UPI-head-image-head" id="id57" name="id57"
+                            onchange="window.teimeta.setText(event, 'id57');" placeholder="Some guy hanling a drone">
+                        <img class="pl-4" width="50" height="30" src="../../../assets/images/icon-list-tick-green.svg">
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label for="exampleFormControlInput1">Author of the image</label>
+                </div>
+
+                <div class="input-group col-sm-10 pl-0">
+                    <div class="input-group-prepend text-center">
+                        <span class="input-group-text" id="basic-addon1">
+                            <img src="../../../assets/images/user.svg">
+                        </span>
+                    </div>
+
+                    <!-- author of the image input -->
+                    <div class="nodeEdit">
+                        <input class="UPI-author-imgAuthor-author" id="id62" name="id62"
+                            onchange="window.teimeta.setText(event, 'id62');" placeholder="Alessio Calantropio">
+
+                    </div>
+
+                    <span>
+                        <img class="pl-4" width="50" height="30" src="../../../assets/images/icon-list-tick-green.svg">
+                    </span>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <!-- tag discipline  -->
+
+    <div class="row tag-selection pl-4">
+        <div class="col-sm-9 pb-2">
+            <span class="title-section">Tags</span>
+            <span class="info-span"><img class="exclamationIcon"
+                    src="../../../assets/images/Exclamation_point2.svg"></span>
+            <span class="ml-2 error-message-tag">Required tag missing</span>
+        </div>
+
+        <app-tag tag_type="discipline"> </app-tag>
+
+        <app-tag tag_type="object"> </app-tag>
+
+        <app-tag tag_type="technique"> </app-tag>
+    </div>
+
+
+</div>
+
+<!--  XXXX -->
+
+<!-- button for saving data input to an xml teimeta  -->
+
+<button class="btn btn-primary submit-button ml-5 my-5 save_continue_button" (click)="test()">FINISH</button>

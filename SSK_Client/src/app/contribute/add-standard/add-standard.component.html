@@ -1,0 +1,91 @@
+
+
+
+<form id="form-standard" class='px-5 py-5'>
+        
+        <div class="form-group row">
+            <div class="col-lg-6 left-column">
+                <div class="input-data">
+                    <label for="standard_abbr_name" class="col-form-label">Short Name :
+                        <span class="info-span">
+                            <img class="exclamationIcon info" [src]="exclamationIcon">
+                        </span>
+                    </label>
+                    <input class="form-control" name="standard_abbr_name" placeholder="Ex: CSV" required [(ngModel)]='standard.standard_abbr_name'>
+                </div>
+                
+                <div class="input-data pt-3">
+                    <label for="standard_complete_name" class="col-form-label">Complete Name :
+                        <span class="info-span">
+                            <img class="exclamationIcon info" [src]="exclamationIcon">
+                        </span>
+                    </label>           
+                    <input class="form-control" name="standard_complete_name" placeholder="Ex: comma-separated values" [(ngModel)]='standard.standard_complete_name'>
+                </div>
+                
+                <div class="pt-3">
+                    <label for="description :"  class="col-form-label">Description :
+                        <span class="info-span">
+                            <img class="exclamationIcon info" [src]="exclamationIcon">
+                        </span>
+                    </label>
+                    <div id="descriptionEditor-{{item.id}}" *ngFor="let item of items" class="row pt-3">
+                            <div  class="px-0 ngx-editor-container" style="background-color: white;">
+                                <app-ngx-editor  [config]="editorConfig" id="ngxEditor-{{item}}" >sss</app-ngx-editor>
+                            </div>
+                            <div  class="pl-3 pr-4 col-sm-1" *ngIf="item.id !== 0">
+                                <img  id="removeDesc-{{item.id}}"  [src]="garbageIcon" (click)="removeDescription( item.id )">
+                            </div>
+            
+                            <div id="adding-description-section-{{item.id}}" class="input-group">
+                                    <div id="editLang-{{item.id}}" class="edit-lang">
+                                        <span class="several-lang">{{ descriptionLangIndication }}</span>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <select class="form-control"  name="value" id="lang-{{item.id}}" (change)='selected(item)' [(ngModel)]  ="item.value"> 
+                                                <option  *ngFor="let lang of languagesList"  [ngValue]="lang.item" > {{lang.label}}</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary add-button" (click)="copyNgxEditor()" type="button">+</button>
+                                    </div>
+                            </div>
+                    </div>
+                </div>
+    
+                <div class="input-data pt-3">
+                    <label for="standard_link" class="col-form-label">Standard Link :
+                        <span class="info-span">
+                            <img class="exclamationIcon info" [src]="exclamationIcon">
+                        </span>
+                    </label>
+                    
+                    <input type="" class="form-control" name="standard_link"  [(ngModel)]='standard.standard_link'
+                    placeholder=" Ex : www.example.com" required>
+                </div>
+    
+                <!-- <app-add-tags  item_type='Tags(s) :' add_button_type='Add' class='pt-1'></app-add-tags> 
+                <app-tag tag_type ="standard"></app-tag>-->
+    
+    
+            </div>
+            <div class="col-lg-6">
+                <app-add-tags item_type='Resource(s) :' add_button_type='Add link' class='pt-1'></app-add-tags>
+                <!--<app-add-tags item_type='Type(s) :' add_button_type='Add' class='pt-1'></app-add-tags>-->
+            </div> 
+        </div>
+    
+    
+        <div class='pt-5'>
+           <button type="submit"  value="submit" class="btn btn-primary" (click)='create()'>Create</button>
+        </div>
+      
+            <pre id=resDiv></pre>
+       
+            <div class='pt-5'>
+                    <button type="submit"  *ngIf="showSubmit" value="submit" class="btn btn-primary" (click)='submitform()'>SUBMIT</button>
+                 </div>
+        <h4 *ngIf= "res" class="text-center my-lg-3  mx-lg-5 py-lg-3 text-white"  [ngClass]="(sha === null)?' bg-danger': 'bg-success'" >{{res}}</h4>
+    </form>
+    
+    

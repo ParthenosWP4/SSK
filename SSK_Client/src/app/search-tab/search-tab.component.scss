@@ -1,0 +1,92 @@
+
+@import '../../partials/variables';
+
+
+
+.research-title {
+  font-family: $avenir-next;
+  font-size: 24px;
+  color: $color-48;
+  text-transform: uppercase;
+
+}
+
+
+.form-check-input {
+  position: absolute !important;
+  text-transform: capitalize;
+}
+
+.form-check {
+  margin: 0px !important;
+}
+
+.group {
+  font-family: $avenir-next;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.form-check-label{
+    color: $color-40;
+    font-family: $avenir-next;
+    text-transform: capitalize;
+    font-size: 0.875rem;
+}
+
+.elt-tab {
+  //border-top: 2px solid $color-28;
+  background-color: $color-3;
+  height: 285px;
+  margin-left: -1.5rem;
+
+}
+
+.discipline{
+  color: $color-49;
+  border: none !important;
+  
+}
+.technique{
+  color: $color-50;
+  border: none !important;
+}
+
+.object{
+  color: $color-51;
+  border: none !important;
+}
+.undefined , .standard{
+  color: $color-52;
+  border: none !important;
+}
+.activity, .activitie{
+  color: $color-53;
+  border: none !important;
+}
+
+.show{
+  overflow-y: scroll;
+  height: 255px;
+}
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: rgba(0,0,0,.5);
+  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+span.tagTitle{
+  background-image: url("../../assets/images/questions-circular-button.svg");
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+span.tagTitle:hover{
+  background-image: url("../../assets/images/QuestionDark.svg");
+  background-repeat: no-repeat;
+}
+

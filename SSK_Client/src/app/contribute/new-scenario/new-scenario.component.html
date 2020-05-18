@@ -1,0 +1,782 @@
+<div class="row home">
+  <div class="col-lg-12">
+    <div class="mt-lg-5   mr-lg-4">
+      <ul class="nav nav-tabs mx-lg-5" role="tablist">
+        <li *ngFor=" let item  of tabList; let i=index" class="nav-item ">
+          <a class="nav-link pull-left" [ngClass]="(item.tab == active) ? 'active':''" data-toggle="tab"
+            [attr.data-target]="'#'+ item.tab + '-tab'" (click)="toogleTab(item.tab)">
+            {{i+1}}.{{item.text}}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="home row">
+  <div class="col-lg-12 ">
+    <div class="tab-content  mx-5 tab">
+
+      <!-----------------------  tab and terms condtions ------------------------>
+      <!-----------------------  tab and terms condtions ------------------------>
+      <!-----------------------  tab and terms condtions ------------------------>
+
+      <div class="tab-pane" id="terms-tab" [ngClass]="(active === 'terms') ? 'active':''">
+        <!-- create an account  or sign in to (contribute component  1step )-->
+
+        <div *ngIf='!showTermsCdtions'>
+          <div class="pt-5 text-center contributeTerms">
+            <p> {{ contributeTerms }} <span class="termsCdtionsLink" (click)="showTermsCdtions = true">terms and
+                conditions of use.</span></p>
+          </div>
+
+          <div class="pt-5 text-center contributeTerms">
+            <button class="btn btn-primary submit-button my-5 sign-button" value="" (click)="open('signIn')">SIGN
+              IN</button>
+            <button class="btn btn-primary submit-button ml-5 my-5 create-account-button" (click)="open('create')"
+              value="">CREATE ACCOUNT</button>
+          </div>
+          <div class="col-md-5 pt-4 pb-5 px-0 text-center exploring-scenarios">
+            But no need of an account
+            <a [routerLink]="['/scenarios']">to start exploring available scenarios</a>
+            and adopt the best practices!
+          </div>
+
+        </div>
+
+        <!-- terms conditions pill content  one page   3rd step -->
+        <div class="fade show active" *ngIf='showTermsCdtions'>
+          <div class="row pt-4 terms-conditions-container">
+            <div *ngFor="let data of termsOfUseData" class="col-lg-10 pt-2 ml-5 ">
+              <h2 class="ml-4">{{ data.title }}</h2>
+              <p *ngFor="let txt of data.textsList" class="ml-4 pt-3 terms-of-use-text">
+                {{ txt }}
+              </p>
+
+            </div>
+            <div class="col-lg-10 pt-2 ml-5">
+              <h2 class="ml-4">4. Licensing</h2>
+              <p class="ml-4 pt-3 terms-of-use-text">
+                The licence applicable to all the data published on the platform
+                (titles and descriptions of the scenarios and steps)
+                is the Creative Commons Attribution (CC-BY), available here:
+                <a href='https://creativecommons.org/licenses/by/4.0/legalcode.'>
+                  https://creativecommons.org/licenses/by/4.0/legalcode.
+                </a>
+              </p>
+            </div>
+
+            <div class="col-lg-12 pt-3 pb-5 text-center">
+              <button (click)='createAccount()'
+                class="btn btn-primary submit-button my-lg-5 p-3 agree-continue-button">AGREE &amp; CONTINUE</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+     
+      <!-----------------------  tab scenario ------------------------>
+      <div class="tab-pane " id="scenario-tab" [ngClass]="(active === 'scenario') ? 'active':''">
+        <div id="bottomall">
+          <div id="info">
+            <div class="infofiles d-none" id="filename">TEI: </div>
+          </div>
+          <div class='scenarioTEI'>
+            <div class="form-group row pb-0 " *ngIf="{ elt: 'head'} as variable">
+              <div class="col-sm-10">
+                <label class="title-section" for="inputFirstname">Title of the scenario</label>
+                <span class="info-span">
+                  <img class="exclamationIcon" src="../../../assets/images/Exclamation_point2.svg">
+                </span>
+                <span class="max-character-indication">max 100 characters</span>
+                <div>
+                  <div class="contentCountMany UPCM-head" id="id26">
+                    <div #head class="content" *ngFor="let idSet of idTabs?.head;">
+                      <input class="UPI-head-head" [attr.name]="idSet.idE" [attr.id]="idSet.idE"
+                        (change)="setText(idSet.idE)">
+                      <span>
+                        <img class="pl-4" width="50" height="30" src="../../../assets/images/icon-list-tick-green.svg">
+                      </span>
+                      <!-- title input -->
+                      <div class="input-group pl-3 col-sm-11 several-lang-title" id="title-lang">
+                        <span class="pl-5 pr-3 several-lang">you can edit the title in several languages</span>
+                        <select class="listattr UPI-head-xml:lang" [attr.id]="idSet.idAttr"
+                          (change)="setText(idSet.idAttr)">
+                          <option value="en" selected="selected">en</option>
+                          <option value="fr">fr</option>
+                          <option value="de">de</option>
+                          <option value="it">it</option>
+                          <option value="es">es</option>
+                        </select>
+                        <button class="btn btn-outline-secondary add-button" type="button"  
+                          (click)="addNewElt('head', idSet, $event)">+</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Author -->
+                <div class="col-sm-9 pb-2">
+                  <span class="title-section">Author(s)</span>
+                  <span class="info-span"><img class="exclamationIcon"
+                      src="../../../assets/images/Exclamation_point2.svg"></span>
+                  <span class="ml-2 error-message-author">Required field missing</span>
+                </div>
+                <div class=" contentCountMany UPCM-author" id="id4">
+                  <div class="row content my-2" *ngFor="let idAuthor of idTabs?.author; let i=index">
+                    <div class="input-group col-lg-3">
+                      <div class="input-group-prepend centered">
+                        <span class="input-group-text" id="basic-addon1"><i class="fa fa-user fa-1half"
+                            aria-hidden="true"></i></span>
+                      </div>
+                      <input type="text" class="form-control UPI-forname" placeholder="Forname" aria-label="Forname"
+                        aria-describedby="basic-addon1" (change)="setText(idAuthor.idF)" [attr.name]="idAuthor.idF"
+                        [attr.id]="idAuthor.idF" [(ngModel)]="authorsInfos.forename" name="forename">
+                    </div>
+                    <div class="input-group col-lg-3">
+                      <div class="input-group-prepend centered">
+                        <span class="input-group-text" id="basic-addon1"><i class="fa fa-user fa-1half"
+                            aria-hidden="true"></i></span>
+                      </div>
+                      <input type="text" class="form-control UPI-surname" placeholder="Surname" aria-label="Surname"
+                        aria-describedby="basic-addon1" (change)="setText(idAuthor.idS)" [attr.name]="idAuthor.idS"
+                        [attr.id]="idAuthor.idS" [(ngModel)]="authorsInfos.surname" name="surname">
+                    </div>
+                    <div class="input-group col-lg-4">
+                      <div class="input-group-prepend centered">
+                        <span class="input-group-text" id="basic-addon1"><i class="fa fa-university fa-1half"
+                            aria-hidden="true"></i></span>
+                      </div>
+                      <input type="text" class="form-control UPI-affiliation-affiliation" placeholder="Affiliation"
+                        aria-label="Affiliation" aria-describedby="basic-addon1" (change)="setText(idAuthor.idA)"
+                        [attr.name]="idAuthor.idA" [attr.id]="idAuthor.idA">
+                    </div>
+                    <div class="input-group col-lg-2">
+                      <button type="button" class="btn btn-primary">
+                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                      </button>
+
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class=" col-lg-2">
+                      <span class="fa-1half" (click)="addNewElt('author', {'idP':'id4'}, $event)">
+                        <i class="fa fa-plus-circle mr-2" aria-hidden="true"></i>
+                        Add one
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- description text editor -->
+                  <div class="col-sm-9 pb-2">
+                    <span class="title-section">Description</span>
+                    <span class="info-span">
+                      <img class="exclamationIcon" src="../../../assets/images/Exclamation_point2.svg">
+                    </span>
+                    <span class="max-character-indication">max 150 characters</span>
+                  </div>
+                  <div class="contentCountMany UPCM-desc" id="id31">
+                    <ul class="nav nav-tabs">
+                      <li *ngFor="let idDesc of idTabs?.desc" class="nav-item">
+                        <a class="nav-link active" #langEditor [attr.href]="'#tab'+idDesc.idAttr" data-toggle="tab">
+                          <div class="nodeEdit">
+                            <select class="listattr UPI-desc-definition-xml:lang select-lang-description"
+                              [attr.href]="idDesc.idAttr" [attr.id]="idDesc.idAttr" [attr.name]="idDesc.idAttr" (change)="setText(idDesc.idAttr)">
+                              <option value="en" selected="selected">en</option>
+                              <option value="fr">fr</option>
+                              <option value="de">de</option>
+                              <option value="it">it</option>
+                              <option value="es">es</option>
+                            </select>
+                          </div>
+                        </a>
+                      </li>
+                      <li #langEditor>
+                        <button class="btn btn-primary" type="button" id="add-desc-scenario" (click)="addNewElt('desc', {'idP':'id31'}, $event)">
+                          +
+                        </button>
+                      </li>
+
+
+                    </ul>
+                    <div class="tab-content">
+                      <div *ngFor="let idDesc of idTabs?.desc" class="tab-pane active" [attr.id]="'tab'+idDesc.idAttr" #editorTab>
+                        <div class="col-lg-9 px-0 nodeEdit" style="background-color: white;">
+                          <app-ngx-editor class="UPI-desc-definition-desc" #ngxeditor [config]="editorConfig" [attr.id]="id+idDesc.idE">
+                          </app-ngx-editor>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row image-container pt-5">
+                    <div class="col-md-5 image-upload-container">
+                      <div class="col-sm-9 pb-2">
+                        <span class="title-section">Image</span>
+                        <span class="info-span"><img class="exclamationIcon"
+                            src="../../../assets/images/Exclamation_point2.svg"></span>
+                      </div>
+                      <!-- file drop -->
+                      <div *ngIf="!files.length && reset==false"
+                        class="mt-1 ml-3 mb-5 rmpm dropzone upload1 UPI-graphic-url" appDragDrop
+                        (files)="filesDropped($event)">
+                        <div class="text-wrapper">
+                          <div class="centered upload-image-text pt-2">Upload image</div>
+                          <div class="centered pt-3">
+                            <img [src]='userIcon' class="userIcon">
+                          </div>
+                        </div>
+                      </div>      
+                      <!-- droped image preview  -->
+                      <div *ngFor="let file of files" class="mt-5 ml-3 mb-5 UPI-graphic-url" appDragDrop
+                      (files)="filesDropped($event)" onchange="window.teimeta.setText(event, 'id10', false);">
+                          <img *ngIf="file" class="uploaded-image" [src]="file.url" width="300px" height="250px">
+                      </div>
+                    </div>
+
+                    <div class="col-md-5 image-licensing-container">
+                      <div class="col-sm-9 pb-2">
+                        <span class="title-section">Image licensing</span>
+                        <span class="info-span"><img class="exclamationIcon"
+                            src="../../../assets/images/Exclamation_point2.svg"></span>
+
+                        <div class="form-check mt-3">
+                          <label class="form-check-label pl-0 mr-4" for="defaultCheck1">
+                            CC O
+                          </label>
+                          <input class="form-check-input UPI-licence-target" type="checkbox" value="CC 0" id="65"
+                            onchange="window.teimeta.setText(event, 'id65', false);">
+
+                          <label class="form-check-label mx-4" for="defaultCheck2">
+                            CC BY
+                          </label>
+                          <input class="form-check-input UPI-licence-target" type="checkbox" value="CC BY" id="67"
+                            onchange="window.teimeta.setText(event, 'id67', false);">
+
+                          <img class="pl-4" width="50" height="30"
+                            src="../../../assets/images/icon-list-tick-green.svg">
+
+                        </div>
+
+                        <!--  Title of the image and Author of the image -->
+
+                        <div class="form-group mt-4">
+                          <label for="exampleFormControlInput1">Title of the image</label>
+                        </div>
+                        <div class="input-group col-sm-10 pl-0">
+
+                          <!-- title of the image input -->
+                          <div class="nodeEdit">
+                            <input class="UPI-head-image-head" id="id57" name="id57"
+                              onchange="window.teimeta.setText(event, 'id57', false);" placeholder="Some guy hanling a drone">
+                            <img class="pl-4" width="50" height="30"
+                              src="../../../assets/images/icon-list-tick-green.svg">
+                          </div>
+                        </div>
+
+                        <div class="form-group mt-4">
+                          <label for="exampleFormControlInput1">Author of the image</label>
+                        </div>
+
+                        <div class="input-group col-sm-10 pl-0">
+                          <div class="input-group-prepend text-center">
+                            <span class="input-group-text" id="basic-addon1">
+                              <img src="../../../assets/images/user.svg">
+                            </span>
+                          </div>
+
+                          <!-- author of the image input -->
+                          <div class="nodeEdit">
+                            <input class="UPI-author-imgAuthor-author" id="id62" name="id62"
+                              onchange="window.teimeta.setText(event, 'id62', false);" placeholder="Alessio Calantropio">
+
+                          </div>
+
+                          <span>
+                            <img class="pl-4" width="50" height="30"
+                              src="../../../assets/images/icon-list-tick-green.svg">
+                          </span>
+                        </div>
+
+                      </div>
+
+
+                    </div>
+
+
+                  </div>
+
+                  <!-- tag discipline  -->
+
+                  <div class="row tag-selection pl-4">
+                    <div class="col-sm-9 pb-2">
+                      <span class="title-section">Tags</span>
+                      <span class="info-span"><img class="exclamationIcon"
+                          src="../../../assets/images/Exclamation_point2.svg"></span>
+                      <span class="ml-2 error-message-tag">Required tag missing</span>
+                    </div>
+
+                    <app-tag [teiMeta]="teiMeta" [inStep]='false'> </app-tag>
+
+                  </div>
+                </div>
+              </div>
+              <h4 class="text-center my-lg-3 bg-danger mx-lg-5 py-lg-3 text-white" *ngIf='scenarioPushError'> Something
+                went
+                wrong, Please retry or contact SSK team (ssk@inria.fr)</h4>
+            </div>
+
+            <!-----------------------  tab steps ------------------------>
+
+            <!-- Modal existing step template -->
+            <ng-template #content let-c="close" let-d="dismiss">
+              <div class="modal-header">
+                <h4 class="modal-title" id="modal-basic-title"></h4>
+                <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+             
+              <div class="modal-body row">
+                <div class="col-md-5 ml-3">
+                    <i class="fa fa-open" ></i>
+
+                  <p>You can add <span class="boldStepTxt">existing steps</span> from other scenarios to your own.</p>
+                  <p>Be aware that you will not be able to modify the basic information
+                    of the step you pick : its <span class="boldStepTxt">title, description</span> and
+                    <span class="boldStepTxt">tags</span> will remain the same.
+                    You can add existing steps from other scenarios to your own.
+                  </p>
+                  <p>But you can reorganise the <span class="boldStepTxt">resources</span> as you see fit :
+                    add or remove what is necessary for your scenario.
+                  </p>
+
+                  <div *ngIf="tagStepList?.length > 0" class="selected-existing-step row mt-5 pt-2 px-2 py-3">
+                      <div class="col-md-10">
+                          <p class="existing-step-title pt-20">{{ stepTitle }} </p>
+                  
+                          <p class="existing-step-description">{{ stepDescription }}</p>
+                          <span  *ngFor="let item of tagStepList;let i=index"  id ='spanTag-{{ i }}' class='tag step-tags mr-3 px-2 {{tagStepTypeList[i]}}'>
+                              {{ item }}
+                          </span>
+                      </div>
+                    
+                      <div class="col-md-1 p-0">
+                           <img class="delete-existing-step" id ='delete-step-{{ i }}' (click)="deleteExistingStep($event)" src="../../../assets/images/garbage.svg">
+                  
+                      </div>
+                
+                   
+                  </div>
+             
+
+                </div>
+                
+
+
+ 
+                <div class="col-md-6">
+                  <div class="container">
+                    <div class="row">
+
+                      <div class="search-step mb-2">
+                        <input class="form-control search-existing-step-input" type="text" name="search"
+                          [(ngModel)]="searchText" autocomplete="off" placeholder="Search a step">
+                          <img  alt="int_dot" class="searchImg" src="/assets/images/magnifier-tool.svg">             
+                      </div> 
+                  
+                      <table class="table">
+                        <tbody class="tbody-add-existing-step">
+                          <tr class="tr-existing-step" *ngFor="let stepEx of existingSteps | filter:searchText" (click)="stepSelect($event)">
+                            
+                              <p class="existing-step-title pl-3 pt-3">{{ stepEx.title }}</p>
+                              <p class="existing-step-description pl-3 ">{{ stepEx.description }}</p>
+
+
+                              <div class="step-tag-container pl-3 pb-3">
+                                  <span  *ngFor="let item of stepEx.tags"  id ='spanTag-{{ i }}' class='tag step-tags mr-3 px-2 {{ item.type}}'>
+                                      {{ item.value }}
+                                   </span>
+                              </div>
+                          </tr>
+                        </tbody>
+
+                      </table>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="modal-footer">
+
+                <button type="button" class="btn btn-outline-dark close-button" (click)="c('Save click')">CLOSE</button>
+                <button type="button" class="btn btn-outline-dark save-button" (click)="c('Save click')">SAVE</button>
+
+              </div>
+            </ng-template>
+           
+          </div>
+          <!-- buttons navigation -->
+          <div class="previous-next text-center col-lg-12"
+            *ngIf="((currentTab == 'scenario' || currentTab == 'steps')) || !end">
+            <button class="btn btn-primary submit-button ml-5 my-5 prev_button" (click)='previous()'>PREVIOUS</button>
+            <button class="btn btn-primary submit-button ml-5 my-5 preview_button">PREVIEW</button>
+            <button class="btn btn-primary submit-button ml-5 my-5 save_continue_button"
+              (click)="saveTEIScenatio(false)">SAVE & CONTINUE
+            </button>
+            <button *ngIf="(stepNunber >= 2)" class="btn btn-primary submit-button ml-5 my-5 save_continue_button"
+              (click)="saveTEIScenatio(true)">FINISH</button>
+
+            <!-- button for saving data input to an xml teimeta -->
+            <button class="btn btn-primary submit-button ml-5 my-5 save_continue_button" (click)="test()">FINISH TEST</button>
+          </div>
+
+        </div>
+      </div>
+
+       <!-- Modal existing step template end -->
+      
+
+       <div class="tab-pane" id="steps-tab" *ngIf="active === 'steps'" [ngClass]="(active === 'steps') ? 'active':''">
+           <div>
+              Author(s): {{ authorsInfos.forename }} {{  authorsInfos.surname }},
+
+              <!-- <p *ngFor="let author of authorsList" >{{ author.forename }} {{  author.surename }}</p> -->
+           </div>
+
+          <div id='stepsDiv'>
+            <div class="mt-5 mb-5">You can either <span class="boldStepTxt">create </span>a new step from scratch,
+              or <span class="boldStepTxt">reuse</span> existing ones from other scenarios.
+            </div>
+            <div class="step-container active">  
+              <div class="row">
+                <div class="col-lg-1 mr-lg-1 centered">
+                    <h2 *ngIf="!end" class="text-info-step p-3 ">STEP {{ stepNunber }}</h2>
+                    <img class="add-existing_step mx-3 p-1" id="" src="../../../assets/images/refresh.svg" (click)="openModalStep(content)">
+                    <img class="delete-step mx-3 p-1" id="" src="../../../assets/images/garbage.svg">
+                </div>
+                <div class="col">
+                    <div class="contentCountMany UPCM-head" id="id26">
+                        <ul class="nav nav-tabs ">
+                          <li *ngFor="let idObj of idStepTabs" class="nav-desc-step nav-item">
+                            <a class="nav-link active" #stepLang [attr.href]="'#tab' + idObj.idAttr" data-toggle="tab">
+                              <div class="nodeEdit">
+                                <select #selectElem class="listattr UPI-head-xml:lang select-lang-description-step"
+                                  [attr.href]="idObj.idAttr" [attr.id]="idObj.idAttr" [attr.name]="idObj.idAttr" (change)="setText(idObj.idAttr);" >
+                                  <option value="en" selected="selected">en</option>
+                                  <option value="fr">fr</option>
+                                  <option value="de">de</option>
+                                  <option value="it">it</option>
+                                  <option value="es">es</option>
+                                </select>
+                                
+                                <select  [(ngModel)]="selectElem.value" class="listattr UPI-desc-definition-xml:lang select-lang-description-step d-none" (change)="setText(idObj.idDAttr);"
+                                  [attr.href]="idObj.idDAttr" [attr.id]="idObj.idDAttr" [attr.name]="idObj.idDAttr" >
+                                  <option [value]="selectElem.value" selected="selected">{{selectElem.value}}</option>
+                                  <option value="fr">fr</option>
+                                  <option value="de">de</option>
+                                  <option value="it">it</option>
+                                  <option value="es">es</option>
+                                </select>
+                              </div>
+                      
+                            </a>
+                          </li>
+                          <li #stepLang>
+                            <button class="btn btn-primary" id ="add-desc-step" type="button" (click)="addNewElt('descHead', {'idP':'id27'}, $event)">
+                              +
+                            </button>
+                          </li>
+                        </ul>
+                        <div class="tab-content">
+                          <div *ngFor="let idObj of idStepTabs" class="tab-pane active ml-lg-3" [attr.id]="'tab'+idObj.idAttr" #editorStepTab>
+                              <div class="UPI-head">
+                                  <div class="UPI-head-head my-lg-3 form-group" >
+                                      <label class="title-section mr-lg-3" for="inputFirstname">Title of the Step
+                                        <span class="info-span">
+                                          <img class="exclamationIcon ml-1" src="../../../assets/images/Exclamation_point2.svg">
+                                        </span>
+                                      </label>
+                                      <input class="UPI-head-head  title-step col-lg-7" placeholder="Enter step's title here" [attr.id]="idObj.idE" [attr.name]="idObj.idE" (change)="setText(idObj.idE)">
+                                  </div>
+                              </div>
+                            <div class="col-lg-9 px-0 nodeEdit" style="background-color: white;">
+                                <span class="title-section">Description</span>
+                                <span class="info-span">
+                                  <img class="exclamationIcon" src="../../../assets/images/Exclamation_point2.svg">
+                                </span>
+                                <span class="max-character-indication">max 150 characters</span>
+                              <app-ngx-editor  class="UPI-desc-definition-desc" #ngxStepEditor [config]="editorConfig" [attr.id]="idObj.idDE">
+                              </app-ngx-editor>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+              </div>
+              <div class="row tag-step mt-5 pl-5 ml-3">
+                <div class="col-sm-9 ml-5 pb-2 selected-tags">
+
+                  <span class="title-section">Tags</span>
+                  <span class="info-span "><img class="exclamationIcon"
+                      src="../../../assets/images/Exclamation_point2.svg"></span>
+
+                  <!-- Affichage des activités et standards sélectionnés -->
+                  <div class="mt-1">                 
+
+                    <button *ngIf="activitySelected.name" class="tag activity mr-2" > {{ activitySelected.name }}</button>         
+
+                    <button *ngFor="let st of standardsArray"  class="tag my-1 mr-2 py-1 standards UPI-term-standard-key" > {{ st }}</button>         
+
+                    <button class="add-button-steps mt-2" (click)="openModalStepAddTags(contentTag)">+ ADD</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row resource-step mt-5 pl-5 ml-3">
+                <div class="col-sm-11 ml-5 pb-2">
+                  <div class="ml-1"> 
+                      <span class="title-section">Resources</span>
+                      <span class="info-span">
+                        <img class="exclamationIcon" src="../../../assets/images/Exclamation_point2.svg">
+                      </span>
+                  </div>
+                  
+                  <div class="row add-resources-container ml-1 mt-2">
+                    
+
+                    <!-- ADD RESOURCES TEST -->
+                    
+                    <div *ngIf="!addResourseTitle"
+                          class="row add-resources-card ml-0 mb-4 mr-4">
+                          <div class="col-md-10 add-resource-title mt-2 pl-3"> 
+                          {{ addResourseTitle }}
+                          </div>
+
+                         <div class="col-md-1 ml-4 pull-right delete-resources-card">                            
+                           <span aria-hidden="true">&times;</span>
+                         </div>
+                          
+                          <p class="add-label-author mt-2 pl-3"> By Karlsruhe Institute of Technology</p>
+                    </div>
+
+                    <!-- ADD RESOURCES -->
+
+                    <button class="add-button-steps mt-2 mb-5" (click)="openModalStepResources(contentResources)">+ ADD</button>
+                  </div>
+                </div>
+              </div>
+ 
+            </div>
+
+            <div class="input-group p-0 col-sm-12 several-lang-step" id="title-lang-1">
+                <div class="edit-lang-step">
+                  <span class="pl-5 pr-3 several-lang">you can edit the title in several languages</span>
+                </div>
+    
+                <div class="input-group-append">
+                  <div class="nodeEdit">
+                    <select class="listattr UPI-desc-definition-xml:lang" id="id35"
+                      onchange="window.teimeta.setText(event, 'id35',false);">
+                      <option value="en" selected="selected"> en </option>
+                      <option value="fr">fr</option>
+                      <option value="de">de</option>
+                      <option value="it">it</option>
+                      <option value="es">es</option>
+                    </select>
+                  </div>
+                </div>
+    
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary add-button" type="button">+</button>
+                </div>
+    
+    
+              </div>
+    
+              <div class="text-center next-step-icon">
+                  <i class="fa fa-chevron-down" aria-hidden="true"></i>
+              </div>
+
+          </div>
+         
+
+          <!-------------- Step 2 ------------->
+          <div class="step-container mt-5">
+
+              <div class="row">
+                  <div class="col-lg-1 mr-lg-1 centered">
+                      <h2 *ngIf="!end" class="text-info-step p-3"> STEP {{stepNunber + 1}} </h2>
+                  </div>
+                  <div class="col">
+                      <input class="UPI-head-head pl-4 title-step" placeholder="Title of the step"  style="width: 288px;">
+  
+                      <span class="info-span pt-3">
+                          <img class="exclamationIcon ml-1" src="../../../assets/images/Exclamation_point2.svg">
+                      </span>
+                  </div>
+                  
+                </div>
+      
+          </div>
+          <div class="input-group p-0 col-sm-12 several-lang-step" id="title-lang-1">
+
+            <div class="edit-lang-step">
+              <span class="pl-5 pr-3 several-lang">you can edit the title in several languages</span>
+            </div>
+
+            <div class="input-group-append">
+              <div class="nodeEdit">
+                <select class="listattr UPI-desc-definition-xml:lang" id="id35"
+                  onchange="window.teimeta.setText(event, 'id35', false);">
+                  <option value="en" selected="selected">en</option>
+                  <option value="fr">fr</option>
+                  <option value="de">de</option>
+                  <option value="it">it</option>
+                  <option value="es">es</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary add-button" type="button">+</button>
+            </div>
+          </div>
+
+
+          
+          <div id="step-2-chevron" class="text-center next-step-icon">
+              <i class="fa fa-chevron-down" aria-hidden="true"></i>
+          </div>
+
+
+          <!-- buttons navigations -->
+          <div class="previous-next text-center col-lg-12">
+              <button class="btn btn-primary submit-button ml-5 my-5 new_step_button">NEW STEP</button>
+              <button  class="btn btn-primary submit-button ml-5 my-5 preview_button">PREVIEW</button>
+              <button  class="btn btn-primary submit-button ml-5 my-5 publish_button">PUBLISH</button>
+              <button  class="btn btn-primary submit-button ml-5 my-5 save_continue" (click)="test1()">XML TEI TEST</button>
+          </div>
+          
+
+        </div>
+
+        <!-- Modal choose tags template ( STEP TAB )  -->
+        <ng-template #contentTag let-c="close" let-d="dismiss">
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title"></h4>
+            <button type="button" class="close-modal-step" aria-label="Close" (click)="d('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body row">
+            <div class="col-md-12 ml-3 ">
+                <app-tag [teiMeta]='teiMeta' [inStepContribute] = 'false' [inStep]='true'> </app-tag>
+            </div>
+
+          </div>
+           
+          <div class="modal-footer">
+
+            <button type="button" class="btn btn-outline-dark close-button" (click)="c('Save click')">CLOSE</button>
+            <button type="button" class="btn btn-outline-dark save-button" (click)="c('Save click')">SAVE</button>
+
+          </div>
+        </ng-template>
+
+        <!-- Modal choose tags template ( STEP TAB )  -->
+        <ng-template #contentResources let-c="close" let-d="dismiss">
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title"></h4>
+              <button type="button" class="close-modal-step" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body row">
+              <div class="col-md-5 ml-3 ">
+                  You can add any between 1 and 5 <span class="font-weight-bold">resources</span>
+
+                      <!-- 
+                      <label class="title-section mt-4"> Author(s) </label>
+                      <span class="info-span"><img class="exclamationIcon"
+                          src="../../../assets/images/Exclamation_point2.svg"></span>
+                  
+                      <div class="input">
+                          <input #authors (keyup)="0">  
+                      </div>
+                  
+                      <label class="title-section mt-4"> Zotero ID or URL </label>
+                      <span class="info-span"><img class="exclamationIcon"
+                          src="../../../assets/images/Exclamation_point2.svg"></span>
+                  
+                      <div class="input">
+                        <input #zoteroID (keyup)="0">   
+                      </div>
+                      
+                      <label class="title-section mt-4"> Link to the project page </label>
+                      <span class="info-span"><img class="exclamationIcon"
+                          src="../../../assets/images/Exclamation_point2.svg"></span>
+                  
+                      <div class="input">
+                        <input #resourceLink (keyup)="0">    
+                      </div>
+
+                      <label class="title-section mt-4"> Name of the project </label>
+                      <span class="info-span"><img class="exclamationIcon"
+                          src="../../../assets/images/Exclamation_point2.svg"></span>
+                  
+                      <div class="input">
+                        <input #nameOftheProject (keyup)="0">  
+                      </div>
+
+
+                      <label class="title-section mt-4"> Resource Type </label>
+                      <span class="info-span"><img class="exclamationIcon"
+                          src="../../../assets/images/Exclamation_point2.svg"></span>
+                  
+                      <div class="input">
+                        <input #resourceType (keyup)="0">
+                      </div> 
+
+                  <button type="button" class="btn btn-outline-dark close-button mt-4">ADD RESOURCES</button>
+                  -->
+                  <!--<app-tag [teiMeta]="teiMeta" [inStep]='false'> </app-tag>-->
+                  <app-add-resource></app-add-resource>
+
+
+              </div>
+              <!--  Resources preview -->
+              <!--<div class="col-md-5 ml-3 ">
+                   <app-tag [teiMeta]="teiMeta" [inStep]='true'> </app-tag> 
+                  Resources <span class="font-weight-bold">preview</span>
+                 <div class="selected-existing-step row mt-5 pt-2 px-2 py-2">
+                     <div class="col-md-11">
+                          <p class="existing-step-title pt-2"> Author(s) : {{ authors.value }} </p>
+                          <p class="existing-step-title pt-2"> Zotero ID or URL (s) : {{ zoteroID.value }} </p>
+                          <p class="existing-step-title pt-2"> Link to the project page : {{ resourceLink.value }} </p>
+                          <p class="existing-step-title pt-2"> Name of the project : {{ nameOftheProject.value }} </p>
+                          <p class="existing-step-title pt-2"> Resource Type : {{ resourceType.value }} </p>
+                          
+                          <span  *ngFor="let item of tagStepList;let i=index"  id ='spanTag-{{ i }}' class='tag step-tags mr-3 px-2 {{tagStepTypeList[i]}}'>
+                              {{ item }}
+                          </span>
+
+                      </div>
+
+                  
+                  </div>
+              </div>-->
+            </div>
+
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-dark close-button" (click)="c('Save click')">CLOSE</button>
+              <button type="button" class="btn btn-outline-dark save-button" (click)="c('Save click')">SAVE</button>
+            </div>
+        </ng-template>
+    </div> 
+  </div>
+</div>
+
+

@@ -1,0 +1,93 @@
+<div class="">
+  <div class="row  home py-lg-5">
+      <div class="col text-center">
+        <span class="scenarios-title">Explore scenarios, steps or resources</span>
+      </div>  
+      <div class="w-100"></div>
+      <div class="col-9 mx-auto mt-lg-5 pb-sm-4">
+        <div class="input-group"  id='multiple-datasets'>
+            <span  (click)= "cleanInput()" class="clear input-group-addon bg-white border-0 btn-danger" *ngIf='fullTextSearch'>
+                <i class="fa fa-times-circle "></i>
+              </span>
+            <input  autofocus type="text"  id="sskSearch"  class="typeahead form-control  font-weight-light search"  placeholder="Search" [(ngModel)]="model" >
+              <img  [src]= "forImage + '/assets/images/magnifier-tool.svg'" class=" searchImg" alt="int_dot"/>
+            </div>
+        <div class="w-100"></div>
+    </div>
+  </div>
+  
+  <div class="row home">
+    <div class="col-lg-9  offset-lg-3" >
+      <div class="mt-lg-5   mr-lg-4">
+        <ul class="nav nav-tabs  nav-fill mx-lg-5" role="tablist"  >
+          <li *ngFor=" let item   of tabList"  class="nav-item " >
+            <a class="nav-link pull-left" [ngClass]="(item == active) ? 'active':''" data-toggle="tab"  [attr.data-target]="'#'+ item + '-tab'"  (click)="toggle(item)" >
+              {{item}} ({{(item === 'scenarios') ? scenarios?.length :''}} {{(item === 'steps') ? getSteps()?.length :''}} {{(item === 'resources') ? getResources()?.length :''}})
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+ </div>
+ <div class="home row">
+    <div class="col mx-auto text-center m-lg-5 searchTab"  *ngIf="elasticServices?.spinner">
+        <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+    </div>
+    <div class=" col-lg-3  mt-3 searchTab" *ngIf="!elasticServices?.spinner">
+        <app-search-tab [data] = "searchData" ></app-search-tab>
+    </div>
+      
+    <div class="col-lg-9 " >
+     <div class="tab-content  mx-5 tab" >
+      <div class=" row my-lg-4 vdivide ">
+          <span *ngFor = "let elt of filters" class="badge badge-default mx-lg-1">
+            <i class="fa fa-times" aria-hidden="true" (click)="remove(elt)"></i>
+            {{elt?.filter}}
+          </span>
+      </div>
+      <div class="tab-pane" id="scenarios-tab"  [ngClass]="(active === 'scenarios') ? 'active':''" >
+          <app-scenario-card  *ngFor="let scen of scenarios" [scenario]="scen"></app-scenario-card>
+          <app-scenario-template   *ngFor="let elt of getScenarioTemp()"  ></app-scenario-template>
+      </div>
+      <div class="tab-pane " id="steps-tab"  [ngClass]="(active === 'steps') ? 'active':''">
+        <app-step-card  *ngFor="let step of steps | paginate: { itemsPerPage: 10, currentPage: p,  totalItems: (active ==='steps') ? steps?.length : resources?.length }"  [step]="step"></app-step-card>
+        <div *ngIf="steps?.length > 10">
+            <pagination-controls 
+          (pageChange)="p = $event"
+          class="text-center ssk-pagination"
+          previousLabel=""
+          nextLabel="">
+        </pagination-controls>
+        </div>
+      </div>
+
+      <div class="tab-pane  " id="resources-tab"  [ngClass]="(active === 'resources') ? 'active':''">
+        <app-resource-card   *ngFor="let res of resources | paginate: { itemsPerPage: 10, currentPage: p,  totalItems: (active ==='steps') ? steps?.length : resources?.length }"  [res]="res" [border]="border"></app-resource-card>
+        <div *ngIf="(resources?.length > 10)">
+            <pagination-controls 
+              (pageChange)="p = $event"
+              class="text-center ssk-pagination"
+              previousLabel=""
+              nextLabel="">
+            </pagination-controls>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+  <script>
+    $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip();
+      $('input[type=text]').tooltip({
+          placement: "top",
+          trigger: "focus"
+      });
+        interface JQuery {
+        popover():void;
+      }
+      
+
+    });
+  </script>
+</div>
+

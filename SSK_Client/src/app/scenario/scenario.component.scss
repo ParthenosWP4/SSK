@@ -1,0 +1,954 @@
+@import "../../partials/variables";
+@import "../../timeline";
+
+.scenario {
+  background-color: $color-33;
+
+  .stitle {
+    font-family: $roboto-regular;
+    font-size: 48px;
+    color: $color-34;
+  }
+  .desc {
+    color: $color-18;
+    font-family: $roboto-light;
+    font-size: 18px;
+    p {
+      font-family: $roboto-italic;
+      font-size: 20px;
+      color: $color-21;
+    }
+  }
+  img {
+    max-height: 75%;
+  }
+}
+
+.scenarioTopIcon{
+  cursor: pointer;
+}
+.caret {
+  border-right: 35px solid transparent !important;
+  border-top: 25px solid $color-33 !important;
+  border-left: 35px solid transparent !important;
+  margin-left: 5rem;
+  position: absolute;
+}
+
+ol {
+  list-style-type: none !important;
+}
+
+.step {
+  color: $color-14;
+  font-family: $raleway-semibold;
+  font-size: 36px;
+  .position {
+    letter-spacing: 0.3em;
+  }
+}
+p span {
+  text-transform: capitalize;
+}
+
+.resource {
+  background-color: $color-3;
+  .rtitle {
+    font-size: 24px;
+    font-family: $roboto-medium;
+    width: 100%;
+  }
+  .head {
+    border-bottom: 1px solid $color-35;
+  }
+
+  .nohead {
+    color: $color-10 !important;
+    font-size: 24px;
+    font-family: $roboto-medium;
+    width: 100%;
+  }
+
+  .complete {
+    font-family: $roboto-italic;
+    font-size: medium;
+    cursor: pointer;
+  }
+  .desc {
+    font-size: small !important;
+    font-family: $roboto-light !important;
+  }
+}
+
+.bottom {
+  button {
+    border-radius: 50px;
+    font-family: $roboto-medium !important;
+    text-transform: uppercase;
+  }
+  .btn-primary {
+    background-color: $color-12 !important;
+  }
+  .btn-secondary {
+    border-color: $color-12 !important;
+    color: $color-12 !important;
+  }
+}
+
+:host /deep/ div.tooltip.show {
+  opacity: 1 !important;
+}
+
+:host /deep/ div.tooltip-inner {
+  background-color: $color-16 !important;
+  font-family: $roboto-light !important;
+  border: 1px solid $color-32;
+  color: $color-3;
+  font-size: larger !important;
+  font-weight: bold !important;
+}
+
+.github-icon {
+  width: 1.6rem;
+}
+
+:host /deep/ div.tooltip-inner::before {
+  //top: 15px !important;
+}
+:host /deep/ .tooltip.top .tooltip-arrow .arrow:before,
+:host /deep/ .tooltip.right .tooltip-arrow .arrow:before,
+:host /deep/ .tooltip.top .tooltip-arrow .arrow,
+:host /deep/ .tooltip.right .tooltip-arrow .arrow {
+  border: #009688;
+}
+
+:host  /deep/ .infoToolTip .tooltip-inner {
+  background-color: $color-11 !important;
+  color: #fff;
+  font-size: small !important;
+  font-weight: bold !important;
+}
+
+
+dl,
+ol,
+ul {
+  list-style-type: none;
+}
+
+.hide {
+  visibility: visible;
+}
+.mhide {
+  display: none;
+}
+
+.preliminary-scenarios .row {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  white-space: nowrap;
+  display: inline-block !important;
+}
+.preliminary-scenarios .row .prem-elt {
+  display: inline-block !important;
+  float: none;
+  white-space: initial;
+}
+
+.preliminary-scenarios > .row:hover {
+  overflow-x: scroll;
+  scrollbar-color: dark;
+}
+.scenarioImageTags{
+  .col{
+    padding: 0px !important
+  }
+  .ccByImg{
+    font-size: 0.5rem;
+  }
+}
+
+
+@media only screen and (max-device-width: 480px) {
+  .cd-horizontal-timeline .events li span:nth-child(2n + 1) {
+    height: 25px;
+    width: 25px;
+    line-height: 16px;
+    top: -11px;
+    font-size: 1rem !important;
+  }
+  .step {
+    font-size: inherit;
+  }
+
+  .rtitle {
+    font-size: inherit !important;
+  }
+
+  .stitle {
+    font-size: 20px !important;
+  }
+
+  .hide {
+    display: none;
+  }
+  .mhide {
+    visibility: visible;
+  }
+}
+
+.prev {
+  min-width: 1rem !important;
+  vertical-align: middle !important;
+}
+#ontimeline {
+  display: inline-block;
+  width: 92%;
+  overflow-y: auto;
+  margin-left: 3rem;
+  left: 0;
+  margin-top: -2.5%;
+}
+
+.numberCircle {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  padding: 4px;
+  border: 2px solid $color-22;
+  color: $color-22;
+  text-align: center;
+  font-size: 1.2rem;
+  font-family: $avenir-next;
+  display: inline-block;
+}
+
+/**
+  * CSS of the new scenario's display
+  */
+.scenarioImageTags {
+  position: relative;
+  z-index: 4;
+}
+.styleNumber {
+  color: red;
+}
+.image-wrapper {
+  width: 98%;
+}
+
+//---- svg icon ----
+
+//quotes-svg-icon
+#quotes-svg:hover {
+  #Steps {
+    stroke: rgb(74, 74, 74);
+  }
+
+  #right-quote {
+    stroke: rgb(74, 74, 74);
+  }
+
+  circle {
+    fill: white;
+  }
+}
+
+//github-svg-icon
+#github-logo-svg:hover {
+  #Steps {
+    stroke: rgb(74, 74, 74);
+  }
+
+  #github-logo {
+    stroke: rgb(74, 74, 74);
+  }
+
+  circle {
+    fill: white;
+  }
+
+  #Full-scenario {
+    stroke: rgb(74, 74, 74);
+    fill: white;
+  }
+}
+
+.grey-background {
+  width: inherit;
+  background-color: #f8f8f8;
+  font-family: $avenir_next;
+}
+//---- container-title-tag-picture-text -----
+.text-description-mobile {
+  font-family: $roboto-light;
+  color: #333333;
+  font-size: 1rem;
+  z-index: 1;
+  position: relative;
+}
+
+.pictureReference {
+  font-style: italic;
+}
+.title {
+  color: $color-40;
+  font-family: $roboto-regular;
+  font-size: 3rem;
+  letter-spacing: -1.22px;
+}
+
+.authors {
+  color: $color-48;
+  font-size: 1.25rem;
+  letter-spacing: -1.03px;
+  font-family: $avenir_next;
+}
+
+.update-message {
+  font-family: "Avenir Next";
+  color: #9b9b9b;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+//tags generics
+.tag1 {
+  color: $color-49;
+  border: 1px solid $color-49;
+}
+
+.tag2 {
+  color: $color-51;
+  border: 1px solid $color-51;
+}
+
+.tag3 {
+  color: $color-50;
+  border: 1px solid $color-50;
+}
+
+.tag {
+  border-radius: 15px;
+  font-weight: 600;
+  letter-spacing: -0.59px;
+  background-color: #fff;
+  font-family: $avenir_next;
+  font-size: 12px;
+  box-sizing: border-box;
+  margin-left: 0.5rem;
+}
+
+//------ Timeline Generics
+.btn-Back {
+  background-color: #63b9d8;
+  color: white;
+}
+.btn-Back:hover {
+  background-color: white;
+  color: #63b9d8;
+  border: 1px solid #63b9d8;
+}
+.btnTimeline {
+  font-family: $avenir_next;
+  background-color: transparent;
+  color: $color-47;
+  cursor: pointer;
+  font-size: 1.25rem;
+  opacity: 1;
+}
+
+.btnTimeline:hover {
+  text-decoration: underline;
+  opacity: 0.5;
+}
+
+.stepTitle {
+  font-family: "Raleway-Bold";
+  color: #2d4f63;
+  font-size: 2rem;
+}
+
+.stepDescription {
+  font-family: $roboto-light;
+  color: #333333;
+  font-size: 1rem;
+  background-color: transparent;
+  border-width: 0px;
+}
+
+//-------- Modal ressources -----
+
+.close-modal {
+  background-color: #ffffff;
+  border: 3px solid #3e6477;
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  right: -30px;
+  top: -23px;
+  overflow: hidden;
+  color: #3e6477;
+  font-size: 30px;
+  border-radius: 50% 50%;
+  text-align: center;
+  cursor: default;
+}
+//----------
+.nav-tabs {
+  border-bottom: 0px;
+  background-color: #f7f7f7;
+  -webkit-box-shadow: 0 4px 6px -6px #222;
+  -moz-box-shadow: 0 4px 6px -6px #222;
+  box-shadow: 0 4px 6px -6px #222;
+}
+
+.nav-link.active {
+  padding-bottom: 0px;
+  color: #63b9d8;
+  border-bottom: 1px solid #63b9d8;
+  background-color: transparent;
+}
+
+.nav-link {
+  border-width: 0px;
+  border-color: #ddd #ddd #fff;
+  text-align: center;
+  padding-bottom: 0px;
+  color: grey;
+}
+
+.modal-content {
+  overflow-y: scroll;
+  border-radius: 0px;
+}
+
+.modal-header {
+  display: inline;
+}
+.modal-body {
+  max-height: 80vh; //Sets the height to 80/100ths of the viewport.
+}
+
+#popups-nav1,
+#popups-nav2 {
+  color: #63b9d8;
+}
+
+.popups-nav1,
+.popups-nav2 {
+  text-align: center;
+}
+
+.popups-nav1:hover {
+  border-bottom: 2px solid red;
+}
+
+.popups-nav2:hover {
+  border-bottom: 2px solid red;
+}
+
+#popups-nav2:hover {
+  color: #63b9d8;
+}
+
+.Content-Generic-Content {
+  color: blue;
+}
+
+.Specific-Resources-Content {
+  color: red;
+  display: block;
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 80%;
+    margin: 30px auto;
+    border-radius: 0px;
+  }
+}
+
+#timeline {
+  width: 90%;
+  position: relative;
+
+  .timeline-item {
+    //padding-bottom: 50px;
+    position: relative;
+
+    .timeline-icon {
+      background: $color-3;
+      border: 3px solid $color-22;
+      width: 60px;
+      height: 60px;
+      padding: 10%;
+      position: absolute;
+      top: 0;
+      left: 16px;
+      color: $color-22;
+      font-size: 1.4rem;
+      text-align: center;
+      border-radius: 50% 50%;
+
+      .step-number {
+        position: relative;
+        top: 3px;
+        left: 18px;
+      }
+    }
+
+    .timeline-content {
+      h2 {
+        padding: 15px;
+        color: $color-22;
+        margin: -20px -20px 0 -20px;
+        font-weight: 300;
+      }
+    }
+    &:before {
+      content: "";
+      width: 5px;
+      height: 100%;
+      background: $color-22;
+      left: 5%;
+      top: 0;
+      position: absolute;
+    }
+  }
+
+  //Remove the vertical bar only for the last element
+  #timeline .timeline-item:last-child {
+    &:before {
+      content: "";
+      background-color: transparent;
+    }
+  }
+}
+
+//----- bottom nav options ------
+.nav-option {
+  font-size: 1rem;
+  background-color: #f8f8f8;
+}
+
+.nav-option:hover {
+  color: $color-47;
+}
+
+.nav-option-left {
+  text-align: center;
+}
+
+.nav-option-right {
+  text-align: center;
+}
+.shift{
+  margin-left: 15rem !important;
+}
+
+//-------- End of Generics css styles properties (colors) --------
+
+// @media only screen and (min-width : 1450px)
+@media only screen and (min-width: 1450px) {
+  .step-Title-and-Tag {
+    display: -webkit-inline-box;
+  }
+
+  .picture-tag-container {
+    float: right;
+  }
+
+  .grey-background {
+    width: 100%;
+  }
+
+  .centericon {
+    text-align: center;
+  }
+
+  .picture {
+    width: 100%;
+  }
+
+  //---- container-title-tag-picture-text -----
+
+  .icon-quote-comment-git {
+    margin-left: 5px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .img-icon-quote-comment-git {
+    margin: 20px;
+  }
+
+  .nav-option-left {
+    text-align: center;
+  }
+
+  .nav-option-right {
+    text-align: center;
+  }
+
+  //------------------- Timeline
+
+  img {
+    max-width: 100%;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .container {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .project-name {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  #timeline {
+    .timeline-item {
+      .timeline-icon {
+        left: -20px;
+
+        .step-number {
+          top: 3px;
+          left: 18px;
+        }
+      }
+
+      &:before {
+        left: 40px;
+      }
+    }
+  }
+
+  //Remove the vertical bar only for the last element
+  #timeline .timeline-item:last-child {
+    &:before {
+      content: "";
+      background-color: transparent;
+    }
+  }
+}
+
+// @media only screen and ( min-width:991px )
+@media only screen and (max-width: 1450px) and (min-width: 991px) {
+  .picture-tag-container {
+    float: right;
+  }
+
+  .grey-background {
+    width: 100%;
+  }
+
+  .centericon {
+    text-align: center;
+  }
+
+  .picture {
+    margin-top: 101px;
+    width: 100%;
+  }
+
+  .icon-update-container span img {
+    cursor: pointer;
+  }
+
+  //---- container-title-tag-picture-text -----
+
+  .icon-quote-comment-git {
+    margin-left: 5px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .img-icon-quote-comment-git {
+    margin: 20px;
+  }
+
+  //------------------- Timeline
+
+  img {
+    max-width: 100%;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .container {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  #timeline {
+    .timeline-item {
+      .timeline-icon {
+        left: -15px;
+
+        .step-number {
+          top: 3px;
+          left: 18px;
+        }
+      }
+
+      &:before {
+        left: 46px;
+      }
+    }
+  }
+
+  //Remove the vertical bar only for the last element
+  #timeline .timeline-item:last-child {
+    &:before {
+      content: "";
+      background-color: transparent;
+    }
+  }
+}
+
+// @media only screen and ( max-width:991px ) and ( min-width:744px )
+@media only screen and (max-width: 991px) and (min-width: 576px) {
+  .grey-background {
+    width: 100%;
+  }
+
+  .centericon {
+    text-align: center;
+  }
+
+  .picture {
+    margin-top: 101px;
+    width: 100%;
+  }
+
+  .title-author-icon-container {
+    text-align: center;
+  }
+  //---- container-title-tag-picture-text ----
+
+  .icon-quote-comment-git {
+    margin-left: 5px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .img-icon-quote-comment-git {
+    margin: 20px;
+  }
+
+  .update-message {
+    font-family: "Avenir Next";
+    color: #9b9b9b;
+  }
+
+  //------------------- Timeline
+
+  img {
+    max-width: 100%;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .container {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .project-name {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  #timeline {
+    .timeline-item {
+      .timeline-icon {
+        left: 3px;
+
+        .step-number {
+          top: 3px;
+          left: 18px;
+        }
+      }
+
+      &:before {
+        left: 16px;
+        background-color: transparent;
+      }
+    }
+  }
+
+  //Remove the vertical bar only for the last element
+  #timeline .timeline-item:last-child {
+    &:before {
+      content: "";
+      background-color: transparent;
+    }
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .picture-tag-container {
+    padding-bottom: 10%;
+  }
+
+  .img-fluid {
+    max-width: 95%;
+    height: auto;
+  }
+
+  //------ Reordering (Flexbox)  ------
+
+  //------ picture-tag-container children components
+
+  //declaring the parent  container as flex box (picture-tag-container)
+
+  .picture-tag-container {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .picture {
+    order: 2;
+    background-color: lightgray;
+  }
+
+  .span-tag {
+    order: 1;
+    //background-color:orange;//test
+  }
+
+  .title-author-icon-container {
+    text-align: center;
+  }
+
+  //----- container-main direct children components
+
+  //declaring the parent  container as flex box (container-main)
+  .container-main {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  //positionning the children components in the parent flex box
+  .timeline-container {
+    order: 1;
+    //background-color:cyan;
+  }
+
+  .nav-option {
+    order: 2;
+    //background-color:orange;//test
+  }
+
+  .container-title-tag-picture-text {
+    order: 3;
+    margin-top: 50px;
+  }
+
+  //----- container-title-tag-picture-text direct component
+
+  //declaring the parent  container as flex box (container-title-tag-picture-text)
+  .container-title-tag-picture-text {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  //positionning the children components in the parent flex box
+  .picture-tag-container {
+    order: 3;
+    // background-color:olivedrab;//test
+  }
+
+  .title-container {
+    order: 1;
+    //background-color:grey;//test
+  }
+
+  .authors-container {
+    order: 2;
+    //background-color:violet;//test
+  }
+
+  .icon-update-container {
+    order: 3;
+    //background-color:red;//test
+    text-align: center;
+  }
+
+  .icon-update-container * {
+    background-color: inherit;
+  }
+
+  .centericon,
+  .update-message {
+    text-align: center;
+  }
+
+  .text-description-mobile {
+    order: 1;
+    //background-color:yellow;//test
+    display: block;
+  }
+
+  //----- End of  Reordering (Flexbox)  ------
+
+  //Timeline
+
+  #timeline {
+    .timeline-item {
+      max-width: 90%;
+      .timeline-icon {
+        left: 3px;
+
+        .step-number {
+          top: 3px;
+          left: 18px;
+        }
+      }
+
+      &:before {
+        left: 16px;
+        background-color: transparent;
+      }
+    }
+  }
+
+  //Remove the vertical bar only for the last element
+  #timeline .timeline-item:last-child {
+    &:before {
+      content: "";
+      background-color: transparent;
+    }
+  }
+
+  .stepTitle {
+    font-size: 1.75rem;
+    padding-left: 86px;
+    padding-top: 5px;
+  }
+
+  //interested  link
+  .interested-link {
+    margin-left: 0px;
+  }
+}
+.popover {
+  width: 200%;
+  height: 250px;
+  transform: none !important;
+}
+
+

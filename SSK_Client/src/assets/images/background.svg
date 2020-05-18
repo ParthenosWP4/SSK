@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200px" height="1628px" viewBox="0 0 1200 1628" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home_aliens" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(0.000000, -655.000000)">
+        <g id="Group" transform="translate(0.000000, 655.000000)">
+            <g id="Group-2">
+                <rect id="bg3" fill="#D4E2E8" x="0" y="945" width="1200" height="464"></rect>
+                <rect id="bg2" fill="#DAECF4" x="0" y="441" width="1200" height="504"></rect>
+                <rect id="bg1" fill="#EAEDEE" x="0" y="0" width="1200" height="441"></rect>
+                <polygon id="bg_path" fill="#F7F7F7" transform="translate(661.000000, 824.500000) scale(-1, 1) translate(-661.000000, -824.500000) " points="548 0 1040.93266 288.412549 580.7114 599.818127 1181 851.241891 880 1649 266.5 1649 919.874459 915.222492 141 645.304335 866.348725 288.412549 276.5 0"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

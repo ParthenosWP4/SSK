@@ -1,0 +1,8 @@
+.row-even { background-color: lightgreen; }
+.row-odd { background-color: lightblue; }
+.css-content { font-size: 120%; color: darkblue; background-color: lightyellow; }
+.css-m-content { font-size: 110%; width: 300px; }
+.css-i-language { width: 200px !important; }
+.css-i-code { width: 80px; }
+.css-i-refine { width: 80px; }
+.css-i-scheme { width: 80px; }

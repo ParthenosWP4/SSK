@@ -1,0 +1,194 @@
+@import '../../../partials/variables';
+
+
+.data-account, .add-data {
+    background-color:#F4F4F4
+}
+
+
+.nav-pills {
+    border-bottom: 1px solid darkgrey;
+}
+
+.nav-row {
+    background-color: #FFFFFF;
+    border:1px #E0E0E0 solid;
+}
+
+#name {
+    color: #4A4A4A;
+    font-family: "Avenir Next";	
+    font-size: 24px;	
+    font-weight: 500;	
+    line-height: 33px;
+}
+
+#affiliation{
+    font-weight: 300;
+    color: #9B9B9B;
+    font-family: "Avenir Next";	
+    font-size: 20px;	
+    line-height: 27px;
+}
+
+#orcid-account-address{
+    color: #4A4A4A;	
+    font-family: "Avenir Next";	
+    font-size: 12px;	
+}
+
+.edit-icon {
+   height:1.3rem;
+   cursor: pointer;
+}
+
+.delete-icon {
+  height: 1.5rem;
+}
+
+
+.smallest{
+    height: .7rem;
+}
+
+.picture-profile{
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+}
+.editImg{
+    font-size: 14px;
+    font-family: "Avenir Next";	
+    color: #4A4A4A;	
+}
+
+
+
+a:not([href]):not([tabindex]) {
+    color: white;
+    text-decoration: none;
+}
+.add-button {
+    border-width: 0rem;
+    cursor: pointer;
+    height: 48px;	
+    width: 195px;	
+    border-radius: 6px;	
+    background-color: #63B9D8;
+    color: white;
+    font-family: "Avenir Next";	
+    font-size: 16px;	
+    font-weight: 600;	
+    letter-spacing: -0.03px;	
+    line-height: 22px;
+}
+
+
+.circle-icon {
+    border-radius:50%;
+    border: 1px solid white;
+    color: white;
+}
+
+
+.publication-text {
+    height: 100%;
+}
+
+.profile-head-right{
+    margin-left: 5rem;
+}
+
+
+.scenarios-draft-title{
+    color: #4A4A4A;	
+    font-family: "Quicksand";	
+    font-size: 20px;	
+    font-weight: 500;	
+    line-height: 25px;
+}
+
+.steps-draft-title,
+.resources-draft-title {	height: 25px;	
+                width: 92px;	
+                color: #4A4A4A;	
+                font-family: "Quicksand";	
+                font-size: 20px;	
+                font-weight: 500;	
+                line-height: 25px;
+            }
+
+.text-info-draft {	
+    width: 240px;	
+    color: #333333;	
+    font-family: Roboto;	
+    font-size: 1.25em;
+    font-style: italic;	
+    font-weight: 300;	
+    line-height: 30px;
+}
+
+
+.pills-publication-tab, 
+.pills-draft-tab {
+    background-color:white ;
+    color: black;
+    font-family: "Raleway";	
+    font-size: 26px;	
+    // letter-spacing: -0.04px;   
+    border-radius: 0px;
+}
+
+.pills-draft-tab.active, 
+.pills-publication-tab.active {
+    background-color:white ;
+    color:  #63B9D8;
+    font-family: "Raleway";	
+    font-size: 26px;	
+    // letter-spacing: -0.04px;
+    // border-bottom: 1px solid #63B9D8;
+}
+
+
+.text-info-draft-container {
+    /*margin-right: 2%;*/
+    margin-left: 8%;
+}
+
+
+.scenarios-draft {	
+    height: 112px;	
+    width: 780px;	
+    border-radius: 6px;	
+    background-color: #F2F2F2;	
+    box-shadow: 5px 5px 18px 0 rgba(46,61,73,0.5);}
+
+
+.resource-link,
+.step-link,
+.scenario-link {
+    color:white;
+}
+
+
+
+.scn-draft-icon , .step-draft-icon {
+    cursor:pointer;  
+}
+
+.author-scenarios-container{
+    width: 580px;
+}
+
+
+.author-scenarios{
+    color: #9B9B9B;
+    font-family: "Avenir_Next";
+    font-size: 1rem;
+}
+
+
+.scenarios-draft:hover {
+    background-color: #63B9D8;
+    color: white;
+  }
