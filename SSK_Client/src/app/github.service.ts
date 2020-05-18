@@ -12,7 +12,7 @@ export class GithubService {
 
   translationClient: any;
   clientWithAuth = new Octokit({
-    auth: 'token 4d708ff605132b82c7678b7759d94b5e2dd02be4'
+    auth: 'token Xxxxxxxxxxxxxxxxxxxxxxxxx4'
   });
 
   constructor(private http: Http) {
