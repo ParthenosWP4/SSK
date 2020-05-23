@@ -107,7 +107,7 @@
                <event ref="step_SDtatRfCV2" type="researchStep" xml:id="s3"/>
                <event ref="step_StWowtSiC" type="researchStep" xml:id="s4"/>
                <event ref="step_Sapditnf_300517" type="researchStep" xml:id="s5"/>
-              
+               <event ref="SSK_sc_mei" type="researchScenario" subtype="followUp"/>
             </listEvent>
          </div>
       </body>
