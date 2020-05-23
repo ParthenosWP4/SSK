@@ -67,10 +67,8 @@
                <term key="Scanning" source="tadirah" type="techniques"/>
             </desc>
             <figure type="image">
-               <head/>
                <graphic url="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/img/FTIR_2.jpg"/>
                <figDesc>
-                 <author/>
                  <availability>
                    <licence>CC-BY</licence>
                  </availability>
