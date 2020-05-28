@@ -65,7 +65,7 @@
           </figDesc>
         </figure>
         <listEvent>
-          <event xml:id="s1" type="researchScenario" ref="SSK_sc_production3DObjectsScenario"></event>
+          <event xml:id="s1" type="researchScenario" ref="SSK_sc_production3DObjectsScenario" subtype="preliminary"/></event>
           <event xml:id="s2" type="researchStep" ref="step_3Dclassification_1"/>
           <event xml:id="s3" type="researchStep" ref="step_3Dclassification_2"/>
           <event xml:id="s4" type="researchStep" ref="step_3Dclassification_3"/>
