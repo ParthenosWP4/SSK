@@ -8,7 +8,7 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Collaborative Digital Edition of a Musical Corpus - Update second</title>
+            <title>Collaborative Digital Edition of a Musical Corpus</title>
             <author>
                <forename>Vincent</forename>
                <surname>Besson</surname>
@@ -46,7 +46,7 @@
    <text>
       <body>
          <div type="scenario" xml:id="sc_mei">
-            <head type="scenarioTitle" xml:lang="en">Collaborative Digital Edition of a Musical Corpus</head>
+            <head type="scenarioTitle" xml:lang="en">Collaborative Digital Edition of a Musical Corpus  - Update second</head>
             <head type="scenarioTitle" xml:lang="fr">Edition numérique collaborative d'un corpus musical</head>
             <desc type="definition" xml:lang="en">A project aims to do a digital edition of a musical
      corpus. The researchers need to be able to encode a broad range of musical documents in a
