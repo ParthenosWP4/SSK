@@ -71,7 +71,7 @@
           <event xml:id="s4" type="researchStep" ref="step_3Dclassification_3"/>
           <event xml:id="s5" type="researchStep" ref="step_3Dclassification_4"/>
           <event xml:id="s6" type="researchStep" ref="step_3Dclassification_5"/>
-          <event xml:id="s7" type="researchScenario" ref="SSK_sc_Preservation3DObjects"/>
+          <event xml:id="s7" type="researchScenario" ref="SSK_sc_Preservation3DObjects" subtype="followUp"/>
         </listEvent>
       </div>
     </body>
