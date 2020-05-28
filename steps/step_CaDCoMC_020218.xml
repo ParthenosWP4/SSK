@@ -45,7 +45,7 @@
       <body>
          <listEvent>
             <event type="researchStep">
-               <head xml:lang="en">Create a digital corpus of musical compositions.</head>
+               <head xml:lang="en">Create a digital corpus of musical compositions. Pluss </head>
                <head xml:lang="fr">Créer un corpus numérique de compositions musicales.</head>
                <desc type="definition" xml:lang="en">Select resources to be included in the corpus. After
       collecting original musical sources, transcribe them adding critical editorial signs and
