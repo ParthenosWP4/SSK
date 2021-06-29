@@ -59,7 +59,7 @@
             scans.</p>
                </desc>
                <desc xml:lang="en" type="terms">
-                  <term type="standard" source="ssk" key="ACSCII"/>
+                  <term type="standard" source="ssk" key="ASCII"/>
                   <term type="standard" source="ssk" key="CSV"/>
                   <term type="standard" source="ssk" key="SPC"/>
                   <term type="standard" source="ssk" key="JCAMP-DX"/>
