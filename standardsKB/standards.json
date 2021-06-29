@@ -1039,7 +1039,7 @@
   },
   {
     "id": 60,
-    "standard_abbr_name": "ACSCII",
+    "standard_abbr_name": "ASCII",
     "standard_complete_name": "American Standard Code for Information Interchange",
     "standard_desc_eng": "ASCII abbreviated from American Standard Code for Information Interchange, is a character encoding standard for electronic communication. ASCII codes represent text in computers, telecommunications equipment, and other devices. Most modern character-encoding schemes are based on ASCII, although they support many additional characters. ASCII is the traditional name for the encoding system.",
     "standard_desc_fr": "",
