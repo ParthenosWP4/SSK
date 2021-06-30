@@ -48,7 +48,7 @@
       performed.</desc>
                <desc type="term" xml:lang="en">
                   <term key="LIBS" source="ssk" type="standard"/>
-                  <term key="Raman Spectroscopy" source="ssk" type="standard"/>
+                  <term key="Raman spectroscopy" source="ssk" type="standard"/>
                   <term key="http://tadirah.dariah.eu/vocab/index.php?tema=11&amp;/gathering"
                         source="http://tadirah.dariah.eu/"
                         type="activity"/>
@@ -59,7 +59,7 @@
                        
                        target="AVJ3J46Y"
                        type="tutorial">
-                     <term key="Raman Spectroscopy" type="technique"/>
+                     <term key="Raman spectroscopy" type="technique"/>
                      <term key="LIBS" type="technique"/>
                   </ref>
                </linkGrp>
