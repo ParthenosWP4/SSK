@@ -72,7 +72,7 @@
                <desc xml:lang="en" type="terms">
                   <term type="standard" source="ssk" key="METS"/>
                   <term key="ALTO-XML" source="ssk" type="standard"/>
-                  <term key="PÄGE XML" source="ssk" type="standard"/>
+                  <term key="PAGE XML" source="ssk" type="standard"/>
                   <term key="hOCR" source="ssk" type="standard"/>
                </desc>
                <linkGrp type="generalResources"
