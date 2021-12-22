@@ -3,9 +3,9 @@
 <TEI xmlns="http://www.tei-c.org/ns/1.0"
      type="researchScenario"
      xml:id="SSK_sc_creatingMetadata">
-   <teiHeader><!-- teiHeader TBC -->
+   <teiHeader>
       <fileDesc>
-         <titleStmt><!-- Title of the tei document, not title of the scenario -->
+         <titleStmt>
             <title>Creation of Metadata scenario</title>
             <author>
                <forename>Antonio Davide</forename>
@@ -35,7 +35,7 @@
    </teiHeader>
    <text>
       <body>
-         <div type="reseachScenario" xml:id="sc_creatingMetadata"><!-- All the textual information about scenarios and steps is now contained in the <head> element-->
+         <div type="reseachScenario"><!-- All the textual information about scenarios and steps is now contained in the <head> element-->
             <head type="scenarioTitle" xml:lang="en">Creating Metadata</head>
             <desc type="definition" xml:lang="en">Scenario consisting of a step-by-step guide to make
      metadata in a specific application profile from data structured in different manners</desc>
