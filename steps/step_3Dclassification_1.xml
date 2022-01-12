@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="step_3DV" type="researchStep">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="step_3Dclassification_1" type="researchStep">
   <teiHeader>
     <fileDesc>
       <titleStmt>
