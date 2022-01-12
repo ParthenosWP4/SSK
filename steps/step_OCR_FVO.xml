@@ -2,7 +2,7 @@
 <?xml-model href="https://raw.githubusercontent.com/ParthenosWP4/SSK/master/spec/TEI_SSK_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0"
      type="researchStep"
-     xml:id="step_OCR_ESIRB">
+     xml:id="step_OCR_FVO">
    <teiHeader>
       <fileDesc>
          <titleStmt>
