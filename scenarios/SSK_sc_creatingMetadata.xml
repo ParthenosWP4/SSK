@@ -6,7 +6,7 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Creation of Metadata scenario</title>
+            <title>"Creation of Metadata" scenario</title>
             <author>
                <forename>Antonio Davide</forename>
                <surname> Madonna</surname>
@@ -35,7 +35,7 @@
    </teiHeader>
    <text>
       <body>
-         <div type="reseachScenario"><!-- All the textual information about scenarios and steps is now contained in the <head> element-->
+         <div type="researchScenario"><!-- All the textual information about scenarios and steps is now contained in the <head> element-->
             <head type="scenarioTitle" xml:lang="en">Creating Metadata</head>
             <desc type="definition" xml:lang="en">Scenario consisting of a step-by-step guide to make
      metadata in a specific application profile from data structured in different manners</desc>
